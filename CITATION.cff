@@ -9,8 +9,9 @@ type: software
 version: 0.9.0-beta
 date-released: "2026-10-20"
 license: MIT
-repository-code: "https://github.com/<your-account>/christos"
-url: "https://github.com/<your-account>/christos"
+repository-code: "https://github.com/VegFisx/Christos"
+url: "https://github.com/VegFisx/Christos"
+doi: "10.5281/zenodo.23499423"
 
 # ---------------------------------------------------------------------------
 # TODO before publishing: replace the placeholder below with the real author
