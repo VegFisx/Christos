@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the system paper below."
+title: "Christos: CHemistry ReactIng SysTem for OrganicS"
+abstract: >-
+  A provenance-tracked reaction prediction engine for organic chemistry that
+  resolves herbal, natural-product and formula inputs to compound level and
+  enumerates condition-constrained transformations without scoring or ranking.
+type: software
+version: 0.9.0-beta
+date-released: "2026-10-20"
+license: MIT
+repository-code: "https://github.com/<your-account>/christos"
+url: "https://github.com/<your-account>/christos"
+
+# ---------------------------------------------------------------------------
+# TODO before publishing: replace the placeholder below with the real author
+# block.  Delete this comment when done.  Example:
+#
+# authors:
+#   - family-names: "Zhang"
+#     given-names: "San"
+#     affiliation: "Example University"
+#     orcid: "https://orcid.org/0000-0000-0000-0000"
+# ---------------------------------------------------------------------------
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+
+preferred-citation:
+  type: article
+  title: "Christos: a provenance-tracked reaction prediction system for herbal and natural-product chemistry"
+  year: 2026
+  # TODO: fill in once the arXiv identifier is assigned.
+  # identifiers:
+  #   - type: doi
+  #     value: "10.48550/arXiv.XXXX.XXXXX"

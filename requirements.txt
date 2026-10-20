@@ -1,0 +1,14 @@
+# Core chemistry and numerics
+rdkit>=2024.3
+rdchiral>=1.1
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.3
+joblib>=1.3
+
+# Spreadsheet import for the optional table-building scripts
+openpyxl>=3.1
+
+# Optional: only needed for the native window (desktop.py)
+# pywebview>=5.0

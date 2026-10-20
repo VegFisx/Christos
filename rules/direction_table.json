@@ -1,0 +1,96 @@
+{
+  "version": "direction-table-v1",
+  "built_at": "2026-10-13",
+  "what_this_is": [
+    "框架层【方向判据表】：给 37 类反应 + 自抽模板，指定它在给定【介质】下应该往哪个方向走。",
+    "这是化学判据（不是从数据库统计出来的），所以单独成文件、可审查、可改、可关（--direction off）。",
+    "每条规则都带 evidence 字段说明来源：哪些是复用引擎/项目里已有的知识，哪些是本次新增。",
+    "★ 不用于删除产物：只给产物打标记（平衡/方向可疑/方向明确/判不了），判断权仍在用户手里。"
+  ],
+  "layer_note": [
+    "为什么属【框架层】而不是【场景层】：这些规则说的是『任意有机反应的水相/醇相可逆性』，",
+    "不为煎煮、炮制或任何具体药材服务。场景层的东西（煎煮工艺、具体药材成分）一律不在这里。"
+  ],
+  "families": {
+    "condensation_reversible": {
+      "label": "suspect",
+      "direction": "reverse_in_water",
+      "rule": "生成水/醇等小分子的缩合键（酯/酰胺/缩醛/脲/磺酰胺）：**水相**里趋水解方向（产物若在缩合方向 → 方向可疑）；**非水相**里趋缩合方向（方向明确）；介质不明 → 平衡",
+      "evidence": "框架级通用有机化学：缩合-水解平衡；与引擎既有 CONDENSATION_CLASSES 一致（运行时以引擎常量为单一真相，会覆盖这里的 label）",
+      "classes": [
+        "esterification", "ester_schotten_baumann", "ester_sulfonic_schotten_baumann",
+        "amide_coupling", "amine_acetylation", "amine_sulfonation", "urea_formation",
+        "imidazole_condensation_acid", "imidazole_condensation_amine",
+        "oxadiazole_condensation"
+      ]
+    },
+    "irreversible_gas_release": {
+      "label": "clear",
+      "direction": "forward_only",
+      "rule": "放出气体（CO2 等）的不可逆断键：方向明确，不设逆方向",
+      "evidence": "框架级通用有机化学：气体逸出把平衡拉向产物（不可逆）",
+      "classes": ["C_C_decarboxylation"]
+    },
+    "irreversible_metal_coupling": {
+      "label": "clear",
+      "direction": "forward_only",
+      "rule": "金属参与/需配体的偶联与活化：方向明确（需专用催化剂与配体）",
+      "evidence": "框架级通用有机化学：交叉偶联需要 Pd/Ni 等催化剂；引擎已有必需试剂判零",
+      "classes": [
+        "suzuki", "sonogashira", "heck", "negishi_batch", "negishi_insitu",
+        "chan_lam", "ullmann_X", "ullmann_phenol", "ART", "B-H",
+        "pinacolatoborylation", "deoxygenative_coupling"
+      ]
+    },
+    "substitution_or_derivatization": {
+      "label": "clear",
+      "direction": "forward_only",
+      "rule": "取代/成醚成硫醚：方向明确（成键方向；逆方向需要另加条件）",
+      "evidence": "框架级通用有机化学：SNAr/SN2/Williamson 属不可逆取代",
+      "classes": ["snar_alcohol", "snar_amine", "snar_thiol", "williamson", "sn2_nheterocycle", "mitsunobu"]
+    },
+    "reagent_dependent": {
+      "label": "undecided",
+      "direction": "needs_reagent",
+      "rule": "加成/还原类：方向本身取决于有没有对应试剂（氢源/氧化剂）→ 本层不裁",
+      "evidence": "框架级通用有机化学 + 引擎既有必需试剂判零（tools/measure_reagent_gate_effect.py 实测判零 2.94×）",
+      "classes": ["reductive_amination_aldehyde", "reductive_amination_ketone"]
+    },
+    "heterocycle_formation": {
+      "label": "clear",
+      "direction": "forward_only",
+      "rule": "成环（叠氮-炔、腈-叠氮、肼-异氰酸酯）在成环后基本不可逆：方向明确",
+      "evidence": "框架级通用有机化学：环化产物稳定、无通用逆反应",
+      "classes": ["triazole_synthesis_1", "triazole_synthesis_2", "tetrazole_synthesis"]
+    },
+    "specialized_condensation": {
+      "label": "undecided",
+      "direction": "forward_under_conditions",
+      "rule": "Horner-Wadsworth-Emmons、咪唑酮合成等：方向由具体试剂/条件决定，本层不裁",
+      "evidence": "框架级通用有机化学：需要强碱/特定试剂",
+      "classes": ["horner_wadsworth_emmons", "imidazole_Xketone_synthesis"]
+    },
+    "mined_templates": {
+      "label": "undecided",
+      "direction": "undecidable",
+      "rule": "ORD 自抽模板（mined_extra / mined_mono）：只有模板没有类型，方向不可判",
+      "evidence": "引擎既有行为：判不了可逆性就不让它驱动多步（propagate_unclassified=False）",
+      "classes": ["mined_extra", "mined_mono"]
+    }
+  },
+  "medium_rules": {
+    "water_like": {
+      "note": "水相/含水介质：缩合类趋水解方向",
+      "solvents": ["water", "aqueous", "water/alcohol", "water/dmso", "water/thf", "buffer"]
+    },
+    "nonwater": {
+      "note": "非水介质：缩合类趋缩合方向（引擎既有行为已如此）",
+      "solvents": ["ethanol", "methanol", "dmso", "dmf", "thf", "dcm", "toluene", "acetonitrile", "ipa"]
+    }
+  },
+  "known_thermo_unreliable": {
+    "what": "rules.json 里 thermo_unreliable=true 的规则：水的【切断】型水解（酯/糖苷/酰胺/亚胺/内酰胺/硫酸酯/磷酸酯/缩醛/半缩醛）—— 气相 xTB 对它们符号系统性错误",
+    "source": "core/thermo.py 与 core/query_base.py 引用的实测报告 tools/refine_hydrolysis_boundary.py",
+    "how_used": "方向层不自己写清单，运行时从 rules.json 读，标为『方向明确（水解侧）』而不是拿 xTB 数值去判"
+  }
+}

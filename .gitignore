@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# Data files.  Christos reads two local SQLite databases and several derived
+# JSON tables.  None of them are distributed with this repository: they are
+# large, they are partly redistributed from third-party sources, and they are
+# not needed to read or build the code.  See data/README.md.
+# ---------------------------------------------------------------------------
+*.db
+*.db-wal
+*.db-shm
+tcm.db*
+coconut.db*
+formula_db.json
+formula_db.csv
+herb_aliases_map.json
+data/raw/
+data/processed/
+data/cache/
+
+# ---------------------------------------------------------------------------
+# Runtime output
+# ---------------------------------------------------------------------------
+out/
+logs/
+*.log
+xtb_cache/
+hf_cache/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+libs/
+
+# ---------------------------------------------------------------------------
+# Build artifacts
+# ---------------------------------------------------------------------------
+build/
+dist/
+*.spec
+*.exe
+*.zip
+*.msi
+
+# ---------------------------------------------------------------------------
+# Editors and OS
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---------------------------------------------------------------------------
+# Secrets.  Never commit credentials, tokens or machine-specific config.
+# ---------------------------------------------------------------------------
+.env
+*.key
+*.pem
+*.pfx
+credentials*.json

@@ -1,0 +1,1570 @@
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Christos（炼膏师）· 化学反应预测与药典判据溯源</title>
+<script>
+(function(){
+  try{
+    var s=JSON.parse(localStorage.getItem('chemreact.settings')||'{}');
+    var t=(s&&s.theme==='night')?'night':'default';
+    document.documentElement.setAttribute('data-theme',t);
+    var saved=(s&&(s.lang==='zh'||s.lang==='en'))?s.lang:null;
+    var sys=String((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+    var l=saved||(sys.indexOf('zh')===0?'zh':'en');
+    document.documentElement.lang=(l==='en'?'en':'zh-CN');
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','default');
+    var sys2=String((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+    document.documentElement.lang=(sys2.indexOf('zh')===0?'zh-CN':'en');
+  }
+})();
+</script>
+<style>
+:root{
+  --bg:#eef4f8;--bg2:#f7fbfd;--panel:#ffffff;--panel2:#f4f8fb;
+  --line:#d3dfe7;--text:#24323c;--muted:#66757f;
+  --accent:#2f6f96;--accent2:#2b6288;
+  --green:#2f7d32;--red:#c0392b;--amber:#a86a00;--purple:#7d5bb5;--cyan:#2b7a78;
+  --input-bg:#ffffff;--input-border:#c9d7e0;
+  --nav-hover:#e8f0f5;--nav-active:#dcebf4;
+  --topbar-bg:rgba(247,251,253,.92);
+  --table-head:#eaf1f6;--log-text:#2b3a44;--find-bg:#f8fbfd;
+  --shadow:0 12px 32px rgba(30,60,80,.14);
+  --focus-ring:rgba(47,111,150,.18);
+  --pill-running-bg:#fff4d6;--pill-done-bg:#e6f4ea;--pill-error-bg:#fdecea;
+  --added-bg:#fff8e6;
+}
+html[data-theme='night']{
+  --bg:#0d1117;--bg2:#010409;--panel:#161b22;--panel2:#1c212b;
+  --line:#30363d;--text:#e6edf3;--muted:#8b949e;
+  --accent:#58a6ff;--accent2:#1f6feb;
+  --green:#3fb950;--red:#f85149;--amber:#d29922;--purple:#bc8cff;--cyan:#39c5cf;
+  --input-bg:#0d1117;--input-border:#30363d;
+  --nav-hover:#161b22;--nav-active:#1f2937;
+  --topbar-bg:rgba(13,17,23,.92);
+  --table-head:#161b22;--log-text:#c9d1d9;--find-bg:#0d1117;
+  --shadow:0 12px 32px rgba(0,0,0,.45);
+  --focus-ring:rgba(88,166,255,.15);
+  --pill-running-bg:#2d2100;--pill-done-bg:#0f2417;--pill-error-bg:#2d0b0d;
+  --added-bg:#2a2110;
+}
+html{color-scheme:light}html[data-theme='night']{color-scheme:dark}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+.app{display:flex;min-height:100vh}
+.sidebar{width:236px;flex:0 0 236px;background:var(--bg2);border-right:1px solid var(--line);display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{display:flex;gap:10px;align-items:center;padding:18px 16px 14px}
+.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#1f6feb,#8957e5);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.brand b{display:block;font-size:15px}.brand span{display:block;color:var(--muted);font-size:11px}
+.nav{padding:6px 10px;flex:1;overflow:auto}
+.navLabel{color:var(--muted);font-size:11px;letter-spacing:.08em;margin:14px 8px 6px}
+.navBtn{display:flex;gap:9px;align-items:center;width:100%;background:none;border:0;color:var(--text);padding:9px 10px;border-radius:8px;text-align:left;margin:1px 0}
+.navBtn:hover{background:var(--nav-hover)}.navBtn.active{background:var(--nav-active);box-shadow:inset 2px 0 0 var(--accent)}
+.navBtn .ico{width:18px;text-align:center;opacity:.9}
+.sideFoot{padding:12px 16px;color:var(--muted);font-size:11px;border-top:1px solid var(--line)}
+.main{flex:1;min-width:0;padding:0 0 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--topbar-bg);backdrop-filter:blur(8px);z-index:20}
+.topbar h1{font-size:17px;margin:0}.topbar .sub{color:var(--muted);font-size:12px;margin-top:2px}
+.topbarRight{display:flex;align-items:center;gap:10px}
+.themeSel{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px}
+.themeSel select{padding:5px 8px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;white-space:nowrap}
+.pill.idle{color:var(--muted)}.pill.running{color:var(--amber);border-color:var(--amber);background:var(--pill-running-bg)}
+.pill.done{color:var(--green);border-color:var(--green);background:var(--pill-done-bg)}.pill.error{color:var(--red);border-color:var(--red);background:var(--pill-error-bg)}
+.view{padding:22px 28px;max-width:1180px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 16px}
+.cardHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.cardHead h2{font-size:14px;margin:0;letter-spacing:.02em}
+.hint{color:var(--muted);font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+label.field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+input,select{background:var(--input-bg);border:1px solid var(--input-border);border-radius:7px;padding:7px 9px;color:var(--text);outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--focus-ring)}
+input[type=checkbox]{width:auto;accent-color:var(--accent)}
+button.primary{background:var(--accent2);border:1px solid var(--accent2);color:#fff;padding:9px 18px;border-radius:8px;font-weight:600}
+button.primary:hover{background:var(--accent)}
+button.ghost{background:var(--panel2);border:1px solid var(--line);padding:6px 12px;border-radius:7px}
+button.ghost:hover{background:var(--nav-hover)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.hrow{display:flex;gap:8px;align-items:flex-start;margin:6px 0;position:relative;flex-wrap:wrap}
+.inputWrap{position:relative;flex:1;min-width:240px}
+.inputWrap .herbInput{width:100%}
+.inputWrap .fxInputRow{width:100%}
+.searchWrap{position:relative;max-width:620px}
+.searchWrap input{width:100%}
+.acBox{position:absolute;left:0;right:0;top:calc(100% + 5px);background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);max-height:380px;overflow:auto;z-index:50;padding:6px}
+.acTier{color:var(--muted);font-size:11px;padding:7px 9px 3px;display:flex;justify-content:space-between}
+.acItem{padding:7px 9px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.acItem:hover,.acItem.active{background:var(--nav-active)}
+.acItem .name{font-weight:600}
+.acMore{background:none;border:0;color:var(--accent);font-size:12px;padding:4px 9px}
+.fxRowMeta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;flex-basis:100%;margin-top:2px}
+.fxRowMeta select{max-width:460px}
+.fxRow.active .fxInputRow{border-color:var(--accent);box-shadow:0 0 0 1px var(--focus-ring)}
+.fxRemoved td{opacity:.45}
+.fxRemoved td b{text-decoration:line-through}
+.fxAddedRow{background:var(--added-bg)}
+.badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:11px;border:1px solid var(--line);margin:2px 4px 2px 0}
+.t0{color:var(--green);border-color:var(--green)}.t1{color:var(--accent);border-color:var(--accent)}.t2{color:var(--cyan);border-color:var(--cyan)}.t3{color:var(--purple);border-color:var(--purple)}.t4{color:var(--amber);border-color:var(--amber)}.t5{color:var(--red);border-color:var(--red)}.t9{color:var(--muted)}
+.tableWrap{overflow:auto;border:1px solid var(--line);border-radius:9px;max-height:420px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--table-head);color:var(--muted);font-weight:600;position:sticky;top:0;z-index:1}
+td input[type=number]{width:76px}
+.resultLinks a{color:var(--accent);margin-right:14px;text-decoration:none}.resultLinks a:hover{text-decoration:underline}
+.runWindowMode .sidebar{display:none}
+.runWindowMode .view{display:none!important}
+.runWindowMode #results{margin:18px 28px 16px;max-width:1180px}
+.runWindowMode #logWrap{margin:0 28px 16px;max-width:1180px}
+.logCard{background:var(--bg2);border:1px solid var(--line);border-radius:10px;margin:0 0 16px;overflow:hidden}
+.logCard summary{padding:9px 14px;cursor:pointer;color:var(--muted)}
+pre.log{margin:0;padding:12px 14px;max-height:320px;overflow:auto;white-space:pre-wrap;font-size:12px;color:var(--log-text)}
+.foot{padding:0 28px;color:var(--muted);font-size:11px}
+.histItem{padding:10px 0;border-bottom:1px solid var(--line)}.histItem:last-child{border-bottom:0}
+.histItem .t{font-size:12px;color:var(--muted)}.histItem .n{font-size:13px;margin:2px 0}
+.histItem a{color:var(--accent);font-size:12px;margin-right:10px;text-decoration:none}
+.warn{color:var(--amber)}.bad{color:var(--red)}
+details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 0}
+.formulaHint{flex-basis:100%;color:var(--amber);font-size:12px;margin:2px 0 4px 2px}
+@media(max-width:760px){.sidebar{width:64px;flex:0 0 64px}.brand span,.brand b,.navLabel,.navBtn .txt,.sideFoot,.themeSel span{display:none}.brand{padding:14px 10px}.navBtn{justify-content:center}.view{padding:16px}.topbar{padding:14px 16px}}
+</style></head><body>
+<div class='app'>
+<aside class='sidebar'>
+  <div class='brand'><div class='logo'>CH</div><div><b>Christos</b><span>炼膏师 · 反应预测</span></div></div>
+  <nav class='nav'>
+    <div class='navLabel'>工作台</div>
+    <button class='navBtn active' data-view='predict'><span class='ico'>◎</span><span class='txt'>单味 / 物种</span></button>
+    <button class='navBtn' data-view='formula'><span class='ico'>▤</span><span class='txt'>方剂（复方）</span></button>
+    <div class='navLabel'>记录</div>
+    <button class='navBtn' data-view='history'><span class='ico'>◷</span><span class='txt'>历史记录</span></button>
+    <button class='navBtn' data-view='settings'><span class='ico'>⚙</span><span class='txt'>设置</span></button>
+  </nav>
+  <div class='sideFoot'>只读本机 · 不删产物<br>Christos（炼膏师）v0.9.0 beta</div>
+</aside>
+<main class='main'>
+<header class='topbar'>
+  <div><h1 id='viewTitle'>单味 / 物种 · 预测产物</h1><div class='sub' id='viewSub'>底物 → 产物</div></div>
+  <div class='topbarRight'>
+    <label class='themeSel'><span>语言</span>
+      <select id='langTop' title='切换语言'>
+        <option value='zh'>中文</option>
+        <option value='en'>English</option>
+      </select>
+    </label>
+    <label class='themeSel'><span>配色</span>
+      <select id='themeTop' title='切换配色'>
+        <option value='default'>默认</option>
+        <option value='night'>夜间模式</option>
+      </select>
+    </label>
+    <button id='stopBtn' class='ghost' style='display:none'>终止运行</button>
+    <div id='statusPill' class='pill idle'>空闲</div>
+  </div>
+</header>
+
+<section id='view-predict' class='view'>
+  <div class='card'>
+    <div class='cardHead'><h2>输入来源</h2><span class='hint'>中药材 / 植物学名 / SMILES</span></div>
+    <div id='herbRows'></div>
+    <div class='row'><button type='button' id='addRow' class='ghost'>＋ 再加一味</button>
+      <span class='hint'>一味一行；输入时边打边出候选，「查找相似」用于多选。</span></div>
+    <div class='row'><label class='field' style='flex:1;min-width:260px'>分子 SMILES（可留空）<input id='smiles' placeholder='如 CC(=O)Oc1ccccc1C(=O)O'></label></div>
+    <div class='grid3'>
+      <label class='field'>每味取几个成分<select id='limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
+      <label class='field'>成分排序<select id='herb_order'><option value='marker' selected>marker（默认）</option><option value='ob'>OB 降序（TCMSP）</option></select></label>
+    </div>
+    <div class='row'><label class='check' style='font-size:12px;color:var(--muted)'><input type='checkbox' id='dose_budget'> 重复输入 = 剂量份数（默认关；只记录，不放大配额）</label></div>
+  </div>
+  <div class='card'>
+    <div class='cardHead'><h2>条件与轮数</h2><span class='hint'>默认保守设置</span></div>
+    <div class='grid3'>
+      <label class='field'>条件档案<select id='cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
+      <label class='field'>轮数<select id='rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>对子预算<input id='max_pairs' value='4000'></label>
+    </div>
+    <details class='adv'><summary>高级选项</summary>
+      <div class='grid3' style='margin-top:6px'>
+        <label class='field' style='display:none'>辅助试剂<input id='reagents' placeholder='如 NaBH4，可留空'></label>
+        <label class='field'>输出目录<input id='outdir' placeholder='默认可留空（out\\）'></label>
+      </div>
+      <div class='row' style='font-size:12px;color:var(--muted)'>
+        <label><input type='checkbox' id='triples'> 三组分模板（慢约 40×）</label>
+        <label><input type='checkbox' id='fair_pairs'> 对子超预算时公平截断</label>
+        <label><input type='checkbox' id='chp_priority'> 药典判据优先（Tier-0 含量测定成分排前）</label>
+      </div>
+    </details>
+  </div>
+  <div class='card'><div class='row' style='margin:0'><button id='go' class='primary'>开始预测</button><span class='hint'>只生成 + 标注 + 留证；每次运行都写运行记录。</span></div></div>
+</section>
+
+<section id='view-formula' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>输入来源</h2><span class='hint'>方剂名 / 别名（同名按版本，不合并）</span></div>
+    <div id='fxRows'></div>
+    <div class='row' style='margin-top:6px'>
+      <button type='button' id='fxAddRow' class='ghost'>＋ 再加一方</button>
+      <span class='hint'>一方一行；输入时边打边出候选，「查找相似」用于多选。</span>
+    </div>
+    <div id='fxStatus' class='hint' style='margin-top:8px'>每首方都可以选版本；调好组成后直接运行。同名方剂已在组合里时，改那一行的版本即可。</div>
+  </div>
+  <div id='fxHerbCard' class='card' hidden>
+    <div class='cardHead'><h2>组成与份数</h2><span id='fxSource' class='hint'></span></div>
+    <div id='fxVersionInfo' class='hint' style='margin-top:4px'></div>
+    <div class='tableWrap'><table><thead><tr><th>药材</th><th>法定剂量 (g)</th><th>份数（0=减味）</th><th>操作</th><th>备注</th></tr></thead><tbody id='fxTbody'></tbody></table></div>
+    <div class='row' style='margin-top:10px'><label style='font-size:12px;color:var(--muted)'><input type='checkbox' id='f_dose_budget'> 剂量加权：按份数放大成分配额（默认关）</label></div>
+    <div class='row'><span class='hint'>份数来自药典剂量（以最小剂量为 1 份）；可直接手改，0 = 本次不用该味。点「减味」把该味设为 0，点「恢复」还原。</span></div>
+    <div id='fxAddCard' style='margin-top:10px;border-top:1px solid var(--line);padding-top:9px'>
+      <div class='row' style='margin-top:0;align-items:flex-end'>
+        <label class='field' style='flex:1;min-width:220px'>加一味（中药材 / 拉丁学名 / COCONUT 物种）<input id='fxAddHerb' placeholder='如 陈皮 / Glycyrrhiza uralensis'></label>
+        <label class='field' style='width:110px'>份数<input id='fxAddMult' type='number' min='1' step='1' value='1'></label>
+        <button id='fxAddFindBtn' class='ghost'>查找相似</button>
+        <button id='fxAddHerbBtn' class='primary'>加进本方</button>
+      </div>
+      <div id='fxAddFind' class='findBox' style='display:none;flex-basis:100%;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--find-bg);margin-top:6px'></div>
+      <div id='fxAddHint' class='hint'>未收录或彩蛋输入不会加入；可加中药名、拉丁学名或 COCONUT 物种。</div>
+    </div>
+    <div id='fxUnmatched' class='hint'></div>
+    <div class='row' style='margin-top:8px'><span id='fxEditState' class='hint'></span></div>
+  </div>
+  <div id='fxRunCard' class='card' hidden>
+    <div class='cardHead'><h2>运行设置</h2><span class='hint'>与命令行参数一致</span></div>
+    <div class='grid3'>
+      <label class='field'>条件档案<select id='f_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
+      <label class='field'>每味成分<select id='f_limit'><option selected>2</option><option>6</option><option>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
+      <label class='field'>轮数<select id='f_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>对子预算<input id='f_max_pairs' value='4000'></label>
+      <label class='field' style='display:none'>辅助试剂<input id='f_reagents' placeholder='可留空'></label>
+      <label class='field'>输出目录<input id='f_outdir' placeholder='默认可留空（out\\）'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <label><input type='checkbox' id='f_triples'> 三组分模板</label>
+      <label><input type='checkbox' id='f_fair_pairs'> 公平截断</label>
+      <label><input type='checkbox' id='f_chp_priority'> 药典判据优先</label>
+    </div>
+    <div class='row'><span class='hint'>方剂组合默认每味 2 个成分（先快速筛）；方越多、每味成分越多，枚举越慢。确认方向后再调大。</span></div>
+    <div class='row'><button id='fxRun' class='primary'>运行本次方剂</button><span class='hint'>已填且查到方剂的行都会参与；空行会忽略。</span></div>
+  </div>
+</section>
+
+<section id='view-history' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>历史记录</h2><button id='histRefresh' class='ghost'>刷新</button></div>
+    <div class='hint' style='margin-bottom:8px'>读本机 out\\runs.jsonl；只显示、不删除、不改写。</div>
+    <div id='histList' class='hint'>加载中…</div>
+  </div>
+</section>
+
+<section id='view-settings' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>默认设置</h2><span class='hint'>条件与配色等本机默认值</span></div>
+    <div class='grid3'>
+      <label class='field'>语言<select id='set_lang'><option value='zh' selected>中文</option><option value='en'>English</option></select></label>
+      <label class='field'>配色<select id='set_theme'><option value='default' selected>默认（淡蓝-淡白-淡灰）</option><option value='night'>夜间模式</option></select></label>
+      <label class='field'>默认条件<select id='set_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
+      <label class='field'>默认轮数<select id='set_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>每味成分<select id='set_limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部</option></select></label>
+      <label class='field'>对子预算<input id='set_max_pairs' value='4000'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <label><input type='checkbox' id='set_dose_budget'> 默认剂量加权</label>
+      <label><input type='checkbox' id='set_chp_priority'> 默认药典判据优先</label>
+      <label><input type='checkbox' id='set_triples'> 默认三组分模板</label>
+      <label><input type='checkbox' id='set_fair_pairs'> 默认公平截断</label>
+    </div>
+    <div class='row'><button id='setSave' class='primary'>保存默认</button><button id='setReset' class='ghost'>恢复保守默认</button><span id='setMsg' class='hint'></span></div>
+  </div>
+</section>
+
+<div id='results' class='card resultCard' hidden>
+  <div class='cardHead'><h2>结果 · 一页报告</h2><span id='elapsed' class='hint'></span></div>
+  <p class='resultLinks'><a id='rep' target='_blank'>完整一页报告 ↗</a><a id='csv' target='_blank'>台账 CSV</a><a id='tsv' target='_blank'>索引 TSV</a><a id='runWinLink' target='_blank' style='display:none'>运行窗口 ↗</a></p>
+  <div id='meta'></div>
+</div>
+
+<details id='logWrap' class='logCard' hidden><summary>运行日志 <span id='logHint' class='hint'></span></summary><pre class='log' id='log'>（等待输出…）</pre></details>
+<footer class='foot'>术语：只生成 + 标注 + 留证；「查不到 ≠ 不存在」。页面筛选只影响显示，不改数据、不排序。</footer>
+</main></div>
+<script>
+let rid=null,t0=0,currentView='predict',lastFormulas=[],runWin=null,fxData=null,fxSel=0;
+let fxRows=[],fxRowSeq=0,fxActiveId=null,fxMultiples={},fxBaseMult={},fxAdded=[];
+/* Easter-egg messages are intentionally NOT translated: Simplified Chinese input only. */
+const EN={
+"备注":"Notes","操作":"Action","醇提":"Ethanol extraction","份数":"Doses","还原":"Reduction",
+"记录":"Records","煎煮":"Decoction","空闲":"Idle","轮数":"Rounds","默认":"Default",
+"配色":"Theme","全部":"All","设置":"Settings","深度":"Depth","刷新":"Refresh",
+"水提":"Water extraction","氧化":"Oxidation","药材":"Herb","工作台":"Workspace",
+"碱水解":"Base hydrolysis","可留空":"Optional","酶催化":"Enzymatic","酸水解":"Acid hydrolysis",
+"找路线":"Routes","保存默认":"Save defaults","查找相似":"Find similar","成分排序":"Compound ordering",
+"对子预算":"Pair budget","辅助试剂":"Reagents","高级选项":"Advanced options","公平截断":"Fair truncation",
+"加进本方":"Add to formula","加载中…":"Loading…","开始预测":"Run prediction","历史记录":"History",
+"每味成分":"Compounds per herb","默认轮数":"Default rounds","默认设置":"Default settings",
+"默认条件":"Default condition","切换配色":"Switch theme","如 陈皮":"e.g. 陈皮",
+"室温浸泡":"Room-temperature soak","输出目录":"Output directory","输入来源":"Inputs",
+"条件档案":"Condition profile","无氧煎煮":"Anaerobic decoction","显示条数":"Routes to show",
+"夜间模式":"Night mode","运行日志":"Run log","运行设置":"Run settings","开始找路线":"Find routes",
+"三组分模板":"Three-component templates","删掉这一方":"Remove this formula","删掉这一行":"Remove this row",
+"条件与轮数":"Conditions & rounds","组成与份数":"Composition & doses","＋ 再加一方":"+ Add formula",
+"＋ 再加一味":"+ Add herb","方剂（复方）":"Formulas","恢复保守默认":"Restore conservative defaults",
+"默认保守设置":"Default conservative settings","默认公平截断":"Default fair truncation",
+"默认剂量加权":"Default dose weighting","全部（较慢）":"All (slower)","索引 TSV":"Index TSV",
+"台账 CSV":"Ledger CSV","药典判据优先":"Pharmacopoeia-first","运行本次方剂":"Run formulas",
+"单味 / 物种":"Herb / Species","底物 → 产物":"Substrate → Products","每味取几个成分":"Compounds per herb",
+"默认三组分模板":"Default three-component templates","只看判为可用的":"Only routes marked usable",
+"法定剂量 (g)":"Pharmacopoeia dose (g)","份数（0=减味）":"Doses (0 = remove)",
+"默认药典判据优先":"Default pharmacopoeia-first","完整一页报告 ↗":"Full HTML report ↗",
+"与命令行参数一致":"Matches CLI parameters","结果 · 一页报告":"Results · HTML report",
+"目标 SMILES":"Target SMILES","对子超预算时公平截断":"Fair truncation when pair budget is exceeded",
+"炼膏师 · 反应预测":"Christos · Reaction Prediction","目标 → 逆合成路线":"Target → Retrosynthetic routes",
+"找路线 · 目标分子":"Routes · Target molecule","marker（默认）":"marker (default)",
+"逆模板黑名单（默认关）":"Retro-template blacklist (off by default)","如 NaBH4，可留空":"e.g. NaBH4 (optional)",
+"条件与配色等本机默认值":"Local defaults for conditions, theme, etc.",
+"只读本机 · 不删产物":"Local read-only · no artifacts deleted",
+"默认（淡蓝-淡白-淡灰）":"Default (pale blue / white / gray)",
+"默认可留空（out\\）":"Default: out\\ (optional)","OB 降序（TCMSP）":"OB descending (TCMSP)",
+"三组分模板（慢约 40×）":"Three-component templates (~40× slower)",
+"单味 / 物种 · 预测产物":"Herb / Species · Product prediction",
+"分子 SMILES（可留空）":"Molecule SMILES (optional)",
+"加一味（须为 HERB 药材名）":"Add a herb (must be a HERB name)",
+"方剂名 / 别名（同名按版本，不合并）":"Formula name / alias (same name: versions are not merged)",
+"方剂名：四君子汤 ｜ 同名按版本，可切":"Formula: 四君子汤 | same name: switch versions",
+"剂量加权：按份数放大成分配额（默认关）":"Dose weighting: scale compound quota by doses (off by default)",
+"中药材 / 植物学名 / SMILES":"Herb / Species / SMILES","Christos（炼膏师）v0.9.0 beta":"Christos v0.9.0 beta",
+"已填且查到方剂的行都会参与；空行会忽略。":"Rows with a resolved formula participate; empty rows are ignored.",
+"与命令行 routes 子命令同一套逻辑。":"Same logic as the CLI `routes` command.",
+"如 CC(=O)Oc1ccccc1C(=O)O":"e.g. CC(=O)Oc1ccccc1C(=O)O",
+"药典判据优先（Tier-0 含量测定成分排前）":"Pharmacopoeia-first (Tier-0 assay compounds first)",
+"只生成 + 标注 + 留证；每次运行都写运行记录。":"Generate + annotate + keep evidence; every run is logged.",
+"一方一行；输入时边打边出候选，「查找相似」用于多选。":"One formula per row; suggestions appear as you type; “Find similar” supports multi-select.",
+"一味一行；输入时边打边出候选，「查找相似」用于多选。":"One herb per row; suggestions appear as you type; “Find similar” supports multi-select.",
+"重复输入 = 剂量份数（默认关；只记录，不放大配额）":"Repeated input = dose count (off by default; recorded only, no quota amplification)",
+"读本机 out\\runs.jsonl；只显示、不删除、不改写。":"Reads local out\\runs.jsonl; display only, never deletes or rewrites.",
+"中药材：甘草 ｜ 物种学名：Glycyrrhiza uralensis":"Herb: 甘草 | Species: Glycyrrhiza uralensis",
+"每首方都可以选版本；调好组成后直接运行。同名方剂已在组合里时，改那一行的版本即可。":"Each formula has its own version; adjust the composition and run. If the same formula is already in the list, change that row's version.",
+"方剂组合默认每味 2 个成分（先快速筛）；方越多、每味成分越多，枚举越慢。确认方向后再调大。":"Formula runs default to 2 compounds per herb (fast screen). More formulas/compounds = slower; increase after confirming the direction.",
+"术语：只生成 + 标注 + 留证；「查不到 ≠ 不存在」。页面筛选只影响显示，不改数据、不排序。":"Terms: generate + annotate + keep evidence; “not found ≠ nonexistent”. Filters only affect display; data is not changed or ranked.",
+"份数来自药典剂量（以最小剂量为 1 份）；可直接手改，0 = 本次不用该味。点「减味」把该味设为 0，点「恢复」还原。":"Doses derive from pharmacopoeia doses (minimum = 1 dose); edit directly, 0 = skip this herb. “Remove” sets 0; “Restore” reverts.",
+"未收录该方剂":"Formula not found",
+"该方名已收录，但组成未能解析":"Name is in the library, but its composition could not be resolved",
+"相似方名（点一个再确认）：":"Similar formulas (click one to confirm):",
+"可换全名/常用别名再试":"Try the full name or a common alias",
+"先在这一行填个方名":"Enter a formula name in this row first",
+"先在这一行填个名字":"Enter a name in this row first",
+"未匹配（可能为炮制说明/方名引用/库外药材）：":"Unmatched (processing notes / formula references / outside library):",
+"（运行时会跳过并标注）":"(skipped and marked at run time)",
+"加味":"Added","减味":"Remove","恢复":"Restore","非原方，仅本次运行":"Not in the original formula; this run only",
+"该版本无克数，默认 1 份":"This version has no gram dose; default 1 dose",
+"按最小剂量折算":"Converted from the minimum dose",
+"收起":"Collapse","可多选":"Multi-select","用勾选的填进":"Fill selected",
+"用勾选的填进这一行":"Fill selected into this row","还没有运行记录。":"No runs yet.",
+"（无文件）":"(no files)","报告":"Report","路线 TXT":"Route TXT",
+"检查名字…":"Checking names…","未启动":"Not started","提交失败":"Submit failed",
+"有名字未收录或方剂":"A name is unknown or is a formula","已保存":"Saved",
+"配色已切换":"Theme switched","运行中…":"Running…",
+"（已提交，等待输出…）":"(Submitted; waiting for output…)","（运行中…）":"(Running…)",
+"（未收录）":"(not found)","本次组合没有可运行的药材（至少保留或加入一味、份数大于 0）":"This formula set has no runnable herbs (keep/add at least one with dose > 0)",
+"方剂出处信息太长（>20000 字符），请减少一次组合的方剂数量。":"Formula provenance is too long (>20,000 chars); reduce the number of formulas.",
+"先查询并选择一个方剂版本":"Look up and select a formula version first",
+"先输入并选择至少一首方剂":"Enter and select at least one formula",
+"填要加的药材名":"Enter the herb name to add",
+"请填药材名或 SMILES":"Enter a herb name or SMILES","请填目标分子 SMILES":"Enter the target molecule SMILES",
+"请填药材名（或分子 SMILES）":"Enter a herb name (or molecule SMILES)",
+"深度/显示条数要填数字":"Depth / route count must be numeric",
+"成分数量要填整数或 all":"Compound count must be an integer or 'all'",
+"轮数 / 对子预算要填数字":"Rounds / pair budget must be numeric",
+"请填方剂名":"Enter a formula name",
+"加一味（中药材 / 拉丁学名 / COCONUT 物种）":"Add a herb (Chinese name / Latin name / COCONUT species)",
+"如 陈皮 / Glycyrrhiza uralensis":"e.g. 陈皮 / Glycyrrhiza uralensis",
+"未收录或彩蛋输入不会加入；可加中药名、拉丁学名或 COCONUT 物种。":"Unrecognized or easter-egg input is not added; Chinese herb names, Latin names, and COCONUT species are accepted.",
+"加入勾选的":"Add selected","没有找到药材/物种候选。":"No herb/species candidates found.",
+"先填要查找的药材/物种名":"Enter a herb/species name to search first",
+"这是方剂，请用上面的方剂行。":"This is a formula; use a formula row above.",
+"可勾选多个":"select multiple",
+"运行输出":"Run output","实时日志与结果":"Live log and results","运行窗口 ↗":"Run window ↗",
+"终止运行":"Stop run","已终止":"Stopped",
+"已中断":"Interrupted",
+"确定终止本次运行？已生成的部分文件会保留。":"Stop this run? Partial files will be kept.",
+"终止失败：":"Stop failed: ",
+"[药材]":"[Herb]","[基元植物]":"[Source plant]","[物种]":"[Species]",
+"[方剂]":"[Formula]","[方剂(相似)]":"[Formula (similar)]","[未收录]":"[Not found]",
+"药材 · 库内":"Herb · in library","药材 · 药典判据":"Herb · pharmacopoeia",
+"基元植物（COCONUT）":"Source plant (COCONUT)","方剂":"Formula",
+"方剂(相似)":"Formula (similar)","未收录":"Not found","别名候选":"Alias candidates",
+"已恢复默认（刷新后生效）":"Defaults restored (refresh to apply)",
+"语言":"Language","中文":"Chinese","English":"English",
+"目标分子 → 逆合成路线":"Target molecule → Retrosynthetic routes",
+"本机 out\\runs.jsonl":"Local out\\runs.jsonl","新任务的默认值":"Defaults for new tasks",
+"同名按版本；切版本 = 换组成":"Same name: versions are separate; switching version changes composition",
+"Christos（炼膏师）· 化学反应预测与药典判据溯源":"Christos · Chemical Reaction Prediction & Pharmacopoeia Provenance"
+};
+const EN_PATTERNS=[
+[/^查询「(.+)」…$/, 'Looking up “$1”…'],
+[/^正在编辑「(.+)」（(.+)）；改动即时记到这一行。$/, 'Editing “$1” ($2); changes are applied to this row immediately.'],
+[/^「(.+)」共 (\d+) 个版本；行内可切版本，下方可调份数\/加减味。$/, '“$1”: $2 versions; switch in the row, edit doses/add/remove below.'],
+[/^(.+) ｜ AI 现查（未核对） ｜ (\d+)味$/, '$1 | AI lookup (unverified) | $2 herbs'],
+[/^(.+) ｜ 药典 ｜ (\d+)味$/, '$1 | Pharmacopoeia | $2 herbs'],
+[/^(.+) ｜ 古籍 ｜ (\d+)味$/, '$1 | Classics | $2 herbs'],
+[/^(.+) ｜ (ETCM|ITCM|CPMCP) ｜ (\d+)味$/, '$1 | $2 | $3 herbs'],
+[/^(.+) ｜ (.+) ｜ (\d+)味$/, '$1 | $2 | $3 herbs'],
+[/^「(.+)」已在另一行；请直接改那一行的版本。$/, '“$1” is already in another row; change its version there.'],
+[/^已移除该行（方剂库未改动）。$/, 'Row removed (the formula library was not changed).'],
+[/^注意：(.+) 本次没有可运行药材，已跳过。$/, 'Note: $1 has no runnable herbs this time; skipped.'],
+[/^这些行还没查到方剂：(.+)$/, 'These rows are not resolved: $1'],
+[/^查找中…$/, 'Searching…'],
+[/^查找中…（第一次查要建物种索引，约 2 秒）$/, 'Searching… (first lookup builds the species index; ~2 s)'],
+[/^方剂：按典籍版本展开成 (\d+) 味$/, 'Formula: expands to $1 herbs from the source version'],
+[/^方剂：已收录，但组成未能解析$/, 'Formula: name is in the library, but its composition could not be resolved'],
+[/^「(.+)」找到 (\d+) 个方剂候选$/, 'Found $2 formula candidates for “$1”'],
+[/^用时 (.+)$/, 'Elapsed $1'],
+[/^运行中 0 秒$/, 'Running 0 s'],
+[/^运行中 (.+)$/, 'Running $1'],
+[/^完成 · (.+)$/, 'Done · $1'],
+[/^失败（退出码 (.+)）$/, 'Failed (exit code $1)'],
+[/^提交失败：(.*)$/, 'Submit failed: $1'],
+[/^读取失败：(.*)$/, 'Read failed: $1'],
+[/^查询失败：(.*)$/, 'Lookup failed: $1'],
+[/^查找失败：(.*)$/, 'Search failed: $1'],
+[/^出错：(.*)$/, 'Error: $1'],
+[/^已有一个任务在跑（(.+)）；等它完成再试。$/, 'A task is already running ($1); wait for it to finish.'],
+[/^输出目录不可用：(.*)$/, 'Output directory is not usable: $1'],
+[/^方剂查询失败：(.*)$/, 'Formula lookup failed: $1'],
+[/^「(.+)」未收录$/, '“$1” not found'],
+[/^「(.+)」已在原方里；直接改它的份数即可。$/, '“$1” is already in the original formula; edit its dose instead.'],
+[/^已加「(.+)」×(\d+)（仅本次运行，不改原方）。$/, 'Added “$1” ×$2 (this run only; original unchanged).'],
+[/^本次改动：减 (\d+) 味，加 (\d+) 味（只影响本次运行）$/, 'Changes: remove $1, add $2 (this run only)'],
+[/^本次改动：减 (\d+) 味（只影响本次运行）$/, 'Change: remove $1 (this run only)'],
+[/^本次改动：加 (\d+) 味（只影响本次运行）$/, 'Change: add $1 (this run only)'],
+[/^(\d+) 味 → 本次 (\d+) 味；减：(.+)；加：(.+)$/, '$1 herbs → $2 this run; remove: $3; add: $4'],
+[/^(\d+) 味 → 本次 (\d+) 味；减：(.+)$/, '$1 herbs → $2 this run; remove: $3'],
+[/^(\d+) 味 → 本次 (\d+) 味；加：(.+)$/, '$1 herbs → $2 this run; add: $3'],
+[/^(\d+) 味 → 本次 (\d+) 味$/, '$1 herbs → $2 this run']
+];
+let LANG='zh';
+try{
+  const _saved=JSON.parse(localStorage.getItem('chemreact.settings')||'{}');
+  if(_saved&&(_saved.lang==='zh'||_saved.lang==='en')){
+    LANG=_saved.lang;
+  }else{
+    const _sys=String((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+    LANG=(_sys.indexOf('zh')===0)?'zh':'en';
+  }
+}catch(e){
+  const _sys=String((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+  LANG=(_sys.indexOf('zh')===0)?'zh':'en';
+}
+document.documentElement.lang=(LANG==='en'?'en':'zh-CN');
+const _nativeAlert=window.alert.bind(window);
+window.alert=function(msg){_nativeAlert(trText(String(msg)));};
+const COND_EN={
+  '煎煮':'Decoction','室温浸泡':'Room-temperature soak','水提':'Water extraction',
+  '醇提':'Ethanol extraction','酸水解':'Acid hydrolysis','碱水解':'Base hydrolysis',
+  '酶催化':'Enzymatic','还原':'Reduction','氧化':'Oxidation','无氧煎煮':'Anaerobic decoction'
+};
+function L(zh,en){return LANG==='en'?en:zh;}
+function condLabel(v){return LANG==='en'?(COND_EN[v]||v):v;}
+function onoff(v){
+  if(v===true)return LANG==='en'?'on':'开';
+  if(v===false)return LANG==='en'?'off':'关';
+  return v;
+}
+function trText(s){
+  if(LANG!=='en')return s;
+  if(Object.prototype.hasOwnProperty.call(EN,s))return EN[s];
+  for(const p of EN_PATTERNS){if(p[0].test(s))return s.replace(p[0],p[1]);}
+  return s;
+}
+function translateNote(s){
+  if(LANG!=='en')return s;
+  return String(s||'').replace(/cond=([^\s]+)/g,function(_,v){return 'cond='+condLabel(v);});
+}
+function translateDOM(root){
+  if(LANG!=='en')return;
+  root=root||document.body;
+  const skip=new Set(['SCRIPT','STYLE','PRE','CODE']);
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){
+    const p=n.parentElement;
+    return (p&&skip.has(p.tagName))?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodes=[];let n;
+  while((n=walker.nextNode()))nodes.push(n);
+  nodes.forEach(function(node){
+    const raw=node.nodeValue||'';
+    const m=raw.match(/^(\s*)([\s\S]*?)(\s*)$/);
+    if(!m||!m[2])return;
+    const en=trText(m[2]);
+    if(en!==m[2])node.nodeValue=m[1]+en+m[3];
+  });
+  if(root.querySelectorAll){
+    root.querySelectorAll('[placeholder],[title]').forEach(function(el){
+      ['placeholder','title'].forEach(function(a){
+        const v=el.getAttribute(a);
+        if(v){const en=trText(v);if(en!==v)el.setAttribute(a,en);}
+      });
+    });
+  }
+}
+function q(id){return document.getElementById(id)}
+function esc4(x){return String(x).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function fmtSec(s){
+  s=Math.max(0,Math.round(s||0));const m=Math.floor(s/60);
+  if(LANG==='en')return m?m+' min '+(s%60)+' s':s+' s';
+  return m?m+' 分 '+(s%60)+' 秒':s+' 秒';
+}
+function setStatus(cls,text){const p=q('statusPill');p.className='pill '+cls;p.textContent=trText(text);}
+function setView(v){
+  currentView=v;
+  if(location.hash!=='#'+v){try{history.replaceState(null,'','#'+v);}catch(e){}}
+  document.querySelectorAll('.view').forEach(function(x){x.hidden=(x.id!=='view-'+v);});
+  document.querySelectorAll('.navBtn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-view')===v);});
+  q('results').hidden=true;q('logWrap').hidden=true;
+  const titles={predict:['单味 / 物种 · 预测产物','底物 → 产物'],formula:['方剂（复方）','同名按版本；切版本 = 换组成'],history:['历史记录','本机 out\\runs.jsonl'],settings:['设置','新任务的默认值']};
+  const t=titles[v]||titles.predict;q('viewTitle').textContent=trText(t[0]);q('viewSub').textContent=trText(t[1]);
+  if(v==='history') loadHistory();
+  if(v==='settings') loadSettingsUI();
+  if(v==='formula') sanitizeFxAdded();
+}
+
+function attachAC(input,box,onPick,filter){
+  let timer=null,active=-1,flat=[];
+  function close(){box.hidden=true;box.innerHTML='';active=-1;flat=[];}
+  function mark(){box.querySelectorAll('.acItem').forEach(function(el,i){el.classList.toggle('active',i===active);});}
+  box.addEventListener('mousedown',function(e){e.preventDefault();});
+  function open(j){
+    if(!j||j.error){box.hidden=true;return;}
+    if(j.kind==='egg'){
+      box.innerHTML='<div class="acTier"><span>🥚 '+esc4(j.message||'根本没有这样的中药')+'</span></div>';
+      box.hidden=false;active=-1;flat=[];
+      return;
+    }
+    if(filter){
+      j.choices=(j.choices||[]).filter(filter);
+      if(j.tiers){
+        j.tiers=j.tiers.map(function(g){
+          g.items=(g.items||[]).filter(filter);g.count=g.items.length;return g;
+        }).filter(function(g){return g.count;});
+      }
+    }
+    const tiers=j.tiers||[];
+    if(!tiers.length&&(!j.choices||!j.choices.length)){close();return;}
+    flat=[];
+    let h='';
+    if(j.domain||j.granularity){
+      h+='<div class="acTier"><span>'+esc4(domainLabel(j.domain))+' · '+esc4(j.granularity||'')+'</span><span>'+((j.choices||[]).length)+' 条</span></div>';
+    }
+    const groups=tiers.length?tiers:[{key:'all',label:'候选',count:(j.choices||[]).length,items:(j.choices||[])}];
+    groups.forEach(function(g,gi){
+      h+='<div class="acTier"><span>'+esc4(g.label||'')+'</span><span>'+g.count+' 条</span></div>';
+      const showAll=g._all;
+      let shown=0;
+      (g.items||[]).forEach(function(c){
+        if(!showAll&&shown>=5&&g.key!=='missing') return;
+        shown++;
+        flat.push(c);
+        const idx=flat.length-1;
+        h+='<div class="acItem" data-i="'+idx+'"><span><span class="name">'+esc4(c.name)+'</span>'
+          +' <span class="hint">['+esc4(c.group||'')+']</span>'
+          +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')+'</span>'
+          +'<span class="hint">'+(c.n_compounds!==undefined?c.n_compounds+((c.group||'').indexOf('方剂')===0?' 味':' 成分'):'')+'</span></div>';
+      });
+      if(!showAll&&g.count>5){
+        h+='<button type="button" class="acMore" data-g="'+gi+'">'+(g.count>50?'展开前 50 条（共 '+g.count+' 条）':'展开全部 '+g.count+' 条')+'</button>';
+      }
+    });
+    box.innerHTML=h;box.hidden=false;active=-1;
+    translateDOM(box);
+    box.querySelectorAll('.acItem').forEach(function(el){
+      el.onclick=function(){const c=flat[+el.getAttribute('data-i')];if(c){onPick(c);close();}};
+    });
+    box.querySelectorAll('.acMore').forEach(function(b){
+      b.onclick=function(ev){ev.stopPropagation();const g=groups[+b.getAttribute('data-g')];g._all=true;open(j);};
+    });
+  }
+  input.addEventListener('input',function(){
+    const v=input.value.trim();clearTimeout(timer);
+    if(!v){close();return;}
+    timer=setTimeout(function(){
+      fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+        if(input.value.trim()!==v)return;open(j);
+      }).catch(function(){close();});
+    },250);
+  });
+  input.addEventListener('keydown',function(e){
+    if(box.hidden)return;
+    const els=box.querySelectorAll('.acItem');
+    if(e.key==='ArrowDown'){e.preventDefault();active=Math.min(els.length-1,active+1);mark();
+      if(els[active])els[active].scrollIntoView({block:'nearest'});}
+    else if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(0,active-1);mark();
+      if(els[active])els[active].scrollIntoView({block:'nearest'});}
+    else if(e.key==='Enter'&&active>=0){e.preventDefault();els[active].click();}
+    else if(e.key==='Escape'){e.preventDefault();close();}
+  });
+  input.addEventListener('blur',function(){setTimeout(close,180);});
+}
+function domainLabel(d){return {chinese:'中文',latin:'拉丁',formula:'方剂',smiles:'SMILES',unknown:'未识别'}[d]||d||'';}
+
+function addRow(val){
+  const box=document.createElement('div');box.className='hrow herbRow';
+  box.innerHTML="<div class='inputWrap'><input class='herbInput' placeholder='中药材：甘草 ｜ 物种学名：Glycyrrhiza uralensis' autocomplete='off'><div class='acBox' hidden></div></div>"
+    +"<button type='button' class='findBtn ghost'>查找相似</button>"
+    +"<button type='button' class='delBtn ghost' title='删掉这一行'>×</button>"
+    +"<div class='findBox' style='display:none;flex-basis:100%;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--find-bg)'></div>";
+  q('herbRows').appendChild(box);
+  const inp=box.querySelector('.herbInput');inp.value=val||'';
+  box.querySelector('.delBtn').onclick=function(){
+    if(document.querySelectorAll('.herbRow').length>1)box.remove();
+    else inp.value='';
+  };
+  box.querySelector('.findBtn').onclick=function(){doFind(box);};
+  attachAC(inp,box.querySelector('.acBox'),function(c){pickChoice(box,c);});
+  return box;
+}
+function pickChoice(box,c){
+  const inp=box.querySelector('.herbInput');inp.value=c.name||'';
+  let hint=box.querySelector('.formulaHint');
+  if((c.group||'').indexOf('方剂')===0){
+    if(!hint){hint=document.createElement('div');hint.className='formulaHint';box.appendChild(hint);}
+    hint.innerHTML='这是方剂「'+esc4(c.name)+'」，请去方剂页选择版本。 <button type="button" class="ghost" style="padding:2px 8px">去方剂页</button>';
+    hint.querySelector('button').onclick=function(){openFormula(c.name);};
+  }else if(hint){hint.remove();}
+}
+function doFind(box){
+  const inp=box.querySelector('.herbInput'),fb=box.querySelector('.findBox');
+  const v=inp.value.trim();
+  if(!v){fb.style.display='block';fb.innerHTML='<span class="warn">先在这一行填个名字</span>';translateDOM(fb);return;}
+  fb.style.display='block';fb.innerHTML='查找中…（第一次查要建物种索引，约 2 秒）';translateDOM(fb);
+  fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){fb.innerHTML='<span class="warn">出错：'+esc4(j.error)+'</span>';translateDOM(fb);return;}
+    if(j.kind==='missing'){fb.innerHTML='（未收录） <button type="button" class="closeBtn ghost">收起</button>';
+      translateDOM(fb);fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};return;}
+    if(j.kind==='egg'){fb.innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b> <button type="button" class="closeBtn ghost">收起</button>';
+      translateDOM(fb);fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};return;}
+    if(!j.choices||!j.choices.length){fb.innerHTML='<span class="hint">「'+esc4(j.query)+'」没有找到相似条目（可能它本身就是唯一一条）</span>';translateDOM(fb);return;}
+    let h='<b>「'+esc4(j.query)+'」找到 '+j.choices.length+' 个</b> <span class="hint">'+(j.kind==='genus'?'同属物种（COCONUT）':(j.kind==='alias'?'别名候选（可能有多个正名）':'同字段药材条目 + 对应基元植物'))+'</span><br>';
+    j.choices.forEach(function(c,i){
+      h+='<label style="display:inline-block;min-width:330px;margin:3px 0"><input type="checkbox" class="fbox" data-i="'+i+'"'
+        +((c.group==='未收录')?' disabled':'')+'> '+esc4(c.name)
+        +' <span class="hint">['+esc4(c.group||'')+']</span>'
+        +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')
+        +((c.group==='未收录')?'':' <span class="hint">（'+c.n_compounds+((c.group||'').indexOf('方剂')===0?' 味':' 个成分')+'）</span>')+'</label>';
+    });
+    h+='<br><button type="button" class="fillBtn primary" style="padding:5px 12px">用勾选的填进这一行</button> <button type="button" class="closeBtn ghost">收起</button>';
+    fb.innerHTML=h;
+    translateDOM(fb);
+    fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};
+    fb.querySelector('.fillBtn').onclick=function(){
+      const picked=Array.prototype.map.call(fb.querySelectorAll('.fbox:checked'),function(x){return j.choices[+x.getAttribute('data-i')];});
+      if(!picked.length)return;
+      inp.value=picked[0].name;pickChoice(box,picked[0]);
+      let last=box;for(let k=1;k<picked.length;k++)last=addRow(picked[k].name);
+      fb.style.display='none';
+    };
+  }).catch(function(e){fb.innerHTML='<span class="warn">查找失败：'+esc4(e)+'</span>';translateDOM(fb);});
+}
+function herbList(){
+  return Array.prototype.map.call(document.querySelectorAll('.herbInput'),function(x){return x.value.trim();}).filter(function(x){return x;});
+}
+function precheck(){
+  const rows=Array.prototype.slice.call(document.querySelectorAll('.herbRow'));
+  const jobs=rows.map(function(box){
+    const v=box.querySelector('.herbInput').value.trim();if(!v)return Promise.resolve(false);
+    return fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+      if(!j.error&&j.kind!=='missing'&&j.kind!=='egg'&&j.kind!=='formula')return false;
+      const fb=box.querySelector('.findBox');fb.style.display='block';
+      if(j.kind==='formula'){
+        fb.innerHTML='<span class="warn">「'+esc4(v)+'」是方剂，请去方剂页选版本。</span> <button type="button" class="goFx ghost">去方剂页</button>';
+        fb.querySelector('.goFx').onclick=function(){openFormula(v);};
+      }else if(j.kind==='egg'){
+        fb.innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b> 请换一个已收录的名字';
+      }else if(j.kind==='missing'){
+        fb.innerHTML='<span class="warn">「'+esc4(v)+'」未收录</span> <span class="hint">点「查找相似」看候选，或换一个已收录的名字</span>';
+      }else{
+        fb.innerHTML='<span class="warn">名字检查失败：'+esc4(j.error||'')+'</span>';
+      }
+      return true;
+    }).catch(function(){return false;});
+  });
+  return Promise.all(jobs).then(function(rs){return rs.some(Boolean);});
+}
+function prepareRunWindow(){
+  if(runWin&&!runWin.closed)return runWin;
+  try{
+    runWin=window.open('', '_blank', 'width=1080,height=820');
+  }catch(e){
+    runWin=null;
+  }
+  if(runWin){
+    try{
+      runWin.document.write("<!doctype html><meta charset='utf-8'><title>Christos · Run</title>"
+        +"<body style='font-family:system-ui;padding:24px;background:#eef4f8;color:#24323c'>"
+        +"Christos · Run</body>");
+      runWin.document.close();
+    }catch(e){}
+  }
+  return runWin;
+}
+function closeRunWindow(){
+  try{if(runWin&&!runWin.closed)runWin.close();}catch(e){}
+  runWin=null;
+}
+function submitBody(body){
+  if(body&&typeof body.set==='function')body.set('lang',LANG);
+  prepareRunWindow();
+  ['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=true;});
+  q('results').hidden=true;q('logWrap').hidden=false;q('logWrap').open=true;q('log').textContent=trText('（已提交，等待输出…）');
+  setStatus('running','运行中 0 秒');
+  fetch('/run',{method:'POST',body:body}).then(function(r){return r.json();}).then(function(j){
+    if(j.error){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent=trText(j.error);setStatus('error','未启动');['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});return;}
+    rid=j.id;t0=Date.now();
+    const sb=q('stopBtn');if(sb){sb.disabled=false;sb.style.display='';}
+    const link=q('runWinLink');
+    if(link){link.href='/?run='+encodeURIComponent(j.id);link.style.display='';}
+    if(runWin&&!runWin.closed){runWin.location.href='/?run='+encodeURIComponent(j.id);runWin=null;}
+    else{window.open('/?run='+encodeURIComponent(j.id),'_blank','width=1080,height=820');}
+    poll();
+  }).catch(function(e){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent='提交失败：'+e;setStatus('error','提交失败');['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});});
+}
+function submitRun(herb,smi){
+  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value});
+  lastFormulas=[];submitBody(body);
+}
+function startRun(){
+  const herbs=herbList(),herb=herbs.join(','),smi=q('smiles').value.trim();
+  if(!herb&&!smi){alert('请填药材名或 SMILES');return;}
+  prepareRunWindow();
+  q('go').disabled=true;setStatus('running','检查名字…');
+  precheck().then(function(bad){
+    if(bad){closeRunWindow();q('go').disabled=false;setStatus('error','有名字未收录或方剂');return;}
+    submitRun(herb,smi);
+  });
+}
+function stopRun(){
+  if(!rid)return;
+  if(!confirm(L('确定终止本次运行？已生成的部分文件会保留。',
+                'Stop this run? Partial files will be kept.')))return;
+  const btn=q('stopBtn');
+  if(btn)btn.disabled=true;
+  fetch('/stop?id='+encodeURIComponent(rid),{method:'POST'}).then(function(r){return r.json();}).then(function(j){
+    if(j.error){
+      alert(L('终止失败：','Stop failed: ')+j.error);
+      if(btn)btn.disabled=false;
+      return;
+    }
+    setStatus('error',L('已终止','Stopped'));
+    if(btn){btn.disabled=false;btn.style.display='none';}
+    setTimeout(poll,400);
+  }).catch(function(e){
+    alert(L('终止失败：','Stop failed: ')+e);
+    if(btn)btn.disabled=false;
+  });
+}
+function poll(){
+  fetch('/status?id='+rid).then(function(r){return r.json();}).then(function(j){
+    if(j.tail!==undefined)q('log').textContent=j.tail||'（运行中…）';
+    if(j.seconds!==undefined)setStatus('running','运行中 '+fmtSec(j.seconds));
+    const sb=q('stopBtn');
+    if(j.state==='running'){if(sb)sb.style.display='';setTimeout(poll,1500);return;}
+    if(sb)sb.style.display='none';
+    ['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});
+    if(j.state==='cancelled'){
+      setStatus('error',L('已终止','Stopped'));q('logWrap').open=true;
+      if(j.report||j.csv||j.tsv)renderResult(j);
+      return;
+    }
+    if(j.state==='interrupted'){
+      setStatus('error',L('已中断','Interrupted'));q('logWrap').open=true;
+      if(j.report||j.csv||j.tsv)renderResult(j);
+      return;
+    }
+    if(j.state==='done'){setStatus('done','完成 · '+fmtSec(j.seconds));renderResult(j);}
+    else{setStatus('error','失败（退出码 '+(j.rc!==undefined?j.rc:'?')+'）');q('logWrap').open=true;}
+  }).catch(function(){setTimeout(poll,2500);});
+}
+function renderResult(j){
+  q('results').hidden=false;q('elapsed').textContent=L('用时 ','Elapsed ')+fmtSec(j.seconds);
+  const rq=rid?('?rid='+rid):'';
+  if(j.report){q('rep').href='/files/'+encodeURIComponent(j.report)+rq;q('rep').style.display='';}else{q('rep').style.display='none';}
+  if(j.csv){q('csv').href='/files/'+encodeURIComponent(j.csv)+rq;q('csv').style.display='';}else{q('csv').style.display='none';}
+  if(j.tsv){q('tsv').href='/files/'+encodeURIComponent(j.tsv)+rq;q('tsv').style.display='';}else{q('tsv').style.display='none';}
+  const m=j.meta||{};let h='';
+  if(lastFormulas&&lastFormulas.length){
+    lastFormulas.forEach(function(f){
+      const _tc=(f.tier>=0&&f.tier<=5)?('t'+f.tier):'t9';
+      const md=f.modifications||{};
+      const rm=(md.removed||[]);
+      const ad=(md.added||[]).map(function(x){return x.herb+'×'+x.mult;});
+      h+='· '+L('本次按方剂 ','Formula ')+'<b>'+esc4(f.name)+'</b> '+L('版本「','version “')+esc4(f.source_display||f.source||'?')+'」<span class="badge '+_tc+'">'+esc4(f.tier_label||'?')+'</span>'
+        +L('：原方 ',' : original ')+((f.base_herbs||[]).length)+L(' 味 → 本次 ',' herbs → current ')+((f.final_herbs||[]).length)+L(' 味',' herbs')
+        +(rm.length?('；<b style="color:var(--red)">'+L('减','remove')+'</b> '+esc4(rm.join(LANG==='en'?', ':'、'))):'')
+        +(ad.length?('；<b style="color:var(--green)">'+L('加','add')+'</b> '+esc4(ad.join(LANG==='en'?', ':'、'))):'')
+        +'<br>';
+    });
+  }
+  const sel=m.selection||{};
+  for(const herb in sel){const s=sel[herb];
+    h+='· '+L('药材 ','Herb ')+'<b>'+esc4(herb)+'</b>'+((s.n_doses>1)?(' <b style="color:var(--amber)">×'+s.n_doses+L(' 份',' doses')+'</b>'):'')
+      +L('：可用成分 ',' : available compounds ')+'<b>'+s.n_available+'</b>'+L(' → 本批取 ',' → selected ')+'<b>'+s.n_kept+'</b>'+L('（未参与 ',' (not used: ')+Math.max(0,s.n_available-s.n_kept)+L('）',')')
+      +(s.source==='coconut'?('　<span style="color:var(--green)">'+L('来源：COCONUT「','Source: COCONUT “')+esc4(s.source_matched)+L('」（','” (')+esc4(s.source_how)+L('）',' )')+'</span>'):('　<span class="hint">'+L('来源：HERB 药材库','Source: HERB library')+'</span>'))+'<br>';
+  }
+  const fm=m.formulas||{},fk=Object.keys(fm);
+  if(fk.length){
+    let rows='';
+    function probeCell(v,urlhint){
+      const p=v.probe;if(!p||!p.verdict)return L('未抽检','Not probed');
+      const col=(p.verdict==='查无')?'var(--red)':(p.verdict==='部分命中'?'var(--amber)':'var(--green)');
+      const verdict=L(p.verdict==='查无'?'查无':(p.verdict==='部分命中'?'部分命中':'命中'),
+                      p.verdict==='查无'?'not found':(p.verdict==='部分命中'?'partial match':'match'));
+      const u=p.url||urlhint;
+      return '<b style="color:'+col+'">'+esc4(verdict)+'</b>'+(u?(' <a href="'+esc4(u)+'" target="_blank" rel="noopener">'+L('来源','Source')+'</a>'):'');
+    }
+    fk.forEach(function(fn){
+      const f=fm[fn]||{},vs=f.versions||[];
+      if(!vs.length){rows+='<tr data-tier="'+f.tier+'" data-probe="'+esc4((f.probe&&f.probe.verdict)||'')+'"><td>'+esc4(fn)+'</td><td>'+L('本次选用','Selected')+'</td><td>'+esc4(f.source_display||f.source||'')+'</td><td>'+esc4(f.tier_label||'?')+'</td><td>'+probeCell(f)+'</td><td>'+f.n_herbs+'</td></tr>';}
+      vs.forEach(function(v,i){rows+='<tr data-tier="'+v.tier+'" data-probe="'+esc4((v.probe&&v.probe.verdict)||'')+'"><td>'+esc4(fn)+'</td><td>'+(i===0?'<b>'+L('本次选用','Selected')+'</b>':L('备选','Alternative'))+'</td><td>'+esc4(v.source_display||v.source||'')+'</td><td>'+esc4(v.tier_label||'?')+'</td><td>'+probeCell(v)+'</td><td>'+v.n_herbs+'</td></tr>';});
+    });
+    h+='· '+L('方剂与出处档（药典 → AI 现查（未核对）；默认全部列出，不隐藏、不排序）；「抽检」= H2 固定样本核对结论：',
+                'Formula source tiers (Pharmacopoeia → AI lookup (unverified); all listed by default, nothing hidden or ranked); “Probe” = H2 fixed-sample verification:')
+      +L('只看 ','Filter: ')
+      +'<select id="tierfilter"><option value="all">'+L('全部出处','All sources')+'</option>'
+      +'<option value="0">'+L('药典','Pharmacopoeia')+'</option>'
+      +'<option value="1">ETCM</option><option value="2">ITCM</option><option value="3">CPMCP</option>'
+      +'<option value="4">'+L('古籍','Classics')+'</option>'
+      +'<option value="5">'+L('AI 现查（未核对）','AI lookup (unverified)')+'</option>'
+      +'<option value="p:查无">'+L('抽检=查无','Probe = not found')+'</option>'
+      +'<option value="p:部分命中">'+L('抽检=部分命中','Probe = partial match')+'</option>'
+      +'<option value="p:命中">'+L('抽检=命中','Probe = match')+'</option></select>'
+      +'<div class="tableWrap"><table><thead><tr><th>'+L('方名','Formula')+'</th><th>'+L('版本','Version')+'</th><th>'+L('出处（库里原样）','Source (as stored)')+'</th><th>'+L('出处分档','Source tier')+'</th><th>'+L('抽检','Probe')+'</th><th>'+L('味数','Herb count')+'</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  }
+  const sw=m.switches||{};
+  const sv=Object.keys(sw).map(function(k){
+    const v=sw[k];
+    if(k==='cond')return k+'='+condLabel(v);
+    if(Array.isArray(v))return k+'='+(v.length?v.join(LANG==='en'?', ':'、'):L('（无）','(none)'));
+    if(v&&typeof v==='object'){
+      const parts=Object.keys(v).map(function(x){return x+'='+v[x];});
+      return k+'='+(parts.length?parts.join(', '):L('（无）','(none)'));
+    }
+    if(typeof v==='boolean')return k+'='+onoff(v);
+    return k+'='+v;
+  }).join(' · ');
+  if(sv)h+='· '+L('开关：','Switches: ')+esc4(sv)+'<br>';
+  const pc=m.pair_coverage||{};
+  if(pc.pairs_used!==undefined){
+    if(pc.pairs_used<pc.pairs_total)h+='<span class="warn">· ⚠ '+L('对子被截断：','Pairs truncated: ')+pc.pairs_used+' / '+pc.pairs_total+'（'+esc4(pc.mode)+L('）；各成分伙伴数 ','); partners per compound ')+pc.min_partners+'~'+pc.max_partners+'</span><br>';
+    else h+='· '+L('对子：共 ','Pairs: ')+pc.pairs_total+L(' 对（未截断）',' (not truncated)')+'<br>';
+  }
+  const st=m.stats||{};
+  if(st.n_products!==undefined)h+='· '+L('产物 ','Products ')+'<b>'+st.n_products+'</b>'+L(' 个 · 出处 ',' · evidence ')+'<b>'+st.n_paths_kept+'</b>'+L(' 条 · 耗时 ',' paths · elapsed ')+st.seconds+' s<br>';
+  q('meta').innerHTML=h;
+  const tf=q('tierfilter');
+  if(tf){tf.onchange=function(){const v=tf.value;document.querySelectorAll('#meta table tbody tr').forEach(function(tr){let show;if(v==='all')show=true;else if(v.indexOf('p:')===0)show=(tr.getAttribute('data-probe')===v.slice(2));else show=(tr.getAttribute('data-tier')===v);tr.style.display=show?'':'none';});};}
+  translateDOM(q('results'));
+}
+
+function fxRowById(id){return fxRows.find(function(x){return x.id===id;});}
+function fxIsFormulaChoice(c){return (c.group||'').indexOf('方剂')===0;}
+function fxIsHerbOrSpeciesChoice(c){
+  const g=c.group||'';
+  return g==='药材'||g==='基元植物'||g==='物种'||g.indexOf('药材')===0;
+}
+function fxLookupAccepts(name,j){
+  if(!j||j.error||j.kind==='egg'||j.kind==='formula')return '';
+  const n=String(name||'').trim().toLowerCase();
+  if(!n)return '';
+  const exact=(j.choices||[]).find(function(c){
+    return String(c.name||'').trim().toLowerCase()===n && fxIsHerbOrSpeciesChoice(c);
+  });
+  if(exact)return String(exact.name||'');
+  // 已知的单选别名（如 丹皮 -> 牡丹皮）仍接受；多候选请用户自己点选。
+  if(j.kind==='alias'&&(j.choices||[]).length===1&&fxIsHerbOrSpeciesChoice(j.choices[0])){
+    return String(j.choices[0].name||'');
+  }
+  return '';
+}
+function fxDefaults(v){
+  const m={};
+  (v.herbs||[]).forEach(function(h){
+    const k=(v.dose_multiples&&v.dose_multiples[h])?v.dose_multiples[h]:1;
+    m[h]=k;
+  });
+  return m;
+}
+function addFormulaRow(name){
+  const id='fxr'+(++fxRowSeq);
+  const el=document.createElement('div');
+  el.className='hrow fxRow';
+  el.setAttribute('data-id',id);
+  el.innerHTML="<div class='inputWrap'><input class='fxInputRow' placeholder='方剂名：四君子汤 ｜ 同名按版本，可切' autocomplete='off'><div class='acBox' hidden></div></div>"
+    +"<button type='button' class='findBtn ghost'>查找相似</button>"
+    +"<button type='button' class='delBtn ghost' title='删掉这一方'>×</button>"
+    +"<div class='fxRowMeta' style='display:none'><select class='fxVerSel'></select> <span class='fxRowSummary hint'></span></div>"
+    +"<div class='findBox' style='display:none;flex-basis:100%;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--find-bg)'></div>";
+  q('fxRows').appendChild(el);
+  const row={id:id,name:'',versions:[],sel:0,multiples:{},added:[],el:el};
+  fxRows.push(row);
+  const inp=el.querySelector('.fxInputRow');
+  attachAC(inp,el.querySelector('.acBox'),function(c){pickFormula(row,c.name);},fxIsFormulaChoice);
+  inp.addEventListener('focus',function(){activateRow(id);});
+  inp.addEventListener('input',function(){
+    if(inp.value.trim()!==row.name){
+      row.name='';row.versions=[];row.sel=0;row.multiples={};row.added=[];
+      el.querySelector('.fxRowMeta').style.display='none';
+      if(fxActiveId===id){fxData=null;q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;}
+      refreshRow(row);
+    }
+  });
+  inp.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&!e.defaultPrevented&&inp.value.trim()){e.preventDefault();pickFormula(row,inp.value.trim());}
+  });
+  el.querySelector('.findBtn').onclick=function(){doFormulaFind(row);};
+  el.querySelector('.delBtn').onclick=function(){removeFormulaRow(id);};
+  el.querySelector('.fxRowMeta').onclick=function(e){if(e.target.tagName!=='SELECT')activateRow(id);};
+  el.querySelector('.fxVerSel').onchange=function(){
+    row.sel=+this.value;row.multiples=fxDefaults(row.versions[row.sel]);row.added=[];
+    if(fxActiveId===id)loadRowEditor(row);
+    refreshRow(row);
+  };
+  translateDOM(el);
+  if(name)pickFormula(row,name);
+  return row;
+}
+function openFormula(name){
+  setView('formula');
+  let row=fxRows.find(function(r){return r.name===name;});
+  if(!row)row=fxRows.find(function(r){return !r.name;});
+  if(!row)row=addFormulaRow();
+  pickFormula(row,name);
+}
+function pickFormula(row,name){
+  name=String(name||'').trim();if(!name)return;
+  const inp=row.el.querySelector('.fxInputRow');inp.value=name;
+  const fb=row.el.querySelector('.findBox');fb.style.display='none';
+  q('fxStatus').textContent='查询「'+name+'」…';
+  translateDOM(q('fxStatus'));
+  fetch('/formula?name='+encodeURIComponent(name)).then(function(r){return r.json();}).then(function(j){
+    if(j.kind==='egg'){
+      row.name='';row.versions=[];row.el.querySelector('.fxRowMeta').style.display='none';
+      if(fxActiveId===row.id){fxData=null;q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;}
+      q('fxStatus').innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b>';
+      translateDOM(q('fxStatus'));
+      return;
+    }
+    if(j.error||!j.versions||!j.versions.length){
+      row.name='';row.versions=[];row.el.querySelector('.fxRowMeta').style.display='none';
+      if(fxActiveId===row.id){fxData=null;q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;}
+      const qname=inp.value.trim();
+      fetch('/lookup?q='+encodeURIComponent(qname)).then(function(r){return r.json();}).then(function(lj){
+        if(lj.kind==='egg'){
+          q('fxStatus').innerHTML='🥚 <b style="color:var(--amber)">'+esc4(lj.message||'根本没有这样的中药')+'</b>';
+          translateDOM(q('fxStatus'));
+          return;
+        }
+        const herbLike=(lj.kind==='herb'||lj.kind==='species'||lj.kind==='genus'
+                        ||(lj.choices||[]).some(fxIsHerbOrSpeciesChoice));
+        if(herbLike){
+          q('fxStatus').innerHTML=L('「'+esc4(qname)+'」是药材/物种，不是方剂。请先在方剂行选择一首方，再到下方的「加一味」区域添加（支持 COCONUT 物种）。',
+                                     '“'+esc4(qname)+'” is a herb/species, not a formula. Select a formula first, then add it in the “Add a herb” section below (COCONUT species supported).')
+            + ' <button type="button" class="ghost" id="fxGoAdd">'+L('去加药材','Go to add area')+'</button>';
+          const b=q('fxGoAdd');
+          if(b)b.onclick=goToAddHerbs;
+          translateDOM(q('fxStatus'));
+          return;
+        }
+        showFormulaLookupError(row,j);
+      }).catch(function(){showFormulaLookupError(row,j);});
+      return;
+    }
+    const dup=fxRows.find(function(x){return x!==row&&x.name===j.name;});
+    if(dup){
+      q('fxStatus').innerHTML='<span class="warn">「'+esc4(j.name)+'」已在另一行；请直接改那一行的版本。</span>';
+      translateDOM(q('fxStatus'));
+      return;
+    }
+    inp.value=j.name;
+    row.name=j.name;row.versions=j.versions;row.sel=0;
+    row.multiples=fxDefaults(j.versions[0]);row.added=[];
+    refreshRow(row);activateRow(row.id);
+    q('fxStatus').textContent='「'+j.name+'」共 '+j.n_versions+' 个版本；行内可切版本，下方可调份数/加减味。';
+    translateDOM(q('fxStatus'));
+  }).catch(function(e){q('fxStatus').innerHTML='<span class="bad">查询失败：'+esc4(e)+'</span>';translateDOM(q('fxStatus'));});
+}
+function refreshRow(row){
+  const meta=row.el.querySelector('.fxRowMeta');
+  const sel=row.el.querySelector('.fxVerSel');
+  if(!row.versions||!row.versions.length){
+    meta.style.display='none';row.el.classList.toggle('active',row.id===fxActiveId);return;
+  }
+  meta.style.display='flex';
+  let opts='';
+  row.versions.forEach(function(v,i){
+    opts+='<option value="'+i+'"'+(i===row.sel?' selected':'')+'>'
+      +esc4((v.source_display||v.source||'?')+' ｜ '+(v.tier_label||'?')+' ｜ '+(v.herbs||[]).length+'味'
+        +((v.dose_multiples&&Object.keys(v.dose_multiples).length)?' ｜ 带法定剂量':''))+'</option>';
+  });
+  sel.innerHTML=opts;
+  row.el.querySelector('.fxRowSummary').textContent=fxEntrySummary(row);
+  row.el.classList.toggle('active',row.id===fxActiveId);
+  translateDOM(row.el);
+}
+function activateRow(id){
+  const row=fxRowById(id);if(!row)return;
+  fxActiveId=id;
+  fxRows.forEach(refreshRow);
+  if(!row.versions||!row.versions.length){
+    fxData=null;q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;return;
+  }
+  loadRowEditor(row);
+}
+function loadRowEditor(row){
+  fxData={name:row.name,versions:row.versions,n_versions:row.versions.length};
+  fxSel=row.sel;
+  fxMultiples=Object.assign({},row.multiples);
+  fxBaseMult=fxDefaults(row.versions[row.sel]);
+  fxAdded=(row.added||[]).map(function(x){return {herb:x.herb,mult:x.mult};});
+  renderComposition();
+  const v=row.versions[row.sel];
+  q('fxSource').textContent=v.source_display||v.source||'';
+  q('fxVersionInfo').innerHTML=(v.gongxiao?esc4(v.gongxiao)+' ':'')
+    +(v.url?('<a href="'+esc4(v.url)+'" target="_blank" rel="noopener" style="color:var(--accent)">出处链接 ↗</a>'):'');
+  q('fxHerbCard').hidden=false;q('fxRunCard').hidden=false;
+  q('fxEditState').textContent='正在编辑「'+row.name+'」（'+(v.source_display||v.source||'?')+'）；改动即时记到这一行。';
+  const _fb=q('fxAddFind');if(_fb){_fb.style.display='none';_fb.innerHTML='';}
+  translateDOM(q('fxHerbCard'));
+  sanitizeFxAdded();
+}
+function syncActiveRow(){
+  const row=fxRowById(fxActiveId);if(!row||!row.versions||!row.versions.length)return;
+  row.sel=fxSel;
+  row.multiples=Object.assign({},fxMultiples);
+  row.added=(fxAdded||[]).map(function(x){return {herb:x.herb,mult:x.mult};});
+  refreshRow(row);
+}
+function removeFormulaRow(id){
+  const row=fxRowById(id);if(!row)return;
+  if(fxRows.length>1){
+    fxRows=fxRows.filter(function(x){return x.id!==id;});
+    row.el.remove();
+    if(fxActiveId===id){
+      fxActiveId=null;fxData=null;
+      const next=fxRows.find(function(x){return x.versions&&x.versions.length;});
+      if(next)activateRow(next.id);else{q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;}
+    }
+  }else{
+    row.name='';row.versions=[];row.sel=0;row.multiples={};row.added=[];
+    row.el.querySelector('.fxInputRow').value='';
+    row.el.querySelector('.fxRowMeta').style.display='none';
+    fxActiveId=null;fxData=null;
+    q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;
+  }
+  q('fxStatus').textContent='已移除该行（方剂库未改动）。';
+  translateDOM(q('fxStatus'));
+}
+function doFormulaFind(row){
+  const inp=row.el.querySelector('.fxInputRow'),fb=row.el.querySelector('.findBox');
+  const v=inp.value.trim();
+  if(!v){fb.style.display='block';fb.innerHTML='<span class="warn">先在这一行填个方名</span>';translateDOM(fb);return;}
+  fb.style.display='block';fb.innerHTML='查找中…';translateDOM(fb);
+  fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){fb.innerHTML='<span class="warn">出错：'+esc4(j.error)+'</span>';translateDOM(fb);return;}
+    const closeBtn=' <button type="button" class="closeBtn ghost">收起</button>';
+    function bindClose(){const b=fb.querySelector('.closeBtn');if(b)b.onclick=function(){fb.style.display='none';};}
+    if(j.kind==='egg'){
+      fb.innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b>'+closeBtn;
+      translateDOM(fb);bindClose();return;
+    }
+    const choices=(j.choices||[]).filter(fxIsFormulaChoice);
+    if(!choices.length){
+      fb.innerHTML='<span class="warn">未收录该方剂</span> <span class="hint">可换全名/常用别名再试</span>'+closeBtn;
+      translateDOM(fb);bindClose();return;
+    }
+    let h='<b>「'+esc4(j.query)+'」找到 '+choices.length+' 个方剂候选</b> <span class="hint">可多选</span><br>';
+    choices.forEach(function(c,i){
+      h+='<label style="display:inline-block;min-width:330px;margin:3px 0"><input type="checkbox" class="fbox" data-i="'+i+'"> '+esc4(c.name)
+        +' <span class="hint">['+esc4(c.group||'')+']</span>'
+        +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')+'</label>';
+    });
+    h+='<br><button type="button" class="fillBtn primary" style="padding:5px 12px">用勾选的填进</button>'+closeBtn;
+    fb.innerHTML=h;
+    translateDOM(fb);
+    bindClose();
+    fb.querySelector('.fillBtn').onclick=function(){
+      const picked=Array.prototype.map.call(fb.querySelectorAll('.fbox:checked'),function(x){return choices[+x.getAttribute('data-i')];});
+      if(!picked.length)return;
+      pickFormula(row,picked[0].name);
+      for(let k=1;k<picked.length;k++){
+        const nr=addFormulaRow();
+        pickFormula(nr,picked[k].name);
+      }
+      fb.style.display='none';
+    };
+  }).catch(function(e){fb.innerHTML='<span class="warn">查找失败：'+esc4(e)+'</span>';translateDOM(fb);});
+}
+function renderComposition(){
+  if(!fxData||!fxData.versions.length)return;
+  const v=fxData.versions[fxSel];
+  let rows='';
+  v.herbs.forEach(function(h){
+    const g=(v.grams&&v.grams[h]!==undefined)?v.grams[h]:null;
+    const mult=(fxMultiples[h]!==undefined)?fxMultiples[h]:(fxBaseMult[h]||1);
+    const removed=(mult<=0);
+    rows+='<tr class="'+(removed?'fxRemoved':'')+'"><td><b>'+esc4(h)+'</b></td><td>'+(g===null?'—':g+' g')+'</td>'
+      +'<td><input type="number" min="0" step="1" class="fxMult" data-herb="'+esc4(h)+'" value="'+mult+'"></td>'
+      +'<td><button type="button" class="ghost fxToggle" data-herb="'+esc4(h)+'">'+(removed?'恢复':'减味')+'</button></td>'
+      +'<td class="hint">'+(g===null?'该版本无克数，默认 1 份':'按最小剂量折算')+'</td></tr>';
+  });
+  (fxAdded||[]).forEach(function(x,idx){
+    rows+='<tr class="fxAddedRow"><td><b>'+esc4(x.herb)+'</b> <span class="badge t9">加味</span></td><td>—</td>'
+      +'<td><input type="number" min="1" step="1" class="fxAddMultEdit" data-i="'+idx+'" value="'+x.mult+'"></td>'
+      +'<td><button type="button" class="ghost fxAddDel" data-i="'+idx+'">移除</button></td>'
+      +'<td class="hint">非原方，仅本次运行</td></tr>';
+  });
+  q('fxTbody').innerHTML=rows;
+  q('fxTbody').querySelectorAll('.fxMult').forEach(function(el){
+    el.oninput=function(){
+      const h=el.getAttribute('data-herb');
+      const val=(el.value==='')?0:Math.max(0,parseInt(el.value||'0',10)||0);
+      fxMultiples[h]=val;
+      const tr=el.closest('tr');
+      if(tr){
+        tr.classList.toggle('fxRemoved',val<=0);
+        const btn=tr.querySelector('.fxToggle');
+        if(btn)btn.textContent=val>0?'减味':'恢复';
+      }
+      updateFxHint();
+    };
+  });
+  q('fxTbody').querySelectorAll('.fxToggle').forEach(function(el){
+    el.onclick=function(){
+      const h=el.getAttribute('data-herb');
+      const cur=fxMultiples[h]||0;
+      fxMultiples[h]=cur>0?0:(fxBaseMult[h]||1);
+      renderComposition();
+    };
+  });
+  q('fxTbody').querySelectorAll('.fxAddMultEdit').forEach(function(el){
+    el.oninput=function(){
+      const i=+el.getAttribute('data-i');
+      const n=Math.max(1,parseInt(el.value||'1',10)||1);
+      if(fxAdded[i])fxAdded[i].mult=n;
+      updateFxHint();
+    };
+  });
+  q('fxTbody').querySelectorAll('.fxAddDel').forEach(function(el){
+    el.onclick=function(){fxAdded.splice(+el.getAttribute('data-i'),1);renderComposition();};
+  });
+  q('fxUnmatched').innerHTML=(v.unmatched&&v.unmatched.length)?('<span class="warn">未匹配（可能为炮制说明/方名引用/库外药材）：'+esc4(v.unmatched.join('、'))+'（运行时会跳过并标注）</span>'):'';
+  updateFxHint();
+  translateDOM(q('fxHerbCard'));
+}
+function updateFxHint(){
+  if(!fxData||!fxData.versions.length)return;
+  const v=fxData.versions[fxSel];
+  const removed=v.herbs.filter(function(h){return (fxMultiples[h]||0)<=0;});
+  const added=(fxAdded||[]).filter(function(x){return x.mult>0;});
+  q('fxAddHint').textContent=(removed.length||added.length)?
+    ('本次改动：'+(removed.length?('减 '+removed.length+' 味'):'')+(removed.length&&added.length?'，':'')+(added.length?('加 '+added.length+' 味'):'')+'（只影响本次运行）'):'';
+  syncActiveRow();
+}
+function fxEntryFinal(e){
+  const si=(e.sel===undefined?0:e.sel);
+  const v=e.versions[si];
+  const base=[];const removed=[];
+  (v.herbs||[]).forEach(function(h){
+    const k=(e.multiples&&e.multiples[h]!==undefined)?e.multiples[h]:((v.dose_multiples&&v.dose_multiples[h])||1);
+    if(k>0)base.push({herb:h,mult:k});else removed.push(h);
+  });
+  const added=(e.added||[]).filter(function(x){return x.mult>0;});
+  return {herbs:base.concat(added),removed:removed,added:added,version:v};
+}
+function fxEntrySummary(e){
+  const f=fxEntryFinal(e);const v=f.version;
+  let s=(v.herbs||[]).length+' 味 → 本次 '+f.herbs.length+' 味';
+  if(f.removed.length)s+='；减：'+f.removed.join('、');
+  if(f.added.length)s+='；加：'+f.added.map(function(x){return x.herb+'×'+x.mult;}).join('、');
+  return s;
+}
+function goToAddHerbs(){
+  if(q('fxHerbCard').hidden){
+    const other=fxRows.find(function(r){return r.versions&&r.versions.length;});
+    if(other){
+      activateRow(other.id);
+    }else{
+      alert(L('请先选中一首方剂，再到下方加药材。',
+              'Select a formula first, then add herbs below.'));
+      return;
+    }
+  }
+  q('fxAddCard').scrollIntoView({behavior:'smooth',block:'center'});
+  const inp=q('fxAddHerb');
+  if(inp)inp.focus();
+}
+function removeFxAdded(name){
+  const before=(fxAdded||[]).length;
+  fxAdded=(fxAdded||[]).filter(function(x){return x.herb!==name;});
+  if(fxAdded.length!==before)renderComposition();
+}
+function addCanonicalHerb(name,mult){
+  if(!fxData||!fxData.versions.length)return 'noformula';
+  const v=fxData.versions[fxSel];
+  if((v.herbs||[]).indexOf(name)>=0)return 'base';
+  const ex=(fxAdded||[]).find(function(x){return x.herb===name;});
+  if(ex){ex.mult+=mult;return 'merged';}
+  fxAdded.push({herb:name,mult:mult});
+  return 'added';
+}
+function sanitizeFxAdded(){
+  if(!fxAdded||!fxAdded.length)return;
+  const names=fxAdded.map(function(x){return x.herb;});
+  Promise.all(names.map(function(n){
+    return fetch('/lookup?q='+encodeURIComponent(n)).then(function(r){return r.json();})
+      .then(function(j){return {n:n,j:j};})
+      .catch(function(){return {n:n,j:null};});
+  })).then(function(rs){
+    const bad=[];
+    rs.forEach(function(x){
+      if(!x.j||x.j.error)return;      // 校验失败不误删
+      const ok=fxLookupAccepts(x.n,x.j);
+      if(x.j.kind==='egg'||x.j.kind==='formula'||!ok)bad.push(x.n);
+    });
+    if(bad.length){
+      fxAdded=fxAdded.filter(function(x){return bad.indexOf(x.herb)<0;});
+      renderComposition();
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('已强制移除未收录/彩蛋条目：','Removed invalid/egg entries: ')
+        +esc4(bad.join(LANG==='en'?', ':'、'))+'</span>';
+      translateDOM(q('fxHerbCard'));
+    }
+  });
+}
+function showFormulaLookupError(row,j){
+  let h='<span class="bad">'+esc4(j.error||'未收录该方剂')+'</span>';
+  const sug=j.suggestions||[];
+  if(sug.length){
+    h+=' <span class="hint">相似方名（点一个再确认）：</span>';
+    sug.forEach(function(s){
+      h+=' <button type="button" class="ghost fxSug" data-n="'+esc4(s.name)+'">'+esc4(s.name)+'</button>';
+    });
+  }
+  q('fxStatus').innerHTML=h;
+  q('fxStatus').querySelectorAll('.fxSug').forEach(function(b){
+    b.onclick=function(){pickFormula(row,b.getAttribute('data-n'));};
+  });
+  translateDOM(q('fxStatus'));
+}
+function doFxAddFind(){
+  if(!fxData||!fxData.versions.length){alert(L('先查询并选择一个方剂版本','Look up and select a formula version first'));return;}
+  const name=q('fxAddHerb').value.trim();
+  const fb=q('fxAddFind');
+  if(!name){
+    fb.style.display='block';
+    fb.innerHTML='<span class="warn">'+L('先填要查找的药材/物种名','Enter a herb/species name to search first')+'</span>';
+    translateDOM(fb);
+    return;
+  }
+  fb.style.display='block';fb.innerHTML=L('查找中…','Searching…');translateDOM(fb);
+  fetch('/lookup?q='+encodeURIComponent(name)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){
+      fb.innerHTML='<span class="warn">'+L('查找失败：','Search failed: ')+esc4(j.error)+'</span>';
+      translateDOM(fb);return;
+    }
+    const closeBtn=' <button type="button" class="closeBtn ghost">'+L('收起','Collapse')+'</button>';
+    function bindClose(){
+      const b=fb.querySelector('.closeBtn');
+      if(b)b.onclick=function(){fb.style.display='none';};
+    }
+    if(j.kind==='egg'){
+      fb.innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b>'+closeBtn;
+      translateDOM(fb);bindClose();return;
+    }
+    if(j.kind==='formula'){
+      fb.innerHTML='<span class="warn">'
+        +L('这是方剂，请用上面的方剂行。','This is a formula; use a formula row above.')
+        +'</span>'+closeBtn;
+      translateDOM(fb);bindClose();return;
+    }
+    const seen={};const uniq=[];
+    (j.choices||[]).forEach(function(c){
+      if(!fxIsHerbOrSpeciesChoice(c))return;
+      const k=String(c.name||'').trim().toLowerCase();
+      if(!k||seen[k])return;
+      seen[k]=1;uniq.push(c);
+    });
+    if(!uniq.length){
+      fb.innerHTML='<span class="warn">'
+        +L('没有找到药材/物种候选。','No herb/species candidates found.')
+        +'</span>'+closeBtn;
+      translateDOM(fb);bindClose();return;
+    }
+    let h='<b>'+L('「'+esc4(name)+'」找到 '+uniq.length+' 个候选',
+                   'Found '+uniq.length+' candidates for “'+esc4(name)+'”')
+      +'</b> <span class="hint">'+L('可勾选多个','select multiple')+'</span><br>';
+    uniq.forEach(function(c,i){
+      h+='<label style="display:inline-block;min-width:330px;margin:3px 0"><input type="checkbox" class="fbox" data-i="'+i+'"> '+esc4(c.name)
+        +' <span class="hint">['+esc4(c.group||'')+']</span>'
+        +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')
+        +((c.n_compounds!==undefined)?' <span class="hint">'+(LANG==='en'?'(':'（')+c.n_compounds+L(' 个成分',' compounds')+(LANG==='en'?')':'）')+'</span>':'')+'</label>';
+    });
+    h+='<br><button type="button" class="fillBtn primary" style="padding:5px 12px">'
+      +L('加入勾选的','Add selected')+'</button>'+closeBtn;
+    fb.innerHTML=h;translateDOM(fb);bindClose();
+    fb.querySelector('.fillBtn').onclick=function(){
+      const picked=Array.prototype.map.call(fb.querySelectorAll('.fbox:checked'),function(x){
+        return uniq[+x.getAttribute('data-i')];
+      });
+      if(!picked.length)return;
+      const mult=Math.max(1,parseInt(q('fxAddMult').value||'1',10)||1);
+      let added=0,merged=0,base=0;
+      picked.forEach(function(c){
+        const r=addCanonicalHerb(c.name,mult);
+        if(r==='added')added++;else if(r==='merged')merged++;else if(r==='base')base++;
+      });
+      if(added||merged)renderComposition();
+      const bits=[];
+      if(added)bits.push(L('新增 '+added+' 味','added '+added));
+      if(merged)bits.push(L('合并 '+merged+' 味','merged '+merged));
+      if(base)bits.push(L('原方已有 '+base+' 味','already in formula: '+base));
+      q('fxAddHint').textContent=bits.length
+        ?(bits.join(LANG==='en'?', ':'，')+L('（仅本次运行，不改原方）。',' (this run only; original unchanged).'))
+        :L('没有加入任何条目。','Nothing was added.');
+      fb.style.display='none';
+      translateDOM(q('fxHerbCard'));
+    };
+  }).catch(function(e){
+    fb.innerHTML='<span class="warn">'+L('查找失败：','Search failed: ')+esc4(e)+'</span>';
+    translateDOM(fb);
+  });
+}
+function addHerbToCurrent(){
+  if(!fxData||!fxData.versions.length){alert(L('先查询并选择一个方剂版本','Look up and select a formula version first'));return;}
+  const name=q('fxAddHerb').value.trim();
+  const mult=Math.max(1,parseInt(q('fxAddMult').value||'1',10)||1);
+  if(!name){alert(L('填要加的药材名','Enter the herb/species name to add'));return;}
+  const v=fxData.versions[fxSel];
+  if((v.herbs||[]).indexOf(name)>=0){
+    q('fxAddHint').innerHTML='<span class="warn">'
+      +L('「'+esc4(name)+'」已在原方里；直接改它的份数即可。',
+         '“'+esc4(name)+'” is already in the formula; edit its dose instead.')+'</span>';
+    return;
+  }
+  q('fxAddHint').textContent=L('校验中…','Checking…');
+  fetch('/lookup?q='+encodeURIComponent(name)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('校验失败：','Check failed: ')+esc4(j.error)+'</span>';
+      return;
+    }
+    const ok=fxLookupAccepts(name,j);
+    if(j.kind==='egg'){
+      removeFxAdded(name);
+      q('fxAddHerb').value='';q('fxAddMult').value='1';
+      q('fxAddHint').innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b>';
+      translateDOM(q('fxHerbCard'));
+      return;
+    }
+    if(j.kind==='formula'){
+      removeFxAdded(name);
+      q('fxAddHerb').value='';q('fxAddMult').value='1';
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('这是方剂，不能当药材/物种加入；请用上面的方剂行。',
+           'This is a formula, not a herb/species; add it as a formula row above.')+'</span>';
+      translateDOM(q('fxHerbCard'));
+      return;
+    }
+    if(j.kind==='genus'&&!ok){
+      removeFxAdded(name);
+      q('fxAddHerb').value='';q('fxAddMult').value='1';
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('这是属名，请选到具体物种（如 Glycyrrhiza uralensis）。',
+           'This is a genus; choose a species (e.g. Glycyrrhiza uralensis).')+'</span>';
+      translateDOM(q('fxHerbCard'));
+      return;
+    }
+    if(!ok){
+      removeFxAdded(name);
+      q('fxAddHerb').value='';q('fxAddMult').value='1';
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('未收录该药材/物种，未加入。','Herb/species not found; not added.')+'</span>';
+      translateDOM(q('fxHerbCard'));
+      return;
+    }
+    const addName=String(ok);
+    if((v.herbs||[]).indexOf(addName)>=0){
+      q('fxAddHint').innerHTML='<span class="warn">'
+        +L('「'+esc4(addName)+'」已在原方里；直接改它的份数即可。',
+           '“'+esc4(addName)+'” is already in the formula; edit its dose instead.')+'</span>';
+      return;
+    }
+    const ex=(fxAdded||[]).find(function(x){return x.herb===addName;});
+    if(ex)ex.mult+=mult;else fxAdded.push({herb:addName,mult:mult});
+    q('fxAddHerb').value='';q('fxAddMult').value='1';
+    renderComposition();
+    q('fxAddHint').textContent=L('已加「'+addName+'」×'+mult+'（仅本次运行，不改原方）。',
+                                  'Added “'+addName+'” ×'+mult+' (this run only; original unchanged).');
+    translateDOM(q('fxHerbCard'));
+    sanitizeFxAdded();
+  }).catch(function(e){
+    q('fxAddHint').innerHTML='<span class="warn">'
+      +L('校验失败：','Check failed: ')+esc4(e)+'</span>';
+  });
+}
+function runFormula(){
+  syncActiveRow();
+  const bad=fxRows.filter(function(r){
+    const v=r.el.querySelector('.fxInputRow').value.trim();
+    return v&&(!r.versions||!r.versions.length);
+  });
+  if(bad.length){
+    alert('这些行还没查到方剂：'+bad.map(function(r){return r.el.querySelector('.fxInputRow').value.trim();}).join('、'));
+    return;
+  }
+  const entries=fxRows.filter(function(r){return r.name&&r.versions&&r.versions.length;});
+  if(!entries.length){alert('先输入并选择至少一首方剂');return;}
+  const names=[];const prov=[];const empty=[];
+  entries.forEach(function(e){
+    const f=fxEntryFinal(e);const v=f.version;
+    if(!f.herbs.length){empty.push(e.name);return;}
+    const doseParts=f.herbs.map(function(x){return x.herb+'×'+x.mult;});
+    f.herbs.forEach(function(x){for(let i=0;i<x.mult;i++)names.push(x.herb);});
+    const vsum=e.versions.map(function(x){
+      return {source:x.source||'',source_display:x.source_display||x.source||'',
+              tier:(x.tier===undefined?-1:x.tier),tier_label:x.tier_label||'?',
+              probe:x.probe||null,n_herbs:(x.herbs||[]).length};
+    });
+    const sIdx=Math.max(0,Math.min((e.sel===undefined?0:e.sel),vsum.length-1));
+    const selSummary=vsum.splice(sIdx,1)[0];
+    vsum.unshift(selSummary);
+    prov.push({name:e.name,source:v.source||'',source_display:v.source_display||v.source||'',
+      tier:(v.tier===undefined?-1:v.tier),tier_label:v.tier_label||'?',probe:v.probe||null,
+      n_versions:e.versions.length,versions:vsum,
+      base_herbs:(v.herbs||[]).slice(),final_herbs:f.herbs.map(function(x){return x.herb;}),
+      n_herbs:f.herbs.length,
+      modifications:{removed:f.removed,added:f.added.map(function(x){return {herb:x.herb,mult:x.mult};})},
+      doses:doseParts.join('、')});
+  });
+  if(!names.length){alert('本次组合没有可运行的药材（至少保留或加入一味、份数大于 0）');return;}
+  if(empty.length){q('fxStatus').textContent='注意：'+empty.join('、')+' 本次没有可运行药材，已跳过。';}
+  const pj=JSON.stringify(prov);
+  if(pj.length>20000){alert('方剂出处信息太长（>20000 字符），请减少一次组合的方剂数量。');return;}
+  lastFormulas=prov;
+  const body=new URLSearchParams({kind:'predict',herb:names.join(','),smiles:'',limit:q('f_limit').value,cond:q('f_cond').value,rounds:q('f_rounds').value,max_pairs:q('f_max_pairs').value,reagents:q('f_reagents').value,triples:q('f_triples').checked?1:0,fair_pairs:q('f_fair_pairs').checked?1:0,chp_priority:q('f_chp_priority').checked?1:0,outdir:q('f_outdir').value,dose_budget:q('f_dose_budget').checked?1:0,herb_order:'marker',formula_provenance:pj});
+  submitBody(body);
+}
+
+function loadHistory(){
+  q('histList').textContent='加载中…';
+  fetch('/history?limit=40').then(function(r){return r.json();}).then(function(j){
+    const runs=j.runs||[];if(!runs.length){q('histList').textContent=trText('还没有运行记录。');return;}
+    let h='';
+    runs.forEach(function(r){
+      const f=r.files||{};const links=[];
+      if(f.report&&f.report!=='(未生成)')links.push('<a href="/files/'+encodeURIComponent(f.report)+'" target="_blank">报告</a>');
+      if(f.routes_txt)links.push('<a href="/files/'+encodeURIComponent(f.routes_txt)+'" target="_blank">路线 TXT</a>');
+      if(f.csv)links.push('<a href="/files/'+encodeURIComponent(f.csv)+'" target="_blank">CSV</a>');
+      if(f.tsv)links.push('<a href="/files/'+encodeURIComponent(f.tsv)+'" target="_blank">TSV</a>');
+      h+='<div class="histItem"><div class="t">'+esc4(r.ts||'')+' · '+esc4(r.kind||'')+'</div><div class="n">'+esc4(translateNote(r.note||''))+'</div><div>'+(links.join('')||'<span class="hint">（无文件）</span>')+'</div></div>';
+    });
+    q('histList').innerHTML=h;
+    translateDOM(q('histList'));
+  }).catch(function(e){q('histList').innerHTML='<span class="bad">读取失败：'+esc4(e)+'</span>';translateDOM(q('histList'));});
+}
+
+function setLang(lang,persist){
+  lang=(lang==='en')?'en':'zh';
+  LANG=lang;
+  document.documentElement.lang=(lang==='en'?'en':'zh-CN');
+  const a=q('set_lang'),b=q('langTop');
+  if(a)a.value=lang;
+  if(b)b.value=lang;
+  if(persist){
+    let s={};
+    try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'{}')||{};}catch(e){s={};}
+    s.lang=lang;
+    localStorage.setItem('chemreact.settings',JSON.stringify(s));
+    location.reload();
+  }
+}
+function setTheme(name,persist){
+  name=(name==='night')?'night':'default';
+  document.documentElement.setAttribute('data-theme',name);
+  const a=q('set_theme'),b=q('themeTop');
+  if(a)a.value=name;
+  if(b)b.value=name;
+  if(persist){
+    let s={};
+    try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'{}')||{};}catch(e){s={};}
+    s.theme=name;
+    localStorage.setItem('chemreact.settings',JSON.stringify(s));
+  }
+}
+function settingsObj(){
+  return {lang:q('set_lang').value,theme:q('set_theme').value,cond:q('set_cond').value,rounds:q('set_rounds').value,limit:q('set_limit').value,max_pairs:q('set_max_pairs').value,dose_budget:q('set_dose_budget').checked,chp_priority:q('set_chp_priority').checked,triples:q('set_triples').checked,fair_pairs:q('set_fair_pairs').checked};
+}
+function applySettings(){
+  let s=null;try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'null');}catch(e){s=null;}
+  if(!s)return;
+  if(s.lang!==undefined)setLang(s.lang,false);
+  if(s.theme!==undefined)setTheme(s.theme,false);
+  if(s.cond!==undefined){q('cond').value=s.cond;q('f_cond').value=s.cond;q('set_cond').value=s.cond;}
+  if(s.rounds!==undefined){q('rounds').value=s.rounds;q('f_rounds').value=s.rounds;q('set_rounds').value=s.rounds;}
+  if(s.limit!==undefined){q('limit').value=s.limit;q('f_limit').value=s.limit;q('set_limit').value=s.limit;}
+  if(s.max_pairs!==undefined){q('max_pairs').value=s.max_pairs;q('f_max_pairs').value=s.max_pairs;q('set_max_pairs').value=s.max_pairs;}
+  q('dose_budget').checked=!!s.dose_budget;q('f_dose_budget').checked=!!s.dose_budget;q('set_dose_budget').checked=!!s.dose_budget;
+  q('chp_priority').checked=!!s.chp_priority;q('f_chp_priority').checked=!!s.chp_priority;q('set_chp_priority').checked=!!s.chp_priority;
+  q('triples').checked=!!s.triples;q('f_triples').checked=!!s.triples;q('set_triples').checked=!!s.triples;
+  q('fair_pairs').checked=!!s.fair_pairs;q('f_fair_pairs').checked=!!s.fair_pairs;q('set_fair_pairs').checked=!!s.fair_pairs;
+}
+function loadSettingsUI(){
+  let s=null;try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'null');}catch(e){s=null;}
+  if(!s)return;
+  if(s.lang!==undefined){q('set_lang').value=s.lang;setLang(s.lang,false);}
+  if(s.theme!==undefined){q('set_theme').value=s.theme;setTheme(s.theme,false);}
+  if(s.cond!==undefined)q('set_cond').value=s.cond;
+  if(s.rounds!==undefined)q('set_rounds').value=s.rounds;
+  if(s.limit!==undefined)q('set_limit').value=s.limit;
+  if(s.max_pairs!==undefined)q('set_max_pairs').value=s.max_pairs;
+  q('set_dose_budget').checked=!!s.dose_budget;q('set_chp_priority').checked=!!s.chp_priority;
+  q('set_triples').checked=!!s.triples;q('set_fair_pairs').checked=!!s.fair_pairs;
+}
+
+document.querySelectorAll('.navBtn').forEach(function(b){b.onclick=function(){setView(b.getAttribute('data-view'));};});
+q('addRow').onclick=function(){addRow('');};
+q('go').onclick=startRun;q('fxRun').onclick=runFormula;
+q('stopBtn').onclick=stopRun;
+q('fxAddRow').onclick=function(){const r=addFormulaRow();r.el.querySelector('.fxInputRow').focus();};
+q('fxAddHerbBtn').onclick=addHerbToCurrent;
+q('fxAddFindBtn').onclick=doFxAddFind;
+q('fxAddHerb').addEventListener('keydown',function(e){
+  if(e.key==='Enter'){e.preventDefault();addHerbToCurrent();}
+});
+q('histRefresh').onclick=loadHistory;
+q('set_lang').onchange=function(){setLang(this.value,true);};
+q('langTop').onchange=function(){setLang(this.value,true);};
+q('set_theme').onchange=function(){setTheme(this.value,true);q('setMsg').textContent='配色已切换';};
+q('themeTop').onchange=function(){setTheme(this.value,true);};
+q('setSave').onclick=function(){localStorage.setItem('chemreact.settings',JSON.stringify(settingsObj()));q('setMsg').textContent='已保存';applySettings();};
+q('setReset').onclick=function(){localStorage.removeItem('chemreact.settings');setTheme('default',false);setLang('zh',false);q('setMsg').textContent='已恢复默认（刷新后生效）';};
+const _hashRaw=(location.hash||'').replace('#','');
+const _hashParts=_hashRaw.split('=');
+const _hash=_hashParts[0];
+const _runParam=new URLSearchParams(location.search).get('run');
+applySettings();setLang(LANG,false);
+if(_runParam){
+  document.body.classList.add('runWindowMode');
+  document.querySelectorAll('.view').forEach(function(x){x.hidden=true;});
+  q('results').hidden=true;q('logWrap').hidden=false;q('logWrap').open=true;
+  q('viewTitle').textContent=L('运行输出','Run output')+' · '+_runParam;
+  q('viewSub').textContent=L('实时日志与结果','Live log and results');
+  q('stopBtn').style.display='';
+  rid=_runParam;t0=Date.now();poll();
+}else{
+  addRow('');addFormulaRow();
+  setView(['predict','formula','history','settings'].indexOf(_hash)>=0?_hash:'predict');
+  if(_hash==='formula'&&_hashParts[1]){
+    const _nm=decodeURIComponent(_hashParts.slice(1).join('='));
+    pickFormula(fxRows[0],_nm);
+  }
+}
+if(LANG==='en'){document.title=trText(document.title);translateDOM(document.body);}
+</script></body></html>

@@ -1,0 +1,1531 @@
+{
+ "notice": "Demo catalog derived from the local project data; not a database distribution.",
+ "herbs": [
+  {
+   "name": "甘草",
+   "species": "glycyrrhiza uralensis",
+   "latin": "Glycyrrhiza uralensis",
+   "formula_hits": 3267
+  },
+  {
+   "name": "当归",
+   "species": "angelica sinensis",
+   "latin": "Angelica sinensis",
+   "formula_hits": 2431
+  },
+  {
+   "name": "茯苓",
+   "species": "poria cocos",
+   "latin": "Poria cocos",
+   "formula_hits": 1721
+  },
+  {
+   "name": "白术",
+   "species": "atractylodes macrocephala",
+   "latin": "Atractylodes macrocephala",
+   "formula_hits": 1518
+  },
+  {
+   "name": "川芎",
+   "species": "ligusticum chuanxiong",
+   "latin": "Ligusticum chuanxiong",
+   "formula_hits": 1470
+  },
+  {
+   "name": "陈皮",
+   "species": "citrus reticulata",
+   "latin": "Citrus reticulata",
+   "formula_hits": 1453
+  },
+  {
+   "name": "人参",
+   "species": "panax ginseng",
+   "latin": "Panax ginseng",
+   "formula_hits": 1430
+  },
+  {
+   "name": "黄芩",
+   "species": "scutellaria baicalensis",
+   "latin": "Scutellaria baicalensis",
+   "formula_hits": 1265
+  },
+  {
+   "name": "白芍",
+   "species": "paeonia lactiflora",
+   "latin": "Paeonia lactiflora",
+   "formula_hits": 1111
+  },
+  {
+   "name": "木香",
+   "species": "aucklandia lappa",
+   "latin": "Aucklandia lappa",
+   "formula_hits": 1032
+  },
+  {
+   "name": "大黄",
+   "species": "rheum palmatum",
+   "latin": "Rheum palmatum",
+   "formula_hits": 1020
+  },
+  {
+   "name": "防风",
+   "species": "saposhnikovia divaricata",
+   "latin": "Saposhnikovia divaricata",
+   "formula_hits": 1014
+  },
+  {
+   "name": "桔梗",
+   "species": "platycodon grandiflorum",
+   "latin": "Platycodon grandiflorum",
+   "formula_hits": 948
+  },
+  {
+   "name": "黄连",
+   "species": "coptis chinensis",
+   "latin": "Coptis chinensis",
+   "formula_hits": 812
+  },
+  {
+   "name": "香附",
+   "species": "cyperus rotundus",
+   "latin": "Cyperus rotundus",
+   "formula_hits": 737
+  },
+  {
+   "name": "红花",
+   "species": "carthamus tinctorius",
+   "latin": "Carthamus tinctorius",
+   "formula_hits": 732
+  },
+  {
+   "name": "白芷",
+   "species": "angelica dahurica",
+   "latin": "Angelica dahurica",
+   "formula_hits": 728
+  },
+  {
+   "name": "麦冬",
+   "species": "ophiopogon japonicus",
+   "latin": "Ophiopogon japonicus",
+   "formula_hits": 688
+  },
+  {
+   "name": "柴胡",
+   "species": "bupleurum chinense",
+   "latin": "Bupleurum chinense",
+   "formula_hits": 679
+  },
+  {
+   "name": "羌活",
+   "species": "notopterygium incisum",
+   "latin": "Notopterygium incisum",
+   "formula_hits": 657
+  },
+  {
+   "name": "山药",
+   "species": "dioscorea opposita",
+   "latin": "Dioscorea opposita",
+   "formula_hits": 650
+  },
+  {
+   "name": "肉桂",
+   "species": "cinnamomum cassia",
+   "latin": "Cinnamomum cassia",
+   "formula_hits": 647
+  },
+  {
+   "name": "五味子",
+   "species": "schisandra chinensis",
+   "latin": "Schisandra chinensis",
+   "formula_hits": 637
+  },
+  {
+   "name": "黄芪",
+   "species": "astragalus membranaceus",
+   "latin": "Astragalus membranaceus",
+   "formula_hits": 637
+  },
+  {
+   "name": "赤芍",
+   "species": "paeonia lactiflora",
+   "latin": "Paeonia lactiflora",
+   "formula_hits": 634
+  },
+  {
+   "name": "枳壳",
+   "species": "citrus aurantium",
+   "latin": "Citrus aurantium",
+   "formula_hits": 630
+  },
+  {
+   "name": "地黄",
+   "species": "rehmannia glutinosa",
+   "latin": "Rehmannia glutinosa",
+   "formula_hits": 628
+  },
+  {
+   "name": "党参",
+   "species": "codonopsis pilosula",
+   "latin": "Codonopsis pilosula",
+   "formula_hits": 614
+  },
+  {
+   "name": "半夏",
+   "species": "pinellia ternata",
+   "latin": "Pinellia ternata",
+   "formula_hits": 611
+  },
+  {
+   "name": "厚朴",
+   "species": "magnolia officinalis",
+   "latin": "Magnolia officinalis",
+   "formula_hits": 602
+  },
+  {
+   "name": "黄柏",
+   "species": "phellodendron chinense",
+   "latin": "Phellodendron chinense",
+   "formula_hits": 595
+  },
+  {
+   "name": "泽泻",
+   "species": "alisma orientale",
+   "latin": "Alisma orientale",
+   "formula_hits": 588
+  },
+  {
+   "name": "连翘",
+   "species": "forsythia suspensa",
+   "latin": "Forsythia suspensa",
+   "formula_hits": 576
+  },
+  {
+   "name": "乳香",
+   "species": "boswellia carterii",
+   "latin": "Boswellia carterii",
+   "formula_hits": 573
+  },
+  {
+   "name": "牛膝",
+   "species": "achyranthes bidentata",
+   "latin": "Achyranthes bidentata",
+   "formula_hits": 573
+  },
+  {
+   "name": "薄荷",
+   "species": "mentha haplocalyx",
+   "latin": "Mentha haplocalyx",
+   "formula_hits": 563
+  },
+  {
+   "name": "丹参",
+   "species": "salvia miltiorrhiza",
+   "latin": "Salvia miltiorrhiza",
+   "formula_hits": 562
+  },
+  {
+   "name": "苍术",
+   "species": "atractylodes lancea",
+   "latin": "Atractylodes lancea",
+   "formula_hits": 528
+  },
+  {
+   "name": "砂仁",
+   "species": "amomum villosum",
+   "latin": "Amomum villosum",
+   "formula_hits": 523
+  },
+  {
+   "name": "没药",
+   "species": "commiphora myrrha",
+   "latin": "Commiphora myrrha",
+   "formula_hits": 511
+  },
+  {
+   "name": "麝香",
+   "species": "moschus berezovskii",
+   "latin": "Moschus berezovskii",
+   "formula_hits": 506
+  },
+  {
+   "name": "栀子",
+   "species": "gardenia jasminoides",
+   "latin": "Gardenia jasminoides",
+   "formula_hits": 482
+  },
+  {
+   "name": "山楂",
+   "species": "crataegus pinnatifida",
+   "latin": "Crataegus pinnatifida",
+   "formula_hits": 482
+  },
+  {
+   "name": "干姜",
+   "species": "zingiber officinale",
+   "latin": "Zingiber officinale",
+   "formula_hits": 479
+  },
+  {
+   "name": "玄参",
+   "species": "scrophularia ningpoensis",
+   "latin": "Scrophularia ningpoensis",
+   "formula_hits": 456
+  },
+  {
+   "name": "枸杞子",
+   "species": "lycium barbarum",
+   "latin": "Lycium barbarum",
+   "formula_hits": 455
+  },
+  {
+   "name": "知母",
+   "species": "anemarrhena asphodeloides",
+   "latin": "Anemarrhena asphodeloides",
+   "formula_hits": 439
+  },
+  {
+   "name": "杜仲",
+   "species": "eucommia ulmoides",
+   "latin": "Eucommia ulmoides",
+   "formula_hits": 426
+  },
+  {
+   "name": "青皮",
+   "species": "citrus reticulata",
+   "latin": "Citrus reticulata",
+   "formula_hits": 421
+  },
+  {
+   "name": "菟丝子",
+   "species": "cuscuta australis",
+   "latin": "Cuscuta australis",
+   "formula_hits": 415
+  },
+  {
+   "name": "桃仁",
+   "species": "prunus persica",
+   "latin": "Prunus persica",
+   "formula_hits": 410
+  },
+  {
+   "name": "独活",
+   "species": "angelica pubescens",
+   "latin": "Angelica pubescens",
+   "formula_hits": 410
+  },
+  {
+   "name": "牡丹皮",
+   "species": "paeonia suffruticosa",
+   "latin": "Paeonia suffruticosa",
+   "formula_hits": 400
+  },
+  {
+   "name": "槟榔",
+   "species": "areca catechu",
+   "latin": "Areca catechu",
+   "formula_hits": 399
+  },
+  {
+   "name": "金银花",
+   "species": "lonicera japonica",
+   "latin": "Lonicera japonica",
+   "formula_hits": 395
+  },
+  {
+   "name": "荆芥",
+   "species": "schizonepeta tenuifolia",
+   "latin": "Schizonepeta tenuifolia",
+   "formula_hits": 389
+  },
+  {
+   "name": "丁香",
+   "species": "eugenia caryophyllata",
+   "latin": "Eugenia caryophyllata",
+   "formula_hits": 382
+  },
+  {
+   "name": "远志",
+   "species": "polygala tenuifolia",
+   "latin": "Polygala tenuifolia",
+   "formula_hits": 376
+  },
+  {
+   "name": "沉香",
+   "species": "aquilaria sinensis",
+   "latin": "Aquilaria sinensis",
+   "formula_hits": 376
+  },
+  {
+   "name": "桂枝",
+   "species": "cinnamomum cassia",
+   "latin": "Cinnamomum cassia",
+   "formula_hits": 372
+  },
+  {
+   "name": "三七",
+   "species": "panax notoginseng",
+   "latin": "Panax notoginseng",
+   "formula_hits": 364
+  },
+  {
+   "name": "生姜",
+   "species": "zingiber officinale",
+   "latin": "Zingiber officinale",
+   "formula_hits": 357
+  },
+  {
+   "name": "枳实",
+   "species": "citrus aurantium",
+   "latin": "Citrus aurantium",
+   "formula_hits": 351
+  },
+  {
+   "name": "葛根",
+   "species": "pueraria lobata",
+   "latin": "Pueraria lobata",
+   "formula_hits": 349
+  },
+  {
+   "name": "大枣",
+   "species": "ziziphus jujuba",
+   "latin": "Ziziphus jujuba",
+   "formula_hits": 341
+  },
+  {
+   "name": "天麻",
+   "species": "gastrodia elata",
+   "latin": "Gastrodia elata",
+   "formula_hits": 339
+  },
+  {
+   "name": "苦杏仁",
+   "species": "prunus armeniaca",
+   "latin": "Prunus armeniaca",
+   "formula_hits": 329
+  },
+  {
+   "name": "续断",
+   "species": "dipsacus asper",
+   "latin": "Dipsacus asper",
+   "formula_hits": 321
+  },
+  {
+   "name": "麦芽",
+   "species": "hordeum vulgare",
+   "latin": "Hordeum vulgare",
+   "formula_hits": 301
+  },
+  {
+   "name": "木瓜",
+   "species": "chaenomeles speciosa",
+   "latin": "Chaenomeles speciosa",
+   "formula_hits": 296
+  },
+  {
+   "name": "乌药",
+   "species": "lindera aggregata",
+   "latin": "Lindera aggregata",
+   "formula_hits": 277
+  },
+  {
+   "name": "前胡",
+   "species": "peucedanum praeruptorum",
+   "latin": "Peucedanum praeruptorum",
+   "formula_hits": 276
+  },
+  {
+   "name": "僵蚕",
+   "species": "beauveria bassiana",
+   "latin": "Bombyx mori",
+   "formula_hits": 271
+  },
+  {
+   "name": "天花粉",
+   "species": "trichosanthes kirilowii",
+   "latin": "Trichosanthes kirilowii",
+   "formula_hits": 266
+  },
+  {
+   "name": "淫羊藿",
+   "species": "epimedium brevicornu",
+   "latin": "Epimedium brevicornu",
+   "formula_hits": 256
+  },
+  {
+   "name": "石菖蒲",
+   "species": "acorus tatarinowii",
+   "latin": "Acorus tatarinowii",
+   "formula_hits": 254
+  },
+  {
+   "name": "莪术",
+   "species": "curcuma phaeocaulis",
+   "latin": "Curcuma phaeocaulis",
+   "formula_hits": 249
+  },
+  {
+   "name": "肉苁蓉",
+   "species": "cistanche deserticola",
+   "latin": "Cistanche deserticola",
+   "formula_hits": 247
+  },
+  {
+   "name": "郁金",
+   "species": "curcuma wenyujin",
+   "latin": "Curcuma wenyujin",
+   "formula_hits": 246
+  },
+  {
+   "name": "川贝母",
+   "species": "fritillaria cirrhosa",
+   "latin": "Fritillaria cirrhosa",
+   "formula_hits": 244
+  },
+  {
+   "name": "鹿茸",
+   "species": "cervus nippon",
+   "latin": "Cervus nippon",
+   "formula_hits": 239
+  },
+  {
+   "name": "全蝎",
+   "species": "buthus martensii",
+   "latin": "Buthus martensii",
+   "formula_hits": 233
+  },
+  {
+   "name": "补骨脂",
+   "species": "psoralea corylifolia",
+   "latin": "Psoralea corylifolia",
+   "formula_hits": 226
+  },
+  {
+   "name": "菊花",
+   "species": "chrysanthemum morifolium",
+   "latin": "Chrysanthemum morifolium",
+   "formula_hits": 224
+  },
+  {
+   "name": "三棱",
+   "species": "sparganium stoloniferum",
+   "latin": "Sparganium stoloniferum",
+   "formula_hits": 223
+  },
+  {
+   "name": "车前子",
+   "species": "plantago asiatica",
+   "latin": "Plantago asiatica",
+   "formula_hits": 221
+  },
+  {
+   "name": "血竭",
+   "species": "daemonorops draco",
+   "latin": "Daemonorops draco",
+   "formula_hits": 216
+  },
+  {
+   "name": "升麻",
+   "species": "cimicifuga heracleifolia",
+   "latin": "Cimicifuga heracleifolia",
+   "formula_hits": 216
+  },
+  {
+   "name": "秦艽",
+   "species": "gentiana macrophylla",
+   "latin": "Gentiana macrophylla",
+   "formula_hits": 210
+  },
+  {
+   "name": "威灵仙",
+   "species": "clematis chinensis",
+   "latin": "Clematis chinensis",
+   "formula_hits": 206
+  },
+  {
+   "name": "天冬",
+   "species": "asparagus cochinchinensis",
+   "latin": "Asparagus cochinchinensis",
+   "formula_hits": 203
+  },
+  {
+   "name": "山茱萸",
+   "species": "cornus officinalis",
+   "latin": "Cornus officinalis",
+   "formula_hits": 198
+  },
+  {
+   "name": "酸枣仁",
+   "species": "ziziphus jujuba",
+   "latin": "Ziziphus jujuba",
+   "formula_hits": 197
+  },
+  {
+   "name": "广藿香",
+   "species": "pogostemon cablin",
+   "latin": "Pogostemon cablin",
+   "formula_hits": 194
+  },
+  {
+   "name": "益母草",
+   "species": "leonurus japonicus",
+   "latin": "Leonurus japonicus",
+   "formula_hits": 193
+  },
+  {
+   "name": "地龙",
+   "species": "pherethima aspergillum",
+   "latin": "Pheretima aspergillum",
+   "formula_hits": 193
+  },
+  {
+   "name": "紫苏叶",
+   "species": "perilla frutescens",
+   "latin": "Perilla frutescens",
+   "formula_hits": 192
+  },
+  {
+   "name": "桑白皮",
+   "species": "morus alba",
+   "latin": "Morus alba",
+   "formula_hits": 191
+  },
+  {
+   "name": "苦参",
+   "species": "sophora flavescens",
+   "latin": "Sophora flavescens",
+   "formula_hits": 191
+  },
+  {
+   "name": "木通",
+   "species": "akebia quinata",
+   "latin": "Akebia quinata",
+   "formula_hits": 190
+  }
+ ],
+ "formulas": [
+  {
+   "name": "一捻金",
+   "ingredients": [
+    "人参",
+    "槟榔",
+    "黑丑",
+    "白丑",
+    "木香",
+    "生大黄"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "槟榔",
+    "木香"
+   ],
+   "source": "《惠直堂方》卷四。",
+   "category": ""
+  },
+  {
+   "name": "上清丸",
+   "ingredients": [
+    "龙脑",
+    "硼砂",
+    "薄荷",
+    "川芎",
+    "桔梗",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "薄荷",
+    "川芎",
+    "桔梗",
+    "甘草"
+   ],
+   "source": "《寿世保元》卷二。",
+   "category": ""
+  },
+  {
+   "name": "乌梅丸",
+   "ingredients": [
+    "乌梅肉",
+    "黄连",
+    "当归",
+    "诃黎勒皮",
+    "阿胶半两",
+    "干姜"
+   ],
+   "mapped_ingredients": [
+    "黄连",
+    "当归",
+    "干姜"
+   ],
+   "source": "《圣惠》卷十三。",
+   "category": ""
+  },
+  {
+   "name": "乌梅汤",
+   "ingredients": [
+    "黄连",
+    "阿胶",
+    "栀子",
+    "乌梅",
+    "黄柏"
+   ],
+   "mapped_ingredients": [
+    "黄连",
+    "栀子",
+    "黄柏"
+   ],
+   "source": "《外台》卷二十五引《肘后方》。",
+   "category": ""
+  },
+  {
+   "name": "乌药散",
+   "ingredients": [
+    "乌药",
+    "香附",
+    "高良姜",
+    "赤芍"
+   ],
+   "mapped_ingredients": [
+    "乌药",
+    "香附",
+    "赤芍"
+   ],
+   "source": "CPMCP",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "二妙丸",
+   "ingredients": [
+    "苍术",
+    "黄柏",
+    "羌活",
+    "白芍药",
+    "威灵仙",
+    "陈皮"
+   ],
+   "mapped_ingredients": [
+    "苍术",
+    "黄柏",
+    "羌活",
+    "威灵仙",
+    "陈皮"
+   ],
+   "source": "《症因脉治》卷三。",
+   "category": ""
+  },
+  {
+   "name": "二陈汤",
+   "ingredients": [
+    "半夏",
+    "陈皮",
+    "茯苓",
+    "甘草",
+    "干葛",
+    "青皮"
+   ],
+   "mapped_ingredients": [
+    "半夏",
+    "陈皮",
+    "茯苓",
+    "甘草",
+    "青皮"
+   ],
+   "source": "《嵩崖尊生》卷七。",
+   "category": ""
+  },
+  {
+   "name": "五味子丸",
+   "ingredients": [
+    "五味子",
+    "菟丝子",
+    "鹿茸",
+    "巴戟天",
+    "肉苁蓉",
+    "杜仲"
+   ],
+   "mapped_ingredients": [
+    "五味子",
+    "菟丝子",
+    "鹿茸",
+    "肉苁蓉",
+    "杜仲"
+   ],
+   "source": "《圣济总录》卷五十二。",
+   "category": ""
+  },
+  {
+   "name": "五淋散",
+   "ingredients": [
+    "茯苓",
+    "当归",
+    "甘草",
+    "赤芍",
+    "栀子",
+    "灯心草"
+   ],
+   "mapped_ingredients": [
+    "茯苓",
+    "当归",
+    "甘草",
+    "赤芍",
+    "栀子"
+   ],
+   "source": "CPMCP",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "五积丸",
+   "ingredients": [
+    "大黄",
+    "黄柏",
+    "槟榔",
+    "山豆半",
+    "蛤粉",
+    "雷丸"
+   ],
+   "mapped_ingredients": [
+    "大黄",
+    "黄柏",
+    "槟榔"
+   ],
+   "source": "《普济方》卷一六九。",
+   "category": ""
+  },
+  {
+   "name": "五苓散",
+   "ingredients": [
+    "辰砂",
+    "泽泻",
+    "白术",
+    "茯苓",
+    "官桂"
+   ],
+   "mapped_ingredients": [
+    "泽泻",
+    "白术",
+    "茯苓"
+   ],
+   "source": "《便览》卷一。",
+   "category": ""
+  },
+  {
+   "name": "五香丸",
+   "ingredients": [
+    "丁香",
+    "五灵脂",
+    "木香",
+    "牵牛子",
+    "香附"
+   ],
+   "mapped_ingredients": [
+    "丁香",
+    "木香",
+    "香附"
+   ],
+   "source": "ETCM",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "交泰丸",
+   "ingredients": [
+    "黄连",
+    "枳实",
+    "白术",
+    "吴茱萸",
+    "归尾",
+    "大黄"
+   ],
+   "mapped_ingredients": [
+    "黄连",
+    "枳实",
+    "白术",
+    "大黄"
+   ],
+   "source": "《回春》卷三。",
+   "category": ""
+  },
+  {
+   "name": "保元汤",
+   "ingredients": [
+    "炙耆",
+    "人参",
+    "炙草",
+    "川芎",
+    "肉桂",
+    "白术"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "川芎",
+    "肉桂",
+    "白术"
+   ],
+   "source": "《种痘新书》卷十二。",
+   "category": ""
+  },
+  {
+   "name": "保和丸",
+   "ingredients": [
+    "楂肉",
+    "姜半夏",
+    "黄连",
+    "陈皮",
+    "神曲",
+    "麦芽"
+   ],
+   "mapped_ingredients": [
+    "黄连",
+    "陈皮",
+    "麦芽"
+   ],
+   "source": "《杂病源流犀烛》卷十四。",
+   "category": ""
+  },
+  {
+   "name": "保胎丸",
+   "ingredients": [
+    "杜仲",
+    "熟地",
+    "山药",
+    "续断",
+    "当归"
+   ],
+   "mapped_ingredients": [
+    "杜仲",
+    "山药",
+    "续断",
+    "当归"
+   ],
+   "source": "《医学集成》卷三。",
+   "category": ""
+  },
+  {
+   "name": "健脾丸",
+   "ingredients": [
+    "人参",
+    "白术",
+    "陈皮",
+    "麦芽",
+    "山楂",
+    "枳实"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "白术",
+    "陈皮",
+    "麦芽",
+    "山楂",
+    "枳实"
+   ],
+   "source": "《医方集解》。",
+   "category": ""
+  },
+  {
+   "name": "六君子汤",
+   "ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草",
+    "半夏曲",
+    "没石子各等"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草"
+   ],
+   "source": "《朱氏集验方》卷十一。",
+   "category": ""
+  },
+  {
+   "name": "六味丸",
+   "ingredients": [
+    "五味子",
+    "山药",
+    "泽泻",
+    "熟地黄",
+    "牡丹皮",
+    "茯苓"
+   ],
+   "mapped_ingredients": [
+    "五味子",
+    "山药",
+    "泽泻",
+    "牡丹皮",
+    "茯苓"
+   ],
+   "source": "ETCM",
+   "category": "Chinese patent medicines"
+  },
+  {
+   "name": "六味地黄丸",
+   "ingredients": [
+    "山茱萸",
+    "山药",
+    "泽泻",
+    "熟地黄",
+    "牡丹皮",
+    "茯苓"
+   ],
+   "mapped_ingredients": [
+    "山茱萸",
+    "山药",
+    "泽泻",
+    "牡丹皮",
+    "茯苓"
+   ],
+   "source": "Chinese Pharmacopoeia 2020 edition",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "六味汤",
+   "ingredients": [
+    "荆芥穗",
+    "薄荷",
+    "炒僵蚕",
+    "桔梗",
+    "生粉草",
+    "防风"
+   ],
+   "mapped_ingredients": [
+    "薄荷",
+    "桔梗",
+    "防风"
+   ],
+   "source": "《喉科指掌》卷二。",
+   "category": ""
+  },
+  {
+   "name": "六和汤",
+   "ingredients": [
+    "陈皮",
+    "青皮",
+    "柴胡",
+    "净香附",
+    "苏叶",
+    "甘草半"
+   ],
+   "mapped_ingredients": [
+    "陈皮",
+    "青皮",
+    "柴胡"
+   ],
+   "source": "《普济方》卷三九○。",
+   "category": ""
+  },
+  {
+   "name": "六神丸",
+   "ingredients": [
+    "石菖蒲",
+    "地骨皮",
+    "远志",
+    "牛膝",
+    "生干地黄",
+    "菟丝子"
+   ],
+   "mapped_ingredients": [
+    "石菖蒲",
+    "远志",
+    "牛膝",
+    "菟丝子"
+   ],
+   "source": "《圣济总录》卷一八五。",
+   "category": ""
+  },
+  {
+   "name": "凉血地黄汤",
+   "ingredients": [
+    "黄柏",
+    "知母",
+    "青皮",
+    "槐子",
+    "熟地黄",
+    "当归"
+   ],
+   "mapped_ingredients": [
+    "黄柏",
+    "知母",
+    "青皮",
+    "当归"
+   ],
+   "source": "《脾胃论》卷中。",
+   "category": ""
+  },
+  {
+   "name": "利膈丸",
+   "ingredients": [
+    "牵牛",
+    "槐角子",
+    "木香",
+    "青皮",
+    "皂角",
+    "半夏"
+   ],
+   "mapped_ingredients": [
+    "木香",
+    "青皮",
+    "半夏"
+   ],
+   "source": "《儒门事亲》卷十二。",
+   "category": ""
+  },
+  {
+   "name": "加味五苓散",
+   "ingredients": [
+    "猪苓",
+    "茯苓",
+    "白术",
+    "泽泻",
+    "桂枝",
+    "羌活"
+   ],
+   "mapped_ingredients": [
+    "茯苓",
+    "白术",
+    "泽泻",
+    "桂枝",
+    "羌活"
+   ],
+   "source": "《景岳全书》卷五十四。",
+   "category": ""
+  },
+  {
+   "name": "加味四君子汤",
+   "ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草",
+    "川连",
+    "苍术"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草",
+    "苍术"
+   ],
+   "source": "《医钞类编》卷八。",
+   "category": ""
+  },
+  {
+   "name": "加味逍遥散",
+   "ingredients": [
+    "逍遥散",
+    "远志",
+    "桃仁",
+    "苏木",
+    "红花"
+   ],
+   "mapped_ingredients": [
+    "远志",
+    "桃仁",
+    "红花"
+   ],
+   "source": "《得效》卷十五。",
+   "category": ""
+  },
+  {
+   "name": "加味香连丸",
+   "ingredients": [
+    "黄连",
+    "厚朴",
+    "陈皮",
+    "木香",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "黄连",
+    "厚朴",
+    "陈皮",
+    "木香",
+    "甘草"
+   ],
+   "source": "《胎产要诀》卷下。",
+   "category": ""
+  },
+  {
+   "name": "化毒丹",
+   "ingredients": [
+    "玄参",
+    "桔梗",
+    "茯苓",
+    "青黛",
+    "甘草",
+    "牙消"
+   ],
+   "mapped_ingredients": [
+    "玄参",
+    "桔梗",
+    "茯苓",
+    "甘草"
+   ],
+   "source": "《简明医彀》卷六。",
+   "category": ""
+  },
+  {
+   "name": "化毒散",
+   "ingredients": [
+    "升麻",
+    "紫草",
+    "广皮",
+    "甘草",
+    "柴胡",
+    "黄芩"
+   ],
+   "mapped_ingredients": [
+    "升麻",
+    "甘草",
+    "柴胡",
+    "黄芩"
+   ],
+   "source": "《治疹全书》卷上。",
+   "category": ""
+  },
+  {
+   "name": "千金散",
+   "ingredients": [
+    "桂心",
+    "威灵仙",
+    "白芷",
+    "当归",
+    "牡丹皮"
+   ],
+   "mapped_ingredients": [
+    "威灵仙",
+    "白芷",
+    "当归",
+    "牡丹皮"
+   ],
+   "source": "《卫生家宝产科备要》卷六。",
+   "category": ""
+  },
+  {
+   "name": "升麻葛根汤",
+   "ingredients": [
+    "升麻",
+    "干葛",
+    "白芍",
+    "甘草",
+    "山楂",
+    "牛蒡子"
+   ],
+   "mapped_ingredients": [
+    "升麻",
+    "白芍",
+    "甘草",
+    "山楂"
+   ],
+   "source": "《痘疹全集》卷十四。",
+   "category": ""
+  },
+  {
+   "name": "半夏汤",
+   "ingredients": [
+    "半夏",
+    "茯苓",
+    "橘皮",
+    "白术",
+    "生姜",
+    "槟榔颗"
+   ],
+   "mapped_ingredients": [
+    "半夏",
+    "茯苓",
+    "白术",
+    "生姜"
+   ],
+   "source": "方出《外台》卷十引《必效方》，名见《普济方》卷一八三。",
+   "category": ""
+  },
+  {
+   "name": "吴茱萸汤",
+   "ingredients": [
+    "吴茱萸",
+    "人参",
+    "生姜",
+    "大枣"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "生姜",
+    "大枣"
+   ],
+   "source": "Catalogue of Ancient Classic Prescriptions",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "四制香附丸",
+   "ingredients": [
+    "香附",
+    "当归",
+    "熟地",
+    "川芎",
+    "白芍",
+    "条芩"
+   ],
+   "mapped_ingredients": [
+    "香附",
+    "当归",
+    "川芎",
+    "白芍"
+   ],
+   "source": "《惠直堂方》卷四。",
+   "category": ""
+  },
+  {
+   "name": "四君子汤",
+   "ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "白术",
+    "茯苓",
+    "甘草"
+   ],
+   "source": "《鸡峰》卷十二。",
+   "category": ""
+  },
+  {
+   "name": "四圣散",
+   "ingredients": [
+    "白芷",
+    "枳壳",
+    "冬葵子",
+    "木通"
+   ],
+   "mapped_ingredients": [
+    "白芷",
+    "枳壳",
+    "木通"
+   ],
+   "source": "《李氏医鉴》卷八。",
+   "category": ""
+  },
+  {
+   "name": "四物汤",
+   "ingredients": [
+    "当归",
+    "白芍",
+    "川芎",
+    "熟地",
+    "五味子",
+    "麦冬"
+   ],
+   "mapped_ingredients": [
+    "当归",
+    "白芍",
+    "川芎",
+    "五味子",
+    "麦冬"
+   ],
+   "source": "《石室秘录》卷三。",
+   "category": ""
+  },
+  {
+   "name": "四神丸",
+   "ingredients": [
+    "肉豆蔻",
+    "补骨脂",
+    "五味子",
+    "吴茱萸",
+    "大枣"
+   ],
+   "mapped_ingredients": [
+    "补骨脂",
+    "五味子",
+    "大枣"
+   ],
+   "source": "Chinese Pharmacopoeia 2020 edition",
+   "category": "Chinese patent medicines"
+  },
+  {
+   "name": "四苓散",
+   "ingredients": [
+    "猪苓",
+    "茯苓",
+    "泽泻",
+    "木通"
+   ],
+   "mapped_ingredients": [
+    "茯苓",
+    "泽泻",
+    "木通"
+   ],
+   "source": "《会约》卷二十。",
+   "category": ""
+  },
+  {
+   "name": "固本丸",
+   "ingredients": [
+    "党参",
+    "地黄",
+    "天冬",
+    "熟地黄",
+    "麦冬"
+   ],
+   "mapped_ingredients": [
+    "党参",
+    "地黄",
+    "天冬",
+    "麦冬"
+   ],
+   "source": "ETCM",
+   "category": "Ancient TCM prescriptions"
+  },
+  {
+   "name": "固真汤",
+   "ingredients": [
+    "黄耆",
+    "人参",
+    "白术",
+    "甘草",
+    "当归",
+    "麦冬"
+   ],
+   "mapped_ingredients": [
+    "人参",
+    "白术",
+    "甘草",
+    "当归",
+    "麦冬"
+   ],
+   "source": "《片玉心书》卷五。",
+   "category": ""
+  },
+  {
+   "name": "地黄饮子",
+   "ingredients": [
+    "生地黄",
+    "赤芍药",
+    "羌活",
+    "当归",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "羌活",
+    "当归",
+    "甘草"
+   ],
+   "source": "《准绳·幼科》卷一。",
+   "category": ""
+  },
+  {
+   "name": "复元通气散",
+   "ingredients": [
+    "青皮",
+    "陈皮",
+    "甘草半",
+    "连翘"
+   ],
+   "mapped_ingredients": [
+    "青皮",
+    "陈皮",
+    "连翘"
+   ],
+   "source": "《赤水玄珠》卷三。",
+   "category": ""
+  },
+  {
+   "name": "大建中汤",
+   "ingredients": [
+    "甘草",
+    "人参",
+    "半夏",
+    "生姜",
+    "蜀椒合",
+    "饴糖"
+   ],
+   "mapped_ingredients": [
+    "甘草",
+    "人参",
+    "半夏",
+    "生姜"
+   ],
+   "source": "《千金》卷十九。",
+   "category": ""
+  },
+  {
+   "name": "大承气汤",
+   "ingredients": [
+    "大黄",
+    "芒消",
+    "厚朴",
+    "柴胡",
+    "黄芩",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "大黄",
+    "厚朴",
+    "柴胡",
+    "黄芩",
+    "甘草"
+   ],
+   "source": "《石室秘录》卷二。",
+   "category": ""
+  },
+  {
+   "name": "大柴胡汤",
+   "ingredients": [
+    "柴胡",
+    "半夏",
+    "黄芩",
+    "甘草",
+    "枳实半两",
+    "大黄"
+   ],
+   "mapped_ingredients": [
+    "柴胡",
+    "半夏",
+    "黄芩",
+    "甘草",
+    "大黄"
+   ],
+   "source": "《易简方》。",
+   "category": ""
+  },
+  {
+   "name": "太乙膏",
+   "ingredients": [
+    "当归",
+    "生地",
+    "白芍",
+    "玄参",
+    "大黄",
+    "甘草"
+   ],
+   "mapped_ingredients": [
+    "当归",
+    "白芍",
+    "玄参",
+    "大黄",
+    "甘草"
+   ],
+   "source": "《会约》卷十九。",
+   "category": ""
+  },
+  {
+   "name": "安胎丸",
+   "ingredients": [
+    "莲肉",
+    "白术",
+    "条芩",
+    "砂仁",
+    "山药"
+   ],
+   "mapped_ingredients": [
+    "白术",
+    "砂仁",
+    "山药"
+   ],
+   "source": "《广嗣纪要》卷七。",
+   "category": ""
+  }
+ ]
+}
