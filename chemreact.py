@@ -43,20 +43,8 @@ def _research_enabled() -> bool:
 
 
 def _stage() -> Path:
-    """Locate the chemistry engine.
-
-    Order: CHEMCREACT_STAGE env var -> this script's own directory (source
-    checkout layout, where core/ sits next to this file) -> the author's
-    development layout.  The last fallback only matters on the machine where
-    this was developed; everywhere else the first two rules apply.
-    """
-    env = os.environ.get("CHEMCREACT_STAGE")
-    if env:
-        return Path(env)
-    here = Path(__file__).resolve().parent
-    if (here / "core").is_dir():
-        return here
-    return Path(r"D:\ProgramData\DSHNS\chemreact-staging")
+    return Path(os.environ.get("CHEMCREACT_STAGE",
+                               r"D:\ProgramData\DSHNS\chemreact-staging"))
 
 
 def _bootstrap() -> Path:
@@ -919,12 +907,22 @@ def cmd_predict(a) -> int:
         if _vs:
             _e["versions"] = _vs
         formulas_meta[_nm] = _e
+    _cond_override = {k: v for k, v in {
+        "solvent": a.solvent,
+        "temperature": a.temperature,
+        "time_min": a.time_min,
+        "pH": a.ph,
+        "catalyst": a.catalyst,
+        "atmosphere": a.atmosphere,
+    }.items() if v is not None}
     spec = qb.RunSpec(seeds=seeds, cond_name=a.cond, rounds=a.rounds,
                       max_pairs=a.max_pairs, direction=not a.no_direction,
                       reagents=_split_list(a.reagents),
                       triples=bool(a.triples), triples_min_support=a.triples_min_support,
                       fair_pairs=fair, use_curated_templates=True,
                       use_mined_top_conditions=True,
+                      strict_redox_gate=True,
+                      cond_override=_cond_override,
                       meta_extra={"selection": selection, "switches": switches,
                                   "pair_coverage": cov, "formulas": formulas_meta})
     print("=" * 96)
@@ -1203,6 +1201,18 @@ def main() -> int:
     pp.add_argument("--cond", default="煎煮",
                     help="条件档案名（默认 煎煮）。可用：煎煮/室温浸泡/水提/醇提/"
                          "酸水解/碱水解/酶催化/还原/氧化/无氧煎煮")
+    pp.add_argument("--solvent", default=None,
+                    help="自定义溶剂（水/乙醇等）；留空则用条件档案的值")
+    pp.add_argument("--temperature", type=float, default=None,
+                    help="自定义温度 °C；留空则用条件档案的值")
+    pp.add_argument("--time-min", type=float, default=None, dest="time_min",
+                    help="自定义时长（分钟）；留空则用条件档案的值")
+    pp.add_argument("--ph", type=float, default=None,
+                    help="自定义 pH；留空则用条件档案的值")
+    pp.add_argument("--catalyst", default=None,
+                    help="自定义催化剂（none/acid/base/metal/enzyme）；留空则用条件档案的值")
+    pp.add_argument("--atmosphere", default=None,
+                    help="自定义气氛（air/O2/H2/N2）；留空则用条件档案的值")
     pp.add_argument("--max-pairs", type=int, default=4000, dest="max_pairs")
     pp.add_argument("--fair-pairs", action="store_true", dest="fair_pairs",
                     help="对子超预算时公平截断：每个成分摊到大致相同的伙伴数（默认关=旧行为）")

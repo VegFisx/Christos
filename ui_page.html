@@ -50,6 +50,10 @@ html[data-theme='night']{
 html{color-scheme:light}html[data-theme='night']{color-scheme:dark}
 *{box-sizing:border-box}html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif}
+
+.runbar{height:4px;border-radius:2px;background:var(--panel2);border:1px solid var(--line);overflow:hidden;margin:6px 0 0;width:100%}
+.runbarIn{height:100%;width:35%;background:var(--accent);animation:runslide 1.2s ease-in-out infinite}
+@keyframes runslide{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 [hidden]{display:none!important}
@@ -162,6 +166,7 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
     </label>
     <button id='stopBtn' class='ghost' style='display:none'>终止运行</button>
     <div id='statusPill' class='pill idle'>空闲</div>
+    <div id='runBar' class='runbar' hidden><div class='runbarIn'></div></div>
   </div>
 </header>
 
@@ -173,17 +178,28 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <span class='hint'>一味一行；输入时边打边出候选，「查找相似」用于多选。</span></div>
     <div class='row'><label class='field' style='flex:1;min-width:260px'>分子 SMILES（可留空）<input id='smiles' placeholder='如 CC(=O)Oc1ccccc1C(=O)O'></label></div>
     <div class='grid3'>
-      <label class='field'>每味取几个成分<select id='limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
+      <label class='field' title='成分越多覆盖越全也越慢；排序为 marker 优先、分子量降序'>每味取几个成分<select id='limit'><option>6</option><option>12</option><option>24</option><option value='all' selected>全部（较慢）</option></select></label>
       <label class='field'>成分排序<select id='herb_order'><option value='marker' selected>marker（默认）</option><option value='ob'>OB 降序（TCMSP）</option></select></label>
     </div>
     <div class='row'><label class='check' style='font-size:12px;color:var(--muted)'><input type='checkbox' id='dose_budget'> 重复输入 = 剂量份数（默认关；只记录，不放大配额）</label></div>
   </div>
   <div class='card'>
-    <div class='cardHead'><h2>条件与轮数</h2><span class='hint'>默认保守设置</span></div>
+    <div class='cardHead'><h2>条件与轮数</h2><span class='hint'>轮数 = 反应迭代次数（上一轮产物继续当下一轮底物），不是反复煎煮</span></div>
     <div class='grid3'>
-      <label class='field'>条件档案<select id='cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
-      <label class='field'>轮数<select id='rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-      <label class='field'>对子预算<input id='max_pairs' value='4000'></label>
+      <label class='field'>条件档案<select id='cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='自定义'>自定义…</option></select></label>
+      <label class='field' title='上一轮产物继续作为下一轮底物；与煎煮次数无关'>反应轮数<select id='rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field' title='底物两两配对的上限；4000 约等于 90 个成分的全部配对，超出部分会被截断'>对子预算<input id='max_pairs' value='4000'></label>
+    </div>
+    <div id='condCustom' class='grid3' hidden>
+      <label class='field' title='留空则沿用所选条件档案'>溶剂<input id='c_solvent' placeholder='water / ethanol'></label>
+      <label class='field'>温度 °C<input id='c_temperature' placeholder='如 80'></label>
+      <label class='field'>时长 min<input id='c_time_min' placeholder='如 60'></label>
+      <label class='field'>pH<input id='c_ph' placeholder='如 6.5'></label>
+      <label class='field'>催化剂<input id='c_catalyst' placeholder='none / acid / base / metal / enzyme'></label>
+      <label class='field'>气氛<input id='c_atmosphere' placeholder='air / O2 / H2 / N2'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <span class='hint'>自定义条件只覆盖填写的项；未填的沿用所选条件档案。</span>
     </div>
     <details class='adv'><summary>高级选项</summary>
       <div class='grid3' style='margin-top:6px'>
@@ -233,8 +249,8 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
     <div class='cardHead'><h2>运行设置</h2><span class='hint'>与命令行参数一致</span></div>
     <div class='grid3'>
       <label class='field'>条件档案<select id='f_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
-      <label class='field'>每味成分<select id='f_limit'><option selected>2</option><option>6</option><option>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
-      <label class='field'>轮数<select id='f_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>每味成分<select id='f_limit'><option>2</option><option>6</option><option>12</option><option>24</option><option value='all' selected>全部（较慢）</option></select></label>
+      <label class='field' title='上一轮产物继续作为下一轮底物；与煎煮次数无关'>反应轮数<select id='f_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
       <label class='field'>对子预算<input id='f_max_pairs' value='4000'></label>
       <label class='field' style='display:none'>辅助试剂<input id='f_reagents' placeholder='可留空'></label>
       <label class='field'>输出目录<input id='f_outdir' placeholder='默认可留空（out\\）'></label>
@@ -264,8 +280,8 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <label class='field'>语言<select id='set_lang'><option value='zh' selected>中文</option><option value='en'>English</option></select></label>
       <label class='field'>配色<select id='set_theme'><option value='default' selected>默认（淡蓝-淡白-淡灰）</option><option value='night'>夜间模式</option></select></label>
       <label class='field'>默认条件<select id='set_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
-      <label class='field'>默认轮数<select id='set_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-      <label class='field'>每味成分<select id='set_limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部</option></select></label>
+      <label class='field'>默认反应轮数<select id='set_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>每味成分<select id='set_limit'><option>6</option><option>12</option><option>24</option><option value='all' selected>全部</option></select></label>
       <label class='field'>对子预算<input id='set_max_pairs' value='4000'></label>
     </div>
     <div class='row' style='font-size:12px;color:var(--muted)'>
@@ -513,7 +529,15 @@ function fmtSec(s){
   if(LANG==='en')return m?m+' min '+(s%60)+' s':s+' s';
   return m?m+' 分 '+(s%60)+' 秒':s+' 秒';
 }
-function setStatus(cls,text){const p=q('statusPill');p.className='pill '+cls;p.textContent=trText(text);}
+
+document.addEventListener('DOMContentLoaded',function(){
+  const c=q('cond'),box=q('condCustom');
+  if(c&&box){
+    const sync=function(){box.hidden=(c.value!=='自定义');};
+    c.addEventListener('change',sync);sync();
+  }
+});
+function setStatus(cls,text){const p=q('statusPill');p.className='pill '+cls;p.textContent=trText(text);const b=q('runBar');if(b)b.hidden=(cls!=='running');}
 function setView(v){
   currentView=v;
   if(location.hash!=='#'+v){try{history.replaceState(null,'','#'+v);}catch(e){}}
@@ -727,7 +751,8 @@ function submitBody(body){
   }).catch(function(e){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent='提交失败：'+e;setStatus('error','提交失败');['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});});
 }
 function submitRun(herb,smi){
-  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value});
+  const _cx=function(id){const el=q(id);return el?el.value:'';};
+  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,solvent:_cx('c_solvent'),temperature:_cx('c_temperature'),time_min:_cx('c_time_min'),ph:_cx('c_ph'),catalyst:_cx('c_catalyst'),atmosphere:_cx('c_atmosphere'),triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value});
   lastFormulas=[];submitBody(body);
 }
 function startRun(){

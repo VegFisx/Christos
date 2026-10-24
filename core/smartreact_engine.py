@@ -358,6 +358,7 @@ class SmartReactEngine:
                  verbose: bool = False,
                  gate_conditions: bool = True,
                  gate_tol_C: float = 30.0,
+                 strict_redox_gate: bool = False,
                  extra_templates_path=None,
                  extra_template_min_support: int = 10,
                  extra_template_limit: int = 20000,
@@ -403,6 +404,10 @@ class SmartReactEngine:
         #   窗口来自 reports/conditions_normalized.json（tools/normalize_condition_table.py 产出）。
         self.gate_conditions = gate_conditions
         self.gate_tol_C = gate_tol_C
+        # Strict redox gate: honour an explicitly stated atmosphere even when
+        # no auxiliary reagents were supplied.  Off by default so benchmark
+        # behaviour is unchanged.
+        self.strict_redox_gate = bool(strict_redox_gate)
         self.cond_table = self._load_condition_table() if gate_conditions else {}
         # ★ C 试点：top mined 模板的 per-template 条件窗口
         self.mined_top_map: Dict[str, str] = {}
@@ -638,7 +643,11 @@ class SmartReactEngine:
         n_pair = n_mono = n_fail = 0
         for r in data.get("rules") or []:
             rid = r.get("id")
-            if rid not in CURATED_RULE_IDS:
+            # Load every rule the rulebook marks active.  The hard-coded
+            # CURATED_RULE_IDS list used to gate this down to six entries, which
+            # silently excluded glycoside hydrolysis, ester hydrolysis, Maillard
+            # and most other transformations a decoction actually undergoes.
+            if str(r.get("status") or "active") != "active":
                 continue
             sm = str(r.get("smarts") or "")
             try:
@@ -666,6 +675,7 @@ class SmartReactEngine:
                 "n_ord_matched": 0,
                 "solvents": list(prof.get("solvent") or []),
                 "catalysts": list(prof.get("catalyst") or []),
+                "atmospheres": list(prof.get("atmosphere") or []),
                 "reagents": [],
                 "auxiliary_reagents": [],
                 "temp_C": ({"min": temp.get("min"), "max": temp.get("max"),
@@ -786,8 +796,12 @@ class SmartReactEngine:
         # ★ 原则：**信息缺失 != 信息否定** —— 条件里一个试剂都没写时，不能因为"气氛是空气"就断定
         #   没有还原剂（ORD 表试剂可得率 0% 的教训，见第二十四轮）。此时不过滤。
         if not reagents.strip():
-            self.gate_stats["单底物模板_无试剂信息_不门控"] = 1
-            return self.mono_templates
+            if not self.strict_redox_gate:
+                self.gate_stats["单底物模板_无试剂信息_不门控"] = 1
+                return self.mono_templates
+            # Strict mode: the atmosphere alone is enough to rule a redox
+            # class in or out.  Air excludes reduction, H2 excludes oxidation.
+            self.gate_stats["单底物模板_严格气氛门控"] = 1
         reducing = atm in REDUCING_ATMOS or any(h in reagents for h in REDUCTANT_HINTS)
         oxidizing = atm in OXIDIZING_ATMOS or any(h in reagents for h in OXIDANT_HINTS)
         n_red = len(self.mono_by_hint.get("reduce", []))
@@ -978,6 +992,15 @@ class SmartReactEngine:
             for k in uniq_c:
                 sa = subs[k][1]
                 for sm, rx, name in self.curated_mono_templates:
+                    if self.strict_redox_gate:
+                        allowed = ((self.curated_cond_table.get(name) or {})
+                                   .get("atmospheres") or [])
+                        atm = str(getattr(cond, "atmosphere", "") or "").lower()
+                        if allowed and atm and atm not in [
+                                str(a).lower() for a in allowed]:
+                            self.gate_stats["curated_单底物_气氛不符"] = (
+                                self.gate_stats.get("curated_单底物_气氛不符", 0) + 1)
+                            continue
                     try:
                         got = lib.apply_single([(sm, rx)], get_mol(sa))
                     except Exception:

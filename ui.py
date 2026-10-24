@@ -133,6 +133,16 @@ def _start_run(form: dict) -> dict:
     argv = [PY_EXE, "-u", str(HERE / "chemreact.py"), "predict",
             "--limit", limit, "--rounds", rounds, "--cond", cond,
             "--max-pairs", max_pairs, "--out", str(od)]
+    # 自定义条件：只在用户显式填了值时才覆盖预设档案
+    for _key, _flag in (("solvent", "--solvent"),
+                        ("temperature", "--temperature"),
+                        ("time_min", "--time-min"),
+                        ("ph", "--ph"),
+                        ("catalyst", "--catalyst"),
+                        ("atmosphere", "--atmosphere")):
+        _v = str(form.get(_key, "") or "").strip()
+        if _v:
+            argv += [_flag, _v]
     if herb:
         argv += ["--herb", herb]
     else:

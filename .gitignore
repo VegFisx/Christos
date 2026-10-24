@@ -67,3 +67,6 @@ Thumbs.db
 *.pem
 *.pfx
 credentials*.json
+
+# Paper artefacts and audit outputs stay out of the source tree
+reports/

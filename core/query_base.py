@@ -114,11 +114,24 @@ class RunSpec:
     use_curated_templates: bool = False
     # ★ C 试点（2026-10-17）：实时路径是否接入 top mined 模板的 per-template 条件
     use_mined_top_conditions: bool = False
+    # ★ Application-layer switch: honour a stated atmosphere even without
+    #   auxiliary reagents.  Benchmark paths leave this off.
+    strict_redox_gate: bool = False
+    # ★ 用户自定义条件：在预设条件档案之上逐项覆盖。
+    #   键名与 Conditions 的字段一致（solvent/temperature/time_min/pH/
+    #   catalyst/atmosphere）。空字典 = 完全使用预设。
+    cond_override: dict = field(default_factory=dict)
     meta_extra: dict = field(default_factory=dict)   # 原样并入 .meta.json（selection/switches 等）
 
     def cond(self):
         import templates as T
         c = T.get_template(self.cond_name)
+        if self.cond_override:
+            from dataclasses import replace as _replace
+            clean = {k: v for k, v in self.cond_override.items()
+                     if hasattr(c, k) and v is not None}
+            if clean:
+                c = _replace(c, **clean)
         if self.reagents:
             # ★ D4：把用户给的试剂注入生产条件 —— 这是「必需试剂判零」在生产链路上
             #   第一次真正能触发的前提（第二十六轮实测：带真实试剂时判零 2.94×，误杀 3.6%）。
@@ -477,7 +490,13 @@ def build_inventory(spec: RunSpec,
                            use_curated_templates=bool(
                                getattr(spec, "use_curated_templates", False)),
                            use_mined_top_conditions=bool(
-                               getattr(spec, "use_mined_top_conditions", False)))
+                               getattr(spec, "use_mined_top_conditions", False)),
+                           strict_redox_gate=bool(
+                               getattr(spec, "strict_redox_gate", False)),
+                           # Strict atmosphere mode is meaningless with the
+                           # mono redox gate switched off, so tie them together.
+                           mono_redox_gate=bool(
+                               getattr(spec, "strict_redox_gate", False)))
     st.engine_notes = [f"extra: {eng.extra_template_note}",
                        f"mono: {eng.mono_template_note}",
                        f"curated: {getattr(eng, 'curated_note', '未启用')}",
