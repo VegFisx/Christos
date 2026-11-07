@@ -62,7 +62,6 @@ chemreact 核心：热力学层（接 xTB）
 
 from __future__ import annotations
 
-import os
 import sys
 import time
 from dataclasses import dataclass, field
@@ -74,14 +73,8 @@ from rdkit import Chem
 _HERE = Path(__file__).resolve().parent
 _STAGE = _HERE.parent
 
-# Optional xTB backend.  Set CHRISTOS_XTB to the xTB executable and
-# CHRISTOS_TCMAI_SRC to the directory that holds ``thermo_xtb.py``.  If the
-# executable is absent the whole layer marks itself unavailable and the rest of
-# the pipeline keeps running without Delta-G estimates -- this is the normal
-# state for anyone who has not installed xTB.
-TCMAI_SRC = Path(os.environ.get("CHRISTOS_TCMAI_SRC", r"D:\TCMAI\src"))
-TCMAI_XTB = Path(os.environ.get(
-    "CHRISTOS_XTB", r"D:\TCMAI\tools\xtb\xtb-6.7.1\bin\xtb.exe"))
+TCMAI_SRC = Path(r"D:\TCMAI\src")
+TCMAI_XTB = Path(r"D:\TCMAI\tools\xtb\xtb-6.7.1\bin\xtb.exe")
 
 # 缓存放暂存区，不放用户项目
 DEFAULT_CACHE = _STAGE / "xtb_cache"
@@ -99,19 +92,42 @@ FORMULA_TO_SMILES = {
     "H2O2": "OO",
 }
 
+# ★ 第 103 轮（A10~A13）：数值统一登记在 core/constants_provenance.json。
+_CONST_PATH = _HERE / "constants_provenance.json"
+_CONST_CACHE = {}
+
+
+def _const(key, default):
+    """从 constants_provenance.json 读一个常数；缺失/损坏时回退默认值。"""
+    if not _CONST_CACHE:
+        try:
+            import json
+            data = json.loads(_CONST_PATH.read_text(encoding="utf-8"))
+            _CONST_CACHE.update(data.get("constants") or {})
+        except Exception:
+            _CONST_CACHE.setdefault("__missing__", True)
+    item = _CONST_CACHE.get(key)
+    if not isinstance(item, dict) or "value" not in item:
+        return default
+    try:
+        return type(default)(item["value"])
+    except Exception:
+        return default
+
+
 # ΔG → 分数 的映射阈值（kJ/mol）。文档化的建模选择，不是实验测定值。
-DG_FAVORABLE = -30.0     # 更负 → 1.0
-DG_UNFAVORABLE = 20.0    # 更正 → 0.0
+DG_FAVORABLE = _const("thermo.dg_favorable", -30.0)     # 更负 → 1.0
+DG_UNFAVORABLE = _const("thermo.dg_unfavorable", 20.0)    # 更正 → 0.0
 
 # ★ 实测教训：大分子的 xTB 自由能不可靠且极慢。
 # 实测中一个 40+ 重原子的乌头碱衍生物给出了 +300 kJ/mol 的荒唐 ΔG——
 # 原因是柔性大分子的构象搜索（ETKDG + MMFF）找不到好构象，
 # 再叠加上气相 RRHO 的谐振近似，结果就崩了。
-MAX_HEAVY_FOR_XTB = 45
+MAX_HEAVY_FOR_XTB = _const("thermo.max_heavy_for_xtb", 45)
 
 # ★ ΔG 合理性区间：超出就判为不可靠，宁可不给分，也不给一个错的数。
-DG_SANE_MIN = -250.0
-DG_SANE_MAX = 150.0
+DG_SANE_MIN = _const("thermo.dg_sane_min", -250.0)
+DG_SANE_MAX = _const("thermo.dg_sane_max", 150.0)
 
 
 @dataclass

@@ -40,6 +40,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 _STAGE = Path(__file__).resolve().parent.parent
+# 参照点 extent = 1 - 1/e（kinetics.json 的 reference_point：在 profile default
+# 温度/时间下 extent 恰好等于它）。用它把 extent 归一成 0~1 的「条件相容度」。
+_E_REF = 1.0 - math.exp(-1.0)
 for _p in (_STAGE / "core", _STAGE / "conditions", _STAGE / "rules", _STAGE / "libs"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
@@ -50,7 +53,8 @@ from rdkit.Chem import rdMolDescriptors  # noqa: E402  （D1 元素收支用）
 from engine import Compound, Product, classify_product, get_mol  # noqa: E402
 
 # ★ 溶剂词表（第十二轮）：单一真相在 conditions/model.py，不在这里重复维护 ★
-from model import solvent_class, solvent_matches  # noqa: E402
+from model import INERT_ATMOSPHERES, solvent_class, solvent_matches  # noqa: E402
+import extent as _extent  # noqa: E402  ★ 第84轮：反应进程层（会不会发生 vs 跑到什么程度）
 
 RDLogger.DisableLog("rdApp.*")
 
@@ -114,6 +118,7 @@ REDUCTANT_HINTS = ("[BH4-]", "[BH3-]", "[BH]", "[AlH", "[Al+3]", "[H-]", "[H][H]
 OXIDANT_HINTS = ("O=O", "OO", "[Mn", "[Cr", "[I](", "Cl(=O)", "OS(=O)(=O)O", "[O-][O-]")
 REDUCING_ATMOS = {"h2"}
 OXIDIZING_ATMOS = {"air", "o2"}
+INERT_ATMOS = {x.lower() for x in INERT_ATMOSPHERES}
 
 # ★ 第十九轮：脱水缩合类反应 —— 在【水相】里视为可逆（不驱动级联传播）★
 #   背景（实测）：水相煎煮跑出 8,834 个酯化产物；级联每轮分子量翻倍
@@ -357,8 +362,10 @@ class SmartReactEngine:
                  prefilter: bool = True,
                  verbose: bool = False,
                  gate_conditions: bool = True,
+                 condition_extent: bool = False,
                  gate_tol_C: float = 30.0,
                  strict_redox_gate: bool = False,
+                 pair_offset: int = 0,
                  extra_templates_path=None,
                  extra_template_min_support: int = 10,
                  extra_template_limit: int = 20000,
@@ -367,11 +374,16 @@ class SmartReactEngine:
                  medium_aware_reversibility: bool = True,
                  propagate_unclassified: bool = False,
                  use_mono_templates: bool = True,
+                 # ★ 2026-10-31：基础模板库（libs/smartreact 的 9,770 条模板）。
+                 #   默认 True，评测/煎煮行为不变；炮制严格模式显式传 False，
+                 #   只跑 curated 证据规则（4 条）与显式开启的其它模板层。
+                 use_base_templates: bool = True,
                  mono_templates_path=None,
                  mono_include_co_reagent: bool = False,
                  mono_template_limit: int = 6000,
                  mono_redox_gate: bool = False,
                  use_curated_templates: bool = False,
+                 curated_rule_ids=None,
                  use_mined_top_conditions: bool = False,
                  mined_top_limit: int = 100,
                  # ★ D5（2026-10-13）：3 组分正向模板。**默认关**——实测（甘草 12 成分、
@@ -403,11 +415,36 @@ class SmartReactEngine:
         #   来判「这类反应在当前条件下会不会发生」。
         #   窗口来自 reports/conditions_normalized.json（tools/normalize_condition_table.py 产出）。
         self.gate_conditions = gate_conditions
+        # ★ 第 101 轮（2026-11-04）：把「条件→反应进程」并进 cond_activation。
+        #   此前 extent 层（温度 Q10 / 时间 / pH / 催化剂）只在 step(extent_gate=True)
+        #   时才算，而 extent_gate 默认关 —— 于是 pH、时间、催化剂在**生成路径上
+        #   完全不起作用**（第 99 轮归因：gate 造成的缺产物 0 条）。
+        #   e < extent_min 判零（不产出），否则 activation = min(原分数, e / e_ref)。
+        #   无数据的类 e=1.0，行为不变。
+        #   ★ 默认**关**（2026-11-04 实测）：通用基准 1,000 条开/关逐位相同
+        #     （recall 92.4% / top-1 39.5% / top-5 66.6%），因为 98% 的产物来自
+        #     mined 模板、其 rule_name 不在条件表里；而炮制 curated 路径会改变
+        #     已建立的基线。故先做成显式开关，等 per-template 条件窗口铺开再谈默认。
+        #   打开：CHEMCREACT_CONDITION_EXTENT=1 或 condition_extent=True。
+        import os as _os
+        _ce_env = _os.environ.get("CHEMCREACT_CONDITION_EXTENT")
+        self.condition_extent = (bool(condition_extent) if _ce_env is None
+                                 else _ce_env.strip() not in ("0", "false", "False", ""))
+        self._cond_fit_cache: Dict[Tuple[Any, ...], Tuple[float, str]] = {}
+        # ★ 第 101 轮（用户 2026-11-04 口径）★
+        #   extent 的参数全是未标定的建模选择 → 只允许标注，不允许门控。
+        #   只有 kinetics.json 的 validation.gate_enabled=true（=补了文献标定）才放行。
+        self._extent_gate_ok = bool(_extent.gating_allowed())
         self.gate_tol_C = gate_tol_C
         # Strict redox gate: honour an explicitly stated atmosphere even when
         # no auxiliary reagents were supplied.  Off by default so benchmark
         # behaviour is unchanged.
         self.strict_redox_gate = bool(strict_redox_gate)
+        # Resume support: skip this many substrate pairs before applying the
+        # per-call cap.  Lets a caller walk a large pair space in slices.
+        self.pair_offset = max(0, int(pair_offset))
+        # 单底物模板结果缓存（SMILES + 条件 -> [(rule, products)]）
+        self._curated_mono_cache = {}
         self.cond_table = self._load_condition_table() if gate_conditions else {}
         # ★ C 试点：top mined 模板的 per-template 条件窗口
         self.mined_top_map: Dict[str, str] = {}
@@ -475,6 +512,11 @@ class SmartReactEngine:
         #   单反应物模板根本无法使用；这里加载并按 arity=1 套用到每个底物。
         self.mono_templates = []
         self.mono_by_hint: Dict[Any, list] = {}
+        # ★ 2026-10-31 炮制严格模式：关掉 9,770 条基础模板的枚举。
+        #   注意：rdkit_template_lib（_load_lib）仍要加载，curated 规则靠它套 SMARTS。
+        self.use_base_templates = bool(use_base_templates)
+        self.base_template_note = ("启用" if self.use_base_templates
+                                   else "未启用（炮制严格模式）")
         self.mono_redox_gate = bool(mono_redox_gate)
         self.mono_template_note = "未启用"
         if use_mono_templates:
@@ -510,12 +552,22 @@ class SmartReactEngine:
         self.curated_cond_table: Dict[str, Any] = {}
         self.curated_co_pool: Dict[str, list] = {}
         self.curated_note = "未启用"
+        # 2026-10-31：炮制严格模式只加载指定的规则子集（None = 全部 active 规则）。
+        self.curated_rule_ids = set(curated_rule_ids) if curated_rule_ids else None
         if use_curated_templates:
             self._load_curated_templates()
         self.gate_stats: Dict[str, Any] = {}
+        # ★ 第 98 轮（2026-11-04）：诊断用。默认 None（零开销、行为不变）。
+        #   置成 list 后，每个被丢弃的产物都记一条 {reason, smiles, rule}，
+        #   用来回答「缺的产物是不是我们自己筛掉的」（tools/diag_miss_filters.py）。
+        self.debug_drops = None
+        # ★ 第八十九轮：mined 模板命中记录 (反应名, 底物SMILES, 产物SMILES) -> 模板 SMARTS。
+        #   台账原来只记类别名（mined_extra / mined_mono），事后无法反查模板动了哪些原子，
+        #   立体判断因此有 47% 判不了。这里在套用时把命中的 SMARTS 记下来。
+        self._mined_smarts: Dict[Tuple[str, str, str], str] = {}
 
         t0 = time.time()
-        self._enum = ReactionEnumerator()
+        self._enum = ReactionEnumerator() if self.use_base_templates else None
         self._init_s: float = time.time() - t0
 
         meta = _load_reaction_names()
@@ -643,6 +695,12 @@ class SmartReactEngine:
         n_pair = n_mono = n_fail = 0
         for r in data.get("rules") or []:
             rid = r.get("id")
+            if self.curated_rule_ids is not None and rid not in self.curated_rule_ids:
+                continue
+            # 2026-10-31：炮制专属规则。非炮制档（curated_rule_ids is None）不加载，
+            # 保证煎煮等既有行为逐字节不变；炮制档由 paozhi_evidence.json 选入。
+            if self.curated_rule_ids is None and r.get("paozhi_only"):
+                continue
             # Load every rule the rulebook marks active.  The hard-coded
             # CURATED_RULE_IDS list used to gate this down to six entries, which
             # silently excluded glycoside hydrolysis, ester hydrolysis, Maillard
@@ -673,6 +731,9 @@ class SmartReactEngine:
             time_min = prof.get("time_min") or {}
             self.curated_cond_table[rid] = {
                 "n_ord_matched": 0,
+                # ★ 第一百一十五轮：把 profile 名带进表里，extent 才能按反应族取自己的
+                #   Ea（糖苷水解 103.6 vs 干热脱水 215.7 kJ/mol，差两倍）。
+                "condition_profile": r.get("condition_profile"),
                 "solvents": list(prof.get("solvent") or []),
                 "catalysts": list(prof.get("catalyst") or []),
                 "atmospheres": list(prof.get("atmosphere") or []),
@@ -686,6 +747,10 @@ class SmartReactEngine:
                               "median": time_min.get("default"), "n": 0}
                              if time_min else None),
                 "ph": prof.get("pH"),
+                # ★ 第 101 轮：pH 偏好必须跟着窗口一起带过来。
+                #   漏了这一行 -> extent 的 _ph_factor 拿到 preference=None -> 直接返回 1.0，
+                #   pH 维度**永远不生效**（旧代码就是这样，且从未被测出来）。
+                "ph_preference": prof.get("pH_preference"),
             }
             pool = []
             for c in r.get("co_substrate_pool") or []:
@@ -802,6 +867,7 @@ class SmartReactEngine:
             # Strict mode: the atmosphere alone is enough to rule a redox
             # class in or out.  Air excludes reduction, H2 excludes oxidation.
             self.gate_stats["单底物模板_严格气氛门控"] = 1
+            self.gate_stats["单底物模板_惰性气氛"] = int(atm in INERT_ATMOS)
         reducing = atm in REDUCING_ATMOS or any(h in reagents for h in REDUCTANT_HINTS)
         oxidizing = atm in OXIDIZING_ATMOS or any(h in reagents for h in OXIDANT_HINTS)
         n_red = len(self.mono_by_hint.get("reduce", []))
@@ -891,12 +957,15 @@ class SmartReactEngine:
                         self._pf_skipped += sk
                     else:
                         tpls = self.extra_templates
-                    got = lib.apply_pair(tpls, get_mol(sa), get_mol(sb))
+                    _tr: Dict[str, str] = {}
+                    got = lib.apply_pair(tpls, get_mol(sa), get_mol(sb), _tr)
                 except Exception:
                     k = "extra模板_套用异常"
                     self.gate_stats[k] = self.gate_stats.get(k, 0) + 1
                     continue
                 if got:
+                    for _cs, _sm in _tr.items():
+                        self._mined_smarts[("mined_extra", sa, _cs)] = _sm
                     out.append(ReactionResult(reactant_a=sa, reactant_b=sb,
                                               reaction_name="mined_extra",
                                               products=sorted(got)))
@@ -908,13 +977,16 @@ class SmartReactEngine:
             mono_use = self._mono_allowed(cond)
             for k in uniq:
                 sa = subs[k][1]
+                _trm: Dict[str, str] = {}
                 try:
-                    got = lib.apply_single(mono_use, get_mol(sa))
+                    got = lib.apply_single(mono_use, get_mol(sa), _trm)
                 except Exception:
                     key = "单底物模板_套用异常"
                     self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                     continue
                 if got:
+                    for _cs, _sm in _trm.items():
+                        self._mined_smarts[("mined_mono", sa, _cs)] = _sm
                     # reactant_b 传同一个分子：step() 靠 reactant_a/b 反查来源 Compound，单底物也用这个路径
                     out.append(ReactionResult(reactant_a=sa, reactant_b=sa,
                                               reaction_name="mined_mono",
@@ -925,12 +997,15 @@ class SmartReactEngine:
                 sa, sb = subs[i][1], subs[j][1]
                 for sm, rx, name in self.extra_top_templates:
                     try:
-                        got = lib.apply_pair([(sm, rx)], get_mol(sa), get_mol(sb))
+                        _trt: Dict[str, str] = {}
+                        got = lib.apply_pair([(sm, rx)], get_mol(sa), get_mol(sb), _trt)
                     except Exception:
                         key = "mined_top双底物_套用异常"
                         self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                         continue
                     if got:
+                        for _cs, _s2 in _trt.items():
+                            self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sb, reaction_name=name,
                             products=sorted(got)[:max(1, self.max_products_per_pair)]))
@@ -941,12 +1016,15 @@ class SmartReactEngine:
                 sa = subs[k][1]
                 for sm, rx, name in self.mono_top_templates:
                     try:
-                        got = lib.apply_single([(sm, rx)], get_mol(sa))
+                        _trm2: Dict[str, str] = {}
+                        got = lib.apply_single([(sm, rx)], get_mol(sa), _trm2)
                     except Exception:
                         key = "mined_top单底物_套用异常"
                         self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                         continue
                     if got:
+                        for _cs, _s2 in _trm2.items():
+                            self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sa, reaction_name=name,
                             products=sorted(got)[:max(1, self.max_products_per_pair)]))
@@ -956,12 +1034,15 @@ class SmartReactEngine:
                 sa, sb = subs[i][1], subs[j][1]
                 for sm, rx, name in self.curated_pair_templates:
                     try:
-                        got = lib.apply_pair([(sm, rx)], get_mol(sa), get_mol(sb))
+                        _trc: Dict[str, str] = {}
+                        got = lib.apply_pair([(sm, rx)], get_mol(sa), get_mol(sb), _trc)
                     except Exception:
                         key = "curated双底物_套用异常"
                         self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                         continue
                     if got:
+                        for _cs, _s2 in _trc.items():
+                            self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sb,
                             reaction_name=name,
@@ -975,13 +1056,16 @@ class SmartReactEngine:
                             continue
                         for x, y in ((sa, co), (co, sa)):
                             try:
+                                _trc2: Dict[str, str] = {}
                                 got = lib.apply_pair([(sm, rx)],
-                                                     get_mol(x), get_mol(y))
+                                                     get_mol(x), get_mol(y), _trc2)
                             except Exception:
                                 key = "curated共底物_套用异常"
                                 self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                                 continue
                             if got:
+                                for _cs, _s2 in _trc2.items():
+                                    self._mined_smarts[(name, x, _cs)] = _s2
                                 out.append(ReactionResult(
                                     reactant_a=x, reactant_b=y,
                                     reaction_name=name,
@@ -991,6 +1075,18 @@ class SmartReactEngine:
                       else list(range(len(subs))))
             for k in uniq_c:
                 sa = subs[k][1]
+                # 同一底物在多批里反复出现时单底物结果完全一样；缓存把重复计算压掉。
+                _ck = (sa, str(getattr(cond, "temperature", "")),
+                       str(getattr(cond, "solvent", "")),
+                       str(getattr(cond, "atmosphere", "")))
+                _cached = self._curated_mono_cache.get(_ck)
+                if _cached is not None:
+                    for _name, _prods in _cached:
+                        out.append(ReactionResult(
+                            reactant_a=sa, reactant_b=sa,
+                            reaction_name=_name, products=_prods))
+                    continue
+                _collected = []
                 for sm, rx, name in self.curated_mono_templates:
                     if self.strict_redox_gate:
                         allowed = ((self.curated_cond_table.get(name) or {})
@@ -1002,16 +1098,22 @@ class SmartReactEngine:
                                 self.gate_stats.get("curated_单底物_气氛不符", 0) + 1)
                             continue
                     try:
-                        got = lib.apply_single([(sm, rx)], get_mol(sa))
+                        _trcm: Dict[str, str] = {}
+                        got = lib.apply_single([(sm, rx)], get_mol(sa), _trcm)
                     except Exception:
                         key = "curated单底物_套用异常"
                         self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                         continue
                     if got:
+                        for _cs, _s2 in _trcm.items():
+                            self._mined_smarts[(name, sa, _cs)] = _s2
+                        _prods = sorted(got)[:max(1, self.max_products_per_pair)]
+                        _collected.append((name, _prods))
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sa,
                             reaction_name=name,
-                            products=sorted(got)[:max(1, self.max_products_per_pair)]))
+                            products=_prods))
+                self._curated_mono_cache[_ck] = _collected
         # ---- ★ D5（2026-10-13）3 组分模板：对 chunk 里出现过的底物取三元组（有上限）----
         #   用户选了方案 C：**全量模板 + 多进程**（不改化学判据，只是同时开几口锅），
         #   并且给"只见过一次的套路"产出的东西**打标记**（support 带在 product_support 里）。
@@ -1338,19 +1440,33 @@ class SmartReactEngine:
         reasons = []
         score = 1.0
 
-        # ---- 温度 ----
-        t = e.get("temp_C")
-        if isinstance(t, dict) and t.get("min") is not None and t.get("max") is not None:
-            lo, hi = float(t["min"]), float(t["max"])
+        # ---- 温度（第 85 轮 A 案：窗口优先取「这条规则声明的条件档」，高温不再判死）----
+        #   旧行为把 ORD「这个反应类实际做过的温度范围」当物理边界，实测方向是反的：
+        #   250 °C 把水解判关（ORD 水解上限 150 °C）——但高温只会让它更快；
+        #   25 °C 反而把缩合/Michael 判开——但室温下很慢。
+        #   新语义与 extent 同源：低温判死、下限附近降权、窗口内 1.0、
+        #   窗口之上不罚（高温加速由 extent 饱和表达）、仅超 hot_ceiling_C 判死。
+        #   判据实现只有一份：extent.temperature_gate()。
+        tw = None
+        _cur = self.curated_cond_table.get(reaction_name)
+        if _cur and isinstance(_cur.get("temp_C"), dict):
+            tw = _cur["temp_C"]
+        if tw is None:
+            tw = e.get("temp_C")
+        if isinstance(tw, dict) and tw.get("min") is not None and tw.get("max") is not None:
             T = float(getattr(cond, "temperature", 100.0))
-            if T < lo - self.gate_tol_C or T > hi + self.gate_tol_C:
-                return 0.0, f"温度 {T:g}°C 超出 ORD 实测范围 [{lo:g}, {hi:g}]（容差 {self.gate_tol_C:g}）"
-            if T < lo:
-                score = min(score, max(0.0, 1.0 - (lo - T) / self.gate_tol_C))
-                reasons.append(f"温度 {T:g}°C 低于实测下限 {lo:g}°C，降权")
-            elif T > hi:
-                score = min(score, max(0.0, 1.0 - (T - hi) / self.gate_tol_C))
-                reasons.append(f"温度 {T:g}°C 高于实测上限 {hi:g}°C，降权")
+            try:
+                t_score, t_why, t_dead = _extent.temperature_gate(
+                    tw.get("min"), tw.get("max"), T)
+            except Exception as ex:              # noqa: BLE001 —— 打印原因，不静默
+                print(f"   [warn] 温度判据失败（{type(ex).__name__}: {ex}），温度不门控")
+                t_score, t_why, t_dead = 1.0, "", False
+            if t_dead:
+                return 0.0, t_why
+            if t_score < 1.0:
+                score = min(score, t_score)
+            if t_why:
+                reasons.append(t_why)
 
         # ---- ★ 必需试剂（第十二轮新增：从"降权"升级到"判零"）★ ----
         #   动机（用户要的例子）：Mitsunobu 缺 DEAD 就该判零，而不是降权 0.5。
@@ -1420,6 +1536,47 @@ class SmartReactEngine:
                     reasons.append(
                         f"溶剂 {got}：无该反应类的成败标签（ORD 偏好 {sols[:3]}），"
                         f"按中性处理（不扣分）")
+
+        # ---- ★ 第 101 轮：条件→反应进程，并入 always-on 的相容度 ★ ----
+        #   extent 层（温度 Q10 / 时间 / pH 高斯偏好 / 催化剂加速）本来就覆盖了
+        #   这四个维度，但过去只在 step(extent_gate=True) 时才看，而它默认关 ——
+        #   实测后果：pH、时间、催化剂在生成路径上从未起作用（第 99 轮归因里
+        #   「gate 判不发生」造成的缺产物是 0 条）。
+        #   现在的规则：
+        #     e < extent_min            -> 判零（这条枚举结果不产出）
+        #     e < 参照点 0.632          -> activation 按 e/0.632 衰减（进分数，不丢弃）
+        #     e >= 0.632                -> 不罚（高温/长时间只会更快）
+        #   没有条件窗口的类 extent 返回 1.0 -> 行为与旧版逐位相同。
+        if self.condition_extent:
+            _ck = (reaction_name, getattr(cond, "temperature", None),
+                   getattr(cond, "time_min", None), getattr(cond, "pH", None),
+                   getattr(cond, "catalyst", None), getattr(cond, "solvent", None),
+                   getattr(cond, "atmosphere", None))
+            _fit = self._cond_fit_cache.get(_ck)
+            if _fit is None:
+                try:
+                    _prm = _extent.load_params()
+                    _e_val, _e_why = _extent.extent_from_table(_cur or e, cond, _prm)
+                    _ext_min = float((_prm.get("gates") or {}).get("extent_min", 0.10))
+                except Exception as ex:          # noqa: BLE001 —— 打印，不静默
+                    print(f"   [warn] extent 并入 activation 失败"
+                          f"（{type(ex).__name__}: {ex}），本类不按进程门控")
+                    _e_val, _e_why, _ext_min = 1.0, "", 0.0
+                _fit = (float(_e_val), str(_e_why), float(_ext_min))
+                if len(self._cond_fit_cache) > 50000:   # 跨查询防无限增长
+                    self._cond_fit_cache.clear()
+                self._cond_fit_cache[_ck] = _fit
+            _e_val, _e_why, _ext_min = _fit
+            # ★ 第 101 轮：未标定 → 不判零，只把 extent 写进产物/分数（标注）
+            if _e_val < _ext_min and self._extent_gate_ok:
+                return 0.0, (f"{_e_why}；转化程度 {_e_val:.2f} 低于可检出下限 "
+                             f"{_ext_min:g}，判不产出")
+            if _e_val < _E_REF:
+                _fit_s = max(0.0, _e_val / _E_REF)
+                if _fit_s < score:
+                    score = _fit_s
+                reasons.append(f"反应进程 e={_e_val:.2f}（参照 0.63），"
+                               f"相容度 {_fit_s:.2f}")
         return score, "；".join(reasons)
 
     # ---------------------------------------------------------------- 溶剂证据
@@ -1472,7 +1629,8 @@ class SmartReactEngine:
              cond=None,
              threshold: float = 0.15,
              exclude_smiles: Optional[set] = None,
-             round_no: int = 1) -> List[Product]:
+             round_no: int = 1,
+             extent_gate: bool = False) -> List[Product]:
         """对一批底物跑一轮两两反应。
 
         ★ 条件门控（2026-10-11 第十轮）★
@@ -1482,6 +1640,15 @@ class SmartReactEngine:
               每条枚举结果的反应类型拿去查 ORD 实测条件窗口（温度/溶剂），
               分数 0 的整条丢弃，0<x<1 的作为 activation 权重参与打分。
               可用 `gate_conditions=False` 关掉回退到旧行为。
+
+        ★ 反应进程 extent（第 84 轮，2026-11-04）★
+        `cond_activation()` 只看「会不会发生」（温度窗口 + 溶剂 + 试剂），
+        **time_min 与 pH 读进来了却从不使用**（实测：5 min 与 24 h 产物完全一样）。
+        `extent_gate=True` 时额外用 `conditions/extent.py` 算反应进程：
+          e = 1 - exp(-(t/t_ref)·Q10^((T-T_ref)/10)·催化剂倍数·pH 倍数)
+        e < `kinetics.json` 的 `gates.extent_min`（0.10）→ 判为「跑不到可检出程度」，整条丢弃；
+        其余产物带 `extent` / `extent_band`（none/minor/major）。
+        默认 False = 旧行为逐位不变。
         """
         exclude_smiles = exclude_smiles or set()
         subs = []
@@ -1496,20 +1663,56 @@ class SmartReactEngine:
         if not subs:
             return []
 
-        pairs = [(i, j) for i in range(len(subs)) for j in range(i + 1, len(subs))]
         truncated = False
-        if len(pairs) > self.max_pairs:
-            if self.fair_pairs:
-                pairs = fair_sample_pairs(len(subs), self.max_pairs)
-            else:
-                pairs = pairs[:self.max_pairs]
-            truncated = True
+        if self.pair_offset:
+            # 只枚举 [offset, offset+max_pairs) 这一段，避免每次都先建
+            # 58k 个元组的完整列表（流式切片时这步是主要开销）。
+            pairs = []
+            k = 0
+            stop = self.pair_offset + self.max_pairs
+            for i in range(len(subs)):
+                for j in range(i + 1, len(subs)):
+                    if k >= self.pair_offset:
+                        pairs.append((i, j))
+                        if len(pairs) >= self.max_pairs:
+                            truncated = (k + 1) < (len(subs) * (len(subs) - 1) // 2)
+                            break
+                    k += 1
+                if len(pairs) >= self.max_pairs:
+                    break
+        else:
+            pairs = [(i, j) for i in range(len(subs)) for j in range(i + 1, len(subs))]
+            if len(pairs) > self.max_pairs:
+                if self.fair_pairs:
+                    pairs = fair_sample_pairs(len(subs), self.max_pairs)
+                else:
+                    pairs = pairs[:self.max_pairs]
+                truncated = True
 
         t0 = time.time()
         n_raw = 0
         n_rev_medium = 0
         out: List[Product] = []
         seen = set()
+        # ★ 第 91 轮：结构 -> 产物对象，用来在去重时补记「还有哪些规则也能给出它」
+        by_smiles: Dict[str, Product] = {}
+
+        # ★ 第 84 轮：反应进程门。按反应类型缓存，一种类型只算一次。
+        # ★ 第 101 轮（用户口径）：extent 参数未标定 → 只标注、不门控。
+        ext_cache: Dict[str, Tuple[float, str]] = {}
+        ext_min = 0.10
+        _ext_params: Dict[str, Any] = {}
+        if extent_gate and not _extent.gating_allowed():
+            print("   [note] extent 参数未经文献标定（kinetics.json: validation.gate_enabled=false），"
+                  "本次只写标注、不按 extent 过滤产物")
+            extent_gate = False
+        if extent_gate:
+            try:
+                _ext_params = _extent.load_params()
+                ext_min = float((_ext_params.get("gates") or {}).get("extent_min", 0.10))
+            except Exception as ex:                  # noqa: BLE001
+                print(f"   [warn] kinetics.json 读取失败，extent 门退化为不门控：{ex}")
+                extent_gate = False
 
         BATCH = 400
         # ★ 第二十二轮：单底物模板不需要"对" —— 没有对时也要跑一轮（chunk 为空，只跑单底物）
@@ -1518,7 +1721,8 @@ class SmartReactEngine:
             chunk = pairs[b * BATCH:(b + 1) * BATCH]
             payload = [(subs[i][1], subs[j][1]) for i, j in chunk]
             try:
-                results = list(self._enum.enumerate_pairs(payload)) if payload else []
+                results = (list(self._enum.enumerate_pairs(payload))
+                           if (payload and self._enum is not None) else [])
             except Exception:
                 continue
             # ★ 第十五/十六轮：额外（ORD 自抽）模板 —— 默认【启用 K1 档】（见 __init__）★
@@ -1548,7 +1752,40 @@ class SmartReactEngine:
                 if act <= 0.0:
                     key = r.reaction_name
                     self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
+                    if self.debug_drops is not None:
+                        for _ps in list(getattr(r, "products", ()) or ()):
+                            self.debug_drops.append({"reason": "gate", "smiles": _ps,
+                                                     "rule": str(key)})
                     continue
+                # ★ 第 84 轮（2026-11-04）：反应进程门 ★
+                #   activation 已经回答「会不会发生」，但 time_min / pH / 催化剂
+                #   过去完全不参与。这里问第二问：「在给定时间/温度/pH/催化剂下
+                #   跑到什么程度」，跑不到可检出程度（e < extent_min）就不产出。
+                per: Optional[Tuple[float, str]] = None
+                if extent_gate:
+                    per = ext_cache.get(r.reaction_name)
+                    if per is None:
+                        entry = (self.cond_table.get(r.reaction_name)
+                                 or self.curated_cond_table.get(r.reaction_name)
+                                 or self.mined_top_cond_table.get(r.reaction_name))
+                        try:
+                            per = _extent.extent_from_table(entry, cond, _ext_params)
+                        except Exception as ex:      # noqa: BLE001 —— 打印，不静默
+                            per = (1.0, f"extent 计算失败（{type(ex).__name__}），放行")
+                        ext_cache[r.reaction_name] = per
+                    if per[0] < ext_min:
+                        if self.debug_drops is not None:
+                            for _ps in list(getattr(r, "products", ()) or ()):
+                                self.debug_drops.append({"reason": "extent", "smiles": _ps,
+                                                         "rule": str(r.reaction_name)})
+                        self.extent_dropped = getattr(self, "extent_dropped", 0) + 1
+                        _k = str(r.reaction_name)
+                        _d = getattr(self, "extent_stats", None)
+                        if _d is None:
+                            _d = {}
+                            self.extent_stats = _d
+                        _d[_k] = _d.get(_k, 0) + 1
+                        continue
                 comp_a = r.reactant_a
                 comp_b = r.reactant_b
                 # ★ D5（2026-10-13）：3 组分模板的第三个反应物（1/2 组分时为 ""）
@@ -1579,18 +1816,54 @@ class SmartReactEngine:
                 react_tot = _element_totals(_react_mols)
                 _csrc = Chem.MolToSmiles(get_mol(src.smiles)) if get_mol(src.smiles) else src.smiles
                 _partner = next((x for x in _distinct if x != _csrc), "")
+                # ★ 2026-11-06：炮制辅料不是外部传入的第二个化合物，而是在 curated
+                #   模板内部作为共底物（co_substrate_pool）出现的，此时 _distinct 只有
+                #   底物一个元素 -> partner 为空，台账无法归因「这个产物来自辅料」。
+                #   兜底：从 ReactionResult 自己的反应物侧取与底物不同的那一个。
+                if not _partner:
+                    for _cand in (getattr(r, "reactant_a", ""),
+                                  getattr(r, "reactant_b", ""),
+                                  getattr(r, "reactant_c", "")):
+                        if not _cand:
+                            continue
+                        _cm = get_mol(_cand)
+                        _cn = Chem.MolToSmiles(_cm) if _cm else _cand
+                        if _cn and _cn != _csrc:
+                            _partner = _cn
+                            break
                 prods_all = list(r.products)
+                # ★ 第89轮：基础模板库（ReactionEnumerator）把「产物 -> 命中模板 SMARTS」
+                #   一并带回来了；老结果没有这个属性，故用 getattr 兜底。
+                _rts = getattr(r, "template_smarts", None) or {}
                 n_raw += len(prods_all)
                 n_take = 0
                 rev_medium = self._nonpropagating(r.reaction_name, cond)
                 for psm in prods_all:
                     if n_take >= self.max_products_per_pair:
+                        if self.debug_drops is not None:
+                            self.debug_drops.append({"reason": "cap", "smiles": "",
+                                                     "rule": str(r.reaction_name)})
                         break
                     m = get_mol(psm)
                     if m is None:
                         continue
                     cs = Chem.MolToSmiles(m)
                     if cs in exclude_smiles or cs in seen:
+                        if self.debug_drops is not None:
+                            self.debug_drops.append({"reason": "dedup", "smiles": cs,
+                                                     "rule": str(r.reaction_name)})
+                        # ★ 第 91 轮：结构去重会**丢掉后到的规则**，但化学上它是可达的。
+                        #   把后到的规则记进 already 那条的 also_rules，否则文献对照按反应族判断时
+                        #   会把「产物对、规则族对」误判成「产物对、规则族错」
+                        #   （实测：去甲槟榔碱先被 mined_mono 占名，demethylation_n_001 被丢弃）。
+                        _prev = by_smiles.get(cs)
+                        if _prev is not None and r.reaction_name != _prev.rule_id:
+                            _alt = [x for x in (_prev.also_rules or "").split(",") if x]
+                            if r.reaction_name not in _alt:
+                                _alt.append(r.reaction_name)
+                                _prev.also_rules = ",".join(_alt)
+                                _k = "去重时补记规则归属"
+                                self.gate_stats[_k] = self.gate_stats.get(_k, 0) + 1
                         continue
                     # ★ 注意返回顺序：classify_product -> (是否保留, 是否小分子副产物)
                     try:
@@ -1598,10 +1871,13 @@ class SmartReactEngine:
                     except Exception:
                         keep, is_byp = True, False
                     if not keep:
+                        if self.debug_drops is not None:
+                            self.debug_drops.append({"reason": "classify", "smiles": cs,
+                                                     "rule": str(r.reaction_name)})
                         continue
                     from rdkit.Chem import Descriptors
                     pform = rdMolDescriptors.CalcMolFormula(m)
-                    out.append(Product(
+                    _p = Product(
                         smiles=cs,
                         formula=pform,
                         element_delta=_element_delta(react_tot, pform),
@@ -1628,7 +1904,18 @@ class SmartReactEngine:
                         co_products=tuple(x for x in prods_all if x != psm),
                         # ★ D5：这条产物来自的模板 support（只打标记；0 = 不适用）
                         template_support=int((getattr(r, "product_support", None) or {}).get(psm, 0)),
-                    ))
+                        # ★ 第 84 轮：反应进程（默认 1.0 = 未启用）
+                        extent=(round(per[0], 4) if per is not None else 1.0),
+                        extent_band=(_extent.band_of(per[0]) if per is not None else ""),
+                        # ★ 第八十九轮：mined 模板命中的 SMARTS（其余规则为空，反查 rules.json 即可）
+                        template_smarts=(_rts.get(psm) or _rts.get(cs)
+                                         or self._mined_smarts.get(
+                                             (r.reaction_name, comp_a, cs), "")),
+                    )
+                    # ★ 第 96 轮：发射序（同轮第几个产物）。见 Product.seq 的注释。
+                    _p.seq = len(out)
+                    out.append(_p)
+                    by_smiles[cs] = _p
                     if rev_medium:
                         n_rev_medium += 1
                     seen.add(cs)

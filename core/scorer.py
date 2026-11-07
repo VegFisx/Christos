@@ -26,18 +26,25 @@ chemreact 核心：产物评分
 
 from __future__ import annotations
 
+import math
 from typing import Any, Dict, List, Optional, Tuple
 
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 
 # 权重：先给经验值，等有了测试集（简报 §11 的 100~500 条）再标定。
+# 2026-11-04（第 95 轮）加 "support"：模板在训练/挖掘语料里出现过多少次。
+# 依据是第 94 轮的实测——top-1 只有 42.67%，而命中所用的 mined 模板 support 中位数 1,341，
+# 86.4% 的命中靠 support ≥100 的通用模板；support 显然是「这条规则靠不靠谱」的强先验，
+# 但它一直没进分数。support 未知时（基础模板库 templates.txt 没有 support 列）不参与，
+# 权重按已出现的因子重新归一，所以不传 support 的旧调用方行为完全不变。
 WEIGHTS = {
     "rule": 0.30,
     "condition": 0.30,
     "stability": 0.20,
     "conservation": 0.10,
     "stereo": 0.10,
+    "support": 0.15,
 }
 
 # 不稳定的结构基元（SMARTS）→ 扣分幅度
@@ -132,14 +139,34 @@ def stereo_score(source_smiles: str, product_smiles: str) -> Tuple[float, List[s
 
 # ---------------------------------------------------------------- 综合评分
 
+SUPPORT_LOG_LO = math.log10(2.0)      # support=1 → 0.0
+SUPPORT_LOG_HI = math.log10(20000.0)  # support≥19999 → 1.0
+
+
+def support_score(support: int) -> Optional[float]:
+    """模板支持度 → 0~1（对数尺度）。support 未知（≤0）返回 None。"""
+    try:
+        s = int(support or 0)
+    except Exception:
+        return None
+    if s <= 0:
+        return None
+    v = (math.log10(s + 1) - SUPPORT_LOG_LO) / (SUPPORT_LOG_HI - SUPPORT_LOG_LO)
+    return max(0.0, min(1.0, v))
+
+
 def score_product(smiles: str, rule: Dict[str, Any], activation: float,
                   source_smiles: str = "",
                   stability_override: Optional[float] = None,
+                  support: int = 0,
                   ) -> Tuple[float, Dict[str, Any]]:
     """返回 (总分 0~1, 各因子明细)。
 
     stability_override：由 core/thermo.py 算出的热力学稳定性（0~1）。
     传了就用真值；没传就退回结构启发式。
+
+    support：产生这个产物的模板支持度（第 95 轮）。**未知时传 0**，
+    此时该因子不参与、权重重新归一 —— 与旧行为逐位相同。
     """
     s_rule = rule_match_score(rule)
     s_cond = condition_match_score(activation, rule)
@@ -150,11 +177,19 @@ def score_product(smiles: str, rule: Dict[str, Any], activation: float,
     s_cons = atom_conservation_score(rule)
     s_stereo, stereo_notes = stereo_score(source_smiles, smiles)
 
-    total = (WEIGHTS["rule"] * s_rule
-             + WEIGHTS["condition"] * s_cond
-             + WEIGHTS["stability"] * s_stab
-             + WEIGHTS["conservation"] * s_cons
-             + WEIGHTS["stereo"] * s_stereo)
+    parts: List[Tuple[str, float, float]] = [
+        ("rule", s_rule, WEIGHTS["rule"]),
+        ("condition", s_cond, WEIGHTS["condition"]),
+        ("stability", s_stab, WEIGHTS["stability"]),
+        ("conservation", s_cons, WEIGHTS["conservation"]),
+        ("stereo", s_stereo, WEIGHTS["stereo"]),
+    ]
+    s_sup = support_score(support)
+    if s_sup is not None:
+        parts.append(("support", s_sup, WEIGHTS["support"]))
+
+    wsum = sum(w for _, _, w in parts)
+    total = sum(w * s for _, s, w in parts) / (wsum or 1.0)
 
     detail = {
         "rule_match": round(s_rule, 3),
@@ -164,6 +199,9 @@ def score_product(smiles: str, rule: Dict[str, Any], activation: float,
         "stereo": s_stereo,
         "notes": stab_notes + stereo_notes,
     }
+    if s_sup is not None:
+        detail["support"] = round(s_sup, 3)
+        detail["support_n"] = int(support)
     return round(total, 4), detail
 
 
@@ -297,16 +335,28 @@ def assign_thermo(products, thermo, rule_by_id: Dict[str, Any]) -> Dict[str, Any
 
 # ---------------------------------------------------------------- 排序
 
-def rank(products, top_k: Optional[int] = None, include_byproducts: bool = False):
-    """按分数降序排；默认把副产物压到最后（但不删除）。
+def rank(products, top_k: Optional[int] = None, include_byproducts: bool = False,
+         by_score: bool = False):
+    """★ 第 101 轮：默认改成「发射序」，不再按 score 排。
 
-    ★ 注意：这里和原 tcm_analyzer.py 的 _valid_product 有本质区别——
-      那边是把苯甲酸这类小分子**直接删掉**（9 个重原子 < 10），
-      这边只是**排到后面**。数据永远不丢。
+    为什么不让 score 决定顺序（用户 2026-11-04 口径：禁止 AI 自己猜底层逻辑）：
+      · 本文件第 35 行自己写着权重「先给经验值」，UNSTABLE_MOTIFS 的扣分幅度也是自定；
+      · 第 96 轮实测：按 score 排 top-1 = 0.3250，按引擎发射序 top-1 = 0.4267
+        —— 未标定的分数不但没帮忙，反而更差。
+
+    所以 score 仍然算、仍然写进台账（当参考列），但**不参与默认排序**。
+    要复现旧行为：`rank(..., by_score=True)`。
     """
     pool = list(products)
+    if by_score:
+        if not include_byproducts:
+            pool.sort(key=lambda p: (p.is_byproduct, -p.score))
+        else:
+            pool.sort(key=lambda p: -p.score)
+        return pool[:top_k] if top_k else pool
+    # 发射序：seq 是引擎产出顺序；副产物仍然压后（不删除）
     if not include_byproducts:
-        pool.sort(key=lambda p: (p.is_byproduct, -p.score))
+        pool.sort(key=lambda p: (p.is_byproduct, int(getattr(p, "seq", 0) or 0)))
     else:
-        pool.sort(key=lambda p: -p.score)
+        pool.sort(key=lambda p: int(getattr(p, "seq", 0) or 0))
     return pool[:top_k] if top_k else pool

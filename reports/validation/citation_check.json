@@ -1,0 +1,1001 @@
+{
+  "generated_at": "2026-11-06T16:37:59",
+  "n_dois": 25,
+  "counts": {
+    "verified": 12,
+    "metadata_mismatch": 4,
+    "not_found": 3,
+    "no_claimed": 1,
+    "verified_notitle": 1,
+    "not_in_crossref_resolvable": 5
+  },
+  "rows": [
+    {
+      "doi": "10.1002/bmc.70636",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json"
+      ],
+      "paths": [
+        ".conditions[11].source"
+      ],
+      "claimed": {
+        "title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy",
+        "journal": "Biomedical Chromatography",
+        "year": "2026"
+      },
+      "crossref": {
+        "title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy: An Integrated Pharmacokinetic–Pharmacodynamic and Network Pharmacology Study",
+        "journal": "Biomedical Chromatography",
+        "year": "2026",
+        "type": "journal-article",
+        "publisher": "Wiley"
+      },
+      "europepmc": {
+        "in_epmc": "N",
+        "is_open_access": "N",
+        "has_pdf": "N",
+        "pmcid": "",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bmc.70636",
+        "title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy: An Integrated Pharmacokinetic–Pharmacodynamic and Network Pharmacology Study",
+        "year": "2026"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2026",
+        "year_found": "2026",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.1016/0014-5793(73)80062-6",
+      "files": [
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[9].sources[1]"
+      ],
+      "claimed": {
+        "title": "Isolation of a new atractyloside type compound",
+        "journal": "FEBS Letters",
+        "year": "1973",
+        "quotes": [
+          "CAT can be decarboxylated to ATR by heating."
+        ]
+      },
+      "crossref": {
+        "title": "Isolation of a new atractyloside type compound",
+        "journal": "FEBS Letters",
+        "year": "1973",
+        "type": "journal-article",
+        "publisher": "Wiley"
+      },
+      "europepmc": {
+        "in_epmc": "N",
+        "is_open_access": "N",
+        "has_pdf": "N",
+        "pmcid": "",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1016/0014-5793%2873%2980062-6",
+        "title": "Isolation of a new atractyloside type compound",
+        "year": "1973"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "1973",
+        "year_found": "1973",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.1016/j.fochx.2026.104644",
+      "files": [
+        "conditions/template_verification_20261106.json",
+        "reports/paper/paozhi_sources_20261031.json"
+      ],
+      "paths": [
+        ".entries[3].found[1]",
+        ".conditions[3].source"
+      ],
+      "claimed": {
+        "title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper",
+        "journal": "Food Chemistry: X",
+        "year": "2026"
+      },
+      "crossref": {
+        "title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper (Zanthoxylum bungeanum maxim.)",
+        "journal": "Food Chemistry: X",
+        "year": "2026",
+        "type": "journal-article",
+        "publisher": "Elsevier BV"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC13697283",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.1016/j.fochx.2026.104644",
+        "title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper (Zanthoxylum bungeanum maxim.)",
+        "year": "2026"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2026",
+        "year_found": "2026",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.1016/j.jgr.2015.02.003",
+      "files": [
+        "conditions/kinetics_measurements.json"
+      ],
+      "paths": [
+        ".datasets[3].source",
+        ".datasets[4].source"
+      ],
+      "claimed": {
+        "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+        "journal": "J Ginseng Res",
+        "year": "2015",
+        "quotes": [
+          "The rate constants were 0.013 h−1 and 0.073 h−1 for the degradation of ginsenosides Rb1 and Rg3 at 80°C, respectively. The corresponding rate constants at 100°C were 0.045 h−1 and 0.155 h−1. The estimated activation energies ... were 69.2 kJ/mol and 40.9 kJ/mol.",
+          "The rate constants were 0.013 h−1 and 0.073 h−1 for the degradation of ginsenosides Rb1 and Rg3 at 80°C, respectively. The corresponding rate constants at 100°C were 0.045 h−1 and 0.155 h−1. The estimated activation energies ... were 69.2 kJ/mol and 40.9 kJ/mol."
+        ]
+      },
+      "crossref": {
+        "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+        "journal": "Journal of Ginseng Research",
+        "year": "2015",
+        "type": "journal-article",
+        "publisher": "Elsevier BV"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC4593791",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.1016/j.jgr.2015.02.003",
+        "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+        "year": "2015"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2015",
+        "year_found": "2015",
+        "journal_match": false
+      },
+      "status": "metadata_mismatch",
+      "bad_fields": [
+        "journal"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jgr.2017.02.003",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[8].found[0]"
+      ],
+      "claimed": {
+        "quotes": [
+          "steamed at 90–100°C for 2–3 h"
+        ]
+      },
+      "crossref": {
+        "title": "Remarkable impact of steam temperature on ginsenosides transformation from fresh ginseng to red ginseng",
+        "journal": "Journal of Ginseng Research",
+        "year": "2018",
+        "type": "journal-article",
+        "publisher": "Elsevier BV"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC6026370",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1226845316302652?via%3Dihub",
+        "title": "Remarkable impact of steam temperature on ginsenosides transformation from fresh ginseng to red ginseng",
+        "year": "2017"
+      },
+      "crossref_error": "",
+      "compare": {},
+      "status": "verified_notitle"
+    },
+    {
+      "doi": "10.1042/bj1030528",
+      "files": [
+        "rules/literature_evidence.json"
+      ],
+      "paths": [
+        ".entries[0].sources[0]"
+      ],
+      "claimed": {
+        "title": "The enzymic hydrolysis of amygdalin",
+        "journal": "Biochemical Journal",
+        "year": "1967",
+        "quotes": [
+          "amygdalin was hydrolysed to prunasin and glucose; prunasin to mandelonitrile and glucose; mandelonitrile to benzaldehyde and hydrocyanic acid"
+        ]
+      },
+      "crossref": {
+        "title": "The enzymic hydrolysis of amygdalin",
+        "journal": "Biochemical Journal",
+        "year": "1967",
+        "type": "journal-article",
+        "publisher": "Portland Press Ltd."
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "N",
+        "has_pdf": "Y",
+        "pmcid": "PMC1270437",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://portlandpress.com/biochemj/article-pdf/103/2/528/758787/bj1030528.pdf",
+        "title": "The enzymic hydrolysis of amygdalin",
+        "year": "1967"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "1967",
+        "year_found": "1967",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.1080/14786419.2026.2693245",
+      "files": [
+        "conditions/template_verification_20261106.json",
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[0].sources[0]",
+        ".rules[2].sources[0]",
+        ".rules[3].sources[0]",
+        ".entries[4].found[0]",
+        ".conditions[0].source",
+        ".reactions[0].source"
+      ],
+      "claimed": {
+        "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+        "journal": "Natural Product Research",
+        "year": "2026",
+        "quotes": [
+          "During early heating, glycosides were hydrolysed into aglycones",
+          "intermediate stages involved dehydration-limited hydrolysis",
+          "prolonged heating induced glycoside degradation and Maillard reactions"
+        ]
+      },
+      "crossref": {
+        "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+        "journal": "Natural Product Research",
+        "year": "2026",
+        "type": "journal-article",
+        "publisher": "Informa UK Limited"
+      },
+      "europepmc": {
+        "in_epmc": "N",
+        "is_open_access": "N",
+        "has_pdf": "N",
+        "pmcid": "",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": false,
+        "oa_url": "",
+        "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+        "year": "2026"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2026",
+        "year_found": "2026",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.1155/2021/7243052",
+      "files": [
+        "conditions/kinetics_measurements.json"
+      ],
+      "paths": [
+        ".datasets[5].source",
+        ".datasets[6].source"
+      ],
+      "claimed": {
+        "title": "Attenuated Structural Transformation of Aconitine during Sand Frying Process and Antiarrhythmic Effect of Its Converted Products",
+        "journal": "Evid Based Complement Alternat Med",
+        "year": "2021",
+        "quotes": [
+          "The content of aconitine was 160.00 μg/mL before processing, decreased to 19.36 μg/mL after processing at 140°C for 30 min, and dropped to 0 μg/mL after continuous heating for 5 min.",
+          "The content of aconitine was 160.00 μg/mL before processing, decreased to 19.36 μg/mL after processing at 140°C for 30 min, and dropped to 0 μg/mL after continuous heating for 5 min."
+        ]
+      },
+      "crossref": {
+        "title": "Attenuated Structural Transformation of Aconitine during Sand Frying Process and Antiarrhythmic Effect of Its Converted Products",
+        "journal": "Evidence-Based Complementary and Alternative Medicine",
+        "year": "2021",
+        "type": "journal-article",
+        "publisher": "Wiley"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC8560236",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://downloads.hindawi.com/journals/ecam/2021/7243052.pdf",
+        "title": "Attenuated Structural Transformation of Aconitine during Sand Frying Process and Antiarrhythmic Effect of Its Converted Products",
+        "year": "2021"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2021",
+        "year_found": "2021",
+        "journal_match": false
+      },
+      "status": "metadata_mismatch",
+      "bad_fields": [
+        "journal"
+      ]
+    },
+    {
+      "doi": "10.1248/cpb.31.577",
+      "files": [
+        "rules/literature_evidence.json"
+      ],
+      "paths": [
+        ".entries[1].sources[0]"
+      ],
+      "claimed": {
+        "title": "The structure of paeoniflorigenone, a new monoterpene isolated from paenoiae radix.",
+        "journal": "Chemical & Pharmaceutical Bulletin",
+        "year": "1983",
+        "quotes": [
+          "isolated from the roots of Paeonia albiflora"
+        ]
+      },
+      "crossref": {
+        "title": "The structure of paeoniflorigenone, a new monoterpene isolated from paenoiae radix.",
+        "journal": "Chemical and Pharmaceutical Bulletin",
+        "year": "1983",
+        "type": "journal-article",
+        "publisher": "Pharmaceutical Society of Japan"
+      },
+      "europepmc": null,
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.jstage.jst.go.jp/article/cpb1958/31/2/31_2_577/_pdf",
+        "title": "The structure of paeoniflorigenone, a new monoterpene isolated from paenoiae radix.",
+        "year": "1983"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "1983",
+        "year_found": "1983",
+        "journal_match": false
+      },
+      "status": "metadata_mismatch",
+      "bad_fields": [
+        "journal"
+      ]
+    },
+    {
+      "doi": "10.13422/j.cnki.syfjx.20241061",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[2].found[1]"
+      ],
+      "claimed": {
+        "quotes": [
+          "酒黄芩的最佳炮制温度为190~200 ℃"
+        ]
+      },
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "302",
+      "status": "not_in_crossref_resolvable"
+    },
+    {
+      "doi": "10.13422/j.cnki.syfjx.20250561",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[7].found[1]"
+      ],
+      "claimed": {},
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "404",
+      "status": "not_found"
+    },
+    {
+      "doi": "10.14148/j.issn.1672-0482.2012.03.024",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[0].found[2]"
+      ],
+      "claimed": {},
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "302",
+      "status": "not_in_crossref_resolvable"
+    },
+    {
+      "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+      "files": [
+        "conditions/template_verification_20261106.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[4].sources[0]",
+        ".rules[5].sources[0]",
+        ".rules[6].sources[0]",
+        ".rules[7].sources[0]",
+        ".rules[10].sources[0]",
+        ".entries[0].found[1]"
+      ],
+      "claimed": {
+        "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+        "journal": "中国中药杂志",
+        "year": "2022",
+        "quotes": [
+          "松香烷型二萜（HAO、JNB）及降二萜内酯（FA）的内酯环在醋酸加热下开环；有羟基时发生酯化成酯、氧化成羰基；有环氧环时易开环；二萜二聚体 EA 发生醚键断裂。",
+          "结构中的环氧环容易开环。",
+          "有羟基时发生酯化成酯。",
+          "有羟基时发生酯化成酯、氧化成羰基。",
+          "二萜二聚体 EA 发生醚键断裂，生成玫瑰烷型二萜 euphebracteolatin A (EHTA) 及另一松香烷型二萜。",
+          "160 ℃ with 6% acetic acid for 40 min"
+        ]
+      },
+      "crossref": null,
+      "europepmc": {
+        "in_epmc": "N",
+        "is_open_access": "N",
+        "has_pdf": "N",
+        "pmcid": "",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": false,
+        "oa_url": "",
+        "title": "[Simulated processing with vinegar changes chemical structures of main terpenoids in Euphorbiae Ebracteolatae Radix].",
+        "year": "2022"
+      },
+      "crossref_error": "not_json",
+      "doi_org": "302",
+      "status": "not_in_crossref_resolvable"
+    },
+    {
+      "doi": "10.19540/j.cnki.cjcmm.20250526.301",
+      "files": [
+        "rules/literature_evidence.json"
+      ],
+      "paths": [
+        ".entries[2].sources[0]"
+      ],
+      "claimed": {
+        "title": "醋制狼毒类药材化学成分及药理作用研究进展",
+        "journal": "中国中药杂志",
+        "year": "2025",
+        "quotes": [
+          "vinegar processing promotes structural transformations of diterpenoids, including ... esterification"
+        ]
+      },
+      "crossref": null,
+      "europepmc": {
+        "in_epmc": "N",
+        "is_open_access": "N",
+        "has_pdf": "N",
+        "pmcid": "",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": false,
+        "oa_url": "",
+        "title": "[Common detoxification mechanisms in processing of toxic medicinal herbs of the same genus: a case study of Euphorbia pekinensis, E. ebracteolata, and E. fischeriana].",
+        "year": "2025"
+      },
+      "crossref_error": "not_json",
+      "doi_org": "302",
+      "status": "not_in_crossref_resolvable"
+    },
+    {
+      "doi": "10.3389/fphar.2016.00367",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[1].sources[0]",
+        ".reactions[2].source"
+      ],
+      "claimed": {
+        "title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2016",
+        "quotes": [
+          "Aconitum must be generally processed by heating in boiling or steaming water, or treating with a dilute acid or alkali solution for a few hours, to reduce the toxicity"
+        ]
+      },
+      "crossref": {
+        "title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity: Involvement of Spinal Microglial Dynorphin Expression and Implications for Aconitum Processing",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2016",
+        "type": "journal-article",
+        "publisher": "Frontiers Media SA"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC5051147",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2016.00367/pdf",
+        "title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity: Involvement of Spinal Microglial Dynorphin Expression and Implications for Aconitum Processing",
+        "year": "2016"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2016",
+        "year_found": "2016",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3389/fphar.2018.00934",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[0].sources[3]",
+        ".rules[2].sources[1]",
+        ".rules[3].sources[1]",
+        ".reactions[3].source"
+      ],
+      "claimed": {
+        "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2018",
+        "quotes": [
+          "both cis-THSG and trans-THSG are readily hydrolyzed, such that the steaming would decrease their content",
+          "Several mechanisms, namely hydrolysis, dehydration, isomerization, and Maillard reaction appear to be involved in the chemical transformation that occurs",
+          "the occurrence of 5-HMF suggest that the Maillard reaction was involved in the processing of PPMR"
+        ]
+      },
+      "crossref": {
+        "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2018",
+        "type": "journal-article",
+        "publisher": "Frontiers Media SA"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC6121093",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf",
+        "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+        "year": "2018"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2018",
+        "year_found": "2018",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3389/fphar.2024.1442297",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[0].sources[4]",
+        ".reactions[4].source"
+      ],
+      "claimed": {
+        "title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2024",
+        "quotes": [
+          "the processing of rhubarb involves not only the hydrolysis of glycosides but also complex chemical changes"
+        ]
+      },
+      "crossref": {
+        "title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+        "journal": "Frontiers in Pharmacology",
+        "year": "2024",
+        "type": "journal-article",
+        "publisher": "Frontiers Media SA"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC11335691",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.3389/fphar.2024.1442297",
+        "title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+        "year": "2024"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2024",
+        "year_found": "2024",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3390/foods14223932",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[0].sources[2]",
+        ".reactions[6].source"
+      ],
+      "claimed": {
+        "title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix",
+        "journal": "Foods",
+        "year": "2025",
+        "quotes": [
+          "hydrolysis of oligosaccharides into higher-sweetness sugars"
+        ]
+      },
+      "crossref": {
+        "title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix: Carbohydrate Hydrolysis, Degradation of Bitter Compounds, and Interaction with Taste Receptors",
+        "journal": "Foods",
+        "year": "2025",
+        "type": "journal-article",
+        "publisher": "MDPI AG"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC12651911",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.mdpi.com/2304-8158/14/22/3932/pdf?version=1763388025",
+        "title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix: Carbohydrate Hydrolysis, Degradation of Bitter Compounds, and Interaction with Taste Receptors",
+        "year": "2025"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2025",
+        "year_found": "2025",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3390/foods15203587",
+      "files": [
+        "conditions/template_verification_20261106.json",
+        "reports/paper/paozhi_sources_20261031.json"
+      ],
+      "paths": [
+        ".entries[3].found[0]",
+        ".conditions[2].source"
+      ],
+      "claimed": {
+        "title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice",
+        "journal": "Foods",
+        "year": "2026"
+      },
+      "crossref": {
+        "title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice: Integrated Analysis of Hepatic Metabolism and Gut Microbiota",
+        "journal": "Foods",
+        "year": "2026",
+        "type": "journal-article",
+        "publisher": "MDPI AG"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC13703343",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.3390/foods15203587",
+        "title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice: Integrated Analysis of Hepatic Metabolism and Gut Microbiota",
+        "year": "2026"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2026",
+        "year_found": "2026",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3390/molecules25194390",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json",
+        "rules/paozhi_evidence.json"
+      ],
+      "paths": [
+        ".rules[0].sources[1]",
+        ".conditions[9].source"
+      ],
+      "claimed": {
+        "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+        "journal": "Molecules",
+        "year": "2020",
+        "quotes": [
+          "red ginseng is prepared by steaming fresh ginseng at 95–100 °C for 2–3 h before drying"
+        ]
+      },
+      "crossref": {
+        "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+        "journal": "Molecules",
+        "year": "2020",
+        "type": "journal-article",
+        "publisher": "MDPI AG"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC7582514",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.mdpi.com/1420-3049/25/19/4390/pdf?version=1600944186",
+        "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+        "year": "2020"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2020",
+        "year_found": "2020",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3390/molecules31203706",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json"
+      ],
+      "paths": [
+        ".conditions[8].source",
+        ".reactions[1].source"
+      ],
+      "claimed": {
+        "title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+        "journal": "Molecules",
+        "year": "2026"
+      },
+      "crossref": {
+        "title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+        "journal": "Molecules",
+        "year": "2026",
+        "type": "journal-article",
+        "publisher": "MDPI AG"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC13707937",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.3390/molecules31203706",
+        "title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+        "year": "2026"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2026",
+        "year_found": "2026",
+        "journal_match": true
+      },
+      "status": "verified"
+    },
+    {
+      "doi": "10.3831/kpi.2020.23.012",
+      "files": [
+        "conditions/kinetics_measurements.json"
+      ],
+      "paths": [
+        ".datasets[0].source",
+        ".datasets[1].source",
+        ".datasets[2].source"
+      ],
+      "claimed": {
+        "title": "Variations in Ginsenosides of Raw Ginseng According to Heating Temperature and Time",
+        "journal": "J Pharmacopuncture",
+        "year": "2020",
+        "quotes": [
+          "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours.",
+          "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours.",
+          "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours."
+        ]
+      },
+      "crossref": {
+        "title": "Variations in Ginsenosides of Raw Ginseng According to Heating Temperature and Time",
+        "journal": "Journal of Pharmacopuncture",
+        "year": "2020",
+        "type": "journal-article",
+        "publisher": "Korean Pharmacopuncture Institute"
+      },
+      "europepmc": {
+        "in_epmc": "Y",
+        "is_open_access": "Y",
+        "has_pdf": "Y",
+        "pmcid": "PMC7338709",
+        "openalex_free": ""
+      },
+      "openalex": {
+        "is_oa": true,
+        "oa_url": "https://www.journal-jop.org/journal/download_pdf.php?doi=10.3831/KPI.2020.23.012",
+        "title": "Variations in Ginsenosides of Raw Ginseng According to Heating Temperature and Time",
+        "year": "2020"
+      },
+      "crossref_error": "",
+      "compare": {
+        "title_overlap": 1.0,
+        "year_match": true,
+        "year_claimed": "2020",
+        "year_found": "2020",
+        "journal_match": false
+      },
+      "status": "metadata_mismatch",
+      "bad_fields": [
+        "journal"
+      ]
+    },
+    {
+      "doi": "10.7501/j.issn.0253-2670.2019.21.018",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[1].found[1]"
+      ],
+      "claimed": {},
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "302",
+      "status": "not_in_crossref_resolvable"
+    },
+    {
+      "doi": "10.7501/j.issn.0253-2670.2025.09.010",
+      "files": [
+        "reports/paper/paozhi_sources_20261031.json"
+      ],
+      "paths": [
+        ".conditions[13].source"
+      ],
+      "claimed": {
+        "title": "沙苑子盐炙工艺优选及其炮制前后抗炎作用研究",
+        "journal": "中草药",
+        "year": "2025"
+      },
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "404",
+      "status": "not_found"
+    },
+    {
+      "doi": "10.7501/j.issn.0253-2670.2026.06.008",
+      "files": [
+        "conditions/template_verification_20261106.json"
+      ],
+      "paths": [
+        ".entries[2].found[0]"
+      ],
+      "claimed": {},
+      "crossref": null,
+      "europepmc": null,
+      "openalex": null,
+      "crossref_error": "not_json",
+      "doi_org": "404",
+      "status": "not_found"
+    }
+  ],
+  "note": "只核对元数据；引句是否属实仍需回原文。not_found 表示 Crossref 无记录（不等于文献不存在，可能是中文库 DOI）。"
+}

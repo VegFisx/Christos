@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-11-06T23:38:18",
+  "validation_type": "retrospective paozhi literature comparison: product + path + rule family",
+  "protocol": "种子单轮（炮制档）+ 文献中间体单独再跑一轮；结构全部只读取自 tcm.db",
+  "criteria": {
+    "consistent": "产物结构一致（InChIKey 前 14 位）+ 反应族符合文献",
+    "formula_only": "只有分子式命中，同分异构未区分",
+    "product_only": "产物对，但反应族与文献不符",
+    "miss": "没生成该产物"
+  },
+  "cases": [
+    {
+      "tag": "ginsenoside_Rb1",
+      "seed_id": "HBIN027729",
+      "condition": "炮制·蒸制",
+      "seed_name": "Ginsenoside rb1",
+      "seed_formula": "C54H92O23",
+      "seconds_round1": 3.5,
+      "n_round1": 77,
+      "bridge_name": "20(r)-ginsenoside rg3",
+      "seconds_round2": 2.5,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C42H72O13",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "Rg3",
+          "round": 1
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "rules_all": [
+            "elimination_dehydration_001"
+          ],
+          "product_formula": "C42H70O12",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "Rg5",
+          "round": 2,
+          "via": "20(r)-ginsenoside rg3"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "rules_all": [
+            "elimination_dehydration_001"
+          ],
+          "product_formula": "C42H70O12",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "Rk1",
+          "round": 2,
+          "via": "20(r)-ginsenoside rg3"
+        }
+      ],
+      "n_consistent": 3,
+      "n_products_ok": 3,
+      "status": "consistent"
+    },
+    {
+      "tag": "arecoline",
+      "seed_id": "HBIN016699",
+      "condition": "炮制·炒焦",
+      "seed_name": "Arecoline",
+      "seed_formula": "C8H13NO2",
+      "seconds_round1": 2.3,
+      "n_round1": 7,
+      "targets": [
+        {
+          "rule": "demethylation_n_001",
+          "rules_all": [
+            "demethylation_n_001"
+          ],
+          "product_formula": "C7H11NO2",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "norarecoline",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent"
+    },
+    {
+      "tag": "CATR",
+      "seed_id": "HBIN019719",
+      "condition": "炮制·炒黄",
+      "seed_name": "Carboxyatractyloside",
+      "seed_formula": "C31H46O18S2",
+      "seconds_round1": 2.3,
+      "n_round1": 19,
+      "targets": [
+        {
+          "rule": "decarboxylation_001",
+          "rules_all": [
+            "decarboxylation_001"
+          ],
+          "product_formula": "C30H46O16S2",
+          "co_product": true,
+          "match_level": "formula",
+          "rule_family_ok": true,
+          "status": "formula_only",
+          "why": "只有分子式命中（同分异构未区分）",
+          "target": "ATR 骨架",
+          "round": 1
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 1,
+      "status": "partial"
+    },
+    {
+      "tag": "JNB",
+      "seed_id": "HBIN031562",
+      "condition": "炮制·醋炙",
+      "seed_name": "Jolkinolide b",
+      "seed_formula": "C20H26O4",
+      "seconds_round1": 2.3,
+      "n_round1": 9,
+      "targets": [
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "rules_all": [
+            "hydrolysis_epoxide_001"
+          ],
+          "product_formula": "C20H28O5",
+          "co_product": false,
+          "match_level": "formula",
+          "rule_family_ok": true,
+          "status": "formula_only",
+          "why": "只有分子式命中（同分异构未区分）",
+          "target": "JNB 开环酸",
+          "round": 1
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 1,
+      "status": "partial"
+    },
+    {
+      "tag": "aconitine",
+      "seed_id": "HBIN014582",
+      "condition": "炮制·蒸制",
+      "seed_name": "Aconitine",
+      "seed_formula": "C34H47NO11",
+      "seconds_round1": 2.4,
+      "n_round1": 22,
+      "targets": [
+        {
+          "rule": "hydrolysis_ester_001",
+          "rules_all": [
+            "hydrolysis_ester_001"
+          ],
+          "product_formula": "C32H45NO10",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "benzoylaconine",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent"
+    },
+    {
+      "tag": "THSG",
+      "seed_id": "HBIN003908",
+      "condition": "炮制·蒸制",
+      "seed_name": "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
+      "seed_formula": "C20H22O9",
+      "seconds_round1": 2.4,
+      "n_round1": 24,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C14H12O4",
+          "co_product": true,
+          "match_level": "formula",
+          "rule_family_ok": true,
+          "status": "formula_only",
+          "why": "只有分子式命中（同分异构未区分）",
+          "target": "THSG 苷元",
+          "round": 1
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 1,
+      "status": "partial"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "schema": "chemreact-kinetics/1",
+  "generated": "2026-11-04",
+  "note": "反应进程（extent）层参数。全部是『建模选择』，不是实测值；每个值都在下面写明依据与合理区间。改动这里就能整体调松/调紧，不用碰代码。",
+  "validation": {
+    "status": "unvalidated_model_choice",
+    "gate_enabled": false,
+    "why": "用户 2026-11-04 口径：涉及底层反应逻辑的参数必须有参考文献。本文件全部参数没有实测标定，因此只允许『标注』（写进 extent / extent_band 供人看），不允许参与门控或过滤。",
+    "how_to_enable": "必须先在文献里标定 q10 与 extent_min（建议 3~5 条带时间-转化率曲线的数据集），把 gate_enabled 改成 true 并写明文献 DOI；在此之前 extent.gating_allowed() 恒为 False。",
+    "user_requirement": "禁止 AI 自己猜测底层反应逻辑；起码要有参考文献。"
+  },
+  "reference_point": {
+    "what": "以每条规则自己的 condition_profile 的 default（温度、时间）作为『参照实验』：在参照点上 extent = 1 - 1/e ≈ 0.632。",
+    "why": "profiles 是从 ORD 实测条件分布/人工整理来的，拿它当参照点比另编一套绝对速率常数诚实；extent 因此是『相对参照实验跑到什么程度』。"
+  },
+  "q10": {
+    "value": 2.0,
+    "range": [
+      1.8,
+      3.0
+    ],
+    "meaning": "温度每升高 10 °C，速率常数大致翻倍的倍数（有机反应 0–100 °C 的经验值）。",
+    "source": "教科书级经验规律（Q10 ≈ 2，常见范围 1.8–3）。不是本项目的实测值。",
+    "train_calibration": {
+      "status": "partially_supported",
+      "measured": [
+        {
+          "reaction": "hydrolysis_glycoside_rb1",
+          "temperatures_C": [
+            80,
+            94,
+            105
+          ],
+          "q10_measured": 2.596,
+          "ea_kJ_per_mol": 103.6,
+          "source": {
+            "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+            "journal": "J Pharmacopuncture",
+            "year": 2020,
+            "doi": "10.3831/KPI.2020.23.012",
+            "matrix": "水/蒸汽（105/94/80 °C），三种温度长时程"
+          }
+        },
+        {
+          "reaction": "hydrolysis_glycoside_rb1_lit2015",
+          "temperatures_C": [
+            80,
+            100
+          ],
+          "q10_measured": 1.861,
+          "ea_kJ_per_mol": 68.0,
+          "source": {
+            "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+            "journal": "J Ginseng Res",
+            "year": 2015,
+            "doi": "10.1016/j.jgr.2015.02.003",
+            "matrix": "80% 甲醇（非纯水），仅作温度依赖参照"
+          }
+        },
+        {
+          "reaction": "pyrolysis_diterpene_alkaloid",
+          "temperatures_C": [
+            140,
+            160
+          ],
+          "q10_measured": 4.261,
+          "ea_kJ_per_mol": 215.7,
+          "source": {
+            "title": "Variations in the Aconitine Content of Aconiti Lateralis Radix Praeparata by Stir-Frying with Sand",
+            "journal": "Evid Based Complement Alternat Med",
+            "year": 2021,
+            "doi": "10.1155/2021/7243052",
+            "matrix": "干热砂炒（无水，路径是脱水/异构化，不是水解）"
+          }
+        }
+      ],
+      "q10_range_measured": [
+        1.861,
+        4.261
+      ],
+      "water_only_range": [
+        2.596,
+        2.596
+      ],
+      "decision": "保留 value = 2.0。实测两条独立数据给出 1.86（80% 甲醇、纯标准品）与 2.60（水/蒸汽、药材基质），当前默认值落在实测区间内部；干热砂炒那条（Q10=4.26）是脱水/异构化路径，不能用于水解反应。只有当同一反应出现 >=3 组独立实测、且中位数偏离 2.0 超过 +-0.3 时才改默认值。",
+      "calib_report": "reports/kinetics_calibration_20261106.json",
+      "measurements": "conditions/kinetics_measurements.json",
+      "note": "本块只记录实测与判断，不参与任何计算；计算仍走 q10.value。"
+    }
+  },
+  "catalyst_speedup": {
+    "acid": 10.0,
+    "base": 10.0,
+    "metal": 30.0,
+    "enzyme": 100.0,
+    "photo": 10.0,
+    "none": 1.0,
+    "meaning": "有催化剂时速率常数的放大倍数（数量级估计：酸碱催化 10× 量级，金属 30×，酶 100×）。",
+    "source": "量级估计，不是实测值。区间可在 5–100 之间整体缩放；改动只影响 extent，不影响规则是否激活。"
+  },
+  "ph": {
+    "span": 3.0,
+    "floor": 0.15,
+    "optimum": {
+      "acid": 2.0,
+      "base": 12.0,
+      "acid_base": null,
+      "any": null,
+      "neutral": 7.0
+    },
+    "meaning": "pH 偏离该反应偏好最优值时的速率折减：高斯型 exp(-((pH-opt)/span)^2)，下限 floor。acid_base（既能酸催化也能碱催化）取两侧较优，中间落到 floor。",
+    "source": "定性化学事实（强酸/强碱条件利于酸碱催化反应，中性最慢）的连续化，不是实测值。"
+  },
+  "gates": {
+    "extent_min": 0.0,
+    "extent_major": 0.5,
+    "trace_below": 0.05,
+    "meaning": "extent 只作标注。extent_min 已改为 0.0（原 0.10 无文献出处，且会删掉整批真实煎煮产物）；trace_below 以下标为痕量（band=none），不删除。",
+    "source": "第一百一十六轮：删掉无出处的 0.10，痕量阈值 0.05 由已发表动力学数据的最小可观测转化率 0.059 向下取整得到。"
+  },
+  "no_data_policy": {
+    "extent": 1.0,
+    "why": "规则/反应类没有可用条件窗口时保守放行（e=1.0）。宁可漏判也不误杀 —— 与现有 cond_activation 的 no-data 策略一致。"
+  },
+  "temperature": {
+    "gate_low_tolerance_C": 30.0,
+    "hot_ceiling_C": 400.0,
+    "meaning": "温度判据（第85轮 A 案）：低于下限-容差判死；下限附近线性降权；窗口内 1.0；窗口之上不罚（高温加速）；超过上限判死（近/超临界水，机理层不覆盖）。",
+    "source": "建模选择，不是实测值。30°C 沿用旧 gate_tol_C；400°C 取水的临界点 374°C 之上留余量。"
+  },
+  "arrhenius": {
+    "enabled": true,
+    "ea_kJ_per_mol": 103.6,
+    "ea_range_kJ_per_mol": [
+      68.0,
+      103.6
+    ],
+    "R": 8.314462618,
+    "meaning": "k(T)/k(T_ref) = exp(-Ea/R * (1/T - 1/T_ref))，T 用开尔文。取代 q10 的 10 度指数形式；q10 保留作回退（arrhenius.enabled=false 时生效）。",
+    "which_ea": "全局默认 103.6 kJ/mol（糖苷水解，水/蒸汽）；个别 profile 见 ea_by_profile（thermal 用 215.7）。",
+    "source": {
+      "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+      "journal": "J Pharmacopuncture",
+      "year": 2020,
+      "doi": "10.3831/KPI.2020.23.012",
+      "table": "Table 2/5/6 (Rb1, 105/94/80 °C)",
+      "quote": "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours."
+    },
+    "calibration_report": "reports/kinetics_calibration_20261106.json",
+    "extrapolation": {
+      "policy": "forbidden",
+      "meaning": "Ea 只在标定温度区间内做插值；区间外只输出标注（why 里写「属外推」），不得据此判零或过滤产物。",
+      "evidence": {
+        "report": "reports/第一百二十三轮-温度外推验证-20261106.md",
+        "result_json": "reports/kinetics_loto.json",
+        "finding": "留一温度验证：Rb1 组预测/实测 = 3.28x / 0.60x / 2.39x，最差 0.52 个数量级 → extrapolation_unreliable。",
+        "note": "同一组内三个温度点拟合出的 Ea=103.6 恰好等于全点拟合值，但留一仍差 2~3 倍，说明三点拟合无法约束第四个温度。"
+      }
+    },
+    "calibrated_range_C": {
+      "hydrolysis": {
+        "range": [
+          80,
+          105
+        ],
+        "datasets": [
+          "rb1_80c_2020",
+          "rb1_94c_2020",
+          "rb1_105c_2020"
+        ],
+        "note": "Rb1 水解 80/94/105 °C；只在这段内可插值。"
+      },
+      "thermal": {
+        "range": [
+          140,
+          160
+        ],
+        "datasets": [
+          "aconitine_dry_140c_2021",
+          "aconitine_dry_160c_2021"
+        ],
+        "note": "乌头碱干热 140/160 °C；两点只能定一条直线，不能算验证过（two_points_no_loto）。"
+      }
+    },
+    "status": "literature_single_study",
+    "note": "这是反应体系的活化能，不是产物选择性判据；extent 门控仍然关闭（validation.gate_enabled=false）。"
+  },
+  "ea_by_profile": {
+    "hydrolysis": {
+      "ea_kJ_per_mol": 103.6,
+      "status": "literature_single_study",
+      "source": {
+        "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+        "journal": "J Pharmacopuncture",
+        "year": 2020,
+        "doi": "10.3831/KPI.2020.23.012",
+        "table": "Table 2/5/6 (Rb1, 105/94/80 °C)"
+      },
+      "note": "糖苷水解；人参皂苷 Rb1 三温度拟合。"
+    },
+    "thermal": {
+      "ea_kJ_per_mol": 215.7,
+      "status": "literature_single_study",
+      "source": {
+        "title": "Variations in the Aconitine Content of Aconiti Lateralis Radix Praeparata by Stir-Frying with Sand",
+        "journal": "Evid Based Complement Alternat Med",
+        "year": 2021,
+        "doi": "10.1155/2021/7243052",
+        "table": "Table 2 (140/160 °C)"
+      },
+      "note": "干热砂炒的脱水/异构化，不是水解；只用于 thermal profile（炒黄/炒焦/炒炭）。"
+    }
+  },
+  "gates_provenance": {
+    "extent_min": {
+      "value_before": 0.1,
+      "value": 0.0,
+      "status": "removed_no_source",
+      "why": "第 101 轮自查 A1 项：0.10 是建模选择、没有任何文献；第 113 轮标定显示真实煎煮 1 小时的转化率 0.7%~6.9%，0.10 会整批删除。",
+      "effect": "即使强行打开 extent_gate，也不删除任何产物。"
+    },
+    "trace_below": {
+      "value": 0.05,
+      "status": "derived_from_dataset",
+      "basis": {
+        "dataset": "rb1_105c_2020",
+        "temp_C": 105,
+        "time_min": 360,
+        "conversion": 0.059,
+        "method": "7 个数据集 26 个时间点里最小的非零转化率，向下取整到 0.05。"
+      },
+      "effect": "只影响 extent_band 标注（none=痕量）。",
+      "source_doi": "10.3831/KPI.2020.23.012",
+      "external_checks": [
+        {
+          "claim": "ICH Q3A(R2) 报告阈值 0.05%（原料药一般杂质，MDD <= 2 g/day）",
+          "urls": [
+            "https://ijpsr.com/bft-article/genotoxic-impurities-in-small-molecule-drug-substances-identification-risk-assessment-and-control-strategies?view=fulltext",
+            "https://pda.org/docs/default-source/website-document-library/chapters/newsletters/metro/qualification-of-impurities-in-drug-substances-and-drug-products.pdf"
+          ],
+          "verdict": "not_applicable",
+          "why": "该阈值描述的是「原料药中杂质含量达到多少需要报告」，分母是原料药质量；我们这里的分母是「反应进度（转化率）」，不是同一量纲的对象。数值 0.05 的巧合不能当作依据。"
+        },
+        {
+          "claim": "动力学初速率法常见要求：转化率保持在 1~20% 以内（文献间不统一）",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10497622",
+            "https://pureportal.strath.ac.uk/files/99754042/Halling_BB_2020_Estimation_of_initial_rate_from_discontinuous_progress_data.pdf"
+          ],
+          "verdict": "no_single_standard",
+          "why": "这是「用初速率估计动力学参数时的取点建议」（1-2%、5%、10%、20% 都有人用；Halling 2020 建议取到至少 10% 以保证速率精度），不是「低于多少就不该报告产物」。"
+        }
+      ],
+      "conclusion": "核实后维持现状：trace_below=0.05 仍然只是「数据导出」，不升级为文献依据；外部两条惯例均已核实但不适用。"
+    },
+    "extent_major": {
+      "value": 0.5,
+      "status": "unvalidated_model_choice",
+      "effect": "只影响 extent_band 标注（minor/major）。"
+    }
+  }
+}

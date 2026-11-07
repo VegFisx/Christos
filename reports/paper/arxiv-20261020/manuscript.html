@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Christos arXiv manuscript</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="paper-en.css" />
+</head>
+<body>
+<h1
+id="christos-a-provenance-aware-read-only-reaction-prediction-system-for-natural-product-and-traditional-chinese-medicine-research">Christos:
+a provenance-aware, read-only reaction prediction system for
+natural-product and traditional Chinese medicine research</h1>
+<p><strong>Article type:</strong> Software/Research Article (final type
+to be selected in the PeerJ submission system)<br />
+<strong>Authors:</strong> [to be completed]<br />
+<strong>Affiliations:</strong> [to be completed]<br />
+<strong>Corresponding author:</strong> [to be completed]</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p><strong>Motivation.</strong> Computational reaction prediction is
+increasingly used to explore natural products and traditional Chinese
+medicine (TCM), but existing workflows often separate prediction from
+provenance, make it difficult to determine why a candidate was
+generated, and provide no clear boundary between exploratory output and
+laboratory advice. This is particularly problematic for TCM research,
+where herb names, plant species, processed medicinal forms, formula
+versions, and source tiers can refer to different chemical starting
+points.</p>
+<p><strong>Results.</strong> We present Christos, a local-first reaction
+prediction system that combines read-only access to heterogeneous
+chemical data, template-based forward enumeration and retrosynthesis,
+condition evidence, provenance annotation, and a reproducible reporting
+interface. Christos resolves inputs at the level of herb, Latin species,
+COCONUT species, formula, or user-supplied molecules; it does not
+silently merge same-named formula versions and never writes to the
+underlying databases. The system exposes both a command-line interface
+and a local browser interface, with CSV/TSV ledgers and a self-contained
+HTML report for every run.</p>
+<p>On a leak-controlled USPTO-50k benchmark, the selected forward
+configuration reaches 82.32% single-step recall on 50,016 reactions
+(41,173 hits; Wilson 95% CI 81.98–82.65%), compared with 55.43% for the
+baseline configuration. The reverse-direction template search reaches
+94.74% any-hit coverage on 5,002 targets, and the multi-step planner
+reaches 47.67% success at depth ≤ 2 and 72.33% at depth ≤ 3 on 300
+targets. In the TCM data layer, the system indexes 31,646 herb
+compounds, 269,105 COCONUT compounds, 12,071 formula records, and 1,526
+pharmacopoeia formula entries. All 3,228 production templates in the
+provenance chain map back to ORD reaction identifiers. A 500-template
+condition audit found at least one product match for 493 templates and
+at least one measured condition class for 491 templates.</p>
+<p><strong>Availability.</strong> Christos is implemented in Python 3.12
+with RDKit, rdchiral, SmartReact, DuckDB, and SQLite. The public
+distribution is deliberately split into a read-only research application
+and a precomputed demonstration package; arbitrary-target retrosynthesis
+and free-form reagent input are disabled in the public demo. The code,
+data cards, protocol, and reference verification snapshots are prepared
+for release with the manuscript.</p>
+<p><strong>Keywords:</strong> reaction prediction; retrosynthesis;
+natural products; traditional Chinese medicine; provenance;
+reproducibility; reaction templates</p>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Template-based reaction prediction has become a practical route to
+exploring chemical transformations when experimental or quantum-chemical
+data are unavailable. RDKit provides a widely used cheminformatics
+toolkit (RDKit, 2024), RDChiral extracts and applies reaction templates
+while preserving stereochemistry (Coley et al., 2019), and systems such
+as AiZynthFinder and Retro* combine template libraries with search and
+ranking (Genheden et al., 2020; Chen et al., 2020). Benchmark resources
+such as USPTO-50k (Schneider et al., 2016) and PaRoutes (Genheden &amp;
+Bjerrum, 2022) make it possible to compare methods, while the Open
+Reaction Database (ORD) provides reaction records with experimental
+context (Kearnes et al., 2021).</p>
+<p>These tools are usually evaluated as prediction engines. A
+complementary engineering question is whether a prediction system can
+preserve the <em>history</em> of a result: which input record was used,
+which template fired, which source database supplied the compound, which
+conditions were observed, and whether the result is a measured
+precedent, a rule-based extension, or an untested hypothesis. This
+distinction matters when the same software is used across molecular
+chemistry, natural-product chemistry, and TCM research.</p>
+<p>TCM introduces specific data-resolution problems. A Chinese herb name
+may correspond to a pharmacopoeia entry, a processed medicinal form, a
+regional alias, or a plant species. A formula may have multiple
+historical versions with different compositions, and a formula name must
+not be treated as a synonym for one fixed ingredient list. A compound
+may come from a herb-specific database or from a species-level
+natural-product collection such as COCONUT (Sorokina et al., 2021).
+Treating these identifiers as interchangeable can produce a chemically
+precise-looking output from an ambiguous input.</p>
+<p>Christos was designed around four requirements that follow from these
+problems:</p>
+<ol type="1">
+<li><strong>Resolve inputs explicitly.</strong> Herb names, processed
+forms, Latin species, COCONUT species, formulas, and user-supplied
+molecules are separate resolution paths. The system reports which path
+was used and which records were skipped.</li>
+<li><strong>Keep data read-only.</strong> The underlying SQLite
+databases and formula files are opened through read-only connections. A
+run may write reports and ledgers, but it must not alter the source
+data.</li>
+<li><strong>Attach provenance to every candidate.</strong> Every product
+path records the source compound, reaction template, rule name,
+condition evidence, round, and any uncertainty marker. The system marks
+candidates rather than silently deleting them.</li>
+<li><strong>Make the public boundary explicit.</strong> The public
+demonstration layer is intentionally narrower than the research engine:
+arbitrary-target retrosynthesis and free-form reagent input are
+disabled, and the demo is distributed without a database.</li>
+</ol>
+<p>The present paper describes the system, its data model, its reaction
+and condition layers, and its evaluation. It is not a claim of clinical
+efficacy, a synthesis protocol, or a replacement for laboratory
+validation. The results are reported as software and benchmark evidence,
+with the limitations of template prediction and TCM source data made
+explicit.</p>
+<h2 id="materials-and-methods">Materials and Methods</h2>
+<h3 id="system-overview">System overview</h3>
+<p>Christos is organized as a set of composable layers rather than a
+single monolithic model:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Function</th>
+<th>Main implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input resolution</td>
+<td>Chinese herb, Latin species, COCONUT species, formula, or
+SMILES</td>
+<td><code>sources/herb.py</code>, <code>sources/coconut.py</code>,
+<code>sources/formula.py</code></td>
+</tr>
+<tr>
+<td>Reaction enumeration</td>
+<td>Forward template application and cascade expansion</td>
+<td><code>core/smartreact_engine.py</code>, SmartReact</td>
+</tr>
+<tr>
+<td>Retrosynthesis</td>
+<td>Template inversion and bounded route search</td>
+<td><code>tools/retro_search.py</code></td>
+</tr>
+<tr>
+<td>Condition layer</td>
+<td>Reaction-class profiles and per-template condition windows</td>
+<td><code>conditions/</code>,
+<code>data/mined_top_template_conditions*.json</code></td>
+</tr>
+<tr>
+<td>Provenance and reporting</td>
+<td>Ledger, index, HTML report, source tags</td>
+<td><code>core/query_base.py</code>,
+<code>tools/make_report.py</code></td>
+</tr>
+<tr>
+<td>Interfaces</td>
+<td>CLI and local browser UI</td>
+<td><code>integration/tcmai_bridge/</code></td>
+</tr>
+</tbody>
+</table>
+<p>The implementation separates the chemical engine from the source-data
+adapters. This allows the same reaction engine to be used with herb
+records, species records, or a user-provided molecule set, while keeping
+the identity of the input source visible in the output.</p>
+<figure>
+<img src="figures/fig1_system_architecture.png" alt="Figure 1" />
+<figcaption aria-hidden="true">Figure 1</figcaption>
+</figure>
+<p><em>Figure 1. Overview of Christos. Inputs are resolved before any
+chemistry is run; source adapters remain read-only; the reaction engine
+writes candidates to a provenance ledger, which is rendered as CSV/TSV
+and a single-file HTML report.</em></p>
+<h3 id="data-sources-and-read-only-policy">Data sources and read-only
+policy</h3>
+<p>The current local deployment uses the following resources:</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Role</th>
+<th style="text-align: right;">Scale</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Herb database (<code>tcm.db</code>)</td>
+<td>Herb names, compounds, aliases, evidence</td>
+<td style="text-align: right;">31,646 compounds</td>
+<td>read-only SQLite</td>
+</tr>
+<tr>
+<td>COCONUT snapshot</td>
+<td>Species-level natural products</td>
+<td style="text-align: right;">269,105 valid molecules</td>
+<td>read-only SQLite</td>
+</tr>
+<tr>
+<td>Formula records</td>
+<td>Multi-herb prescriptions and versions</td>
+<td style="text-align: right;">12,071 records</td>
+<td>read-only JSON</td>
+</tr>
+<tr>
+<td>Pharmacopoeia overlay</td>
+<td>2025 formula entries and source URLs</td>
+<td style="text-align: right;">1,526 entries</td>
+<td>internal overlay, not redistributed</td>
+</tr>
+<tr>
+<td>USPTO-50k</td>
+<td>Leak-controlled benchmark</td>
+<td style="text-align: right;">50,016 reactions</td>
+<td>public benchmark</td>
+</tr>
+<tr>
+<td>ORD-derived templates</td>
+<td>Reaction template source and provenance</td>
+<td style="text-align: right;">3,228 production templates</td>
+<td>derived data, attributed</td>
+</tr>
+</tbody>
+</table>
+<p>The public build does not redistribute upstream raw databases.
+ORD-derived templates are treated as CC BY-SA 4.0, USPTO-50k is CC0
+(figshare 5104873), the COCONUT curated dataset is CC0 with MIT
+infrastructure code, and the SmartReact template package is Apache-2.0.
+The local herb and formula resources remain subject to the owner’s
+authorization and are not included in the public demonstration
+archive.</p>
+<p>All SQLite connections use <code>mode=ro</code>; when a WAL-backed
+database cannot be opened read-only because of a missing shared-memory
+file, the adapter falls back to <code>immutable=1</code>, which reads a
+snapshot without creating or modifying sidecar files. This policy was
+introduced after observing that a conventional read-write
+<code>sqlite3.connect()</code> can create <code>-wal</code> and
+<code>-shm</code> files even when the caller only intends to read.</p>
+<p>The public demo contains a small, fixed excerpt rather than the
+databases. It includes 100 common herbs, one selected Latin species per
+herb, 50 formulas, and 150 precomputed examples. The formulas are
+limited to 4–6 ingredients and are filtered for safety before packaging;
+the demo does not expose arbitrary SMILES or routes.</p>
+<h3 id="input-resolution">Input resolution</h3>
+<p>An input is resolved in the following order:</p>
+<ol type="1">
+<li>exact herb or processed-herb name in the herb database;</li>
+<li>a recognised alias, with the resolved canonical name reported;</li>
+<li>a species name from the COCONUT species dictionary;</li>
+<li>an exact formula name, with all versions retained;</li>
+<li>user-supplied SMILES, when the research interface permits it.</li>
+</ol>
+<p>The resolver returns both the selected records and unresolved tokens.
+For formulas, the system keeps the version list and selects a documented
+source tier by default; it does not combine same-named versions into a
+synthetic formula. This choice is deliberate: merging versions would
+create compositions that do not correspond to any historical or
+pharmacopoeial record.</p>
+<figure>
+<img src="figures/fig2_input_resolution.png" alt="Figure 2" />
+<figcaption aria-hidden="true">Figure 2</figcaption>
+</figure>
+<p><em>Figure 2. Resolution paths for herb names, Latin species, formula
+names and SMILES. Unmatched tokens are reported verbatim rather than
+forced into a record.</em></p>
+<h3 id="forward-reaction-enumeration">Forward reaction enumeration</h3>
+<p>The forward engine applies a library of reaction templates to a
+substrate set. Templates are grouped by reaction name and filtered by
+reactant category. A run can be bounded by the number of compounds per
+herb, the number of reaction rounds, the maximum number of substrate
+pairs, and a per-pair candidate cap.</p>
+<p>The current selected configuration uses a support-filtered template
+pool, a per-pair cap of 32, and a substrate-compatibility prefilter. The
+cap matters: a very small cap can hide a correct candidate even when the
+template is present. For this reason the system records the pair
+coverage and truncation state in the run metadata rather than treating a
+capped result as a complete enumeration.</p>
+<figure>
+<img src="figures/fig3_forward_provenance.png" alt="Figure 3" />
+<figcaption aria-hidden="true">Figure 3</figcaption>
+</figure>
+<p><em>Figure 3. A forward candidate and the fields retained in the
+provenance ledger: input species, source compound, rule,
+condition-evidence marker and candidate product.</em></p>
+<h3 id="retrosynthesis">Retrosynthesis</h3>
+<p>The retrosynthesis module inverts forward templates and applies them
+recursively to a target molecule. The search returns disconnections,
+precursor sets, and route-level annotations. Precursors are checked
+against the available termination set and are annotated as available or
+unavailable. The system does not infer that an unavailable precursor is
+impossible; it records the absence of an availability match.</p>
+<p>The public build blocks arbitrary-target retrosynthesis by default.
+The research CLI requires an explicit research-mode environment flag.
+This is a product boundary, not a claim that the underlying search is
+harmless in every context.</p>
+<figure>
+<img src="figures/fig4_retrosynthesis_example.png" alt="Figure 4" />
+<figcaption aria-hidden="true">Figure 4</figcaption>
+</figure>
+<p><em>Figure 4. A one-step retrosynthetic route with two precursors hit
+in the current termination set and a passing forward validation. This is
+an annotation, not a laboratory instruction.</em></p>
+<h3 id="condition-evidence">Condition evidence</h3>
+<p>Condition evidence is represented at two levels:</p>
+<ul>
+<li>reaction-class profiles for named reactions, with solvent, pH,
+temperature, catalyst, and atmosphere windows;</li>
+<li>per-template windows mined from ORD records, where a template is
+matched to a reaction record before its conditions are collected.</li>
+</ul>
+<p>For the per-template layer, a top-N set of templates is evaluated
+against an evenly spaced ORD sample. A record contributes a condition
+only when the template generates a product that matches the recorded
+product. In the current 500-template audit, 493 templates had at least
+one product match and 491 had at least one condition category. The
+resulting windows are annotations: they do not simulate kinetics, yield,
+or selectivity.</p>
+<h3 id="provenance-and-reporting">Provenance and reporting</h3>
+<p>Every candidate path in a ledger contains the product structure,
+source compound, source herb or species, reaction rule, round, condition
+activation marker, direction marker, and evidence string. The report
+generator converts the ledger into a single-file HTML page with the same
+information and optional structure drawings.</p>
+<p>The system deliberately avoids silent scoring. A direction flag or
+condition marker is shown as an annotation; it does not remove the
+candidate from the ledger. The phrase “no evidence” is used for a
+candidate without a matching condition record, not as a claim that the
+reaction cannot occur.</p>
+<h3 id="evaluation-design">Evaluation design</h3>
+<p>The evaluation has three parts.</p>
+<p><strong>Forward prediction.</strong> The engine is run for one round
+on the reactants of USPTO-50k records. A hit means the recorded product
+appears anywhere in the candidate set; no ranking is used. We report
+both the baseline configuration and the selected production
+configuration, and use the leak-controlled library for the headline
+number.</p>
+<p><strong>Retrosynthesis coverage.</strong> A target is a hit if at
+least one disconnection produces a precursor set equal to the recorded
+reactant set after atom-map removal. Coverage is reported for the
+leak-controlled library. Multi-step success is measured on 300 targets
+with a bounded beam search.</p>
+<p><strong>TCM resolution and provenance.</strong> We exercise herb,
+species, formula, and SMILES inputs through the same interface and
+record the resolved source, version, unresolved tokens, and output
+links. The demo examples are generated from the same engine but are
+packaged as fixed precomputed samples so that no database is
+redistributed.</p>
+<h2 id="results">Results</h2>
+<h3 id="implemented-data-scale">Implemented data scale</h3>
+<p>The current local deployment covers:</p>
+<ul>
+<li>31,646 herb compounds;</li>
+<li>269,105 COCONUT compounds;</li>
+<li>12,071 formula records;</li>
+<li>1,526 pharmacopoeia formula entries;</li>
+<li>3,228 production templates with ORD reaction identifiers;</li>
+<li>100 herbs and 50 formulas in the public demonstration catalog.</li>
+</ul>
+<p>These numbers describe the implemented data layer, not a claim of
+complete chemical coverage. A missing compound or formula means that the
+current source did not contain it, not that it does not exist.</p>
+<h3 id="forward-prediction">Forward prediction</h3>
+<p>On the leak-controlled USPTO-50k benchmark, the baseline
+configuration reaches 55.43% single-step recall. The selected
+configuration, which uses a larger support-filtered candidate pool, a
+per-pair cap of 32, and compatibility prefiltering, reaches
+<strong>82.32%</strong> (41,173/50,016) with a Wilson 95% confidence
+interval of <strong>81.98–82.65%</strong>.</p>
+<p>The improvement should be read as a system-configuration result, not
+as evidence that the template library is universally correct. Candidate
+truncation, template support, and template quality all contribute. The
+run metadata records these settings so that the result can be reproduced
+and compared.</p>
+<h3 id="retrosynthesis-and-multi-step-planning">Retrosynthesis and
+multi-step planning</h3>
+<p>The leak-controlled reverse search reaches <strong>94.74%</strong>
+any-hit coverage on 5,002 targets. With a beam width of four and the
+selected template library, end-to-end success is <strong>47.67%</strong>
+at depth ≤ 2 (143/300) and <strong>72.33%</strong> at depth ≤ 3
+(217/300) on a fixed 300-target set. Of those 300 targets, 207 have at
+least one route marked usable under the system’s heuristic
+criterion.</p>
+<p>The system reports the route-level source of each precursor and the
+availability status. It does not convert a “usable” annotation into an
+instruction to perform a synthesis.</p>
+<figure>
+<img src="figures/fig5_benchmark_summary.png" alt="Figure 5" />
+<figcaption aria-hidden="true">Figure 5</figcaption>
+</figure>
+<p><em>Figure 5. Summary of the frozen benchmark measurements used in
+this paper: forward baseline/selected recall, reverse any-hit coverage,
+multi-step success and the 500-template condition audit.</em></p>
+<h3 id="condition-and-provenance-coverage">Condition and provenance
+coverage</h3>
+<p>Every one of the 3,228 production templates is linked to ORD reaction
+identifiers, and the reaction-level back-reference covers 9,177/9,177
+records in the current provenance table. The 500-template condition
+audit produced 493 templates with at least one matching product and 491
+with at least one condition category. The audit is available as a data
+product and does not change the default runtime library by itself.</p>
+<h3 id="tcm-case-study">TCM case study</h3>
+<p>The system can resolve a herb by Chinese name, a species by Latin
+binomial, a formula by name and version, or a set of user SMILES. For a
+Glycyrrhiza example, running the current engine over 12 constituents
+produces a ledger with 552 candidate products and 552 provenance paths;
+the record includes the source compound, reaction rule, round, and
+condition evidence for each path. The example is an illustration of the
+reporting model, not a pharmacological conclusion.</p>
+<p>Formula resolution retains all same-named versions and reports the
+selected source tier and unresolved tokens. In a run with multiple
+formula versions, the output includes the selected version and the
+alternatives rather than collapsing them into one composition.</p>
+<h3 id="public-demonstration-and-safety-boundary">Public demonstration
+and safety boundary</h3>
+<p>The public demo contains 100 common herbs with one Latin species
+each, 50 formulas, and 150 precomputed entries. Its page has no
+arbitrary SMILES field, no route search, no free-form reagent input, and
+no purchasable-block or vendor link. The application is read-only with
+respect to the source database and writes only its own report and
+runtime directories.</p>
+<p>This boundary is important for a system that can enumerate reaction
+products. The research interface remains available for controlled
+experiments, but the public interface deliberately presents a narrower
+capability set.</p>
+<h2 id="discussion">Discussion</h2>
+<p>Christos is intended to make reaction prediction inspectable rather
+than to hide uncertainty behind a single score. Three design choices
+follow from that aim.</p>
+<p>First, input resolution is explicit. In TCM data, a herb name, a
+processed form, a Latin binomial, and a formula version are not
+interchangeable identifiers. The system records the resolution path and
+the unresolved tokens, allowing a user to see whether a result was
+derived from the intended source.</p>
+<p>Second, provenance is attached to each candidate. A template
+identifier, a reaction record reference, a source compound, and a
+condition marker make it possible to audit a result after the run. This
+is more useful than a bare ranked list when the underlying data are
+heterogeneous.</p>
+<p>Third, the public interface is narrower than the research engine. A
+system that can search arbitrary targets or expose purchasable building
+blocks carries a different risk profile from a system that displays a
+fixed demonstration catalog. Christos therefore treats public
+availability as a product decision with explicit feature gates.</p>
+<p>The benchmark results show that the selected configuration is
+materially stronger than the baseline on the frozen USPTO-50k protocol.
+They do not establish chemical practicality, biological activity, or
+clinical utility. The template engine remains dependent on the template
+library and on the input data; the condition layer annotates evidence
+and does not simulate reaction outcomes.</p>
+<h2 id="limitations">Limitations</h2>
+<ol type="1">
+<li><strong>Template dependence.</strong> The forward and reverse
+results are bounded by the template library and by candidate truncation.
+A missing template can hide a correct path.</li>
+<li><strong>No laboratory validation in this study.</strong> Condition
+profiles are based on reaction records and literature; they are not a
+substitute for experimental validation.</li>
+<li><strong>TCM source heterogeneity.</strong> Herb names, processed
+forms, species assignments, formula versions, and source tiers can be
+ambiguous. The system reports unresolved tokens rather than forcing a
+match.</li>
+<li><strong>Condition evidence is incomplete.</strong> Many templates
+have no usable condition record. A missing condition marker means “not
+found in the current condition data”, not “impossible”.</li>
+<li><strong>No universal safety guarantee.</strong> The public build
+blocks high-risk interfaces, but no software filter replaces legal
+review, institutional controls, or responsible use.</li>
+<li><strong>Data and licence boundaries.</strong> Some local resources
+are owner-maintained and are not redistributed. The public demo uses
+only a small, sanitized excerpt.</li>
+</ol>
+<h2 id="conclusions">Conclusions</h2>
+<p>Christos provides a provenance-aware, read-only workflow for reaction
+prediction in natural-product and TCM research. It couples explicit
+input resolution, template-based enumeration and retrosynthesis,
+condition evidence, and auditable reports. On a leak-controlled
+USPTO-50k benchmark, the selected configuration reaches 82.32%
+single-step recall; reverse search reaches 94.74% coverage on 5,002
+targets; and multi-step planning reaches 47.67% and 72.33% at depth ≤ 2
+and ≤ 3, respectively. The system’s main contribution is not a new
+opaque predictor, but an inspectable pipeline in which the source, rule,
+condition, and uncertainty of each candidate remain visible.</p>
+<h2 id="data-and-code-availability">Data and code availability</h2>
+<p>The repository contains the protocol, result tables, figure sources,
+and runnable scripts. Upstream raw data are not redistributed. The
+public demonstration package is a fixed, precomputed sample; it does not
+contain the production databases. A repository URL and archival DOI will
+be inserted before submission.</p>
+<h2 id="funding">Funding</h2>
+<p>[To be completed.]</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>The authors declare no competing interests. [To be confirmed.]</p>
+<h2 id="author-contributions">Author contributions</h2>
+<p>[To be completed using the CRediT taxonomy.]</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>[To be completed.]</p>
+<h2 id="references">References</h2>
+<p>Journal and conference citations were checked on 2026-10-19: DOI
+records were resolved through Crossref, and the PMLR conference entry
+was checked against the official PMLR page. Software references are
+official project URLs. The Crossref API snapshots are stored in
+<code>reports/paper/reference_verification_20261019/</code>.</p>
+<ol type="1">
+<li><p>Chen, B., Li, C., Dai, H., &amp; Song, L. (2020). Retro<em>:
+Learning retrosynthetic planning with neural guided A</em> search.
+<em>Proceedings of the 37th International Conference on Machine
+Learning</em>, PMLR 119, 1608–1616.
+https://proceedings.mlr.press/v119/chen20c.html</p></li>
+<li><p>Coley, C. W., Green, W. H., &amp; Jensen, K. F. (2019). RDChiral:
+An RDKit wrapper for handling stereochemistry in retrosynthetic template
+extraction and application. <em>Journal of Chemical Information and
+Modeling</em>, 59(6), 2529–2537.
+https://doi.org/10.1021/acs.jcim.9b00286</p></li>
+<li><p>Genheden, S., &amp; Bjerrum, E. J. (2022). PaRoutes: Towards a
+framework for benchmarking retrosynthesis route predictions. <em>Digital
+Discovery</em>, 1(4), 527–539.
+https://doi.org/10.1039/D2DD00015F</p></li>
+<li><p>Genheden, S., Thakkar, A., Chadimová, V., Reymond, J.-L.,
+Engkvist, O., &amp; Bjerrum, E. J. (2020). AiZynthFinder: A fast, robust
+and flexible open-source software for retrosynthetic planning.
+<em>Journal of Cheminformatics</em>, 12, 70.
+https://doi.org/10.1186/s13321-020-00472-1</p></li>
+<li><p>Kearnes, S. M., Maser, M. R., Wleklinski, M., Kast, A., Doyle, A.
+G., Dreher, S. D., Hawkins, J. M., Jensen, K. F., &amp; Coley, C. W.
+(2021). The Open Reaction Database. <em>Journal of the American Chemical
+Society</em>, 143(45), 18820–18826.
+https://doi.org/10.1021/jacs.1c09820</p></li>
+<li><p>Maziarz, K., Tripp, A., Liu, G., Stanley, M., Xie, S., Gaiński,
+P., Seidl, P., &amp; Segler, M. (2025). Re-evaluating retrosynthesis
+algorithms with Syntheseus. <em>Faraday Discussions</em>, 256, 568–586.
+https://doi.org/10.1039/D4FD00093E</p></li>
+<li><p>RDKit: Open-source cheminformatics. (2024).
+https://www.rdkit.org</p></li>
+<li><p>Schneider, N., Stiefl, N., &amp; Landrum, G. A. (2016). What’s
+What: The (nearly) definitive guide to reaction role assignment.
+<em>Journal of Chemical Information and Modeling</em>, 56(12),
+2336–2346. https://doi.org/10.1021/acs.jcim.6b00564</p></li>
+<li><p>Sorokina, M., Merseburger, P., Rajan, K., Yirik, M. A., &amp;
+Steinbeck, C. (2021). COCONUT online: Collection of Open Natural
+Products database. <em>Journal of Cheminformatics</em>, 13, 2.
+https://doi.org/10.1186/s13321-020-00478-9</p></li>
+<li><p>Torren-Peraire, P., Hassen, A. K., Genheden, S., Verhoeven, J.,
+Clevert, D.-A., Preuss, M., &amp; Tetko, I. V. (2024). Models Matter:
+The impact of single-step retrosynthesis on synthesis planning.
+<em>Digital Discovery</em>, 3(3), 558–572.
+https://doi.org/10.1039/D3DD00252G</p></li>
+<li><p>MolecularAI. SmartReact (version 2.0.1) [Computer software].
+https://github.com/MolecularAI/smartreact</p></li>
+</ol>
+</body>
+</html>

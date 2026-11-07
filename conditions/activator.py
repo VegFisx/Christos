@@ -56,6 +56,38 @@ from schema import load_rules, resolve_conditions  # noqa: E402
 #   对旧取值（ethanol/methanol/aqueous）行为不变（回归断言见 tools/test_solvent_gate.py）。
 SOLVENT_FAMILY = {k: v for k, v in SOLVENT_PARENT.items() if k != v}
 
+# ---------------------------------------------------------------- 阈值（外置）
+# ★ 第 101 轮（用户 2026-11-04）★
+#   门控阈值原来散落在代码里（0.35 / 0.15 步长 / 0.25 softness / 0.5 催化剂降权 / 0.15 通过线），
+#   全是『建模选择』且没有参考文献。用户要求：涉及底层反应逻辑的参数必须有出处，
+#   没有出处的只能当排序提示、不能判零。所以统一搬到 thresholds.json，
+#   每项带 status；代码只读文件，不再藏数字。
+_THRESH_PATH = _HERE / "thresholds.json"
+
+
+def _load_thresholds() -> Dict[str, Any]:
+    try:
+        import json
+        return json.loads(_THRESH_PATH.read_text(encoding="utf-8"))
+    except Exception as ex:                      # noqa: BLE001 —— 打印，不静默
+        print(f"   [warn] thresholds.json 读取失败（{type(ex).__name__}: {ex}），用内置默认值")
+        return {}
+
+
+TH = _load_thresholds()
+
+
+def _num(section: str, key: str, default: float) -> float:
+    try:
+        return float((TH.get(section) or {}).get(key, default))
+    except (TypeError, ValueError):
+        return float(default)
+
+
+def threshold_status(section: str) -> str:
+    """某项阈值有没有出处；返回 'cited' 或 'unvalidated_model_choice'。"""
+    return str((TH.get(section) or {}).get("status") or "unvalidated_model_choice")
+
 
 def solvent_score(run_solvent: str, allowed: Sequence[str]) -> float:
     """溶剂打分。
@@ -80,7 +112,9 @@ def solvent_score(run_solvent: str, allowed: Sequence[str]) -> float:
         if fam is None or fam not in allowed:
             return 0.0
         idx = allowed.index(fam)
-    return max(0.35, 1.0 - 0.15 * idx)
+    step = _num("solvent", "decay_step", 0.15)
+    floor = _num("solvent", "floor", 0.35)
+    return max(floor, 1.0 - step * idx)
 
 
 def solvent_matches(run_solvent: str, allowed: Sequence[str]) -> bool:
@@ -104,26 +138,49 @@ def ph_score(ph: float, preference: Optional[str]) -> float:
     """
     if preference in (None, "any"):
         return 1.0
+    ph_cfg = TH.get("ph") or {}
+
+    def _tbl(name: str, default):
+        rows = ph_cfg.get(name) or default
+        return rows
+
     if preference == "acid_base":
-        d = min(abs(ph - 7.0) / 6.0, 1.0)
-        return 0.40 + 0.60 * d
+        c = ph_cfg.get("acid_base") or {}
+        neutral = float(c.get("neutral_ph", 7.0))
+        half = float(c.get("half_range", 6.0)) or 6.0
+        floor = float(c.get("floor", 0.40))
+        slope = float(c.get("slope", 0.60))
+        d = min(abs(ph - neutral) / half, 1.0)
+        return floor + slope * d
     if preference == "acid":
-        return 1.0 if ph <= 3 else (0.70 if ph <= 5 else (0.45 if ph <= 8 else 0.20))
+        for hi, sc in _tbl("acid", [[3.0, 1.0], [5.0, 0.70], [8.0, 0.45], [14.0, 0.20]]):
+            if ph <= float(hi):
+                return float(sc)
+        return 0.20
     if preference == "base":
-        return 1.0 if ph >= 11 else (0.70 if ph >= 9 else (0.45 if ph >= 6 else 0.20))
+        for lo, sc in _tbl("base", [[11.0, 1.0], [9.0, 0.70], [6.0, 0.45], [0.0, 0.20]]):
+            if ph >= float(lo):
+                return float(sc)
+        return 0.20
     if preference == "neutral":
-        return 1.0 if 5.5 <= ph <= 8.0 else (0.50 if 4.0 <= ph <= 9.5 else 0.15)
+        for lo, hi, sc in _tbl("neutral", [[5.5, 8.0, 1.0], [4.0, 9.5, 0.50], [0.0, 14.0, 0.15]]):
+            if float(lo) <= ph <= float(hi):
+                return float(sc)
+        return 0.15
     return 1.0
 
 
 # ---------------------------------------------------------------- 软窗口打分
 
 def window_score(value: float, spec: Dict[str, float],
-                 softness: float = 0.25) -> float:
+                 softness: Optional[float] = None) -> float:
     """落在 [min, max] 内得 1.0；越界按窗口宽度的 softness 倍线性衰减到 0。
 
     softness=0.25 表示：越界超过窗口宽度的 25%，分数归零。
+    ★ 第 101 轮：默认值改从 thresholds.json 读（window.softness）。
     """
+    if softness is None:
+        softness = _num("window", "softness", 0.25)
     lo = float(spec["min"])
     hi = float(spec["max"])
     if lo <= value <= hi:
@@ -135,6 +192,21 @@ def window_score(value: float, spec: Dict[str, float],
 
 # ---------------------------------------------------------------- 主函数
 
+def _temperature_gate(spec: Dict[str, Any], T: float) -> Tuple[float, str, bool]:
+    """温度判据，委托给 extent.temperature_gate()（单一真相）。
+
+    为什么不让 activator 自己再写一套：第 84 轮接入 extent 时已经证明"同一个问题
+    在两个引擎里各写一份"必然跑偏——这里只负责把规则的条件档 shape 转过去。
+    万一 extent 不可用（路径/依赖缺失），退回旧的窗口打分，不让条件层整个失效。
+    """
+    try:
+        import extent as _extent
+        return _extent.temperature_gate(spec.get("min"), spec.get("max"), T)
+    except Exception:                        # noqa: BLE001 —— 显式退回，不静默
+        s = window_score(T, spec)
+        return s, ("" if s >= 0.5 else f"温度 {T:g} 落在窗口之外"), s <= 0.0
+
+
 def activation_score(rule: Dict[str, Any],
                      resolved: Optional[Dict[str, Any]],
                      run: Conditions) -> Tuple[float, List[str]]:
@@ -144,7 +216,15 @@ def activation_score(rule: Dict[str, Any],
     if resolved is None:
         return 0.0, ["规则没有可解析的条件窗口"]
 
-    priority = float(rule.get("priority", 0.5))
+    _prov = str(rule.get("provenance") or "").strip().lower()
+    if _prov in ("cited", "literature", "curated"):
+        priority = float(rule.get("priority", 0.5))
+    else:
+        # ★ 第 101 轮（用户口径：无出处的参数不许当判据）★
+        #   priority 是手写的 0.3~1.0，没有文献，不能拿它把某条规则压到门槛以下。
+        #   这里统一置 1.0：priority 只在排序里体现（见 active_rules 返回的分数顺序），
+        #   不参与「判零/判不发生」。
+        priority = 1.0
     category = rule.get("category", "")
 
     # ---- 硬门槛 1：气氛 ----
@@ -168,17 +248,29 @@ def activation_score(rule: Dict[str, Any],
 
     # ---- 软打分：温度 / 时间 ----
     scores = [s_solvent]
-    for key, value in (("temperature", run.temperature),
-                       ("time_min", run.time_min)):
-        spec = resolved.get(key)
-        if not spec:
-            continue
-        s = window_score(float(value), spec)
+
+    # ---- 温度：第 85 轮 A 案（低温判死、高温不判死）----
+    #   旧版对温度和时间用同一套 window_score，高温越界判 0 分。实测方向是反的：
+    #   250 °C 会把水解判关（ORD 水解上限 150 °C），而高温只会让它更快。
+    #   现在温度委托 extent.temperature_gate()，与生产路径同一份判据。
+    t_spec = resolved.get("temperature")
+    if t_spec:
+        t_score, t_why, t_dead = _temperature_gate(t_spec, float(run.temperature))
+        if t_dead:
+            return 0.0, [t_why]
+        scores.append(t_score)
+        if t_why:
+            reasons.append(t_why)
+
+    # ---- 时间：仍用软窗口（"跑多久"由 extent 层表达，这里只做门控）----
+    tm_spec = resolved.get("time_min")
+    if tm_spec:
+        s = window_score(float(run.time_min), tm_spec)
         scores.append(s)
         if s < 0.5:
             reasons.append(
-                f"{key}={value:g} 落在窗口 [{spec['min']}, {spec['max']}] "
-                f"之外，得分 {s:.2f}")
+                f"time_min={run.time_min:g} 落在窗口 "
+                f"[{tm_spec['min']}, {tm_spec['max']}] 之外，得分 {s:.2f}")
 
     if not scores:
         return 0.0, ["规则的条件窗口为空"]
@@ -204,9 +296,11 @@ def activation_score(rule: Dict[str, Any],
         else:
             # 催化剂不匹配是"降权"不是"判死"：
             # 很多反应在无催化或别的催化下也能缓慢发生，只是慢得多。
-            scores.append(0.5)
+            # 0.5 是建模选择（无文献），所以从 thresholds.json 读，便于日后标定。
+            _cat_bad = _num("catalyst", "mismatch_factor", 0.5)
+            scores.append(_cat_bad)
             reasons.append(
-                f"规则偏好催化剂 {allowed_cat}，当前 {run.catalyst}，降权至 0.5")
+                f"规则偏好催化剂 {allowed_cat}，当前 {run.catalyst}，降权至 {_cat_bad:g}")
 
     # ---- 木桶短板 × priority ----
     return min(scores) * priority, reasons
@@ -215,9 +309,16 @@ def activation_score(rule: Dict[str, Any],
 def active_rules(rules: Sequence[Dict[str, Any]],
                  profiles: Dict[str, Any],
                  run: Conditions,
-                 threshold: float = 0.15,
+                 threshold: Optional[float] = None,
                  ) -> List[Tuple[Dict[str, Any], float, List[str]]]:
-    """返回 [(规则, 分数, 原因)]，按分数降序，只保留 >= threshold 的。"""
+    """返回 [(规则, 分数, 原因)]，按分数降序，只保留 >= threshold 的。
+
+    ★ 第 101 轮：threshold 默认从 thresholds.json 的 active_threshold.value 读（0.15）。
+      这个 0.15 是建模选择、没有文献；用户口径是「没有出处的阈值不能单独判零」，
+      所以它只作为**排序下限**保留，真正判零仍靠硬门槛（气氛/溶剂/温度）。
+    """
+    if threshold is None:
+        threshold = float(((TH.get("active_threshold") or {}).get("value", 0.15)))
     out = []
     for r in rules:
         if r.get("status") == "disabled":

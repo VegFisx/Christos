@@ -1,0 +1,113 @@
+{
+  "schema": "chemreact-constants-provenance/1",
+  "generated": "2026-11-04",
+  "why": "用户 2026-11-04：涉及底层反应逻辑的参数必须有参考文献；没有出处的只能登记为建模选择，不得当实验值使用（AGENTS 第十二节）。本文件是 core/cascade.py 与 core/thermo.py 里全部数值常数的单一声明处，代码从这里读默认值。",
+  "status_vocabulary": {
+    "literature": "有同行评议文献支撑",
+    "internal_experiment": "只有项目内部对比实验（同一数据集内的扫描），不等于文献验证",
+    "internal_reasoning": "有具体失败案例支撑的工程判断，但没有外部文献",
+    "modeling_choice": "建模选择：为了让分数可比而人为定的刻度，无实验含义"
+  },
+  "gate_effect_vocabulary": {
+    "none": "只影响展示",
+    "affects_ordering": "影响排序/打分，不改变产物集合",
+    "affects_cost": "影响是否调用昂贵计算，不改变产物集合",
+    "stops_propagation": "会让产物不再继续往下反应（多轮搜索的深度界）"
+  },
+  "constants": {
+    "cascade.round_decay": {
+      "value": 0.85,
+      "unit": "无量纲（每轮乘数）",
+      "used_by": "core/cascade.py: ROUND_DECAY（第 171 行按轮次把分数打折；第 200 行算 decay）",
+      "status": "modeling_choice",
+      "gate_effect": "affects_ordering",
+      "evidence": null,
+      "note": "表达『推断越深、累积不确定性越大』。它本身不删除任何产物，但会与 min_propagate_score 共同决定多轮搜索能走多远。",
+      "policy": "可以调；调了必须按第 100 轮口径重跑 3,000 条对比，并在报告里写明数值来源。"
+    },
+    "cascade.min_propagate_score": {
+      "value": 0.35,
+      "unit": "分数（0~1）",
+      "used_by": "core/cascade.py: MIN_PROPAGATE_SCORE（第 132 行 default 参数）",
+      "status": "internal_experiment",
+      "gate_effect": "stops_propagation",
+      "evidence": {
+        "dataset": "甘草 15 个成分 / 煎煮 / max_rounds=8",
+        "scan": [
+          {"threshold": 0.0, "rounds": 8, "converged": false, "products": 1510, "high_score": 573},
+          {"threshold": 0.25, "rounds": 8, "converged": false, "products": 1522, "high_score": 573},
+          {"threshold": 0.35, "rounds": 7, "converged": true, "products": 1448, "high_score": 573},
+          {"threshold": 0.45, "rounds": 5, "converged": true, "products": 1137, "high_score": 573}
+        ]
+      },
+      "note": "这是『最多追几步推断』的深度界，不是化学判据。0.35 是内部扫描里唯一既收敛又不丢高分产物的点；换成 0.45 会少走两轮。注意它依赖 scorer 的分数刻度，而 scorer 的权重同样未标定（AGENTS 第 101 轮：排序已改为发射序，但本门槛仍在用分数）。",
+      "policy": "只在 rounds>1 时生效，单轮预测不受影响。若要让多轮结果更全，先看 max_rounds；不要把本值当成『反应能不能发生』的证据。"
+    },
+    "cascade.min_thermo_coverage": {
+      "value": 0.5,
+      "unit": "比例",
+      "used_by": "core/cascade.py: MIN_THERMO_COVERAGE（第 227 行判断是否整体回退启发式）",
+      "status": "internal_reasoning",
+      "gate_effect": "affects_ordering",
+      "evidence": {
+        "case": "附子中的乌头碱类（40~50 个重原子）超出 xTB 可靠范围，覆盖率可低到 10%",
+        "reason": "同榜混两套尺度（真值 + 启发式）比全部用启发式更糟"
+      },
+      "note": "只决定『这一轮要不要整体回退到启发式打分』，不删除产物。",
+      "policy": "随 xTB 可用性变化；改动需附覆盖率分布实测。"
+    },
+    "thermo.dg_favorable": {
+      "value": -30.0,
+      "unit": "kJ/mol",
+      "used_by": "core/thermo.py: DG_FAVORABLE（第 337 行起把 ΔG 映射成 0~1 分）",
+      "status": "modeling_choice",
+      "gate_effect": "affects_ordering",
+      "evidence": null,
+      "note": "ΔG → 分数的刻度端点；-30 kJ/mol 以下记满分。没有文献规定这个端点。",
+      "policy": "仅用于排序；不得用它判『反应不发生』。"
+    },
+    "thermo.dg_unfavorable": {
+      "value": 20.0,
+      "unit": "kJ/mol",
+      "used_by": "core/thermo.py: DG_UNFAVORABLE（同上）",
+      "status": "modeling_choice",
+      "gate_effect": "affects_ordering",
+      "evidence": null,
+      "note": "ΔG → 分数的另一端；+20 kJ/mol 以上记 0 分。同样无文献端点。",
+      "policy": "仅用于排序；不得用它判『反应不发生』。"
+    },
+    "thermo.max_heavy_for_xtb": {
+      "value": 45,
+      "unit": "重原子数",
+      "used_by": "core/thermo.py: MAX_HEAVY_FOR_XTB（第 215 行，超过就跳过 xTB）",
+      "status": "internal_reasoning",
+      "gate_effect": "affects_cost",
+      "evidence": {
+        "case": "40+ 重原子的乌头碱衍生物给出 +300 kJ/mol 的荒唐 ΔG",
+        "reason": "柔性大分子构象搜索找不到好构象，叠加气相 RRHO 谐振近似"
+      },
+      "note": "跳过不等于判死：产物仍在，只是没有 ΔG。",
+      "policy": "随构象搜索方法升级可重估。"
+    },
+    "thermo.dg_sane_min": {
+      "value": -250.0,
+      "unit": "kJ/mol",
+      "used_by": "core/thermo.py: DG_SANE_MIN（第 320 行，ΔG 合理性下界）",
+      "status": "modeling_choice",
+      "gate_effect": "affects_ordering",
+      "evidence": null,
+      "note": "超出区间记为 ΔG 不可靠（insane_dg 计数），不删产物、不给分。",
+      "policy": "这是数据质量闸门，不是化学判据。"
+    },
+    "thermo.dg_sane_max": {
+      "value": 150.0,
+      "unit": "kJ/mol",
+      "used_by": "core/thermo.py: DG_SANE_MAX（同上）",
+      "status": "modeling_choice",
+      "gate_effect": "affects_ordering",
+      "evidence": null,
+      "note": "同上界说明；+300 kJ/mol 那种值会被这条挡住。",
+      "policy": "同上。"
+    }
+  }
+}

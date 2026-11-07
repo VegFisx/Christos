@@ -1,0 +1,493 @@
+[
+ {
+  "id": "hyd_phosphate",
+  "kind": "rule",
+  "rule": "hydrolysis_phosphate_001",
+  "smiles": {
+   "lit": "COP(=O)(O)O",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "磷酸单甲酯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+    "name": "Ome"
+   }
+  ],
+  "forbid": [],
+  "note": "磷酸酯水解，放出甲醇"
+ },
+ {
+  "id": "hyd_hemiacetal",
+  "kind": "rule",
+  "rule": "hydrolysis_hemiacetal_001",
+  "smiles": {
+   "lit": "COC(C)O",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "甲氧基乙醇(半缩醛)",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+    "name": "Acetaldehyde"
+   }
+  ],
+  "forbid": [],
+  "note": "半缩醛水解回到醛 + 醇"
+ },
+ {
+  "id": "hyd_epoxide",
+  "kind": "rule",
+  "rule": "hydrolysis_epoxide_001",
+  "smiles": {
+   "lit": "CC1CO1",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "环氧丙烷",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "DNIAPMSPPWPWGF-UHFFFAOYSA-N",
+    "name": "1,2-propanediol"
+   }
+  ],
+  "forbid": [],
+  "note": "环氧化物开环成邻二醇"
+ },
+ {
+  "id": "hyd_imine",
+  "kind": "rule",
+  "rule": "hydrolysis_imine_001",
+  "smiles": {
+   "lit": "CN=Cc1ccccc1",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "N-甲基苯甲亚胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+    "name": "Benzaldehyde"
+   }
+  ],
+  "forbid": [],
+  "note": "亚胺水解回到醛 + 胺"
+ },
+ {
+  "id": "hyd_alkene",
+  "kind": "rule",
+  "rule": "hydration_alkene_001",
+  "smiles": {
+   "lit": "CC=C",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "丙烯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "KFZMGEQAYNKOFK-UHFFFAOYSA-N",
+    "name": "Ipa"
+   },
+   {
+    "db": "BDERNNFJNOPAEC-UHFFFAOYSA-N",
+    "name": "Pol"
+   }
+  ],
+  "forbid": [],
+  "note": "烯烃水合生成醇（马氏/反马氏两种都可能）"
+ },
+ {
+  "id": "hyd_enone",
+  "kind": "rule",
+  "rule": "hydration_enone_001",
+  "smiles": {
+   "db": "HGINCPLSRVDWNT-UHFFFAOYSA-N",
+   "name": "Papite"
+  },
+  "name": "丙烯醛",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "OCCC=O",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "α,β-不饱和羰基水合生成 β-羟基醛"
+ },
+ {
+  "id": "ox_amine",
+  "kind": "rule",
+  "rule": "oxidation_amine_001",
+  "smiles": {
+   "db": "QUSNBJAOOMFDIB-UHFFFAOYSA-N",
+   "name": "Ethylamine"
+  },
+  "name": "乙胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CC=N",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   },
+   {
+    "db": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+    "name": "Acetaldehyde"
+   }
+  ],
+  "forbid": [],
+  "note": "胺氧化生成亚胺（进一步可水解成羰基）"
+ },
+ {
+  "id": "ox_epoxide",
+  "kind": "rule",
+  "rule": "oxidation_epoxide_001",
+  "smiles": {
+   "lit": "CC=C",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "丙烯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CC1CO1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "双键环氧化生成环氧化物"
+ },
+ {
+  "id": "ox_dehydro_enone",
+  "kind": "rule",
+  "rule": "oxidation_dehydrogenation_enone_001",
+  "smiles": {
+   "db": "ZTQSAGDEMFDKMZ-UHFFFAOYSA-N",
+   "name": "Butal"
+  },
+  "name": "丁醛",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CC=CC=O",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "脱氢生成 α,β-不饱和羰基"
+ },
+ {
+  "id": "ox_sulfoxide_sulfone",
+  "kind": "rule",
+  "rule": "oxidation_sulfoxide_to_sulfone_001",
+  "smiles": {
+   "db": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+   "name": "Dimethyl sulfoxide"
+  },
+  "name": "DMSO",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "HHVIBTZHLRERCL-UHFFFAOYSA-N",
+    "name": "Mesylmethane"
+   }
+  ],
+  "forbid": [],
+  "note": "亚砜进一步氧化成砜"
+ },
+ {
+  "id": "red_quinone",
+  "kind": "rule",
+  "rule": "reduction_quinone_001",
+  "smiles": {
+   "lit": "O=C1C=CC=CC1=O",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "邻苯醌",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "db": "YCIMNLLNPGFGHC-UHFFFAOYSA-N",
+    "name": "1,2-benzenediol"
+   }
+  ],
+  "forbid": [],
+  "note": "醌还原成邻苯二酚。★规则的 [O]=[C][C]=[O] 要求两个羰基【相邻】，对苯醌（1,4-）不匹配"
+ },
+ {
+  "id": "eli_deamination",
+  "kind": "rule",
+  "rule": "elimination_deamination_001",
+  "smiles": {
+   "db": "BHHGXPLMPWCGHP-UHFFFAOYSA-N",
+   "name": "Pea"
+  },
+  "name": "2-苯乙胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "DTUQWGWMVIHBKE-UHFFFAOYSA-N",
+    "name": "Benzene acetaldehyde"
+   }
+  ],
+  "forbid": [],
+  "note": "氧化脱氨生成醛"
+ },
+ {
+  "id": "eli_amide_to_nitrile",
+  "kind": "rule",
+  "rule": "elimination_amide_to_nitrile_001",
+  "smiles": {
+   "db": "DLFVBJFMPXGRIB-UHFFFAOYSA-N",
+   "name": "Acetamide"
+  },
+  "name": "乙酰胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CC#N",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "酰胺高温脱水成腈"
+ },
+ {
+  "id": "rea_keto_enol",
+  "kind": "rule",
+  "rule": "tautomerization_keto_enol_001",
+  "smiles": {
+   "db": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+   "name": "Azeton"
+  },
+  "name": "丙酮",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "db": "NARVIWMVBMUEOG-UHFFFAOYSA-N",
+    "name": "2-hydroxy-propylene"
+   }
+  ],
+  "forbid": [],
+  "note": "酮-烯醇互变异构"
+ },
+ {
+  "id": "est_delta_lactone",
+  "kind": "rule",
+  "rule": "esterification_delta_lactone_001",
+  "smiles": {
+   "lit": "OCCCCC(=O)O",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "5-羟基戊酸",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "O=C1CCCCO1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "δ-羟基酸分子内酯化生成六元内酯"
+ },
+ {
+  "id": "cond_maillard",
+  "kind": "rule",
+  "rule": "maillard_simplified_001",
+  "smiles": {
+   "lit": "OCC=O",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "羟乙醛",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "LEQAOMBKQFMDFZ-UHFFFAOYSA-N",
+    "name": "Glyoxal"
+   }
+  ],
+  "forbid": [],
+  "note": "美拉德简化：α-羟基醛氧化成 α-二羰基"
+ },
+ {
+  "id": "bi_glycosylation",
+  "kind": "rule",
+  "rule": "condensation_glycosylation_001",
+  "smiles": {
+   "db": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+   "name": "Bgc"
+  },
+  "name": "葡萄糖(端基羟基)",
+  "conditions": "醇提",
+  "expect_any": [
+   {
+    "lit": "CCO[C@H]1O[C@@H](CO)[C@H](O)[C@@H](O)[C@@H]1O",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   },
+   {
+    "db": "WYUFTYLVLQZQNH-JAJWTYFOSA-N",
+    "name": "1-ethyl-alpha-d-galactoside"
+   }
+  ],
+  "forbid": [],
+  "note": "糖苷化：葡萄糖端基羟基与醇池里的乙醇成苷。★成苷时端基构型可以翻转（端基异构化），所以 α/β 两种都算对"
+ },
+ {
+  "id": "bi_hemiacetal",
+  "kind": "rule",
+  "rule": "condensation_hemiacetal_001",
+  "smiles": {
+   "db": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+   "name": "Benzaldehyde"
+  },
+  "name": "苯甲醛",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "OC(OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O)c1ccccc1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   },
+   {
+    "lit": "COC(O)c1ccccc1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "半缩醛形成：苯甲醛 + 醇池里的醇。★实测引擎取的是池子里的葡萄糖（分子最大），不是甲醇"
+ },
+ {
+  "id": "bi_michael_amine",
+  "kind": "rule",
+  "rule": "addition_michael_amine_001",
+  "smiles": {
+   "db": "HGINCPLSRVDWNT-UHFFFAOYSA-N",
+   "name": "Papite"
+  },
+  "name": "丙烯醛",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "O=CCCNCC(=O)O",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "★Michael 加成(胺)：氮必须加在 β碳上 → 3-氨基丙醛的衍生物。与硫醇版同源，上一轮一起修过。★原期望是 3-甲氨基丙醛(CNCCC=O)，那是照【甲胺】算的；甲胺在煎煮水里不存在，已从池子里移除（tools/audit_cosubstrates.py），现按药材真实存在的【甘氨酸】出产物"
+ },
+ {
+  "id": "bi_aldol",
+  "kind": "rule",
+  "rule": "condensation_aldol_001",
+  "smiles": {
+   "db": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+   "name": "Acetaldehyde"
+  },
+  "name": "乙醛",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CC(O)CC=O",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "醇醛缩合：乙醛 + 醛池里的乙醛 → 3-羟基丁醛"
+ },
+ {
+  "id": "bi_thiohemiacetal",
+  "kind": "rule",
+  "rule": "addition_thiohemiacetal_001",
+  "smiles": {
+   "db": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+   "name": "Benzaldehyde"
+  },
+  "name": "苯甲醛",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CSC(O)c1ccccc1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "硫代半缩醛：苯甲醛 + 硫醇池里的甲硫醇"
+ },
+ {
+  "id": "ox_para_diphenol",
+  "kind": "rule",
+  "rule": "oxidation_diphenol_para_001",
+  "smiles": {
+   "db": "QIGBRXMKCJKVMJ-UHFFFAOYSA-N",
+   "name": "Hydroquinone"
+  },
+  "name": "对苯二酚",
+  "conditions": "氧化",
+  "expect_any": [
+   {
+    "db": "AZQWKYJCGOJGHM-UHFFFAOYSA-N",
+    "name": "P-quinone"
+   }
+  ],
+  "forbid": [],
+  "note": "★对位★二酚氧化成醌：对苯二酚 -2H +O → 对苯醌 (C6H6O2 → C6H4O2)"
+ },
+ {
+  "id": "ox_para_anthrahydroquinone",
+  "kind": "rule",
+  "rule": "oxidation_diphenol_para_001",
+  "smiles": {
+   "lit": "Oc1c2ccccc2c(O)c2ccccc12",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "9,10-蒽氢醌",
+  "conditions": "氧化",
+  "expect_any": [
+   {
+    "db": "RZVHIXYEVGDQDX-UHFFFAOYSA-N",
+    "name": "Morkit"
+   }
+  ],
+  "forbid": [],
+  "note": "★这就是加这条规则的原因★ 论文说明写着「丹参酮、大黄蒽醌」，但原 SMARTS 只认两个羰基直接相连的邻位，蒽醌（相距 3 键）一直匹配不上。对苯二酚→对苯醌、蒽氢醌→蒽醌 都要能跑"
+ },
+ {
+  "id": "red_para_quinone",
+  "kind": "rule",
+  "rule": "reduction_quinone_para_001",
+  "smiles": {
+   "db": "AZQWKYJCGOJGHM-UHFFFAOYSA-N",
+   "name": "P-quinone"
+  },
+  "name": "对苯醌",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "db": "QIGBRXMKCJKVMJ-UHFFFAOYSA-N",
+    "name": "Hydroquinone"
+   }
+  ],
+  "forbid": [],
+  "note": "对位醌还原成二酚：对苯醌 +H2 → 对苯二酚 (C6H4O2 → C6H6O2)"
+ },
+ {
+  "id": "red_para_anthraquinone",
+  "kind": "rule",
+  "rule": "reduction_quinone_para_001",
+  "smiles": {
+   "db": "RZVHIXYEVGDQDX-UHFFFAOYSA-N",
+   "name": "Morkit"
+  },
+  "name": "9,10-蒽醌",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "Oc1c2ccccc2c(O)c2ccccc12",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "9,10-蒽醌 +H2 → 9,10-蒽氢醌 (C14H8O2 → C14H10O2)。论文说明承诺的「大黄蒽醌」就是这一类"
+ }
+]

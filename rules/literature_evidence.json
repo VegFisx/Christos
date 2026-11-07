@@ -1,0 +1,104 @@
+{
+  "schema_version": "chemreact-literature-evidence/1",
+  "generated_at": "2026-11-06",
+  "note": "每条都必须有 DOI/URL 与原文引句；找不到就留空并写 status=not_found。本表只服务 rules/rules.json 的 provenance=cited 规则。",
+  "entries": [
+    {
+      "id": "lit_cyanohydrin_haisman1967",
+      "claim": "苦杏仁苷三步酶解：苦杏仁苷→野樱苷+葡萄糖→扁桃腈+葡萄糖→苯甲醛+HCN",
+      "reaction": "氰醇（羟腈）裂解：R-CH(OH)-C#N -> R-CHO + HCN",
+      "sources": [
+        {
+          "title": "The enzymic hydrolysis of amygdalin",
+          "journal": "Biochemical Journal",
+          "year": 1967,
+          "doi": "10.1042/bj1030528",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1270437/",
+          "quote": "amygdalin was hydrolysed to prunasin and glucose; prunasin to mandelonitrile and glucose; mandelonitrile to benzaldehyde and hydrocyanic acid",
+          "type": "primary",
+          "title_ours": "The elimination of cyanide from mandelonitrile and the hydrolysis of amygdalin",
+          "citation_check": {
+            "status": "metadata_mismatch",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "The enzymic hydrolysis of amygdalin",
+            "crossref_journal": "Biochemical Journal",
+            "crossref_year": "1967",
+            "pmcid": "PMC1270437",
+            "open_access": "N",
+            "oa_url": "https://portlandpress.com/biochemj/article-pdf/103/2/528/758787/bj1030528.pdf"
+          }
+        }
+      ],
+      "conditions": {
+        "temperature_C": null,
+        "time_min": null,
+        "pH": null,
+        "note": "酶法体外实验，摘要未给温时 pH；另有 Foods 2024;13(3):437 (10.3390/foods13030437) 给苯甲醛生成 53 °C/pH 5.8/1.8 h"
+      },
+      "usage": "支持 cleavage_cyanohydrin_001；该规则同时是苦杏仁/麻黄汤里「扁桃腈→苯甲醛」缺失环节的来源。",
+      "weakness": "酶催化证据，非纯热化学；温度/时间未标定，因此不参与条件门控。"
+    },
+    {
+      "id": "lit_hemiketal_paeoniflorigenone_1983",
+      "claim": "芍药苷（笼状半缩酮）的苷元以开链酮式存在（paeoniflorigenone）",
+      "reaction": "半缩酮 -> 开链酮（异构化）",
+      "sources": [
+        {
+          "title": "The structure of paeoniflorigenone, a new monoterpene isolated from paenoiae radix.",
+          "journal": "Chemical & Pharmaceutical Bulletin",
+          "year": 1983,
+          "doi": "10.1248/cpb.31.577",
+          "quote": "isolated from the roots of Paeonia albiflora",
+          "type": "primary_structure_only",
+          "title_ours": "Paeoniflorigenone, a novel monoterpene from Paeoniae Radix",
+          "citation_check": {
+            "status": "metadata_mismatch",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "The structure of paeoniflorigenone, a new monoterpene isolated from paenoiae radix.",
+            "crossref_journal": "Chemical and Pharmaceutical Bulletin",
+            "crossref_year": "1983",
+            "oa_url": "https://www.jstage.jst.go.jp/article/cpb1958/31/2/31_2_577/_pdf"
+          }
+        }
+      ],
+      "conditions": {
+        "temperature_C": null,
+        "time_min": null,
+        "pH": null
+      },
+      "usage": "只作结构证据：证明酮式苷元真实存在。**没有反应级文献，因此不建规则**（按 AGENTS §十二）。",
+      "weakness": "无转化描述、无条件；不能拿来当判据。"
+    },
+    {
+      "id": "lit_vinegar_esterification_jwcmm2025",
+      "claim": "醋制促进二萜结构转化，包含醚键水解、内酯开环、酯化、氧化、环氧开环",
+      "reaction": "有机酸+醇->酯（炮制语境）",
+      "sources": [
+        {
+          "title": "醋制狼毒类药材化学成分及药理作用研究进展",
+          "journal": "中国中药杂志",
+          "year": 2025,
+          "doi": "10.19540/j.cnki.cjcmm.20250526.301",
+          "quote": "vinegar processing promotes structural transformations of diterpenoids, including ... esterification",
+          "type": "review",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ],
+      "conditions": {
+        "temperature_C": null,
+        "time_min": null,
+        "pH": null
+      },
+      "usage": "只支持「醋炙下可能发生酯化」这一方向性说法；无底物、无产物、无条件，所以不新增规则。",
+      "weakness": "综述二手，且与「醋酸与生物碱成盐」机制并存（Wu 2021, 10.1155/2021/1271953）。"
+    }
+  ]
+}

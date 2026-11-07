@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-10-31",
+  "source": "file:D:/TCMAI/tcm.db?mode=ro",
+  "note": "辅料共底物（P2 原型）：每个结构都按 ingredient_id 从 tcm.db 只读取回，未手写 SMILES。仅在炮制档启用；开关见 chemreact.py --no-paozhi-adjuvant。",
+  "methods": {
+    "蜜炙": {
+      "adjuvant": "蜂蜜",
+      "herb_id": "HERB001711",
+      "herb_name_en": "Honey",
+      "compounds": [
+        {
+          "ingredient_id": "HBIN028037",
+          "name_en": "Glucose",
+          "name_cn": "葡萄糖",
+          "formula": "C6H12O6",
+          "pubchem_id": "5793",
+          "smiles": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O",
+          "match_level": "herb_online",
+          "match_source": "HERB_detail"
+        },
+        {
+          "ingredient_id": "HBIN026793",
+          "name_en": "Fructose",
+          "name_cn": "果糖",
+          "formula": "C6H12O6",
+          "pubchem_id": "2723872",
+          "smiles": "C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O",
+          "match_level": "herb_online",
+          "match_source": "HERB_detail"
+        }
+      ]
+    },
+    "酒炙": {
+      "adjuvant": "黄酒",
+      "herb_id": "HERB002538",
+      "herb_name_en": "Yellow Wing",
+      "compounds": [
+        {
+          "ingredient_id": "HBIN015097",
+          "name_en": "Alcohol",
+          "name_cn": "乙醇",
+          "formula": "C2H6O",
+          "pubchem_id": "702",
+          "smiles": "CCO",
+          "match_level": "herb_online",
+          "match_source": "HERB_detail"
+        }
+      ]
+    },
+    "醋炙": {
+      "adjuvant": "醋",
+      "herb_id": "HERB000960",
+      "herb_name_en": "Vinegar",
+      "compounds": [
+        {
+          "ingredient_id": "HBIN014399",
+          "name_en": "Acetic acid",
+          "name_cn": "乙酸",
+          "formula": "C2H4O2",
+          "pubchem_id": "176",
+          "smiles": "CC(=O)O",
+          "match_level": "herb_online",
+          "match_source": "HERB_detail"
+        }
+      ]
+    }
+  }
+}

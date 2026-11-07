@@ -1,0 +1,516 @@
+{
+  "schema": "chemreact-template-provenance/1",
+  "generated": "2026-11-04",
+  "why": "用户 2026-11-04：涉及底层反应逻辑的参数必须有参考文献；没有出处的只能当惯例。",
+  "source_file": "reports/paper/paozhi_sources_20261031.json",
+  "status_vocabulary": {
+    "cited": "有同行评议文献，数值可追溯",
+    "secondary": "只有二手来源（百科/教学站），可参考不可当实验值",
+    "convention": "工艺惯例或对照档，文献里没有『最优值』这一说",
+    "physics": "物理常数（如沸点）",
+    "user_input": "用户自定条件（2026-11-06 起炮制默认让用户自填），不是文献预设值"
+  },
+  "templates": {
+    "自定义": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 25,
+        "time_min": 60,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "用户自填条件的占位档，本身没有物理含义。",
+      "citations": []
+    },
+    "煎煮": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 60,
+        "solvent": "water",
+        "pH": 6.5,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "中药汤剂标准工艺：常压水煮约 1 h。属工艺惯例，非实测最优值。",
+      "citations": []
+    },
+    "水提": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 60,
+        "time_min": 120,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "60 °C / 120 min 为温和水提惯例，无原始文献。",
+      "citations": []
+    },
+    "醇提": {
+      "status": "physics",
+      "match": "",
+      "template_values": {
+        "temperature": 78,
+        "time_min": 120,
+        "solvent": "ethanol",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "78 °C 取乙醇常压沸点（物理常数）；120 min 为工艺惯例。",
+      "citations": []
+    },
+    "酸水解": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 120,
+        "solvent": "water",
+        "pH": 1.5,
+        "catalyst": "acid",
+        "atmosphere": "air"
+      },
+      "note": "刻意强酸长时加热以断糖苷/酯键；pH 1.5 / 120 min 为惯例值。",
+      "citations": []
+    },
+    "碱水解": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 120,
+        "solvent": "water",
+        "pH": 12.0,
+        "catalyst": "base",
+        "atmosphere": "air"
+      },
+      "note": "刻意强碱长时加热；pH 12 / 120 min 为惯例值。",
+      "citations": []
+    },
+    "氧化": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 240,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "O2"
+      },
+      "note": "通氧 + 长时间；240 min 为惯例值，无出处。",
+      "citations": []
+    },
+    "还原": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 60,
+        "time_min": 240,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": "metal",
+        "atmosphere": "H2"
+      },
+      "note": "H2 氛围 + 金属催化，作为对照档；数值为惯例。",
+      "citations": []
+    },
+    "酶催化": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 37,
+        "time_min": 1440,
+        "solvent": "water",
+        "pH": 6.0,
+        "catalyst": "enzyme",
+        "atmosphere": "air"
+      },
+      "note": "37 °C / pH 6 / 24 h 模拟体内或发酵，属惯例。",
+      "citations": []
+    },
+    "室温浸泡": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 25,
+        "time_min": 1440,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "极端对照：25 °C / 24 h。",
+      "citations": []
+    },
+    "无氧煎煮": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 60,
+        "solvent": "water",
+        "pH": 6.5,
+        "catalyst": null,
+        "atmosphere": "N2"
+      },
+      "note": "煎煮的 N2 气氛对照，其余同煎煮。",
+      "citations": []
+    },
+    "无溶剂（炮制）": {
+      "status": "convention",
+      "match": "",
+      "template_values": {
+        "temperature": 150,
+        "time_min": 30,
+        "solvent": "none",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "150 °C / 30 min；炒制常见区间 120–180 °C 的中间值。",
+      "citations": []
+    },
+    "炮制·炒黄": {
+      "status": "cited",
+      "match": "representative",
+      "template_values": {
+        "temperature": 165,
+        "time_min": 10,
+        "solvent": "none",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "模板 165 °C / 10 min 落在文献区间内（160–170 °C；莱菔子 160 °C/3 min；120 °C/0–10 min）。",
+      "citations": [
+        {
+          "method": "炒黄（个案）",
+          "herb": "莱菔子",
+          "value": "160",
+          "unit": "°C",
+          "time": "3 min",
+          "quote": "a representative laboratory-scale stir-frying condition (160 °C for 3 min) was selected",
+          "source": {
+            "title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice",
+            "journal": "Foods",
+            "year": 2026,
+            "doi": "10.3390/foods15203587",
+            "type": "peer_reviewed"
+          }
+        },
+        {
+          "method": "炒黄（炒微黄）",
+          "herb": null,
+          "value": "160–170",
+          "unit": "°C",
+          "time": "未给",
+          "quote": "炒制一般受热温度：炒微黄在160~170℃，炒焦化在190~200℃。",
+          "source": {
+            "title": "中药炒制的常见方法及作用",
+            "publisher": "康美中药网",
+            "year": 2018,
+            "url": "https://www.kmzyw.com.cn/baike/20180814/1534236773000.5614.html",
+            "type": "secondary"
+          }
+        },
+        {
+          "method": "炒制（个案）",
+          "herb": "花椒",
+          "value": "120",
+          "unit": "°C",
+          "time": "0–10 min",
+          "quote": "during Sichuan pepper stir-frying (0-10 min, 120 °C)",
+          "source": {
+            "title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper",
+            "journal": "Food Chemistry: X",
+            "year": 2026,
+            "doi": "10.1016/j.fochx.2026.104644",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·炒焦": {
+      "status": "secondary",
+      "match": "representative",
+      "template_values": {
+        "temperature": 195,
+        "time_min": 10,
+        "solvent": "none",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "模板 195 °C / 10 min 取『焦炒 190–200 °C』区间中值；来源为二手网页。",
+      "citations": [
+        {
+          "method": "炒焦（炒焦化）",
+          "herb": null,
+          "value": "190–200",
+          "unit": "°C",
+          "time": "未给",
+          "quote": "炒制一般受热温度：炒微黄在160~170℃，炒焦化在190~200℃。",
+          "source": {
+            "title": "中药炒制的常见方法及作用",
+            "publisher": "康美中药网",
+            "year": 2018,
+            "url": "https://www.kmzyw.com.cn/baike/20180814/1534236773000.5614.html",
+            "type": "secondary"
+          }
+        }
+      ]
+    },
+    "炮制·炒炭": {
+      "status": "secondary",
+      "match": "representative",
+      "template_values": {
+        "temperature": 260,
+        "time_min": 35,
+        "solvent": "none",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "模板 260 °C / 35 min 取『220–300 °C、35–40 min』区间；来源为二手网页。",
+      "citations": [
+        {
+          "method": "炒炭",
+          "herb": null,
+          "value": "220–300",
+          "unit": "°C",
+          "time": "35–40 min",
+          "quote": "一般温度在220~300℃，时间35~40分钟为度。",
+          "source": {
+            "title": "中药制炭的方法及注意事项",
+            "publisher": "康美中药网",
+            "year": 2018,
+            "url": "https://www.kmzyw.com.cn/baike/20180820/1534756563000.4053.html",
+            "type": "secondary"
+          }
+        }
+      ]
+    },
+    "炮制·蜜炙": {
+      "status": "cited",
+      "match": "exact",
+      "template_values": {
+        "temperature": 120,
+        "time_min": 13.5,
+        "solvent": "none",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "120 °C / 13.5 min 与文献数值完全一致（甘草蜜炙，700 W）。",
+      "citations": [
+        {
+          "method": "蜜炙（蜜炒）",
+          "herb": "甘草",
+          "value": "120",
+          "unit": "°C（药材温度）",
+          "time": "13.5 min",
+          "quote": "Stir-frying under controlled intensity and duration (700 W, 13.5 min; drug temperature 120 °C) was identified as optimal.",
+          "source": {
+            "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+            "journal": "Natural Product Research",
+            "year": 2026,
+            "doi": "10.1080/14786419.2026.2693245",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·酒炙": {
+      "status": "cited",
+      "match": "rounded",
+      "template_values": {
+        "temperature": 140,
+        "time_min": 5,
+        "solvent": "ethanol",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "模板 140 °C / 5 min 取『柴胡黄酒 135–145 °C、5 min』中值。",
+      "citations": [
+        {
+          "method": "酒炙",
+          "herb": "柴胡",
+          "value": "135–145",
+          "unit": "°C",
+          "time": "5 min",
+          "quote": "最佳炮制工艺条件为柴胡与黄酒用量比为100∶10，酒炙温度135~145℃，酒炙时间5 min。",
+          "source": {
+            "title": "正交试验优选酒柴胡炮制工艺",
+            "journal": "中国医院药学杂志",
+            "year": 2018,
+            "url": "https://zgyyyx.magtechjournal.com/EN/10.13286/j.cnki.chinhosppharmacyj.2018.09.09",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·醋炙": {
+      "status": "cited",
+      "match": "exact",
+      "template_values": {
+        "temperature": 84,
+        "time_min": 35,
+        "solvent": "water",
+        "pH": 3.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "84 °C / 35 min 与文献完全一致（延胡索米醋 37%）。",
+      "citations": [
+        {
+          "method": "醋炙",
+          "herb": "延胡索",
+          "value": "84",
+          "unit": "°C",
+          "time": "35 min",
+          "quote": "processing temperature of 84°C, vinegar dosage of 37%, and baking time of 35 min",
+          "source": {
+            "title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy",
+            "journal": "Biomedical Chromatography",
+            "year": 2026,
+            "doi": "10.1002/bmc.70636",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·盐炙": {
+      "status": "cited",
+      "match": "exact",
+      "template_values": {
+        "temperature": 150,
+        "time_min": 10,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "150 °C / 10 min 取杜仲盐炙；另有沙苑子 2% 盐水 100 °C/15 min。",
+      "citations": [
+        {
+          "method": "盐炙",
+          "herb": "杜仲",
+          "value": "150",
+          "unit": "°C",
+          "time": "10 min",
+          "quote": "每1 kg杜仲药材喷洒2%盐水溶液拌匀润透，150 ℃炒制10 min。",
+          "source": {
+            "title": "多指标正交试验法优选杜仲药材最佳炮制工艺",
+            "journal": "药物分析杂志",
+            "year": 2009,
+            "url": "http://dianda.cqvip.com/Qikan/Article/Detail?id=32337407",
+            "type": "peer_reviewed"
+          }
+        },
+        {
+          "method": "盐炙（个案）",
+          "herb": "沙苑子",
+          "value": "100",
+          "unit": "°C",
+          "time": "15 min",
+          "quote": "每30 g沙苑子，加2%食盐水4 mL，闷润8 h，于100 ℃炒15 min。",
+          "source": {
+            "title": "沙苑子盐炙工艺优选及其炮制前后抗炎作用研究",
+            "journal": "中草药",
+            "year": 2025,
+            "doi": "10.7501/j.issn.0253-2670.2025.09.010",
+            "url": "https://www.tiprpress.com/zcy/ch/reader/create_pdf.aspx?file_no=20250910&year_id=2025&quarter_id=9&falg=1",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·姜炙": {
+      "status": "cited",
+      "match": "exact",
+      "template_values": {
+        "temperature": 150,
+        "time_min": 40,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "150 °C / 40 min 与文献一致（黄连 15% 姜汁）。",
+      "citations": [
+        {
+          "method": "姜炙",
+          "herb": "黄连",
+          "value": "150",
+          "unit": "°C",
+          "time": "40 min",
+          "quote": "黄连的最佳姜炙工艺为：生黄连加15%姜汁润透后，在150℃下烘制40 min，取出，晾凉。",
+          "source": {
+            "title": "正交设计法优选黄连姜炙工艺",
+            "journal": "中国药师",
+            "year": 2016,
+            "url": "https://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_zgys201602007",
+            "type": "peer_reviewed"
+          }
+        }
+      ]
+    },
+    "炮制·蒸制": {
+      "status": "cited",
+      "match": "representative",
+      "template_values": {
+        "temperature": 100,
+        "time_min": 120,
+        "solvent": "water",
+        "pH": 7.0,
+        "catalyst": null,
+        "atmosphere": "air"
+      },
+      "note": "模板 100 °C / 120 min 取『人参 95–100 °C、2–3 h』区间端点；蒸汽未单独建模。",
+      "citations": [
+        {
+          "method": "蒸制（红参）",
+          "herb": "人参",
+          "value": "95–100",
+          "unit": "°C",
+          "time": "2–3 h",
+          "quote": "red ginseng is prepared by steaming fresh ginseng at 95–100 °C for 2–3 h before drying",
+          "source": {
+            "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+            "journal": "Molecules",
+            "year": 2020,
+            "doi": "10.3390/molecules25194390",
+            "type": "peer_reviewed_local_fulltext"
+          }
+        }
+      ]
+    },
+    "炮制·自定义": {
+      "status": "user_input",
+      "match": "n/a",
+      "note": "2026-11-06 用户要求：炮制条件改为用户自填（溶剂/温度/时间/pH/气氛），本档不带固定预设值；占位基线 150C/30min/无溶剂 仅用于引擎初始化。",
+      "source": {
+        "title": "用户指令",
+        "type": "user_requirement"
+      },
+      "template_values": {
+        "solvent": "none",
+        "temperature": 150,
+        "time_min": 30,
+        "pH": 7.0,
+        "atmosphere": "air"
+      },
+      "citations": []
+    }
+  }
+}

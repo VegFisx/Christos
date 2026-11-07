@@ -178,6 +178,11 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
             return []
 
         ph = ",".join("?" * len(ids))
+        # 特异性：该成分出现在多少个药材里。1 = 该药材特有，越大越通用。
+        cur.execute(
+            "SELECT ingredient_id, COUNT(DISTINCT herb_id) AS n "
+            "FROM herb_compound GROUP BY ingredient_id")
+        spread = {r[0]: r[1] for r in cur.fetchall()}
         cur.execute(
             f"""
             SELECT c.ingredient_id, c.name_en, c.smiles, c.isomeric_smiles, c.mol_weight,
@@ -189,9 +194,7 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
               AND c.smiles IS NOT NULL AND c.smiles != ''
               AND LENGTH(c.smiles) > 3
               AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN')
-            ORDER BY
-              CASE hc.match_level WHEN 'marker' THEN 0 ELSE 1 END,
-              c.mol_weight DESC
+            ORDER BY c.mol_weight DESC
             """,
             ids,
         )
@@ -221,6 +224,7 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
                      name=(name_en or "").strip() or smiles[:24],
                      herb=herb_cn or herb_name,
                      source="herb")
+        c._iid = ing_id          # 供特异性排序使用
         c.chp = None
         # ★ C（用户 2026-10-16）：带出 TCMSP 的 OB / DL。**默认只当信息列，不参与取舍**；
         #   只有显式 order_tcmsp=True 时才用它排序。口径：OB≥30% 且 DL≥0.18（TCMSP 经典）。
@@ -232,6 +236,13 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
         c.tcmsp = bool(c.ob is not None and c.ob >= 30
                        and c.dl is not None and c.dl >= 0.18)
         out.append(c)
+
+    # 默认按特异性排序：出现在越少药材里的成分越靠前，通用成分垫底。
+    # 这取代了此前"手写 marker 优先"的做法，后者按关键词 LIKE 生成，
+    # 会把麻黄碱标成半夏成分、把 ATP 标成腺苷类标志物。
+    if not chp_first:
+        # 稳定排序：相同特异性的保持 SQL 里按分子量降序的相对顺序
+        out.sort(key=lambda c: spread.get(getattr(c, "_iid", ""), 9999))
 
     if chp_first:
         chp = {}

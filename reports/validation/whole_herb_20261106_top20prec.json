@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-11-06 11:18:28",
+  "protocol": {
+    "condition": "煎煮",
+    "rounds": 1,
+    "max_pairs": 400,
+    "seed_source": "tcm.db herb_compound 关联合并 compounds，按 ob_score 降序",
+    "top_n": 20
+  },
+  "cases": {
+    "甘草": {
+      "herb_id": "HERB001779",
+      "n_components_with_structure": 359,
+      "n_seeds_used": 22,
+      "seeds": [
+        {
+          "id": "HBIN022166",
+          "name": "Cyclobutanol,1-ethyl-",
+          "ob": 93.233
+        },
+        {
+          "id": "HBIN028181",
+          "name": "Glycyrol",
+          "ob": 90.776
+        },
+        {
+          "id": "HBIN030896",
+          "name": "isoliquiritigenin",
+          "ob": 85.32179823
+        },
+        {
+          "id": "HBIN012887",
+          "name": "7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin",
+          "ob": 83.714
+        },
+        {
+          "id": "HBIN033114",
+          "name": "Licopyranocoumarin",
+          "ob": 80.36
+        },
+        {
+          "id": "HBIN043917",
+          "name": "Shinpterocarpin",
+          "ob": 80.295
+        },
+        {
+          "id": "HBIN034960",
+          "name": "Methyl 2-hydroxy-3,4-dimethoxybenzoate",
+          "ob": 79.296
+        },
+        {
+          "id": "HBIN039409",
+          "name": "Phaseol",
+          "ob": 78.766
+        },
+        {
+          "id": "HBIN033094",
+          "name": "Licochalcone b",
+          "ob": 76.757
+        },
+        {
+          "id": "HBIN006254",
+          "name": "2'-o-methylisoliquiritigenin",
+          "ob": 75.856
+        },
+        {
+          "id": "HBIN028083",
+          "name": "Glyasperin f",
+          "ob": 75.837
+        },
+        {
+          "id": "HBIN030134",
+          "name": "Inermine",
+          "ob": 75.183
+        },
+        {
+          "id": "HBIN047875",
+          "name": "Vestitol",
+          "ob": 74.65518912
+        },
+        {
+          "id": "HBIN048716",
+          "name": "(z)-1-(2,4-dihydroxyphenyl)-3-phenylprop-2-en-1-one",
+          "ob": 73.18
+        },
+        {
+          "id": "HBIN006534",
+          "name": "Liquiritigenin",
+          "ob": 71.123
+        },
+        {
+          "id": "HBIN002717",
+          "name": "1-methoxyphaseollidin",
+          "ob": 69.981
+        },
+        {
+          "id": "HBIN026662",
+          "name": "Formononetin",
+          "ob": 69.674
+        },
+        {
+          "id": "HBIN036764",
+          "name": "Neowilforine",
+          "ob": 67.152
+        },
+        {
+          "id": "HBIN024796",
+          "name": "Echinatin",
+          "ob": 66.584
+        },
+        {
+          "id": "HBIN007125",
+          "name": "3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone",
+          "ob": 66.371
+        }
+      ],
+      "precursors": [
+        {
+          "id": "HBIN028191",
+          "name": "甘草酸 glycyrrhizin",
+          "rank_by_ob": 203,
+          "in_top": false
+        },
+        {
+          "id": "HBIN033383",
+          "name": "甘草苷 liquiritin",
+          "rank_by_ob": 21,
+          "in_top": false
+        }
+      ],
+      "hours_check_note": "甘草酸/甘草苷 在煎煮中经糖苷水解生成甘草次酸（第 87 轮文献案例，hydrolysis_glycoside_001）",
+      "seconds": 132.3,
+      "n_hops": 6093,
+      "target": "甘草次酸 glycyrrhetinic acid",
+      "target_status": "consistent",
+      "target_rule": "hydrolysis_glycoside_001",
+      "target_round": "-",
+      "n_products_same_formula": 0
+    },
+    "人参": {
+      "herb_id": "HERB004609",
+      "n_components_with_structure": 429,
+      "n_seeds_used": 21,
+      "seeds": [
+        {
+          "id": "HBIN038919",
+          "name": "Patchouli alcohol",
+          "ob": 101.965
+        },
+        {
+          "id": "HBIN020019",
+          "name": "Celabenzine",
+          "ob": 101.883
+        },
+        {
+          "id": "HBIN023972",
+          "name": "Dihydroresveratrol",
+          "ob": 87.273
+        },
+        {
+          "id": "HBIN036591",
+          "name": "Neocnidilide",
+          "ob": 83.83
+        },
+        {
+          "id": "HBIN036053",
+          "name": "Mycosinol",
+          "ob": 82.124
+        },
+        {
+          "id": "HBIN041332",
+          "name": "Putrescine",
+          "ob": 81.225
+        },
+        {
+          "id": "HBIN011003",
+          "name": "5-[(3as,6r,6ar)-2-keto-1,3,3a,4,6,6a-hexahydrothieno[3,4-d]imidazol-6-yl]valeric acid",
+          "ob": 75.753
+        },
+        {
+          "id": "HBIN016516",
+          "name": "Aposiopolamine",
+          "ob": 66.647
+        },
+        {
+          "id": "HBIN027794",
+          "name": "Ginsenoyne a",
+          "ob": 66.219
+        },
+        {
+          "id": "HBIN026800",
+          "name": "Frutinone a",
+          "ob": 65.904
+        },
+        {
+          "id": "HBIN030133",
+          "name": "Inermin",
+          "ob": 65.831
+        },
+        {
+          "id": "HBIN023424",
+          "name": "D-erythro-isocitric acid",
+          "ob": 65.429
+        },
+        {
+          "id": "HBIN022815",
+          "name": "DBP",
+          "ob": 64.5416405
+        },
+        {
+          "id": "HBIN014684",
+          "name": "Adenine",
+          "ob": 62.806
+        },
+        {
+          "id": "HBIN038749",
+          "name": "Panaxydol",
+          "ob": 61.667
+        },
+        {
+          "id": "HBIN027809",
+          "name": "Girinimbin",
+          "ob": 61.215
+        },
+        {
+          "id": "HBIN007666",
+          "name": "3,5-dimethyl-p-anisic acid",
+          "ob": 61.105
+        },
+        {
+          "id": "HBIN026829",
+          "name": "Fumarine",
+          "ob": 59.263
+        },
+        {
+          "id": "HBIN045672",
+          "name": "Taxifolin",
+          "ob": 57.842
+        },
+        {
+          "id": "HBIN034311",
+          "name": "Malkangunin",
+          "ob": 57.714
+        }
+      ],
+      "precursors": [
+        {
+          "id": "HBIN027729",
+          "name": "人参皂苷 Rb1 ginsenoside Rb1",
+          "rank_by_ob": 324,
+          "in_top": false
+        }
+      ],
+      "hours_check_note": "Rb1 -> Rd -> Rg3，蒸制/加热条件下经糖苷水解（第 88 轮，hydrolysis_glycoside_001）",
+      "seconds": 92.5,
+      "n_hops": 4598,
+      "target": "人参皂苷 Rg3",
+      "target_status": "consistent",
+      "target_rule": "hydrolysis_glycoside_001",
+      "target_round": "-",
+      "n_products_same_formula": 0
+    },
+    "附子": {
+      "herb_id": "HERB001776",
+      "n_components_with_structure": 148,
+      "n_seeds_used": 23,
+      "seeds": [
+        {
+          "id": "HBIN029984",
+          "name": "Ignavine",
+          "ob": 84.079
+        },
+        {
+          "id": "HBIN042347",
+          "name": "(r)-norcoclaurine",
+          "ob": 82.543
+        },
+        {
+          "id": "HBIN032097",
+          "name": "Karanjin",
+          "ob": 69.557
+        },
+        {
+          "id": "HBIN047506",
+          "name": "Unal",
+          "ob": 67.616
+        },
+        {
+          "id": "HBIN049046",
+          "name": "Zoba eg",
+          "ob": 66.136
+        },
+        {
+          "id": "HBIN049045",
+          "name": "Zoba 3ga",
+          "ob": 65.804
+        },
+        {
+          "id": "HBIN029531",
+          "name": "Honokiol",
+          "ob": 60.669
+        },
+        {
+          "id": "HBIN023349",
+          "name": "Deoxyandrographolide",
+          "ob": 56.304
+        },
+        {
+          "id": "HBIN012310",
+          "name": "6-demethyldesoline",
+          "ob": 51.872
+        },
+        {
+          "id": "HBIN032092",
+          "name": "Karakoline",
+          "ob": 51.731
+        },
+        {
+          "id": "HBIN031283",
+          "name": "Isotalatizidine",
+          "ob": 50.824
+        },
+        {
+          "id": "HBIN046496",
+          "name": "Tmpea",
+          "ob": 47.544
+        },
+        {
+          "id": "HBIN023215",
+          "name": "Deltoin",
+          "ob": 46.693
+        },
+        {
+          "id": "HBIN036668",
+          "name": "Neokadsuranic acid b",
+          "ob": 43.098
+        },
+        {
+          "id": "HBIN047561",
+          "name": "Uracil",
+          "ob": 42.526
+        },
+        {
+          "id": "HBIN024930",
+          "name": "Eic",
+          "ob": 41.904
+        },
+        {
+          "id": "HBIN009569",
+          "name": "(3r,8s,9r,10r,13r,14s,17r)-3-hydroxy-4,4,9,13,14-pentamethyl-17-[(e,2r)-6-methyl-7-[(2r,3r,4s,5s,6r)-3,4,5-trihydroxy-6-[[(2r,3r,4s,5s,6r)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxymethyl]oxan-2-yl]oxyhept-5-en-2-yl]-1,2,3,7,8,10,12,15,16,17-decahydr",
+          "ob": 41.522
+        },
+        {
+          "id": "HBIN000290",
+          "name": "11,14-eicosadienoic acid",
+          "ob": 39.994
+        },
+        {
+          "id": "HBIN005003",
+          "name": "2,7-dideacetyl-2,7-dibenzoyl-taxayunnanine f",
+          "ob": 39.428
+        },
+        {
+          "id": "HBIN007871",
+          "name": "3-acetylaconitine",
+          "ob": 37.053
+        }
+      ],
+      "precursors": [
+        {
+          "id": "HBIN014582",
+          "name": "乌头碱 aconitine",
+          "rank_by_ob": 67,
+          "in_top": false
+        },
+        {
+          "id": "HBIN034775",
+          "name": "中乌头碱 mesaconitine",
+          "rank_by_ob": 63,
+          "in_top": false
+        },
+        {
+          "id": "HBIN029816",
+          "name": "次乌头碱 hypaconitine",
+          "rank_by_ob": 31,
+          "in_top": false
+        }
+      ],
+      "hours_check_note": "双酯型二萜生物碱水相水解生成苯甲酰单酯型（第 92 轮，hydrolysis_ester_001）",
+      "seconds": 188.3,
+      "n_hops": 7329,
+      "target": "苯甲酰乌头原碱 benzoylaconine",
+      "target_status": "consistent",
+      "target_rule": "hydrolysis_ester_001",
+      "target_round": "-",
+      "n_products_same_formula": 0
+    }
+  }
+}

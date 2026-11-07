@@ -28,6 +28,10 @@ class ReactionResult:
     reactant_c: str = ""
     # ★ D5：D5（3 组分）用 —— 产物 canonical SMILES -> 该模板的 support（只用于打标记）
     product_support: Optional[dict] = None
+    # ★ 2026-11-04（chemreact 第 89 轮）：产物 SMILES -> 命中它的模板 SMARTS。
+    #   为什么要：台账只记反应类名（esterification / mitsunobu …），事后无法反查模板
+    #   动了哪些原子，逐跳立体判断因此判不了。这里把命中的 SMARTS 一并带回去。
+    template_smarts: Optional[dict] = None
 
     def __str__(self) -> str:
         return self._format()

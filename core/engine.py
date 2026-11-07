@@ -52,6 +52,7 @@ for _p in (_STAGE / "rules", _STAGE / "conditions", _STAGE / "libs"):
 from schema import load_rules, resolve_conditions          # noqa: E402
 from model import Conditions                                # noqa: E402
 from activator import active_rules, activation_score        # noqa: E402
+import extent as _extent                                    # noqa: E402  ★ 第84轮：反应进程层
 
 
 # ---------------------------------------------------------------- 阈值
@@ -120,6 +121,35 @@ class Product:
     # ★ 热力学（由 core/thermo.py 填充，可为空）
     dg_kj: Optional[float] = None
     stability: Optional[float] = None
+
+    # ★ 2026-11-04（第 84 轮）：反应进程 extent（0~1）。
+    #   与 activation 的分工：
+    #     activation = 这条反应**会不会发生**（硬门 + 阈值，过/不过）
+    #     extent     = 在当前时间/温度/pH/催化剂下**跑到什么程度**（连续量）
+    #   默认 1.0 = 未启用（开关 `RunSpec.condition_extent` 关着），所以旧结果逐位不变。
+    #   依据见 conditions/kinetics.json 与 conditions/extent.py。
+    extent: float = 1.0
+    extent_band: str = ""
+
+    # ★ 2026-11-04（第 89 轮）：mined 模板命中的 SMARTS（空 = 该产物不是 mined 模板出的）。
+    #   为什么记：台账原来只记类别名（mined_extra / mined_mono），事后无法反查模板动了哪些原子，
+    #   逐跳立体判断因此有 47% 判不了。写了这一列，judge_stereo_hops 就能直接算作用范围。
+    template_smarts: str = ""
+
+    # ★ 2026-11-04（第 91 轮）：同一个结构还能由哪些规则给出（逗号分隔的 rule_id）。
+    #   为什么要记：`step()` 用 `seen` 按结构去重，**先到的那条规则占住名字**
+    #   （实测：去甲槟榔碱先被 mined_mono 给出，demethylation_n_001 那一份被丢掉，
+    #   台账里只看到 mined_mono）。化学是对的，归因是坏的 —— 文献对照按反应族判断时
+    #   因此会误判成「产物对、反应族错」。这一列把其它能给出它的规则留下来。
+    also_rules: str = ""
+
+    # ★ 2026-11-04（第 96 轮）：引擎内部发射序（同轮内第几个被枚举出来）。
+    #   为什么记：实测 3,000 条测试反应，**按发射序排序**的 top-1 = 42.71%，
+    #   而按 `scorer.score_product` 排序只有 32.50%（MRR 0.547 vs 0.442）。
+    #   发射序来自「模板枚举顺序 × 底物顺序」，模板库本身是按支持度整理的，
+    #   所以它隐含了「这个反应更常见」的先验——比手写权重更准。
+    #   默认 0 = 未赋值（旧路径行为不变），sort 时 0 会排在一起。
+    seq: int = 0
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -558,6 +588,8 @@ class Engine:
 
             for part, mol, is_by in valid:
                 seen_local.add(part)
+                _seq = int(getattr(self, "_seq_counter", 0))
+                self._seq_counter = _seq + 1
                 out.append(Product(
                     smiles=part,
                     formula=rdMolDescriptors.CalcMolFormula(mol),
@@ -574,6 +606,7 @@ class Engine:
                     reversible=bool(rule.get("reversible", False)),
                     activation=activation,
                     co_products=group,
+                    seq=_seq,
                 ))
         if n_unbalanced:
             self.balance_dropped = getattr(self, "balance_dropped", 0) + n_unbalanced
@@ -584,10 +617,43 @@ class Engine:
     def step(self, compounds: Sequence[Compound], cond: Conditions,
              threshold: float = 0.15,
              exclude_smiles: Optional[set] = None,
-             round_no: int = 1) -> List[Product]:
-        """对一批底物跑一轮反应。exclude_smiles 里的产物不再重复产出。"""
+             round_no: int = 1,
+             extent_gate: bool = False) -> List[Product]:
+        """对一批底物跑一轮反应。exclude_smiles 里的产物不再重复产出。
+
+        ★ 第 84 轮（2026-11-04）新增 `extent_gate` ★
+        activation 回答「这条反应会不会发生」，extent 回答「跑到什么程度」。
+        打开后：extent < kinetics.json 的 `gates.extent_min`（默认 0.10）的规则
+        整条跳过；其余规则跑出来的产物带 `extent` / `extent_band`。
+        默认 False = 旧行为逐位不变（extent 一律 1.0、不门控）。
+        """
         exclude_smiles = exclude_smiles or set()
         active = active_rules(self.rules, self.profiles, cond, threshold)
+        # ★ 第 101 轮：发射序计数器（scorer.rank 默认按它排；跨规则递增）
+        self._seq_counter = 0
+
+        # 每条规则的 extent 只算一次（按规则，不按底物）
+        extent_of: Dict[str, Tuple[float, str]] = {}
+        extent_min = 0.10
+        if extent_gate and not _extent.gating_allowed():
+            print("   [note] extent 参数未经文献标定（kinetics.json: validation.gate_enabled=false），"
+                  "本次只写标注、不按 extent 过滤产物")
+            extent_gate = False
+        if extent_gate:
+            params = _extent.load_params()
+            extent_min = float((params.get("gates") or {}).get("extent_min", 0.10))
+            for rule, _act, _reasons in active:
+                try:
+                    resolved, _ = resolve_conditions(rule, self.profiles)
+                    e, ewhy = _extent.extent_from_profile(
+                        resolved, cond, params,
+                        profile=rule.get("condition_profile"))
+                except Exception as ex:              # noqa: BLE001 —— 打印，不静默
+                    e, ewhy = 1.0, f"extent 计算失败（{type(ex).__name__}: {ex}），放行"
+                extent_of[rule["id"]] = (e, ewhy)
+            n_low = sum(1 for e, _w in extent_of.values() if e < extent_min)
+            if n_low:
+                self.extent_dropped = getattr(self, "extent_dropped", 0) + n_low
 
         results: List[Product] = []
         seen: set = set()
@@ -603,12 +669,18 @@ class Engine:
             if get_mol(sub.smiles) is None:
                 continue
             for rule, act, _reasons in active:
+                per = extent_of.get(rule["id"])
+                if per is not None and per[0] < extent_min:
+                    continue                      # 当前条件跑到这个程度的量，判为不产出
                 for p in self.apply_rule(rule, sub, act, round_no=round_no,
                                          cond=cond):
                     if p.smiles in exclude_smiles or p.smiles in seen:
                         continue
                     if p.smiles == sub.smiles:
                         continue          # 自身不算产物
+                    if per is not None:
+                        p.extent = round(per[0], 4)
+                        p.extent_band = _extent.band_of(per[0])
                     seen.add(p.smiles)
                     results.append(p)
         return results

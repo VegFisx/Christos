@@ -104,7 +104,11 @@ SOLVENT_FINE = tuple(sorted(set(SOLVENT_PARENT) - set(SOLVENT_COARSE)))
 # 允许取值（粗 + 细；校验用）
 SOLVENTS = set(SOLVENT_PARENT)
 CATALYSTS = {None, "acid", "base", "enzyme", "metal", "light"}
-ATMOSPHERES = {"air", "O2", "N2", "H2", "vacuum", "CO2"}
+ATMOSPHERES = {"air", "O2", "N2", "H2", "He", "Ne", "Ar", "vacuum", "CO2", "none"}
+# Carrier gases that do not themselves supply oxygen or hydrogen.  This is a
+# redox-gate classification only; it does not claim chemical inertness toward
+# every reaction class.
+INERT_ATMOSPHERES = {"N2", "He", "Ne", "Ar"}
 
 
 def solvent_class(name) -> str:

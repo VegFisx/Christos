@@ -357,6 +357,38 @@
         "N2"
       ],
       "pH_preference": "any"
+    },
+    "esterification_paozhi": {
+      "temperature": {
+        "min": 20,
+        "max": 200,
+        "default": 100
+      },
+      "pH": {
+        "min": 0,
+        "max": 14,
+        "default": 3
+      },
+      "solvent": [
+        "water",
+        "aqueous",
+        "alcohol",
+        "none"
+      ],
+      "catalyst": [
+        "acid",
+        null
+      ],
+      "time_min": {
+        "min": 1,
+        "max": 1440,
+        "default": 60
+      },
+      "atmosphere": [
+        "air",
+        "N2"
+      ],
+      "pH_preference": "acid"
     }
   },
   "rules": [
@@ -375,7 +407,9 @@
       "status": "active",
       "notes": "实测差值 O1H2，补 1 分子水即配平。乌头碱减毒主途径。引擎须用 RDChiral：rdkit 原生 RunReactants 在环内断键时会复制原子。 【修复】取代基碳原写成 [C:]（只匹配脂肪碳），导致【酚酯/芳基酰胺】等芳香取代底物匹配不上。已改为 [#6:]（任意碳）。同类问题见糖苷水解。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
       "max_products_per_molecule": 3,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "cited",
+      "evidence_id": "hydrolysis_ester_001"
     },
     {
       "id": "hydrolysis_glycoside_001",
@@ -392,7 +426,9 @@
       "status": "active",
       "notes": "★★重要修复★★ 苷元碳原来写成 [C:8]，而 SMARTS 里 [C] 专指【脂肪碳】——这导致规则对【酚苷】完全无效，而中药里绝大多数糖苷是酚苷。实证：甲基葡萄糖苷（烷基苷）正常，水杨苷/熊果苷（酚苷）0 产物。已改为 [#6:8]（任意碳）。修完水杨苷→葡萄糖+水杨醇、熊果苷→葡萄糖+对苯二酚。★这是反应级测试集抓出来的——原子守恒校验发现不了「该匹配的底物漏掉了」。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
       "max_products_per_molecule": 3,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "cited",
+      "evidence_id": "hydrolysis_glycoside_001"
     },
     {
       "id": "hydrolysis_amide_001",
@@ -409,7 +445,8 @@
       "status": "active",
       "notes": "实测差值 O1H2。★已修两类映射缺陷：①原写法反应物 [N:3] 与产物 [O:3] 共用编号 3，rdkit 会把氮原子当氧改；②新增原子必须【不编号】（写 [OH] 而非 [O:5]），否则 RDChiral 抛 KeyError。中性水中酰胺水解实际很慢，条件层应压制其分数。 【修复】取代基碳原写成 [C:]（只匹配脂肪碳），导致【酚酯/芳基酰胺】等芳香取代底物匹配不上。已改为 [#6:]（任意碳）。同类问题见糖苷水解。 【覆盖修复】原 [N:3][C:4] 要求氮上必须连碳，导致乙酰胺/谷氨酰胺/天冬酰胺等【伯酰胺】一个都水解不了。改为 [N:3]，氮上取代基不写进模板——未映射的取代基会原样带入产物，一条 SMARTS 同时覆盖伯酰胺与 N-取代酰胺。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
       "max_products_per_molecule": 3,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_sulfate_001",
@@ -432,7 +469,8 @@
           "name": "硫酸单甲酯"
         }
       ],
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_phosphate_001",
@@ -449,7 +487,8 @@
       "status": "active",
       "notes": "实测差值 O1H2。磷脂、磷酸糖。环磷酸酯由 RDChiral 通用处理，无需单独规则。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
       "max_products_per_molecule": 3,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_acetal_001",
@@ -466,7 +505,8 @@
       "status": "active",
       "notes": "★原 SMARTS 有真错误：产物只写了 [#6:5]，把 [#6:3] 整个片段丢了（丢一个烷氧基）。已补第三个产物片段 [OH][#6:3]。修复后 400/400 配平。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
       "max_products_per_molecule": 1,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_hemiacetal_001",
@@ -481,7 +521,8 @@
       "status": "active",
       "notes": "简单底物（COC(O)c1ccccc1）配平正确且不耗水。环状半缩醛（如葡萄糖）由 RDChiral 正确开环。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】 ★B文献条件：水/酸或碱催化（JOC 1985；Perkin Trans 2 1994）。",
       "max_products_per_molecule": 2,
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_hydroxyl_001",
@@ -499,7 +540,8 @@
       "priority": 0.6,
       "status": "active",
       "notes": "实测差值 H-2，补 0.5 O2 并产 1 水即配平。",
-      "max_products_per_molecule": 2
+      "max_products_per_molecule": 2,
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_aldehyde_001",
@@ -515,7 +557,8 @@
       "priority": 0.75,
       "status": "active",
       "notes": "实测差值 O1，补 0.5 O2。",
-      "max_products_per_molecule": 3
+      "max_products_per_molecule": 3,
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_phenol_quinone_001",
@@ -533,7 +576,8 @@
       "priority": 0.6,
       "status": "active",
       "notes": "实测差值 H-2。多酚聚合起始步。 ★B文献条件：高碘酸盐氧化或酪氨酸酶+O2（JACS 1966；IJMS 2020）。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_amine_001",
@@ -559,7 +603,8 @@
           "smiles": "CCN",
           "name": "乙胺"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_ketone_001",
@@ -575,7 +620,8 @@
       "priority": 0.45,
       "status": "active",
       "notes": "实测差值 H2。煎煮条件下一般无氢源，条件层应靠 atmosphere 把它关掉。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_quinone_001",
@@ -591,7 +637,8 @@
       "priority": 0.45,
       "status": "active",
       "notes": "实测差值 H4（双位点），补 2 分子氢。丹参酮、大黄蒽醌。 ★★产物修复★★ 原来产物写成 [OH:1][C:2][C:3][OH:4]，碳氧双键变单键后 C2/C3 各补 1 个氢，产物成了环己二烯二醇 C6H8O2（非芳香）。而邻苯醌还原应得到【芳香】的邻苯二酚 C6H6O2。更糟的是：规则靠把 co_reagents 从 H2:1 灌到 H2:2 让等式成立——这是「靠调试剂把原子数凑平」，校验器只能看到账平、看不到账假。已把产物改为芳香碳 [c:2]/[c:3]，co 恢复为 H2:1。★这是本项目第三次遇到「靠灌试剂凑平」：美拉德简化、分子内脱水成醚、本次。★零命中复核（第七十五轮）：原 SMARTS 会把草酰氯 O=C(Cl)C(=O)Cl 当成醌；加 ;R 环约束后，邻苯醌/1,2-萘醌仍匹配，草酰氯/丁二酮不匹配。",
-      "max_products_per_molecule": 2
+      "max_products_per_molecule": 2,
+      "provenance": "unvalidated"
     },
     {
       "id": "elimination_dehydration_001",
@@ -605,7 +652,9 @@
       "priority": 0.6,
       "status": "active",
       "notes": "原生配平（82/82）。但只匹配仲醇/叔醇；伯醇（如乙醇）不匹配，是覆盖缺口不是 bug。 【覆盖修复】原 [CH2:1][CH1:2][OH:3] 对两个碳都写死了氢数——要求羟基碳恰好 1 个氢、邻碳恰好 2 个氢。结果【乙醇】这个最基础的脱水底物匹配不上（CH3CH2OH 两个条件都不满足）。已放宽为 [CX4:1][CX4:2][OX2H:3]。这是「氢数写死」的第 4 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水。",
-      "max_products_per_molecule": 3
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "elimination_dehydration_001"
     },
     {
       "id": "demethylation_aromatic_001",
@@ -621,7 +670,8 @@
       "priority": 0.55,
       "status": "active",
       "notes": "★★已修★★ 【芳香甲醚脱甲基】阿魏酸→咖啡酸、愈创木酚型脱甲基，是中药里真实相关的反应。原 SMARTS [O:1][CH3:2] 过宽，会命中一切 O-CH3——乙酸甲酯/苯甲酸甲酯/甲基葡萄糖苷都被它「脱甲基」，但那些其实是【酯水解】【糖苷水解】该干的事。同一转化被两条规则重复计算，产物溯源会指错规则。已加芳香性约束 [c:3][O:1][CH3:2]。★注意：本条备注里早就写着「过宽，应加芳香性约束」——写了警告却一直没修，是这类 TODO 的通病。",
-      "max_products_per_molecule": 2
+      "max_products_per_molecule": 2,
+      "provenance": "unvalidated"
     },
     {
       "id": "decarboxylation_aromatic_001",
@@ -635,7 +685,8 @@
       "priority": 0.7,
       "status": "active",
       "notes": "原生配平（33/33）。CO2 已显式写入产物，是正确写法的范例。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "decarboxylation_beta_keto_001",
@@ -655,7 +706,8 @@
           "smiles": "CC(=O)CC(=O)O",
           "name": "乙酰乙酸"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "hydroxylation_aromatic_001",
@@ -671,7 +723,8 @@
       "priority": 0.4,
       "status": "active",
       "notes": "实测 1895/1895 配平，但传播过广（400 个底物出 1895 个产物），且方向不明确。建议加位置/取代约束后降权重用。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydration_alkene_001",
@@ -687,7 +740,8 @@
       "priority": 0.4,
       "status": "active",
       "notes": "实测配平，但 SMARTS 无区域选择性，任意双键都加水，产物质量差。建议重写（马氏规则）。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydration_enone_001",
@@ -703,7 +757,8 @@
       "priority": 0.4,
       "status": "active",
       "notes": "实测配平，但无立体/区域选择性。建议重写。 ★★加成方向修复★★ 羟基因在了 α碳(C2) 上，而 α,β-不饱和羰基水合是 Michael 型加成，水应加到【β碳】(C1)。原写法给 CC(O)C=O（乳醛），正确应为 O=CCCO（3-羟基丙醛）。两个产物分子式相同，四道闸门全会放行。这是第 3 个「加基因接错原子」的 bug。 ★B文献条件：水+酸/碱或催化（JACS 1973；Nature Chem 2010）。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "tautomerization_keto_enol_001",
@@ -717,7 +772,8 @@
       "priority": 0.3,
       "status": "active",
       "notes": "实测 509/509 配平。属互变异构，不产生新分子，级联中应默认跳过。 【覆盖修复】原 [CX4H2:3] 要求 α碳恰好 2 个氢，丙酮（α碳为 CH3）这个最典型的底物匹配不上。已去掉氢数限制。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
     },
     {
       "id": "esterification_gamma_lactone_001",
@@ -731,7 +787,8 @@
       "priority": 0.5,
       "max_products_per_molecule": 2,
       "status": "active",
-      "notes": "γ-羟基酸分子内酯化成五元环内酯（+1 水）。★替代了原来的坏规则 esterification_intramolecular_001：那条的产物模板把酸羟基的氧也写进环里、还丢掉了链上的碳，导致 19 个底物匹配、0 个产物。实证：4-羟基丁酸→γ-丁内酯 配平；正确拒绝 β-羟基酸（3-羟基丁酸）与 δ-羟基酸（5-羟基戊酸）；葡糖酸给出正确的五元环内酯。★α-内酯（三元环）刻意不建规则——极不稳定，不是可分离产物。"
+      "notes": "γ-羟基酸分子内酯化成五元环内酯（+1 水）。★替代了原来的坏规则 esterification_intramolecular_001：那条的产物模板把酸羟基的氧也写进环里、还丢掉了链上的碳，导致 19 个底物匹配、0 个产物。实证：4-羟基丁酸→γ-丁内酯 配平；正确拒绝 β-羟基酸（3-羟基丁酸）与 δ-羟基酸（5-羟基戊酸）；葡糖酸给出正确的五元环内酯。★α-内酯（三元环）刻意不建规则——极不稳定，不是可分离产物。",
+      "provenance": "unvalidated"
     },
     {
       "id": "esterification_delta_lactone_001",
@@ -745,7 +802,8 @@
       "priority": 0.5,
       "max_products_per_molecule": 2,
       "status": "active",
-      "notes": "δ-羟基酸分子内酯化成六元环内酯（+1 水）。实证：5-羟基戊酸→δ-戊内酯 配平；正确拒绝 4-羟基丁酸（γ）。与 γ-内酯化互不重叠，各自只匹配自己的链长。"
+      "notes": "δ-羟基酸分子内酯化成六元环内酯（+1 水）。实证：5-羟基戊酸→δ-戊内酯 配平；正确拒绝 4-羟基丁酸（γ）。与 γ-内酯化互不重叠，各自只匹配自己的链长。",
+      "provenance": "unvalidated"
     },
     {
       "id": "maillard_simplified_001",
@@ -763,7 +821,9 @@
       "priority": 0.35,
       "status": "active",
       "notes": "★修复★ 还原糖的 CH2OH 被氧化成 CHO，属【氧化】：消耗半个 O2、产出一个水。第 6 轮被 derive_co_reagents --apply 覆盖成了 by={H2:1}（产氢气）——原子数同样配平，所以校验器放行了，直到加上化学合理性检查才暴露。这类「靠编副产物把原子数凑平」的错误是原子守恒校验的盲区。",
-      "max_products_per_molecule": 3
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "maillard_simplified_001"
     },
     {
       "id": "oxidation_primary_alcohol_001",
@@ -781,7 +841,8 @@
       "priority": 0.55,
       "max_products_per_molecule": 2,
       "status": "active",
-      "notes": "与「羟基氧化」(仲醇→酮) 互补：这个是伯醇→醛。"
+      "notes": "与「羟基氧化」(仲醇→酮) 互补：这个是伯醇→醛。",
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_sulfide_001",
@@ -797,7 +858,8 @@
       "priority": 0.4,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "大蒜素等含硫成分的氧化。"
+      "notes": "大蒜素等含硫成分的氧化。",
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_epoxide_001",
@@ -813,7 +875,8 @@
       "priority": 0.35,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "无区域选择性，仅限流 1 个。萜类双键易被氧化。"
+      "notes": "无区域选择性，仅限流 1 个。萜类双键易被氧化。",
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_dehydrogenation_enone_001",
@@ -831,7 +894,8 @@
       "priority": 0.4,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "形成共轭烯酮，热力学有利。"
+      "notes": "形成共轭烯酮，热力学有利。",
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_thiol_disulfide_001",
@@ -845,7 +909,8 @@
       "priority": 0.0,
       "max_products_per_molecule": 1,
       "status": "disabled",
-      "notes": "★停用★ 成二硫需要两分子硫醇，而本引擎只支持单反应物规则。手工探针（半胱氨酸）也不匹配。这是引擎的结构性限制，不是 SMARTS 写错。"
+      "notes": "★停用★ 成二硫需要两分子硫醇，而本引擎只支持单反应物规则。手工探针（半胱氨酸）也不匹配。这是引擎的结构性限制，不是 SMARTS 写错。",
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_aldehyde_001",
@@ -861,7 +926,8 @@
       "priority": 0.4,
       "max_products_per_molecule": 2,
       "status": "active",
-      "notes": "新规则草稿，陪跑试剂待自动推导"
+      "notes": "新规则草稿，陪跑试剂待自动推导",
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_alkene_001",
@@ -877,7 +943,8 @@
       "priority": 0.35,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "过宽，仅限流 1 个；实际只在强还原条件下发生。"
+      "notes": "过宽，仅限流 1 个；实际只在强还原条件下发生。",
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_nitro_001",
@@ -897,7 +964,8 @@
           "smiles": "C[N+](=O)[O-]",
           "name": "硝基甲烷"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_epoxide_001",
@@ -913,7 +981,9 @@
       "priority": 0.6,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "rdchiral 可正确处理环内断键，这正是它相对 rdkit 的优势。"
+      "notes": "环氧开环，生成反式邻二醇。文献：郁红礼等 2022（狼毒醋制，160°C/6%乙酸/40min；『结构中的环氧环容易开环』；DOI 10.19540/j.cnki.cjcmm.20221111.301）。RDKit 实测 JNB C20H26O4 的环氧环开环生成 C20H28O5（与内酯开环产物为同分异构体，由不同反应位点得到）。仅炮制档加载。",
+      "provenance": "cited",
+      "evidence_id": "hydrolysis_epoxide_001"
     },
     {
       "id": "hydrolysis_lactam_001",
@@ -930,7 +1000,8 @@
       "max_products_per_molecule": 1,
       "status": "active",
       "notes": "环内断键，靠 rdchiral。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "hydrolysis_imine_001",
@@ -953,7 +1024,8 @@
           "name": "N-甲基苯甲亚胺"
         }
       ],
-      "thermo_unreliable": true
+      "thermo_unreliable": true,
+      "provenance": "unvalidated"
     },
     {
       "id": "cyclization_hemiacetal_001",
@@ -977,7 +1049,8 @@
           "smiles": "O=CCCCCO",
           "name": "5-羟基戊醛"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "cyclization_lactam_001",
@@ -1001,7 +1074,8 @@
           "smiles": "NCCCCC(=O)O",
           "name": "5-氨基戊酸"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "cyclization_ether_001",
@@ -1015,7 +1089,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "★已修★ 原产物会形成 O-O 键（1,2-二氧戊环），化学错误；它之所以通过原子守恒校验，是因为推导器给它编了个 byproducts=H2。新写法只让【一个】氧进环，水作为副产物，现已原生配平（183 底物 100%）。"
+      "notes": "★已修★ 原产物会形成 O-O 键（1,2-二氧戊环），化学错误；它之所以通过原子守恒校验，是因为推导器给它编了个 byproducts=H2。新写法只让【一个】氧进环，水作为副产物，现已原生配平（183 底物 100%）。",
+      "provenance": "unvalidated"
     },
     {
       "id": "cyclization_lactone_delta_001",
@@ -1029,7 +1104,8 @@
       "priority": 0.45,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "与已有 δ-内酯化 编号方式不同，用于交叉验证写法是否稳健。"
+      "notes": "与已有 δ-内酯化 编号方式不同，用于交叉验证写法是否稳健。",
+      "provenance": "unvalidated"
     },
     {
       "id": "condensation_aldol_intra_001",
@@ -1043,7 +1119,8 @@
       "priority": 0.0,
       "max_products_per_molecule": 1,
       "status": "disabled",
-      "notes": "★停用★ SMARTS 里 [CX4H2:3] 与 [CX3:4] 本来就成键，再让它们成键没有意义。真正的分子内醇醛需要 1,5- 或 1,6-二羰基（两端羰基之间隔着 ≥2 个碳）。与其硬凑，不如停用——分子间醇醛（condensation_aldol_001）已经覆盖了碳碳成键。"
+      "notes": "★停用★ SMARTS 里 [CX4H2:3] 与 [CX3:4] 本来就成键，再让它们成键没有意义。真正的分子内醇醛需要 1,5- 或 1,6-二羰基（两端羰基之间隔着 ≥2 个碳）。与其硬凑，不如停用——分子间醇醛（condensation_aldol_001）已经覆盖了碳碳成键。",
+      "provenance": "unvalidated"
     },
     {
       "id": "isomerization_double_bond_001",
@@ -1057,7 +1134,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "双键沿链迁移，趋向共轭。"
+      "notes": "双键沿链迁移，趋向共轭。",
+      "provenance": "unvalidated"
     },
     {
       "id": "isomerization_epimerization_001",
@@ -1071,7 +1149,8 @@
       "priority": 0.0,
       "max_products_per_molecule": 1,
       "status": "disabled",
-      "notes": "★停用★ SMARTS 两边完全相同，是恒等变换，不产生任何新分子。真正的差向异构需要立体化学模板，本引擎暂不支持。"
+      "notes": "★停用★ SMARTS 两边完全相同，是恒等变换，不产生任何新分子。真正的差向异构需要立体化学模板，本引擎暂不支持。",
+      "provenance": "unvalidated"
     },
     {
       "id": "rearrangement_retro_aldol_001",
@@ -1085,7 +1164,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "碳碳键断裂，生成两个片段。 【覆盖修复】原 [CX4H:3] 要求中间碳恰好 1 个氢，把最典型的 β-羟基羰基（中间为 CH2，如醛缩合产物）全部排除。已放宽为 [CX4:3]。"
+      "notes": "碳碳键断裂，生成两个片段。 【覆盖修复】原 [CX4H:3] 要求中间碳恰好 1 个氢，把最典型的 β-羟基羰基（中间为 CH2，如醛缩合产物）全部排除。已放宽为 [CX4:3]。",
+      "provenance": "unvalidated"
     },
     {
       "id": "decarboxylation_malonic_001",
@@ -1109,7 +1189,8 @@
           "smiles": "CC(=O)CC(=O)O",
           "name": "乙酰乙酸"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "elimination_deamination_001",
@@ -1125,7 +1206,8 @@
       "priority": 0.35,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "与已有「胺氧化」同型，用于交叉验证。"
+      "notes": "与已有「胺氧化」同型，用于交叉验证。",
+      "provenance": "unvalidated"
     },
     {
       "id": "elimination_decarboxylation_phenol_001",
@@ -1139,7 +1221,8 @@
       "priority": 0.0,
       "max_products_per_molecule": 1,
       "status": "disabled",
-      "notes": "★停用★ 与已有的「芳香酸脱羧」重复：后者的 SMARTS [c:1][CX3:2](=[OX1:3])[OX2H:4] 本来就匹配所有芳香羧酸（含酚酸）。手工探针（水杨酸/咖啡酸/没食子酸）全不匹配。"
+      "notes": "★停用★ 与已有的「芳香酸脱羧」重复：后者的 SMARTS [c:1][CX3:2](=[OX1:3])[OX2H:4] 本来就匹配所有芳香羧酸（含酚酸）。手工探针（水杨酸/咖啡酸/没食子酸）全不匹配。",
+      "provenance": "unvalidated"
     },
     {
       "id": "esterification_transesterification_001",
@@ -1180,7 +1263,8 @@
       "priority": 0.55,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "★醇提的关键反应★ 乙醇与药材中的酯生成新酯。原来的单反应物引擎无法表达，这是本轮加双反应物支持的主要动机。!@ 约束断开的 C-O 键必须是非环键（环内酯另由单反应物规则处理）。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】"
+      "notes": "★醇提的关键反应★ 乙醇与药材中的酯生成新酯。原来的单反应物引擎无法表达，这是本轮加双反应物支持的主要动机。!@ 约束断开的 C-O 键必须是非环键（环内酯另由单反应物规则处理）。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】",
+      "provenance": "unvalidated"
     },
     {
       "id": "esterification_intermolecular_001",
@@ -1213,7 +1297,8 @@
       "priority": 0.45,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "有机酸 + 醇 → 酯 + 水。与已有的分子内酯化（内酯化）互补。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】"
+      "notes": "有机酸 + 醇 → 酯 + 水。与已有的分子内酯化（内酯化）互补。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】",
+      "provenance": "unvalidated"
     },
     {
       "id": "condensation_schiff_base_001",
@@ -1233,7 +1318,8 @@
       "priority": 0.35,
       "max_products_per_molecule": 2,
       "status": "active",
-      "notes": "醛 + 伯胺 → 亚胺 + 水。美拉德反应的前期步骤之一。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py"
+      "notes": "醛 + 伯胺 → 亚胺 + 水。美拉德反应的前期步骤之一。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py",
+      "provenance": "unvalidated"
     },
     {
       "id": "amidation_intermolecular_001",
@@ -1253,7 +1339,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "有机酸 + 胺 → 酰胺 + 水。中性水中很慢，条件层应压制。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py"
+      "notes": "有机酸 + 胺 → 酰胺 + 水。中性水中很慢，条件层应压制。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py",
+      "provenance": "unvalidated"
     },
     {
       "id": "aminolysis_ester_001",
@@ -1273,7 +1360,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "酯 + 胺 → 酰胺 + 醇。生物碱与氨基酸共存时可能发生。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py"
+      "notes": "酯 + 胺 → 酰胺 + 醇。生物碱与氨基酸共存时可能发生。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py",
+      "provenance": "unvalidated"
     },
     {
       "id": "condensation_glycosylation_001",
@@ -1316,7 +1404,8 @@
       "priority": 0.4,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "糖的端基羟基（半缩醛碳 [CX4H1](O)(OR)）与另一个醇成苷，脱一分子水。★要求第一个反应物本身就是半缩醛（糖环），所以不会把普通醇也配上去。这是水解的逆反应，与「糖苷水解」成对。"
+      "notes": "糖的端基羟基（半缩醛碳 [CX4H1](O)(OR)）与另一个醇成苷，脱一分子水。★要求第一个反应物本身就是半缩醛（糖环），所以不会把普通醇也配上去。这是水解的逆反应，与「糖苷水解」成对。",
+      "provenance": "unvalidated"
     },
     {
       "id": "condensation_hemiacetal_001",
@@ -1359,7 +1448,8 @@
       "priority": 0.4,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "醛 + 醇 → 半缩醛。缩醛/糖苷形成的第一步，不加不减原子。 ★B文献条件：醛+醇、酸催化、可逆（Analyst 2023；ACS Earth 2024）。"
+      "notes": "醛 + 醇 → 半缩醛。缩醛/糖苷形成的第一步，不加不减原子。 ★B文献条件：醛+醇、酸催化、可逆（Analyst 2023；ACS Earth 2024）。",
+      "provenance": "unvalidated"
     },
     {
       "id": "addition_michael_thiol_001",
@@ -1389,7 +1479,8 @@
           "smiles": "C=CC=O",
           "name": "丙烯醛"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "addition_michael_amine_001",
@@ -1409,7 +1500,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "★已修★ 与 Michael加成(硫醇) 同源的区域选择性错误：氮必须加在【β碳】(C1) 上，原来错加在 α碳(C2) 上。 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py"
+      "notes": "★已修★ 与 Michael加成(硫醇) 同源的区域选择性错误：氮必须加在【β碳】(C1) 上，原来错加在 α碳(C2) 上。 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py",
+      "provenance": "unvalidated"
     },
     {
       "id": "condensation_aldol_001",
@@ -1433,7 +1525,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "碳碳成键。含 α-H 的羰基进攻另一个羰基，生成 β-羟基羰基。糖降解产生的小醛之间可能发生。 【覆盖修复】原 [CX4H2:3] 要求烯醇碳恰好 2 个氢，导致乙醛（α碳为 CH3）这个最经典的醛缩合底物匹配不上。去掉氢数限制后可覆盖 CH3/CH2/CH 三种。"
+      "notes": "碳碳成键。含 α-H 的羰基进攻另一个羰基，生成 β-羟基羰基。糖降解产生的小醛之间可能发生。 【覆盖修复】原 [CX4H2:3] 要求烯醇碳恰好 2 个氢，导致乙醛（α碳为 CH3）这个最经典的醛缩合底物匹配不上。去掉氢数限制后可覆盖 CH3/CH2/CH 三种。",
+      "provenance": "unvalidated"
     },
     {
       "id": "addition_thiohemiacetal_001",
@@ -1457,7 +1550,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "醛 + 硫醇 → 硫代半缩醛。含硫成分（大蒜素类）与醛的结合。 ★B文献条件：硫醇+醛；酶或Re2O7催化（Biochemistry 1977/1986；Beilstein 2013）。"
+      "notes": "醛 + 硫醇 → 硫代半缩醛。含硫成分（大蒜素类）与醛的结合。 ★B文献条件：硫醇+醛；酶或Re2O7催化（Biochemistry 1977/1986；Beilstein 2013）。",
+      "provenance": "unvalidated"
     },
     {
       "id": "elimination_amide_to_nitrile_001",
@@ -1473,7 +1567,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "高温脱水。乙酰胺 → 乙腈 + 水。中药煎煮温度下较慢，权重压低。 【手工配平】酰胺 → 腈 + 水。差值 {H:-2, O:-1} 正是脱去一个水分子。"
+      "notes": "高温脱水。乙酰胺 → 乙腈 + 水。中药煎煮温度下较慢，权重压低。 【手工配平】酰胺 → 腈 + 水。差值 {H:-2, O:-1} 正是脱去一个水分子。",
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_sulfoxide_to_sulfone_001",
@@ -1489,7 +1584,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "含硫成分深度氧化（大蒜素类）。与「硫醚氧化成亚砜」接力。"
+      "notes": "含硫成分深度氧化（大蒜素类）。与「硫醚氧化成亚砜」接力。",
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_sulfoxide_001",
@@ -1507,7 +1603,8 @@
       "priority": 0.3,
       "max_products_per_molecule": 1,
       "status": "active",
-      "notes": "DMSO → DMS 型还原，只在通氢条件下发生（条件层靠 atmosphere 关掉）。 【手工配平】亚砜 + H2 → 硫醚 + 水。差值 {O:-1}，两边补氢与水即配平。"
+      "notes": "DMSO → DMS 型还原，只在通氢条件下发生（条件层靠 atmosphere 关掉）。 【手工配平】亚砜 + H2 → 硫醚 + 水。差值 {O:-1}，两边补氢与水即配平。",
+      "provenance": "unvalidated"
     },
     {
       "id": "decarboxylation_cinnamic_001",
@@ -1535,7 +1632,8 @@
           "smiles": "OC(=O)/C=C/c1ccc(O)c(OC)c1",
           "name": "阿魏酸"
         }
-      ]
+      ],
+      "provenance": "unvalidated"
     },
     {
       "id": "oxidation_diphenol_para_001",
@@ -1567,7 +1665,8 @@
           "name": "蒽氢醌"
         }
       ],
-      "notes": "★新增★ 补上论文里承诺却从未实现的【对位】醌/二酚这一类。论文「醌还原」的说明写着「丹参酮、大黄蒽醌等」，但原 SMARTS 只认两个官能团【直接相连】的邻位——蒽醌的两个 C=O 在 9、10 位、相距 3 个键，从来匹配不上。本规则处理对位（1,4-）：对苯二酚→对苯醌、1,4-萘二酚→1,4-萘醌、蒽氢醌→9,10-蒽醌、大黄素。实测不误匹配邻苯二酚（那是「酚氧化成醌」的活）。 【一致性修正】副产物原写成 H2（脱氢式），但库内其它氧化规则统一用 O2/H2O（有氧煎煮的现实路径）。已改为 co={O2:0.5}, by={H2O:1}。"
+      "notes": "★新增★ 补上论文里承诺却从未实现的【对位】醌/二酚这一类。论文「醌还原」的说明写着「丹参酮、大黄蒽醌等」，但原 SMARTS 只认两个官能团【直接相连】的邻位——蒽醌的两个 C=O 在 9、10 位、相距 3 个键，从来匹配不上。本规则处理对位（1,4-）：对苯二酚→对苯醌、1,4-萘二酚→1,4-萘醌、蒽氢醌→9,10-蒽醌、大黄素。实测不误匹配邻苯二酚（那是「酚氧化成醌」的活）。 【一致性修正】副产物原写成 H2（脱氢式），但库内其它氧化规则统一用 O2/H2O（有氧煎煮的现实路径）。已改为 co={O2:0.5}, by={H2O:1}。",
+      "provenance": "unvalidated"
     },
     {
       "id": "reduction_quinone_para_001",
@@ -1597,7 +1696,8 @@
           "name": "9,10-蒽醌"
         }
       ],
-      "notes": "★新增★ 与「对二酚氧化成醌」配对，补上对位（1,4-）醌这一类。★★键类型陷阱★★ SMARTS 里不写键符号时默认是【单键或芳香键】。对苯醌的环是 单-双-单 交替，所以 [C:2][#6:5][#6:6][C:3] 里的中间键匹配不上 → 对苯醌一条都产不出。改成 ~（任意键）才能匹配。但产物侧【不能】写 ~：写了 RDKit 不敢判定芳香性、会给碳补氢，产物分子式多 2 个氢。实测「反应物 ~ + 产物默认键」命中 6/6。 【已知局限】~（任意键）会顺带匹配四氢邻苯二甲酸酐这类体系——酸酐的两个 C=O 碳之间除了 C-O-C 近路，还有一条绕环走碳的远路。试过 5 种约束（环内键 @、环成员 R、两者组合）都排除不掉。酸酐在中药里罕见，不为此牺牲 5 个真醌（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型）的命中。 【状态=verify 的理由】对 5 类真醌（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型）完全正确，但 ~ 会顺带匹配四氢邻苯二甲酸酐这类体系，产物配不平（2/67 例）。试过 5 种约束（环内键 @、环成员 R、递归 SMARTS 排除连氧桥碳）都排不掉。标 verify 而非 disabled——它的主用途是可靠的，只是需要人工复核边界。★ priority 显式保留 0.5，不继承 verify 的默认降级（那会造成永不激活）。 ★★酸酐过度匹配已解决★★ 加 [C;r6:2]/[C;r6:3] 六元环约束——真醌的两个 C=O 碳都在【六元环】上，而四氢邻苯二甲酸酐的在五元环上，精确排除。实测 9/9：5 个真醌全中（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型），邻苯醌、四氢邻苯二甲酸酐、邻苯二甲酸酐、乙酸酐全排除。★ 这是补上论文里承诺「大黄蒽醌」却从未实现的那一类 ★"
+      "notes": "★新增★ 与「对二酚氧化成醌」配对，补上对位（1,4-）醌这一类。★★键类型陷阱★★ SMARTS 里不写键符号时默认是【单键或芳香键】。对苯醌的环是 单-双-单 交替，所以 [C:2][#6:5][#6:6][C:3] 里的中间键匹配不上 → 对苯醌一条都产不出。改成 ~（任意键）才能匹配。但产物侧【不能】写 ~：写了 RDKit 不敢判定芳香性、会给碳补氢，产物分子式多 2 个氢。实测「反应物 ~ + 产物默认键」命中 6/6。 【已知局限】~（任意键）会顺带匹配四氢邻苯二甲酸酐这类体系——酸酐的两个 C=O 碳之间除了 C-O-C 近路，还有一条绕环走碳的远路。试过 5 种约束（环内键 @、环成员 R、两者组合）都排除不掉。酸酐在中药里罕见，不为此牺牲 5 个真醌（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型）的命中。 【状态=verify 的理由】对 5 类真醌（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型）完全正确，但 ~ 会顺带匹配四氢邻苯二甲酸酐这类体系，产物配不平（2/67 例）。试过 5 种约束（环内键 @、环成员 R、递归 SMARTS 排除连氧桥碳）都排不掉。标 verify 而非 disabled——它的主用途是可靠的，只是需要人工复核边界。★ priority 显式保留 0.5，不继承 verify 的默认降级（那会造成永不激活）。 ★★酸酐过度匹配已解决★★ 加 [C;r6:2]/[C;r6:3] 六元环约束——真醌的两个 C=O 碳都在【六元环】上，而四氢邻苯二甲酸酐的在五元环上，精确排除。实测 9/9：5 个真醌全中（对苯醌/1,4-萘醌/9,10-蒽醌/大黄素/辅酶Q0型），邻苯醌、四氢邻苯二甲酸酐、邻苯二甲酸酐、乙酸酐全排除。★ 这是补上论文里承诺「大黄蒽醌」却从未实现的那一类 ★",
+      "provenance": "unvalidated"
     },
     {
       "id": "esterification_paper_original_001",
@@ -1611,7 +1711,143 @@
       "priority": 0.0,
       "status": "disabled",
       "notes": "【论文原版，已停用】这是论文 TableS1 里名为「酯化」的那一条，23 条中唯一一条本库【未实现】的。实测（tools/check_paper_esterification.py）：它的产物模板 `[O:1]1[CX4:2][CX3:3](=[OX1:4])[OH:5]1` 环闭合写法有误，在乙醇酸、乳酸等任何能匹配的底物上都生成【价态非法】结构（O 价态 3）；而水杨酸、3-羟基丙酸、4-羟基丁酸则完全不匹配（模板要求羟基与羧基相邻且都在脂肪碳上）。论文想表达的是【内酯化】，该化学已由 γ-内酯化 / δ-内酯化 正确覆盖。保留此条是为了【不静默丢数据】—— 23 条论文规则在本库里都能找到对应记录。",
-      "max_products_per_molecule": 1
+      "max_products_per_molecule": 1,
+      "provenance": "unvalidated"
+    },
+    {
+      "id": "hydrolysis_lactone_5ring_001",
+      "name": "内酯水解（五元环）",
+      "category": "hydrolysis",
+      "smarts": "[C:1]1(=[O:2])[O:3][#6:4]~[#6:5]~[#6:6]1>>[C:1](=[O:2])([OH:3])[#6:6]~[#6:5]~[#6:4][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.8,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "五元内酯（γ-内酯）水解开环，生成羟基酸。文献：郁红礼等 2022（狼毒醋制，160°C/6%乙酸/40min；HAO、JNB、FA 的内酯环开环；DOI 10.19540/j.cnki.cjcmm.20221111.301）。SMARTS 用 ~ 允许 α,β-不饱和内酯。RDKit 实测 JNB C20H26O4 -> C20H28O5，FA C19H28O2 -> C19H30O3。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "thermo_unreliable": true,
+      "provenance": "cited",
+      "evidence_id": "hydrolysis_lactone_5ring_001"
+    },
+    {
+      "id": "esterification_acid_alcohol_001",
+      "name": "酯化（乙酸+醇）",
+      "category": "esterification",
+      "smarts": "[O;H1;!$(O[C]=[O]):5][#6:6].[CH3:1][C:2](=[O:3])[OH:4]>>[CH3:1][C:2](=[O:3])[O:5][#6:6].[OH2:4]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {
+        "H2O": 1
+      },
+      "condition_profile": "esterification_paozhi",
+      "priority": 0.7,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "乙酸与醇酯化，生成乙酸酯和水。文献：郁红礼等 2022（狼毒醋制，160°C/6% 冰醋酸/40min；有羟基时发生酯化成酯，辅料醋是关键）。限定乙酸为酰基供体，避免把药材自身羧酸与羟基在盐炙/姜炙/蜜炙里也当成酯化。★反应物顺序：醇在前、乙酸在后。apply_pair 只按 (a,b) 顺序匹配、不自动换向，而辅料乙酸总是追加在底物列表末尾（j 位），故醇必须写成第 1 个反应物。★醇羟基限定：`!$(O[C]=[O])` 排除羧酸自身的 OH；否则甘草皂苷上的葡萄糖醛酸羧基会生成混合酸酐（实测旧写法产出 CC(=O)OC(=O)- 而非乙酸酯）。RDKit 实测：乙酸+乙醇 -> 乙酸乙酯+H2O；乙酸+葡萄糖生成 6 个羟基乙酸酯；乙酸+葡萄糖醛酸生成 5 个羟基乙酸酯、羧基不反应；(葡萄糖,乙酸) 命中、(乙酸,葡萄糖) 不命中。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "esterification_acid_alcohol_001"
+    },
+    {
+      "id": "oxidation_allylic_alcohol_001",
+      "name": "烯丙醇氧化成羰基",
+      "category": "oxidation",
+      "smarts": "[C:1]=[C:2][CH1,CH2:3][OH:4]>>[C:1]=[C:2][C:3]=[O:4]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {
+        "H2O": 1
+      },
+      "condition_profile": "thermal",
+      "priority": 0.5,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "烯丙醇氧化为 α,β-不饱和羰基。文献：郁红礼等 2022（狼毒醋制，有羟基时氧化成羰基）。限定烯丙醇，避免把糖/苷元上的普通羟基全部氧化。RDKit 实测 3-丁烯-2-醇 C4H8O -> 3-丁烯-2-酮 C4H6O。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "oxidation_allylic_alcohol_001"
+    },
+    {
+      "id": "demethylation_n_001",
+      "name": "N-去甲基化",
+      "category": "demethylation",
+      "smarts": "[N;!a:1]([CH3:2])([#6:3])[#6:4]>>[N:1]([H])([#6:3])[#6:4].[CH2:2]=[O]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.6,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "叔胺 N-去甲基化，生成仲胺和甲醛。文献：李凯悦等 2017（槟榔炮制，槟榔碱去甲基化生成去甲槟榔碱；华西药学杂志 32(2):150-153；摘要：『槟榔碱的去甲基化和甲基化』）。RDKit 实测槟榔碱 C8H13NO2 -> 去甲槟榔碱 C7H11NO2 + CH2O。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "demethylation_n_001"
+    },
+    {
+      "id": "decarboxylation_001",
+      "name": "热脱羧",
+      "category": "decarboxylation",
+      "smarts": "[C:1](=[O:2])([OH:3])[C:4]([C:5](=[O:6])[OH:7])>>[C:1](=[O:2])=[O:3].[C:4]([H])[C:5](=[O:6])[OH:7]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.6,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "羧酸热脱羧，生成 CO2 和少一个碳的产物。文献：苍耳子炮制 CATR -> ATR（安靖等 2013，药物分析杂志 33(11):1910-1913；Danieli et al. 1973 FEBS Lett，CAT 加热脱羧生成 ATR，DOI 10.1016/0014-5793(73)80062-6）。限定丙二酸/β-二羧酸基元（羧基碳邻接另一个羧基碳），避免把普通羧酸（如甘草酸）在 84°C 误脱羧。RDKit 实测羧基苍术苷 C31H46O18S2 -> CO2 + C30H46O16S2；丙二酸 -> CO2 + 乙酸；乙酸/苯甲酸不匹配。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "provenance": "cited",
+      "evidence_id": "decarboxylation_001"
+    },
+    {
+      "id": "cleavage_ether_acyclic_001",
+      "name": "醚键水解（非环醚）",
+      "category": "hydrolysis",
+      "smarts": "[CX4;!R:1][O:2][CX4;!R:3]>>[CX4:1][OH:2].[CX4:3][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.5,
+      "status": "active",
+      "paozhi_only": true,
+      "notes": "非环醚水解断裂，生成两分子醇。文献：郁红礼等 2022（狼毒醋制，二萜二聚体 EA 醚键断裂生成 EHTA 及另一松香烷型二萜）。限定两个碳都不在环内，避免误切糖苷/环醚；EA 若醚键碳在环内则本规则不匹配（已知限制）。RDKit 实测二乙醚 -> 2 乙醇；苯甲醚/甲基葡萄糖苷不匹配。仅炮制档加载。",
+      "max_products_per_molecule": 3,
+      "thermo_unreliable": true,
+      "provenance": "cited",
+      "evidence_id": "cleavage_ether_acyclic_001"
+    },
+    {
+      "id": "cleavage_cyanohydrin_001",
+      "name": "氰醇裂解（羟腈→醛+氰化氢）",
+      "category": "cleavage",
+      "smarts": "[C;H1:1]([OH1:2])([C:3]#N)[#6:4]>>[CH1:1](=[O:2])[#6:4].[C:3]#N",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {
+        "HCN": 1
+      },
+      "condition_profile": "hydrolysis",
+      "priority": 0.8,
+      "status": "active",
+      "notes": "文献：Haisman & Knight, Biochem J 1967;103(2):528 (10.1042/bj1030528) —— 扁桃腈自发/酶促裂解为苯甲醛 + HCN。补的是「苦杏仁苷→野樱苷→扁桃腈→苯甲醛」链的最后一环；温度/时间未标定，故不参与任何 extent 门控。",
+      "max_products_per_molecule": 3,
+      "thermo_unreliable": true,
+      "provenance": "cited",
+      "evidence_id": "lit_cyanohydrin_haisman1967"
     }
   ]
 }

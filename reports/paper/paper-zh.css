@@ -1,0 +1,130 @@
+@page {
+  size: A4;
+  margin: 19mm 18mm 20mm 18mm;
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  max-width: 168mm;
+  margin: 0 auto;
+  color: #202a33;
+  font-family: "Microsoft YaHei", "SimSun", "Noto Sans CJK SC", serif;
+  font-size: 10.5pt;
+  line-height: 1.72;
+  text-align: justify;
+}
+
+h1, h2, h3 {
+  font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  color: #17384a;
+  line-height: 1.35;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 20pt;
+  margin: 0 0 12pt;
+}
+
+h2 {
+  font-size: 14pt;
+  margin: 18pt 0 7pt;
+  border-bottom: 1px solid #d9e5eb;
+  padding-bottom: 3pt;
+}
+
+h3 {
+  font-size: 11.5pt;
+  margin: 12pt 0 5pt;
+}
+
+p {
+  margin: 0 0 7pt;
+  orphans: 3;
+  widows: 3;
+}
+
+ul, ol {
+  margin: 0 0 8pt 18pt;
+  padding: 0;
+}
+
+li {
+  margin: 2pt 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 12pt;
+  font-size: 9.2pt;
+  page-break-inside: avoid;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 8pt auto;
+}
+
+th, td {
+  border: 1px solid #cad9e0;
+  padding: 4.5pt 5.5pt;
+  vertical-align: top;
+}
+
+th {
+  background: #eaf2f5;
+  color: #21495b;
+  text-align: left;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  background: #f2f6f8;
+  padding: 0 2pt;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+p:has(code) {
+  text-align: left;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f5f8fa;
+  border: 1px solid #dce8ed;
+  padding: 7pt;
+  font-size: 9pt;
+}
+
+a {
+  color: #1d6680;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid #9dc4d2;
+  margin: 8pt 0;
+  padding: 5pt 10pt;
+  color: #48616c;
+  background: #f7fafb;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #d9e5eb;
+  margin: 12pt 0;
+}
+
+/* Avoid awkward breaks in headings and short table rows. */
+tr, img {
+  page-break-inside: avoid;
+}

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 The Christos Authors
+Copyright (c) 2026 DXC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Third-party components keep their own licences:
+
+- `libs/smartreact/` — vendored, see the files in that directory.
+- RDKit, NumPy, pandas, SciPy, scikit-learn, matplotlib — BSD-family licences.
+- `data/tcm_subset.db` is derived from a herbal compound database and is
+  distributed here only for reproducing the paper's cases; see
+  `data/TCM-SUBSET.md`.

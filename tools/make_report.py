@@ -30,6 +30,28 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
+# ★ 第八十六轮：反应路径视图需要 core/reaction_paths.py。
+# 这个脚本平时由 chemreact.py 调用（那里已经把 core/conditions 放进 sys.path），
+# 但也要能单独 `python tools\make_report.py 台账.csv` 跑 —— 所以这里自己兜一次。
+_ROOT = Path(__file__).resolve().parent.parent
+for _sub in ("core", "conditions", "tools"):
+    _p = str(_ROOT / _sub)
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    import reaction_paths as rp        # noqa: E402
+except Exception as _ex:               # noqa: BLE001 —— 打印，不静默降级
+    rp = None
+    print("   [warn] 反应路径模块不可用（%s）；报告仍会生成，但没有路径视图" % _ex)
+
+# 第八十九轮：逐跳立体判断（可选依赖；不可用时只是不显示这一栏）
+try:
+    import judge_stereo_hops as jst    # noqa: E402
+except Exception as _ex:               # noqa: BLE001
+    jst = None
+    print("   [warn] 立体判断模块不可用（%s）；路径里不显示立体结论" % _ex)
+
 
 def esc(x) -> str:
     return html.escape(str(x if x is not None else ""))
@@ -267,6 +289,34 @@ def build_report(csv_path, out_path=None, lang="zh"):
             runinfo += " · " + "  ".join(L("r%d 新增 %d", "r%d new %d")
                                          % (x.get("round"), x.get("new"))
                                          for x in per)
+    condinfo = ""
+    cond_details = (meta or {}).get("condition_details") or {}
+    if cond_details:
+        cond_parts = []
+        for key, label_zh, label_en in (
+                ("solvent", "溶剂", "solvent"),
+                ("catalyst", "催化剂", "catalyst"),
+                ("atmosphere", "气氛", "atmosphere"),
+                ("temperature", "温度", "temperature"),
+                ("time_min", "时长", "time"),
+                ("pH", "pH", "pH")):
+            item = cond_details.get(key) or {}
+            if "value" in item:
+                value = item.get("value")
+                unit = str(item.get("unit") or "")
+                detail_text = ("%g %s" % (float(value), unit)).strip()
+                category = ""
+                if detail_text:
+                    cond_parts.append("%s %s" % (L(label_zh, label_en), detail_text))
+                continue
+            detail_text = str(item.get("detail") or item.get("category") or "").strip()
+            category = str(item.get("category") or "").strip()
+            if detail_text:
+                if category and category != detail_text:
+                    detail_text += " [%s]" % category
+                cond_parts.append("%s %s" % (L(label_zh, label_en), detail_text))
+        if cond_parts:
+            condinfo = L("实际条件：", "Selected conditions: ") + " · ".join(cond_parts)
     fxinfo = ""
     fx = (meta or {}).get("formulas") or {}
     if fx:
@@ -301,6 +351,7 @@ def build_report(csv_path, out_path=None, lang="zh"):
              "table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}"
              "th,td{border:1px solid #e2e2e2;padding:4px 7px;text-align:left;vertical-align:top}"
              "th{background:#eef1f5;position:sticky;top:0}tr:nth-child(even){background:#fafbfc}"
+             "tbody tr{content-visibility:auto;contain-intrinsic-size:auto 128px}"
              ".wrap{max-height:70vh;overflow:auto;border:1px solid #ddd;border-radius:8px}"
              ".bar{margin:10px 0}.bar button{margin-right:6px;padding:4px 10px;border-radius:14px;"
              "border:1px solid #bbb;background:#fff;cursor:pointer}.bar button.on{background:#2b6cb0;"
@@ -308,9 +359,10 @@ def build_report(csv_path, out_path=None, lang="zh"):
              ".note{color:#666;font-size:12px;margin:6px 0 16px}code{font-size:12px;"
              "word-break:break-all}</style></head><body>")
     h.append("<h1>chemreact · %s</h1>" % L("反应产物报告", "Reaction Product Report"))
-    h.append("<div class='note'>%s<code>%s</code>%s%s<br>%s</div>"
+    h.append("<div class='note'>%s<code>%s</code>%s%s%s<br>%s</div>"
              % (L("台账：", "Ledger: "), esc(str(csv_path)),
                 ("<br>" + esc(runinfo)) if runinfo else "",
+                ("<br>" + esc(condinfo)) if condinfo else "",
                 ("<br>" + esc(fxinfo)) if fxinfo else "",
                 L("只打标记、不删产物、不排序（筛选仅用于浏览）",
                   "Flags only; no artifacts deleted; no ranking (filters are display-only).")))
@@ -417,30 +469,25 @@ def build_report(csv_path, out_path=None, lang="zh"):
         print("   [warn] 无 RDKit，跳过结构图：%s" % ex)
     h.append("<h2 style='font-size:16px'>%s</h2>" % L("产物（去重）", "Products (deduplicated)"))
     h.append("<div class='wrap'><table id='pt'><thead><tr><th>#</th>"
-             + (("<th>%s</th>" % L("结构", "Structure")) if draw_ok else "")
              + "<th>%s</th><th>%s</th><th>MW</th><th>%s</th><th>%s</th>"
-               "<th>%s</th><th>%s</th><th>%s</th><th>SMILES</th></tr></thead><tbody>"
+               "<th>%s</th><th>%s</th><th>%s</th><th>SMILES</th><th>%s</th></tr></thead><tbody>"
                % (L("分子式", "Formula"), L("重原子", "Heavy atoms"), L("方向（按路径）", "Direction (by path)"),
                   L("路径数", "Paths"), L("最少轮数", "Min rounds"), L("规则", "Rule"),
-                  L("来源药材", "Source herb")))
+                  L("来源药材", "Source herb"), L("来路", "How")))
     for i, p in enumerate(prod.values(), 1):
-        svg_cell = ""
-        if draw_ok:
-            if i <= MAXDRAW:
-                svg_cell = _mol_svg(p["smiles"]) or L("（画失败）", "(draw failed)")
-            else:
-                svg_cell = L("（略）", "(omitted)")
-        h.append("<tr data-dir='%s' data-ev='%d' data-herb='%s'><td>%d</td>%s<td>%s</td><td>%s</td><td>%s</td>"
-                 "<td>%s</td><td>%d</td><td>%d</td><td>%s</td><td>%s</td>"
-                 "<td><code>%s</code></td></tr>"
+        h.append("<tr data-dir='%s' data-ev='%d' data-herb='%s' data-smi=\"%s\">"
+                 "<td>%d</td>%s<td>%s</td><td>%s</td><td>%s</td>"
+                 "<td>%d</td><td>%d</td><td>%s</td><td>%s</td>"
+                 "<td><code>%s</code></td>"
+                 "<td><button class='pthb' onclick='showPaths(this)'>%s</button></td></tr>"
                  % (esc(",".join(p["dirs"].keys())), (1 if p["ev_any"] else 0),
-                    esc("、".join(sorted(p["herbs"]))), i,
-                    ("<td>%s</td>" % svg_cell) if draw_ok else "",
+                    esc("、".join(sorted(p["herbs"]))), esc(p["smiles"]), i,
                     esc(p["formula"]), esc(p["hac"]), esc(p["mw"]),
                     esc(" / ".join("%s×%d" % (k, v) for k, v in p["dirs"].most_common())),
                     p["n_paths"], p["min_round"],
                     esc(" / ".join(k for k, _ in p["rules"].most_common(3))),
-                    esc("、".join(sorted(p["herbs"]))), esc(p["smiles"][:90])))
+                    esc("、".join(sorted(p["herbs"]))), esc(p["smiles"][:90]),
+                    L("看路径", "path")))
     h.append("</tbody></table></div>")
     if draw_ok and len(prod) > MAXDRAW:
         h.append("<div class='note'>%s</div>"
@@ -448,6 +495,231 @@ def build_report(csv_path, out_path=None, lang="zh"):
                      "Only the first %d structures are drawn (ledger order; use SMILES for the rest; no ranking)"
                      % MAXDRAW))
 
+    # ---- 反应路径（第八十六轮）：产物是怎么一步步变来的 ----
+    # 台账每行只是一跳；多轮时上一轮产物就是下一轮底物，把行拼成图才能看出链。
+    # 纯展示：不改台账、不排序、不加任何化学假设。
+    if rp is not None and rows:
+        # 第八十九轮：逐跳立体结论。
+        # 口径：旁观中心 = 底物指定手性中心 − 落在规则作用范围内的那些；
+        # 产物（主产物 + co_products 各片段）的指定中心数 ≥ 旁观数 => ok。
+        # 只做「本反应不该动的手性中心有没有丢」，不判断 R/S 是否翻转。
+        _st_of = {}
+        if jst is not None:
+            try:
+                _byid, _byname = jst.load_rule_smarts()
+                _byname = dict(_byname)      # 台账里 rule_name 存的是规则 id，两个键都认
+                _byname.update(_byid)
+            except Exception as _ex:       # noqa: BLE001
+                _byname = {}
+                print("   [warn] 读 rules.json 失败（%s）；立体结论降级为 unknown" % _ex)
+            for _r in rows:
+                try:
+                    _st_of[id(_r)] = jst.judge_hop(_r, _byname)[0]
+                except Exception:          # noqa: BLE001 —— 单行失败不影响整份报告
+                    _st_of[id(_r)] = "unknown"
+        path_hops = []
+        _ak_low = 0
+        for r in rows:
+            _st = _st_of.get(id(r), "")
+            _ak = rp.atom_conservation(r.get("source_smiles", ""), r.get("product_smiles", ""),
+                                       r.get("co_products", ""),
+                                       r.get("partner_smiles", ""))
+            if _ak is not None and _ak < 0.7:
+                _ak_low += 1
+            path_hops.append({
+                "s": r.get("source_smiles", ""), "p": r.get("product_smiles", ""),
+                "r": r.get("rule_name", ""), "d": str(r.get("round", "") or ""),
+                "n": r.get("source_name", ""), "f": r.get("formula", ""),
+                "w": _why(r.get("activation_why", "")), "a": r.get("activation", ""),
+                "b": r.get("extent_band", ""), "e": r.get("extent", ""),
+                "dir": _dir(r.get("direction_cn") or ""), "co": r.get("co_products", ""),
+                "st": _st,
+                "ak": (round(_ak, 3) if _ak is not None else ""),
+            })
+            # 伴生产物也是产物：双底物规则常把「另一半」（往往是文献关心的脱酯骨架）
+            # 放进 co_products。不展开的话，链上会缺掉一半分子（第八十七轮实测）。
+            for _frag in str(r.get("co_products", "") or "").split("|"):
+                _frag = _frag.strip()
+                if not _frag:
+                    continue
+                _ak_f = _ak   # 行级口径：同一行主产物与伴生产物共用一个守恒率，只计一次
+                path_hops.append({
+                    "s": r.get("source_smiles", ""), "p": _frag,
+                    "r": r.get("rule_name", ""), "d": str(r.get("round", "") or ""),
+                    "n": r.get("source_name", ""), "f": "",
+                    "w": "", "a": r.get("activation", ""),
+                    "b": "", "e": "", "dir": "", "co": r.get("co_products", ""), "zc": 1,
+                    "st": "",
+                    "ak": (round(_ak_f, 3) if _ak_f is not None else ""),
+                })
+        labels = {}
+        for s in ((meta or {}).get("seeds") or []):
+            nm = str(s.get("name") or "").strip()
+            smi = str(s.get("smiles") or "").strip()
+            if nm and smi and nm != smi and not rp.looks_like_smiles(nm):
+                labels[smi] = nm
+        for p in prod.values():
+            if p["smiles"] not in labels and p["formula"]:
+                labels[p["smiles"]] = p["formula"]
+        # 种子（输入成分）若既没名字也不是产物：现算分子式，最多 60 个（RDKit 可选）
+        _need = [h["s"] for h in path_hops if h["s"] not in labels]
+        for _smi in list(dict.fromkeys(_need))[:60]:
+            _f = rp.formula_of(_smi)
+            if _f:
+                labels[_smi] = _f
+        _used_rules = {h["r"] for h in path_hops}
+        rule_names = {k: v for k, v in (rp.load_rule_names() or {}).items() if k in _used_rules}
+        _j = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+        opts = "".join(
+            "<option value=\"%s\">%s</option>"
+            % (esc(p["smiles"]),
+               esc("%s · %d 条 · 最少 %d 轮" % (p["formula"] or "?", p["n_paths"], p["min_round"])))
+            for p in prod.values())
+        h.append("<h2 style='font-size:16px'>%s</h2>"
+                 % L("反应路径（这个产物是怎么一步步变来的）",
+                     "Reaction paths (how each product came to be)"))
+        h.append("<style>"
+                 ".pthb{padding:2px 8px;border-radius:5px;border:1px solid #2b6cb0;"
+                 "background:#fff;color:#2b6cb0;cursor:pointer;font-size:12px}"
+                 ".pthb:hover{background:#ebf4ff}"
+                 ".chain{background:#fff;border:1px solid #e2e8f0;border-left:3px solid #2b6cb0;"
+                 "border-radius:7px;padding:9px 11px;margin:8px 0;line-height:1.9;font-size:13px}"
+                 ".chain .mol{display:inline-block;background:#f1f5f9;border-radius:5px;"
+                 "padding:1px 7px;font-weight:600}"
+                 ".chain .arw{color:#4a5568;padding:0 4px;font-size:12px}"
+                 ".chain .det{color:#718096;font-size:11.5px;margin-top:3px}"
+                 "</style>")
+        h.append("<div class='card' style='padding:12px'>"
+                 "<div style='display:flex;gap:8px;flex-wrap:wrap;align-items:center'>"
+                 "<span>%s</span>"
+                 "<select id='pathSel' style='flex:1;min-width:280px;padding:7px 9px;"
+                 "border:1px solid #cbd5e0;border-radius:6px'>%s</select>"
+                 "</div>"
+                 "<div class='note' style='font-size:12px;color:#666;margin-top:8px'>%s</div>"
+                 "<div id='pathOut' style='margin-top:10px'></div></div>"
+                 % (L("选一个产物看它的来路：", "Pick a product to see how it was made:"),
+                    opts,
+                    L("一条链 = 从上一步的分子到下一步的分子，方括号里是规则 + 轮次 + 条件分（+ 进程档位）。"
+                      "多步链表示上一轮的产物又当了下一轮的底物；这只表达「按这些规则，A 能变成 B」，"
+                      "不是生化合成路线，也不含任何未落进台账的东西。"
+                      "进程档位只是**趋势提示**（按现有文献数据估的深浅），不参与筛选、不会删掉任何产物。",
+                      "A chain = one molecule to the next; brackets carry rule + round + condition score "
+                      "(+ extent band). Multi-step chains mean a product became the next round's substrate. "
+                      "It says only 'by these rules A can become B', not a biosynthetic route. "
+                      "The extent band is a trend hint only (estimated depth from the available literature); "
+                      "it never filters or removes products.")))
+        if jst is not None:
+            _stc = {}
+            for r in rows:
+                _k = _st_of.get(id(r), "")
+                if _k:
+                    _stc[_k] = _stc.get(_k, 0) + 1
+            _lbl = {"ok": "保住", "partial": "部分丢", "lost_all": "整层丢",
+                    "no_src_stereo": "底物本来没手性", "unknown": "无法判断",
+                    "": "未判"}
+            _parts = ["%s %d" % (_lbl.get(k, k), _stc[k])
+                      for k in ("ok", "partial", "lost_all", "no_src_stereo", "unknown")
+                      if _stc.get(k)]
+            h.append("<div class='note' style='font-size:12px;color:#444;margin-top:6px'>"
+                     "<b>%s</b> %s<br><span style='color:#718096'>%s</span></div>"
+                     % (L("立体检查（逐跳）：", "Stereo check (per hop): "),
+                        esc(" · ".join(_parts) or "—"),
+                        L("判据 = 本反应不该动的那些手性中心有没有丢；"
+                          "「无法判断」多为 mined 模板（台账只记类别名，反查不到作用范围）。"
+                          "这里不判 R/S 是否翻转。",
+                          "Criterion = whether stereo centres outside this rule's scope were lost; "
+                          "'unknown' is mostly mined templates (ledger stores only the category). "
+                          "R/S inversion is not judged.")))
+            if _ak_low:
+                h.append("<div class='note' style='font-size:12px;color:#444;margin-top:6px'>"
+                         "<b>%s</b> %d<br><span style='color:#718096'>%s</span></div>"
+                         % (L("原子守恒率低于 70% 的行：", "Rows keeping under 70% of heavy atoms: "),
+                            _ak_low,
+                            L("主产物 + 伴生产物的重原子数加总仍远少于底物。这类行多来自 mined 模板"
+                              "（ORD 记录只写主产物，模板里没出现的原子就被删掉），不是引擎的化学判断；"
+                              "看到它请回去查模板。",
+                              "Product plus co-products together keep far fewer heavy atoms than the "
+                              "substrate. These rows are mostly mined templates whose SMARTS omit part of "
+                              "the substrate; check the template before trusting the product.")))
+        h.append("<script>"
+                 "var HOPS=" + _j(path_hops) + ";"
+                 "var NM=" + _j(labels) + ";"
+                 "var RN=" + _j(rule_names) + ";"
+                 "var IDX={};"
+                 "HOPS.forEach(function(h){(IDX[h.p]=IDX[h.p]||[]).push(h);});"
+                 "function lab(s){return NM[s]||(s.length>26?s.slice(0,26)+'…':s);}"
+                 "function pathsFor(t){var out=[],seen={};"
+                 "function walk(s,d,stack,vis){if(out.length>=6)return;var inc=IDX[s]||[];"
+                 "if(!inc.length){var k=stack.map(function(h){return h.s+'|'+h.r+'|'+h.d;}).join('>');"
+                 "if(stack.length&&!seen[k]){seen[k]=1;out.push(stack.slice().reverse());}return;}"
+                 "if(d>=10)return;"
+                 "for(var i=0;i<inc.length;i++){var h=inc[i];if(vis[h.s])continue;"
+                 "stack.push(h);vis[h.p]=1;walk(h.s,d+1,stack,vis);vis[h.p]=0;stack.pop();"
+                 "if(out.length>=6)return;}}"
+                 "var v={};v[t]=1;walk(t,0,[],v);return out;}"
+                 "function bandTxt(b){return b==='major'?'主要':b==='minor'?'次要':b==='none'?'痕量':b;}"
+                 "function stTxt(s){return s==='ok'?'立体✓':s==='partial'?'立体部分丢':"
+                 "s==='lost_all'?'立体丢':s==='unknown'?'立体判断不了':'';}"
+                 "function renderPaths(smi){"
+                 "var o=document.getElementById('pathOut');if(!o)return;"
+                 "if(!smi){o.innerHTML='';return;}"
+                 "var chs=pathsFor(smi);"
+                 "if(!chs.length){o.innerHTML='<div class=\"note\">没有台账路径（可能是输入成分本身，或上游被截断）</div>';return;}"
+                 "var html='';"
+                 "chs.forEach(function(ch,ci){"
+                 "var line='<span class=\"mol\">'+esc2(lab(ch[0].s))+'</span>';"
+                 "var det='';"
+                 "ch.forEach(function(h){"
+                 "var bits=[(RN[h.r]||h.r)||'?'];"
+                 "if(h.d)bits.push('第 '+h.d+' 轮');"
+                 "if(h.a)bits.push('条件 '+h.a);"
+                 "if(h.b)bits.push('进程 '+bandTxt(h.b)+(h.e?' ('+h.e+')':''));"
+                 "if(h.dir)bits.push(h.dir);"
+                 "if(h.zc)bits.push('伴生产物');"
+                 "if(h.st)bits.push(stTxt(h.st));"
+                 "if(h.ak!==''&&h.ak!==undefined&&h.ak<0.7)bits.push('原子守恒'+Math.round(h.ak*100)+'%');"
+                 "line+='<span class=\"arw\">--['+esc2(bits.join(' · '))+']--&gt;</span>';"
+                 "line+='<span class=\"mol\">'+esc2(lab(h.p))+'</span>';"
+                 "if(h.w)det+='<div class=\"det\">· '+esc2(h.w)+'</div>';"
+                 "});"
+                 "html+='<div class=\"chain\"><div>'+line+'</div>'+(det||'')+'</div>';});"
+                 "o.innerHTML=html;}"
+                 "function esc2(t){var d=document.createElement('div');"
+                 "d.textContent=(t==null?'':String(t));return d.innerHTML;}"
+                 "function showPaths(btn){var tr=btn.closest('tr');"
+                 "var smi=tr.getAttribute('data-smi');"
+                 "var sel=document.getElementById('pathSel');if(sel)sel.value=smi;"
+                 "renderPaths(smi);var o=document.getElementById('pathOut');"
+                 "if(o&&o.scrollIntoView)o.scrollIntoView({block:'center',behavior:'smooth'});}"
+                 "var _sel=document.getElementById('pathSel');"
+                 "if(_sel){_sel.onchange=function(){renderPaths(_sel.value);};}"
+                 "</script>")
+
+    h.append("<h2 style='font-size:16px'>%s</h2>"
+             % L("结构查看器（输入 SMILES 自行渲染）",
+                 "Structure viewer (enter a SMILES)"))
+    h.append("<div class='card' style='padding:12px'>"
+             "<div style='display:flex;gap:8px;flex-wrap:wrap'>"
+             "<input id='svIn' placeholder='CC(=O)Oc1ccccc1C(=O)O' "
+             "style='flex:1;min-width:280px;padding:8px 10px;border:1px solid #cbd5e0;border-radius:6px'>"
+             "<button onclick='svDraw()' style='padding:8px 18px;border-radius:6px;border:1px solid #2b6cb0;background:#2b6cb0;color:#fff;cursor:pointer'>"
+             + L("渲染", "Draw") + "</button></div>"
+             "<div id='svOut' style='margin-top:10px;min-height:120px'></div>"
+             "<div class='note' style='font-size:12px;color:#666'>"
+             + L("结构由本地服务用 RDKit 现场绘制；请通过 http://127.0.0.1:8765/ 打开本页。",
+                 "Rendered locally with RDKit; open this page via http://127.0.0.1:8765/.")
+             + "</div></div>")
+    h.append("<script>"
+             "function svDraw(){"
+             "var v=document.getElementById('svIn').value.trim();"
+             "var o=document.getElementById('svOut');"
+             "if(!v){o.textContent='请输入 SMILES';return;}"
+             "o.textContent='渲染中…';"
+             "fetch('/render?smiles='+encodeURIComponent(v))"
+             ".then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text();})"
+             ".then(function(t){o.innerHTML=t;})"
+             ".catch(function(e){o.textContent='渲染失败：'+e.message;});}"
+             "</script>")
     # 明细表
     h.append("<h2 style='font-size:16px'>%s</h2>"
              % L("出处明细（逐条路径，保持原顺序）", "Evidence details (per path, original order)"))

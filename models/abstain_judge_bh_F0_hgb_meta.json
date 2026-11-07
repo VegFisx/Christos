@@ -1,0 +1,20 @@
+{
+ "artifact": "D:\\ProgramData\\DSHNS\\chemreact-staging\\models\\abstain_judge_bh_F0_hgb.pkl",
+ "model": "HistGradientBoostingClassifier(max_iter=200)",
+ "feature_set": "F0 = one-hot(Catalyst/Base/Solvent Name) + Morgan(r2,512)(Aryl)+Morgan(Amine) + substrate_desc(Aryl)+substrate_desc(Amine)",
+ "n_train": 27497,
+ "n_pos": 11965,
+ "seed": 20261013,
+ "vocab_sizes": {
+  "Catalyst Name": 109,
+  "Base Name": 66,
+  "Solvent Name": 18
+ },
+ "n_features": 1229,
+ "measured_ood": null,
+ "scope_warning": "训练于 HTE Buchwald–Hartwig 胺化（27,497 行）。只在同类反应/条件空间内有效；用于中药煎煮体系属域外，不可用。",
+ "prior_drift_warning": "该 OOD 切分实为 source transfer（it0 fold1 的 test 88% 是 JNJ HTE 2024；各 Source 正类率 0.070~0.788）。仅用 train 里该 Source 的正类率这个**无化学捷径**就有平均 AUC 0.619±0.084（论文 DRFP 基线 0.666）→ 本模型的**绝对概率含大量先验漂移**，不能当纯化学判据；跨来源使用时必须重新校准/重定阈值。",
+ "abstention_cost": "覆盖 20% 时精度 0.928，但**只捞到全部正例的 15.3%**（100% 覆盖时 0.669）→ 高精度低召回，适合排雷/否决，不适合『找全所有能发生的反应』。",
+ "calibration_warning": "池化 ECE 从 0.0691 降到 Platt 0.0336，但**逐 split ECE 平均没有改善**（−0.0220±0.0097，仅 13/40 变好）→ 校准器不跨 OOD 簇迁移，拒识阈值必须随校准后的概率重定。",
+ "fit_seconds": 31.8
+}

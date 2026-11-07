@@ -1,0 +1,62 @@
+{
+  "schema": "chemreact-thresholds/1",
+  "generated": "2026-11-04",
+  "note": "条件门控的阈值集中在此。用户 2026-11-04 口径：涉及底层反应逻辑的参数必须有参考文献；没有出处的只能当排序提示，不能参与『判死/判不发生』。所以本文件里 status=unvalidated_model_choice 的项，只允许进分数排序，不允许判零。",
+  "policy": {
+    "user_requirement": "禁止 AI 自己猜测底层反应逻辑，起码要有参考文献。",
+    "rule": "status 为 unvalidated_model_choice 的阈值：可作为软的降权项（影响排序），不得单独判零/判不发生；要判零必须有 cited 的文献。",
+    "cited_required_fields": ["doi_or_url", "quote", "fitted_on"]
+  },
+  "solvent": {
+    "decay_step": 0.15,
+    "floor": 0.35,
+    "meaning": "溶剂不在规则允许列表时，按列表顺序（=偏好顺序）每远一档扣 decay_step，最低到 floor；不在任何族里则判 0。",
+    "status": "unvalidated_model_choice",
+    "source": "无文献。列表顺序来自规则自身，衰减步长与地板是自定。"
+  },
+  "ph": {
+    "acid_base": {
+      "neutral_ph": 7.0,
+      "half_range": 6.0,
+      "floor": 0.40,
+      "slope": 0.60
+    },
+    "acid": [
+      [3.0, 1.0],
+      [5.0, 0.70],
+      [8.0, 0.45],
+      [14.0, 0.20]
+    ],
+    "base": [
+      [11.0, 1.0],
+      [9.0, 0.70],
+      [6.0, 0.45],
+      [0.0, 0.20]
+    ],
+    "neutral": [
+      [5.5, 8.0, 1.0],
+      [4.0, 9.5, 0.50],
+      [0.0, 14.0, 0.15]
+    ],
+    "status": "unvalidated_model_choice",
+    "source": "无文献。ORD 条件表里 pH 覆盖 0/37，没有数据可标定；分段点是定性事实（酸碱催化）的连续化。"
+  },
+  "window": {
+    "softness": 0.25,
+    "meaning": "温度/时间越界超过窗口宽度的 softness 倍即归零。",
+    "status": "unvalidated_model_choice",
+    "source": "无文献。"
+  },
+  "catalyst": {
+    "mismatch_factor": 0.5,
+    "meaning": "运行条件给了催化剂但不在该规则允许列表时，分数乘 0.5。",
+    "status": "unvalidated_model_choice",
+    "source": "无文献。"
+  },
+  "active_threshold": {
+    "value": 0.15,
+    "meaning": "activation 低于此值视为『不发生』（不产出）。这是唯一一个会直接判零的阈值。",
+    "status": "unvalidated_model_choice",
+    "source": "无文献。用户口径下，判零需要文献支撑；在补齐之前，建议只用它做排序下限、不删产物（见 policy.rule）。"
+  }
+}

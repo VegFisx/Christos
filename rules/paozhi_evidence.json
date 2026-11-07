@@ -1,0 +1,360 @@
+{
+  "generated_at": "2026-10-31",
+  "note": "炮制模式允许的规则：只收录有炮制文献映射的规则。逐条来源与引句见本文件 sources；论文用汇总另见 reports/paper/paozhi_sources_20261031.json（2026-10-31 本轮未改）。",
+  "rules": [
+    {
+      "id": "hydrolysis_glycoside_001",
+      "sources": [
+        {
+          "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+          "journal": "Natural Product Research",
+          "year": 2026,
+          "doi": "10.1080/14786419.2026.2693245",
+          "quote": "During early heating, glycosides were hydrolysed into aglycones",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+            "crossref_journal": "Natural Product Research",
+            "crossref_year": "2026"
+          }
+        },
+        {
+          "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+          "journal": "Molecules",
+          "year": 2020,
+          "doi": "10.3390/molecules25194390",
+          "quote": "red ginseng is prepared by steaming fresh ginseng at 95–100 °C for 2–3 h before drying",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+            "crossref_journal": "Molecules",
+            "crossref_year": "2020",
+            "pmcid": "PMC7582514",
+            "open_access": "Y",
+            "oa_url": "https://www.mdpi.com/1420-3049/25/19/4390/pdf?version=1600944186"
+          }
+        },
+        {
+          "title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix",
+          "journal": "Foods",
+          "year": 2025,
+          "doi": "10.3390/foods14223932",
+          "quote": "hydrolysis of oligosaccharides into higher-sweetness sugars",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix: Carbohydrate Hydrolysis, Degradation of Bitter Compounds, and Interaction with Taste Receptors",
+            "crossref_journal": "Foods",
+            "crossref_year": "2025",
+            "pmcid": "PMC12651911",
+            "open_access": "Y",
+            "oa_url": "https://www.mdpi.com/2304-8158/14/22/3932/pdf?version=1763388025"
+          }
+        },
+        {
+          "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+          "journal": "Frontiers in Pharmacology",
+          "year": 2018,
+          "doi": "10.3389/fphar.2018.00934",
+          "pmcid": "PMC6121093",
+          "quote": "both cis-THSG and trans-THSG are readily hydrolyzed, such that the steaming would decrease their content",
+          "note": "何首乌九蒸九晒；糖苷（THSG）水解为苷元。",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+            "crossref_journal": "Frontiers in Pharmacology",
+            "crossref_year": "2018",
+            "pmcid": "PMC6121093",
+            "open_access": "Y",
+            "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
+          }
+        },
+        {
+          "title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+          "journal": "Frontiers in Pharmacology",
+          "year": 2024,
+          "doi": "10.3389/fphar.2024.1442297",
+          "pmcid": "PMC11335691",
+          "quote": "the processing of rhubarb involves not only the hydrolysis of glycosides but also complex chemical changes",
+          "note": "大黄酒炙/酒蒸/炒炭；结合蒽醌减少、游离蒽醌增加。",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+            "crossref_journal": "Frontiers in Pharmacology",
+            "crossref_year": "2024",
+            "pmcid": "PMC11335691",
+            "open_access": "Y",
+            "oa_url": "https://doi.org/10.3389/fphar.2024.1442297"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrolysis_ester_001",
+      "sources": [
+        {
+          "title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity",
+          "journal": "Frontiers in Pharmacology",
+          "year": 2016,
+          "doi": "10.3389/fphar.2016.00367",
+          "quote": "Aconitum must be generally processed by heating in boiling or steaming water, or treating with a dilute acid or alkali solution for a few hours, to reduce the toxicity",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity: Involvement of Spinal Microglial Dynorphin Expression and Implications for Aconitum Processing",
+            "crossref_journal": "Frontiers in Pharmacology",
+            "crossref_year": "2016",
+            "pmcid": "PMC5051147",
+            "open_access": "Y",
+            "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2016.00367/pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "elimination_dehydration_001",
+      "sources": [
+        {
+          "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+          "journal": "Natural Product Research",
+          "year": 2026,
+          "doi": "10.1080/14786419.2026.2693245",
+          "quote": "intermediate stages involved dehydration-limited hydrolysis",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+            "crossref_journal": "Natural Product Research",
+            "crossref_year": "2026"
+          }
+        },
+        {
+          "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+          "journal": "Frontiers in Pharmacology",
+          "year": 2018,
+          "doi": "10.3389/fphar.2018.00934",
+          "pmcid": "PMC6121093",
+          "quote": "Several mechanisms, namely hydrolysis, dehydration, isomerization, and Maillard reaction appear to be involved in the chemical transformation that occurs",
+          "note": "何首乌九蒸九晒；原文把脱水列为参与机制之一。",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+            "crossref_journal": "Frontiers in Pharmacology",
+            "crossref_year": "2018",
+            "pmcid": "PMC6121093",
+            "open_access": "Y",
+            "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "maillard_simplified_001",
+      "sources": [
+        {
+          "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+          "journal": "Natural Product Research",
+          "year": 2026,
+          "doi": "10.1080/14786419.2026.2693245",
+          "quote": "prolonged heating induced glycoside degradation and Maillard reactions",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+            "crossref_journal": "Natural Product Research",
+            "crossref_year": "2026"
+          }
+        },
+        {
+          "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+          "journal": "Frontiers in Pharmacology",
+          "year": 2018,
+          "doi": "10.3389/fphar.2018.00934",
+          "pmcid": "PMC6121093",
+          "quote": "the occurrence of 5-HMF suggest that the Maillard reaction was involved in the processing of PPMR",
+          "note": "何首乌九蒸九晒；5-HMF 作为美拉德反应标志物。",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+            "crossref_journal": "Frontiers in Pharmacology",
+            "crossref_year": "2018",
+            "pmcid": "PMC6121093",
+            "open_access": "Y",
+            "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrolysis_lactone_5ring_001",
+      "sources": [
+        {
+          "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+          "journal": "中国中药杂志",
+          "year": 2022,
+          "volume": "47(24)",
+          "pages": "6596",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "quote": "松香烷型二萜（HAO、JNB）及降二萜内酯（FA）的内酯环在醋酸加热下开环；有羟基时发生酯化成酯、氧化成羰基；有环氧环时易开环；二萜二聚体 EA 发生醚键断裂。",
+          "note": "检索摘要（万方/CNKI）；160°C、6% 冰醋酸、40 min。",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrolysis_epoxide_001",
+      "sources": [
+        {
+          "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+          "journal": "中国中药杂志",
+          "year": 2022,
+          "volume": "47(24)",
+          "pages": "6596",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "quote": "结构中的环氧环容易开环。",
+          "note": "同上；检索摘要。",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "esterification_acid_alcohol_001",
+      "sources": [
+        {
+          "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+          "journal": "中国中药杂志",
+          "year": 2022,
+          "volume": "47(24)",
+          "pages": "6596",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "quote": "有羟基时发生酯化成酯。",
+          "note": "同上；醋酸为酰基供体，对照实验证明辅料醋是关键。",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "oxidation_allylic_alcohol_001",
+      "sources": [
+        {
+          "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+          "journal": "中国中药杂志",
+          "year": 2022,
+          "volume": "47(24)",
+          "pages": "6596",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "quote": "有羟基时发生酯化成酯、氧化成羰基。",
+          "note": "同上；本规则限定烯丙醇，属于对文献『羟基氧化』的保守实现。",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "demethylation_n_001",
+      "sources": [
+        {
+          "title": "美拉德反应对槟榔炮制过程中槟榔碱转化的影响",
+          "journal": "华西药学杂志",
+          "year": 2017,
+          "volume": "32(2)",
+          "pages": "150-153",
+          "quote": "槟榔碱在炮制过程中具有两种转化路径:一是槟榔碱的去甲基化和甲基化,二是槟榔碱的缩合反应。在美拉德反应存在时,前者的转化率明显下降。",
+          "note": "四川大学期刊社页面摘要全文；去甲基化产物为去甲槟榔碱。"
+        }
+      ]
+    },
+    {
+      "id": "decarboxylation_001",
+      "sources": [
+        {
+          "title": "苍耳子炮制前后羧基苍术苷和苍术苷的含量比较",
+          "journal": "药物分析杂志",
+          "year": 2013,
+          "volume": "33(11)",
+          "pages": "1910-1913",
+          "quote": "",
+          "note": "清炒后羧基苍术苷（CATR）下降、苍术苷（ATR）升高；检索摘要。CATR 的 C4 有两个羧基，属丙二酸型脱羧。"
+        },
+        {
+          "title": "Isolation of a new atractyloside type compound",
+          "journal": "FEBS Letters",
+          "year": 1973,
+          "doi": "10.1016/0014-5793(73)80062-6",
+          "quote": "CAT can be decarboxylated to ATR by heating.",
+          "note": "题录/检索摘要；CATR 与 ATR 相差一个羧基。",
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Isolation of a new atractyloside type compound",
+            "crossref_journal": "FEBS Letters",
+            "crossref_year": "1973",
+            "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1016/0014-5793%2873%2980062-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cleavage_ether_acyclic_001",
+      "sources": [
+        {
+          "title": "模拟醋制法研究狼毒(月腺大戟)主要萜类效应成分醋制过程结构转化机制",
+          "journal": "中国中药杂志",
+          "year": 2022,
+          "volume": "47(24)",
+          "pages": "6596",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "quote": "二萜二聚体 EA 发生醚键断裂，生成玫瑰烷型二萜 euphebracteolatin A (EHTA) 及另一松香烷型二萜。",
+          "note": "同上；本规则限定非环醚，EA 若醚键碳在环内则不匹配。",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ]
+    }
+  ]
+}

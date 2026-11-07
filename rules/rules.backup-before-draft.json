@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "hydrolysis": {
+      "temperature": {
+        "min": 20,
+        "max": 150,
+        "default": 100
+      },
+      "pH": {
+        "min": 1,
+        "max": 14,
+        "default": 7
+      },
+      "solvent": [
+        "water",
+        "aqueous",
+        "alcohol"
+      ],
+      "catalyst": [
+        "acid",
+        "base",
+        "enzyme",
+        null
+      ],
+      "time_min": {
+        "min": 1,
+        "max": 1440,
+        "default": 60
+      },
+      "atmosphere": [
+        "air",
+        "N2"
+      ],
+      "pH_preference": "acid_base"
+    },
+    "oxidation": {
+      "temperature": {
+        "min": 20,
+        "max": 120,
+        "default": 100
+      },
+      "pH": {
+        "min": 2,
+        "max": 12,
+        "default": 7
+      },
+      "solvent": [
+        "water",
+        "aqueous",
+        "alcohol"
+      ],
+      "catalyst": [
+        null,
+        "metal"
+      ],
+      "time_min": {
+        "min": 5,
+        "max": 1440,
+        "default": 120
+      },
+      "atmosphere": [
+        "air",
+        "O2"
+      ],
+      "pH_preference": "any"
+    },
+    "reduction": {
+      "temperature": {
+        "min": 20,
+        "max": 120,
+        "default": 60
+      },
+      "pH": {
+        "min": 3,
+        "max": 11,
+        "default": 7
+      },
+      "solvent": [
+        "water",
+        "aqueous",
+        "alcohol"
+      ],
+      "catalyst": [
+        null,
+        "metal"
+      ],
+      "time_min": {
+        "min": 5,
+        "max": 1440,
+        "default": 120
+      },
+      "atmosphere": [
+        "H2"
+      ],
+      "pH_preference": "any"
+    },
+    "thermal": {
+      "temperature": {
+        "min": 80,
+        "max": 300,
+        "default": 150
+      },
+      "pH": {
+        "min": 1,
+        "max": 14,
+        "default": 7
+      },
+      "solvent": [
+        "water",
+        "aqueous",
+        "alcohol",
+        "none"
+      ],
+      "catalyst": [
+        null,
+        "acid",
+        "base"
+      ],
+      "time_min": {
+        "min": 1,
+        "max": 1440,
+        "default": 60
+      },
+      "atmosphere": [
+        "air",
+        "N2"
+      ],
+      "pH_preference": "any"
+    },
+    "ambient": {
+      "temperature": {
+        "min": 20,
+        "max": 45,
+        "default": 37
+      },
+      "pH": {
+        "min": 4,
+        "max": 9,
+        "default": 7
+      },
+      "solvent": [
+        "water",
+        "aqueous"
+      ],
+      "catalyst": [
+        null,
+        "enzyme"
+      ],
+      "time_min": {
+        "min": 5,
+        "max": 2880,
+        "default": 240
+      },
+      "atmosphere": [
+        "air",
+        "N2"
+      ],
+      "pH_preference": "neutral"
+    }
+  },
+  "rules": [
+    {
+      "id": "hydrolysis_ester_001",
+      "name": "酯水解",
+      "category": "hydrolysis",
+      "smarts": "[C:1](=[O:2])[O:3][C:4]>>[C:1](=[O:2])[O:3][H].[C:4][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.85,
+      "status": "active",
+      "notes": "实测差值 O1H2，补 1 分子水即配平。乌头碱减毒主途径。引擎须用 RDChiral：rdkit 原生 RunReactants 在环内断键时会复制原子。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "hydrolysis_glycoside_001",
+      "name": "糖苷水解",
+      "category": "hydrolysis",
+      "smarts": "[C:1]1([O:2][C:3][C:4][C:5][C:6]1)[O:7][C:8]>>[C:1]1([O:2][C:3][C:4][C:5][C:6]1)[OH].[OH:7][C:8]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.8,
+      "status": "active",
+      "notes": "实测差值 O1H2，补 1 分子水。皂苷脱糖生成苷元。糖环本身是环，RDChiral 能正确打开糖苷键并保持糖环完整。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "hydrolysis_amide_001",
+      "name": "酰胺水解",
+      "category": "hydrolysis",
+      "smarts": "[C:1](=[O:2])[N:3][C:4]>>[C:1](=[O:2])[OH].[N:3][C:4]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.6,
+      "status": "active",
+      "notes": "实测差值 O1H2。★已修两类映射缺陷：①原写法反应物 [N:3] 与产物 [O:3] 共用编号 3，rdkit 会把氮原子当氧改；②新增原子必须【不编号】（写 [OH] 而非 [O:5]），否则 RDChiral 抛 KeyError。中性水中酰胺水解实际很慢，条件层应压制其分数。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "hydrolysis_sulfate_001",
+      "name": "硫酸酯水解",
+      "category": "hydrolysis",
+      "smarts": "[S:1](=[O:2])(=[O:3])[O:4][C:5]>>[S:1](=[O:2])(=[O:3])[O:4][H].[C:5][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.7,
+      "status": "active",
+      "notes": "实测差值 O1H2。常见于硫酸多糖。底物稀少（4000 个真实分子里只 4 个匹配），统计置信度低。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "hydrolysis_phosphate_001",
+      "name": "磷酸酯水解",
+      "category": "hydrolysis",
+      "smarts": "[P:1](=[O:2])([O:3])[O:4][C:5]>>[P:1](=[O:2])([O:3])[O:4][H].[C:5][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.7,
+      "status": "active",
+      "notes": "实测差值 O1H2。磷脂、磷酸糖。环磷酸酯由 RDChiral 通用处理，无需单独规则。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "hydrolysis_acetal_001",
+      "name": "缩醛水解",
+      "category": "hydrolysis",
+      "smarts": "[CX4H1:1]([OX2:2][#6:3])[OX2:4][#6:5]>>[CX3H1:1]=[OX1:2].[OH:4][#6:5].[OH][#6:3]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.75,
+      "status": "active",
+      "notes": "★原 SMARTS 有真错误：产物只写了 [#6:5]，把 [#6:3] 整个片段丢了（丢一个烷氧基）。已补第三个产物片段 [OH][#6:3]。修复后 400/400 配平。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "hydrolysis_hemiacetal_001",
+      "name": "半缩醛水解",
+      "category": "hydrolysis",
+      "smarts": "[CX4H1:1]([OH:2])[OX2:3][#6:4]>>[CX3H1:1]=[O:2].[OH:3][#6:4]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.7,
+      "status": "active",
+      "notes": "简单底物（COC(O)c1ccccc1）配平正确且不耗水。环状半缩醛（如葡萄糖）由 RDChiral 正确开环。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "oxidation_hydroxyl_001",
+      "name": "羟基氧化",
+      "category": "oxidation",
+      "smarts": "[CH1:1][OH:2]>>[C:1]=[O:2]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {
+        "H2O": 1
+      },
+      "condition_profile": "oxidation",
+      "priority": 0.6,
+      "status": "active",
+      "notes": "实测差值 H-2，补 0.5 O2 并产 1 水即配平。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "oxidation_aldehyde_001",
+      "name": "醛氧化",
+      "category": "oxidation",
+      "smarts": "[CH1:1]=[O:2]>>[C:1](=[O:2])[OH]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {},
+      "condition_profile": "oxidation",
+      "priority": 0.75,
+      "status": "active",
+      "notes": "实测差值 O1，补 0.5 O2。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "oxidation_phenol_quinone_001",
+      "name": "酚氧化成醌",
+      "category": "oxidation",
+      "smarts": "[OH:1][c:2][c:3][OH:4]>>[O:1]=[C:2][C:3]=[O:4]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {
+        "H2O": 1
+      },
+      "condition_profile": "oxidation",
+      "priority": 0.6,
+      "status": "active",
+      "notes": "实测差值 H-2。多酚聚合起始步。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "oxidation_amine_001",
+      "name": "胺氧化",
+      "category": "oxidation",
+      "smarts": "[CX4H2:1][NX3H2:2]>>[CX3H1:1]=[O].[N:2]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {},
+      "condition_profile": "oxidation",
+      "priority": 0.5,
+      "status": "active",
+      "notes": "实测差值 O1。氧化脱氨。★已修两类映射缺陷：①原写法反应物 [N:2] 与产物 [O:2] 共用编号 2，rdkit 会把氮原子当氧改（数值凑巧还能配平，极具迷惑性）；②新增原子必须【不编号】（写 [O] 而非 [O:5]）。底物稀少（只 5 个匹配），权重应压低。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "reduction_ketone_001",
+      "name": "酮还原",
+      "category": "reduction",
+      "smarts": "[CX3:1](=[OX1:2])[#6:3]>>[CX4:1]([OH])[#6:3]",
+      "reversible": true,
+      "co_reagents": {
+        "H2": 1
+      },
+      "byproducts": {},
+      "condition_profile": "reduction",
+      "priority": 0.45,
+      "status": "active",
+      "notes": "实测差值 H2。煎煮条件下一般无氢源，条件层应靠 atmosphere 把它关掉。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "reduction_quinone_001",
+      "name": "醌还原",
+      "category": "reduction",
+      "smarts": "[O:1]=[C:2][C:3]=[O:4]>>[OH:1][C:2][C:3][OH:4]",
+      "reversible": true,
+      "co_reagents": {
+        "H2": 2
+      },
+      "byproducts": {},
+      "condition_profile": "reduction",
+      "priority": 0.45,
+      "status": "active",
+      "notes": "实测差值 H4（双位点），补 2 分子氢。丹参酮、大黄蒽醌。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "elimination_dehydration_001",
+      "name": "脱水",
+      "category": "elimination",
+      "smarts": "[CH2:1][CH1:2][OH:3]>>[C:1]=[C:2].[OH2]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.6,
+      "status": "active",
+      "notes": "原生配平（82/82）。但只匹配仲醇/叔醇；伯醇（如乙醇）不匹配，是覆盖缺口不是 bug。",
+      "max_products_per_molecule": 3
+    },
+    {
+      "id": "demethylation_aromatic_001",
+      "name": "脱甲基",
+      "category": "demethylation",
+      "smarts": "[O:1][CH3:2]>>[O:1][H].[CH3][OH]",
+      "reversible": false,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.55,
+      "status": "active",
+      "notes": "实测差值 O1H2。⚠️ SMARTS [O:1][CH3:2] 过宽，会命中脂肪族甲氧基，应加芳香性约束。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "decarboxylation_aromatic_001",
+      "name": "芳香酸脱羧",
+      "category": "decarboxylation",
+      "smarts": "[c:1][CX3:2](=[OX1:3])[OX2H:4]>>[c:1][H].[C](=[O])=[O]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.7,
+      "status": "active",
+      "notes": "原生配平（33/33）。CO2 已显式写入产物，是正确写法的范例。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "decarboxylation_beta_keto_001",
+      "name": "β-酮酸脱羧",
+      "category": "decarboxylation",
+      "smarts": "[CX3:1](=[OX1:2])[CX4:3][CX3:4](=[OX1:5])[OH:6]>>[CX3:1](=[OX1:2])[CX4:3].[C](=[O])=[O]",
+      "reversible": false,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.65,
+      "status": "active",
+      "notes": "★原 SMARTS 有真错误：产物漏写 CO2（实测差值 C-1 O-2）。已补 [C](=[O])=[O]。对照：同文件的「芳香酸脱羧」写法正确，CO2 显式写入产物——两种写法并存说明是笔误。",
+      "max_products_per_molecule": 2
+    },
+    {
+      "id": "hydroxylation_aromatic_001",
+      "name": "芳香环羟基化",
+      "category": "hydroxylation",
+      "smarts": "[cH:1]:[c:2]>>[c:1]([OH]):[c:2]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {},
+      "condition_profile": "oxidation",
+      "priority": 0.4,
+      "status": "risky",
+      "notes": "实测 1895/1895 配平，但传播过广（400 个底物出 1895 个产物），且方向不明确。建议加位置/取代约束后降权重用。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "hydration_alkene_001",
+      "name": "烯烃水合",
+      "category": "hydration",
+      "smarts": "[C:1]=[C:2]>>[C:1][C:2][OH]",
+      "reversible": true,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.4,
+      "status": "risky",
+      "notes": "实测配平，但 SMARTS 无区域选择性，任意双键都加水，产物质量差。建议重写（马氏规则）。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "hydration_enone_001",
+      "name": "α,β-不饱和羰基水合",
+      "category": "hydration",
+      "smarts": "[C:1]=[C:2][C:3]=[O:4]>>[C:1][C:2]([OH])[C:3]=[O:4]",
+      "reversible": true,
+      "co_reagents": {
+        "H2O": 1
+      },
+      "byproducts": {},
+      "condition_profile": "hydrolysis",
+      "priority": 0.4,
+      "status": "risky",
+      "notes": "实测配平，但无立体/区域选择性。建议重写。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "tautomerization_keto_enol_001",
+      "name": "酮-烯醇化",
+      "category": "rearrangement",
+      "smarts": "[CX3:1](=[OX1:2])[CX4H2:3]>>[C:1]([OH:2])=[C:3]",
+      "reversible": true,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "ambient",
+      "priority": 0.3,
+      "status": "active",
+      "notes": "实测 509/509 配平。属互变异构，不产生新分子，级联中应默认跳过。",
+      "max_products_per_molecule": 1
+    },
+    {
+      "id": "esterification_gamma_lactone_001",
+      "name": "γ-内酯化",
+      "category": "esterification",
+      "smarts": "[OX2H:1][CX4:2][CX4:5][CX4:6][CX3:3](=[OX1:4])[OX2H:7]>>[O:1]1[CX4:2][CX4:5][CX4:6][CX3:3]1=[OX1:4].[OH2:7]",
+      "reversible": true,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.5,
+      "max_products_per_molecule": 2,
+      "status": "active",
+      "notes": "γ-羟基酸分子内酯化成五元环内酯（+1 水）。★替代了原来的坏规则 esterification_intramolecular_001：那条的产物模板把酸羟基的氧也写进环里、还丢掉了链上的碳，导致 19 个底物匹配、0 个产物。实证：4-羟基丁酸→γ-丁内酯 配平；正确拒绝 β-羟基酸（3-羟基丁酸）与 δ-羟基酸（5-羟基戊酸）；葡糖酸给出正确的五元环内酯。★α-内酯（三元环）刻意不建规则——极不稳定，不是可分离产物。"
+    },
+    {
+      "id": "esterification_delta_lactone_001",
+      "name": "δ-内酯化",
+      "category": "esterification",
+      "smarts": "[OX2H:1][CX4:2][CX4:5][CX4:6][CX4:8][CX3:3](=[OX1:4])[OX2H:7]>>[O:1]1[CX4:2][CX4:5][CX4:6][CX4:8][CX3:3]1=[OX1:4].[OH2:7]",
+      "reversible": true,
+      "co_reagents": {},
+      "byproducts": {},
+      "condition_profile": "thermal",
+      "priority": 0.5,
+      "max_products_per_molecule": 2,
+      "status": "active",
+      "notes": "δ-羟基酸分子内酯化成六元环内酯（+1 水）。实证：5-羟基戊酸→δ-戊内酯 配平；正确拒绝 4-羟基丁酸（γ）。与 γ-内酯化互不重叠，各自只匹配自己的链长。"
+    },
+    {
+      "id": "maillard_simplified_001",
+      "name": "美拉德简化",
+      "category": "condensation",
+      "smarts": "[C:1](=[O:2])[CH2:3][OH:4]>>[C:1](=[O:2])[CH:3]=[O:4]",
+      "reversible": false,
+      "co_reagents": {
+        "O2": 0.5
+      },
+      "byproducts": {
+        "H2O": 1
+      },
+      "condition_profile": "thermal",
+      "priority": 0.35,
+      "status": "active",
+      "notes": "实测差值 H-2。名字叫美拉德但实际是醇氧化，命名与化学不符，建议改名或重写。",
+      "max_products_per_molecule": 3
+    }
+  ]
+}

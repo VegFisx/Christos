@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>Christos 系统论文（中文人味版）</title>
+<style>
+@page {
+  size: A4;
+  margin: 19mm 18mm 20mm 18mm;
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  max-width: 168mm;
+  margin: 0 auto;
+  color: #202a33;
+  font-family: "Microsoft YaHei", "SimSun", "Noto Sans CJK SC", serif;
+  font-size: 10.5pt;
+  line-height: 1.72;
+  text-align: justify;
+}
+
+h1, h2, h3 {
+  font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  color: #17384a;
+  line-height: 1.35;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 20pt;
+  margin: 0 0 12pt;
+}
+
+h2 {
+  font-size: 14pt;
+  margin: 18pt 0 7pt;
+  border-bottom: 1px solid #d9e5eb;
+  padding-bottom: 3pt;
+}
+
+h3 {
+  font-size: 11.5pt;
+  margin: 12pt 0 5pt;
+}
+
+p {
+  margin: 0 0 7pt;
+  orphans: 3;
+  widows: 3;
+}
+
+ul, ol {
+  margin: 0 0 8pt 18pt;
+  padding: 0;
+}
+
+li {
+  margin: 2pt 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 12pt;
+  font-size: 9.2pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cad9e0;
+  padding: 4.5pt 5.5pt;
+  vertical-align: top;
+}
+
+th {
+  background: #eaf2f5;
+  color: #21495b;
+  text-align: left;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  background: #f2f6f8;
+  padding: 0 2pt;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f5f8fa;
+  border: 1px solid #dce8ed;
+  padding: 7pt;
+  font-size: 9pt;
+}
+
+a {
+  color: #1d6680;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid #9dc4d2;
+  margin: 8pt 0;
+  padding: 5pt 10pt;
+  color: #48616c;
+  background: #f7fafb;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #d9e5eb;
+  margin: 12pt 0;
+}
+
+/* Avoid awkward breaks in headings and short table rows. */
+tr, img {
+  page-break-inside: avoid;
+}
+
+</style>
+</head>
+<body>
+<h1>Christos：面向药材与天然产物数据的可溯源、只读反应预测引擎（含显式输入解析）</h1>
+<p>**文章类型：**软件/研究论文（PeerJ 投稿系统最终选择）
+<strong>作者：</strong>（待填写）
+<strong>单位：</strong>（待填写）
+<strong>通讯作者：</strong>（待填写）</p>
+<hr />
+<h2>摘要</h2>
+<p><strong>研究动机。</strong> 反应预测工具现在常用于天然产物和中医药（TCM）研究，但多数只给出产物，不说明这条结果来自哪条记录、哪个模板触发、有什么证据支持。中医药这边的问题更明显：药材名、植物物种、炮制品和方剂版本，各自指向的化学成分可以完全不同。</p>
+<p><strong>结果。</strong> 本文提出一套审计可溯源反应预测系统的方法，并用它建成了一个实例 Christos，完全在本机运行。它以只读方式读取多套化学数据，按反应模板做正向枚举和逆合成，为每个候选附上条件标记和完整出处，并把每次运行写成可复现的报告。输入可以是药材名、拉丁物种、COCONUT 物种、方剂名或一组 SMILES。同名方剂的不同版本全部保留，系统报告选中的是哪一个。底层数据库只读。每次运行输出 CSV/TSV 台账和单文件 HTML 报告，命令行和本地浏览器界面都能用。</p>
+<p>在泄漏受控的 USPTO-50k 基准上，所选正向配置在 50,016 条反应上达到 <strong>82.32%</strong> 的单步召回（命中 41,173 条；Wilson 95% CI 81.98–82.65%），基线配置为 55.43%。逆向模板搜索在 5,002 个目标的子集上、配 79,184 条模板的库达到 <strong>94.74%</strong> 的 any-hit 覆盖率，在全量 50,016 个目标上、配 3,065 条泄漏剔除库则为 <strong>79.81%</strong>；多步规划器在 300 个 ORD 目标上，深度 ≤2/≤3 的成功率分别为 <strong>47.67%/72.33%</strong>；与逆向数字不同，这一组没有做目标级过滤。中医药数据层索引 31,646 个药材成分、269,105 个 COCONUT 成分、12,071 条方剂记录和 1,526 条药典方剂条目。出处链中的 3,228 条生产模板全部映射到 ORD 反应标识。500 条模板条件审计中，493 条至少有一次产物匹配，491 条至少有一类条件记录。五条有文献记载的中药转化，涵盖糖苷水解与酯水解，全部在第一轮可达。</p>
+<p>预测性能只在 USPTO-50k 和 ORD 上评估。中药部分按输入解析与出处层评估，不是反应预测基准：没有 TCM 反应 ground truth，573 条甘草台账也尚未对照实验或文献。对一份 573 条记录的中药运行做字段级审计，九个出处处字段组全部出现，但条件理由是实质内容的只有 1.2%。</p>
+<p><strong>可用性。</strong> Christos 用 Python 3.12 实现，依赖 RDKit、rdchiral、SmartReact 和 SQLite。DuckDB 只出现在生成基准表的离线分析脚本里，不在运行时。公开发行版分为只读研究应用和预计算演示包两部分。Demo 关闭任意目标逆合成和自由试剂输入。代码、数据卡、协议和参考文献核验快照随稿件一起发布。</p>
+<p>**关键词：**反应预测；逆合成；天然产物；中医药；出处；可复现性；反应模板</p>
+<hr />
+<h2>引言</h2>
+<p>当实验数据或量子化学数据都不足时，模板式反应预测可以用来探索化学转化。RDKit 提供广泛使用的化学信息学工具（RDKit, 2024），RDChiral 在保留立体化学的同时抽取和应用反应模板（Coley et al., 2019），AiZynthFinder 和 Retro* 等系统则把模板库与搜索、排序结合（Genheden et al., 2020; Chen et al., 2020）。USPTO-50k（Schneider et al., 2016）和 PaRoutes（Genheden &amp; Bjerrum, 2022）等基准资源让不同方法可以比较，Open Reaction Database（ORD）则提供带实验背景的反应记录（Kearnes et al., 2021）。</p>
+<p>这些工具通常只作为预测引擎来评价。另一个工程问题很少被问：系统能不能保留一条结果的<strong>历史</strong>，包括输入记录、触发它的模板、提供化合物的来源数据库、观察到的条件，以及这个结果属于实验先例还是规则外推。当同一套软件同时服务分子化学、天然产物化学和中医药时，这个问题就无法回避。</p>
+<p>两项研究给这个问题定了个尺度。Maziarz 等（2025）在统一框架里重新评估逆合成算法，发现报告出来的性能会随评测设置变化。Torren-Peraire 等（2024）发现单步模型的选择主导下游规划质量。所以一个单步召回率如果脱离它背后的配置和模板库，意义有限，这也是后面每次报数都同时给出配置的原因。</p>
+<p>中医药有自己的解析难题。一个中文药名可能对应药典条目、炮制品、地区别名或植物物种。一个方名可能覆盖多个组成不同的历史版本。一个化合物可能来自药材专库，也可能来自 COCONUT 这类物种级天然产物集合（Sorokina et al., 2021）。把这些标识符当成可互换的，就会从一个模糊输入得到一个看起来精确、来源其实不对的化学结果。</p>
+<p>本系统是在逐层审计中医药数据处理管线之后才建起来的：每一层先确认可信，再往上叠。这次审计得到四条发现，每一条都改变了设计——64 条人工整理规则里加载器只用了 6 条；条件门在空气气氛下放行了还原反应；出处字段结构完整，但带实质条件证据的只有 1.2%；拉丁名字段把植物学名和药典药材名混在一列。第 5 节逐条给出测量。</p>
+<p>Christos 因此围绕四项要求设计：</p>
+<ol>
+<li><strong>显式解析输入。</strong> 药材、炮制品、拉丁物种、COCONUT 物种、方剂和用户小分子走不同解析路径；系统报告实际使用了哪条路径，以及哪些记录未匹配。</li>
+<li><strong>保持数据只读。</strong> SQLite 数据库和方剂文件通过只读连接打开；运行可以写报告和台账，但不能修改源数据。</li>
+<li><strong>为每个候选附加出处。</strong> 每条产物路径记录来源化合物、反应模板、规则名、条件标记、轮次和不确定标记。标记记录的是条件层查到了什么，包括什么都没查到的情形。不确定的候选留在台账里，带一个标记。</li>
+<li><strong>明确公开边界。</strong> 公开演示层比研究引擎窄。任意目标逆合成和自由试剂输入关闭，Demo 不带数据库。</li>
+</ol>
+<p>本文介绍系统的数据模型、反应层、条件层和评价结果。这些内容不构成临床有效性结论，也不提供合成操作方案。结果只作为软件和基准证据报告，模板预测和中医药来源数据各自的局限在最后一节列出。</p>
+<h2>材料与方法</h2>
+<h3>系统概览</h3>
+<p>Christos 由若干可组合的层组成：</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>功能</th>
+<th>主要实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入解析</td>
+<td>中文药材、拉丁物种、COCONUT 物种、方剂或 SMILES</td>
+<td><code>sources/herb.py</code>、<code>sources/coconut.py</code>、<code>sources/formula.py</code></td>
+</tr>
+<tr>
+<td>反应枚举</td>
+<td>正向模板应用与级联扩展</td>
+<td><code>core/smartreact_engine.py</code>、SmartReact</td>
+</tr>
+<tr>
+<td>逆合成</td>
+<td>模板反转与受限路线搜索</td>
+<td><code>tools/retro_search.py</code></td>
+</tr>
+<tr>
+<td>条件层</td>
+<td>反应类 profile 与逐模板条件窗口</td>
+<td><code>conditions/</code>、<code>data/mined_top_template_conditions*.json</code></td>
+</tr>
+<tr>
+<td>出处与报告</td>
+<td>台账、索引、HTML 报告、来源标签</td>
+<td><code>core/query_base.py</code>、<code>tools/make_report.py</code></td>
+</tr>
+<tr>
+<td>接口</td>
+<td>CLI 与本地浏览器界面</td>
+<td><code>integration/tcmai_bridge/</code></td>
+</tr>
+</tbody>
+</table>
+<p>化学引擎和数据源适配器是分开的。同一套引擎可以跑药材记录、物种记录或用户给定分子，输出里仍然看得出输入属于哪一类。</p>
+<h3>数据来源与只读策略</h3>
+<p>当前本地部署使用以下资源：</p>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>作用</th>
+<th style="text-align:right">规模</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>药材库 <code>tcm.db</code></td>
+<td>药材名、成分、别名、依据</td>
+<td style="text-align:right">31,646 条成分记录（25,486 个唯一 SMILES）</td>
+<td>只读 SQLite</td>
+</tr>
+<tr>
+<td>COCONUT 快照</td>
+<td>物种级天然产物</td>
+<td style="text-align:right">269,105 个有效分子</td>
+<td>只读 SQLite</td>
+</tr>
+<tr>
+<td>方剂记录</td>
+<td>复方组成与版本</td>
+<td style="text-align:right">12,071 条记录</td>
+<td>只读 JSON</td>
+</tr>
+<tr>
+<td>药典 overlay</td>
+<td>2025 方剂条目与官方来源</td>
+<td style="text-align:right">1,526 条</td>
+<td>内部 overlay，不分发</td>
+</tr>
+<tr>
+<td>USPTO-50k</td>
+<td>泄漏受控基准</td>
+<td style="text-align:right">50,016 条反应</td>
+<td>公开基准</td>
+</tr>
+<tr>
+<td>ORD 衍生模板</td>
+<td>模板来源与出处</td>
+<td style="text-align:right">3,228 条生产模板</td>
+<td>衍生数据，注明来源</td>
+</tr>
+</tbody>
+</table>
+<p>公开版本不重新分发上游原始数据库。ORD 衍生模板按 CC BY-SA 4.0 处理；USPTO-50k 为 CC0（figshare 5104873）；COCONUT curated dataset 为 CC0，基础设施代码为 MIT；SmartReact 模板包为 Apache-2.0。本地药材和方剂资源仍归库主控制，不进入公开演示包。</p>
+<p>所有 SQLite 连接使用 <code>mode=ro</code>。当 WAL 数据库因为缺少共享内存文件而无法只读打开时，适配器回退到 <code>immutable=1</code>，以快照方式读取，不创建或修改边车文件。这条策略来自一个观察：普通的 <code>sqlite3.connect()</code> 即使只打算读取，也可能生成 <code>-wal</code> 和 <code>-shm</code> 文件。</p>
+<p>公开 Demo 只包含固定的小型摘录，而不是数据库：100 味常见中药、每味一个选定拉丁物种、50 个方剂和 150 个预计算示例。方剂限制为 4–6 味，并在打包前做安全过滤；Demo 不开放任意 SMILES 或路线搜索。</p>
+<h3>输入解析</h3>
+<p>输入分五类：药材名、拉丁物种、COCONUT 物种、方剂名，或一组 SMILES。药材名走下面这条级联，命中即停：</p>
+<ol>
+<li>药材库中的精确药材名或炮制品名；</li>
+<li>炮制品闸：药典收载但库里没有的炮制品，如实返回“库缺”，不拆成基原，也不转交给别名或模糊匹配；</li>
+<li>别名查询（同义词辞典加药材表的别名列），全部候选一并返回，系统不替用户挑；</li>
+<li>人工审定异名表，解析到唯一正名；</li>
+<li>中文名子串匹配，上限 40 条，按名称长度排序；</li>
+<li>拉丁名、英文名或别名子串匹配；</li>
+<li>相似度不低于 0.85 的模糊匹配，最多返回一个候选。</li>
+</ol>
+<p>拼音路径已被删除，因为它造成过误命中：<code>gancao</code> 命中过「秤杆草」（chenggancao）。</p>
+<p>解析器同时返回选中的记录和未能解析的 token。方剂保留完整版本列表，默认按有记录的来源档位选一个。同名版本不会合并，因为合并出来的组成不对应任何历史或药典记录。</p>
+<h3>正向反应枚举</h3>
+<p>正向引擎对底物集合应用反应模板。模板按反应名和反应物类别组织。一次运行可由每味成分数、反应轮数、最大底物对数和每对候选上限约束。</p>
+<p>当前选定配置使用 support 过滤后的模板池、每对 cap 32 和底物兼容性预筛。过小的 cap 可能在模板存在的情况下藏掉正确候选，所以运行元数据会记录对子覆盖和截断状态。被截断的结果不当作完整枚举。</p>
+<h3>逆合成</h3>
+<p>逆合成模块反转正向模板，并递归应用到目标分子。搜索返回切断、前体集合和路线级标注。前体与可用终止集合比对，并标注为可用或不可用。没有匹配到可用前体，只记录为不在当前终止集合里，不判定为不可能。</p>
+<p>公开构建默认关闭任意目标逆合成；研究 CLI 必须显式设置研究模式环境变量。这条限制划的是功能范围，不涉及对底层搜索安全性的判断。</p>
+<h3>条件证据</h3>
+<p>条件证据分两层：</p>
+<ul>
+<li>命名反应的反应类 profile：包含溶剂、pH、温度、催化剂和气氛窗口；</li>
+<li>从 ORD 记录挖出的逐模板窗口：先把模板匹配到真实反应记录，再收集其条件。</li>
+</ul>
+<p>逐模板层从 top-N 模板出发，在 ORD 等距样本上运行；只有当模板生成的产物与记录产物匹配时，该记录才贡献条件。当前 500 条模板审计中，493 条至少有一次产物匹配，491 条至少有一类条件记录。得到的窗口只是标注，不模拟动力学、收率或选择性。</p>
+<h3>出处与报告</h3>
+<p>台账中的每条候选路径都包含产物结构、来源化合物、来源药材或物种、反应规则、轮次、条件激活标记、方向标记和证据字符串。报告生成器把台账转换为单文件 HTML，并在需要时绘制结构。</p>
+<p>系统不做静默评分。方向标记和条件标记只作为标注显示，候选仍然留在台账里。“无证据”表示没有找到匹配的条件记录，不表示反应不会发生。</p>
+<h3>评价设计</h3>
+<p>评价分三部分。</p>
+<p><strong>正向预测。</strong> 对 USPTO-50k 每条记录的反应物运行一轮引擎；只要记录产物出现在候选集合中即记为命中，不使用排序。评测集是全部 50,016 条反应，随机种子 20261014，六个进程。</p>
+<p>泄漏受控模板库的构建方式是：先从未去重的 ORD 分片里挖模板，再逐条检查 ORD 记录，如果它的产物在去原子映射、规范化之后命中 USPTO-50k 评测集，整条记录剔除。剔除发生在产物层面而不是反应层面，所以只要产物与某个测试条目重合，哪怕反应物不同，这条记录也会被丢掉。这是两种做法里更严格的一种。逆向用的两个模板库也按同样方式过滤过，只是挖掘来源不同、规模不同：5,002 目标那套用 79,184 条模板，全量 50,016 目标那套用 3,065 条。</p>
+<p>过滤本身不是头条数字的来源。同一个选定配置跑未过滤的库得 82.56%，跑过滤后的库得 82.32%，差 0.24 个百分点。这个差距划出了“模板与测试集重叠”最多能贡献多少。</p>
+<p>Christos 不对候选排序，所以 any-position 召回是唯一和输出格式对得上的指标。要报 precision@k 得先造一个排序，而那正是系统刻意不做的。预期的用法是读者拿候选对着出处逐条看，而不是把第一行当答案。</p>
+<p>基线配置是引擎默认值：默认候选上限、默认模板池、不启用底物兼容性预筛。选定配置使用约 2 万条的 support 过滤模板池和每对 cap 32。兼容性预筛保留在管线里，但下面的消融显示它在测试样本上没有可测增益。候选数要和召回率一起看，因为更大的 cap 会靠多给候选来提高召回，单看召回率会误导。</p>
+<p><strong>逆合成覆盖。</strong> 只要某个切断在去除原子映射后得到与记录反应物集合完全相同的前体集合，即记为命中。覆盖率报两个口径：5,002 个目标配 79,184 条模板，50,016 个目标配 3,065 条泄漏剔除库。两组目标集和两个模板库都不同，覆盖率不能互相比较。5,002 和 300 两个目标集都取自 ORD，不是 USPTO-50k：筛选条件是分子量不超过 500、单组分、非盐形式，从 parquet 第 20 万行起取，然后去重。多步成功率在 300 个目标上评价，beam width 4，每次扩展最多 400 个切断。一条路线在每一步都通过 <code>retro_search.step_usability</code> 检查时才算可用，一个目标只要有一条这样的路线就算可用。</p>
+<p><strong>中医药解析与出处。</strong> 通过同一界面测试药材、物种、方剂和 SMILES 输入，记录解析来源、版本、未解析 token 和输出链接。Demo 示例由同一引擎生成，但以固定预计算样本打包，因此不分发数据库。</p>
+<h2>结果</h2>
+<h3>已实现的数据规模</h3>
+<p>当前本地部署覆盖：</p>
+<ul>
+<li>31,646 条药材成分记录，其中 25,486 条带唯一 SMILES；</li>
+<li>269,105 个 COCONUT 成分；</li>
+<li>12,071 条方剂记录；</li>
+<li>1,526 条药典方剂条目；</li>
+<li>3,228 条带 ORD 反应标识的生产模板；</li>
+<li>公开演示目录中的 100 味药材和 50 个方剂。</li>
+</ul>
+<p>药材表没有做全局去重。同一化合物属于几味药，就在表里出现几次，所以 31,646 条记录对应 25,486 个唯一 SMILES，重复率 19.5%。InChIKey 覆盖 30,964 条，唯一键 29,013 个；两个数不同是因为部分不同的 SMILES 映射到同一个 InChIKey。这些数字描述的是已经建成的数据层。某个成分或方剂缺失，只说明当前来源没有收录。</p>
+<h3>正向预测</h3>
+<p>在泄漏受控的 USPTO-50k 基准上，基线配置的单步召回为 55.43%，覆盖全部 50,016 条反应。它平均每个反应返回 8.8 个候选（中位数 8，90 分位 15），1.01% 的反应一个候选都没有。选定配置达到 <strong>82.32%</strong>（41,173/50,016，Wilson 95% CI <strong>81.98–82.65%</strong>），平均每个反应返回 21.2 个候选。一次全量运行在六个进程上耗时 2,820 秒。</p>
+<p>多出来的候选是解释的一部分，所以召回率和候选数必须一起看。从基线换到选定配置，这两个数同时上升。</p>
+<p>在一个固定的 500 条分层样本上做消融，各组件的作用可以分开看：</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th style="text-align:right">召回</th>
+<th style="text-align:right">平均候选数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引擎默认</td>
+<td style="text-align:right">41.60%</td>
+<td style="text-align:right">8.4</td>
+</tr>
+<tr>
+<td>加每对 cap 32</td>
+<td style="text-align:right">64.60%</td>
+<td style="text-align:right">10.1</td>
+</tr>
+<tr>
+<td>加 2 万条 support 过滤模板池</td>
+<td style="text-align:right">75.80%</td>
+<td style="text-align:right">19.4</td>
+</tr>
+<tr>
+<td>cap 提到 64</td>
+<td style="text-align:right">75.80%</td>
+<td style="text-align:right">19.6</td>
+</tr>
+<tr>
+<td>加底物兼容性预筛</td>
+<td style="text-align:right">75.80%</td>
+<td style="text-align:right">19.4</td>
+</tr>
+</tbody>
+</table>
+<p>cap 从 32 提到 64，召回和候选数都不变；兼容性预筛在这个样本上没有可测的增益。增益跟的是 cap 提高和模板池扩大这两件事。模板库本身并非处处正确，运行元数据记录了全部设置，便于复现和比较。</p>
+<p>样本和全量回答的是不同的加权问题，两者的差距是预期内的。500 条样本给每个反应类别等配额，而全量由第 1、2 类主导，这两类占全部反应的 45% 且分数最高。等权因此把基线从全量的 55.43% 拉到 43.96%，把选定配置从 82.32% 拉到 75.22%。样本上的 41.60% 和 75.80% 正好落在这两个等权值旁边。它们的 Wilson 区间分别是 37.36–45.97% 和 71.86–79.35%，两个等权值都落在区间内，剩下的差距在 n = 500 时属于抽样噪音，不是系统性偏差。消融在一个加权下比较各配置，头条数字用另一个。</p>
+<h3>增益从哪里来</h3>
+<p>召回率在不同反应类别之间很不均匀。默认配置在 4 到 7 类最弱，在 1、2 类最强。选定配置把这些弱类别拉得最远。</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th style="text-align:right">n</th>
+<th style="text-align:right">基线</th>
+<th style="text-align:right">选定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:right">15,151</td>
+<td style="text-align:right">70.9%</td>
+<td style="text-align:right">86.9%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:right">11,896</td>
+<td style="text-align:right">84.2%</td>
+<td style="text-align:right">92.6%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:right">5,662</td>
+<td style="text-align:right">65.5%</td>
+<td style="text-align:right">76.0%</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:right">909</td>
+<td style="text-align:right">16.3%</td>
+<td style="text-align:right">52.5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:right">672</td>
+<td style="text-align:right">19.6%</td>
+<td style="text-align:right">64.7%</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:right">8,237</td>
+<td style="text-align:right">16.9%</td>
+<td style="text-align:right">73.2%</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:right">4,614</td>
+<td style="text-align:right">9.5%</td>
+<td style="text-align:right">79.2%</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:right">811</td>
+<td style="text-align:right">64.9%</td>
+<td style="text-align:right">81.8%</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:right">1,834</td>
+<td style="text-align:right">25.7%</td>
+<td style="text-align:right">68.4%</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:right">230</td>
+<td style="text-align:right">66.1%</td>
+<td style="text-align:right">77.0%</td>
+</tr>
+</tbody>
+</table>
+<p>类别是 USPTO-50k 自带的十个反应类型标签。第 7 类涨了 69.7 个百分点，第 6 类涨 56.3，第 5 类涨 45.1；而第 2 类只涨 8.4，第 1 类涨 16.0。这个模式提示默认库对相当一部分弱类别根本没有表示能力，扩大后的池子补上了模板。这不证明这些模板在化学上正确。</p>
+<h3>实验配置</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>目标集</th>
+<th>模板库</th>
+<th>产物级排除</th>
+<th>可与谁比较</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正向，基线</td>
+<td>50,016 USPTO-50k</td>
+<td>引擎默认</td>
+<td>是，对 USPTO-50k</td>
+<td>正向选定</td>
+</tr>
+<tr>
+<td>正向，选定</td>
+<td>50,016 USPTO-50k</td>
+<td>约 2 万条 support 过滤</td>
+<td>是，对 USPTO-50k</td>
+<td>正向基线</td>
+</tr>
+<tr>
+<td>逆向，子集</td>
+<td>5,002 ORD</td>
+<td>79,184</td>
+<td>是，另做目标重叠检验</td>
+<td>无</td>
+</tr>
+<tr>
+<td>逆向，全量</td>
+<td>50,016 USPTO-50k</td>
+<td>3,065</td>
+<td>是</td>
+<td>无</td>
+</tr>
+<tr>
+<td>多步</td>
+<td>300 ORD</td>
+<td>选定库</td>
+<td>未做目标重叠检验</td>
+<td>无</td>
+</tr>
+<tr>
+<td>条件审计</td>
+<td>500 条模板</td>
+<td>生产库</td>
+<td>不适用</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p>正向两组共用同一目标集，只差配置，所以可以比较。逆向两组既换目标集又换库，并列只为完整。多步沿用选定库，但没有做目标级重叠检验。</p>
+<h3>逆合成与多步规划</h3>
+<p>逆向搜索报两个覆盖率，必须分开读。在 5,002 个目标的子集上、配 79,184 条模板的库，any-hit 覆盖率为 <strong>94.74%</strong>（4,739/5,002，Wilson 95% CI 94.09–95.33%）。在全量 50,016 个目标上、配 3,065 条模板的泄漏剔除库，覆盖率为 <strong>79.81%</strong>。这个落差同时来自更小的模板库和更大更难的目标集。</p>
+<p>5,002 个逆向目标做过一次与模板挖掘源的重叠检验。其中 252 个（5.04%）的产物也出现在该源里，
+这 252 个的 any-hit 是 94.84%（239/252）；其余 4,750 个没有重叠，达到 94.74%（4,500/4,750）。
+把重叠目标去掉，覆盖率在小数点后两位不变。</p>
+<p>300 个多步目标没有做同样的检验，成功率按实测报告，应理解为未做目标级过滤。</p>
+<p>采用 beam width 4 和选定模板库时，端到端成功率在 300 个固定目标上为：深度 ≤2 <strong>47.67%</strong>（143/300，Wilson 95% CI 42.08–53.31%），深度 ≤3 <strong>72.33%</strong>（217/300，CI 67.01–77.09%）。300 个目标中有 207 个至少有一条被标为可用的路线。</p>
+<p>每个前体都带有路线级来源和可用性。“可用”是一个标注，不是合成指令。</p>
+<h3>条件与出处覆盖</h3>
+<p>3,228 条生产模板全部关联到 ORD 反应标识；当前出处表中的反应级反查覆盖 9,177/9,177 条记录。500 条模板条件审计产生 493 条至少一次产物匹配的模板，以及 491 条至少有一类条件的模板。两个数用不同口径：493 统计的是至少匹配到一次产物的模板，491 统计的是在此基础上还至少提取到一类条件的模板。有 2 个模板匹配了产物但没有产出条件类别。审计结果作为数据产物保存，本身不会改变默认运行时模板库。</p>
+<h3>药材解析审计</h3>
+<p>解析级联对 75 个输入跑了一遍：20 个精确中文名、10 个别名、10 个炮制品、25 个从药材表里抽出的拉丁名，以及 10 个本不该解析成功的字符串。</p>
+<table>
+<thead>
+<tr>
+<th>输入组</th>
+<th style="text-align:right">n</th>
+<th style="text-align:right">解析成功</th>
+<th style="text-align:right">未解析</th>
+<th style="text-align:right">歧义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>精确中文名</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>别名</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>炮制品</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>拉丁名（取自表内）</td>
+<td style="text-align:right">25</td>
+<td style="text-align:right">25</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>非药材字符串</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<p>歧义列统计的是返回多个候选的条目，是“解析成功”的子集，不是独立结果。非药材那一行的 1 个“解析成功”是错误返回，不是正确解析。</p>
+<p>精确中文名 20 个全部解析成功。别名 10 个中成功 9 个，寸冬返回空。炮制品十个中只成功三个，其余七个（包括炒白术和姜半夏）不在库里，返回的是炮制品闸的明确“库缺”，而不是被拆成基原。</p>
+<p>拉丁名这条路径要分两种情况看。从药材表里直接抽出的 25 个双名全部回指到自己的药材，因为这些条目存的是植物学双名。常见中药存的却是生药拉丁名：甘草那条存的是 Radix et Rhizoma Glycyrrhizae，不是 Glycyrrhiza uralensis。用户按植物学名输入因此会失败或者落到别的条目上——Glycyrrhiza uralensis 解析成了「甘草节」，也就是甘草的节。当前代码没有修正这个问题；要修，得把这一列拆成生药名和植物名两列。</p>
+<p>同一次审计还发现两处：「生地黄」解析成「鲜地黄」「干地黄」两个候选，而不是单一药材，因为表里没有这个名字；「寸冬」（麦冬的别名）完全没解析出来。</p>
+<p>十个本不该解析的字符串里，九个返回空。「甘」这个单字返回了 40 个候选，正好撞上子串匹配的上限，因为它能匹配到很多药名。这一次属于错误返回，不是解析成功。</p>
+<p>表内抽出的 25 个双名是容易的那一半。用户按常见药材的植物学名输入这件事，这次只有 Glycyrrhiza uralensis 一个用例，而且失败了。当前构建不支持常见中药的植物名查询。</p>
+<p>审计脚本在仓库里（tools/audit_herb_resolution.py），用例表可以继续扩充。</p>
+<h3>已知转化验证</h3>
+<p>选取五条中药文献中有记载的转化做定性可达性检验。每条底物单独在煎煮条件下跑到三轮，然后在前台账里查找文献给出的产物。</p>
+<table>
+<thead>
+<tr>
+<th>转化</th>
+<th>规则</th>
+<th style="text-align:right">轮次</th>
+<th style="text-align:right">候选数</th>
+<th style="text-align:right">耗时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甘草酸 → 甘草次酸</td>
+<td>hydrolysis_glycoside_001</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5,510</td>
+<td style="text-align:right">56 s</td>
+</tr>
+<tr>
+<td>人参皂苷 Rb1 → Rg3</td>
+<td>hydrolysis_glycoside_001</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">11,658</td>
+<td style="text-align:right">193 s</td>
+</tr>
+<tr>
+<td>乌头碱 → 苯甲酰乌头原碱</td>
+<td>hydrolysis_ester_001</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">642</td>
+<td style="text-align:right">6 s</td>
+</tr>
+<tr>
+<td>苯甲酰乌头原碱 → 乌头原碱</td>
+<td>hydrolysis_ester_001</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">814</td>
+<td style="text-align:right">7 s</td>
+</tr>
+<tr>
+<td>芦丁 → 槲皮素</td>
+<td>hydrolysis_glycoside_001</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5,685</td>
+<td style="text-align:right">96 s</td>
+</tr>
+</tbody>
+</table>
+<p>五条产物全部在第一轮出现，而且都由化学上预期的规则产生：糖苷类走糖苷水解，两个二萜生物碱走酯水解。这说明管线能够抵达文献记载的煎煮化学，但不等于能把正确产物排到前面——系统根本不排序。</p>
+<p>乌头碱这两级在附子炮制文献里有记载（PubMed 27761113、18306748）。其余三条转化的具体文献尚未补齐，它们同样出自煎煮化学文献，只是本稿还没有一一对应到具体论文。</p>
+<h3>中医药案例</h3>
+<p>以甘草为例，当前构建对 12 个成分运行后得到 573 个候选产物和 573 条出处路径。每条路径记录来源化合物、反应规则、轮次、方向标记和条件标记。这个例子说明的是报告模型，不是药理学结论。</p>
+<p>对同一份台账做字段级审计，可以把“结构完整”和“内容有据”分开。九个字段组在 573 条里出现率都是 100%。但条件理由是实质内容的只有 7 条（1.2%），其余 566 条写的是“无 ORD 条件数据，放行”，意思是条件层没有找到匹配记录，把候选原样放过去了。字段始终是填满的，填在条件字段背后的东西通常不是。</p>
+<p>审计脚本在仓库里（<code>tools/audit_provenance_completeness.py</code>），可以对任何台账复跑。它让溯源声明可以被核查，不必只靠信任。</p>
+<p>方剂解析保留所有同名版本，并报告选中的来源档位与未解析 token。对多版本方剂，输出会列出当前版本和备选版本，而不是折叠成一个组成。</p>
+<h3>公开演示与安全边界</h3>
+<p>公开 Demo 包含 100 味常见药材（每味一个拉丁物种）、50 个方剂和 150 个预计算条目。页面没有任意 SMILES 输入框、路线搜索、自由试剂输入、可购砌块或供应商链接。应用对源数据库只读，只写自己的报告和运行时目录。</p>
+<p>能够枚举反应产物的系统需要这样一条边界。研究接口保留给受控实验，公开接口只提供较窄的一组功能。</p>
+<h3>两级筛选</h3>
+<p>四君子汤那 3,210 条候选分两步压缩。第一步只保留中药规则库里的规则，去掉从 ORD 挖来的通用有机合成模板，3,210 降到 1,114。第二步把每个产物的 InChIKey 拿去和药材库里的 31,646 个成分比对，6 个是已知中药成分，1,108 个不在库里。</p>
+<p>这 6 个已知成分来自四次酯水解和两次糖苷水解。整体压缩率 99.8%。读者拿到的不是3,210 个结构，而是 6 个有文献身份的具体化合物。</p>
+<p>这套筛选不是排序，也不带任何置信分。它只应用两条显式判据——规则来源和是否在成分表里——产物要么同时满足，要么不满足。库外那 1,108 个产物在另一个开关下仍然可取，它们是候选新成分，不是错误。</p>
+<h3>运行时标定</h3>
+<p>两个预算控制一次运行：每味成分上限和对子预算。两者都在甘草上实测，不是凭感觉定的。</p>
+<table>
+<thead>
+<tr>
+<th>成分上限</th>
+<th style="text-align:right">底物</th>
+<th style="text-align:right">对子</th>
+<th style="text-align:right">产物</th>
+<th style="text-align:right">耗时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td style="text-align:right">24</td>
+<td style="text-align:right">276</td>
+<td style="text-align:right">3,666</td>
+<td style="text-align:right">18.5 s</td>
+</tr>
+<tr>
+<td>64</td>
+<td style="text-align:right">64</td>
+<td style="text-align:right">2,016</td>
+<td style="text-align:right">33,579</td>
+<td style="text-align:right">166 s</td>
+</tr>
+<tr>
+<td>128</td>
+<td style="text-align:right">128</td>
+<td style="text-align:right">8,128</td>
+<td style="text-align:right">97,670</td>
+<td style="text-align:right">429 s</td>
+</tr>
+<tr>
+<td>342（全部）</td>
+<td style="text-align:right">342</td>
+<td style="text-align:right">58,311</td>
+<td style="text-align:right">359,141（上界）</td>
+<td style="text-align:right">33 分钟</td>
+</tr>
+</tbody>
+</table>
+<p>24 个成分在特异性排序下已覆盖甘草全部特征成分。加到 128 只增加产物、不增加特征条目。全量必须切片：按每 2,000 对一个切片，30 片共 33 分钟跑完，得到 35.9 万条产物——切片内去重、跨片不去重，所以是上界。</p>
+<table>
+<thead>
+<tr>
+<th>对子预算</th>
+<th style="text-align:right">实际对</th>
+<th style="text-align:right">产物</th>
+<th style="text-align:right">耗时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td style="text-align:right">500</td>
+<td style="text-align:right">9,914</td>
+<td style="text-align:right">50 s</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td style="text-align:right">1,000</td>
+<td style="text-align:right">17,826</td>
+<td style="text-align:right">77 s</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td style="text-align:right">2,000</td>
+<td style="text-align:right">27,076</td>
+<td style="text-align:right">109 s</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td style="text-align:right">4,000</td>
+<td style="text-align:right">54,103</td>
+<td style="text-align:right">259 s</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td style="text-align:right">8,000</td>
+<td style="text-align:right">120,487</td>
+<td style="text-align:right">573 s</td>
+</tr>
+</tbody>
+</table>
+<p>产物数和耗时都随对子线性增长，没有效率拐点。对子预算换的是等待时间，不是质量。</p>
+<p>全量 58,311 对无法一次跑完：引擎在单进程内累积全部产物，规模到十万级时内存吃不消。因此改成切片执行，每 2,000 对写一个检查点，崩溃后从断点继续。切片内去重、跨片不去重，所以产物总数是上界。</p>
+<h3>哪些优化没有奏效</h3>
+<p>针对 33 分钟的全量运行试了四个方向，结果都没有变化。</p>
+<p>跨批复用单底物模板的结果没有效果。1,000 对花掉的 72 秒主要来自 11,000 次 RDKit <code>RunReactants</code> 调用，每次约 6.5 毫秒；单底物路径只占很小一部分。</p>
+<p>直接按索引枚举对子、而不是先建出完整的 58,311 个元组再切片，同样没有变化。</p>
+<p>按 200 对一批把产物流式写盘，峰值内存从 1.8 GB 降到平稳水平，但比 2,000 对切片慢 60%，因为在这个粒度下每批的固定开销占了大头。</p>
+<p>四进程并行在原理上可行：切片彼此独立，前四片跑出的产物数与串行完全一致。失败在内存——每个 worker 持有约 1.7 GB 的产物对象，四个 worker 就会吃光 16 GB 机器，其中两个被系统直接杀掉、连错误栈都来不及留下。瓶颈是单个产物对象的体积，不是模板库：加载全部 82,000 条模板只占约 37 MB。</p>
+<p>要突破这个上限，需要改变产物对象承载的内容——把出处查询推迟到写盘时再做。这属于引擎层重构，本文不展开。</p>
+<h2>讨论</h2>
+<p>Christos 把预测本身的证据放在预测旁边。</p>
+<p>输入解析是显式的。在中医药数据中，药材名、炮制品、拉丁双名和方剂版本不是可互换标识；系统记录解析路径和未解析 token，使用户能够判断结果是否真的来自预期来源。</p>
+<p>出处附加在每个候选上。模板标识、反应记录引用、来源化合物和条件标记让运行结束后仍可审计结果。当底层数据异构时，这比一个裸排序列表更有用。</p>
+<p>公开接口窄于研究引擎。能搜索任意目标或展示可购砌块的系统，与只展示固定演示目录的系统具有不同风险画像，所以公开可用性在 Christos 里是一个带功能闸门的产品决策。</p>
+<p>这些闸门不是安全边界。研究路径靠一个环境变量打开，源码又是公开的，愿意改代码的人随时能把它重新打开。闸门防的是误用：打开公开版的人找不到填目标分子或自由试剂的地方。它不会让读过仓库的人没法使用底层搜索。这个区别决定了系统该怎么被监管、该怎么描述，本论文也不主张更多。</p>
+<p>在冻结的 USPTO-50k 协议上，选定配置明显强于基线。这不证明化学可操作性、生物活性或临床效用。模板引擎仍然依赖模板库和输入数据，条件层只标注证据，不模拟结果。</p>
+<h2>应用场景</h2>
+<p><strong>方剂煎煮产物预测。</strong> 给一组药材，返回只在合煎后出现的产物。四君子汤标准四味在筛选后给出 6 个有文献身份的成分。</p>
+<p><strong>炮制减毒机制。</strong> 乌头碱经苯甲酰乌头原碱到乌头原碱的两级水解在第一轮就被复现。这正是附子、川乌、草乌炮制减毒的核心化学。</p>
+<p><strong>质量标准标志物筛选。</strong> 煎煮后出现、原药材里没有的产物，可以作为区分汤剂与原生药粉的候选标志物。</p>
+<p><strong>配伍化学基础。</strong> 两个前体分别来自不同药材的产物，是「这一组合、而非单味药产生了它」的直接证据。</p>
+<h2>展望</h2>
+<p>要补上这条标注链，需要的是基础设施而不是更好的模型：要么为天然产物骨架给出预测靶点谱，要么建立结构到 MeSH、结构到 RxNorm 的映射表，让新产物能够接上现有的毒性与不良反应表。这两样目前都不存在，做起来是数据工程。</p>
+<p>此外还有三项眼前的扩展。</p>
+<p>中药规则库现在有 64 条，系统性的文献挖掘可以把它做到几百条，这是覆盖面上最大的杠杆。筛选层目前只用规则来源和成分身份，加上质量守恒、条件窗口和文献先验会更紧。本文所有预测都还没有对照实验，那是把「可达性检验」变成「准确性结论」的关键一步。</p>
+<h2>局限</h2>
+<ol>
+<li><strong>依赖模板。</strong> 正向和逆向结果受模板库和候选截断限制。缺少模板可能隐藏正确路径。</li>
+<li><strong>本研究没有实验室验证。</strong> 条件 profile 来自反应记录和文献，不能替代实验验证。</li>
+<li><strong>中医药来源异构。</strong> 药材名、炮制品、物种归属、方剂版本和来源档位都可能存在歧义；系统报告未解析 token，而不是强行匹配。</li>
+<li><strong>条件证据不完整。</strong> 许多模板没有可用条件记录。缺少条件标记表示“当前条件数据中未找到”，不表示“不可能发生”。</li>
+<li><strong>不存在通用安全保证。</strong> 公开构建关闭高风险接口，但任何软件过滤都不能替代法律审查、机构控制或负责任使用。</li>
+<li><strong>数据与许可边界。</strong> 部分本地资源由库主维护，不能重新分发；公开 Demo 只使用小型脱敏摘录。</li>
+<li><strong>溯源是可追溯，不是独立验证。</strong> 模板到 ORD 的映射说明模板从哪儿来。但模板本来就是从 ORD 挖的，所以反查回去只是确认链条，不是拿外部来源做检验。</li>
+<li><strong>中医药数据层无法从公开包重算。</strong> 药材、方剂和药典表受第三方条款约束，不随仓库分发。Demo 只带固定摘录，所以本论文里的中医药规模数字无法只靠公开包复现。</li>
+<li><strong>下游风险标注止步于已知化合物。</strong> 预测产物如果不在任何化合物表里，就没有标识符可以去关联毒性或疾病记录。TDC 派生的 ADMET 缓存（Huang et al., 2022）用 InChIKey 匹配，覆盖一次煎煮运行产物的 2.6%；CTD（Davis et al., 2026）用化学品名字匹配，几乎覆盖不到，因为新结构根本没有名字可对。同一对方剂上，ADMET 缓存能把温和方与含附子的方分得很清楚——84 个有标注的产物里 0 个超过急性毒性第 90 百分位，而对含附子的方是 169 个里 65 个——但只对其中被既往整理收录的少数产物成立。</li>
+<li><strong>拉丁名路径不可靠。</strong> 27 个用例的审计里，三个双名学名只有一个解析成功，而那个成功的是错的。中文名和别名路径更强，但都不完整。</li>
+</ol>
+<h2>结论</h2>
+<p>Christos 的目的就是让反应预测可以被审计，而审计查出来的问题比设计时预想的多。</p>
+<p>管线能抵达文献记载的煎煮化学：五条涵盖糖苷水解和酯水解的转化全部在第一轮出现，两级筛选把一次 3,210 条候选的煎煮运行压到 6 个有文献身份的成分。</p>
+<p>它也暴露了四个本来会被「系统级声明」掩盖的缺陷：64 条规则里有 58 条从未被加载；还原规则通过了只允许空气的气氛门；出处字段完整而实质条件证据只覆盖 1.2%；拉丁名列存的是药材名而不是植物名。</p>
+<p>那些基准数字——82.32% 的正向召回，以及两种配置下 94.74% 和 79.81% 的逆向覆盖——描述的是引擎，不是中药层。中药层是按输入解析与出处层评估的，它的局限和结果并列呈现。</p>
+<h2>数据与代码可用性</h2>
+<p>代码、协议、结果表、图件源文件和可运行脚本在 https://github.com/VegFisx/Christos，归档于 https://doi.org/10.5281/zenodo.23499423。下游标注使用了 TDC ADMET Group（Huang et al., 2022）、Tox21/ToxCast 端点（Richard et al., 2016, 2021）、CTD（Davis et al., 2026）和 OnSIDES v3.1.1（Tanaka et al., 2025）；OnSIDES 用于下游评估准备，未进入本文头条结果。药典 overlay 从《中国药典》2025 年版经第三方结构化仓库 <code>Independent-KBs</code> 派生；该仓库未声明仓库级许可证，因此 overlay 仅限内部使用。上游原始数据不再分发。公开演示包是固定预计算样本，不包含生产数据库。</p>
+<h2>资助</h2>
+<p>（待填写。）</p>
+<h2>利益冲突</h2>
+<p>作者声明无利益冲突。（待确认。）</p>
+<h2>作者贡献</h2>
+<p>（待按 CRediT 分类填写。）</p>
+<h2>致谢</h2>
+<p>（待填写。）</p>
+<h2>参考文献</h2>
+<p>下列期刊/会议引用已于 2026-10-19 和 2026-10-29 核对：DOI 记录通过 Crossref 解析，软件、数据集和会议条目通过各自的官方项目页、EPA 页、GitHub release 与固定提交页核对。API 快照存于 <code>reports/paper/reference_verification_20261019/</code> 和 <code>reports/paper/reference_verification_20261029/</code>。</p>
+<ol>
+<li>
+<p>Chen, B., Li, C., Dai, H., &amp; Song, L. (2020). Retro*: Learning retrosynthetic planning with neural guided A* search. <em>Proceedings of the 37th International Conference on Machine Learning</em>, PMLR 119, 1608–1616. https://proceedings.mlr.press/v119/chen20c.html</p>
+</li>
+<li>
+<p>Coley, C. W., Green, W. H., &amp; Jensen, K. F. (2019). RDChiral: An RDKit wrapper for handling stereochemistry in retrosynthetic template extraction and application. <em>Journal of Chemical Information and Modeling</em>, 59(6), 2529–2537. https://doi.org/10.1021/acs.jcim.9b00286</p>
+</li>
+<li>
+<p>Genheden, S., &amp; Bjerrum, E. J. (2022). PaRoutes: Towards a framework for benchmarking retrosynthesis route predictions. <em>Digital Discovery</em>, 1(4), 527–539. https://doi.org/10.1039/D2DD00015F</p>
+</li>
+<li>
+<p>Genheden, S., Thakkar, A., Chadimová, V., Reymond, J.-L., Engkvist, O., &amp; Bjerrum, E. J. (2020). AiZynthFinder: A fast, robust and flexible open-source software for retrosynthetic planning. <em>Journal of Cheminformatics</em>, 12, 70. https://doi.org/10.1186/s13321-020-00472-1</p>
+</li>
+<li>
+<p>Kearnes, S. M., Maser, M. R., Wleklinski, M., Kast, A., Doyle, A. G., Dreher, S. D., Hawkins, J. M., Jensen, K. F., &amp; Coley, C. W. (2021). The Open Reaction Database. <em>Journal of the American Chemical Society</em>, 143(45), 18820–18826. https://doi.org/10.1021/jacs.1c09820</p>
+</li>
+<li>
+<p>Maziarz, K., Tripp, A., Liu, G., Stanley, M., Xie, S., Gaiński, P., Seidl, P., &amp; Segler, M. (2025). Re-evaluating retrosynthesis algorithms with Syntheseus. <em>Faraday Discussions</em>, 256, 568–586. https://doi.org/10.1039/D4FD00093E</p>
+</li>
+<li>
+<p>RDKit: Open-source cheminformatics. (2024). https://www.rdkit.org</p>
+</li>
+<li>
+<p>Schneider, N., Stiefl, N., &amp; Landrum, G. A. (2016). What's What: The (nearly) definitive guide to reaction role assignment. <em>Journal of Chemical Information and Modeling</em>, 56(12), 2336–2346. https://doi.org/10.1021/acs.jcim.6b00564</p>
+</li>
+<li>
+<p>Sorokina, M., Merseburger, P., Rajan, K., Yirik, M. A., &amp; Steinbeck, C. (2021). COCONUT online: Collection of Open Natural Products database. <em>Journal of Cheminformatics</em>, 13, 2. https://doi.org/10.1186/s13321-020-00478-9</p>
+</li>
+<li>
+<p>Torren-Peraire, P., Hassen, A. K., Genheden, S., Verhoeven, J., Clevert, D.-A., Preuss, M., &amp; Tetko, I. V. (2024). Models Matter: The impact of single-step retrosynthesis on synthesis planning. <em>Digital Discovery</em>, 3(3), 558–572. https://doi.org/10.1039/D3DD00252G</p>
+</li>
+<li>
+<p>MolecularAI. SmartReact (version 2.0.1) [Computer software]. https://github.com/MolecularAI/smartreact</p>
+</li>
+<li>
+<p>Huang, K., Fu, T., Gao, W., Zhao, Y., Roohani, Y., Leskovec, J., Coley, C. W., Xiao, C., Sun, J., &amp; Zitnik, M. (2022). Artificial intelligence foundation for therapeutic science. <em>Nature Chemical Biology</em>, 18(10), 1033–1036. https://doi.org/10.1038/s41589-022-01131-2</p>
+</li>
+<li>
+<p>Richard, A. M., Huang, R., Waidyanatha, S., et al. (2021). The Tox21 10K compound library: Collaborative chemistry advancing toxicology. <em>Chemical Research in Toxicology</em>, 34(2), 189–216. https://doi.org/10.1021/acs.chemrestox.0c00264</p>
+</li>
+<li>
+<p>Richard, A. M., Judson, R. S., Houck, K. A., et al. (2016). ToxCast chemical landscape: Paving the road to 21st century toxicology. <em>Chemical Research in Toxicology</em>, 29(8), 1225–1251. https://doi.org/10.1021/acs.chemrestox.6b00135</p>
+</li>
+<li>
+<p>Davis, A. P., Wiegers, T. C., Sciaky, D., Barkalow, F., Wyatt, B., Wiegers, J., McMorran, R., Abrar, S., &amp; Mattingly, C. J. (2026). Comparative Toxicogenomics Database: update 2027. <em>Nucleic Acids Research</em>, gkag1041. https://doi.org/10.1093/nar/gkag1041</p>
+</li>
+<li>
+<p>Tanaka, Y., Chen, H. Y., Belloni, P., et al. (2025). OnSIDES database: Extracting adverse drug events from drug labels using natural language processing models. <em>Med</em>, 6(7), 100642. https://doi.org/10.1016/j.medj.2025.100642</p>
+</li>
+<li>
+<p>国家药典委员会. (2025). 《中华人民共和国药典（2025 年版）》. 北京：中国医药科技出版社.</p>
+</li>
+<li>
+<p>cliviali. (2026). <em>Independent-KBs：中国药典 2025 结构化知识库</em> [数据集]，提交 <code>63cfd6a</code>. https://github.com/cliviali/Independent-KBs （未声明仓库级许可证，仅限内部使用）.</p>
+</li>
+</ol>
+<hr />
+<h2>图件计划</h2>
+<p>已生成的中文图件在 <code>figures-system-20261020/zh/</code>，英文图件在
+<code>figures-system-20261020/en/</code>；图注和来源说明见
+<code>figures-system-20261020/README.md</code>。</p>
+<p>PeerJ 投稿前应补充：</p>
+<ol>
+<li>系统架构图：输入解析器、数据源适配器、反应引擎、条件层和报告层；</li>
+<li>数据解析路径图：药材、物种、方剂和 SMILES 四条路径；</li>
+<li>正向枚举示例：展示完整出处字段；</li>
+<li>逆向搜索示例：展示路线和可用性标记；</li>
+<li>基准结果图：现有 <code>reports/paper/figures-v2/</code> 图件需先按系统论文重命名和图注统一。</li>
+</ol>
+
+</body>
+</html>

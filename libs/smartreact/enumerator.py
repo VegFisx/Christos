@@ -149,7 +149,8 @@ def _worker_run_pair(
             continue
         results.append(
             ReactionResult(
-                reactant_a=ra, reactant_b=rb, reaction_name=templ.name, products=sorted(products)
+                reactant_a=ra, reactant_b=rb, reaction_name=templ.name, products=sorted(products),
+                template_smarts={p: templ.smarts for p in products},
             )
         )
     return results
@@ -311,6 +312,7 @@ class ReactionEnumerator:
                     reactant_b=rb,
                     reaction_name=templ.name,
                     products=sorted(products),
+                    template_smarts={p: templ.smarts for p in products},
                 )
             )
         return results

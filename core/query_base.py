@@ -88,7 +88,18 @@ PATH_FIELDS = ["product_smiles", "product_inchikey", "formula", "mw", "heavy_ato
                # ★ D1：元素收支 (dC,dH,dO) —— 让 element_delta_shape 这个判据**可审计**
                "element_delta",
                # ★ D5：3 组分模板的 support（只打标记；空 = 非三组分）
-               "template_support"]
+               "template_support",
+               # ★ 第84轮：反应进程 extent（空 = 开关未启用，旧台账保持原样）
+               "extent", "extent_band",
+               # ★ 第89轮：mined 模板命中的 SMARTS（空 = 非 mined 模板产物）
+               "template_smarts",
+               # ★ 第91轮：同一结构还能由哪些规则给出（结构去重时后到的那几条）
+               "also_rules",
+               # ★ 第96轮：引擎发射序（越小越先枚举；实测按它排序 top-1 更准）
+               "seq",
+               # ★ 第109轮：双底物反应的另一个底物
+               #   ——烹制辅料是否真参与，靠这一列才能算出来。
+               "partner_smiles"]
 
 
 @dataclass
@@ -112,15 +123,29 @@ class RunSpec:
     fair_pairs: bool = False                   # 对子超预算时公平截断（默认 False=旧行为不变）
     # ★ B 试点（2026-10-17）：实时路径是否接入 6 条 curated 规则（默认 False，评测不变）
     use_curated_templates: bool = False
+    # 2026-10-31：炮制严格模式——只跑规则库热反应子集，不加载 ORD 自抽模板。
+    use_extra_templates: bool = True
+    use_mono_templates: bool = True
+    # 2026-10-31：基础模板库（9,770 条）。默认 True；炮制严格模式传 False，
+    # 只跑 curated 证据规则，且台账里不再出现 esterification/mitsunobu 等基础反应名。
+    use_base_templates: bool = True
+    curated_rule_ids: tuple = ()
     # ★ C 试点（2026-10-17）：实时路径是否接入 top mined 模板的 per-template 条件
     use_mined_top_conditions: bool = False
     # ★ Application-layer switch: honour a stated atmosphere even without
     #   auxiliary reagents.  Benchmark paths leave this off.
     strict_redox_gate: bool = False
+    # ★ 第84轮（2026-11-04）：反应进程层 —— time_min / pH / 催化剂 真正参与产物生成。
+    #   默认 False：旧行为逐位不变（产物不带 extent、不门控）。
+    #   打开后：extent < conditions/kinetics.json 的 gates.extent_min 的反应整条不产出，
+    #   其余产物带 extent / extent_band。依据与参数见 conditions/extent.py、kinetics.json。
+    condition_extent: bool = False
     # ★ 用户自定义条件：在预设条件档案之上逐项覆盖。
     #   键名与 Conditions 的字段一致（solvent/temperature/time_min/pH/
     #   catalyst/atmosphere）。空字典 = 完全使用预设。
     cond_override: dict = field(default_factory=dict)
+    # ★ 断点续跑：跳过前 N 个底物对（配合 max_pairs 把大任务切片）
+    pair_offset: int = 0
     meta_extra: dict = field(default_factory=dict)   # 原样并入 .meta.json（selection/switches 等）
 
     def cond(self):
@@ -142,8 +167,15 @@ class RunSpec:
     def describe(self) -> str:
         names = [n for n, _s, _src in self.seeds]
         head = ", ".join(names[:6]) + ("…" if len(names) > 6 else "")
-        return (f"输入 {len(self.seeds)} 个 [{head}] · 条件 {self.cond_name} · "
+        text = (f"输入 {len(self.seeds)} 个 [{head}] · 条件 {self.cond_name} · "
                 f"轮数 {self.rounds}")
+        details = (getattr(self, "meta_extra", None) or {}).get("condition_details") or {}
+        shown = [str((details.get(k) or {}).get("detail") or "")
+                 for k in ("solvent", "catalyst", "atmosphere")]
+        shown = [x for x in shown if x]
+        if shown:
+            text += " · 实际物质 " + " / ".join(shown)
+        return text
 
 
 @dataclass
@@ -378,10 +410,13 @@ def inchikeys_of(smiles_list: Sequence[str],
         stat.update({"timeout": 0, "abandoned": 0, "budget_s": round(budget, 1),
                      "timed_out_examples": []})
         pool = None
-        try:
-            pool = ProcessPoolExecutor(max_workers=max(1, workers))
-        except Exception as err:                 # noqa: BLE001  —— 退化成单进程串行
-            print(f"   [warn] 进程池起不来（{type(err).__name__}: {err}），改串行")
+        # workers<=1 时完全不建池：调用方可能本身就在 daemon 进程里
+        # （多进程切片），再开子进程会被 Python 直接拒绝。
+        if workers and workers > 1:
+            try:
+                pool = ProcessPoolExecutor(max_workers=workers)
+            except Exception as err:             # noqa: BLE001  —— 退化成单进程串行
+                print(f"   [warn] 进程池起不来（{type(err).__name__}: {err}），改串行")
         if pool is None:
             for s in todo:
                 if time.time() - t0 > budget:
@@ -489,6 +524,14 @@ def build_inventory(spec: RunSpec,
                            fair_pairs=bool(getattr(spec, "fair_pairs", False)),
                            use_curated_templates=bool(
                                getattr(spec, "use_curated_templates", False)),
+                           use_extra_templates=bool(
+                               getattr(spec, "use_extra_templates", True)),
+                           use_mono_templates=bool(
+                               getattr(spec, "use_mono_templates", True)),
+                           use_base_templates=bool(
+                               getattr(spec, "use_base_templates", True)),
+                           curated_rule_ids=(tuple(
+                               getattr(spec, "curated_rule_ids", ()) or ()) or None),
                            use_mined_top_conditions=bool(
                                getattr(spec, "use_mined_top_conditions", False)),
                            strict_redox_gate=bool(
@@ -496,8 +539,10 @@ def build_inventory(spec: RunSpec,
                            # Strict atmosphere mode is meaningless with the
                            # mono redox gate switched off, so tie them together.
                            mono_redox_gate=bool(
-                               getattr(spec, "strict_redox_gate", False)))
-    st.engine_notes = [f"extra: {eng.extra_template_note}",
+                               getattr(spec, "strict_redox_gate", False)),
+                           pair_offset=int(getattr(spec, "pair_offset", 0)))
+    st.engine_notes = [f"base: {eng.base_template_note}",
+                       f"extra: {eng.extra_template_note}",
                        f"mono: {eng.mono_template_note}",
                        f"curated: {getattr(eng, 'curated_note', '未启用')}",
                        f"mined_top: {getattr(eng, 'mined_top_note', '未启用')}"]
@@ -513,6 +558,8 @@ def build_inventory(spec: RunSpec,
     n_unparsable = len(seeds) - len(live)
 
     cond = spec.cond()
+    # ★ 第84轮：反应进程开关（关着 = 台账里 extent 列为空，旧形状不变）
+    _extent_on = bool(getattr(spec, "condition_extent", False))
     # ★ 方向层（缺口②）：默认开。判据表在 `rules/direction_table.json`，
     #   文献侧证据在 `reports/direction_evidence.json`（没有就只报规则侧）。
     judge = None
@@ -534,7 +581,8 @@ def build_inventory(spec: RunSpec,
         if not frontier:
             break
         t0 = time.time()
-        step_products = eng.step(frontier, cond, round_no=r, exclude_smiles=set(seen))
+        step_products = eng.step(frontier, cond, round_no=r, exclude_smiles=set(seen),
+                                 extent_gate=bool(getattr(spec, "condition_extent", False)))
         st.truncated = st.truncated or bool(eng.stats.get("pairs_truncated"))
         new_this_round: List[str] = []
         for p in step_products:
@@ -551,7 +599,8 @@ def build_inventory(spec: RunSpec,
                 rule = eng._rule_by_id.get(p.rule_id, {})
                 try:
                     base, _detail = score_product(p.smiles, rule, p.activation,
-                                                  source_smiles=p.source_smiles)
+                                                  source_smiles=p.source_smiles,
+                                                  support=int(getattr(p, "template_support", 0) or 0))
                     sc = round(base, 4)
                 except Exception as ex:          # noqa: BLE001  —— 累计，不静默
                     eng.gate_stats["score_异常"] = eng.gate_stats.get("score_异常", 0) + 1
@@ -573,6 +622,11 @@ def build_inventory(spec: RunSpec,
                     "partner_smiles": str(getattr(p, "partner_smiles", "") or ""),
                     "element_delta": tuple(getattr(p, "element_delta", ()) or ()),
                     "template_support": int(getattr(p, "template_support", 0) or 0),
+                    # ★ 第84轮：extent 只在开关打开时写（关闭 -> 空字符串，旧台账形状不变）
+                    "extent": (round(float(getattr(p, "extent", 1.0)), 4)
+                               if _extent_on else ""),
+                    "extent_band": (str(getattr(p, "extent_band", "") or "")
+                                    if _extent_on else ""),
                     "sources": OrderedDict(),
                 }
                 collected[p.smiles] = rec
@@ -596,6 +650,20 @@ def build_inventory(spec: RunSpec,
                 ent = {"rule_name": key[0], "round": key[1],
                        "activation": float(p.activation),
                        "activation_why": str(getattr(p, "activation_why", "") or ""),
+                       # ★ 第84轮：这一条出处的反应进程（开关关着 -> 空）
+                       "extent": (round(float(getattr(p, "extent", 1.0)), 4)
+                                  if _extent_on else ""),
+                       "extent_band": (str(getattr(p, "extent_band", "") or "")
+                                       if _extent_on else ""),
+                       # ★ 第89轮：mined 模板命中的 SMARTS（非 mined 产物 -> 空）
+                       "template_smarts": str(getattr(p, "template_smarts", "") or ""),
+                       # ★ 第91轮：同一结构还能由哪些规则给出（去重时后到的那几条）
+                       "also_rules": str(getattr(p, "also_rules", "") or ""),
+                       # ★ 第96轮：引擎发射序（越小越先枚举出来 -> 越可能是主产物）
+                       "seq": int(getattr(p, "seq", 0) or 0),
+                       # ★ 第110轮：同批另一个反应物（炮制辅料归因要用；
+                       #   之前只有 rec 里有，ent 里漏了 -> 台账本列恒空）
+                       "partner_smiles": str(getattr(p, "partner_smiles", "") or ""),
                        "direction": "", "direction_cn": "", "direction_reason": "",
                        "direction_source": ""}
                 if judge is not None:
@@ -609,6 +677,10 @@ def build_inventory(spec: RunSpec,
                 src["paths"][key] = ent
             else:
                 ent["activation"] = max(float(ent["activation"]), float(p.activation))
+                # ★ 第96轮：同一 (规则,轮) 可能对应多条产物，取最小发射序 = 最早那条
+                _sq = int(getattr(p, "seq", 0) or 0)
+                if _sq and (not ent.get("seq") or _sq < int(ent["seq"])):
+                    ent["seq"] = _sq
 
         st.per_round_new.append({"round": r, "new": len(new_this_round),
                                  "kept_raw": len(step_products),
@@ -639,7 +711,7 @@ def build_inventory(spec: RunSpec,
     for sm, rec in collected.items():
         rec["product_inchikey"] = cache.get(sm, "")
         for s in rec["sources"].values():
-            for ent in sorted(s["paths"].values(), key=lambda x: (x["round"], x["rule_name"])):
+            for ent in sorted(s["paths"].values(), key=lambda x: (x["round"], int(x.get("seq", 0) or 0), x["rule_name"])):
                 inv.paths.append({
                     "product_smiles": sm,
                     "product_inchikey": rec["product_inchikey"],
@@ -665,6 +737,16 @@ def build_inventory(spec: RunSpec,
                     "cond_model": _cond_model_note(ent["rule_name"], cond, rec, s),
                     "element_delta": "|".join(str(x) for x in (rec.get("element_delta") or ())),
                     "template_support": int(rec.get("template_support", 0) or 0),
+                    # ★ 第84轮：反应进程（按出处记；开关关着 -> 空列）
+                    "extent": ent.get("extent", ""),
+                    "extent_band": ent.get("extent_band", ""),
+                    # ★ 第89轮：mined 模板 SMARTS（judge_stereo_hops 用它算作用范围）
+                    "template_smarts": ent.get("template_smarts", ""),
+                    "partner_smiles": ent.get("partner_smiles", ""),
+                    # ★ 第91轮：同一结构还能由哪些规则给出（归因用）
+                    "also_rules": ent.get("also_rules", ""),
+                    # ★ 第96轮：引擎发射序（同轮越小越先枚举）
+                    "seq": int(ent.get("seq", 0) or 0),
                 })
     st.n_paths_raw = n_raw_paths
     st.n_paths_kept = len(inv.paths)
@@ -674,6 +756,11 @@ def build_inventory(spec: RunSpec,
         "pairs_truncated": st.truncated,
         "direction_summary": n_dir,
         "direction_enabled": judge is not None,
+        # ★ 第84轮：反应进程层的门控统计（开关关着时不写）
+        "extent": ({"dropped": int(getattr(eng, "extent_dropped", 0) or 0),
+                    "by_type": {k: int(v) for k, v in
+                                (getattr(eng, "extent_stats", {}) or {}).items()}}
+                   if _extent_on else {}),
     }
     return inv
 
@@ -740,6 +827,12 @@ def dump_inventory(inv: Inventory,
     #   核心字段优先，不被覆盖（setdefault）。
     for _k, _v in (getattr(inv.spec, "meta_extra", None) or {}).items():
         meta.setdefault(_k, _v)
+    # ★ 第84轮：反应进程层开关（只在打开时记录，旧 meta 形状不变）
+    if getattr(inv.spec, "condition_extent", False):
+        meta["condition_extent"] = True
+        _ex = (getattr(inv, "notes", {}) or {}).get("extent") or {}
+        meta["extent_dropped"] = int(_ex.get("dropped", 0) or 0)
+        meta["extent_gate_by_type"] = dict(_ex.get("by_type") or {})
     meta_path = Path(str(paths_file).replace(".csv", ".meta.json"))
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
@@ -773,7 +866,9 @@ def load_inventory(paths_file: Path = INVENTORY_CSV,
                                rounds=int(meta.get("rounds", 0)),
                                max_pairs=int(meta.get("max_pairs", 0)),
                                max_products_per_pair=int(
-                                   meta.get("max_products_per_pair", 0)))
+                                   meta.get("max_products_per_pair", 0)),
+                               meta_extra={"condition_details":
+                                           meta.get("condition_details") or {}})
             inv.built_at = str(meta.get("built_at") or inv.built_at)
             st = inv.stats
             ms = meta.get("stats", {})
@@ -1061,7 +1156,7 @@ def query_product(inv: Inventory, ref: str, max_sources: int = 20) -> Dict[str, 
                 "role": s.get("role", ""),
                 "source_label": (label_of(s["source_smiles"], seed_labels)
                                  if seed_labels else ""),
-                "paths": sorted(s["paths"], key=lambda x: (x["round"], x["rule_name"])),
+                "paths": sorted(s["paths"], key=lambda x: (x["round"], int(x.get("seq", 0) or 0), x["rule_name"])),
             })
         names = names_of_inchikey(e["inchikey"]) if e["inchikey"] else []
         rounds = [p["round"] for s in e["sources"].values() for p in s["paths"]]
@@ -1132,11 +1227,13 @@ def query_substrate(smiles: str,
         rows.append({"smiles": p.smiles, "formula": p.formula, "mw": p.mw,
                      "heavy_atoms": p.heavy_atoms, "rule_name": p.rule_name,
                      "activation": p.activation, "score": sc,
+                     # ★ 第 101 轮：按「发射序」排，不按 score —— score 的权重是未标定的经验值
+                     #   （core/scorer.py:35 自述），而实测它比发射序更差（top-1 0.3250 vs 0.4267）。
+                     "seq": int(getattr(p, "seq", 0) or 0),
                      "is_byproduct": p.is_byproduct, "reversible": p.reversible,
                      "co_products": [x for x in (p.co_products or ())
                                      if x != p.smiles][:4]})
-    rows.sort(key=lambda r: (-(r["score"] if isinstance(r["score"], float) else 0.0),
-                             r["rule_name"]))
+    rows.sort(key=lambda r: (r["seq"], r["rule_name"]))
     res.update({
         "input_canonical": cs, "cond": cond.describe(), "seconds": round(dt, 2),
         "n_products": len(rows), "n_rules": len({r["rule_name"] for r in rows}),

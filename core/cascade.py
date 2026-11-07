@@ -48,13 +48,40 @@ from model import Conditions                              # noqa: E402
 
 
 # 每远一轮，置信度乘这个系数。第 1 轮不衰减。
-ROUND_DECAY = 0.85
+#
+# ★ 第 103 轮（A10~A13）：数值不再写死在这里，统一登记在
+#   core/constants_provenance.json（含 status / evidence / gate_effect / policy）。
+#   用户 2026-11-04 的规矩：涉及底层反应逻辑的参数必须有参考文献，没有出处的
+#   只能登记为建模选择，不得当实验值用（AGENTS 第十二节）。
+_CONST_PATH = _HERE / "constants_provenance.json"
+_CONST_CACHE: Dict[str, Any] = {}
+
+
+def _const(key: str, default):
+    """从 constants_provenance.json 读一个常数；文件缺失/损坏时回退默认值。"""
+    if not _CONST_CACHE:
+        try:
+            import json
+            data = json.loads(_CONST_PATH.read_text(encoding="utf-8"))
+            _CONST_CACHE.update(data.get("constants") or {})
+        except Exception:                  # noqa: BLE001
+            _CONST_CACHE.setdefault("__missing__", True)
+    item = _CONST_CACHE.get(key)
+    if not isinstance(item, dict) or "value" not in item:
+        return default
+    try:
+        return type(default)(item["value"])
+    except Exception:                      # noqa: BLE001
+        return default
+
+
+ROUND_DECAY = _const("cascade.round_decay", 0.85)
 
 # ★ 热力学覆盖率低于此值就整体回退启发式。
 # 实测教训：中药大分子（附子里的乌头碱类，40~50 个重原子）超出 xTB 可靠范围，
 # 覆盖率会低到 10%。这时如果坚持"能算的用真值、算不出的用启发式"，
 # 同一张排行榜上就混了两套尺度，**比全部用启发式还糟**。
-MIN_THERMO_COVERAGE = 0.5
+MIN_THERMO_COVERAGE = _const("cascade.min_thermo_coverage", 0.5)
 
 # ★★ 传播分数门槛：只有分数够高的产物才继续往下反应 ★★
 #
@@ -86,7 +113,7 @@ MIN_THERMO_COVERAGE = 0.5
 #   机制：分数含轮数衰减 0.85^(r-1)，深处产物自然跌破门槛。
 #   所以这个门槛本质上定义了「最多追几步推断」——
 #   追得越深，累积不确定性越大，这个界是有化学意义的，不是拍脑袋。
-MIN_PROPAGATE_SCORE = 0.35
+MIN_PROPAGATE_SCORE = _const("cascade.min_propagate_score", 0.35)
 
 
 @dataclass

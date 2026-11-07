@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Christos PeerJ manuscript</title>
+<style>
+@page {
+  size: A4;
+  margin: 18mm 18mm 20mm 18mm;
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  max-width: 168mm;
+  margin: 0 auto;
+  color: #202a33;
+  font-family: "DejaVu Serif", "Times New Roman", "SimSun", "Microsoft YaHei", serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  text-align: left;
+}
+
+h1, h2, h3 {
+  font-family: "DejaVu Sans", Arial, "Microsoft YaHei", "SimSun", sans-serif;
+  color: #17384a;
+  line-height: 1.28;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 19pt;
+  margin: 0 0 10pt;
+}
+
+h2 {
+  font-size: 13.5pt;
+  margin: 16pt 0 6pt;
+  border-bottom: 1px solid #d9e5eb;
+  padding-bottom: 3pt;
+}
+
+h3 {
+  font-size: 11.5pt;
+  margin: 12pt 0 4pt;
+}
+
+p {
+  margin: 0 0 7pt;
+  orphans: 3;
+  widows: 3;
+}
+
+ul, ol {
+  margin: 0 0 8pt 18pt;
+  padding: 0;
+}
+
+li {
+  margin: 2pt 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 12pt;
+  font-family: "DejaVu Sans", Arial, "Microsoft YaHei", "SimSun", sans-serif;
+  font-size: 8.7pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cad9e0;
+  padding: 4pt 5pt;
+  vertical-align: top;
+}
+
+th {
+  background: #eaf2f5;
+  color: #21495b;
+  text-align: left;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 215mm;
+  height: auto;
+  margin: 10pt auto 3pt;
+  page-break-inside: avoid;
+}
+
+p:has(img) {
+  page-break-inside: avoid;
+}
+
+em {
+  color: #425963;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  background: #f2f6f8;
+  padding: 0 2pt;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f5f8fa;
+  border: 1px solid #dce8ed;
+  padding: 7pt;
+  font-size: 9pt;
+}
+
+a {
+  color: #1d6680;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid #9dc4d2;
+  margin: 8pt 0;
+  padding: 5pt 10pt;
+  color: #48616c;
+  background: #f7fafb;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #d9e5eb;
+  margin: 12pt 0;
+}
+
+</style>
+</head>
+<body>
+<h1>Christos: a local reaction prediction system with source-aware input resolution and provenance</h1>
+<p>Article type: Software article<br />
+Authors: Dong Xinchang<br />
+Affiliations: Beijing University of Chinese Medicine, School of Chinese Materia Medica, Beijing, China<br />
+Corresponding author: [To be completed]</p>
+<hr />
+<h2>Abstract</h2>
+<p>Background: Reaction templates can produce candidate structures, but the source record, template, and condition evidence behind a result often stay out of view. The problem grows in traditional Chinese medicine (TCM), where one herb name may refer to a pharmacopoeia entry, a processed form, a regional alias, or a plant species, and a formula name may cover several versions with different compositions.</p>
+<p>Methods: Christos is a local reaction prediction system for forward enumeration, retrosynthesis, and result-level provenance. It handles five input types, opens databases read-only, and keeps the template, source compound, reaction round, condition marker, and uncertainty flag with each candidate. We tested forward recall on USPTO-50k, reverse coverage on ORD targets, multi-step route recovery, and TCM input resolution and provenance fields.</p>
+<p>Results: Across 50,016 USPTO-50k reactions, the selected configuration reached 91.69% single-step candidate-set recall (45,862 hits; Wilson 95% CI 91.45% to 91.93%), against 58.73% for the baseline; top-1 accuracy was 43.28% on the official 5,001-reaction test split, where candidate-set recall was 91.71%. On a 39,176-reaction deterministic sample of USPTO-MIT (479,035 reactions), candidate-set recall was 71.18% and top-1 accuracy 32.81%. Reverse search reached 94.74% any-hit coverage on 5,002 targets with 79,184 templates and 79.81% on all 50,016 targets with 3,065 leak-controlled templates. At depths ≤2 and ≤3, route recovery on 300 targets was 47.67% and 72.33%. The local TCM layer contained 31,646 compounds, 110,686 herb–compound links, 269,105 COCONUT compounds, 6,743 formula records, and 1,526 pharmacopoeia formula entries. The forward runtime library held 9,770 curated templates and 41,619 templates mined from ORD reaction records. A retrospective computational check against eight papers reproduced the published products in all five selected hydrolysis cases at connectivity level, with the expected rule family and cleaved bond, and compared the engine path with each reported route. With PubChem isomeric references, the exact stereoisomer was reproduced in three; the two aconitine products each differed at one centre that is unassigned on one side, so those two remain connectivity-level.</p>
+<p>Conclusions: Christos keeps the input record, reaction path, and candidate product in one inspectable chain and preserves the state in which evidence is missing. The benchmark figures describe the reaction engine under the stated settings. They do not establish chemical practicality, biological activity, or clinical utility.</p>
+<p>Keywords: reaction prediction; retrosynthesis; natural products; traditional Chinese medicine; provenance; reproducibility; reaction templates</p>
+<hr />
+<h2>Introduction</h2>
+<p>When experimental or quantum-chemical data are unavailable, template methods can provide an initial list of products. RDKit handles molecular objects and basic chemical operations (RDKit, 2024); RDChiral extracts and applies stereochemistry-aware templates (Coley et al., 2019); AiZynthFinder and Retro* connect template libraries to search and ranking (Genheden et al., 2020; Chen et al., 2020). USPTO-50k, PaRoutes, and ORD provide a common test set, a route benchmark, and reactions with experimental context, respectively (Schneider et al., 2016; Genheden &amp; Bjerrum, 2022; Kearnes et al., 2021).</p>
+<p>A model can report a different recall rate after changing the target set or template library. Maziarz et al. (2025) observed this when algorithms were compared within a common framework, and Torren-Peraire et al. (2024) showed that the choice of single-step model propagates into multi-step planning. A recall figure therefore needs its target set, template library, candidate limit, and filtering rules checked alongside it.</p>
+<p>Natural-product applications also require the program to explain where a result came from. Which input record supplied the substrate, which template was called, which local source supplied the compound, and whether the condition evidence came from a measured record or a general rule cannot be answered from the final product alone. A single interface that accepts molecules, herbs, species, and formulas makes mistakes at these identifier boundaries more likely to go unnoticed.</p>
+<p>Such mismatches are common in TCM data. A Chinese herb name may denote a pharmacopoeia entry, a processed form, a regional alias, or a plant species; a formula name may belong to historical versions with different compositions. A compound may come from a herb-specific table or from a species-level natural-product collection such as COCONUT (Sorokina et al., 2021).</p>
+<p>Christos starts with input resolution. Each input type has its own lookup path, unresolved tokens are returned unchanged, and the program does not select one plausible candidate when several are possible. SQLite sources are opened read-only. Product records retain the source compound, rule, round, condition marker, and uncertainty flag. The public demonstration uses a fixed catalogue and does not expose arbitrary-target retrosynthesis, free-form reagents, purchasable building blocks, or vendor links.</p>
+<p>We used public reaction benchmarks to evaluate the engine and separate audits to inspect TCM input resolution and provenance. The two evaluations answer different questions. The first asks whether candidates cover known products; the second asks whether the system selected the intended source and kept known and unknown information distinct. Every candidate remains a chemical hypothesis awaiting experimental work.</p>
+<h2>Materials and Methods</h2>
+<h3>System overview</h3>
+<p>The code separates input handling, reaction generation, evidence annotation, and reporting into six units. Table 1 gives their implementation entry points.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Function</th>
+<th>Main implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input resolution</td>
+<td>Chinese herb, Latin species, COCONUT species, formula, or SMILES</td>
+<td><code>sources/herb.py</code>, <code>sources/coconut.py</code>, <code>sources/formula.py</code></td>
+</tr>
+<tr>
+<td>Reaction enumeration</td>
+<td>Forward template application and cascade expansion</td>
+<td><code>core/smartreact_engine.py</code>, SmartReact (MolecularAI, version 2.0.1)</td>
+</tr>
+<tr>
+<td>Retrosynthesis</td>
+<td>Template inversion and bounded route search</td>
+<td><code>tools/retro_search.py</code></td>
+</tr>
+<tr>
+<td>Condition layer</td>
+<td>Reaction-class profiles and per-template condition windows</td>
+<td><code>conditions/</code>, <code>data/mined_top_template_conditions*.json</code></td>
+</tr>
+<tr>
+<td>Provenance and reporting</td>
+<td>Ledger, index, HTML report, source tags</td>
+<td><code>core/query_base.py</code>, <code>tools/make_report.py</code></td>
+</tr>
+<tr>
+<td>Interfaces</td>
+<td>CLI and local browser UI</td>
+<td><code>integration/tcmai_bridge/</code></td>
+</tr>
+</tbody>
+</table>
+<p>The source adapters are not bound to the reaction engine. Herb records, species records, formulas, or user-supplied molecules enter the same reaction code, and the input-side provenance remains attached to the products.</p>
+<p>The runtime uses Python 3.12, RDKit, rdChiral, SmartReact, and SQLite. DuckDB appears only in offline scripts that generate benchmark tables.</p>
+<p><img src="figures/fig1_system_architecture.png" alt="Figure 1" /></p>
+<p><em>Figure 1. Input and output paths in Christos. Inputs are resolved before the chemistry modules run. Source adapters do not write to the databases. Candidate products and provenance fields enter the ledger, which produces CSV/TSV files and a single-file HTML report.</em></p>
+<h3>Data sources and read-only policy</h3>
+<p>The local build loads the following resources:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Role</th>
+<th style="text-align:right">Scale</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Herb database (<code>tcm.db</code>)</td>
+<td>Herb names, compounds, aliases, evidence</td>
+<td style="text-align:right">31,646 compound records (25,486 distinct SMILES)</td>
+<td>read-only SQLite</td>
+</tr>
+<tr>
+<td>COCONUT snapshot</td>
+<td>Species-level natural products</td>
+<td style="text-align:right">269,105 valid molecules</td>
+<td>read-only SQLite</td>
+</tr>
+<tr>
+<td>Formula records</td>
+<td>Multi-herb prescriptions and versions</td>
+<td style="text-align:right">6,743 records</td>
+<td>read-only JSON</td>
+</tr>
+<tr>
+<td>Pharmacopoeia overlay</td>
+<td>2025 formula entries and source URLs</td>
+<td style="text-align:right">1,526 entries</td>
+<td>internal overlay, not redistributed</td>
+</tr>
+<tr>
+<td>USPTO-50k</td>
+<td>Leak-controlled benchmark</td>
+<td style="text-align:right">50,016 reactions</td>
+<td>public benchmark</td>
+</tr>
+<tr>
+<td>Forward templates</td>
+<td>Curated package plus templates mined from ORD</td>
+<td style="text-align:right">9,770 curated + 41,619 mined</td>
+<td>derived data, attributed</td>
+</tr>
+<tr>
+<td>Retrosynthesis templates</td>
+<td>Clustered reverse templates</td>
+<td style="text-align:right">3,228 clustered (3,025 compiled)</td>
+<td>derived data, attributed</td>
+</tr>
+</tbody>
+</table>
+<p>Upstream raw databases are not redistributed with this work. ORD-derived templates are treated as CC BY-SA 4.0, USPTO-50k is CC0 (figshare 5104873), the COCONUT curated dataset is CC0 with MIT infrastructure code, and the SmartReact template package is Apache-2.0. Local herb and formula resources remain subject to the owner's authorization and do not enter the public archive.</p>
+<p>SQLite connections use <code>mode=ro</code>. If a WAL database cannot be opened read-only because its shared-memory file is absent, the adapter falls back to <code>immutable=1</code> and reads a snapshot without creating sidecar files. We added this branch after finding that an ordinary <code>sqlite3.connect()</code> can create <code>-wal</code> and <code>-shm</code> files during work that was meant to be read-only.</p>
+<p>The public demonstration contains 100 common herbs with one Latin species each, 50 formulas, and 150 precomputed examples. Formulas are limited to four to six ingredients and passed a safety filter before packaging. The page has no arbitrary-SMILES entry and accepts no route queries.</p>
+<h3>Input resolution</h3>
+<p>Christos accepts herb names, Latin species, COCONUT species, formula names, or sets of SMILES. Herb names pass through the following cascade until a stage returns a result:</p>
+<ol>
+<li>exact match on a herb or processed-herb name in the herb database;</li>
+<li>processed-form gate: a pharmacopoeial processed form absent from the database returns &quot;not in library&quot; and is not decomposed into its source herb or passed to alias matching;</li>
+<li>alias lookup against a synonym dictionary and the herb alias column, returning every candidate without choosing among them;</li>
+<li>lookup in a curated synonym table that resolves to one canonical name;</li>
+<li>substring match on Chinese names, capped at 40 hits and ordered by name length;</li>
+<li>substring match on Latin, English, or alias strings;</li>
+<li>fuzzy match with a similarity ratio of at least 0.85, returning at most one candidate.</li>
+</ol>
+<p>Pinyin resolution was removed after it matched 秤杆草 (<code>chenggancao</code>) to the query <code>gancao</code>.</p>
+<p>The resolver returns both selected records and unresolved tokens. For a formula, it retains all versions with the same name and selects one by documented source tier. Combining versions by hand would create a composition that does not match any historical or pharmacopoeial entry.</p>
+<p><img src="figures/fig2_input_resolution.png" alt="Figure 2" /></p>
+<p><em>Figure 2. Resolution paths for herb names, Latin species, formula names and SMILES. Unmatched tokens are reported verbatim rather than forced into a record.</em></p>
+<h3>Forward reaction enumeration</h3>
+<p>Forward enumeration applies templates to a substrate set. Templates are grouped by reaction name and then filtered by reactant category. Run parameters include compounds per herb, reaction rounds, the substrate-pair limit, and the number of candidates kept for each pair.</p>
+<p>The selected configuration uses a support-filtered template pool, keeps at most 32 products per substrate pair, and enables a substrate-compatibility prefilter. A pair limit can remove the correct product even after its template has fired. Each run therefore records pair coverage and truncation state, and a capped run is marked as an incomplete enumeration.</p>
+<p><img src="figures/fig3_forward_provenance.png" alt="Figure 3" /></p>
+<p><em>Figure 3. A forward candidate and the fields retained in the provenance ledger: input species, source compound, rule, condition-evidence marker and candidate product.</em></p>
+<h3>Retrosynthesis</h3>
+<p>Retrosynthesis applies the templates in reverse and expands a target molecule layer by layer. The output includes disconnections, precursor sets, and annotations for each route. Precursors are checked against the termination set and marked available or unavailable. A miss means only that the local set lacks the precursor; it says nothing definite about whether the compound can be bought or prepared.</p>
+<p>The public build does not expose arbitrary-target retrosynthesis. The research command requires a separate environment variable. This changes the public feature set and does not act as a security barrier.</p>
+<p><img src="figures/fig4_retrosynthesis_example.png" alt="Figure 4" /></p>
+<p><em>Figure 4. A one-step retrosynthetic route with two precursors hit in the current termination set and a passing forward validation. This is an annotation, not a laboratory instruction.</em></p>
+<h3>Condition evidence</h3>
+<p>Condition evidence has two sources:</p>
+<ul>
+<li>profiles for named reaction classes, containing solvent, pH, temperature, catalyst, and atmosphere windows;</li>
+<li>per-template windows mined from ORD records, where a template must reproduce a recorded product before its conditions are collected.</li>
+</ul>
+<p>The per-template layer starts from an evenly spaced ORD sample. A record contributes its conditions only after the template reproduces the recorded product. Of 500 audited templates, 493 matched at least one product, and 491 produced at least one condition class. The windows annotate candidates; they do not calculate kinetics, yield, or selectivity.</p>
+<h3>Provenance and reporting</h3>
+<p>Each ledger path stores the product structure, source compound, herb or species source, reaction rule, round, condition marker, direction marker, and evidence text. The report generator reads these fields and writes a single-file HTML page, with structure drawings where requested.</p>
+<p>Direction and condition markers change what is displayed; they do not delete candidates. &quot;No evidence&quot; means the current records contain no matching condition. It does not mean that the reaction cannot occur.</p>
+<h3>Literature consistency validation</h3>
+<p>We assembled five cases before running the current build: glycyrrhizic acid to glycyrrhetinic acid, ginsenoside Rb1 to Rg3, the two aconitine ester-hydrolysis steps, and rutin to quercetin. Candidate papers were located through PubMed; all primary-run structures came from the local read-only compound table. Each case was then re-run from the PubChem isomeric reference structure and compared at connectivity and at full isomeric identity.</p>
+<p>Each substrate ran alone under the decoction profile for one round, with <code>strict_redox_gate=True</code> and a cap of 64 products. A product match required the canonical structure of the reported product. We then checked the matched rule, its mapped broken bond, the formula difference between substrate and product, and the presence of any literature intermediate. For intermediates present in the local table, a second run tested whether the intermediate could reach the final product. This is a computational experiment: the system is run under the decoction profile, and its products and paths are compared with the published ones. The system reproduces the published products under its own conditions; it does not reproduce the physical conditions, yields, or selectivity of the cited studies.</p>
+<h3>Evaluation design</h3>
+<h4>Forward prediction</h4>
+<p>We ran one round on the recorded reactants of each USPTO-50k entry. Product structures were canonicalised with stereochemistry retained, so a hit required the same stereoisomer as the recorded product, and no ranking was applied. The evaluation covered all 50,016 reactions, using seed 20261014 and three workers.</p>
+<p>The leak-controlled template library was mined from all ORD shards and then filtered at product level. After normalisation and removal of atom maps, an ORD record was excluded when its product matched any USPTO-50k test product. The reactants did not have to match. Both reverse libraries followed the same rule. Their final sizes differ because they came from different template sources: 79,184 templates for the 5,002-target experiment and 3,065 for the full 50,016-target experiment.</p>
+<p>Under the selected configuration, the filtered and unfiltered libraries produced 91.69% and 91.97%, a difference of 0.28 percentage points. In this comparison, template-test overlap could explain only a small part of the result.</p>
+<p>The baseline retained the engine default of eight products per substrate pair, used no extra template pool, and left the compatibility prefilter off. The selected configuration raised the limit to 32, added about 20,000 templates with support of at least 10, and enabled the prefilter.</p>
+<p>The baseline median candidate count was 8, and the selected configuration's 90th percentile was 32. Both reached their respective limits. Benchmark settings came from environment variables, while the result files stored only aggregates. We therefore reconstructed the configuration from engine defaults and the changelog, not from a complete run manifest. The ablation showed no measurable gain from the compatibility prefilter, but the selected pipeline still uses it.</p>
+<p>The system does not rank candidates. Complete-set recall matches the form of the output; precision at k depends on a ranking that Christos does not produce. Users see a candidate set with provenance, and the first row has no special status.</p>
+<h4>Retrosynthesis coverage</h4>
+<p>A reverse target counted as a hit when at least one disconnection, after removal of atom maps, gave exactly the recorded reactant set. We drew the 5,002-target and 300-target sets from ORD, restricted to products with molecular weight at most 500, one component, and no salt form, starting near row 200,000 of the parquet file and removing duplicates. One experiment used 5,002 targets and 79,184 templates; the other used all 50,016 targets and 3,065 leak-controlled templates. Because both target set and template library changed, only separate coverage values can be reported.</p>
+<p>Multi-step testing used beam width 4 and kept at most 400 disconnections per expansion. A target counted as route-found when the search returned any route, whether or not that route passed the usability check. A route was usable when every step passed <code>retro_search.step_usability</code>; a target was usable when it had at least one usable route. Route-found is the looser endpoint.</p>
+<h4>TCM resolution and provenance</h4>
+<p>Herb, species, formula, and SMILES inputs entered through the same interface. Each run recorded the source, version, unresolved tokens, and output links. Demonstration examples came from the same engine and were frozen as precomputed results, so the public package contains no production database.</p>
+<h3>Experiment configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Target set</th>
+<th>Template library</th>
+<th>Product-level filter</th>
+<th>Comparable with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward, baseline</td>
+<td>50,016 USPTO-50k</td>
+<td>engine default</td>
+<td>yes, on USPTO-50k</td>
+<td>forward selected</td>
+</tr>
+<tr>
+<td>Forward, selected</td>
+<td>50,016 USPTO-50k</td>
+<td>~20,000 support-filtered</td>
+<td>yes, on USPTO-50k</td>
+<td>forward baseline</td>
+</tr>
+<tr>
+<td>Reverse, subset</td>
+<td>5,002 ORD</td>
+<td>79,184</td>
+<td>yes, plus target overlap check</td>
+<td>nothing else</td>
+</tr>
+<tr>
+<td>Reverse, full</td>
+<td>50,016 USPTO-50k</td>
+<td>3,065</td>
+<td>yes</td>
+<td>nothing else</td>
+</tr>
+<tr>
+<td>Multi-step</td>
+<td>300 ORD</td>
+<td>selected</td>
+<td>no target overlap check</td>
+<td>nothing else</td>
+</tr>
+<tr>
+<td>Condition audit</td>
+<td>500 templates</td>
+<td>production</td>
+<td>not applicable</td>
+<td>nothing else</td>
+</tr>
+<tr>
+<td>Herb resolution</td>
+<td>75 fixed inputs</td>
+<td>not applicable</td>
+<td>not applicable</td>
+<td>nothing else</td>
+</tr>
+</tbody>
+</table>
+<p>The two forward experiments share a target set and differ only in configuration, so they can be compared directly. The reverse experiments changed both the target set and the template library and are shown side by side without a direct comparison. The multi-step run reused the selected library and did not receive a target-level overlap check.</p>
+<h2>Results</h2>
+<h3>Implemented data scale</h3>
+<p>The local build indexed 31,646 compounds and 110,686 herb–compound links from the herb database, 269,105 COCONUT compounds, 6,743 formula records, and 1,526 pharmacopoeia formula entries. Its forward runtime library held 9,770 curated templates and 41,619 templates mined from ORD reaction records; of the mined set, the default configuration loads 14,140 multi-substrate and 1,045 single-substrate templates. The retrosynthesis search uses a separate clustered library of 3,228 templates (3,025 after compilation). The public demonstration separately contained 100 herbs and 50 formulas.</p>
+<p>The herb table stores herb-compound associations and has not been globally deduplicated. The 31,646 records collapsed to 25,486 distinct SMILES, a record-level duplication rate of 19.5%. An InChIKey was present for 30,964 records, with 29,013 distinct keys. Because 682 records lacked an InChIKey, the distinct-key count cannot be compared directly with the distinct-SMILES count. A compound or formula outside these counts was absent from this local snapshot.</p>
+<h3>Forward prediction</h3>
+<p>The leak-controlled USPTO-50k experiment contained 50,016 reactions. The baseline reached 58.73% single-step recall (Wilson 95% CI 58.30% to 59.16%) and returned a mean of 10.4 candidates per reaction (median 9, 90th percentile 16). A further 0.05% of reactions returned no candidate. The selected configuration reached 91.69% (45,862/50,016; Wilson 95% CI 91.45% to 91.93%), with a mean of 21.3 candidates. One complete run took 1,596 seconds on three workers.</p>
+<p>The baseline figure of 58.73% is a frozen measurement from 2026-10-30. Re-running the same configuration (eight products per substrate pair, no extra template pool, prefilter off) on the current code base returns 55.53%, with the same candidate distribution (mean 10.3, median 9, 90th percentile 16, empty set 0.05%). The difference is not spread evenly. Classes 4, 5, 6, 7, 8, and 9 agree to within 0.2 percentage points across the two runs; the gap concentrates in classes 1, 2, 3, and 10 (current code 54.8, 75.9, 56.8, 0.0 against frozen 60.5, 79.7, 59.0, 66.5). Those four depend on two-component mined templates that a cap of eight can truncate. Class 10 is the clearest case: the NBS benzylic-bromination templates are still in the library (support 2,313) and still compile, but on current emission order they land at positions 9 to 15 for most entries, so a cap of eight drops them, whereas the 2026-10-30 run placed them inside the cap. The gap is therefore an interaction between candidate ordering and the cap, not a missing transformation. It cannot be bisected: the frozen run predates the first commit, and the earliest snapshot we can rebuild already reproduces only 40% of class 10 at a cap of eight (36.7% with stereochemistry off), while a cap of 32 gives 83-87%. The per-class table below uses the frozen run, the same run that produced the 58.73% and 91.69% headlines. We report the frozen value for consistency with the other frozen measurements and give the current-code value here rather than silently replacing one with the other.</p>
+<p>Both configurations gained recall as candidate counts grew, so the two measures need to be read together. The baseline cap of 8 sat near the median, and the selected cap of 32 fell below the 90th percentile. Truncation affected both runs, and the reported recall covers only what appeared within the cap.</p>
+<p>Ablation on a fixed 500-reaction stratified sample isolates the components:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th style="text-align:right">Recall</th>
+<th style="text-align:right">Mean candidates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine default</td>
+<td style="text-align:right">46.60%</td>
+<td style="text-align:right">10.3</td>
+</tr>
+<tr>
+<td>+ per-pair cap 32</td>
+<td style="text-align:right">58.20%</td>
+<td style="text-align:right">14.8</td>
+</tr>
+<tr>
+<td>+ 20k support-filtered template pool</td>
+<td style="text-align:right">84.80%</td>
+<td style="text-align:right">19.6</td>
+</tr>
+<tr>
+<td>cap 64 instead of 32</td>
+<td style="text-align:right">85.00%</td>
+<td style="text-align:right">19.7</td>
+</tr>
+<tr>
+<td>+ substrate-compatibility prefilter</td>
+<td style="text-align:right">84.80%</td>
+<td style="text-align:right">19.6</td>
+</tr>
+</tbody>
+</table>
+<p>Raising the cap from 32 to 64 changed recall by 0.2 percentage points and the mean candidate count by 0.1. The compatibility prefilter again produced no measurable effect on this sample. Most of the gain came from the larger per-pair cap and the expanded template pool. These numbers do not show that the added templates are chemically correct.</p>
+<p>The 500-reaction sample and the full benchmark weight reaction classes differently. The sample gives each class an equal quota. The full set is dominated by classes 1 and 2, which account for 45% of reactions and had the highest recall. Equal weighting reduced the baseline from 58.73% to 45.65% and the selected configuration from 91.69% to 85.90%. The sample estimates were 46.60% and 84.80%, with Wilson intervals of 42.27% to 50.98% and 81.39% to 87.68%. Each equal-weight value fell inside its corresponding interval. The remaining difference is compatible with sampling variation at n = 500. Headline results use full-set weighting; the ablation uses the stratified sample.</p>
+<h3>External test splits</h3>
+<p>Two further splits bound the forward result without changing any template. On the official USPTO-50k test split distributed with the RetroComposer release, 5,001 reactions reduced to 4,993 evaluable rows after dropping eight three-reactant entries. With the selected configuration, candidate-set recall was 91.71% (4,579 rows), top-1 43.28%, top-5 67.75%, top-10 78.85%, and MRR 0.5496, with 21.8 candidates on average (354 s, no errors). Candidate-set recall on the 50,016-reaction set is 92.01% for the same code, so the 0.30-point difference between denominators does not carry the headline.</p>
+<p>The harder split is USPTO-MIT, which is roughly ten times larger. No official split file was reachable while this was written, so we sampled deterministically: the first eight hex digits of the MD5 of the seed plus the reaction string were mapped onto 0-9999 and rows below 836 kept, giving 39,176 of 479,035 reactions (8.36%). Candidate-set recall was 71.18% (top-1 32.81%, top-5 51.89%, top-10 61.68%, MRR 0.4187, 20.1 candidates). The four shards agreed to within 0.6 points on recall and 0.8 on top-1.</p>
+<p>Strict same-reaction overlap between our template examples and either test set is zero (0 of 50,016 and 0 of 479,035), so the drop from 91.71% to 71.18% reflects a wider reaction space rather than memorisation.</p>
+<p>These numbers are not directly comparable with published transformer baselines. Molecular Transformer, its augmented variant, Chemformer and Graph2SMILES report top-1 accuracies of 90.3% to 92.8% on the 40,000-reaction test set of USPTO-MIT, using official splits and single products; our figures are candidate-set recall over roughly 20 candidates on a different sample of a different split. We report them to bound the result, not to claim superiority.</p>
+<h3>Where the gain comes from</h3>
+<p>Recall varied by reaction class. The baseline configuration was strongest on classes 1, 2, and 10 and weakest on classes 4, 5, and 9. The selected configuration produced its largest gains on the weak classes.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align:right">n</th>
+<th style="text-align:right">Baseline</th>
+<th style="text-align:right">Selected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:right">15,151</td>
+<td style="text-align:right">60.5%</td>
+<td style="text-align:right">93.0%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:right">11,896</td>
+<td style="text-align:right">79.7%</td>
+<td style="text-align:right">95.8%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:right">5,662</td>
+<td style="text-align:right">59.0%</td>
+<td style="text-align:right">81.3%</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:right">909</td>
+<td style="text-align:right">10.3%</td>
+<td style="text-align:right">56.7%</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:right">672</td>
+<td style="text-align:right">5.7%</td>
+<td style="text-align:right">83.6%</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:right">8,237</td>
+<td style="text-align:right">42.8%</td>
+<td style="text-align:right">96.5%</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:right">4,614</td>
+<td style="text-align:right">60.1%</td>
+<td style="text-align:right">92.0%</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:right">811</td>
+<td style="text-align:right">49.9%</td>
+<td style="text-align:right">97.3%</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:right">1,834</td>
+<td style="text-align:right">22.0%</td>
+<td style="text-align:right">83.7%</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:right">230</td>
+<td style="text-align:right">66.5%</td>
+<td style="text-align:right">79.1%</td>
+</tr>
+</tbody>
+</table>
+<p>Class 5 rose by 78.0 percentage points, class 9 by 61.7, class 6 by 53.8, and class 8 by 47.3. Class 2 rose by 16.1 points and class 10 by 12.6. The larger template pool appears to have filled some coverage gaps in the weak classes. This comparison did not test whether the added templates produce chemically valid reactions.</p>
+<h3>Retrosynthesis and multi-step planning</h3>
+<p>Exclusion preceded template counting. Each ORD record was checked against the USPTO-50k product set, and a matching record never entered the count. No template was removed after construction.</p>
+<p>We also checked overlap between the 5,002 reverse targets and the template-mining source. The source contained products from 252 targets (5.04%), which had an any-hit rate of 94.84% (239/252). The remaining 4,750 targets had a rate of 94.74% (4,500/4,750). Removing the overlapping targets left coverage unchanged to two decimal places.</p>
+<p>The two reverse experiments need to be read separately. With 5,002 targets and 79,184 templates, any-hit coverage was 94.74% (4,739/5,002; Wilson 95% CI 94.09% to 95.33%). With all 50,016 targets and the 3,065-template leak-controlled library, coverage was 79.81%. Both the target set and the template library changed, so the present data cannot separate their effects.</p>
+<p>The 300 multi-step targets did not receive the same overlap check, and their route-found rates are reported without target-level filtering.</p>
+<p>With the selected template library and beam width 4, route recovery was 47.67% at depth ≤2 (143/300; Wilson 95% CI 42.08% to 53.31%) and 72.33% at depth ≤3 (217/300; 95% CI 67.01% to 77.09%). At depth ≤3, 207 targets had at least one usable route, equal to 69.0% of all targets and 95.4% of targets with a route. The usable-route count at depth ≤2 was not stored separately.</p>
+<p>Each precursor carries a route-level source and availability status. &quot;Usable&quot; here means only that the recorded steps passed the local checks. It does not mean that a synthesis will work in practice.</p>
+<p><img src="figures/fig5_benchmark_summary.png" alt="Figure 5" /></p>
+<p><em>Figure 5. Frozen benchmark measurements. The panel collects results from different tasks and the bars do not share a scale: forward single-step recall (baseline 58.73%, selected 91.69%), reverse any-hit coverage (94.74%), multi-step route-found rate at depth ≤ 2 and ≤ 3 (47.67%, 72.33%). The condition-template audit (493 of 500 audited templates matched at least one product, and 491 also matched a condition class) is reported in the text only, because it is a product-match share rather than a recall.</em></p>
+<h3>Condition and provenance coverage</h3>
+<p>The template counts in this paper describe different objects. The forward runtime library holds 9,770 curated templates plus a mined library of 41,619; the default configuration loads 14,140 multi-substrate and 1,045 single-substrate templates from that mined set. The roughly 20,000-template pool belongs only to the selected benchmark configuration, not to the default library. The 3,228 figure is the clustered retrosynthesis library, which the forward path never loads. The condition audit sampled 500 templates from the mined library.</p>
+<p>Each mined template records the ORD reaction record it was derived from, and the mining pipeline that produced the library ships with the code. In the audit, 493 of the 500 sampled templates matched at least one product and 491 also yielded at least one condition class; two templates matched a product but produced no condition class. The audit was written as a separate data product and did not change the runtime library. It was run on an earlier build of the mined library and has not been re-run on the current one.</p>
+<h3>Literature consistency results</h3>
+<p>All five published products were reproduced in the first round of the computational run. Each hit used the hydrolysis rule named in the validation design. The candidate counts below refer to the current build and differ from an earlier interface run.</p>
+<table>
+<thead>
+<tr>
+<th>Conversion</th>
+<th>Literature</th>
+<th>Engine rule</th>
+<th style="text-align:right">Candidates</th>
+<th>2D connectivity</th>
+<th>PubChem exact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycyrrhizic acid to glycyrrhetinic acid</td>
+<td>Fan et al., 2016</td>
+<td><code>hydrolysis_glycoside_001</code></td>
+<td style="text-align:right">63</td>
+<td>hit</td>
+<td>exact</td>
+</tr>
+<tr>
+<td>Ginsenoside Rb1 to Rg3</td>
+<td>Fu et al., 2017; Ryu et al., 2017; Piao et al., 2020</td>
+<td><code>hydrolysis_glycoside_001</code></td>
+<td style="text-align:right">102</td>
+<td>hit</td>
+<td>exact</td>
+</tr>
+<tr>
+<td>Aconitine to benzoylaconine</td>
+<td>Li et al., 2016; Huang et al., 2007</td>
+<td><code>hydrolysis_ester_001</code></td>
+<td style="text-align:right">24</td>
+<td>hit</td>
+<td>connectivity only</td>
+</tr>
+<tr>
+<td>Benzoylaconine to aconine</td>
+<td>Li et al., 2016; Huang et al., 2007</td>
+<td><code>hydrolysis_ester_001</code></td>
+<td style="text-align:right">27</td>
+<td>hit</td>
+<td>connectivity only</td>
+</tr>
+<tr>
+<td>Rutin to quercetin</td>
+<td>Kim &amp; Lim, 2017; Yang et al., 2019</td>
+<td><code>hydrolysis_glycoside_001</code></td>
+<td style="text-align:right">61</td>
+<td>hit</td>
+<td>exact</td>
+</tr>
+</tbody>
+</table>
+<p>The engine path is recorded as the rule, the mapped bond broken, the round, and the product-minus-substrate formula difference. The next table compares it with the route described in each paper.</p>
+<table>
+<thead>
+<tr>
+<th>Conversion</th>
+<th>Engine path</th>
+<th>Reported route</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycyrrhizic acid to glycyrrhetinic acid</td>
+<td><code>hydrolysis_glycoside_001</code>; C–O bond, round 1; C−12 H−16 O−12</td>
+<td>Consecutive and parallel hydrolysis to glycyrrhetinic acid and the 3-O-mono-glucuronide (Fan et al., 2016)</td>
+<td>Family agrees; the mono-glucuronide is absent locally, so the order is unresolved</td>
+</tr>
+<tr>
+<td>Ginsenoside Rb1 to Rg3</td>
+<td><code>hydrolysis_glycoside_001</code>; C–O bond, round 1; C−12 H−20 O−10</td>
+<td>Rb1 → Rd → Rg3 by enzymatic conversion; thermal processing also forms Rg3 (Fu et al., 2017; Ryu et al., 2017; Piao et al., 2020)</td>
+<td>Rd → Rg3 reproduced in a second run; Rb1 also reaches Rg3 directly</td>
+</tr>
+<tr>
+<td>Aconitine to benzoylaconine</td>
+<td><code>hydrolysis_ester_001</code>; ester O–C bond, round 1; C−2 H−2 O−1</td>
+<td>C8 acetylester removed (Li et al., 2016; Huang et al., 2007)</td>
+<td>Agrees with acetyl loss; C8 is not fixed by atom map</td>
+</tr>
+<tr>
+<td>Benzoylaconine to aconine</td>
+<td><code>hydrolysis_ester_001</code>; ester O–C bond, round 1; C−7 H−4 O−1</td>
+<td>C14 benzoylester removed (Li et al., 2016; Huang et al., 2007)</td>
+<td>Agrees with benzoyl loss; C14 is not fixed by atom map</td>
+</tr>
+<tr>
+<td>Rutin to quercetin</td>
+<td><code>hydrolysis_glycoside_001</code>; C–O bond, round 1; C−12 H−20 O−9</td>
+<td>Rutinoside cleavage; isoquercetin also reported (Kim &amp; Lim, 2017; Yang et al., 2019)</td>
+<td>Isoquercitrin reaches quercetin; direct cleavage matches</td>
+</tr>
+</tbody>
+</table>
+<p>The system reproduced the published product at connectivity level in 5/5 cases. The expected reaction family and mapped bond type matched in 5/5. With PubChem isomeric references, the exact stereoisomer was reproduced in 3/5; the two aconitine products each differ from their reference at one stereocentre that is unassigned on one side, so those two remain connectivity-level.</p>
+<p>The sequence evidence is also uneven. The Rb1 → Rd → Rg3 and rutin → isoquercitrin → quercetin sequences were reproduced in two separate runs. The two aconitine steps were reproduced as two consecutive cases. The glycyrrhizic-acid paper reports both a mono-glucuronide and glycyrrhetinic acid under consecutive and parallel hydrolysis, but the mono-glucuronide is not in the local table. Its precise ordering could not be tested.</p>
+<p>These computational runs used 100°C for 60 minutes in water at pH 6.5 under air. The cited studies used subcritical water, steaming, enzymatic conversion, acid hydrolysis, or extended water hydrolysis. The published products and reaction families were reproduced; the physical conditions, reported yields, and condition-dependent selectivity were not.</p>
+<h3>Herb resolution audit</h3>
+<p>We tested the cascade on 75 inputs: twenty exact Chinese names, ten aliases, ten processed forms, twenty-five binomials taken from the herb table, and ten strings that should not resolve.</p>
+<table>
+<thead>
+<tr>
+<th>Input group</th>
+<th style="text-align:right">n</th>
+<th style="text-align:right">Resolved</th>
+<th style="text-align:right">Unresolved</th>
+<th style="text-align:right">Ambiguous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact Chinese name</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>Processed form</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>Latin binomial (table-sourced)</td>
+<td style="text-align:right">25</td>
+<td style="text-align:right">25</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>Non-herb string</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<p>An ambiguous result returned more than one candidate and is still counted as resolved. One non-herb string was marked resolved; this was a false return.</p>
+<p>All 20 exact Chinese names resolved. Nine of ten aliases resolved, with 寸冬 returning nothing. Three of ten processed forms resolved. The other seven, including 炒白术 and 姜半夏, returned the explicit &quot;not in library&quot; result and were not decomposed into their source herbs.</p>
+<p>The Latin-name path depended on how each record was stored. All 25 table-sourced binomials resolved back to their own herb because those records store botanical names. Common Chinese herbs store a pharmacopoeial drug name instead. The record for 甘草 contains Radix et Rhizoma Glycyrrhizae, not Glycyrrhiza uralensis. A query for Glycyrrhiza uralensis resolved to 甘草节 (Gancaojie, a node of the licorice root), not 甘草 (Gancao, the root). Correcting this path requires separate drug-name and botanical-name fields.</p>
+<p>Two other outcomes came from the same audit. 生地黄 resolved to 鲜地黄 and 干地黄 because the table has no entry for 生地黄 itself. 寸冬, an alias for 麦冬, returned nothing.</p>
+<p>Nine of the ten non-herb strings returned nothing. The single character 甘 (gan) returned 40 candidates, reaching the substring cap because many herb names contain it. This was a false match.</p>
+<p>Success on the table-sourced binomials does not mean that botanical lookup works for common Chinese herbs. Glycyrrhiza uralensis was the only test of that path, and it returned the wrong medicinal part. The current build cannot reliably resolve botanical names for common Chinese herbs.</p>
+<p>The audit script is <code>tools/audit_herb_resolution.py</code>, and the case list can be extended.</p>
+<h3>TCM case study</h3>
+<p>A Glycyrrhiza run over 12 constituents produced 573 candidate products and 573 provenance paths. Each path included the source compound, reaction rule, round, direction marker, and condition marker. We used this run to inspect the reporting model, not to support a pharmacological claim.</p>
+<p>The field-level audit asked two different questions: whether a field was populated, and whether it contained substantive evidence. All nine field groups were populated in 100% of the 573 entries. Only seven entries (1.2%; Wilson 95% CI 0.59% to 2.50%) contained condition rationale. The other 566 carried &quot;no ORD condition data, admitted&quot;, which meant the condition layer found no matching record and kept the candidate without a condition annotation. Complete fields and sparse evidence occurred together.</p>
+<p><code>tools/audit_provenance_completeness.py</code> can rerun the audit on any ledger. Formula resolution retains all same-named versions and reports the selected source tier and unresolved tokens. When a run encounters several versions, the output lists the selected version and the alternatives.</p>
+<h3>Public demonstration and safety boundary</h3>
+<p>The public demonstration contains 100 common herbs with one Latin species each, 50 formulas, and 150 precomputed entries. The page has no arbitrary-SMILES field, route search, free-form reagent input, purchasable-block list, or vendor link. Source databases are read-only, and the application writes only its reports and runtime files. The research interface remains available for controlled use.</p>
+<h3>Two-stage filtering</h3>
+<p>The 3,210 Sijunzi candidates were reduced first by rule provenance. Keeping only the TCM rulebook removed general organic-synthesis templates mined from ORD and left 1,114 candidates. We then matched each product's InChIKey against the 31,646 herb compounds. Six products were known constituents and 1,108 were not.</p>
+<p>Four of the six known products arose from ester hydrolysis and two from glycoside hydrolysis. The two filters removed 99.8% of the candidates, leaving six structures with literature identities for manual review.</p>
+<p>The filter uses two binary checks: whether the rule comes from the TCM rulebook and whether the compound appears in the herb table. It assigns no confidence score. The 1,108 products outside the table remain available under a separate flag; they may be new constituents or incorrect products.</p>
+<h3>Runtime calibration</h3>
+<p>The Glycyrrhiza tests also measured two run budgets: compounds selected per herb and substrate pairs processed per run.</p>
+<table>
+<thead>
+<tr>
+<th>Component limit</th>
+<th style="text-align:right">Substrates</th>
+<th style="text-align:right">Pairs</th>
+<th style="text-align:right">Products</th>
+<th style="text-align:right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td style="text-align:right">24</td>
+<td style="text-align:right">276</td>
+<td style="text-align:right">3,666</td>
+<td style="text-align:right">18.5 s</td>
+</tr>
+<tr>
+<td>64</td>
+<td style="text-align:right">64</td>
+<td style="text-align:right">2,016</td>
+<td style="text-align:right">33,579</td>
+<td style="text-align:right">166 s</td>
+</tr>
+<tr>
+<td>128</td>
+<td style="text-align:right">128</td>
+<td style="text-align:right">8,128</td>
+<td style="text-align:right">97,670</td>
+<td style="text-align:right">429 s</td>
+</tr>
+<tr>
+<td>342 (all)</td>
+<td style="text-align:right">342</td>
+<td style="text-align:right">58,311</td>
+<td style="text-align:right">359,141 (upper bound)</td>
+<td style="text-align:right">33 min</td>
+</tr>
+</tbody>
+</table>
+<p>Under the specificity ordering, 24 compounds already included every characteristic Glycyrrhiza compound. Raising the limit to 128 produced more products but no additional characteristic entries. The complete set required slicing. The 30 slices of 2,000 pairs completed in 33 minutes and produced 359,141 rows. Duplicates were removed within slices but not across them, so the total is an upper bound.</p>
+<table>
+<thead>
+<tr>
+<th>Pair budget</th>
+<th style="text-align:right">Effective pairs</th>
+<th style="text-align:right">Products</th>
+<th style="text-align:right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td style="text-align:right">500</td>
+<td style="text-align:right">9,914</td>
+<td style="text-align:right">50 s</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td style="text-align:right">1,000</td>
+<td style="text-align:right">17,826</td>
+<td style="text-align:right">77 s</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td style="text-align:right">2,000</td>
+<td style="text-align:right">27,076</td>
+<td style="text-align:right">109 s</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td style="text-align:right">4,000</td>
+<td style="text-align:right">54,103</td>
+<td style="text-align:right">259 s</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td style="text-align:right">8,000</td>
+<td style="text-align:right">120,487</td>
+<td style="text-align:right">573 s</td>
+</tr>
+</tbody>
+</table>
+<p>Products and runtime increased with the pair count. The pair budget controls waiting time and coverage; it is not a chemical quality threshold.</p>
+<h3>What did not help</h3>
+<p>The full run took about 33 minutes. We tested four changes around it, and none changed the output.</p>
+<p>Cross-batch caching of single-substrate results had no effect. The 72 seconds spent on 1,000 pairs was dominated by 11,000 calls to RDKit <code>RunReactants</code>, at about 6.5 ms each. The single-substrate path was not the main cost.</p>
+<p>Generating pair indices on demand instead of building all 58,311 tuples first also produced no change.</p>
+<p>Writing products to disk every 200 pairs lowered peak memory from 1.8 GB to a flat profile, but ran 60% slower than 2,000-pair slices. At that granularity, setup cost consumed the gain.</p>
+<p>Four-process parallelism worked in logic: the slices were independent, and the first four produced product counts identical to the serial run. Memory stopped the run. Each worker held about 1.7 GB of product objects, four workers exhausted a 16 GB machine, and two were killed without an error trace. Loading all 82,000 templates required only about 37 MB, so the template library was not the source of the pressure.</p>
+<p>Further memory reduction would require changing the fields stored in product objects or deferring provenance lookup until a row is written. We did not make that engine-level change.</p>
+<h2>Discussion</h2>
+<p>The direct result is traceability. Each predicted product can be followed back to a specific input record, template, source compound, and condition marker. TCM work needs that step because herb names, processed forms, Latin names, and formula versions often look as though they refer to the same material while describing different things. The resolution path at least shows which record entered the run.</p>
+<p>The provenance chain does not guarantee the chemistry. A template-to-ORD link says where a template came from; a condition window says what appeared in a class of records. Neither establishes kinetics, yield, or selectivity. Results can also change when the template library or local data snapshot changes.</p>
+<p>The public and research builds do different jobs. The public build shows a fixed catalogue and provides no entry point for arbitrary-target retrosynthesis, free-form reagents, purchasable building blocks, or vendor links. An environment variable restores the research path. This reduces accidental use, but the source is visible, so it cannot stop someone who edits the code.</p>
+<p>In the frozen USPTO-50k experiment, the selected configuration scored above the baseline. Both runs were truncated, and the selected run produced more candidates along with more hits. These numbers support the configuration within the stated benchmark. They do not extend to chemical practicality, biological activity, or clinical utility.</p>
+<h3>Applications</h3>
+<p>Christos can list structures that appear only after several herbs have been heated together. In the Sijunzi example, filtering reduced 3,210 candidates to six known constituents. When the two precursors of a product come from different herbs, the record provides a specific lead for a combination-dependent reaction; the product still needs experimental confirmation.</p>
+<p>The first-round hydrolysis of aconitine to benzoylaconine and then to aconine matches a key step in Aconitum processing. Products that appear after decoction but are absent from the raw herbs could be screened as candidate quality markers. These are starting points for research, not validated markers or processing endpoints.</p>
+<h3>Outlook</h3>
+<p>There is still no ready path from a new product to toxicity or adverse-event data. One option is to predict target profiles for natural-product scaffolds; another is to build structure-to-MeSH and structure-to-RxNorm mappings. The current system has neither, and both require work beyond the reaction engine.</p>
+<p>The TCM rulebook has 64 rules, and systematic literature work could expand it into the hundreds. Mass balance, condition windows, and literature priors might reduce manual review further. The largest remaining gap is experimental work: this study asks whether a transformation can be reached within the software and its evidence sources, not whether it occurs under a particular laboratory procedure.</p>
+<h2>Limitations</h2>
+<p>The results are bounded first by the template library and candidate limits. A missing template removes a potentially correct path, and a low candidate cap can omit a product that a higher cap would expose. Each run records truncation and pair coverage, but the present runs cannot estimate full uncapped recall. Four of the five literature cases could be compared only at connectivity level because their local structures lack stereo assignments.</p>
+<p>We did not perform laboratory validation. Condition profiles came from reaction records and literature and cannot replace measurements of yield, selectivity, solvent effects, or degradation. Downstream risk annotation also works only for compounds already present in external tables. The ADMET cache matched 2.6% of one decoction run by InChIKey. CTD uses chemical names and matched essentially none of the same new structures. In the two formula examples, the ADMET cache found 0 acute-toxicity values above the 90th percentile among 84 annotated products for the milder combination and 65 among 169 for the Aconitum-containing formula. That contrast covers only products already represented in the annotation source.</p>
+<p>TCM identifiers remain unstable. Herb names, processed forms, species assignments, formula versions, and source tiers can all be ambiguous. Christos reports unresolved tokens instead of supplying a plausible record. In the audit, seven of ten processed forms and one of ten aliases failed to resolve, and the Latin field mixed botanical names with pharmacopoeial drug names. The TCM tables are controlled by the database owner or by third-party terms, so the public package cannot reproduce the TCM-scale counts without those sources.</p>
+<p>Condition evidence remains sparse. Many templates have no usable condition class in the current records. A missing marker means that the data contain no match; it does not establish that a reaction is impossible. All five literature products were reproduced in the first round, but each current run returned between 24 and 102 candidates, and the system does not rank them.</p>
+<p>The public interface reduces accidental access to sensitive features. It does not replace legal review, institutional controls, or safety assessment. Data redistribution remains subject to the source licenses and ownership terms in the data card.</p>
+<h2>Conclusions</h2>
+<p>Christos was developed to make reaction predictions easier to check. The published products for five documented glycoside and ester-hydrolysis conversions were reproduced in the first round, and two-stage filtering left six known constituents from 3,210 Sijunzi candidates.</p>
+<p>The audits also exposed implementation problems. Of 64 curated rules, 58 were not loaded; reduction rules passed an air-only condition gate; only 1.2% of provenance entries contained substantive condition evidence; and the Latin-name field held drug names instead of botanical names. We changed the implementation and retained those findings in the results.</p>
+<p>The 91.69% forward recall and the reverse coverage values of 94.74% and 79.81% apply to the reaction engine under the stated configurations. Input resolution and provenance were evaluated separately for the herbal layer. In the literature-consistency check, all five products matched at connectivity level and all used the expected hydrolysis family; three could also be confirmed at full stereochemical identity, and the two aconitine steps remain connectivity-level. Christos provides an inspectable record of how a result was generated. Whether a predicted product forms under a specific procedure still requires experimental work.</p>
+<h2>Data and code availability</h2>
+<p>Code, protocol, result tables, figure sources, and runnable scripts are at https://github.com/VegFisx/Christos, archived at https://doi.org/10.5281/zenodo.23499423. The literature-validation outputs are <code>reports/paper/literature_validation_20261030.json</code>, <code>reports/paper/literature_validation_20261030.csv</code>, <code>reports/paper/literature_validation_pubmed_20261030.xml</code>, and <code>reports/paper/pubchem_literature_validation_20261030.json</code>. The benchmark result tables are tagged <code>stereo_on_full50k</code>, <code>stereo_on_unfiltered_full50k</code>, <code>legacy_on_full50k</code> and <code>legacy_off_full50k</code>; all forward runs keep stereochemistry in product canonicalisation. The headline figures refer to the archived code snapshot at commit <code>694d2de</code> with <code>CHEMCREACT_STEREO_CANON=1</code>. The current default tree carries one further change, a revised temperature gate, and reaches 92.01% (46,020 of 50,016; Wilson 95% CI 91.77% to 92.24%), stored as <code>stereo_on_default_20261104</code>; the same tree with stereochemistry disabled reaches 82.77%. Applying that same re-run to the degraded baseline configuration gives 55.53% (tag <code>baseline58_20261107</code>), against the frozen 58.73%. Downstream annotation used the TDC ADMET Group (Huang et al., 2022), Tox21/ToxCast endpoints (Richard et al., 2016, 2021), CTD (Davis et al., 2026), and OnSIDES v3.1.1 (Tanaka et al., 2025); OnSIDES was retained for downstream evaluation and is not used for the headline results. The pharmacopoeia overlay was derived from the 2025 Chinese Pharmacopoeia through the third-party <code>Independent-KBs</code> structured source. That repository declares no repository-level license, so the overlay remains internal-only. Upstream raw data are not redistributed. The public demonstration package is a fixed precomputed sample and contains no production databases.</p>
+<h2>References</h2>
+<p>All DOIs were resolved through Crossref on 2026-10-19 and 2026-10-29; software and dataset landing pages were checked against the official project, EPA, GitHub release, and repository commit pages. The API snapshots are stored in <code>reports/paper/reference_verification_20261019/</code> and <code>reports/paper/reference_verification_20261029/</code>.</p>
+<ol>
+<li>
+<p>Chen, B., Li, C., Dai, H., &amp; Song, L. (2020). Retro*: Learning retrosynthetic planning with neural guided A* search. <em>Proceedings of the 37th International Conference on Machine Learning</em>, PMLR 119, 1608–1616. https://proceedings.mlr.press/v119/chen20c.html</p>
+</li>
+<li>
+<p>Coley, C. W., Green, W. H., &amp; Jensen, K. F. (2019). RDChiral: An RDKit wrapper for handling stereochemistry in retrosynthetic template extraction and application. <em>Journal of Chemical Information and Modeling</em>, 59(6), 2529–2537. https://doi.org/10.1021/acs.jcim.9b00286</p>
+</li>
+<li>
+<p>Genheden, S., &amp; Bjerrum, E. J. (2022). PaRoutes: Towards a framework for benchmarking retrosynthesis route predictions. <em>Digital Discovery</em>, 1(4), 527–539. https://doi.org/10.1039/D2DD00015F</p>
+</li>
+<li>
+<p>Genheden, S., Thakkar, A., Chadimová, V., Reymond, J.-L., Engkvist, O., &amp; Bjerrum, E. J. (2020). AiZynthFinder: A fast, robust and flexible open-source software for retrosynthetic planning. <em>Journal of Cheminformatics</em>, 12, 70. https://doi.org/10.1186/s13321-020-00472-1</p>
+</li>
+<li>
+<p>Kearnes, S. M., Maser, M. R., Wleklinski, M., Kast, A., Doyle, A. G., Dreher, S. D., Hawkins, J. M., Jensen, K. F., &amp; Coley, C. W. (2021). The Open Reaction Database. <em>Journal of the American Chemical Society</em>, 143(45), 18820–18826. https://doi.org/10.1021/jacs.1c09820</p>
+</li>
+<li>
+<p>Maziarz, K., Tripp, A., Liu, G., Stanley, M., Xie, S., Gaiński, P., Seidl, P., &amp; Segler, M. (2025). Re-evaluating retrosynthesis algorithms with Syntheseus. <em>Faraday Discussions</em>, 256, 568–586. https://doi.org/10.1039/D4FD00093E</p>
+</li>
+<li>
+<p>RDKit: Open-source cheminformatics. (2024). https://www.rdkit.org</p>
+</li>
+<li>
+<p>Schneider, N., Stiefl, N., &amp; Landrum, G. A. (2016). What's What: The (nearly) definitive guide to reaction role assignment. <em>Journal of Chemical Information and Modeling</em>, 56(12), 2336–2346. https://doi.org/10.1021/acs.jcim.6b00564</p>
+</li>
+<li>
+<p>Sorokina, M., Merseburger, P., Rajan, K., Yirik, M. A., &amp; Steinbeck, C. (2021). COCONUT online: Collection of Open Natural Products database. <em>Journal of Cheminformatics</em>, 13, 2. https://doi.org/10.1186/s13321-020-00478-9</p>
+</li>
+<li>
+<p>Torren-Peraire, P., Hassen, A. K., Genheden, S., Verhoeven, J., Clevert, D.-A., Preuss, M., &amp; Tetko, I. V. (2024). Models Matter: The impact of single-step retrosynthesis on synthesis planning. <em>Digital Discovery</em>, 3(3), 558–572. https://doi.org/10.1039/D3DD00252G</p>
+</li>
+<li>
+<p>MolecularAI. SmartReact (version 2.0.1) [Computer software]. https://github.com/MolecularAI/smartreact</p>
+</li>
+<li>
+<p>Huang, K., Fu, T., Gao, W., Zhao, Y., Roohani, Y., Leskovec, J., Coley, C. W., Xiao, C., Sun, J., &amp; Zitnik, M. (2022). Artificial intelligence foundation for therapeutic science. <em>Nature Chemical Biology</em>, 18(10), 1033–1036. https://doi.org/10.1038/s41589-022-01131-2</p>
+</li>
+<li>
+<p>Richard, A. M., Huang, R., Waidyanatha, S., et al. (2021). The Tox21 10K compound library: Collaborative chemistry advancing toxicology. <em>Chemical Research in Toxicology</em>, 34(2), 189–216. https://doi.org/10.1021/acs.chemrestox.0c00264</p>
+</li>
+<li>
+<p>Richard, A. M., Judson, R. S., Houck, K. A., et al. (2016). ToxCast chemical landscape: Paving the road to 21st century toxicology. <em>Chemical Research in Toxicology</em>, 29(8), 1225–1251. https://doi.org/10.1021/acs.chemrestox.6b00135</p>
+</li>
+<li>
+<p>Davis, A. P., Wiegers, T. C., Sciaky, D., Barkalow, F., Wyatt, B., Wiegers, J., McMorran, R., Abrar, S., &amp; Mattingly, C. J. (2026). Comparative Toxicogenomics Database: update 2027. <em>Nucleic Acids Research</em>, gkag1041. https://doi.org/10.1093/nar/gkag1041</p>
+</li>
+<li>
+<p>Tanaka, Y., Chen, H. Y., Belloni, P., et al. (2025). OnSIDES database: Extracting adverse drug events from drug labels using natural language processing models. <em>Med</em>, 6(7), 100642. https://doi.org/10.1016/j.medj.2025.100642</p>
+</li>
+<li>
+<p>Chinese Pharmacopoeia Commission. (2025). <em>Pharmacopoeia of the People's Republic of China</em> (2025 edition). Beijing: China Medical Science Press.</p>
+</li>
+<li>
+<p>cliviali. (2026). <em>Independent-KBs: structured Chinese pharmacopoeia 2025 knowledge base</em> [Data set], commit 63cfd6a. https://github.com/cliviali/Independent-KBs (no repository-level license declared; internal use only).</p>
+</li>
+<li>
+<p>Fan, R., Li, N., Xu, H., Xiang, J., Wang, L., &amp; Gao, Y. (2016). The mechanism of hydrothermal hydrolysis for glycyrrhizic acid into glycyrrhetinic acid and glycyrrhetinic acid 3-O-mono-β-D-glucuronide in subcritical water. <em>Food Chemistry</em>, 190, 912–921. https://doi.org/10.1016/j.foodchem.2015.06.039</p>
+</li>
+<li>
+<p>Fu, Y., Yin, Z.-H., &amp; Yin, C.-Y. (2017). Biotransformation of ginsenoside Rb1 to ginsenoside Rg3 by endophytic bacterium Burkholderia sp. GE 17-7 isolated from Panax ginseng. <em>Journal of Applied Microbiology</em>, 122(6), 1579–1585. https://doi.org/10.1111/jam.13435</p>
+</li>
+<li>
+<p>Ryu, J., Lee, H. W., Yoon, J., Seo, B., Kwon, D. E., Shin, U.-M., Choi, K.-J., &amp; Lee, Y.-W. (2017). Effect of hydrothermal processing on ginseng extract. <em>Journal of Ginseng Research</em>, 41(4), 572–577. https://doi.org/10.1016/j.jgr.2016.12.002</p>
+</li>
+<li>
+<p>Li, T.-F., Gong, N., &amp; Wang, Y.-X. (2016). Ester hydrolysis differentially reduces aconitine-induced anti-hypersensitivity and acute neurotoxicity: Involvement of spinal microglial dynorphin expression and implications for Aconitum processing. <em>Frontiers in Pharmacology</em>, 7, 367. https://doi.org/10.3389/fphar.2016.00367</p>
+</li>
+<li>
+<p>Huang, Q.-A., Zhang, Y.-M., He, Y., Lu, J., &amp; Lin, R.-C. (2007). Studies on hydrolysis of aconitine. <em>Zhongguo Zhong Yao Za Zhi</em>, 32(20), 2143–2145. PMID: 18306748.</p>
+</li>
+<li>
+<p>Kim, D.-S., &amp; Lim, S.-B. (2017). Optimization of subcritical water hydrolysis of rutin into isoquercetin and quercetin. <em>Preventive Nutrition and Food Science</em>, 22(2), 131–137. https://doi.org/10.3746/pnf.2017.22.2.131</p>
+</li>
+<li>
+<p>Yang, J., Lee, H., Sung, J., Kim, Y., Jeong, H. S., &amp; Lee, J. (2019). Conversion of rutin to quercetin by acid treatment in relation to biological activities. <em>Preventive Nutrition and Food Science</em>, 24(3), 313–320. https://doi.org/10.3746/pnf.2019.24.3.313</p>
+</li>
+<li>
+<p>Piao, X. M., Huo, Y., Kang, J. P., Mathiyalagan, R., Zhang, H., Yang, D. U., Kim, M., Yang, D. C., Kang, S. C., &amp; Wang, Y. P. (2020). Diversity of ginsenoside profiles produced by various processing technologies. <em>Molecules</em>, 25(19), 4390. https://doi.org/10.3390/molecules25194390</p>
+</li>
+</ol>
+
+</body>
+</html>

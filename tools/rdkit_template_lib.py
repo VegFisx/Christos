@@ -8,7 +8,9 @@ r"""ORD 自抽正向模板的【加载 + 套用】库（单一真相，别再各
 口径（写死）：
   support = 该模板在【train】漏项里复现出的反应条数（见 forward_template_mining.py）
   套用时按 support 降序取前 limit 个 —— 与挖掘脚本的选择顺序一致（可复现）
-  应用产物一律 sanitize + 去映射 canonical（isomericSmiles=False）
+  应用产物一律 sanitize + 去映射 canonical。默认 isomericSmiles=True（保留立体化学；
+  2026-11-04 第八十九轮改的默认，理由见下方 _STEREO_ENV 注释）；
+  设 CHEMCREACT_STEREO_CANON=0 或调 set_stereo_canon(False) 可回到旧的「丢手性」行为。
 
 被谁用：
   · core/smartreact_engine.py（可选开关 extra_templates_path）
@@ -17,6 +19,7 @@ r"""ORD 自抽正向模板的【加载 + 套用】库（单一真相，别再各
 from __future__ import annotations
 
 import json
+import os as _os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -87,12 +90,39 @@ def compile_templates(templates: Sequence[MinedTemplate]
     return compiled, n_fail
 
 
+# ---- 立体规范化开关（2026-10-30 引入；2026-11-04 默认改为「开」）----
+# 开（默认）：产物保留手性标记，身份按 isomeric SMILES 计算；手性目标可被精确命中。
+# 关（显式关闭）：产物按非立体 canonical SMILES 去重，是 2026-10 之前论文冻结结果的行为。
+#
+# 为什么改默认：第八十九轮实测（甘草 limit 6 单轮）——
+#   开关关：可判 223 跳里 223 跳（100%）立体信息整层丢失；
+#   开关开：可判 173 跳里 173 跳（100%）保住。
+# 默认丢光手性等于默认丢一层化学信息，代价又只是候选集合和去重规则变化，故改成开。
+#
+# ★ 需要复现旧冻结基准时，必须显式关掉：
+#     $env:CHEMCREACT_STEREO_CANON = "0"
+# 跨进程（基准脚本的 worker 池）请用环境变量，进程内测试可用 set_stereo_canon()。
+_STEREO_ENV = _os.environ.get("CHEMCREACT_STEREO_CANON", "").strip().lower()
+if _STEREO_ENV in ("0", "false", "no", "off", "none", "disabled"):
+    STEREO_CANON = False
+elif _STEREO_ENV in ("1", "true", "yes", "on"):
+    STEREO_CANON = True
+else:
+    STEREO_CANON = True          # 未设变量 = 默认开
+
+
+def set_stereo_canon(enabled: bool) -> None:
+    """进程内切换；每个引擎实例会重新加载本模块，跨进程请用环境变量。"""
+    global STEREO_CANON
+    STEREO_CANON = bool(enabled)
+
+
 def _canon(mol) -> Optional[str]:
     try:
         Chem.SanitizeMol(mol)
         for a in mol.GetAtoms():
             a.SetAtomMapNum(0)
-        return Chem.MolToSmiles(mol, isomericSmiles=False)
+        return Chem.MolToSmiles(mol, isomericSmiles=STEREO_CANON)
     except Exception:
         return None
 
@@ -282,8 +312,13 @@ def apply_triple(compiled: Sequence[Tuple[str, object]],
     return got
 
 
-def apply_single(compiled: Sequence[Tuple[str, object]], mol) -> Set[str]:
-    """把【1 个反应物】的模板套到单个分子上。"""
+def apply_single(compiled: Sequence[Tuple[str, object]], mol,
+                 trace: Optional[Dict[str, str]] = None) -> Set[str]:
+    """把【1 个反应物】的模板套到单个分子上。
+
+    ``trace``（第八十九轮加，可选）：传入 dict 时记录「产物 canonical SMILES -> 命中的模板 SMARTS」，
+    用于事后判断这条模板动了哪些原子（立体判断需要作用范围）。
+    """
     got: Set[str] = set()
     if mol is None:
         return got
@@ -297,12 +332,15 @@ def apply_single(compiled: Sequence[Tuple[str, object]], mol) -> Set[str]:
                 cs = _canon(pmol)
                 if cs:
                     got.add(cs)
+                    if trace is not None:
+                        trace.setdefault(cs, _sm)
     return got
 
 
 def apply_pair(compiled: Sequence[Tuple[str, object]],
-               mol_a, mol_b) -> Set[str]:
-    """把模板库套到一对分子上，返回产物 canonical SMILES 集合。"""
+               mol_a, mol_b,
+               trace: Optional[Dict[str, str]] = None) -> Set[str]:
+    """把模板库套到一对分子上，返回产物 canonical SMILES 集合（``trace`` 同 apply_single）。"""
     got: Set[str] = set()
     if mol_a is None or mol_b is None:
         return got
@@ -316,6 +354,8 @@ def apply_pair(compiled: Sequence[Tuple[str, object]],
                 cs = _canon(pmol)
                 if cs:
                     got.add(cs)
+                    if trace is not None:
+                        trace.setdefault(cs, _sm)
     return got
 
 
@@ -329,4 +369,5 @@ __all__ = ["MinedTemplate", "load_mined_templates", "compile_templates",
            "compile_templates_all", "compile_templates_report",
            "needs_co_reagent", "delta_h", "redox_hint",
            "apply_single", "apply_pair", "apply_pair_smiles", "apply_triple",
-           "apply_triple_support", "DEFAULT_PATH"]
+           "apply_triple_support", "DEFAULT_PATH", "STEREO_CANON",
+           "set_stereo_canon"]

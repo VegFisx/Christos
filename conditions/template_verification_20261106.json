@@ -1,0 +1,315 @@
+{
+  "schema_version": "chemreact-template-verification/1",
+  "generated_at": "2026-11-06",
+  "scope": "conditions/templates.py 里 9 个炮制档的条件数值，逐条做文献核对。",
+  "method": "联网检索（2026-11-06，用户挂梯子后），只收有 DOI/URL + 可直接引用原句者；找不到写 status=not_found。",
+  "verdict_vocab": {
+    "supported": "找到一手文献，数值与本项目预设一致或在其区间内",
+    "approximate": "找到相似工艺的数值，但药材/条件不完全对应",
+    "not_found": "检索不到任何支持该数值的来源",
+    "mismatch": "找到的数值明确不属于本档工艺（如把酒炙当成炒焦）"
+  },
+  "entries": [
+    {
+      "template": "炮制·醋炙",
+      "preset": "water 84 °C / 35 min / pH 3",
+      "status": "not_found",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "醋炙（延胡索）",
+          "values": "加醋 20%，140 °C / 15 min",
+          "source": "CN101618076B（正交试验 A1B1C2）",
+          "type": "patent",
+          "doi": null,
+          "url": "https://patents.google.com/patent/CN101618076B/zh"
+        },
+        {
+          "method": "醋制（月腺大戟二萜单体，模拟醋制）",
+          "values": "160 °C / 6% 乙酸 / 40 min",
+          "source": "中国中药杂志 2022;47(24):6596-6606（PMID 36604908）",
+          "type": "primary",
+          "doi": "10.19540/j.cnki.cjcmm.20221111.301",
+          "url": null,
+          "quote": "160 ℃ with 6% acetic acid for 40 min",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        },
+        {
+          "method": "醋狼毒炮制工艺",
+          "values": "醋 40% / 160 °C / 10 min",
+          "source": "《醋狼毒炮制工艺研究》",
+          "type": "primary",
+          "doi": "10.14148/j.issn.1672-0482.2012.03.024",
+          "url": null,
+          "note": "与上一条的 40 min 矛盾（10 min vs 40 min），说明「狼毒醋炙」本身没有统一值",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ],
+      "verdict_note": "本项目的 84 °C / 35 min 检索不到出处；文献值集中在 140–160 °C、10–15 min 或 160 °C/40 min。"
+    },
+    {
+      "template": "炮制·炒炭",
+      "preset": "none 260 °C / 35 min",
+      "status": "not_found",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "炒炭（山楂炭，热分析）",
+          "values": "最优 311 °C / 3.64 min（区间 307.4–332.0 °C）",
+          "source": "中草药 2026（tiprpress 在线）",
+          "type": "primary",
+          "doi": null,
+          "url": "https://www.tiprpress.com/zcy/article/pdf/20261708",
+          "quote": "山楂炭最佳炮制温度为307.4～332.0 ℃"
+        },
+        {
+          "method": "炒炭（栀子炭）",
+          "values": "290.3–387.0 °C，330 °C / 5.91 min",
+          "source": "中草药 2019;50(21)",
+          "type": "primary",
+          "doi": "10.7501/j.issn.0253-2670.2019.21.018",
+          "url": null,
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ],
+      "verdict_note": "220–300 °C / 35–40 min 只见于网页对「武火」的泛称；实测文献温度更高（290–390 °C）、时间更短（3–6 min）。"
+    },
+    {
+      "template": "炮制·炒焦",
+      "preset": "none 195 °C / 10 min",
+      "status": "mismatch",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "炒焦（焦麦芽，热分析）",
+          "values": "217.7–286.3 °C，最优 270.00 °C / 20.00 min",
+          "source": "中草药 2026;57(6)",
+          "type": "primary",
+          "doi": "10.7501/j.issn.0253-2670.2026.06.008",
+          "url": null,
+          "doi_valid": false,
+          "citation_check": {
+            "status": "doi_not_registered",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 404：该 DOI 未注册，出处需重查。"
+          }
+        },
+        {
+          "method": "酒炙（酒黄芩）—— 曾被误当作炒焦依据",
+          "values": "190–200 °C",
+          "source": "中国实验方剂学杂志 2024;30(19):170-179",
+          "type": "primary",
+          "doi": "10.13422/j.cnki.syfjx.20241061",
+          "url": null,
+          "quote": "酒黄芩的最佳炮制温度为190~200 ℃",
+          "doi_valid": true,
+          "citation_check": {
+            "status": "not_found",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
+          }
+        }
+      ],
+      "verdict_note": "预设的 195 °C 实际对应酒炙黄芩，不是炒焦；真正的炒焦文献是 217–286 °C / 20 min。"
+    },
+    {
+      "template": "炮制·炒黄",
+      "preset": "none 165 °C / 10 min",
+      "status": "approximate",
+      "preset_supported": true,
+      "found": [
+        {
+          "method": "炒黄（莱菔子）",
+          "values": "160 °C / 3 min",
+          "source": "Foods 2025;14(20):3587",
+          "type": "primary",
+          "doi": "10.3390/foods15203587",
+          "url": null,
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice: Integrated Analysis of Hepatic Metabolism and Gut Microbiota",
+            "crossref_journal": "Foods",
+            "crossref_year": "2026",
+            "pmcid": "PMC13703343",
+            "open_access": "Y",
+            "oa_url": "https://doi.org/10.3390/foods15203587"
+          }
+        },
+        {
+          "method": "炒黄",
+          "values": "120 °C / 0–10 min",
+          "source": "Food Chemistry: X 2026",
+          "type": "primary",
+          "doi": "10.1016/j.fochx.2026.104644",
+          "url": null,
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper (Zanthoxylum bungeanum maxim.)",
+            "crossref_journal": "Food Chemistry: X",
+            "crossref_year": "2026",
+            "pmcid": "PMC13697283",
+            "open_access": "Y",
+            "oa_url": "https://doi.org/10.1016/j.fochx.2026.104644"
+          }
+        }
+      ],
+      "verdict_note": "165 °C / 10 min 落在文献的「160–170 °C 微炒」与「120 °C ≤10 min」之间，属代表值，不是某一味药的原值。"
+    },
+    {
+      "template": "炮制·蜜炙",
+      "preset": "none 120 °C / 13.5 min",
+      "status": "supported",
+      "preset_supported": true,
+      "found": [
+        {
+          "method": "蜜炙（甘草）",
+          "values": "120 °C / 13.5 min",
+          "source": "Natural Product Research 2026",
+          "type": "primary",
+          "doi": "10.1080/14786419.2026.2693245",
+          "url": null,
+          "citation_check": {
+            "status": "verified",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+            "crossref_journal": "Natural Product Research",
+            "crossref_year": "2026"
+          }
+        }
+      ],
+      "verdict_note": "唯一一条与预设逐位一致的档位。"
+    },
+    {
+      "template": "炮制·酒炙",
+      "preset": "ethanol 140 °C / 5 min",
+      "status": "not_found",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "酒炙（酒柴胡辅料用量）",
+          "values": "黄酒 100:20（20%）",
+          "source": "药学学报 2018",
+          "type": "primary",
+          "doi": null,
+          "url": null,
+          "note": "药典柴胡项下只有醋柴胡（醋 20%），没有酒柴胡与温度"
+        }
+      ],
+      "verdict_note": "135–145 °C / 5 min 与 140 °C / 5 min 都检索不到；辅料比例另有出处。"
+    },
+    {
+      "template": "炮制·盐炙",
+      "preset": "water 150 °C / 10 min / pH 7",
+      "status": "approximate",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "盐炙（杜仲）",
+          "values": "175–185 °C / 5–10 min，断丝率 80–90%",
+          "source": "CN101288687A",
+          "type": "patent",
+          "doi": null,
+          "url": "https://patents.google.com/patent/CN101288687A/zh",
+          "quote": "每100Kg药材用2Kg食盐"
+        }
+      ],
+      "verdict_note": "辅料 2% 与药典通则 0213 一致；温度 150 °C 未找到，专利值是 175–185 °C。"
+    },
+    {
+      "template": "炮制·姜炙",
+      "preset": "water 150 °C / 40 min / pH 7",
+      "status": "not_found",
+      "preset_supported": false,
+      "found": [
+        {
+          "method": "姜炙（黄连，药典）",
+          "values": "生姜 12.5%（每 100 kg 黄连用生姜 12.5 kg）",
+          "source": "神农本草（西湖大学）术语库，转引药典",
+          "type": "secondary",
+          "doi": null,
+          "url": "https://shennongalpha.westlake.edu.cn/zh/term/nmm-01f5",
+          "quote": "每100kg黄连，用生姜12.5kg"
+        },
+        {
+          "method": "姜炙（樟帮工艺）",
+          "values": "20% 姜汁 / 140 °C / 12 min",
+          "source": "中国实验方剂学杂志 2025（综述，自认「工艺参数及质量标准还不完整」）",
+          "type": "review",
+          "doi": "10.13422/j.cnki.syfjx.20250561",
+          "url": null,
+          "doi_valid": false,
+          "citation_check": {
+            "status": "doi_not_registered",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "note": "doi.org 解析 404：该 DOI 未注册，出处需重查。"
+          }
+        }
+      ],
+      "verdict_note": "150 °C / 40 min 无出处；辅料比例 10% 与药典 12.5% 冲突。"
+    },
+    {
+      "template": "炮制·蒸制",
+      "preset": "water 100 °C / 120 min",
+      "status": "approximate",
+      "preset_supported": true,
+      "found": [
+        {
+          "method": "蒸制（红参）",
+          "values": "90–100 °C / 2–3 h",
+          "source": "J Ginseng Res 2018;42(3):277-287",
+          "type": "primary",
+          "doi": "10.1016/j.jgr.2017.02.003",
+          "url": null,
+          "quote": "steamed at 90–100°C for 2–3 h",
+          "note": "该句是引言里的传统工艺陈述，不是该文实验条件（其试验为 100 °C vs 120 °C）",
+          "citation_check": {
+            "status": "verified_notitle",
+            "checked_at": "2026-11-06T16:26:10",
+            "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+            "crossref_title": "Remarkable impact of steam temperature on ginsenosides transformation from fresh ginseng to red ginseng",
+            "crossref_journal": "Journal of Ginseng Research",
+            "crossref_year": "2018",
+            "pmcid": "PMC6026370",
+            "open_access": "Y",
+            "oa_url": "https://www.sciencedirect.com/science/article/pii/S1226845316302652?via%3Dihub"
+          }
+        }
+      ],
+      "verdict_note": "预设 100 °C / 120 min 落在传统工艺区间内，但引文属背景陈述。"
+    }
+  ],
+  "summary": {
+    "n_templates": 9,
+    "supported": 2,
+    "approximate": 2,
+    "not_found": 4,
+    "mismatch": 1,
+    "gate_effect": "none —— 本文件只做登记与展示，不参与任何门控；预设数值一律未改动。"
+  }
+}
