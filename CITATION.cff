@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Christos: a local reaction prediction system with source-aware input resolution and provenance"
+abstract: >-
+  A local reaction prediction system that resolves Chinese medicine herb and
+  formula names to concrete compound seeds, enumerates products with reaction
+  templates, and records the source record, template and condition evidence
+  behind every candidate. Ships a desktop interface, a command-line bridge and
+  the benchmark data needed to reproduce the published numbers.
+authors:
+  - family-names: Dong
+    given-names: Xinchang
+    email: vegfish@qq.com
+    affiliation: "Beijing University of Chinese Medicine, School of Chinese Materia Medica, Beijing, China"
+version: 0.9.0
+date-released: 2026-11-08
+license: MIT
+repository-code: "https://github.com/VegFisx/Christos"
+keywords:
+  - reaction prediction
+  - retrosynthesis
+  - reaction templates
+  - provenance
+  - traditional Chinese medicine
+  - chemoinformatics
