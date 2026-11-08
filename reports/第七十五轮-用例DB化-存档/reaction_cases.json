@@ -1,0 +1,519 @@
+[
+  {
+    "id": "hyd_ester_benzoate",
+    "kind": "rule",
+    "rule": "hydrolysis_ester_001",
+    "smiles": "COC(=O)c1ccccc1",
+    "name": "苯甲酸甲酯",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C(O)c1ccccc1"
+    ],
+    "forbid": [],
+    "note": "酯水解生成羧酸。苯甲酸是标志性产物"
+  },
+  {
+    "id": "hyd_ester_ethylacetate",
+    "kind": "rule",
+    "rule": "hydrolysis_ester_001",
+    "smiles": "CCOC(C)=O",
+    "name": "乙酸乙酯",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(=O)O"
+    ],
+    "forbid": [],
+    "note": "简单酯水解生成乙酸"
+  },
+  {
+    "id": "hyd_glycoside_salicin",
+    "kind": "rule",
+    "rule": "hydrolysis_glycoside_001",
+    "smiles": "CO[C@H]1O[C@@H](CO)[C@H](O)[C@@H](O)[C@@H]1O",
+    "name": "甲基葡萄糖苷",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CO"
+    ],
+    "forbid": [],
+    "note": "糖苷水解：甲基葡萄糖苷 → 葡萄糖（苷元侧是甲醇）。★水杨苷那条跑不出产物，先用最简单的甲基糖苷隔离规则本身是否有问题"
+  },
+  {
+    "id": "hyd_amide_acetamide",
+    "kind": "rule",
+    "rule": "hydrolysis_amide_001",
+    "smiles": "CC(N)=O",
+    "name": "乙酰胺（伯酰胺）",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(=O)O"
+    ],
+    "forbid": [],
+    "note": "★原本是覆盖缺口：规则写成 [N:3][C:4] 要求氮上连碳，伯酰胺全灭。已改为 [N:3]——未映射的取代基会原样带入产物，一条 SMARTS 同时覆盖伯酰胺与 N-取代酰胺。这条用例现在验证修复"
+  },
+  {
+    "id": "hyd_acetal_benzaldehyde",
+    "kind": "rule",
+    "rule": "hydrolysis_acetal_001",
+    "smiles": "COC(OC)c1ccccc1",
+    "name": "苯甲醛二甲缩醛",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=Cc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "缩醛水解回到醛——这是缩醛的保护/脱保护原理"
+  },
+  {
+    "id": "hyd_sulfate",
+    "kind": "rule",
+    "rule": "hydrolysis_sulfate_001",
+    "smiles": "COS(=O)(=O)O",
+    "name": "硫酸单甲酯",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CO"
+    ],
+    "forbid": [],
+    "note": "硫酸酯水解掉硫酸根，放出甲醇"
+  },
+  {
+    "id": "hyd_lactam",
+    "kind": "rule",
+    "rule": "hydrolysis_lactam_001",
+    "smiles": "O=C1CCCN1",
+    "name": "2-吡咯烷酮",
+    "conditions": "煎煮",
+    "expect_any": [
+      "NCCCC(=O)O"
+    ],
+    "forbid": [],
+    "note": "内酰胺开环生成 γ-氨基丁酸"
+  },
+  {
+    "id": "ox_primary_alcohol",
+    "kind": "rule",
+    "rule": "oxidation_primary_alcohol_001",
+    "smiles": "OCc1ccccc1",
+    "name": "苯甲醇",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=Cc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "伯醇氧化成醛。苯甲醇→苯甲醛是教科书反应"
+  },
+  {
+    "id": "ox_aldehyde",
+    "kind": "rule",
+    "rule": "oxidation_aldehyde_001",
+    "smiles": "O=Cc1ccccc1",
+    "name": "苯甲醛",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C(O)c1ccccc1"
+    ],
+    "forbid": [],
+    "note": "醛进一步氧化成酸"
+  },
+  {
+    "id": "ox_hydroxyl_isopropanol",
+    "kind": "rule",
+    "rule": "oxidation_hydroxyl_001",
+    "smiles": "CC(C)O",
+    "name": "异丙醇",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(C)=O"
+    ],
+    "forbid": [],
+    "note": "仲醇氧化成酮。异丙醇→丙酮"
+  },
+  {
+    "id": "ox_phenol_quinone",
+    "kind": "rule",
+    "rule": "oxidation_phenol_quinone_001",
+    "smiles": "Oc1ccccc1O",
+    "name": "邻苯二酚",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C1C=CC=CC1=O"
+    ],
+    "forbid": [],
+    "note": "邻苯二酚氧化成【邻】苯醌。★规则的 [OH][c][c][OH] 要求两个羟基相邻，对苯二酚（1,4-）不匹配；且产物是邻醌不是对醌"
+  },
+  {
+    "id": "ox_sulfide_sulfoxide",
+    "kind": "rule",
+    "rule": "oxidation_sulfide_001",
+    "smiles": "CSC",
+    "name": "二甲硫醚",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CSC=O",
+      "CS(C)=O"
+    ],
+    "forbid": [],
+    "note": "硫醚氧化成亚砜（DMSO 的生成）"
+  },
+  {
+    "id": "ox_aromatic_hydroxyl",
+    "kind": "rule",
+    "rule": "hydroxylation_aromatic_001",
+    "smiles": "Oc1ccccc1",
+    "name": "苯酚",
+    "conditions": "煎煮",
+    "expect_any": [
+      "Oc1ccccc1O",
+      "Oc1cccc(O)c1",
+      "Oc1ccc(O)cc1"
+    ],
+    "forbid": [],
+    "note": "酚的羟基化。★实测该规则【不具位置选择性】——邻/间/对三种异构体都产。这对「列出所有可能候选」是合理的，但用于定量预测时是个已知局限"
+  },
+  {
+    "id": "red_ketone",
+    "kind": "rule",
+    "rule": "reduction_ketone_001",
+    "smiles": "CC(C)=O",
+    "name": "丙酮",
+    "conditions": "还原",
+    "expect_any": [
+      "CC(C)O"
+    ],
+    "forbid": [],
+    "note": "酮还原成仲醇"
+  },
+  {
+    "id": "red_aldehyde",
+    "kind": "rule",
+    "rule": "reduction_aldehyde_001",
+    "smiles": "O=Cc1ccccc1",
+    "name": "苯甲醛",
+    "conditions": "还原",
+    "expect_any": [
+      "OCc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "醛还原成伯醇"
+  },
+  {
+    "id": "red_double_bond",
+    "kind": "rule",
+    "rule": "reduction_alkene_001",
+    "smiles": "C=CC",
+    "name": "丙烯",
+    "conditions": "还原",
+    "expect_any": [
+      "CCC"
+    ],
+    "forbid": [],
+    "note": "碳碳双键加氢"
+  },
+  {
+    "id": "red_sulfoxide",
+    "kind": "rule",
+    "rule": "reduction_sulfoxide_001",
+    "smiles": "CS(C)=O",
+    "name": "DMSO",
+    "conditions": "还原",
+    "expect_any": [
+      "CSC"
+    ],
+    "forbid": [],
+    "note": "亚砜还原回硫醚"
+  },
+  {
+    "id": "dec_aromatic",
+    "kind": "rule",
+    "rule": "decarboxylation_aromatic_001",
+    "smiles": "O=C(O)c1ccccc1",
+    "name": "苯甲酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "c1ccccc1"
+    ],
+    "forbid": [],
+    "note": "芳香酸脱羧生成苯"
+  },
+  {
+    "id": "dec_beta_keto",
+    "kind": "rule",
+    "rule": "decarboxylation_beta_keto_001",
+    "smiles": "CC(=O)CC(=O)O",
+    "name": "乙酰乙酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(C)=O"
+    ],
+    "forbid": [],
+    "note": "β-酮酸脱羧生成酮 + CO2。这是最简单的脱羧"
+  },
+  {
+    "id": "dec_malonic",
+    "kind": "rule",
+    "rule": "decarboxylation_malonic_001",
+    "smiles": "OC(=O)CC(=O)O",
+    "name": "丙二酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(=O)O"
+    ],
+    "forbid": [],
+    "note": "丙二酸型脱羧生成一元酸"
+  },
+  {
+    "id": "dec_cinnamic",
+    "kind": "rule",
+    "rule": "decarboxylation_cinnamic_001",
+    "smiles": "OC(=O)/C=C/c1ccccc1",
+    "name": "肉桂酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "C=Cc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "肉桂酸型脱羧生成苯乙烯——注意产物是【乙烯基】不是苯环羟基"
+  },
+  {
+    "id": "cond_esterification",
+    "kind": "rule",
+    "rule": "esterification_intermolecular_001",
+    "smiles": "O=C(O)c1ccccc1",
+    "name": "苯甲酸",
+    "conditions": "醇提",
+    "expect_any": [
+      "CCOC(=O)c1ccccc1"
+    ],
+    "forbid": [],
+    "note": "酯化：苯甲酸 + 乙醇 → 苯甲酸乙酯（醇提条件下）"
+  },
+  {
+    "id": "cond_transesterification",
+    "kind": "rule",
+    "rule": "esterification_transesterification_001",
+    "smiles": "COC(=O)c1ccccc1",
+    "name": "苯甲酸甲酯",
+    "conditions": "醇提",
+    "expect_any": [
+      "CCOC(=O)c1ccccc1"
+    ],
+    "forbid": [],
+    "note": "★酯交换★ 甲酯 + 乙醇 → 乙酯。这是「醇提≠水提」的化学实质"
+  },
+  {
+    "id": "cond_schiff",
+    "kind": "rule",
+    "rule": "condensation_schiff_base_001",
+    "smiles": "O=Cc1ccccc1",
+    "name": "苯甲醛",
+    "conditions": "室温浸泡",
+    "expect_any": [
+      "O=C(O)CN=Cc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "醛 + 胺池里的【甘氨酸】→ 席夫碱。★原期望写的是 N-甲基化物(CN=Cc1ccccc1)，那是照着【甲胺】算的；而甲胺在煎煮水里根本不存在，已从池子里移除（见 tools/audit_cosubstrates.py），现按药材真实存在的甘氨酸出产物"
+  },
+  {
+    "id": "cond_amidation",
+    "kind": "rule",
+    "rule": "amidation_intermolecular_001",
+    "smiles": "CC(=O)O",
+    "name": "乙酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC(=O)NCC(=O)O"
+    ],
+    "forbid": [],
+    "note": "酸 + 胺池里的【甘氨酸】→ 马尿酸型酰胺。原期望的 N-甲基化物同样是照甲胺算的"
+  },
+  {
+    "id": "cond_aminolysis",
+    "kind": "rule",
+    "rule": "aminolysis_ester_001",
+    "smiles": "COC(C)=O",
+    "name": "乙酸甲酯",
+    "conditions": "室温浸泡",
+    "expect_any": [
+      "CC(=O)NCC(=O)O"
+    ],
+    "forbid": [],
+    "note": "酯的氨解：酯 + 胺池里的【甘氨酸】→ 马尿酸型酰胺（原期望的 N-甲基化物已随甲胺移除）"
+  },
+  {
+    "id": "add_michael_thiol",
+    "kind": "rule",
+    "rule": "addition_michael_thiol_001",
+    "smiles": "C=CC=O",
+    "name": "丙烯醛",
+    "conditions": "室温浸泡",
+    "expect_any": [
+      "CSCCC=O"
+    ],
+    "forbid": [],
+    "note": "★Michael 加成：硫必须加在 β碳上 → 3-甲硫基丙醛。原规则错加在 α碳（给 CSC(C)C=O）——两者分子式完全相同，原子守恒/价态/立体化学三道闸门全都发现不了，只有反应级测试集能抓出来"
+  },
+  {
+    "id": "cyc_gamma_lactone",
+    "kind": "rule",
+    "rule": "esterification_gamma_lactone_001",
+    "smiles": "OCCCC(=O)O",
+    "name": "4-羟基丁酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C1CCCO1"
+    ],
+    "forbid": [],
+    "note": "γ-羟基酸分子内酯化生成五元内酯"
+  },
+  {
+    "id": "cyc_delta_lactone",
+    "kind": "rule",
+    "rule": "cyclization_lactone_delta_001",
+    "smiles": "OCCCCC(=O)O",
+    "name": "5-羟基戊酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C1CCCCO1"
+    ],
+    "forbid": [],
+    "note": "δ-羟基酸生成六元内酯"
+  },
+  {
+    "id": "cyc_hemiacetal",
+    "kind": "rule",
+    "rule": "cyclization_hemiacetal_001",
+    "smiles": "O=CCCCO",
+    "name": "4-羟基丁醛",
+    "conditions": "室温浸泡",
+    "expect_any": [
+      "OC1CCCO1"
+    ],
+    "forbid": [],
+    "note": "4-羟基丁醛成环生成 2-羟基四氢呋喃"
+  },
+  {
+    "id": "cyc_lactam",
+    "kind": "rule",
+    "rule": "cyclization_lactam_001",
+    "smiles": "NCCCC(=O)O",
+    "name": "4-氨基丁酸",
+    "conditions": "煎煮",
+    "expect_any": [
+      "O=C1CCCN1"
+    ],
+    "forbid": [],
+    "note": "γ-氨基丁酸成环生成 γ-丁内酰胺"
+  },
+  {
+    "id": "cyc_ether",
+    "kind": "rule",
+    "rule": "cyclization_ether_001",
+    "smiles": "OCCCCO",
+    "name": "1,4-丁二醇",
+    "conditions": "煎煮",
+    "expect_any": [
+      "C1CCOC1"
+    ],
+    "forbid": [],
+    "note": "分子内脱水成醚生成四氢呋喃。★规则要求两个羟基之间恰好隔 4 个碳"
+  },
+  {
+    "id": "eli_dehydration",
+    "kind": "rule",
+    "rule": "elimination_dehydration_001",
+    "smiles": "CCC(C)O",
+    "name": "2-丁醇",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC=CC"
+    ],
+    "forbid": [],
+    "note": "醇脱水成烯"
+  },
+  {
+    "id": "eli_demethylation",
+    "kind": "rule",
+    "rule": "demethylation_aromatic_001",
+    "smiles": "COc1ccccc1",
+    "name": "苯甲醚",
+    "conditions": "煎煮",
+    "expect_any": [
+      "Oc1ccccc1"
+    ],
+    "forbid": [],
+    "note": "脱甲基：芳甲醚脱甲基生成酚"
+  },
+  {
+    "id": "rea_double_bond_isomer",
+    "kind": "rule",
+    "rule": "isomerization_double_bond_001",
+    "smiles": "CC=CC",
+    "name": "2-丁烯",
+    "conditions": "煎煮",
+    "expect_any": [
+      "C=CCC"
+    ],
+    "forbid": [],
+    "note": "双键位置异构（可逆，只产不传播）"
+  },
+  {
+    "id": "rea_retro_aldol",
+    "kind": "rule",
+    "rule": "rearrangement_retro_aldol_001",
+    "smiles": "CC(O)CC=O",
+    "name": "3-羟基丁醛（乙醛缩合产物）",
+    "conditions": "煎煮",
+    "expect_any": [
+      "CC=O"
+    ],
+    "forbid": [],
+    "note": "★原本是覆盖缺口：规则要求中间碳恰好 1 个氢，把最典型的 β-羟基羰基（中间为 CH2）全部排除。已放宽为 [CX4:3]。这条用例验证修复——乙醛自身缩合产物能正常裂解回乙醛"
+  },
+  {
+    "id": "gate_oxidation_off_n2",
+    "kind": "gating",
+    "conditions": "无氧煎煮",
+    "must_inactive_categories": [
+      "oxidation"
+    ],
+    "note": "氮气保护下，所有氧化反应必须熄灭"
+  },
+  {
+    "id": "gate_oxidation_on_air",
+    "kind": "gating",
+    "conditions": "煎煮",
+    "must_active_categories": [
+      "oxidation"
+    ],
+    "note": "有氧煎煮下，氧化规则应当激活"
+  },
+  {
+    "id": "gate_reduction_only_h2",
+    "kind": "gating",
+    "conditions": "煎煮",
+    "must_inactive_categories": [
+      "reduction"
+    ],
+    "note": "不通氢时还原反应不应发生"
+  },
+  {
+    "id": "gate_reduction_on_h2",
+    "kind": "gating",
+    "conditions": "还原",
+    "must_active_categories": [
+      "reduction"
+    ],
+    "note": "通氢条件下还原规则激活"
+  },
+  {
+    "id": "gate_hydrolysis_on_acid",
+    "kind": "gating",
+    "conditions": "酸水解",
+    "must_active_rules": [
+      "hydrolysis_ester_001",
+      "hydrolysis_glycoside_001"
+    ],
+    "note": "酸水解条件下，酯水解和糖苷水解应当激活"
+  }
+]

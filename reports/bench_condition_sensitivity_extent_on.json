@@ -1,0 +1,81 @@
+{
+ "n": 40,
+ "seed": 20261014,
+ "cond_extent": 1,
+ "n_errors": 0,
+ "presets": {
+  "煎煮": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "炮制·醋炙": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "炮制·盐炙": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "炮制·姜炙": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "炮制·炒炭": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "炮制·酒炙": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "酸水解": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "碱水解": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  },
+  "室温浸泡": {
+   "jaccard_vs_base_mean": 1.0,
+   "jaccard_vs_base_median": 1.0,
+   "share_identical": 1.0,
+   "unique_products_mean": 0,
+   "empty_share": 0.0,
+   "mean_products": 20.12
+  }
+ },
+ "seconds": 28.4
+}

@@ -1,0 +1,37 @@
+快照: TCMAI-src-20261010-191318
+副本: D:\ProgramData\DSHNS\chemreact-staging\migration-rehearsal\TCMAI
+引擎已装入: D:\ProgramData\DSHNS\chemreact-staging\migration-rehearsal\TCMAI\src\chemreact
+已生成替代模块: src/_tcm_analyzer_new.py
+
+========================================================================================
+在副本上跑调用点验证
+========================================================================================
+========================================================================================
+模拟你项目里的调用点
+========================================================================================
+  ✓ predict_reactions(compounds)
+    ✓ 返回 13 个产物，六个旧键齐全
+  ✓ predict_reactions(frontier)  frontier 带 source/herb_name
+  ✓ predict_reactions(tuple 形式)
+  ✓ predict_reactions(..., rule_limits={})
+  ✓ get_reactions()
+    ✓ 58 条，旧四键齐全；irreversible 可筛出 37 条
+  ✓ REACTIONS dict
+  ✓ _LAST_RXN_STATS 原地更新
+  ✓ find_final_products(uniq, max_rounds=3)
+    ✓ 128 个产物，3 轮，收敛=False，旧六键齐全
+  ✓ legacy_filter 开关（对比误杀）
+
+========================================================================================
+结果：9 通过 / 0 失败
+========================================================================================
+
+--- stderr ---
+D:\ProgramData\DSHNS\chemreact-staging\migration-rehearsal\TCMAI\src\chemreact\libs\rdchiral\bonds.py:35: SyntaxWarning: invalid escape sequence '\ '
+  '''This function is meant to take a reactant template and fully enumerate
+D:\ProgramData\DSHNS\chemreact-staging\migration-rehearsal\TCMAI\src\chemreact\libs\rdchiral\bonds.py:346: SyntaxWarning: invalid escape sequence '\B'
+  '''Copy over single-bond directions (ENDUPRIGHT, ENDDOWNRIGHT) to
+
+
+副本保留在 D:\ProgramData\DSHNS\chemreact-staging\migration-rehearsal
+D:\TCMAI 一个字节都没动。

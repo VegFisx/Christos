@@ -1,0 +1,54 @@
+====================================================================================================
+① 用名字找母体
+====================================================================================================
+  甘草里的甘草酸类: [('Ammo-nium glycyrrhizinate', 'CC1(C2CCC3(C(C2(CCC1OC4C(C(C…'), ('Monoammonium glycyrrhizinate', 'CC1(C2CCC3(C(C2(CCC1OC4C(C(C…'), ('Glycyrrhizic acid', 'CC1(C2CCC3(C(C2(CCC1OC4C(C(C…'), ('Glycyrrhizin', 'CC1(C2CCC3(C(C2(CCC1OC4C(C(C…')]
+  附子里的乌头碱类: [('Lipoaconitine', 'CCCCCC=CCC=CCCCCCCCC(=O)OC12…'), ('Lipodeoxyaconitine', 'CCCCCC=CCC=CCCCCCCCC(=O)OC12…'), ('Liwaconitine', 'CCN1CC2(CCC(C34C2C(C(C31)C5(…'), ('10-hydroxy-methyllycaconitine', 'CCN1CC2(CCC(C34C2C(C(C31)(C5…')]
+
+====================================================================================================
+② 对每个真实母体，逐条规则看能产出什么
+====================================================================================================
+
+  【Ammo-nium glycyrrhizinate】C42H65NO16  重原子 59
+      糖苷水解              → 4 个
+            C30H46O4        CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CC
+            C12H18O13       O=C(O)C1OC(OC2C(O)OC(C(=O)O)C(O)C2O)C(O)C(O)C1O
+            C36H54O10       CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(OC6OC(C(=O)O)
+      缩醛水解              → 2 个
+            C30H46O4        CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CC
+            C12H18O13       O=CC(OC1OC(C(=O)O)C(O)C(O)C1O)C(O)C(O)C(O)C(=O)O
+
+  【Monoammonium glycyrrhizinate】C42H65NO16  重原子 59
+      糖苷水解              → 4 个
+            C30H46O4        CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CC
+            C12H18O13       O=C(O)C1OC(OC2C(O)OC(C(=O)O)C(O)C2O)C(O)C(O)C1O
+            C36H54O10       CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(OC6OC(C(=O)O)
+      缩醛水解              → 2 个
+            C30H46O4        CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CC
+            C12H18O13       O=CC(OC1OC(C(=O)O)C(O)C(O)C1O)C(O)C(O)C(O)C(=O)O
+
+  【Lipoaconitine】C50H75NO11  重原子 62
+      酯水解               → 4 个
+            C18H32O2        CCCCCC=CCC=CCCCCCCCC(=O)O
+            C32H45NO10      CCN1CC2(COC)C(O)CC(OC)C34C5CC6(O)C(OC)C(O)C(O)(C5C6OC(=O)c
+            C43H71NO10      CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)C3(O)CC(C1C3O)C13C(OC
+      脱水                → 3 个
+            C50H73NO10      CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)=C3CC(C1C3OC(=O)c1ccc
+            H2O             O
+            C50H73NO10      CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)C3(O)CC(C1C3OC(=O)c1c
+
+  【Lipodeoxyaconitine】C50H75NO10  重原子 61
+      酯水解               → 4 个
+            C18H32O2        CCCCCC=CCC=CCCCCCCCC(=O)O
+            C32H45NO9       CCN1CC2(COC)CCC(OC)C34C5CC6(O)C(OC)C(O)C(O)(C5C6OC(=O)c5cc
+            C43H71NO9       CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)C3(O)CC(C1C3O)C13C(OC
+      脱水                → 3 个
+            C50H73NO9       CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)=C3CC(C1C3OC(=O)c1ccc
+            H2O             O
+            C50H73NO9       CCCCCC=CCC=CCCCCCCCC(=O)OC12C(O)C(OC)C3=C(OC(=O)c4ccccc4)C
+
+====================================================================================================
+③ 目标产物能不能在这些结果里找到
+====================================================================================================
+  — 甘草次酸骨架（C30 五环三萜，C11=O，C30 羧酸）
+      母体命中: []
+  ? 乌头原碱骨架（C19 二萜生物碱，多羟基，无酯基）  (查询 SMILES 解析失败)

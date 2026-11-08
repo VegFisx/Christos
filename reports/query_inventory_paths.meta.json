@@ -1,0 +1,54 @@
+{
+ "built_at": "2026-10-13 22:58:28",
+ "cond_name": "煎煮",
+ "rounds": 1,
+ "max_pairs": 4000,
+ "max_products_per_pair": 8,
+ "seeds": [
+  {
+   "name": "Ammo-nium glycyrrhizinate",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O.N",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Glycyrrhizic acid",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Araboglycyrrhizin",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@H](CO7)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  }
+ ],
+ "stats": {
+  "n_products": 56,
+  "n_paths_kept": 56,
+  "seconds": 9.22,
+  "ik_ok": 56,
+  "ik_fail": 0,
+  "per_round_new": [
+   {
+    "round": 1,
+    "new": 56,
+    "kept_raw": 56,
+    "seconds": 8.07
+   }
+  ],
+  "n_self_products": 0,
+  "truncated": false
+ },
+ "notes": {
+  "unparsable_seeds": 0,
+  "pairs_truncated": false,
+  "direction_summary": {
+   "方向可疑": 37,
+   "方向未定": 19
+  },
+  "direction_enabled": true
+ },
+ "engine_notes": [
+  "extra: 启用：加载 600 条（支持>=1），编译通过 590，编译失败 0，★元数≠2 丢弃 10 条（arity 分布 {2: 590, 3: 10}）",
+  "mono: 启用：加载 3256 条 -> arity=1 共 2793 条，保留 903（需共试剂的不含，按需共试剂剔除 1890）；隐含环境：不需氧化还原 99、需还原 337、需氧化 467，编译失败 0；★元数≥2 丢弃 463 条（arity 分布 {1: 2793, 2: 415, 3: 36, 4: 10, 5: 1, 6: 1}）"
+ ]
+}

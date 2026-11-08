@@ -39,7 +39,9 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 FJ_DEFAULT = r"D:\TCMAI\data\formula_db.json"
-TCM_DEFAULT = r"D:\TCMAI\tcm.db"
+import os
+
+TCM_DEFAULT = (os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
 # ★ 药典 2025 成方制剂 overlay（我们自己从 indkb.zip 扒出来的，**不改用户的库**）
 CHP_OVERLAY = Path(__file__).resolve().parent.parent / "data" / "chp_formulas.json"
 

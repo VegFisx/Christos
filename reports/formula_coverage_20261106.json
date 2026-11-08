@@ -1,0 +1,335 @@
+{
+  "generated_at": "2026-11-06 11:12:31",
+  "protocol": "公式化两步验证 + 规则族覆盖统计",
+  "max_pairs": 120,
+  "baseline_rule_count": 28,
+  "formulas": [
+    {
+      "name": "桂枝汤",
+      "n_seeds": 5,
+      "missing_seeds": [],
+      "n_hops": 868,
+      "seconds": 22.6,
+      "targets": [
+        {
+          "status": "consistent",
+          "target": "Cinnamic acid",
+          "target_id": "HBIN020657",
+          "rule": "oxidation_aldehyde_001",
+          "primary_rule": "oxidation_aldehyde_001",
+          "rules_all": [
+            "oxidation_aldehyde_001"
+          ],
+          "from": "Cinnamaldehyde",
+          "chain": [
+            "oxidation_aldehyde_001"
+          ],
+          "label": "cinnamic_acid"
+        },
+        {
+          "status": "consistent",
+          "target": "Liquiritigenin",
+          "target_id": "HBIN006534",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "mined_extra",
+          "rules_all": [
+            "mined_extra",
+            "hydrolysis_glycoside_001",
+            "hydrolysis_acetal_001"
+          ],
+          "from": "Liquiritin",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "liquiritigenin"
+        },
+        {
+          "status": "consistent",
+          "target": "Glycyrrhetinic acid",
+          "target_id": "HBIN028184",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "mined_extra",
+          "rules_all": [
+            "mined_extra",
+            "hydrolysis_glycoside_001",
+            "hydrolysis_acetal_001"
+          ],
+          "from": "Paeoniflorin",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "glycyrrhetinic_acid"
+        },
+        {
+          "status": "not_found",
+          "target": "Paeoniflorigenone",
+          "target_id": "HBIN038605",
+          "label": "paeoniflorigenone"
+        }
+      ],
+      "rules_hit": {
+        "mined_extra": 461,
+        "mined_mono": 65,
+        "esterification": 56,
+        "elimination_dehydration_001": 43,
+        "condensation_hemiacetal_001": 42,
+        "mitsunobu": 39,
+        "condensation_glycosylation_001": 34,
+        "condensation_aldol_001": 31,
+        "esterification_intermolecular_001": 26,
+        "hydroxylation_aromatic_001": 24,
+        "esterification_transesterification_001": 22,
+        "hydrolysis_acetal_001": 20,
+        "oxidation_hydroxyl_001": 12,
+        "hydrolysis_glycoside_001": 11,
+        "rearrangement_retro_aldol_001": 10,
+        "tautomerization_keto_enol_001": 9,
+        "amidation_intermolecular_001": 7,
+        "oxidation_dehydrogenation_enone_001": 7,
+        "hydration_alkene_001": 6,
+        "cyclization_ether_001": 5,
+        "esterification_gamma_lactone_001": 5,
+        "addition_michael_thiol_001": 4,
+        "aminolysis_ester_001": 3,
+        "demethylation_aromatic_001": 3,
+        "condensation_schiff_base_001": 3,
+        "esterification_delta_lactone_001": 3,
+        "hydrolysis_ester_001": 2,
+        "oxidation_primary_alcohol_001": 2,
+        "cyclization_lactone_delta_001": 2,
+        "addition_michael_amine_001": 2,
+        "addition_thiohemiacetal_001": 2,
+        "hydration_enone_001": 2,
+        "oxidation_epoxide_001": 2,
+        "oxidation_aldehyde_001": 1
+      },
+      "new_rules": [
+        "addition_thiohemiacetal_001",
+        "condensation_hemiacetal_001",
+        "condensation_schiff_base_001",
+        "cyclization_lactone_delta_001",
+        "demethylation_aromatic_001",
+        "hydration_enone_001",
+        "oxidation_aldehyde_001",
+        "oxidation_hydroxyl_001",
+        "oxidation_primary_alcohol_001"
+      ]
+    },
+    {
+      "name": "麻黄汤",
+      "n_seeds": 4,
+      "missing_seeds": [],
+      "n_hops": 439,
+      "seconds": 9.7,
+      "targets": [
+        {
+          "status": "consistent",
+          "target": "Prunasin",
+          "target_id": "HBIN040963",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "from": "Amygdalin",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "prunasin"
+        },
+        {
+          "status": "not_found",
+          "target": "Benzaldehyde",
+          "target_id": "HBIN017734",
+          "label": "benzaldehyde"
+        },
+        {
+          "status": "not_found",
+          "target": "Benzaldehyde",
+          "target_id": "HBIN017734",
+          "label": "benzaldehyde(桥接)"
+        }
+      ],
+      "rules_hit": {
+        "mined_extra": 160,
+        "mined_mono": 53,
+        "elimination_dehydration_001": 34,
+        "esterification": 32,
+        "condensation_hemiacetal_001": 32,
+        "condensation_glycosylation_001": 26,
+        "hydrolysis_acetal_001": 18,
+        "hydroxylation_aromatic_001": 15,
+        "hydrolysis_glycoside_001": 14,
+        "condensation_aldol_001": 13,
+        "oxidation_hydroxyl_001": 12,
+        "amidation_intermolecular_001": 9,
+        "rearrangement_retro_aldol_001": 7,
+        "hydration_alkene_001": 6,
+        "amide_coupling": 5,
+        "esterification_gamma_lactone_001": 5,
+        "tautomerization_keto_enol_001": 5,
+        "addition_michael_thiol_001": 4,
+        "condensation_schiff_base_001": 3,
+        "cyclization_ether_001": 3,
+        "esterification_delta_lactone_001": 3,
+        "oxidation_dehydrogenation_enone_001": 3,
+        "cyclization_lactone_delta_001": 2,
+        "addition_michael_amine_001": 2,
+        "addition_thiohemiacetal_001": 2,
+        "hydration_enone_001": 2,
+        "oxidation_epoxide_001": 2,
+        "reductive_amination_aldehyde": 1,
+        "reductive_amination_ketone": 1,
+        "oxidation_primary_alcohol_001": 1,
+        "oxidation_aldehyde_001": 1
+      },
+      "bridge": {
+        "seed": "Prunasin",
+        "n_hops": 50,
+        "seconds": 2.2,
+        "targets": [
+          {
+            "status": "not_found",
+            "target": "Benzaldehyde",
+            "target_id": "HBIN017734",
+            "label": "benzaldehyde"
+          }
+        ]
+      },
+      "new_rules": [
+        "addition_thiohemiacetal_001",
+        "amide_coupling",
+        "condensation_hemiacetal_001",
+        "condensation_schiff_base_001",
+        "cyclization_lactone_delta_001",
+        "hydration_enone_001",
+        "oxidation_aldehyde_001",
+        "oxidation_hydroxyl_001",
+        "oxidation_primary_alcohol_001",
+        "reductive_amination_aldehyde",
+        "reductive_amination_ketone"
+      ]
+    },
+    {
+      "name": "小柴胡汤",
+      "n_seeds": 4,
+      "missing_seeds": [],
+      "n_hops": 928,
+      "seconds": 39.4,
+      "targets": [
+        {
+          "status": "consistent",
+          "target": "Saikogenin f",
+          "target_id": "HBIN042778",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "mined_extra",
+          "rules_all": [
+            "mined_extra",
+            "hydrolysis_glycoside_001",
+            "hydrolysis_acetal_001"
+          ],
+          "from": "Saikosaponin d",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "saikogenin_f"
+        },
+        {
+          "status": "not_found",
+          "target": "Saikogenin d",
+          "target_id": "HBIN042776",
+          "label": "saikogenin_d"
+        },
+        {
+          "status": "consistent",
+          "target": "Baicalein",
+          "target_id": "HBIN017508",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "from": "Baicalin",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "baicalein"
+        },
+        {
+          "status": "consistent",
+          "target": "Wogonin",
+          "target_id": "HBIN048372",
+          "rule": "hydrolysis_glycoside_001",
+          "primary_rule": "mined_extra",
+          "rules_all": [
+            "mined_extra",
+            "hydrolysis_glycoside_001",
+            "hydrolysis_acetal_001"
+          ],
+          "from": "Baicalin",
+          "chain": [
+            "hydrolysis_glycoside_001"
+          ],
+          "label": "wogonin"
+        }
+      ],
+      "rules_hit": {
+        "mined_extra": 456,
+        "esterification": 124,
+        "mined_mono": 82,
+        "mitsunobu": 72,
+        "elimination_dehydration_001": 51,
+        "condensation_glycosylation_001": 44,
+        "esterification_intermolecular_001": 34,
+        "condensation_aldol_001": 31,
+        "hydrolysis_acetal_001": 23,
+        "hydrolysis_glycoside_001": 17,
+        "oxidation_hydroxyl_001": 17,
+        "hydroxylation_aromatic_001": 14,
+        "rearrangement_retro_aldol_001": 13,
+        "amidation_intermolecular_001": 11,
+        "esterification_gamma_lactone_001": 9,
+        "esterification_delta_lactone_001": 7,
+        "tautomerization_keto_enol_001": 7,
+        "hydration_alkene_001": 6,
+        "oxidation_dehydrogenation_enone_001": 5,
+        "cyclization_lactone_delta_001": 4,
+        "cyclization_ether_001": 3,
+        "demethylation_aromatic_001": 3,
+        "oxidation_primary_alcohol_001": 2,
+        "addition_michael_thiol_001": 2,
+        "oxidation_epoxide_001": 2,
+        "addition_michael_amine_001": 1,
+        "isomerization_double_bond_001": 1,
+        "oxidation_phenol_quinone_001": 1,
+        "hydration_enone_001": 1
+      },
+      "new_rules": [
+        "cyclization_lactone_delta_001",
+        "demethylation_aromatic_001",
+        "hydration_enone_001",
+        "isomerization_double_bond_001",
+        "oxidation_hydroxyl_001",
+        "oxidation_phenol_quinone_001",
+        "oxidation_primary_alcohol_001"
+      ]
+    }
+  ],
+  "all_new_rules": [
+    "addition_thiohemiacetal_001",
+    "amide_coupling",
+    "condensation_hemiacetal_001",
+    "condensation_schiff_base_001",
+    "cyclization_lactone_delta_001",
+    "demethylation_aromatic_001",
+    "hydration_enone_001",
+    "isomerization_double_bond_001",
+    "oxidation_aldehyde_001",
+    "oxidation_hydroxyl_001",
+    "oxidation_phenol_quinone_001",
+    "oxidation_primary_alcohol_001",
+    "reductive_amination_aldehyde",
+    "reductive_amination_ketone"
+  ],
+  "saturated": false
+}

@@ -1,0 +1,27 @@
+=== 追踪 rxnmapper 的导入链 ===
+    Traceback (most recent call last):
+      File "D:\ProgramData\DSHNS\chemreact-staging\tools\diag_jaraco.py", line 14, in <module>
+        import rxnmapper
+      File "D:\ProgramData\DSHNS\chemreact-staging\libs\rxnmapper\__init__.py", line 7, in <module>
+        from .batched_mapper import BatchedMapper
+      File "D:\ProgramData\DSHNS\chemreact-staging\libs\rxnmapper\batched_mapper.py", line 4, in <module>
+        import pkg_resources
+      File "D:\ProgramData\DSHNS\chemreact-staging\libs\pkg_resources\__init__.py", line 90, in <module>
+        from jaraco.text import drop_comment, join_continuation, yield_lines
+    ModuleNotFoundError: No module named 'jaraco'
+
+=== jaraco 相关：venv 和 libs 各有什么 ===
+  venv  : （无）
+  libs  : （无）
+
+=== 谁需要 jaraco ===
+  setuptools   OK  D:\TCMAI\venv\Lib\site-packages\setuptools\__init__.py
+  pymongo      OK  D:\ProgramData\DSHNS\chemreact-staging\libs\pymongo\__init__.py
+  diskcache    OK  D:\ProgramData\DSHNS\chemreact-staging\libs\diskcache\__init__.py
+  filelock     OK  D:\TCMAI\venv\Lib\site-packages\filelock\__init__.py
+
+=== 试着只导入 jaraco ===
+  jaraco               OK
+  jaraco.text          OK
+  jaraco.context       OK
+  jaraco.functools     OK

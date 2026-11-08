@@ -1,0 +1,80 @@
+{
+ "generated_at": "2026-11-06T10:13:18+0800",
+ "note": "wide128 mono20k full 50016: 8 shards sequential, 1 worker each, seed 20261014, cond=煎煮, rounds=1, maxprod=128, extra_min_support=1, extra_limit=60000, mono_limit=20000, mono_co_reagent=1",
+ "cwd": "D:\\ProgramData\\DSHNS\\chemreact-staging",
+ "argv": [
+  "tools/make_run_manifest.py",
+  "--out",
+  "reports/paper/results/wide128_mono20k_round105/manifest.json",
+  "--note",
+  "wide128 mono20k full 50016: 8 shards sequential, 1 worker each, seed 20261014, cond=煎煮, rounds=1, maxprod=128, extra_min_support=1, extra_limit=60000, mono_limit=20000, mono_co_reagent=1"
+ ],
+ "git": {
+  "commit": "60392050b6e9c11c4263bd07fc4e86e579dae3dc",
+  "branch": "master",
+  "dirty_files": 0,
+  "last_commit_subject": "add run manifest for wide128 mono20k benchmark"
+ },
+ "python": {
+  "version": "3.12.10",
+  "executable": "D:\\TCMAI\\venv\\Scripts\\python.exe",
+  "implementation": "CPython"
+ },
+ "platform": {
+  "system": "Windows",
+  "release": "11",
+  "cpu_count": 20,
+  "machine": "AMD64"
+ },
+ "libraries": {
+  "rdkit": "2026.03.6",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "pandas": "3.0.5",
+  "zstandard": "0.25.0"
+ },
+ "env_CHEMCREACT": {
+  "CHEMCREACT_BENCH_EXTRA_LIMIT": "60000",
+  "CHEMCREACT_BENCH_EXTRA_MIN_SUPPORT": "1",
+  "CHEMCREACT_BENCH_MAXPROD": "128",
+  "CHEMCREACT_BENCH_MONO_CO_REAGENT": "1",
+  "CHEMCREACT_BENCH_MONO_LIMIT": "20000",
+  "CHEMCREACT_BENCH_OUT": "reports/paper/results/wide128_mono20k_round105",
+  "CHEMCREACT_BENCH_SHARD": "0..7/8",
+  "CHEMCREACT_BENCH_TAG": "wide128m20k_s0..s7"
+ },
+ "files": {
+  "rules/rules.json": {
+   "sha256": "33157b14504f3c25209fa51fba606612083ebd8d6e68d37a44c58ec2caf8d20e",
+   "bytes": 71931
+  },
+  "rules/paozhi_evidence.json": {
+   "sha256": "e52b48f40b844554c483fdb2617d9f1aa6a7fb52150a4606095b2f0494e66f5b",
+   "bytes": 9705
+  },
+  "rules/paozhi_adjuvants.json": {
+   "sha256": "67fd2f7a5dd120341718955ec5330353386186df86a61a97a4dcdddeaec8a0cb",
+   "bytes": 2056
+  },
+  "conditions/thresholds.json": {
+   "sha256": "6be63d4dbed5bd77d1d61819cdf7347e5919ebc88a0fb9e74c6e57365ecb3ee6",
+   "bytes": 2512
+  },
+  "conditions/kinetics.json": {
+   "sha256": "bd310e3d82aeeca0f569e50927c410a521ef4ca57431acc2cb6c119a1a466adf",
+   "bytes": 3660
+  },
+  "conditions/template_provenance.json": {
+   "sha256": "c45e4f4cae8c1916b7b57c2b358ca8d0c82b1e048d58cb8f8cffe10de14aea98",
+   "bytes": 16223
+  },
+  "core/constants_provenance.json": {
+   "sha256": "ab6e1f93abc0e9dc24f0d91a2e2ff432130ee2d9ef5922737bfaa17c79543b37",
+   "bytes": 6016
+  },
+  "libs/smartreact/data/templates.txt": {
+   "sha256": "57ce24d92eafec0b5a4fa8772272ff204ccba8a0f06ece54664a41f8dd9dcda4",
+   "bytes": 5040194
+  }
+ }
+}

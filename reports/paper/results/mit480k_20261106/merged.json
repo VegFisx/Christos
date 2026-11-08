@@ -1,0 +1,26 @@
+{
+  "n_reactions": 39176,
+  "files": [
+    "forward_official_test__mit_s0.jsonl",
+    "forward_official_test__mit_s1.jsonl",
+    "forward_official_test__mit_s2.jsonl",
+    "forward_official_test__mit_s3.jsonl"
+  ],
+  "recall_1step": 0.7117623034510925,
+  "top1": 0.32808352052276907,
+  "top3": 0.4579589544619155,
+  "top5": 0.5188891157851746,
+  "top10": 0.6167551562180927,
+  "mrr": 0.4187135616754088,
+  "candidate_stats": {
+    "mean": 20.12778231570349,
+    "median": 17.0,
+    "p90": 37
+  },
+  "by_class_recall": {
+    "mit": {
+      "n": 39176,
+      "rate": 0.7117623034510925
+    }
+  }
+}

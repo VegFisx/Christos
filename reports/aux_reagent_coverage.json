@@ -1,0 +1,578 @@
+{
+  "ester_schotten_baumann": {
+    "n_reactions": 5426,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.297
+      },
+      {
+        "smiles": "c1ccncc1",
+        "coverage": 0.186
+      }
+    ]
+  },
+  "esterification": {
+    "n_reactions": 12091,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "O=S(=O)(O)O",
+        "coverage": 0.25
+      },
+      {
+        "smiles": "Cl",
+        "coverage": 0.151
+      }
+    ]
+  },
+  "amide_coupling": {
+    "n_reactions": 78826,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "Cl",
+        "coverage": 0.34
+      },
+      {
+        "smiles": "CCN(C(C)C)C(C)C",
+        "coverage": 0.202
+      },
+      {
+        "smiles": "F[P-](F)(F)(F)(F)F",
+        "coverage": 0.174
+      }
+    ]
+  },
+  "williamson": {
+    "n_reactions": 33023,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.86
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.483
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.322
+      },
+      {
+        "smiles": "[H-]",
+        "coverage": 0.213
+      },
+      {
+        "smiles": "[Cs+]",
+        "coverage": 0.152
+      }
+    ]
+  },
+  "ullmann_phenol": {
+    "n_reactions": 6586,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.784
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.511
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "[Cs+]",
+        "coverage": 0.382
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.196
+      }
+    ]
+  },
+  "ester_sulfonic_schotten_baumann": {
+    "n_reactions": 9051,
+    "required": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.52
+      }
+    ],
+    "optional": []
+  },
+  "snar_amine": {
+    "n_reactions": 10578,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.32
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.179
+      }
+    ]
+  },
+  "B-H": {
+    "n_reactions": 49112,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.166
+      }
+    ]
+  },
+  "amine_acetylation": {
+    "n_reactions": 31271,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.297
+      },
+      {
+        "smiles": "Cl",
+        "coverage": 0.174
+      }
+    ]
+  },
+  "snar_alcohol": {
+    "n_reactions": 906,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[Cs+]",
+        "coverage": 0.412
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.379
+      },
+      {
+        "smiles": "[H-]",
+        "coverage": 0.316
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.215
+      }
+    ]
+  },
+  "amine_sulfonation": {
+    "n_reactions": 18283,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.22
+      },
+      {
+        "smiles": "Cl",
+        "coverage": 0.178
+      }
+    ]
+  },
+  "cross_electrophile_coupling": {
+    "n_reactions": 749,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.613
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "CC(=O)[O-]",
+        "coverage": 0.259
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.223
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.216
+      },
+      {
+        "smiles": "CC1(C)OB(B2OC(C)(C)C(C)(C)O2)OC1(C)C",
+        "coverage": 0.216
+      }
+    ]
+  },
+  "sn2_nheterocycle": {
+    "n_reactions": 12402,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.445
+      },
+      {
+        "smiles": "[K+]",
+        "coverage": 0.404
+      },
+      {
+        "smiles": "[H-]",
+        "coverage": 0.368
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.257
+      },
+      {
+        "smiles": "[Cs+]",
+        "coverage": 0.164
+      }
+    ]
+  },
+  "suzuki": {
+    "n_reactions": 41470,
+    "required": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.623
+      },
+      {
+        "smiles": "[K+]",
+        "coverage": 0.564
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.495
+      }
+    ]
+  },
+  "sonogashira": {
+    "n_reactions": 10726,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.25
+      }
+    ]
+  },
+  "C_C_decarboxylation": {
+    "n_reactions": 158,
+    "required": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.633
+      },
+      {
+        "smiles": "[K+]",
+        "coverage": 0.532
+      }
+    ],
+    "optional": []
+  },
+  "urea_formation": {
+    "n_reactions": 9203,
+    "required": [],
+    "optional": []
+  },
+  "reductive_amination_ketone": {
+    "n_reactions": 5794,
+    "required": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.767
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "CC(=O)O[BH-](OC(C)=O)OC(C)=O",
+        "coverage": 0.348
+      },
+      {
+        "smiles": "[BH3-]C#N",
+        "coverage": 0.217
+      },
+      {
+        "smiles": "CC(=O)O",
+        "coverage": 0.211
+      }
+    ]
+  },
+  "reductive_amination_aldehyde": {
+    "n_reactions": 16288,
+    "required": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.85
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "CC(=O)O[BH-](OC(C)=O)OC(C)=O",
+        "coverage": 0.415
+      },
+      {
+        "smiles": "CC(=O)O",
+        "coverage": 0.202
+      },
+      {
+        "smiles": "[BH3-]C#N",
+        "coverage": 0.16
+      },
+      {
+        "smiles": "Cl",
+        "coverage": 0.152
+      }
+    ]
+  },
+  "heck": {
+    "n_reactions": 652,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.373
+      },
+      {
+        "smiles": "Cc1ccccc1P(c1ccccc1C)c1ccccc1C",
+        "coverage": 0.336
+      }
+    ]
+  },
+  "mitsunobu": {
+    "n_reactions": 7919,
+    "required": [
+      {
+        "smiles": "c1ccc(P(c2ccccc2)c2ccccc2)cc1",
+        "coverage": 0.605
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "CCOC(=O)N=NC(=O)OCC",
+        "coverage": 0.291
+      },
+      {
+        "smiles": "CC(C)OC(=O)N=NC(=O)OC(C)C",
+        "coverage": 0.227
+      }
+    ]
+  },
+  "imidazole_condensation_acid": {
+    "n_reactions": 1148,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.234
+      },
+      {
+        "smiles": "Cl",
+        "coverage": 0.221
+      }
+    ]
+  },
+  "negishi_batch": {
+    "n_reactions": 1141,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[Br-]",
+        "coverage": 0.433
+      },
+      {
+        "smiles": "[Cl-]",
+        "coverage": 0.32
+      }
+    ]
+  },
+  "negishi_insitu": {
+    "n_reactions": 680,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "BrCCBr",
+        "coverage": 0.172
+      },
+      {
+        "smiles": "C[Si](C)(C)Cl",
+        "coverage": 0.163
+      },
+      {
+        "smiles": "[Cl-]",
+        "coverage": 0.16
+      }
+    ]
+  },
+  "ullmann_X": {
+    "n_reactions": 632,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.614
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.305
+      },
+      {
+        "smiles": "CC(=O)[O-]",
+        "coverage": 0.288
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.282
+      },
+      {
+        "smiles": "CC1(C)OB(B2OC(C)(C)C(C)(C)O2)OC1(C)C",
+        "coverage": 0.264
+      }
+    ]
+  },
+  "tetrazole_synthesis": {
+    "n_reactions": 110,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "CCC[CH2][Sn](=[O])[CH2]CCC",
+        "coverage": 0.355
+      }
+    ]
+  },
+  "imidazole_condensation_amine": {
+    "n_reactions": 816,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.297
+      },
+      {
+        "smiles": "[K+]",
+        "coverage": 0.192
+      }
+    ]
+  },
+  "snar_thiol": {
+    "n_reactions": 1424,
+    "required": [],
+    "optional": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.477
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.245
+      },
+      {
+        "smiles": "CCN(C(C)C)C(C)C",
+        "coverage": 0.18
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.174
+      }
+    ]
+  },
+  "chan_lam": {
+    "n_reactions": 605,
+    "required": [
+      {
+        "smiles": "c1ccncc1",
+        "coverage": 0.524
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "CCN(CC)CC",
+        "coverage": 0.2
+      }
+    ]
+  },
+  "oxadiazole_condensation": {
+    "n_reactions": 247,
+    "required": [],
+    "optional": []
+  },
+  "ART": {
+    "n_reactions": 54,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 1.0
+      },
+      {
+        "smiles": "[Cs+]",
+        "coverage": 0.537
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.352
+      },
+      {
+        "smiles": "O=P([O-])([O-])[O-]",
+        "coverage": 0.352
+      },
+      {
+        "smiles": "C1CCC(P(C2CCCCC2)C2CCCCC2)CC1",
+        "coverage": 0.204
+      },
+      {
+        "smiles": "[Na+]",
+        "coverage": 0.185
+      },
+      {
+        "smiles": "[F-]",
+        "coverage": 0.167
+      }
+    ]
+  },
+  "triazole_synthesis_2": {
+    "n_reactions": 19,
+    "required": [
+      {
+        "smiles": "[K+]",
+        "coverage": 0.789
+      }
+    ],
+    "optional": [
+      {
+        "smiles": "[Na]",
+        "coverage": 0.421
+      },
+      {
+        "smiles": "O=C([O-])[O-]",
+        "coverage": 0.368
+      }
+    ]
+  },
+  "triazole_synthesis_1": {
+    "n_reactions": 42,
+    "required": [],
+    "optional": []
+  },
+  "deoxygenative_coupling": {
+    "n_reactions": 2,
+    "required": [
+      {
+        "smiles": "[Na]",
+        "coverage": 0.5
+      },
+      {
+        "smiles": "[CH3][Zn][CH3]",
+        "coverage": 0.5
+      }
+    ],
+    "optional": []
+  }
+}

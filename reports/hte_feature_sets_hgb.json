@@ -1,0 +1,256 @@
+{
+  "scratch": "第十七轮阶段A：结构特征+交互项 对 同对内 AUC 的影响",
+  "caliber": {
+    "eval_set": "对比底物对（min==0 且 max>0）",
+    "pairs": 459,
+    "rows": 17246,
+    "split": "GroupKFold(5) by pair",
+    "metric": "同对内 micro/macro AUC",
+    "baseline_ref": {
+      "yield_gt_0": 0.592,
+      "yield_ge_10": 0.646
+    },
+    "feature_sets": {
+      "F0a": [
+        "NB",
+        "SUB"
+      ],
+      "F0b": [
+        "NB",
+        "DESC"
+      ],
+      "F0": [
+        "NB",
+        "SUB",
+        "DESC"
+      ],
+      "F1": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "F2": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "F3": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ]
+    },
+    "morgan_bits": 512,
+    "scale": false,
+    "maxiter": 2000,
+    "models": [
+      "hgb"
+    ],
+    "sets": [
+      "F0a",
+      "F0b",
+      "F1",
+      "F2",
+      "F3"
+    ]
+  },
+  "failures": {
+    "morgan_smiles": 0,
+    "qm_parse": 0,
+    "qm_dim_mismatch": 0,
+    "add_nan": 0
+  },
+  "results": {
+    "yield_gt_0|F0a|hgb": {
+      "micro": 0.5538543573148067,
+      "macro": 0.6498673662641212,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 201.0,
+      "features": [
+        "NB",
+        "SUB"
+      ],
+      "n_features": 1199,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_gt_0|F0b|hgb": {
+      "micro": 0.5590720462562481,
+      "macro": 0.6271914522309607,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 35.7,
+      "features": [
+        "NB",
+        "DESC"
+      ],
+      "n_features": 187,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_gt_0|F1|hgb": {
+      "micro": 0.5800432237934536,
+      "macro": 0.6645097345404141,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 313.7,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "n_features": 2747,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_gt_0|F2|hgb": {
+      "micro": 0.5968702352698234,
+      "macro": 0.653453832065158,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 397.5,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "n_features": 2805,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_gt_0|F3|hgb": {
+      "micro": 0.5845565459436677,
+      "macro": 0.6493100299397716,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 845.2,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ],
+      "n_features": 4905,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_ge_10|F0a|hgb": {
+      "micro": 0.6579586769978377,
+      "macro": 0.632725608666657,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 173.7,
+      "features": [
+        "NB",
+        "SUB"
+      ],
+      "n_features": 1199,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_ge_10|F0b|hgb": {
+      "micro": 0.6455993702392636,
+      "macro": 0.611462148447523,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 35.5,
+      "features": [
+        "NB",
+        "DESC"
+      ],
+      "n_features": 187,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_ge_10|F1|hgb": {
+      "micro": 0.6452246928781025,
+      "macro": 0.6265097149377115,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 245.3,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "n_features": 2747,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_ge_10|F2|hgb": {
+      "micro": 0.6721257704855162,
+      "macro": 0.622737622216062,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 246.6,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "n_features": 2805,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    },
+    "yield_ge_10|F3|hgb": {
+      "micro": 0.6720917089072289,
+      "macro": 0.638722011788687,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 395.5,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ],
+      "n_features": 4905,
+      "scale": false,
+      "maxiter": 2000,
+      "n_not_converged_folds": 0
+    }
+  },
+  "total_seconds": 2909.3
+}

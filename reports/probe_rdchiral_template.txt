@@ -1,0 +1,50 @@
+================================================================================================
+【无手性】[OH:1][c:2]>>[O:1]=[c:2]
+================================================================================================
+  rdchiralReaction 的属性:
+    atoms_pt_idx_to_map: dict  = {0: 1, 1: 2}
+    atoms_pt_map: dict  = {1: <rdkit.Chem.rdchem.QueryAtom object at 0x00000206C372D070>, 2: <rd
+    atoms_rt_idx_to_map: dict  = {0: 1, 1: 2}
+    atoms_rt_map: dict  = {1: <rdkit.Chem.rdchem.QueryAtom object at 0x00000206C372CF20>, 2: <rd
+    pt_bond_dirs_by_mapnum: dict  = {}
+    reaction_smarts: str  = [OH:1][c:2]>>[O:1]=[c:2]
+    required_bond_defs_coreatoms: set  = set()
+    required_rt_bond_defs: dict  = {}
+    rt_bond_dirs_by_mapnum: dict  = {}
+    rxn: ChemicalReaction  = <rdkit.Chem.rdChemReactions.ChemicalReaction object at 0x00000206C372C
+    template_p: Mol  = <rdkit.Chem.rdchem.Mol object at 0x00000206C372D000>
+    template_r: Mol  = <rdkit.Chem.rdchem.Mol object at 0x00000206C372CF90>
+  RDKit GetReactantTemplate(0): [O&H1:1][c:2]
+  底物                   RDKit原始模板    rdchiral模板  一致?
+  苯酚                        True          None  ★不一致★
+  2-丙醇                     False          None  ★不一致★
+  (R)-2-丁醇                 False          None  ★不一致★
+  (S)-2-丁醇                 False          None  ★不一致★
+  无手性2-丁醇                  False          None  ★不一致★
+  苯甲醚                      False          None  ★不一致★
+
+================================================================================================
+【带手性】[C:1][C@H:2][OH:3]>>[C:1][C:2]=[O:3]
+================================================================================================
+  rdchiralReaction 的属性:
+    atoms_pt_idx_to_map: dict  = {0: 1, 1: 2, 2: 3}
+    atoms_pt_map: dict  = {1: <rdkit.Chem.rdchem.QueryAtom object at 0x00000206C372D850>, 2: <rd
+    atoms_rt_idx_to_map: dict  = {0: 1, 1: 2, 2: 3}
+    atoms_rt_map: dict  = {1: <rdkit.Chem.rdchem.QueryAtom object at 0x00000206C372D690>, 2: <rd
+    pt_bond_dirs_by_mapnum: dict  = {}
+    reaction_smarts: str  = [C:1][C@H:2][OH:3]>>[C:1][C:2]=[O:3]
+    required_bond_defs_coreatoms: set  = set()
+    required_rt_bond_defs: dict  = {}
+    rt_bond_dirs_by_mapnum: dict  = {}
+    rxn: ChemicalReaction  = <rdkit.Chem.rdChemReactions.ChemicalReaction object at 0x00000206C372D
+    template_p: Mol  = <rdkit.Chem.rdchem.Mol object at 0x00000206C372D700>
+    template_r: Mol  = <rdkit.Chem.rdchem.Mol object at 0x00000206C372D620>
+  RDKit GetReactantTemplate(0): [C:1][C@&H1:2][O&H1:3]
+  底物                   RDKit原始模板    rdchiral模板  一致?
+  苯酚                       False          None  ★不一致★
+  2-丙醇                      True          None  ★不一致★
+  (R)-2-丁醇                  True          None  ★不一致★
+  (S)-2-丁醇                  True          None  ★不一致★
+  无手性2-丁醇                   True          None  ★不一致★
+  苯甲醚                      False          None  ★不一致★
+

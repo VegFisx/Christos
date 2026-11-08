@@ -1,0 +1,279 @@
+{
+ "built_at": "2026-10-15 15:04:33",
+ "cond_name": "煎煮",
+ "rounds": 1,
+ "max_pairs": 4000,
+ "max_products_per_pair": 8,
+ "seeds": [
+  {
+   "name": "Ammo-nium glycyrrhizinate",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O.N",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Glycyrrhizic acid",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Araboglycyrrhizin",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@H](CO7)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Apioglycyrrhizin",
+   "smiles": "CC1(C2CCC3(C(C2(CCC1OC4C(C(C(C(O4)C(=O)O)O)O)OC5C(C(CO5)(CO)O)O)C)C(=O)C=C6C3(CCC7(C6CC(CC7)(C)C(=O)O)C)C)C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Liquiritigenin-7,4'-diglucoside",
+   "smiles": "C1C(OC2=C(C1=O)C=CC(=C2)OC3C(C(C(C(O3)CO)O)O)O)C4=CC=C(C=C4)OC5C(C(C(C(O5)CO)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Liquiritigenin-7-o-beta-d-apiofuranosyl-4'-o-beta-d-gluoco-pyranoside",
+   "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O[C@H]3[C@@H]([C@](CO3)(CO)O)O)C4=CC=C(C=C4)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "18alpha-glycyrrhetinic acid",
+   "smiles": "C[C@]12CC[C@](C[C@@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "18beta-glycyrrhetinic acid",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Apioglycyrrhizin_qt",
+   "smiles": "C[C@@]12CC[C@](C[C@H]1C3=CC(=O)[C@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@@]4([C@]3(CC2)C)C)(C)C)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Neoisoliquiritigenin",
+   "smiles": "C1=CC(=CC=C1/C=C/C(=O)C2=C(C=C(C=C2)O)O)O[C@@H]3[C@H]([C@@H]([C@H]([C@@H](O3)CO)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "2'-o-methylisoliquiritigenin",
+   "smiles": "COC1=C(C=CC(=C1)O)C(=O)/C=C/C2=CC=C(C=C2)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Isoliquiritigenin 4-methylether",
+   "smiles": "COC1=CC=C(C=C1)/C=C/C(=O)C2=C(C=C(C=C2)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Liquiritigenin",
+   "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O)C3=CC=C(C=C3)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine d3",
+   "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)O[C@@H]2[C@H]([C@@H]([C@H](O[C@H]2O[C@@H]3[C@H]([C@@H]([C@H](O[C@H]3O[C@H]4C[C@]5(C(CC[C@@]6(C5C=CC7C6(CC[C@@]8(C7C[C@@](C[C@H]8OC(=O)C)(C)C(=O)O)C)C)C)C(C4)(C)C)C)C(=O)O)O)O)C(=O)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin d3",
+   "smiles": "CC1C(C(C(C(O1)OC2C(C(OC(C2O)OC3C(C(C(OC3OC4CCC5(C(C4(C)C)CCC6(C5CC=C7C6(CCC8(C7CC(CC8OC(=O)C)(C)C(=O)O)C)C)C)C)C(=O)O)O)O)C(=O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin a3",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine a3",
+   "smiles": "C[C@]12CCC(C[C@H]1C3=CC(=O)C4[C@]5(CC[C@@H](C(C5CC[C@]4(C3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine f3",
+   "smiles": "C[C@@H]1[C@H]([C@@H]([C@@H]([C@H](O1)O[C@H]2[C@@H]([C@H]([C@@H](O[C@H]2O[C@H]3[C@@H]([C@H]([C@@H](O[C@@H]3O[C@@H]4CC[C@@]5(C(C4(C)C)CC[C@]6(C5CC=C7C6(CC[C@]8(C7C[C@]9(C[C@@H]8OC9=O)C)C)C)C)C)C(=O)O)O)O)C(=O)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice-saponin f3",
+   "smiles": "CC1C(C(C(C(O1)OC2C(C(C(OC2OC3C(C(C(OC3OC4CCC5(C(C4(C)C)CCC6(C5CC=C7C6(CCC8(C7CC9(CC8OC9=O)C)C)C)C)C)C(=O)O)O)O)C(=O)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Ethyl-n-buthy-uralsaponin a esters",
+   "smiles": "CCCCOC(=O)[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)OC2CC[C@]3(C(C2(C)C)CC[C@@]4(C3C(=O)C=C5C4(CC[C@@]6(C5C[C@@](CC6)(C)C(=O)O)C)C)C)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)OCC)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Methyl-n-butyl-uralsaponin a esters",
+   "smiles": "CCCCOC(=O)[C@@H]1[C@H]([C@H]([C@H]([C@@H](O1)OC2CCC3(C(C2(C)C)CCC4(C3C(=O)C=C5C4(CCC6(C5CC(CC6)(C)C(=O)O)C)C)C)C)O[C@H]7[C@@H]([C@@H]([C@@H]([C@H](O7)C(=O)OC)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Neowilforine",
+   "smiles": "C[C@@H]1C2[C@@H]([C@@H]([C@@]3(C14CC(COC(=O)C5=C(CCC(C(=O)O2)C)N=CC=C5)(C(C4OC(=O)C)C([C@H]3OC(=O)C)OC(=O)C)C)COC(=O)C)OC(=O)C)OC(=O)C6=CC=CC=C6",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine g2",
+   "smiles": "C[C@]12CC[C@](CC1C3=CC(=O)C4[C@]5(CC[C@@H]([C@](C5CC[C@]4(C3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin g2",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H]([C@]([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine j2",
+   "smiles": "C[C@]12CC[C@](CC1C3=CCC4[C@]5(CC[C@@H]([C@](C5CC[C@]4(C3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin j2",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC[C@@H]4[C@]5(CC[C@@H]([C@]([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine k2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=CC4[C@]5(CC[C@@H]([C@](C5CC[C@]4(C3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H](C([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponinh2",
+   "smiles": "C[C@]12CC[C@@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin k2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=C[C@@H]4[C@]5(CC[C@@H]([C@]([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Uralsaponin a",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Glyyunnanprosapogenin d",
+   "smiles": "CC1(C2CCC3(C(C2(CCC1OC4C(C(C(C(O4)C(=O)O)O)O)O)C)C=CC5=C6CC(C(CC6(CCC53C)C)OC7C(C(C(C(O7)C(=O)O)O)O)O)(C)C(=O)O)C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Glycyram",
+   "smiles": "CC1(C2CCC3(C(C2(CCC1OC4C(C(C(C(O4)C(=O)O)O)O)OC5C(C(C(C(O5)C(=O)O)O)O)O)C)C(=O)C=C6C3(CCC7(C6CC(CC7)(C)C(=O)O)C)C)C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Glyeurysaponin",
+   "smiles": "CC1(C2CCC3(C(C2(CCC1OC4C(C(C(C(O4)C(=O)O)OC5C(C(C(C(O5)C(=O)O)O)O)O)O)O)C)C(=O)C=C6C3(CCC7(C6CC(CC7)(C)C(=O)O)C)C)C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Uralsaponin b",
+   "smiles": "CC1(C2CCC3(C(C2(CCC1OC4C(C(C(C(O4)C(=O)O)O)OC5C(C(C(C(O5)C(=O)O)O)O)O)O)C)C(=O)C=C6C3(CCC7(C6CC(CC7)(C)C(=O)O)C)C)C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin e2",
+   "smiles": "C[C@]12CC[C@@H](C([C@@H]1CC[C@@]3([C@@H]2C(=O)C=C4[C@]3(CC[C@@]5([C@H]4C[C@@]6(C[C@H]5OC6=O)C)C)C)C)(C)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)C(=O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin b2",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponin c2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=C[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice-saponin c2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=C[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licoricesaponine c2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=CC4[C@](C3(CC2)C)(CCC5[C@@]4(C[C@@H](CC5(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Soy lecithin",
+   "smiles": "CCCCCCCCCCCCCCCCCC(=O)O[C@H](COC(=O)CCCCCCCCCCCCCCC)COP(=O)([O-])OCC[N+](C)(C)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice glycoside a",
+   "smiles": "COC1=C(C=CC(=C1)/C=C/C(=O)OC[C@]2(CO[C@H]([C@@H]2O)O[C@@H]3[C@H]([C@@H]([C@H](O[C@H]3OC4=CC=C(C=C4)/C=C/C(=O)C5=C(C=C(C=C5)O)O)CO)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice glycoside e",
+   "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O)C3=CC=C(C=C3)O[C@H]4C([C@H]([C@@H](C(O4)CO)O)O)O[C@H]5[C@H](C(CO5)(COC(=O)C6=CNC7=CC=CC=C76)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Amylum",
+   "smiles": "CC1C(C(C(C(O1)CO)OC2C(C(C(C(O2)COC3C(C(C(C(O3)CO)OC)O)O)OC4C(C(C(C(O4)CO)OC)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Methyl 3-o-beta-d-glucopyranosyl polygalacate",
+   "smiles": "CC1(CCC2(C(C1)C3=CCC4C(C3(CC2O)C)(CCC5C4(CC(C(C5(C)CO)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)O)C)C)C(=O)OC)C",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "3,4-dicaffeoyl-5-(3-hydroxy-3-methyl) glutaroyl quinic acid",
+   "smiles": "CC(CC(=O)O)(CC(=O)OC1C[C@](CC(C1OC(=O)/C=C/C2=CC(=C(C=C2)O)O)OC(=O)/C=C/C3=CC(=C(C=C3)O)O)(C(=O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Narcissin",
+   "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)OC3=C(OC4=CC(=CC(=C4C3=O)O)O)C5=CC(=C(C=C5)O)OC)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Isoliensinine",
+   "smiles": "CN1CCC2=CC(=C(C=C2[C@H]1CC3=CC=C(C=C3)OC)OC4=C(C=CC(=C4)C[C@@H]5C6=CC(=C(C=C6CCN5C)OC)O)O)OC",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Rutin",
+   "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)OC3=C(OC4=CC(=CC(=C4C3=O)O)O)C5=CC(=C(C=C5)O)O)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  }
+ ],
+ "stats": {
+  "n_products": 13240,
+  "n_paths_kept": 13240,
+  "seconds": 145.71,
+  "ik_ok": 13240,
+  "ik_fail": 0,
+  "per_round_new": [
+   {
+    "round": 1,
+    "new": 13240,
+    "kept_raw": 13240,
+    "seconds": 139.07
+   }
+  ],
+  "n_self_products": 0,
+  "truncated": false
+ },
+ "notes": {
+  "unparsable_seeds": 0,
+  "pairs_truncated": false,
+  "direction_summary": {
+   "方向可疑": 10112,
+   "方向未定": 3128
+  },
+  "direction_enabled": true
+ },
+ "engine_notes": [
+  "extra: 启用：加载 600 条（支持>=1），编译通过 590，编译失败 0，★元数≠2 丢弃 10 条（arity 分布 {2: 590, 3: 10}）",
+  "mono: 启用：加载 3256 条 -> arity=1 共 2793 条，保留 903（需共试剂的不含，按需共试剂剔除 1890）；隐含环境：不需氧化还原 99、需还原 337、需氧化 467，编译失败 0；★元数≥2 丢弃 463 条（arity 分布 {1: 2793, 2: 415, 3: 36, 4: 10, 5: 1, 6: 1}）"
+ ]
+}

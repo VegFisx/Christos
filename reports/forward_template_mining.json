@@ -1,0 +1,144 @@
+{
+ "scratch": "ORD 自抽正向模板的增量实验（train/test 隔离）",
+ "sample": {
+  "n_sampled": 40000,
+  "seed": 20261012,
+  "usable": 26884,
+  "train": 13569,
+  "test": 13315,
+  "skip": {
+   "贡献组分=3": 2927,
+   "贡献组分=1": 8745,
+   "贡献组分=4": 560,
+   "贡献组分=5": 116,
+   "重复": 747,
+   "贡献组分=6": 14,
+   "贡献组分=7": 5,
+   "产物SMILES非法": 2,
+   "挖掘_重原子过多": 1593
+  }
+ },
+ "baseline": {
+  "train_hits": 4034,
+  "train_testable": 13569,
+  "test_hits": 3993,
+  "test_testable": 13315,
+  "train_coverage": 0.2972953054757167,
+  "test_coverage": 0.2998873450995118
+ },
+ "mining": {
+  "missed_train_tried": 7942,
+  "extracted": 7150,
+  "unique_templates": 5670,
+  "skipped_too_big": 1593,
+  "skipped_by_budget": 0,
+  "extract_budget_s": 3600,
+  "max_heavy_atoms": 70,
+  "support_hist": {
+   "2": 385,
+   "1": 5029,
+   ">5": 65,
+   "3-5": 191
+  }
+ },
+ "variants": {
+  "raw_K1": {
+   "templates": 600,
+   "targets_evaluated": 4000,
+   "incremental_hits": 548,
+   "incremental_rate_on_targets": 0.137,
+   "overall_increment": 0.09591543372136688,
+   "extrapolated": true,
+   "probe_any_product": 169,
+   "probe_any_product_rate": 0.338,
+   "seconds": 27.5
+  },
+  "raw_K2": {
+   "templates": 600,
+   "targets_evaluated": 4000,
+   "incremental_hits": 548,
+   "incremental_rate_on_targets": 0.137,
+   "overall_increment": 0.09591543372136688,
+   "extrapolated": true,
+   "probe_any_product": 169,
+   "probe_any_product_rate": 0.338,
+   "seconds": 22.0
+  },
+  "raw_K3": {
+   "templates": 254,
+   "targets_evaluated": 4000,
+   "incremental_hits": 429,
+   "incremental_rate_on_targets": 0.10725,
+   "overall_increment": 0.07508708223807735,
+   "extrapolated": true,
+   "probe_any_product": 109,
+   "probe_any_product_rate": 0.218,
+   "seconds": 8.8
+  },
+  "raw_K5": {
+   "templates": 91,
+   "targets_evaluated": 4000,
+   "incremental_hits": 279,
+   "incremental_rate_on_targets": 0.06975,
+   "overall_increment": 0.048832857679309054,
+   "extrapolated": true,
+   "probe_any_product": 39,
+   "probe_any_product_rate": 0.078,
+   "seconds": 3.9
+  },
+  "gen_K1": {
+   "templates": 600,
+   "targets_evaluated": 4000,
+   "incremental_hits": 469,
+   "incremental_rate_on_targets": 0.11725,
+   "overall_increment": 0.08208820878708223,
+   "extrapolated": true,
+   "probe_any_product": 216,
+   "probe_any_product_rate": 0.432,
+   "seconds": 34.4
+  },
+  "gen_K2": {
+   "templates": 197,
+   "targets_evaluated": 4000,
+   "incremental_hits": 429,
+   "incremental_rate_on_targets": 0.10725,
+   "overall_increment": 0.07508708223807735,
+   "extrapolated": true,
+   "probe_any_product": 190,
+   "probe_any_product_rate": 0.38,
+   "seconds": 19.7
+  },
+  "gen_K3": {
+   "templates": 85,
+   "targets_evaluated": 4000,
+   "incremental_hits": 351,
+   "incremental_rate_on_targets": 0.08775,
+   "overall_increment": 0.06143488546751783,
+   "extrapolated": true,
+   "probe_any_product": 168,
+   "probe_any_product_rate": 0.336,
+   "seconds": 11.7
+  },
+  "gen_K5": {
+   "templates": 30,
+   "targets_evaluated": 4000,
+   "incremental_hits": 237,
+   "incremental_rate_on_targets": 0.05925,
+   "overall_increment": 0.04148167480285392,
+   "extrapolated": true,
+   "probe_any_product": 63,
+   "probe_any_product_rate": 0.126,
+   "seconds": 2.9
+  }
+ },
+ "template_dump": {
+  "file": "mined_forward_templates.jsonl",
+  "n": 0
+ },
+ "eval_caps": {
+  "max_eval_targets": 4000,
+  "max_probe": 500,
+  "max_templates_per_variant": 600
+ },
+ "seconds": 1478.9
+}

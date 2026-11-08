@@ -1,0 +1,33 @@
+底物总数: 4000
+
+================================================================================
+【酰胺水解】 hydrolysis_amide_001
+  模板: [C:1](=[O:2])[N:3][C:4]>>[C:1](=[O:2])[O:5][H].[N:3][C:4]
+  有产物 0 | 无产物 3896 | 抛异常 97
+  首个异常底物: 10,12-dihy-droxypicrotoxane  C1C(NC2=C(N1)NC(=NC2=O)N)CN(C=O)C3=CC=C(C=C3)C(=O)NC(CCC(=O)O)C(=O)O
+  异常类型: KeyError: 5
+          outs = rdchiralRun(rxn, rdchiralReactants(smiles))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\main.py", line 170, in rdchiralRun
+          atoms_rt =  {a.GetAtomMapNum(): atoms_rt_map[a.GetIntProp('old_mapno')] \
+                                          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      KeyError: 5
+
+================================================================================
+【胺氧化】 oxidation_amine_001
+  模板: [CX4H2:1][NX3H2:2]>>[CX3H1:1]=[O:5].[N:2]
+  有产物 0 | 无产物 3988 | 抛异常 5
+  首个异常底物: 1,2-di-o-(9z,12z,15z-octadecatrienoyl)-3-o-(6-amino-6-deoxy-alpha-d-glucosyl)-glycerol  CCC=CCC=CCC=CCCCCCCCC(=O)OCC(COC1C(C(C(C(O1)CN)O)O)O)OC(=O)CCCCCCCC=CCC=CCC=CCC
+  异常类型: KeyError: 5
+          outs = rdchiralRun(rxn, rdchiralReactants(smiles))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\main.py", line 170, in rdchiralRun
+          atoms_rt =  {a.GetAtomMapNum(): atoms_rt_map[a.GetIntProp('old_mapno')] \
+                                          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      KeyError: 5
+
+================================================================================
+【酯化】 esterification_intramolecular_001
+  模板: [OX2H:1][CX4:2][CX3:3](=[OX1:4])[OX2H:5]>>[O:1]1[CX4:2][CX3:3](=[OX1:4])[OH:5]1
+  有产物 0 | 无产物 3993 | 抛异常 0
+

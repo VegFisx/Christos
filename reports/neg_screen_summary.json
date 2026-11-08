@@ -1,0 +1,37 @@
+{
+  "A_total": 449,
+  "B_total": 404,
+  "tally": {
+    "A:false": 157,
+    "A:strict": 147,
+    "A:weak": 145,
+    "B:false": 175,
+    "B:b_zero": 229
+  },
+  "why": {
+    "B:b_zero": 229,
+    "B:false": 175,
+    "A:weak:部分转化/未完成/原料回收": 144,
+    "A:strict:明确否定短语": 136,
+    "A:false:后处理/萃取/纯化语境": 100,
+    "A:false:组分未消耗": 11,
+    "A:strict:明确无产物": 11,
+    "A:false:组分未消耗: elute was unreacted": 9,
+    "A:false:组分未消耗: reactant remained u": 4,
+    "A:false:组分未消耗: quinazoline remaine": 3,
+    "A:false:组分未消耗: D-xylulose remained": 3,
+    "A:false:组分未消耗: There was unreacted": 3,
+    "A:false:组分未消耗: peroxide remained u": 2,
+    "A:false:组分未消耗: fraction was unreac": 2,
+    "A:false:组分未消耗: alcohol remained un": 2,
+    "A:false:组分未消耗: amine remained unre": 2,
+    "A:false:组分未消耗: 1-diphenylethylene ": 1,
+    "A:false:组分未消耗: zinc powder remaine": 1,
+    "A:weak:原料回收": 1,
+    "A:false:组分未消耗: still was unreacted": 1,
+    "A:false:组分未消耗: 2-cyclohexylpropana": 1,
+    "A:false:组分未消耗: methanol was unreac": 1,
+    "A:false:未消耗（非反应失败）": 1,
+    "A:false:组分未消耗: acid remained unrea": 1
+  }
+}

@@ -1,0 +1,30 @@
+============================================================================================
+目标: Thymidine 胸苷   CC1=CN(C2CC(O)C(CO)O2)C(=O)N1
+============================================================================================
+   [加护栏前] 切断方案  2002 个，其中【全部前体可得】的 0 个
+   [加护栏后] 切断方案  2002 个，其中【全部前体可得】的 0 个
+
+============================================================================================
+目标: 5-methoxymarmesin   COc1cc2c(cc1O)oc1cc(O)cc(O)c1c2=O
+============================================================================================
+   [加护栏前] 切断方案  1972 个，其中【全部前体可得】的 642 个
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+   [加护栏后] 切断方案  1928 个，其中【全部前体可得】的 642 个
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+        [ester_schotten_baumann] CCl + O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12
+
+============================================================================================
+目标: CCNC(C)=O 乙酰胺   CCNC(C)=O
+============================================================================================
+   [加护栏前] 切断方案  1664 个，其中【全部前体可得】的 88 个
+        [amide_coupling] CC(N)=O + CCO
+        [amide_coupling] CC(=O)O + CCN
+        [amide_coupling] CC(N)=O + CCO
+   [加护栏后] 切断方案  1440 个，其中【全部前体可得】的 88 个
+        [amide_coupling] CC(N)=O + CCO
+        [amide_coupling] CC(=O)O + CCN
+        [amide_coupling] CC(N)=O + CCO
+

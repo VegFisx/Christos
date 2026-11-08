@@ -1,0 +1,62 @@
+{
+ "generated_at": "2026-11-07T20:04:52",
+ "data": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\rank_dataset_20261107.jsonl",
+ "n_rows": 257444,
+ "results": [
+  {
+   "label": "random-half",
+   "baseline": {
+    "n": 6062,
+    "recall_any": 0.9211,
+    "top1": 0.4254,
+    "top5": 0.6793,
+    "mrr": 0.546
+   },
+   "learned": {
+    "n": 6062,
+    "recall_any": 0.9211,
+    "top1": 0.6777,
+    "top5": 0.8999,
+    "mrr": 0.7735
+   },
+   "delta_top1": 0.2523
+  },
+  {
+   "label": "class-disjoint(1-5 -> 6-10)",
+   "baseline": {
+    "n": 3774,
+    "recall_any": 0.9353,
+    "top1": 0.0861,
+    "top5": 0.3747,
+    "mrr": 0.2393
+   },
+   "learned": {
+    "n": 3774,
+    "recall_any": 0.9353,
+    "top1": 0.1932,
+    "top5": 0.5567,
+    "mrr": 0.3615
+   },
+   "delta_top1": 0.1071
+  },
+  {
+   "label": "random-half, no rank feature",
+   "baseline": {
+    "n": 6062,
+    "recall_any": 0.9211,
+    "top1": 0.4254,
+    "top5": 0.6793,
+    "mrr": 0.546
+   },
+   "learned": {
+    "n": 6062,
+    "recall_any": 0.9211,
+    "top1": 0.7032,
+    "top5": 0.902,
+    "mrr": 0.7886
+   },
+   "delta_top1": 0.2778
+  }
+ ],
+ "caveat": "标签=候选是否等于真产物；训练不使用真产物做特征；随机半切分属同分布评估，类别不交叉那一组才是泛化证据。"
+}

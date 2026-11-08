@@ -13,6 +13,7 @@ chemreact 数据源：从 tcm.db 只读取成分
 from __future__ import annotations
 
 import difflib
+import json
 import re
 import sqlite3
 import sys
@@ -27,9 +28,27 @@ for _p in (_STAGE / "core",):
 
 from engine import Compound  # noqa: E402
 
-DEFAULT_DB = r"D:\TCMAI\tcm.db"
+import os
+
+DEFAULT_DB = (os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
+# ★ 环境变量 CHEMREACT_TCM_DB 指向替代库（例如仓库里随附的脱敏子集
+#   data/tcm_subset.db），便于审稿人在没有原始 tcm.db 时重跑验证脚本。
 # ★ 最近一次解析命中信息（给桥接打印用）：{"query":…, "matched":…, "how":…}
 LAST_RESOLVE: Dict[str, str] = {}
+
+# ★ 第三档立体补录（默认关，见下方取数处的说明）：``compounds`` 表里
+#   ``isomeric_smiles`` 为空的 261 个成分中，162 个已按「公式 + 去立体后规范
+#   SMILES」核验补到 isomeric SMILES（tools/fill_missing_stereo.py）。
+_STEREO_FILL_ON = (os.environ.get("CHEMCREACT_STEREO_FILL") or "").strip().lower() in (
+    "1", "true", "yes", "on")
+_STEREO_FILL: Dict[str, dict] = {}
+if _STEREO_FILL_ON:
+    try:
+        _sf = Path(__file__).resolve().parent.parent / "data" / "tcm_stereo_fill.json"
+        if _sf.exists():
+            _STEREO_FILL = json.loads(_sf.read_text(encoding="utf-8")).get("compounds", {}) or {}
+    except Exception as _ex:                      # noqa: BLE001  兜底：读不到就当没有
+        print(f"   [warn] 立体补录文件读取失败：{type(_ex).__name__}: {_ex}")
 
 
 def _norm(s: str) -> str:
@@ -193,7 +212,8 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
             WHERE hc.herb_id IN ({ph})
               AND c.smiles IS NOT NULL AND c.smiles != ''
               AND LENGTH(c.smiles) > 3
-              AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN')
+              AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN',
+                                   'Not Available','not available','NULL','null')
             ORDER BY c.mol_weight DESC
             """,
             ids,
@@ -215,6 +235,14 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
             use = (smiles or "").strip()
         if not use:
             continue
+        # 第三档（默认关）：库里两列都没有立体、但确有手性中心的 261 个成分，
+        # 用 data/tcm_stereo_fill.json 里核验过的 isomeric SMILES（公式 + 去立体
+        # 后规范 SMILES 必须一致，见 tools/fill_missing_stereo.py）。
+        # 目前 162/261 补到。要启用：$env:CHEMCREACT_STEREO_FILL = "1"
+        if "@" not in use and _STEREO_FILL_ON and ing_id in _STEREO_FILL:
+            _fill = (_STEREO_FILL[ing_id].get("smiles") or "").strip()
+            if _fill:
+                use = _fill
         smiles = use
 
         if smiles in seen:

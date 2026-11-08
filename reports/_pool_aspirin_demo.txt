@@ -1,0 +1,3 @@
+salicylic acid	O=C(O)c1ccccc1O
+acetic anhydride	CC(=O)OC(C)=O
+acetic acid	CC(=O)O

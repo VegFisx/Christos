@@ -1,0 +1,16 @@
+{
+ "n": 400,
+ "supported_rate_loose": 0.935,
+ "supported_rate_strict": 0.935,
+ "codes_loose": {
+  "supported": 374,
+  "artifact_section_label": 21,
+  "name_missing": 5
+ },
+ "codes_strict": {
+  "supported": 374,
+  "artifact_section_label": 21,
+  "name_missing": 5
+ },
+ "loose_only_examples": []
+}

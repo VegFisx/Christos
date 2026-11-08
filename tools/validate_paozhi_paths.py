@@ -38,11 +38,33 @@ import reaction_paths as rp              # noqa: E402
 import validate_literature_conversions as V   # noqa: E402
 from validate_literature_paths import run_once  # noqa: E402  两步验证的第一步
 
-DB = "file:D:/TCMAI/tcm.db?mode=ro"
+import os
+
+_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
+DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 OUT_JSON = ROOT / "reports" / "paozhi_paths_20261104.json"
 
+# 本地库没有、但 PubChem 有的目标结构（由 tools/fetch_target_structures.py 抓取）。
+# 只收录能按 CID 取到的：THSG 苷元与 JNB 开环酸在 PubChem 无名录条目，仍只能比分子式。
+_TS_PATH = ROOT / "data" / "target_structures.json"
+PUB_TARGETS = {}
+if _TS_PATH.exists():
+    _ts = json.loads(_TS_PATH.read_text(encoding="utf-8"))
+    PUB_TARGETS = _ts.get("compounds", {})
+
+# tcm.db 的 smiles 列没有立体层（inchi_key 列有）：直接拿它跑，产物必然也是平面结构，
+# 结构级对照就只能停在骨架层。这里存同一条目的 isomeric SMILES（由
+# tools/fetch_seed_structures.py 按 CID 从 PubChem 取，公式须与库一致）。
+# 有立体种子时优先用它，并在结果里记 seed_smiles_source。
+_SEED_PATH = ROOT / "data" / "seed_structures.json"
+SEED_STEREO = {}
+if _SEED_PATH.exists():
+    _ss = json.loads(_SEED_PATH.read_text(encoding="utf-8"))
+    SEED_STEREO = _ss.get("seeds", {})
+
 # (标签, 种子 ingredient_id, 条件档, [(目标标签, 匹配方式, 值, 文献预期的规则族前缀)], 桥接中间体 id)
-# 匹配方式："key" 用 tcm.db 的 ingredient_id 取 InChIKey；"formula" 只能用分子式。
+# 匹配方式："key" 用 tcm.db 的 ingredient_id 取 InChIKey；"formula" 只能用分子式；
+# "pubchem" 用 data/target_structures.json 里的 InChIKey（先全键、再骨架前 14 位）。
 CASES = [
     ("ginsenoside_Rb1", "HBIN027729", "炮制·蒸制", [
         ("Rg3", "key", "HBIN003457", ("hydrolysis_glycoside",)),
@@ -56,11 +78,13 @@ CASES = [
         ("norarecoline", "key", "HBIN028561", ("demethylation",)),
     ], ""),
     ("CATR", "HBIN019719", "炮制·炒黄", [
-        # 文献 A4：苍耳子砂炒是「加热脱羧」；ATR 骨架库里没有条目 → 只能分子式级
-        ("ATR 骨架", "formula", "C30H46O16S2", ("decarboxylation",)),
+        # 文献 A4：苍耳子砂炒是「加热脱羧」；ATR 骨库里没有条目，
+        # 2026-11-07 起改用 PubChem CID 442005（Atractylosidic acid，C30H46O16S2）。
+        ("ATR 骨架", "pubchem", "atractylosidic_acid", ("decarboxylation",)),
     ], ""),
     ("JNB", "HBIN031562", "炮制·醋炙", [
-        # 文献 A2：狼毒醋制是内酯/环氧开环；C20H28O5 库里 20 个同分异构
+        # 文献 A2：狼毒醋制是内酯/环氧开环；C20H28O5 库里 20 个同分异构，
+        # 且 PubChem 无「JNB 开环酸」条目（只有本体 CID 161954）→ 仍只能比分子式。
         ("JNB 开环酸", "formula", "C20H28O5", ("hydrolysis_lactone", "hydrolysis_epoxide", "epoxide")),
     ], ""),
     # 附子：双酯型生物碱 → 单酯型（炮制减毒）。文献 C2：酯水解（hydrolysis_ester_001）。
@@ -76,8 +100,15 @@ CASES = [
 
 
 def db_row(cur, iid):
-    cur.execute("SELECT ingredient_id, name_en, formula, smiles, inchi_key "
-                "FROM compounds WHERE ingredient_id=?", (iid,))
+    """读一条成分；结构列与生产路径一致（sources/herb.py 优先 isomeric_smiles）。
+
+    注意 ``smiles`` 列**没有立体层**，只有 ``isomeric_smiles`` 有（31,646 行里
+    19,043 行带 @）。以前这里直接取 ``smiles``，导致对照天然只能到骨架层。
+    """
+    cur.execute(
+        "SELECT ingredient_id, name_en, formula, "
+        "       COALESCE(isomeric_smiles, smiles), smiles, inchi_key "
+        "FROM compounds WHERE ingredient_id=?", (iid,))
     return cur.fetchone()
 
 
@@ -87,6 +118,30 @@ def match_target(hops, kind, value, prefixes=()):
     ``formula`` 匹配会有多个候选（同分异构），此时**优先取反应族符合文献的那个**，
     否则会误判成「规则族不对」——2026-11-04 第一版就踩了这个坑。
     """
+    match_target.last_level = None
+    if kind == "pubchem":
+        tgt = PUB_TARGETS.get(value) or {}
+        want = (tgt.get("inchikey") or "").upper()
+        skel = (tgt.get("skeleton_prefix") or "").upper()
+        if not want:
+            match_target.last_level = "missing"
+            return None
+        ranked = []
+        for h in hops:
+            try:
+                key = V.full_inchikey(h.product).upper()
+            except Exception:
+                continue
+            ranked.append((h, key))
+        for h, key in ranked:                 # 先要全键一致（含立体）
+            if key == want:
+                match_target.last_level = "full"
+                return h
+        for h, key in ranked:                 # 再退到骨架一致
+            if skel and key[:14] == skel:
+                match_target.last_level = "skeleton"
+                return h
+        return None
     if kind == "formula":
         cands = [h for h in hops
                  if h.product_formula and h.product_formula.upper() == value.upper()]
@@ -129,10 +184,27 @@ def family_ok(rule_id, prefixes):
     return any(rid.startswith(p.lower()) or p.lower() in rid for p in prefixes)
 
 
+def _eff_kind(kind):
+    """把 pubchem 匹配方式按实际命中深度细化（全键 = 结构级，骨架 = 仅骨架）。"""
+    if kind != "pubchem":
+        return kind
+    lvl = getattr(match_target, "last_level", None)
+    if lvl == "full":
+        return "pubchem_full"
+    if lvl == "skeleton":
+        return "pubchem_skeleton"
+    return "pubchem_miss"
+
+
 def _judge(hit, kind, prefixes):
     """把一次命中翻成 (status, 说明)。"""
     ok_family = any(family_ok(x, prefixes) for x in rules_of(hit))
-    level = "structure" if kind == "key" else "formula"
+    if kind == "pubchem_full":
+        level = "structure"
+    elif kind == "pubchem_skeleton":
+        level = "skeleton"
+    else:
+        level = "structure" if kind == "key" else "formula"
     item = {
         "rule": hit.rule, "rules_all": rules_of(hit), "product_formula": hit.product_formula,
         "co_product": bool(hit.co), "match_level": level,
@@ -144,6 +216,9 @@ def _judge(hit, kind, prefixes):
     elif level == "formula":
         item["status"] = "formula_only"
         item["why"] = "只有分子式命中（同分异构未区分）"
+    elif level == "skeleton":
+        item["status"] = "skeleton_only"
+        item["why"] = "骨架一致（InChIKey 前 14 位相同），立体未区分"
     else:
         item["status"] = "consistent"
     return item
@@ -159,7 +234,14 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
     row["seed_name"] = seed[1]
     row["seed_formula"] = seed[2]
 
-    hops1, sec1 = run_once((seed[1], seed[3], "tcm.db:paozhi-literature"), cond_name=cond)
+    seed_smi = seed[3]
+    seed_src = "tcm.db:isomeric" if "@" in (seed_smi or "") else "tcm.db:flat"
+    _st = SEED_STEREO.get(seed_id) or {}
+    if _st.get("formula_matches_db") and _st.get("smiles"):
+        seed_smi, seed_src = _st["smiles"], "pubchem:isomeric"
+    row["seed_smiles_source"] = seed_src
+
+    hops1, sec1 = run_once((seed[1], seed_smi, "tcm.db:paozhi-literature"), cond_name=cond)
     row["seconds_round1"] = sec1
     row["n_round1"] = len({h.product for h in hops1})
 
@@ -167,10 +249,10 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
     for label, kind, val, prefixes in targets:
         if kind == "key":
             t = db_row(cur, val)
-            if not t or not t[4]:
+            if not t or not t[5]:
                 resolved.append((label, kind, "", prefixes))
                 continue
-            resolved.append((label, kind, t[4][:14].upper(), prefixes))
+            resolved.append((label, kind, t[5][:14].upper(), prefixes))
         else:
             resolved.append((label, kind, val, prefixes))
 
@@ -182,7 +264,7 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
             continue
         hit = match_target(hops1, kind, val, prefixes)
         if hit is not None:
-            item = _judge(hit, kind, prefixes)
+            item = _judge(hit, _eff_kind(kind), prefixes)
             item["target"] = label
             item["round"] = 1
             results.append(item)
@@ -206,7 +288,7 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
                 if hit is None:
                     item["status"] = "miss"
                 else:
-                    new = _judge(hit, kind, prefixes)
+                    new = _judge(hit, _eff_kind(kind), prefixes)
                     new["target"] = label
                     new["round"] = 2
                     new["via"] = bridge[1]

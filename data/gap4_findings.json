@@ -1,0 +1,40 @@
+{
+ "generated_for": "药典真缺口最后 4 味（本地核对）",
+ "items": [
+  {
+   "herb": "小驳骨",
+   "latin_in_chp": "Gendarussa vulgaris Nees（药典正文）",
+   "coconut_species_like_gendarussa": [
+    "justicia gendarussa"
+   ],
+   "coconut_species_like_g.vulgaris": []
+  },
+  {
+   "herb": "哈蟆油",
+   "latin_in_chp": "Rana dybowskii（蛙科动物）",
+   "coconut_species_like_dybowskii": [],
+   "coconut_species_like_rana dybowskii": []
+  },
+  {
+   "herb": "艾片(左旋龙脑)",
+   "latin_in_chp": "无拉丁（加工品：(1S)-龙脑）",
+   "coconut_species_like_borneol": [],
+   "coconut_species_like_": "—"
+  },
+  {
+   "herb": "土鳖虫(䗪虫)",
+   "latin_in_chp": "含生僻字；地鳖（昆虫）",
+   "coconut_species_like_eupolyphaga": [
+    "eupolyphaga sinensis"
+   ],
+   "coconut_species_like_steleophaga": []
+  }
+ ],
+ "borneol_in_tcmdb": [
+  [
+   "3,6,6-trimethyl bicyclo[3.1.1]-2-heptanol",
+   "C10H18O",
+   "DODVNKCHFWJRHU-RYPBNFRJSA-N"
+  ]
+ ]
+}

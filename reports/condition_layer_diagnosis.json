@@ -1,0 +1,84 @@
+{
+ "what": "条件层诊断：activation 是否真的随真实条件变化、是否有判别力",
+ "rule": "B-H",
+ "data": {
+  "csv": "BH_HTE_Curated_Dataset_v20260219.csv",
+  "n_groups": 5752,
+  "n_groups_used": 300,
+  "n_rows_used": 10345,
+  "min_cond": 8,
+  "assumed_temperature_C": 100.0
+ },
+ "activation_distribution": {
+  "0.5": 8508,
+  "1.0": 1590,
+  "0.6": 247
+ },
+ "activation_mean": 0.5792,
+ "activation_stdev": 0.18,
+ "within_pair_zero_variance_groups": 125,
+ "within_pair_groups": 300,
+ "auc_by_pair": {
+  "auc": 0.5192,
+  "wins": 19197,
+  "ties": 110934,
+  "losses": 13682
+ },
+ "activation_by_solvent": {
+  "Toluene": {
+   "n": 1557,
+   "mean": 0.6092
+  },
+  "DME": {
+   "n": 9,
+   "mean": 0.5111
+  },
+  "1,4-Dioxane": {
+   "n": 2638,
+   "mean": 0.6012
+  },
+  "tBuOH": {
+   "n": 4,
+   "mean": 1.0
+  },
+  "DMSO": {
+   "n": 2712,
+   "mean": 0.5025
+  },
+  "t-AmOH": {
+   "n": 2124,
+   "mean": 0.6434
+  },
+  "DMA": {
+   "n": 613,
+   "mean": 0.5171
+  },
+  "2-Me-THF": {
+   "n": 432,
+   "mean": 0.6157
+  },
+  "Anisole": {
+   "n": 3,
+   "mean": 1.0
+  },
+  "MeCN": {
+   "n": 144,
+   "mean": 0.5333
+  },
+  "THF": {
+   "n": 109,
+   "mean": 0.5229
+  }
+ },
+ "activation_by_catalyst_class": {
+  "metal": {
+   "n": 10208,
+   "mean": 0.5793
+  },
+  "other": {
+   "n": 137,
+   "mean": 0.5715
+  }
+ },
+ "seconds": 7.9
+}

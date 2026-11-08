@@ -1,0 +1,798 @@
+{
+ "n_targets": 5002,
+ "lib": "lib_uspto50k_excl_v2_freq10.jsonl",
+ "workers": 4,
+ "lib_templates": 18232,
+ "blacklist_in_lib": 80,
+ "blacklist_missing_n": 1,
+ "cut_stats": {
+  "mean_cuts": 659.0027988804478,
+  "total_cuts": 3296332
+ },
+ "any_hit": 4597,
+ "any_hit_rate": 0.919,
+ "topk": {
+  "top1": {
+   "n": 754,
+   "rate": 0.1507
+  },
+  "top3": {
+   "n": 1361,
+   "rate": 0.2721
+  },
+  "top5": {
+   "n": 1681,
+   "rate": 0.3361
+  },
+  "top10": {
+   "n": 2169,
+   "rate": 0.4336
+  },
+  "top50": {
+   "n": 3434,
+   "rate": 0.6865
+  }
+ },
+ "by_class_any_hit": {
+  "1": {
+   "n": 1493,
+   "rate": 0.923
+  },
+  "10": {
+   "n": 26,
+   "rate": 0.8846
+  },
+  "2": {
+   "n": 1231,
+   "rate": 0.9602
+  },
+  "3": {
+   "n": 573,
+   "rate": 0.8115
+  },
+  "4": {
+   "n": 90,
+   "rate": 0.5444
+  },
+  "5": {
+   "n": 75,
+   "rate": 0.76
+  },
+  "6": {
+   "n": 809,
+   "rate": 0.9765
+  },
+  "7": {
+   "n": 454,
+   "rate": 0.9471
+  },
+  "8": {
+   "n": 73,
+   "rate": 0.9726
+  },
+  "9": {
+   "n": 178,
+   "rate": 0.8539
+  }
+ },
+ "in_sources_subset": {
+  "n": 252,
+  "any_hit_rate": 0.9167
+ },
+ "ustat": {
+  "mcs_calls": 2647,
+  "mcs_skipped_by_bound": 0,
+  "mcs_cache_hit": 58,
+  "mcs_timeout": 0,
+  "big_molecule_deterministic": 123,
+  "r1_pass_available": 0,
+  "avail_check_error": 0,
+  "r1_deterministic": 10629
+ },
+ "blacklist_on_50k": {
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>F-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>N-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>O-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[c:2]:[cH;D2;+0:1]:[c:3]>>C-[c;H0;D3;+0:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 4563,
+   "n_cut": 56310,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 56310
+   }
+  },
+  "[#7:2]-[CH2;D2;+0:1]-[C:3]>>O=[C;H0;D3;+0:1](-[#7:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 2295,
+   "n_cut": 5288,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 5288
+   }
+  },
+  "[C:2]-[CH2;D2;+0:1]-[#7:3]-[CH2;D2;+0:4]-[C:5]>>O=[C;H0;D3;+0:1](-[C:2])-[#7:3]-[C;H0;D3;+0:4](=O)-[C:5]": {
+   "kind": "r2_family",
+   "n_prod": 1276,
+   "n_cut": 4474,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 4474
+   }
+  },
+  "[C:2]-[CH3;D1;+0:1]>>C-[CH2;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 2376,
+   "n_cut": 5495,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 5495
+   }
+  },
+  "[C:2]-[CH3;D1;+0:1]>>Cl-[CH2;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 2376,
+   "n_cut": 5495,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 5495
+   }
+  },
+  "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1)-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(-C)(-C)-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C-c1:c:c:c:c:c:1)-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-[C:3])-C-c1:c:c:c:c:c:1": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>F-C(-F)(-F)-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-c1:c:c:c:c:c:1)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>C=C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-C1-c2:c:c:c:c:c:2-c2:c:c:c:c:c:2-1)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-[N;H0;D3;+0:1](-[C:2])-[C:3])-c1:c:c:c:c:c:1": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[NH;D2;+0:1]-[C:3]>>O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]": {
+   "kind": "r2_family",
+   "n_prod": 1144,
+   "n_cut": 2654,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2654
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C-[Si](-C-C)(-C-C)-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C1-C-C-C-C-O-1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 1603,
+   "n_cut": 2386,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2386
+   }
+  },
+  "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 1603,
+   "n_cut": 2386,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2386
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-C(-C)-C)-C(-C)-C": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C=C-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c(-[N+](=O)-[O-]):c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>O-C(=O)-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 1603,
+   "n_cut": 2386,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 2386
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C(-c1:c:c:c:c:c:1)(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[C:2]-[OH;D1;+0:1]>>O=C-[O;H0;D2;+0:1]-[C:2]": {
+   "kind": "never_usable",
+   "n_prod": 1065,
+   "n_cut": 1152,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 1152
+   }
+  },
+  "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>N#C-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]": {
+   "kind": "r2_family",
+   "n_prod": 1767,
+   "n_cut": 3108,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 3108
+   }
+  },
+  "[c:2]:[n;H0;D2;+0:1]:[c:3]>>[O-]-[n+;H0;D3:1](:[c:2]):[c:3]": {
+   "kind": "r2_family",
+   "n_prod": 2061,
+   "n_cut": 6228,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 6228
+   }
+  },
+  "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>O-C(=O)-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]": {
+   "kind": "r2_family",
+   "n_prod": 1767,
+   "n_cut": 3108,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 3108
+   }
+  },
+  "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]": {
+   "kind": "r2_family",
+   "n_prod": 1767,
+   "n_cut": 3108,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 3108
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[C:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH2;D2;+0:3]-[OH;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 5,
+   "verdicts": {
+    "R1_残基路线": 271
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C=C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 276
+   }
+  },
+  "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 276
+   }
+  },
+  "[O;D1;H0:1]=[C:2]-[OH;D1;+0:3]>>[O;D1;H0:1]=[C:2]-[O;H0;D2;+0:3]-C-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 484
+   }
+  },
+  "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 276
+   }
+  },
+  "[C:2]-[C;H0;D3;+0:3](=[O;D1;H0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH;D2;+0:3]=[O;D1;H0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 5,
+   "verdicts": {
+    "R1_残基路线": 271
+   }
+  },
+  "[C:2]-[CH2;D2;+0:1]-[C:3]=[O;D1;H0:4]>>C-O-C(=O)-[CH;D3;+0:1](-[C:2])-[C:3]=[O;D1;H0:4]": {
+   "kind": "never_usable",
+   "n_prod": 461,
+   "n_cut": 521,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 521
+   }
+  },
+  "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>[O-;H0;D1:1]-[C:2]=[O;D1;H0:3]": {
+   "kind": "never_usable",
+   "n_prod": 478,
+   "n_cut": 484,
+   "n_usable": 8,
+   "verdicts": {
+    "R1_残基路线": 476
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[OH;D1;+0:3]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[O;H0;D2;+0:4]-C-c1:c:c:c:c:c:1": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 276
+   }
+  },
+  "[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[OH;D1;+0:4]>>N#[C;H0;D2;+0:1]-[C:2].[OH-;D0:3].[OH2;D0;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 273,
+   "n_cut": 276,
+   "n_usable": 5,
+   "verdicts": {
+    "R1_残基路线": 271
+   }
+  },
+  "[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 173,
+   "n_cut": 388,
+   "n_usable": 18,
+   "verdicts": {
+    "R1_残基路线": 370
+   }
+  },
+  "[C:1]-[C@@H;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 173,
+   "n_cut": 388,
+   "n_usable": 18,
+   "verdicts": {
+    "R1_残基路线": 370
+   }
+  },
+  "[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 173,
+   "n_cut": 388,
+   "n_usable": 18,
+   "verdicts": {
+    "R1_残基路线": 370
+   }
+  },
+  "[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 173,
+   "n_cut": 388,
+   "n_usable": 18,
+   "verdicts": {
+    "R1_残基路线": 370
+   }
+  },
+  "[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 173,
+   "n_cut": 388,
+   "n_usable": 18,
+   "verdicts": {
+    "R1_残基路线": 370
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[C:3]>>[C:1]-[C;H0;D4;+0:2]1(-[C:3])-O-C-C-[O;H0;D2;+0:4]-1": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 226
+   }
+  },
+  "[C:3]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[C:4]>>C-O-[C;H0;D4;+0:1](-[O;H0;D2;+0:2]-C)(-[C:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 226
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 8,
+   "verdicts": {
+    "R1_残基路线": 218
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 8,
+   "verdicts": {
+    "R1_残基路线": 218
+   }
+  },
+  "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[C:4]>>C-[OH;D1;+0:1].C=[C;H0;D3;+0:2](-[C:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 8,
+   "verdicts": {
+    "R3_惰性小分子": 192,
+    "R1_残基路线": 26
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 8,
+   "verdicts": {
+    "R1_残基路线": 218
+   }
+  },
+  "[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]": {
+   "kind": "never_usable",
+   "n_prod": 102,
+   "n_cut": 226,
+   "n_usable": 8,
+   "verdicts": {
+    "R1_残基路线": 218
+   }
+  },
+  "[OH;D1;+0:1]-[C:2]-[C:3]-[OH;D1;+0:4]>>C-C1(-C)-[O;H0;D2;+0:1]-[C:2]-[C:3]-[O;H0;D2;+0:4]-1": {
+   "kind": "never_usable",
+   "n_prod": 30,
+   "n_cut": 64,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 64
+   }
+  },
+  "[OH;D1;+0:1]-[C:2](-[C:3]-[OH;D1;+0:4])-[C:5]-[OH;D1;+0:6]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2](-[C:3]-[O;H0;D2;+0:4]-C(-C)=O)-[C:5]-[O;H0;D2;+0:6]-C(-C)=O": {
+   "kind": "never_usable",
+   "n_prod": 2,
+   "n_cut": 4,
+   "n_usable": 0,
+   "verdicts": {
+    "R2_前体大于目标": 4
+   }
+  },
+  "[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C@@H;D3;+0:5](-[C:6])-[OH;D1;+0:7]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C;H0;D3;+0:5](-[C:6])=[O;H0;D1;+0:7]": {
+   "kind": "never_usable",
+   "n_prod": 4,
+   "n_cut": 4,
+   "n_usable": 0,
+   "verdicts": {
+    "R1_残基路线": 4
+   }
+  },
+  "[#8:1]-[C:2](=[O;D1;H0:3])-[C;H0;D3;+0:4](=[CH2;D1;+0:6])-[CH3;D1;+0:5]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C;H0;D3;+0:4](=[CH2;D1;+0:5])-[CH3;D1;+0:6]": {
+   "kind": "noop",
+   "n_prod": 1,
+   "n_cut": 1,
+   "n_usable": 0,
+   "verdicts": {
+    "R1_残基路线": 1
+   }
+  }
+ },
+ "seconds": 591.4
+}

@@ -1,0 +1,144 @@
+{
+ "generated_at": "2026-10-12 18:03:19",
+ "complete": true,
+ "parquet": "D:\\ProgramData\\DSHNS\\chemreact-staging\\ord-data\\data\\11\\ord_dataset-1158e351757f315b93cbcbe7bc55f38e.parquet",
+ "out_dir": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\ord_condition_dataset",
+ "parquet_total_records": 1771032,
+ "n_shards_total": 178,
+ "n_shards_done": 178,
+ "n_records_processed": 1771032,
+ "rows_with_numeric_yield": 925943,
+ "yield_yield_rate_of_processed": 0.522827,
+ "yield_ratio_vs_hte_27497": 33.674,
+ "shard_rows": 10000,
+ "fail_counts": {
+  "fail_protobuf": 0,
+  "fail_no_cxsmiles": 0,
+  "fail_cxsmiles_split": 0,
+  "fail_product_unparsable": 95,
+  "fail_no_outcomes": 0,
+  "fail_no_products": 0,
+  "fail_no_yield_measurement": 806564,
+  "fail_yield_non_percentage_only": 0,
+  "fail_yield_out_of_range": 38430
+ },
+ "fail_total": 845089,
+ "flag_counts": {
+  "no_temperature": 662383,
+  "no_solvent": 128438,
+  "no_catalyst": 773071,
+  "no_reagent": 925943,
+  "no_doi": 0,
+  "no_patent": 0,
+  "no_reaction_class": 925943,
+  "no_reaction_time": 409394,
+  "no_reactant_names": 0,
+  "temp_unit_unknown": 0,
+  "temperature_zero": 40421,
+  "product_compound_without_smiles_id": 39769,
+  "multi_product": 85902,
+  "yield_multiple_measurements": 435793,
+  "yield_inconsistent": 142637
+ },
+ "availability_counts": {
+  "has_temperature": 263560,
+  "has_solvent": 797505,
+  "has_catalyst": 152872,
+  "has_reagent": 0,
+  "has_doi": 925943,
+  "has_patent": 925943,
+  "has_reaction_class": 0,
+  "has_reaction_time": 516549,
+  "has_reactant_names": 925943,
+  "has_product_smiles": 925943
+ },
+ "availability_rate_of_rows": {
+  "has_temperature": 0.28464,
+  "has_solvent": 0.86129,
+  "has_catalyst": 0.165099,
+  "has_reagent": 0.0,
+  "has_doi": 1.0,
+  "has_patent": 1.0,
+  "has_reaction_class": 0.0,
+  "has_reaction_time": 0.557863,
+  "has_reactant_names": 1.0,
+  "has_product_smiles": 1.0
+ },
+ "temperature_bins": {
+  "<=0C": 64029,
+  "0-25C": 24428,
+  "25-50C": 28087,
+  "50-80C": 64037,
+  "80-120C": 60078,
+  "120-200C": 21785,
+  ">200C": 1116
+ },
+ "temperature_units": {
+  "CELSIUS": 263550,
+  "FAHRENHEIT": 9,
+  "KELVIN": 1
+ },
+ "yield_bins": {
+  "0-10": 22813,
+  "10-20": 41333,
+  "20-30": 54548,
+  "30-40": 68796,
+  "40-50": 83969,
+  "50-60": 96630,
+  "60-70": 113056,
+  "70-80": 130852,
+  "80-90": 146542,
+  "90-100": 167404
+ },
+ "yield_measurement_details": {
+  "PERCENTYIELD": 705870,
+  "CALCULATEDPERCENTYIELD": 657653
+ },
+ "yield_chosen_details": {
+  "PERCENTYIELD": 700568,
+  "CALCULATEDPERCENTYIELD": 225375
+ },
+ "yield_out_of_range_bands": {
+  "mild_100_130": 42522,
+  "extreme_gt130": 27528,
+  "le_zero": 809
+ },
+ "reaction_class_counts": {},
+ "n_reaction_classes": 0,
+ "identifier_type_counts": {
+  "REACTION_CXSMILES": 1771032
+ },
+ "reaction_role_counts": {
+  "REACTANT": 2995185,
+  "SOLVENT": 1213259,
+  "CATALYST": 173250
+ },
+ "reaction_metadata_keys": {},
+ "n_row_groups_done": 1772,
+ "extract_seconds_summed": 846.9,
+ "progress": {
+  "updated_at": "2026-10-12 18:01:48",
+  "n_shards_total": 178,
+  "n_shards_done": 178,
+  "n_shards_failed": 0,
+  "n_records_processed_all_shards": 1771032,
+  "n_records_this_run": 1731032,
+  "rows_written_all_shards": 925943,
+  "parquet_total_records": 1771032,
+  "elapsed_s": 141.0,
+  "records_per_s": 12275.1,
+  "eta_s": 2.9,
+  "workers": 6,
+  "shard_rows": 10000
+ },
+ "shard_file_verification": {
+  "n_parquet_files": 178,
+  "parquet_rows_total": 925943,
+  "stats_rows_total": 925943,
+  "rows_match": true,
+  "mismatched_shards": [],
+  "n_mismatched": 0,
+  "unreadable": [],
+  "leftover_tmp_files": []
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-11-06 11:04:57",
+  "n_requested": 3000,
+  "n_evaluated": 3000,
+  "n_engine_errors": 0,
+  "recall_any": 0.9527,
+  "top1": 0.402,
+  "top5": 0.5697,
+  "top10": 0.6547,
+  "mrr": 0.4922,
+  "candidates": {
+    "mean": 47.0,
+    "median": 42.0,
+    "p90": 82
+  },
+  "hit_rank": {
+    "median": 2.0,
+    "share_rank1": 0.402
+  },
+  "seconds": 564.9
+}

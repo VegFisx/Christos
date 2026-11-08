@@ -1,0 +1,106 @@
+{
+ "built_at": "2026-10-15 16:54:39",
+ "cond_name": "煎煮",
+ "rounds": 1,
+ "max_pairs": 4000,
+ "max_products_per_pair": 8,
+ "seeds": [
+  {
+   "name": "6'-sinapoylspinosin",
+   "smiles": "COC1=CC(=CC(=C1O)OC)/C=C/C(=O)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)O[C@@H]3[C@H]([C@@H]([C@H](O[C@H]3C4=C(C=C5C(=C4O)C(=O)C=C(O5)C6=CC=C(C=C6)O)OC)CO)O)O)O)O)O",
+   "source": "tcm.db:白芥子"
+  },
+  {
+   "name": "Sinalbin",
+   "smiles": "C1=CC(=CC=C1CC(=NOS(=O)(=O)O)S[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO)O)O)O)O",
+   "source": "tcm.db:白芥子"
+  },
+  {
+   "name": "Gluconasturtiin",
+   "smiles": "C1=CC=C(C=C1)CCC(=NOS(=O)(=O)O)S[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO)O)O)O",
+   "source": "tcm.db:白芥子"
+  },
+  {
+   "name": "Beta-sitosterol",
+   "smiles": "CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C)C(C)C",
+   "source": "tcm.db:白芥子"
+  }
+ ],
+ "stats": {
+  "n_products": 56,
+  "n_paths_kept": 56,
+  "seconds": 1.91,
+  "ik_ok": 56,
+  "ik_fail": 0,
+  "per_round_new": [
+   {
+    "round": 1,
+    "new": 56,
+    "kept_raw": 56,
+    "seconds": 0.6
+   }
+  ],
+  "n_self_products": 0,
+  "truncated": false
+ },
+ "notes": {
+  "unparsable_seeds": 0,
+  "pairs_truncated": false,
+  "direction_summary": {
+   "方向未定": 54,
+   "方向可疑": 2
+  },
+  "direction_enabled": true
+ },
+ "engine_notes": [
+  "extra: 启用：加载 600 条（支持>=1），编译通过 590，编译失败 0，★元数≠2 丢弃 10 条（arity 分布 {2: 590, 3: 10}）",
+  "mono: 启用：加载 3256 条 -> arity=1 共 2793 条，保留 903（需共试剂的不含，按需共试剂剔除 1890）；隐含环境：不需氧化还原 99、需还原 337、需氧化 467，编译失败 0；★元数≥2 丢弃 463 条（arity 分布 {1: 2793, 2: 415, 3: 36, 4: 10, 5: 1, 6: 1}）"
+ ],
+ "selection": {
+  "白芥子": {
+   "n_available": 14,
+   "n_kept": 4,
+   "limit": 4,
+   "kept_names": [
+    "6'-sinapoylspinosin",
+    "Sinalbin",
+    "Gluconasturtiin",
+    "Beta-sitosterol"
+   ],
+   "skipped_n": 10,
+   "skipped_names_preview": [
+    "3,5,6,7,8-pentahydroxy-2-(4-methoxyphenyl)-4h-1-benzopyran-4-one",
+    "Sinapine",
+    "3,5,6,7,8-pentahydroxy-2-phenyl-4h-1-benzo-pyran-4-one",
+    "2',3',4',5',6'-pentahydroxychalcone",
+    "Gluconicacid",
+    "4-hydroxybenzoylcholine",
+    "Sinapaldehyde",
+    "4-hydroxybenzylamine",
+    "Mustard oil",
+    "sinalbine"
+   ],
+   "order_rule": "marker 优先；其次分子量降序；按结构(SMILES)去重"
+  }
+ },
+ "switches": {
+  "limit": 4,
+  "rounds": 1,
+  "cond": "煎煮",
+  "triples": false,
+  "fair_pairs": false,
+  "chp_priority": false,
+  "max_pairs": 4000,
+  "direction": true,
+  "score": true,
+  "reagents": []
+ },
+ "pair_coverage": {
+  "pairs_total": 6,
+  "pairs_used": 6,
+  "mode": "sequential",
+  "min_partners": 3,
+  "max_partners": 3,
+  "fair": false
+ }
+}

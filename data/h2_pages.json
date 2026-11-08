@@ -1,0 +1,488 @@
+{
+ "1": {
+  "url": "https://health.baidu.com/m/detail/ar_7096815533108865924",
+  "status": "ok",
+  "chars": 678
+ },
+ "2": {
+  "url": "https://baike.baidu.com/item/天台乌药散/4303675",
+  "status": "失败：HTTPError: HTTP Error 403: Forbidden"
+ },
+ "3": {
+  "url": "https://ai.so.com/search/so55a740ba7c6a53abd0ab5ba0a891631e?search=%E4%BA%94%E8%8B%93%E6%95%A3%E7%9A%84%E7%BB%84%E6%88%90%E8%8D%AF%E7%89%A9&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "status": "ok",
+  "chars": 16
+ },
+ "4": {
+  "url": "https://wenku.so.com/s?q=五苓散组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 15
+ },
+ "5": {
+  "url": "https://www.youlai.cn/ask/909750zO8VT.html",
+  "status": "ok",
+  "chars": 750
+ },
+ "6": {
+  "url": "https://ai.so.com/search/soa26fe579cc0fd39b6ec92e951c2f361e?search=%E4%BB%81%E4%B8%B9%E7%9A%84%E6%88%90%E5%88%86%E6%9C%89%E5%93%AA%E4%BA%9B&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "status": "ok",
+  "chars": 16
+ },
+ "7": {
+  "url": "https://www.jianke.com/product/172657.html",
+  "status": "ok",
+  "chars": 2500
+ },
+ "8": {
+  "url": "https://image.so.com/i?src=imageonebox&q=%E4%BD%95%E4%BA%BA%E9%A5%AE%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "status": "ok",
+  "chars": 668
+ },
+ "9": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "10": {
+  "url": "https://ai.so.com/search?search=%E4%BF%9D%E5%85%83%E6%B1%A4%E7%9A%84%E5%8E%9F%E9%85%8D%E6%96%B9%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "11": {
+  "url": "https://wenda.so.com/q/1636156445215010?src=140&q=%E4%BF%9D%E5%85%83%E6%B1%A4+%E7%BB%84%E6%88%90",
+  "status": "ok",
+  "chars": 564
+ },
+ "12": {
+  "url": "https://www.familydoctor.com.cn/q/14736289.html",
+  "status": "ok",
+  "chars": 2500
+ },
+ "13": {
+  "url": "https://baike.so.com/doc/4974659-5197421.html",
+  "status": "ok",
+  "chars": 1960
+ },
+ "14": {
+  "url": "https://wenku.so.com/s?q=六神丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "15": {
+  "url": "https://www.miaoshou.net/article/ZpNrlnOMLKM2DOd9.html",
+  "status": "ok",
+  "chars": 2500
+ },
+ "16": {
+  "url": "https://ai.so.com/search?search=%E5%87%89%E8%86%88%E6%95%A3%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "17": {
+  "url": "https://baike.so.com/doc/534508-565909.html",
+  "status": "ok",
+  "chars": 1264
+ },
+ "18": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "19": {
+  "url": "https://baike.so.com/doc/2776873-25768587.html",
+  "status": "ok",
+  "chars": 1167
+ },
+ "20": {
+  "url": "https://baike.so.com/doc/2278551-2410450.html",
+  "status": "失败：HTTPError: HTTP Error 500: Internal Server Error"
+ },
+ "21": {
+  "url": "https://baike.so.com/doc/6817399-7034427.html",
+  "status": "ok",
+  "chars": 1855
+ },
+ "22": {
+  "url": "https://wenku.so.com/s?q=化风丹 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "23": {
+  "url": "https://wenku.so.com/s?q=十灰散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "24": {
+  "url": "https://wenku.so.com/s?q=十灰散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "25": {
+  "url": "https://wenku.so.com/s?q=半夏泻心汤组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 17
+ },
+ "26": {
+  "url": "https://wenku.so.com/s?q=华盖散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "27": {
+  "url": "https://ai.so.com/search?search=%E5%8F%B3%E5%BD%92%E9%A5%AE%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "28": {
+  "url": "https://ai.so.com/search/soab4c1869772384a265088238b35208db?search=%E4%B8%AD%E8%8D%AF%E5%9B%9B%E5%90%9B%E5%AD%90%E6%B1%A4%E6%A0%87%E5%87%86%E9%85%8D%E6%96%B9&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "status": "ok",
+  "chars": 16
+ },
+ "29": {
+  "url": "https://wenku.so.com/s?q=四红丹 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "30": {
+  "url": "https://baike.so.com/doc/6727079-6941348.html",
+  "status": "失败：HTTPError: HTTP Error 500: Internal Server Error"
+ },
+ "31": {
+  "url": "https://wenku.so.com/s?q=定痛膏 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "32": {
+  "url": "https://baike.so.com/doc/7562679-7836772.html",
+  "status": "ok",
+  "chars": 1441
+ },
+ "33": {
+  "url": "https://wenku.so.com/s?q=小儿止泻片 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "34": {
+  "url": "https://baike.so.com/doc/398610-422020.html",
+  "status": "ok",
+  "chars": 1978
+ },
+ "35": {
+  "url": "https://wenku.so.com/s?q=开胸顺气丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "36": {
+  "url": "https://baike.so.com/doc/260373-275630.html",
+  "status": "ok",
+  "chars": 965
+ },
+ "37": {
+  "url": "https://baike.so.com/doc/1708950-1806789.html",
+  "status": "ok",
+  "chars": 1755
+ },
+ "38": {
+  "url": "https://wenku.so.com/s?q=栀子豉汤组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "39": {
+  "url": "https://baike.so.com/doc/30513977-32356953.html",
+  "status": "ok",
+  "chars": 2368
+ },
+ "40": {
+  "url": "https://baike.so.com/doc/6095393-6308501.html",
+  "status": "ok",
+  "chars": 814
+ },
+ "41": {
+  "url": "https://wenku.so.com/s?q=槐角地榆丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "42": {
+  "url": "https://baike.so.com/doc/2167871-2293890.html",
+  "status": "ok",
+  "chars": 2018
+ },
+ "43": {
+  "url": "https://wenku.so.com/s?q=沉香化气丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "44": {
+  "url": "https://wenku.so.com/d/dc7338b8424c144c987aac3ccc5bac96",
+  "status": "ok",
+  "chars": 46
+ },
+ "45": {
+  "url": "https://ai.so.com/search?search=%E6%B3%BB%E7%99%BD%E6%95%A3%E7%9A%84%E6%88%90%E5%88%86%E6%98%AF%E4%BB%80%E4%B9%88%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "46": {
+  "url": "https://wenku.so.com/s?q=海蛤散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "47": {
+  "url": "https://wenku.so.com/s?q=消积丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "48": {
+  "url": "https://www.cndzys.com/xshcore/quanwei_ztart/1es_3435087.html",
+  "status": "ok",
+  "chars": 350
+ },
+ "49": {
+  "url": "https://ai.so.com/search/soc25eb397e7333825d6496e11b85ad4c7?search=%E6%B6%A4%E7%97%B0%E6%B1%A4%E7%BB%84%E6%88%90-%E6%9C%89%E6%9D%A5%E5%8C%BB%E7%94%9F&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "status": "ok",
+  "chars": 16
+ },
+ "50": {
+  "url": "https://wenku.so.com/s?q=清心丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "51": {
+  "url": "https://www.youlai.cn/ask/E91F3DMgAta.html",
+  "status": "ok",
+  "chars": 945
+ },
+ "52": {
+  "url": "https://image.so.com/i?src=imageonebox&q=%E7%83%82%E7%A7%AF%E4%B8%B8%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "status": "ok",
+  "chars": 664
+ },
+ "53": {
+  "url": "https://baike.so.com/doc/9727474-10073955.html",
+  "status": "ok",
+  "chars": 1499
+ },
+ "54": {
+  "url": "http://mp.weixin.qq.com/s?src=11&amp;timestamp=1792144927&amp;ver=7030&amp;signature=9Wu5a5xwjDCgCJoTtyz29x6YyDNk2LohLHbJz3PAyNUtaPLeNX3LHS0NTFTuiSiMchDesK1l*TBxyhyzkzGQEwN5yD0ivrxxqHjgXw8-4cuQOHc7*hAPjHPuoeuzmPFJ&amp;new=1",
+  "status": "ok",
+  "chars": 75
+ },
+ "55": {
+  "url": "https://baike.so.com/doc/686884-727024.html",
+  "status": "ok",
+  "chars": 1489
+ },
+ "56": {
+  "url": "https://wenku.so.com/s?q=理中丸组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 15
+ },
+ "57": {
+  "url": "https://ai.so.com/search?search=%E7%90%86%E4%B8%AD%E4%B8%B8%E7%9A%84%E7%BB%84%E6%88%90%E9%85%8D%E6%96%B9&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "58": {
+  "url": "https://image.so.com/i?src=imageonebox&q=%E7%94%9F%E8%82%8C%E6%95%A3%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "status": "ok",
+  "chars": 681
+ },
+ "59": {
+  "url": "https://baike.so.com/doc/5991317-6204285.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "60": {
+  "url": "https://wenku.so.com/s?q=益母丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "61": {
+  "url": "https://wenku.so.com/s?q=益母丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "62": {
+  "url": "https://wenku.so.com/s?q=益阴汤 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "63": {
+  "url": "https://baike.so.com/doc/2809159-2964954.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "64": {
+  "url": "https://baike.so.com/doc/3431354-26396143.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "65": {
+  "url": "https://baike.so.com/doc/2028339-2146263.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "66": {
+  "url": "https://wenku.so.com/s?q=羚翘解毒丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "67": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "68": {
+  "url": "https://baike.so.com/doc/5977599-6190559.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "69": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "70": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "71": {
+  "url": "https://wenku.so.com/s?q=葛根芩连汤组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 17
+ },
+ "72": {
+  "url": "https://www.mfk.com/article/2324628.shtml",
+  "status": "ok",
+  "chars": 2500
+ },
+ "73": {
+  "url": "https://ai.so.com/search?search=%E8%97%BF%E9%A6%99%E6%AD%A3%E6%B0%94%E6%95%A3%E7%9A%84%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "74": {
+  "url": "https://ai.so.com/search/so190871965578097bd17bd6affd7005c3?search=%E8%A1%A5%E4%B8%AD%E7%9B%8A%E6%B0%94%E6%B1%A4%E7%BB%84%E6%88%90&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "status": "ok",
+  "chars": 16
+ },
+ "75": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "76": {
+  "url": "https://image.so.com/i?src=imageonebox&q=%E8%A1%A5%E8%82%BE%E6%98%8E%E7%9B%AE%E4%B8%B8%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "status": "ok",
+  "chars": 685
+ },
+ "77": {
+  "url": "https://wenku.so.com/s?q=调经种子丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 18
+ },
+ "78": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "79": {
+  "url": "https://baike.so.com/doc/7743052-8017147.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "80": {
+  "url": "https://baike.so.com/doc/1606631-1698412.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "81": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "82": {
+  "url": "https://wenku.so.com/s?q=通气散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 16
+ },
+ "83": {
+  "url": "https://wenku.so.com/s?q=防风通圣散组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 390
+ },
+ "84": {
+  "url": "https://baike.so.com/doc/5655320-5867969.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "85": {
+  "url": "https://baike.so.com/doc/542307-574163.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "86": {
+  "url": "https://wenku.so.com/s?q=青黛散 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 390
+ },
+ "87": {
+  "url": "https://baike.so.com/doc/763854-808305.html",
+  "status": "ok",
+  "chars": 391
+ },
+ "88": {
+  "url": "https://wenku.so.com/s?q=香砂六君子汤组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 390
+ },
+ "89": {
+  "url": "https://baike.so.com/doc/5677580-5890253.html",
+  "status": "ok",
+  "chars": 411
+ },
+ "90": {
+  "url": "https://baike.so.com/doc/4485141-4694291.html",
+  "status": "ok",
+  "chars": 411
+ },
+ "91": {
+  "url": "https://baike.so.com/doc/2325-2381.html",
+  "status": "ok",
+  "chars": 411
+ },
+ "92": {
+  "url": "https://ai.so.com/search?search=%E9%BA%BB%E5%AD%90%E4%BB%81%E4%B8%B8%E7%9A%84%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "status": "ok",
+  "chars": 16
+ },
+ "93": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "94": {
+  "url": "https://baike.so.com/doc/5385616-5622064.html",
+  "status": "ok",
+  "chars": 411
+ },
+ "95": {
+  "url": "https://wenku.so.com/s?q=黄土汤组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 390
+ },
+ "96": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "97": {
+  "url": "https://baike.so.com/doc/6282553-6496012.html",
+  "status": "ok",
+  "chars": 411
+ },
+ "98": {
+  "url": "https://wenku.so.com/s?q=黄连上清丸 组成&src=ob_zz_juhe360wenku",
+  "status": "ok",
+  "chars": 390
+ },
+ "99": {
+  "url": "",
+  "status": "没有可用的候选页面"
+ },
+ "100": {
+  "url": "https://image.so.com/i?src=imageonebox&q=%E9%BB%91%E8%99%8E%E6%95%A3%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "status": "ok",
+  "chars": 672
+ }
+}

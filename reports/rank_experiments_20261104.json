@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-11-04 13:29:48",
+  "cache": "reports/cand_cache_3000.jsonl",
+  "n": 2997,
+  "coverage": {
+    "candidates": 63945,
+    "extent_nondefault": 1286,
+    "curated": 0
+  },
+  "fixed_all": {
+    "engine": {
+      "recall_any": 0.9256,
+      "top1": 0.4271,
+      "top5": 0.6773,
+      "top10": 0.8011,
+      "mrr": 0.5471
+    },
+    "scorer": {
+      "recall_any": 0.9256,
+      "top1": 0.325,
+      "top5": 0.5485,
+      "top10": 0.7094,
+      "mrr": 0.4421
+    },
+    "scorer+sup": {
+      "recall_any": 0.9256,
+      "top1": 0.1585,
+      "top5": 0.3907,
+      "top10": 0.4998,
+      "mrr": 0.282
+    },
+    "engine+cur": {
+      "recall_any": 0.9256,
+      "top1": 0.4271,
+      "top5": 0.6773,
+      "top10": 0.8011,
+      "mrr": 0.5471
+    },
+    "engine+ext": {
+      "recall_any": 0.9256,
+      "top1": 0.3357,
+      "top5": 0.6346,
+      "top10": 0.7955,
+      "mrr": 0.472
+    },
+    "engine+cur+ext": {
+      "recall_any": 0.9256,
+      "top1": 0.3483,
+      "top5": 0.6607,
+      "top10": 0.8008,
+      "mrr": 0.4885
+    },
+    "ext_only": {
+      "recall_any": 0.9256,
+      "top1": 0.2749,
+      "top5": 0.4768,
+      "top10": 0.6266,
+      "mrr": 0.3841
+    },
+    "cur_only": {
+      "recall_any": 0.9256,
+      "top1": 0.4271,
+      "top5": 0.6773,
+      "top10": 0.8011,
+      "mrr": 0.5471
+    }
+  },
+  "grid_best_tune": {
+    "weights": [
+      0.0,
+      0.2,
+      0.0,
+      0.8,
+      0.0
+    ],
+    "tune": {
+      "recall_any": 0.9272,
+      "top1": 0.4052,
+      "top5": 0.6716,
+      "top10": 0.787,
+      "mrr": 0.5298
+    },
+    "valid": {
+      "recall_any": 0.9239,
+      "top1": 0.449,
+      "top5": 0.6831,
+      "top10": 0.8152,
+      "mrr": 0.5643
+    }
+  },
+  "grid_top5": [
+    {
+      "weights": [
+        0.0,
+        0.2,
+        0.0,
+        0.8,
+        0.0
+      ],
+      "tune": {
+        "recall_any": 0.9272,
+        "top1": 0.4052,
+        "top5": 0.6716,
+        "top10": 0.787,
+        "mrr": 0.5298
+      }
+    },
+    {
+      "weights": [
+        0.0,
+        0.4,
+        0.0,
+        0.6,
+        0.0
+      ],
+      "tune": {
+        "recall_any": 0.9272,
+        "top1": 0.4052,
+        "top5": 0.6716,
+        "top10": 0.787,
+        "mrr": 0.5298
+      }
+    },
+    {
+      "weights": [
+        0.0,
+        0.6,
+        0.0,
+        0.4,
+        0.0
+      ],
+      "tune": {
+        "recall_any": 0.9272,
+        "top1": 0.4052,
+        "top5": 0.6716,
+        "top10": 0.787,
+        "mrr": 0.5298
+      }
+    },
+    {
+      "weights": [
+        0.0,
+        0.8,
+        0.0,
+        0.2,
+        0.0
+      ],
+      "tune": {
+        "recall_any": 0.9272,
+        "top1": 0.4052,
+        "top5": 0.6716,
+        "top10": 0.787,
+        "mrr": 0.5298
+      }
+    },
+    {
+      "weights": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tune": {
+        "recall_any": 0.9272,
+        "top1": 0.4052,
+        "top5": 0.6716,
+        "top10": 0.787,
+        "mrr": 0.5298
+      }
+    }
+  ],
+  "weights_meaning": "w=[scorer, 发射序, support, curated, extent]",
+  "seconds": 47.0
+}

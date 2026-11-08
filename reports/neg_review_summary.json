@@ -1,0 +1,38 @@
+{
+  "n_candidates_reviewed": 393,
+  "n_labeled": 393,
+  "n_missing": 0,
+  "n_dup": 0,
+  "label_totals": {
+    "strict": 17,
+    "false": 290,
+    "weak": 86
+  },
+  "label_by_source": {
+    "strict|A_text": 15,
+    "false|A_text": 48,
+    "weak|A_text": 84,
+    "false|B_yield0": 227,
+    "strict|B_yield0": 2,
+    "false|B_yield0_v2": 15,
+    "weak|B_yield0_v2": 2
+  },
+  "rule_vs_llm_confusion": {
+    "rule:strict -> strict": 15,
+    "rule:strict -> false": 48,
+    "rule:strict -> weak": 84,
+    "rule:b_zero -> false": 227,
+    "rule:b_zero -> strict": 2,
+    "? -> false": 15,
+    "? -> weak": 2
+  },
+  "rule_A_strict_survived": "15/147",
+  "rule_B_bzero_survived": "2/229",
+  "strict_clean_set": 17,
+  "weak_set": 86,
+  "lead_manual_sample_12": "strict 2 / weak 5 / false 5 (=17% strict precision, 独立抽样)",
+  "outputs": [
+    "negative_clean.jsonl",
+    "negative_weak.jsonl"
+  ]
+}

@@ -1,0 +1,20 @@
+=== 10 个模板的实际参数 ===
+  煎煮: T=100  pH=6.5  气氛=air  溶剂=water  催化剂=None  时间=60
+  室温浸泡: T=25  pH=7.0  气氛=air  溶剂=water  催化剂=None  时间=1440
+  酶催化: T=37  pH=6.0  气氛=air  溶剂=water  催化剂=enzyme  时间=1440
+
+=== 逐项对比 thermal（煎煮 vs 内酰胺化）===
+  temperature  窗口[80,300]  实际 100   ✓
+  pH           窗口[1,14]  实际 6.5   ✓
+  time_min     窗口[1,1440]  实际 60   ✓
+  solvent     允许 ['water', 'aqueous', 'alcohol', 'none']  实际 water   ✓
+  catalyst    允许 [None, 'acid', 'base']  实际 None   ✓
+  atmosphere  允许 ['air', 'N2']  实际 air   ✓
+
+=== 逐项对比 ambient（室温浸泡 vs 半缩醛化）===
+  temperature  窗口[20,45]  实际 25   ✓
+  pH           窗口[4,9]  实际 7.0   ✓
+  time_min     窗口[5,2880]  实际 1440   ✓
+  solvent     允许 ['water', 'aqueous']  实际 water   ✓
+  catalyst    允许 [None, 'enzyme']  实际 None   ✓
+  atmosphere  允许 ['air', 'N2']  实际 air   ✓

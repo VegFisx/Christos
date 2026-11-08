@@ -1,0 +1,59 @@
+{
+ "n_cuts": 3320,
+ "verdict_counts": {
+  "quiet1": {
+   "R1": 3320
+  },
+  "loaded": {
+   "R1": 3320
+  },
+  "quiet2": {
+   "R1": 3320
+  }
+ },
+ "flips": {
+  "quiet1_vs_loaded": 0,
+  "loaded_vs_quiet2": 0,
+  "quiet1_vs_quiet2": 0,
+  "any_of_three": 0,
+  "ok_R1_swaps_quiet1_loaded": 0
+ },
+ "seconds": {
+  "quiet1": 3.7711679935455322,
+  "loaded": 6.068601846694946,
+  "quiet2": 3.3466758728027344
+ },
+ "ustat": {
+  "quiet1": {
+   "mcs_calls": 0,
+   "mcs_skipped_by_bound": 0,
+   "mcs_cache_hit": 0,
+   "mcs_timeout": 0,
+   "big_molecule_deterministic": 502,
+   "r1_pass_available": 0,
+   "avail_check_error": 0,
+   "r1_deterministic": 2818
+  },
+  "loaded": {
+   "mcs_calls": 0,
+   "mcs_skipped_by_bound": 0,
+   "mcs_cache_hit": 0,
+   "mcs_timeout": 0,
+   "big_molecule_deterministic": 502,
+   "r1_pass_available": 0,
+   "avail_check_error": 0,
+   "r1_deterministic": 2818
+  },
+  "quiet2": {
+   "mcs_calls": 0,
+   "mcs_skipped_by_bound": 0,
+   "mcs_cache_hit": 0,
+   "mcs_timeout": 0,
+   "big_molecule_deterministic": 502,
+   "r1_pass_available": 0,
+   "avail_check_error": 0,
+   "r1_deterministic": 2818
+  }
+ },
+ "examples": []
+}

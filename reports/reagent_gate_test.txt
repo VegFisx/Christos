@@ -1,0 +1,29 @@
+============================================================================================
+① 逐个场景看 cond_activation 的判定
+============================================================================================
+  不给试剂               mitsunobu        分数 1.00   
+  不给试剂               suzuki           分数 1.00   
+  不给试剂               amide_coupling   分数 1.00   
+
+  只给 PPh3            mitsunobu        分数 1.00   
+  只给 PPh3            suzuki           分数 0.50   条件里的试剂 ['P(c1ccccc1)(c1ccccc1)c1ccccc1'] 不在该类反应的 ORD 常用试剂 ['sodium carbonate',
+  只给 PPh3            amide_coupling   分数 0.50   条件里的试剂 ['P(c1ccccc1)(c1ccccc1)c1ccccc1'] 不在该类反应的 ORD 常用试剂 ['triethylamine', 'H
+
+  给 PPh3 + DEAD      mitsunobu        分数 1.00   
+  给 PPh3 + DEAD      suzuki           分数 0.50   条件里的试剂 ['P(c1ccccc1)(c1ccccc1)c1ccccc1', 'CCOC(=O)/N=N/C(=O)OCC'] 不在该类反应的 ORD 
+  给 PPh3 + DEAD      amide_coupling   分数 0.50   条件里的试剂 ['P(c1ccccc1)(c1ccccc1)c1ccccc1', 'CCOC(=O)/N=N/C(=O)OCC'] 不在该类反应的 ORD 
+
+  给无关试剂(CCO)         mitsunobu        分数 0.50   条件里的试剂 ['CCO'] 不在该类反应的 ORD 常用试剂 ['triphenylphosphine', 'diethyl azodicarboxyla
+  给无关试剂(CCO)         suzuki           分数 0.50   条件里的试剂 ['CCO'] 不在该类反应的 ORD 常用试剂 ['sodium carbonate', 'Na2CO3', 'potassium carb
+  给无关试剂(CCO)         amide_coupling   分数 0.50   条件里的试剂 ['CCO'] 不在该类反应的 ORD 常用试剂 ['triethylamine', 'HATU', 'DIPEA'] 中，降权至 0.5
+
+============================================================================================
+② 真实底物：条件里的试剂会不会改变产物
+============================================================================================
+  底物 12 个
+  【煎煮100°C 无试剂】产物   17  类型 ['amide_coupling', 'esterification', 'reductive_amination_aldehyde', 'reductive_amination_ketone']
+  【煎煮100°C + PPh3】产物   17  类型 ['amide_coupling', 'esterification', 'reductive_amination_aldehyde', 'reductive_amination_ketone']
+  【室温THF + PPh3+DEAD】产物   23  类型 ['amide_coupling', 'esterification', 'mitsunobu', 'reductive_amination_aldehyde', 'reductive_amination_ketone']
+
+说明：无试剂时不检查是【有意为之】—— 向后兼容，
+      否则默认条件下所有需要试剂的反应都会被拦掉。

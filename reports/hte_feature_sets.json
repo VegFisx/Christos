@@ -1,0 +1,242 @@
+{
+  "scratch": "第十七轮阶段A：结构特征+交互项 对 同对内 AUC 的影响",
+  "caliber": {
+    "eval_set": "对比底物对（min==0 且 max>0）",
+    "pairs": 459,
+    "rows": 17246,
+    "split": "GroupKFold(5) by pair",
+    "metric": "同对内 micro/macro AUC",
+    "baseline_ref": {
+      "yield_gt_0": 0.592,
+      "yield_ge_10": 0.646
+    },
+    "feature_sets": {
+      "F0a": [
+        "NB",
+        "SUB"
+      ],
+      "F0b": [
+        "NB",
+        "DESC"
+      ],
+      "F0": [
+        "NB",
+        "SUB",
+        "DESC"
+      ],
+      "F1": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "F2": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "F3": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ]
+    },
+    "morgan_bits": 512
+  },
+  "failures": {
+    "morgan_smiles": 0,
+    "qm_parse": 0,
+    "qm_dim_mismatch": 0,
+    "add_nan": 0
+  },
+  "results": {
+    "yield_gt_0|F0a|logreg": {
+      "micro": 0.5923215533409333,
+      "macro": 0.5832053033755273,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 2.7,
+      "features": [
+        "NB",
+        "SUB"
+      ],
+      "n_features": 1199
+    },
+    "yield_gt_0|F0b|logreg": {
+      "micro": 0.5478248078549627,
+      "macro": 0.5619769117906093,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 4.8,
+      "features": [
+        "NB",
+        "DESC"
+      ],
+      "n_features": 187
+    },
+    "yield_gt_0|F0|logreg": {
+      "micro": 0.5949820230885211,
+      "macro": 0.5858700001926349,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 14.2,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC"
+      ],
+      "n_features": 1211
+    },
+    "yield_gt_0|F1|logreg": {
+      "micro": 0.5820559023956957,
+      "macro": 0.5861175002064468,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 22.2,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "n_features": 2747
+    },
+    "yield_gt_0|F2|logreg": {
+      "micro": 0.580911659957738,
+      "macro": 0.5931347909184299,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 41.7,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "n_features": 2805
+    },
+    "yield_gt_0|F3|logreg": {
+      "micro": 0.5965491684794446,
+      "macro": 0.6104142566766306,
+      "comparisons": 353509,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 49.5,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ],
+      "n_features": 4905
+    },
+    "yield_ge_10|F0a|logreg": {
+      "micro": 0.6190275545552946,
+      "macro": 0.5755819865896452,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 3.1,
+      "features": [
+        "NB",
+        "SUB"
+      ],
+      "n_features": 1199
+    },
+    "yield_ge_10|F0b|logreg": {
+      "micro": 0.5987192846563943,
+      "macro": 0.567500485446363,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 5.3,
+      "features": [
+        "NB",
+        "DESC"
+      ],
+      "n_features": 187
+    },
+    "yield_ge_10|F0|logreg": {
+      "micro": 0.6114179456579056,
+      "macro": 0.5761587359699434,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 12.8,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC"
+      ],
+      "n_features": 1211
+    },
+    "yield_ge_10|F1|logreg": {
+      "micro": 0.6184586000439016,
+      "macro": 0.5774953460735329,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 23.4,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB"
+      ],
+      "n_features": 2747
+    },
+    "yield_ge_10|F2|logreg": {
+      "micro": 0.6341143106567324,
+      "macro": 0.5843052038218723,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 53.0,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD"
+      ],
+      "n_features": 2805
+    },
+    "yield_ge_10|F3|logreg": {
+      "micro": 0.6491871898188681,
+      "macro": 0.6006789042344419,
+      "comparisons": 396341,
+      "n_scored": 17246,
+      "folds": 5,
+      "seconds": 93.1,
+      "features": [
+        "NB",
+        "SUB",
+        "DESC",
+        "SB",
+        "QM",
+        "ADD",
+        "INT"
+      ],
+      "n_features": 4905
+    }
+  },
+  "total_seconds": 336.1
+}

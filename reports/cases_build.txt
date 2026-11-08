@@ -1,0 +1,41 @@
+写入 D:\ProgramData\DSHNS\chemreact-staging\tools\reaction_cases.json
+用例总数: 41
+   rule      36
+   gating    5
+
+覆盖规则 35 条:
+   addition_michael_thiol_001
+   amidation_intermolecular_001
+   aminolysis_ester_001
+   condensation_schiff_base_001
+   cyclization_ether_intra_001
+   cyclization_hemiacetal_001
+   cyclization_lactam_001
+   cyclization_lactone_delta_001
+   cyclization_lactone_gamma_001
+   decarboxylation_aromatic_001
+   decarboxylation_beta_keto_001
+   decarboxylation_cinnamic_001
+   decarboxylation_malonic_001
+   demethylation_001
+   elimination_dehydration_001
+   esterification_intermolecular_001
+   esterification_transesterification_001
+   hydrolysis_acetal_001
+   hydrolysis_amide_001
+   hydrolysis_ester_001
+   hydrolysis_glycoside_001
+   hydrolysis_sulfate_001
+   hydroxylation_aromatic_001
+   isomerization_double_bond_001
+   oxidation_aldehyde_001
+   oxidation_hydroxyl_001
+   oxidation_phenol_quinone_001
+   oxidation_primary_alcohol_001
+   oxidation_sulfide_001
+   reduction_aldehyde_001
+   reduction_double_bond_001
+   reduction_ketone_001
+   reduction_sulfoxide_001
+   retro_aldol_001
+   ring_opening_lactam_001

@@ -1,0 +1,247 @@
+{
+ "generated": "2026-10-14",
+ "criterion": "样本内切断>=1000 且 可用<=2 且 全部切断为 R2（结构上必然放大）；数据=usability_per_cut.jsonl（50k 抽样 2,930 产物）",
+ "n_entries": 29,
+ "totals": {
+  "n_cuts": 227438,
+  "n_usable": 0,
+  "n_R2": 227438
+ },
+ "n_in_prod_lib": 29,
+ "n_not_in_prod_lib": 0,
+ "skip_not_all_r2": 0,
+ "entries": [
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1)-[C:3]",
+   "freq_bench": 7,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 20,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7:2]-[CH2;D2;+0:1]-[C:3]>>O=[C;H0;D3;+0:1](-[#7:2])-[C:3]",
+   "freq_bench": 56,
+   "n_cuts": 2274,
+   "n_usable": 0,
+   "n_R2": 2274,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(-C)(-C)-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 317,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>N#C-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "freq_bench": 6,
+   "n_cuts": 1713,
+   "n_usable": 0,
+   "n_R2": 1713,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[n;H0;D2;+0:1]:[c:3]>>[O-]-[n+;H0;D3:1](:[c:2]):[c:3]",
+   "freq_bench": 4,
+   "n_cuts": 3346,
+   "n_usable": 0,
+   "n_R2": 3346,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C-c1:c:c:c:c:c:1)-[C:3]",
+   "freq_bench": 76,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-[C:3])-C-c1:c:c:c:c:c:1",
+   "freq_bench": 7,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[CH2;D2;+0:1]-[#7:3]-[CH2;D2;+0:4]-[C:5]>>O=[C;H0;D3;+0:1](-[C:2])-[#7:3]-[C;H0;D3;+0:4](=O)-[C:5]",
+   "freq_bench": 3,
+   "n_cuts": 1824,
+   "n_usable": 0,
+   "n_R2": 1824,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>F-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 6,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>N-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 6,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "freq_bench": 9,
+   "n_cuts": 1289,
+   "n_usable": 0,
+   "n_R2": 1289,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "freq_bench": 3,
+   "n_cuts": 1289,
+   "n_usable": 0,
+   "n_R2": 1289,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 10,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 22,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 10,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:4]:[cH;D2;+0:3]:[cH;D2;+0:1]:[c:2]>>C-[c;H0;D3;+0:1](:[c:2]):[c;H0;D3;+0:3](-F):[c:4]",
+   "freq_bench": 4,
+   "n_cuts": 15602,
+   "n_usable": 0,
+   "n_R2": 15602,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>O-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 4,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>F-C(-F)(-F)-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 5,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-c1:c:c:c:c:c:1)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 21,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C=C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 3,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>C-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "freq_bench": 5,
+   "n_cuts": 30064,
+   "n_usable": 0,
+   "n_R2": 30064,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-C1-c2:c:c:c:c:c:2-c2:c:c:c:c:c:2-1)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 3,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-[N;H0;D3;+0:1](-[C:2])-[C:3])-c1:c:c:c:c:c:1",
+   "freq_bench": 3,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>O-C(=O)-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "freq_bench": 10,
+   "n_cuts": 1289,
+   "n_usable": 0,
+   "n_R2": 1289,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "freq_bench": 3,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>O-C(=O)-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "freq_bench": 3,
+   "n_cuts": 1713,
+   "n_usable": 0,
+   "n_R2": 1713,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-N(-C-c1:c:c:c:c:c:1)-c1:n:c:n:c2:c(-N3-C-C-O-C-C-3):n:c(-[N;H0;D3;+0:1](-[C:2])-[C:3]):n:c:1:2",
+   "freq_bench": 5,
+   "n_cuts": 1154,
+   "n_usable": 0,
+   "n_R2": 1154,
+   "in_prod_lib": true
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "freq_bench": 6,
+   "n_cuts": 1713,
+   "n_usable": 0,
+   "n_R2": 1713,
+   "in_prod_lib": true
+  }
+ ]
+}

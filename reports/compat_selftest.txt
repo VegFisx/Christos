@@ -1,0 +1,10 @@
+predict_reactions → 5 个产物
+  C8H8O3      芳香环羟基化          COC(=O)c1ccc(O)cc1
+  CH4O        酯水解             CO [副产物]
+  C7H6O2      酯水解             O=C(O)c1ccccc1
+  C6H4O2      对二酚氧化成醌         O=C1C=CC(=O)C=C1
+  C6H6O3      芳香环羟基化          Oc1ccc(O)c(O)c1
+_LAST_RXN_STATS: 58 条规则有产出
+get_reactions(): 58 条
+REACTIONS: 58 条
+find_final_products → 5 个产物，1 轮，收敛=True

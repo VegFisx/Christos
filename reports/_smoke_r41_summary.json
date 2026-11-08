@@ -1,0 +1,98 @@
+{
+ "n_targets": 6,
+ "n_templates": 3025,
+ "usability_stats": {
+  "mcs_calls": 0,
+  "mcs_skipped_by_bound": 0,
+  "mcs_cache_hit": 0,
+  "mcs_timeout": 0,
+  "big_molecule_deterministic": 1235
+ },
+ "n_compile_fail": 0,
+ "n_templates_with_hits": 66,
+ "totals": {
+  "n_try": 3399,
+  "R2_前体大于目标": 2074,
+  "R1_残基路线": 1235,
+  "n_usable": 66,
+  "R3_惰性小分子": 24,
+  "n_unusable": 3333,
+  "usable_rate": 0.0194
+ },
+ "usable_rate": 0.0194,
+ "n_never_usable_templates": 57,
+ "example_bad": [
+  {
+   "idx": 47,
+   "n_try": 30
+  },
+  {
+   "idx": 61,
+   "n_try": 30
+  },
+  {
+   "idx": 83,
+   "n_try": 24
+  },
+  {
+   "idx": 84,
+   "n_try": 24
+  },
+  {
+   "idx": 88,
+   "n_try": 24
+  },
+  {
+   "idx": 126,
+   "n_try": 84
+  },
+  {
+   "idx": 170,
+   "n_try": 30
+  },
+  {
+   "idx": 185,
+   "n_try": 84
+  },
+  {
+   "idx": 186,
+   "n_try": 84
+  },
+  {
+   "idx": 198,
+   "n_try": 30
+  }
+ ],
+ "before_after": {
+  "note": "before=全部模板；after=砍掉 reports/retro_template_blacklist.json；同一次体检、同源聚合，不是估计。",
+  "n_blacklist_loaded": 54,
+  "n_blacklisted_with_hits": 50,
+  "before": {
+   "n_try": 3399,
+   "R2_前体大于目标": 2074,
+   "R1_残基路线": 1235,
+   "n_usable": 66,
+   "R3_惰性小分子": 24,
+   "n_unusable": 3333,
+   "usable_rate": 0.0194
+  },
+  "after": {
+   "n_try": 522,
+   "R1_残基路线": 456,
+   "n_usable": 66,
+   "n_unusable": 456,
+   "usable_rate": 0.1264
+  },
+  "delta": {
+   "n_try": 2877,
+   "n_unusable": 2877,
+   "n_usable": 0
+  }
+ },
+ "never_usable_now": {
+  "n": 57,
+  "n_in_blacklist": 50,
+  "n_new_vs_blacklist": 7
+ },
+ "seconds": 28.3
+}

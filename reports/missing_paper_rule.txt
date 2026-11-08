@@ -1,0 +1,31 @@
+已补入 1 条（status=disabled）
+
+============================================================================================
+复查：论文 23 条规则在本库的对应情况
+============================================================================================
+  ✓ 酯水解                   active    hydrolysis_ester_001
+  ✓ 糖苷水解                  active    hydrolysis_glycoside_001
+  ✓ 酰胺水解                  active    hydrolysis_amide_001
+  ✓ 硫酸酯水解                 active    hydrolysis_sulfate_001
+  ✓ 磷酸酯水解                 active    hydrolysis_phosphate_001
+  ✓ 缩醛水解                  active    hydrolysis_acetal_001
+  ✓ 半缩醛水解                 active    hydrolysis_hemiacetal_001
+  ✓ 羟基氧化                  active    oxidation_hydroxyl_001
+  ✓ 醛氧化                   active    oxidation_aldehyde_001
+  ✓ 酚氧化成醌                 active    oxidation_phenol_quinone_001
+  ✓ 胺氧化                   active    oxidation_amine_001
+  ✓ 酮还原                   active    reduction_ketone_001
+  ✓ 醌还原                   active    reduction_quinone_001
+  ✓ 脱水                    active    elimination_dehydration_001
+  ✓ 脱甲基                   active    demethylation_aromatic_001
+  ✓ 芳香酸脱羧                 active    decarboxylation_aromatic_001
+  ✓ β-酮酸脱羧                active    decarboxylation_beta_keto_001
+  ✓ 芳香环羟基化                active    hydroxylation_aromatic_001
+  ✓ 烯烃水合                  active    hydration_alkene_001
+  ✓ α,β-不饱和羰基水合           active    hydration_enone_001
+  ✓ 酮-烯醇化                 active    tautomerization_keto_enol_001
+  ✓ 酯化                    disabled  esterification_paper_original_001
+  ✓ 美拉德简化                 active    maillard_simplified_001
+
+未对应: 0 条 
+规则总数 64（启用 58，停用 6）

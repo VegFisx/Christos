@@ -1,0 +1,30 @@
+{
+ "sample_products": 1000,
+ "n_cuts": 596512,
+ "workers": 4,
+ "seed": 20261014,
+ "verdicts": {
+  "ok": 162888,
+  "R2_前体大于目标": 355245,
+  "R1_残基路线": 69931,
+  "R3_惰性小分子": 6984,
+  "R4_荒谬前体(CO2/无机小分子)": 1464
+ },
+ "usable_rate": 0.2731,
+ "usable_rate_after_blacklist": 0.3152,
+ "cuts_after_blacklist": 516580,
+ "r1_n": 69931,
+ "r1_element_complete": 12109,
+ "r1_element_complete_share": 0.1732,
+ "ustat": {
+  "mcs_calls": 20003,
+  "mcs_skipped_by_bound": 6608,
+  "mcs_cache_hit": 111524,
+  "mcs_timeout": 1074,
+  "big_molecule_deterministic": 10562,
+  "r1_pass_available": 0,
+  "avail_check_error": 0,
+  "r1_deterministic": 21461
+ },
+ "seconds": 688.4
+}

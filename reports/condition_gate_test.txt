@@ -1,0 +1,88 @@
+================================================================================================
+① 静态扫描：37 类反应在各条件下的门控判定
+================================================================================================
+条件表条目数: 37
+
+反应类型                                        室温水浸    煎煮 100°C        乙醇回流        高温久煎        低温冷浸
+ART                                         1.00        1.00        1.00        1.00        1.00
+B-H                                         1.00        1.00        1.00        1.00        1.00
+C_C_decarboxylation                           判零        0.33          判零          判零          判零
+amide_coupling                              1.00        1.00        0.60        1.00        1.00
+amine_acetylation                           1.00        1.00        0.60          判零        1.00
+amine_sulfonation                           1.00        1.00        0.60          判零        1.00
+chan_lam                                    0.60        0.60        0.60        0.60        0.60
+cross_electrophile_coupling                 1.00        0.67        0.60          判零        1.00
+deoxygenative_coupling                      1.00        1.00        1.00        1.00        1.00
+ester_schotten_baumann                      0.60        0.60        0.60          判零        0.60
+ester_sulfonic_schotten_baumann             1.00        1.00        0.60          判零        1.00
+esterification                              1.00        1.00        0.60          判零        1.00
+heck                                          判零        0.60        0.60        0.33          判零
+horner_wadsworth_emmons                     1.00        1.00        1.00        1.00        1.00
+imidazole_Xketone_synthesis                 1.00        1.00        1.00        1.00        1.00
+imidazole_condensation_acid                 1.00        1.00        0.60        1.00        1.00
+imidazole_condensation_amine                1.00        1.00        1.00          判零        1.00
+mitsunobu                                   0.60          判零        0.60          判零        0.60
+negishi_batch                               1.00        1.00        0.60          判零        0.47
+negishi_insitu                              1.00        0.33        0.60          判零        0.47
+oxadiazole_condensation                       判零          判零          判零          判零          判零
+pinacolatoborylation                        1.00        1.00        1.00        1.00        1.00
+reductive_amination_aldehyde                0.60        0.60        0.60          判零        0.60
+reductive_amination_ketone                  0.60        0.60        0.60          判零        0.60
+sn2_nheterocycle                            1.00        1.00        0.60          判零        1.00
+snar_alcohol                                1.00        1.00        0.60        0.33        1.00
+snar_amine                                  1.00        1.00        1.00        1.00        1.00
+snar_thiol                                  0.17        0.60        1.00        0.60          判零
+sonogashira                                 0.60        0.60        0.60          判零        0.60
+suzuki                                      1.00        1.00        0.60        1.00        1.00
+tetrazole_synthesis                           判零        0.33        0.60          判零          判零
+triazole_synthesis_1                        1.00        1.00        1.00        1.00        1.00
+triazole_synthesis_2                        1.00        1.00        1.00        1.00        1.00
+ullmann_X                                   1.00        0.67        0.60          判零        1.00
+ullmann_phenol                              1.00        1.00        0.60        1.00        1.00
+urea_formation                              0.60        0.60        0.60          判零        0.60
+williamson                                  1.00        1.00        0.60          判零        1.00
+
+================================================================================================
+② 各条件下【被判零】的反应类型
+================================================================================================
+
+  【室温水浸】判零 4/37 类:
+     ['C_C_decarboxylation', 'heck', 'oxadiazole_condensation', 'tetrazole_synthesis']
+
+  【煎煮 100°C】判零 2/37 类:
+     ['mitsunobu', 'oxadiazole_condensation']
+
+  【乙醇回流】判零 2/37 类:
+     ['C_C_decarboxylation', 'oxadiazole_condensation']
+
+  【高温久煎】判零 20/37 类:
+     ['C_C_decarboxylation', 'amine_acetylation', 'amine_sulfonation', 'cross_electrophile_coupling', 'ester_schotten_baumann', 'ester_sulfonic_schotten_baumann', 'esterification', 'imidazole_condensation_amine', 'mitsunobu', 'negishi_batch', 'negishi_insitu', 'oxadiazole_condensation', 'reductive_amination_aldehyde', 'reductive_amination_ketone', 'sn2_nheterocycle', 'sonogashira', 'tetrazole_synthesis', 'ullmann_X', 'urea_formation', 'williamson']
+
+  【低温冷浸】判零 5/37 类:
+     ['C_C_decarboxylation', 'heck', 'oxadiazole_condensation', 'snar_thiol', 'tetrazole_synthesis']
+
+================================================================================================
+③ 误杀检查：温和条件（室温水）不该大面积判零
+================================================================================================
+  室温水浸判零 4/37 = 10.8%
+  煎煮100°C 判零 2  乙醇回流判零 2
+  高温久煎判零 20  低温冷浸判零 5
+
+================================================================================================
+④ 动态：同一批底物换条件，产物是否不同
+================================================================================================
+  底物 12 个（tcm.db 里 150~400 Da 的 12 个）
+  【室温水浸】产物    16  反应类型   4  门控拦掉枚举结果      0 条
+  【煎煮 100°C】产物    11  反应类型   3  门控拦掉枚举结果      5 条
+  【乙醇回流】产物    16  反应类型   4  门控拦掉枚举结果      0 条
+  【高温久煎】产物     1  反应类型   1  门控拦掉枚举结果     15 条
+  【低温冷浸】产物    16  反应类型   4  门控拦掉枚举结果      0 条
+
+  各条件的反应类型集合（看是否真的不同）:
+     室温水浸         ['amide_coupling', 'esterification', 'mitsunobu', 'reductive_amination_ketone']
+     煎煮 100°C     ['amide_coupling', 'esterification', 'reductive_amination_ketone']
+     乙醇回流         ['amide_coupling', 'esterification', 'mitsunobu', 'reductive_amination_ketone']
+     高温久煎         ['amide_coupling']
+     低温冷浸         ['amide_coupling', 'esterification', 'mitsunobu', 'reductive_amination_ketone']
+
+-> condition_gate_test.json  1s

@@ -1,0 +1,79 @@
+{
+ "scratch": "HTE 条件感知判据（分组 CV + 同对内 AUC）",
+ "data": {
+  "contrast_pairs": 459,
+  "rows": 17246,
+  "assumed_temperature_C": 100.0,
+  "success_definitions": [
+   "Yield>0",
+   "Yield>=10"
+  ]
+ },
+ "results": {
+  "yield_gt_0": {
+   "gate": {
+    "micro": 0.5295466310617268,
+    "macro": 0.5122885526274078,
+    "comparisons": 353509
+   },
+   "prior": {
+    "micro": 0.5064736682800155,
+    "macro": 0.49825852291543277,
+    "comparisons": 353509
+   },
+   "logreg_cond": {
+    "micro": 0.5473170414331743,
+    "macro": 0.5731211137290868,
+    "comparisons": 353509
+   },
+   "logreg_all": {
+    "micro": 0.5923215533409333,
+    "macro": 0.5832053033755273,
+    "comparisons": 353509
+   },
+   "hgb": {
+    "micro": 0.5590720462562481,
+    "macro": 0.6271914522309607,
+    "comparisons": 353509
+   }
+  },
+  "yield_ge_10": {
+   "gate": {
+    "micro": 0.5395997386089252,
+    "macro": 0.5114664985829104,
+    "comparisons": 396341
+   },
+   "prior": {
+    "micro": 0.4995824302809954,
+    "macro": 0.5130415971812472,
+    "comparisons": 396341
+   },
+   "logreg_cond": {
+    "micro": 0.602382796632193,
+    "macro": 0.5765414338325388,
+    "comparisons": 396341
+   },
+   "logreg_all": {
+    "micro": 0.6190275545552946,
+    "macro": 0.5755819865896452,
+    "comparisons": 396341
+   },
+   "hgb": {
+    "micro": 0.6455993702392636,
+    "macro": 0.611462148447523,
+    "comparisons": 396341
+   }
+  }
+ },
+ "best_model": "logreg_all",
+ "bootstrap_diff_vs_gate": {
+  "n_boot": 2000,
+  "pairs": 459,
+  "ci95": [
+   0.016940543237069793,
+   0.13841605000022683
+  ],
+  "median": 0.06673073504494065
+ },
+ "seconds": 222.6
+}

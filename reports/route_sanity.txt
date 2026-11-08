@@ -1,0 +1,34 @@
+============================================================================================
+路线荒谬性抽查（depth=3 beam=4）
+============================================================================================
+   [warn] rdchiral 模板库跳过 203 条无法编译/多目标的模板
+   20/60  路线 40  荒谬 15  (33s)
+   40/60  路线 83  荒谬 33  (123s)
+   60/60  路线 115  荒谬 44  (175s)
+
+============================================================================================
+结果
+============================================================================================
+  路线总数 115
+  ├ 含极端小分子/无机碳（荒谬）    44  ( 38.3%)
+  └ 其余                          71  ( 61.7%)
+
+  步数分布: {'步数_1': 7, '步数_2': 30, '步数_3': 78}
+
+  荒谬路线例子（前 4）:
+     目标 CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)O)C1
+        CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)O)C <- ['CC(C)(C)OC(=O)N1CCC(CN)C1', 'O=C(O)c1cnc(Cl)nc1Cl']
+        O=C(O)c1cnc(Cl)nc1Cl                       <- ['Clc1ccnc(Cl)n1', 'O=C=O']
+     目标 CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1
+        CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2 <- ['CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1', 'NCC1CCNC1']
+        CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1     <- ['CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1', 'O=C=O']
+        CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1             <- ['CC(=O)Nc1cccc(N)c1', 'Clc1ccnc(Cl)n1']
+     目标 CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1
+        CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1       <- ['CSc1ncc(C(=O)O)c(Cl)n1', 'NC1(c2ccccc2)CC1']
+        CSc1ncc(C(=O)O)c(Cl)n1                     <- ['CSc1nccc(Cl)n1', 'O=C=O']
+     目标 CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1
+        CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1       <- ['O=C(O)c1cnc(S)nc1NC1(c2ccccc2)CC1', 'O=C([O-])[O-]']
+        O=C([O-])[O-]                              <- ['O=C([O-])O']
+        O=C([O-])O                                 <- ['O=C(O)O']
+
+-> route_sanity.json  175s

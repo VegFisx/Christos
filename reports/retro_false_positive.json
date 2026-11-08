@@ -1,0 +1,710 @@
+{
+  "n_targets": 80,
+  "summary": {
+    "C0_无护栏_目标数": 80,
+    "C1_骨架护栏_目标数": 80,
+    "C2_骨架+带电_目标数": 80,
+    "C0_无护栏_有一步路线": 12,
+    "有一步路线目标": 12,
+    "前体总检查数": 69,
+    "档:old_terminal": 60,
+    "C1_骨架护栏_有一步路线": 12,
+    "C2_骨架+带电_有一步路线": 12,
+    "太小(<=2重原子)": 12,
+    "档:block_skel": 3,
+    "骨架命中(可疑)": 3,
+    "档:block_full": 6
+  },
+  "pairs": [
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCC(=O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCI",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 3,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCC(=O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCI",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 3,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCC(=O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl margarate",
+      "target_smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCI",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 3,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "tag": "tcm.db:Papaveroline",
+      "level": "old_terminal",
+      "heavy_atoms": 21,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "tag": "tcm.db:Papaveroline",
+      "level": "old_terminal",
+      "heavy_atoms": 21,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Papaveroline",
+      "target_smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "tag": "tcm.db:Papaveroline",
+      "level": "old_terminal",
+      "heavy_atoms": 21,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "O=c1[nH]c(=O)n(C2CC(O)C(CO)O2)cc1I",
+      "tag": "~ORD_core_block(34)",
+      "level": "block_skel",
+      "heavy_atoms": 17,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "O=c1[nH]c(=O)n(C2CC(O)C(CO)O2)cc1I",
+      "tag": "~ORD_core_block(34)",
+      "level": "block_skel",
+      "heavy_atoms": 17,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "Thymidine",
+      "target_smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "reaction": "negishi_insitu",
+      "precursor": "O=c1[nH]c(=O)n(C2CC(O)C(CO)O2)cc1I",
+      "tag": "~ORD_core_block(34)",
+      "level": "block_skel",
+      "heavy_atoms": 17,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Quercetin 3-o-galactoside",
+      "target_smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(C)(O)C1Cc2c(cc3oc(=O)ccc3c2O)O1",
+      "tag": "tcm.db:Celereoin",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(C)(O)C1Cc2c(cc3oc(=O)ccc3c2O)O1",
+      "tag": "tcm.db:Celereoin",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(C)(O)C1Cc2c(cc3oc(=O)ccc3c2O)O1",
+      "tag": "tcm.db:Celereoin",
+      "level": "old_terminal",
+      "heavy_atoms": 19,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-methyoxymarmesin",
+      "target_smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c(Cc2c(O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c(Cc2c(O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c(Cc2c(O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ebractelatinoside b",
+      "target_smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Lactose",
+      "target_smiles": "OCC1OC(OC2C(CO)OC(O)C(O)C2O)C(O)C(O)C1O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Lactose",
+      "target_smiles": "OCC1OC(OC2C(CO)OC(O)C(O)C2O)C(O)C(O)C1O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Lactose",
+      "target_smiles": "OCC1OC(OC2C(CO)OC(O)C(O)C2O)C(O)C(O)C1O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1c(O)cc(O)c2c(=O)c3c(OC)c(O)ccc3oc12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1c(O)cc(O)c2c(=O)c3c(OC)c(O)ccc3oc12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "target_smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1c(O)cc(O)c2c(=O)c3c(OC)c(O)ccc3oc12",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "COc1cc(O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 22,
+      "in_ord_products": false
+    },
+    {
+      "target": "Andrographidine c",
+      "target_smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "OCC1OC(O)C(O)C(O)C1O",
+      "tag": "tcm.db:Hexose",
+      "level": "old_terminal",
+      "heavy_atoms": 12,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(O)c1",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(O)c1",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(O)c1",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 27,
+      "in_ord_products": false
+    },
+    {
+      "target": "5-nonadecylresorcinol-3-o-methyl ether",
+      "target_smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCl",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 2,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(=O)Br",
+      "tag": "ORD_core_block(149)",
+      "level": "block_full",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCOC(=O)CCCCCO",
+      "tag": "ORD_core_block(38)",
+      "level": "block_full",
+      "heavy_atoms": 11,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(=O)Br",
+      "tag": "ORD_core_block(149)",
+      "level": "block_full",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCOC(=O)CCCCCO",
+      "tag": "ORD_core_block(38)",
+      "level": "block_full",
+      "heavy_atoms": 11,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CC(=O)Br",
+      "tag": "ORD_core_block(149)",
+      "level": "block_full",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Ethyl 6-acetoxyhexanoate",
+      "target_smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "reaction": "ester_schotten_baumann",
+      "precursor": "CCOC(=O)CCCCCO",
+      "tag": "ORD_core_block(38)",
+      "level": "block_full",
+      "heavy_atoms": 11,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 28,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 28,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 28,
+      "in_ord_products": false
+    },
+    {
+      "target": "Neodiospyrin",
+      "target_smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "reaction": "C_C_decarboxylation",
+      "precursor": "O=C(O)O",
+      "tag": "COCONUT",
+      "level": "old_terminal",
+      "heavy_atoms": 4,
+      "in_ord_products": false
+    }
+  ]
+}

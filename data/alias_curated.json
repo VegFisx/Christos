@@ -1,0 +1,254 @@
+{
+ "n": 31,
+ "note": "只含人工判定为『采纳』的项；炮制品/加工品一律不替换",
+ "pairs": [
+  {
+   "alias": "黄耆",
+   "canonical": "黄芪",
+   "why": "耆=芪，同物异写",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 18,
+   "confidence": 0.09
+  },
+  {
+   "alias": "生地",
+   "canonical": "干地黄",
+   "why": "生地=生地黄；按 HERB 库本名归到 干地黄（用户 2026-10-16 口径）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 12,
+   "confidence": 0.08
+  },
+  {
+   "alias": "官桂",
+   "canonical": "肉桂",
+   "why": "官桂=肉桂（等级名/别名，同一药材）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 7,
+   "confidence": 0.14
+  },
+  {
+   "alias": "芒消",
+   "canonical": "芒硝",
+   "why": "消=硝，同物异写",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 9,
+   "confidence": 0.19
+  },
+  {
+   "alias": "炙草",
+   "canonical": "炙甘草",
+   "why": "炙草=炙甘草（简写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 6,
+   "confidence": 0.23
+  },
+  {
+   "alias": "五味",
+   "canonical": "五味子",
+   "why": "五味=五味子（简写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 7,
+   "confidence": 0.33
+  },
+  {
+   "alias": "归尾",
+   "canonical": "当归",
+   "why": "归尾=当归尾（当归的尾部；部分→全株，已标注）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 4,
+   "confidence": 0.2
+  },
+  {
+   "alias": "芥穗",
+   "canonical": "荆芥穗",
+   "why": "芥穗=荆芥穗（简写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 6,
+   "confidence": 0.4
+  },
+  {
+   "alias": "桑皮",
+   "canonical": "桑白皮",
+   "why": "桑皮=桑白皮（简写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 5,
+   "confidence": 0.38
+  },
+  {
+   "alias": "玄胡",
+   "canonical": "延胡索",
+   "why": "玄胡=玄胡索=延胡索（同物异写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 2,
+   "confidence": 0.17
+  },
+  {
+   "alias": "归身",
+   "canonical": "当归",
+   "why": "归身=当归身（当归身部；部分→全株，已标注）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 4,
+   "confidence": 0.33
+  },
+  {
+   "alias": "西黄",
+   "canonical": "牛黄",
+   "why": "西黄=西牛黄=牛黄（同物异写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 4,
+   "confidence": 0.4
+  },
+  {
+   "alias": "片脑",
+   "canonical": "冰片",
+   "why": "片脑=龙脑=冰片（同物异写）",
+   "source": "mine_alias_from_versions + 人工判定(2026-10-17)",
+   "votes": 2,
+   "confidence": 0.29
+  },
+  {
+   "alias": "桂心",
+   "canonical": "肉桂",
+   "why": "桂心=肉桂（去皮肉桂心）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "胆星",
+   "canonical": "胆南星",
+   "why": "胆星=胆南星（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "龟版",
+   "canonical": "龟甲",
+   "why": "龟版/龟板=龟甲（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "芎",
+   "canonical": "川芎",
+   "why": "芎=川芎（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "川椒",
+   "canonical": "花椒",
+   "why": "川椒=花椒/蜀椒（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "葶苈",
+   "canonical": "葶苈子",
+   "why": "葶苈=葶苈子（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "朴消",
+   "canonical": "朴硝",
+   "why": "朴消=朴硝（消=硝）★ 目标名暂不在库内，待补库后生效",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "火消",
+   "canonical": "硝石",
+   "why": "火消=火硝=硝石（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "杞子",
+   "canonical": "枸杞子",
+   "why": "杞子=枸杞子（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "海蛤",
+   "canonical": "蛤壳",
+   "why": "海蛤=蛤壳（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "诃黎勒皮",
+   "canonical": "诃子",
+   "why": "诃黎勒=诃子（同物异写；皮为其果皮）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "白茯",
+   "canonical": "茯苓",
+   "why": "白茯=白茯苓=茯苓（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "山栀仁",
+   "canonical": "栀子",
+   "why": "山栀仁=栀子仁=栀子（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "牛蒡",
+   "canonical": "牛蒡子",
+   "why": "牛蒡=牛蒡子（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "川楝肉",
+   "canonical": "川楝子",
+   "why": "川楝肉=川楝子（果实去核）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "胡桃",
+   "canonical": "核桃仁",
+   "why": "胡桃=核桃（仁）（同物异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "夜明沙",
+   "canonical": "夜明砂",
+   "why": "夜明沙=夜明砂（同音异写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  },
+  {
+   "alias": "山萸",
+   "canonical": "山茱萸",
+   "why": "山萸=山茱萸（简写）",
+   "source": "用户确认(2026-10-17)",
+   "votes": null,
+   "confidence": null
+  }
+ ]
+}

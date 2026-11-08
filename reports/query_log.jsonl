@@ -1,0 +1,50 @@
+{"ts": "selftest", "cmd": "A", "query": "C7H6O2", "resolved_kind": "分子式", "found": false, "n_hits": 0}
+{"ts": "selftest", "cmd": "A", "query": "C7H6O2", "resolved_kind": "分子式", "found": false, "n_hits": 0}
+{"ts": "selftest", "cmd": "A", "query": "C7H6O2", "resolved_kind": "分子式", "found": false, "n_hits": 0}
+{"ts": "2026-10-13 07:51:33", "cmd": "C-similar", "query": "glycyrrhizin", "resolved_kind": "名称", "found": true, "n_hits": 388, "threshold": 0.5}
+{"ts": "2026-10-13 07:52:33", "cmd": "C-similar", "query": "glycyrrhizin", "resolved_kind": "名称", "found": true, "n_hits": 388, "threshold": 0.5}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-13 12:07:48", "cmd": "A", "query": "CC1(C)[C@@H](O[C@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O[C@@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O)CC[C@]2(C)[C@H]3C(=O)C=C4[C@@H]5C[C@@](C)(C(=O)O[C@@H]6[C@@H](O)[C@H](O[C@H]7[C@@H](O[C@H]8CC[C@]9(C)[C@H]%10C(=O)C=C%11[C@@H]%12C[C@@](C)(C(=O)O)CC[C@]%12(C)CC[C@@]%11(C)[C@]%10(C)CC[C@H]9C8(C)C)", "resolved_kind": "SMILES", "found": true, "n_hits": 1}
+{"ts": "2026-10-13 12:08:05", "cmd": "A", "query": "CC1(C)[C@@H](O[C@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O[C@@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O)CC[C@]2(C)[C@H]3C(=O)C=C4[C@@H]5C[C@@](C)(C(=O)O[C@@H]6[C@@H](O)[C@H](O[C@H]7[C@@H](O[C@H]8CC[C@]9(C)[C@H]%10C(=O)C=C%11[C@@H]%12C[C@@](C)(C(=O)O)CC[C@]%12(C)CC[C@@]%11(C)[C@]%10(C)CC[C@H]9C8(C)C)", "resolved_kind": "SMILES", "found": true, "n_hits": 1}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-13 13:03:33", "cmd": "C", "query": "C9H6O3", "resolved_kind": "", "found": true, "n_hits": 1}
+{"ts": "2026-10-13 13:12:24", "cmd": "A", "query": "CC1(C)[C@@H](O[C@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O[C@@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O)CC[C@]2(C)[C@H]3C(=O)C=C4[C@@H]5C[C@@](C)(C(=O)O[C@@H]6[C@@H](O)[C@H](O[C@H]7[C@@H](O[C@H]8CC[C@]9(C)[C@H]%10C(=O)C=C%11[C@@H]%12C[C@@](C)(C(=O)O)CC[C@]%12(C)CC[C@@]%11(C)[C@]%10(C)CC[C@H]9C8(C)C)", "resolved_kind": "SMILES", "found": true, "n_hits": 1}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-14 12:37:06", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "off"}
+{"ts": "2026-10-14 12:37:10", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "on:54"}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-14 15:35:31", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "on:57"}
+{"ts": "2026-10-14 15:35:38", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "off"}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-14 16:20:47", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "on:54"}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "2026-10-14 23:40:27", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "on:83"}
+{"ts": "2026-10-14 23:40:40", "cmd": "pool_query", "query": "CC(=O)Oc1ccccc1C(=O)O", "resolved_kind": "smiles", "found": true, "n_hits": 1, "depth": 1, "beam": 4, "usable_only": false, "retro_blacklist": "on:83"}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}
+{"ts": "selftest", "cmd": "selftest", "query": "selftest_probe", "found": false}

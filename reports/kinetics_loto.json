@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-11-06T17:09:30",
+  "source": "conditions/kinetics_measurements.json",
+  "points": [
+    {
+      "id": "rb1_105c_2020",
+      "T_c": 105.0,
+      "k_per_min": 0.0011893405997775858,
+      "r2": 0.8387,
+      "n": 4,
+      "from": "time_series",
+      "group": "hydrolysis_glycoside_rb1"
+    },
+    {
+      "id": "rb1_94c_2020",
+      "T_c": 94.0,
+      "k_per_min": 0.0007484413228946785,
+      "r2": 0.5896,
+      "n": 3,
+      "from": "time_series",
+      "group": "hydrolysis_glycoside_rb1"
+    },
+    {
+      "id": "rb1_80c_2020",
+      "T_c": 80.0,
+      "k_per_min": 0.00012134996199315005,
+      "r2": 0.7315,
+      "n": 4,
+      "from": "time_series",
+      "group": "hydrolysis_glycoside_rb1"
+    },
+    {
+      "id": "rb1_lit2015_80c",
+      "T_c": 80.0,
+      "k_per_min": 0.00021666666666666666,
+      "r2": null,
+      "n": 0,
+      "from": "reported_k",
+      "group": "hydrolysis_glycoside_rb1_lit2015"
+    },
+    {
+      "id": "rb1_lit2015_100c",
+      "T_c": 100.0,
+      "k_per_min": 0.00075,
+      "r2": null,
+      "n": 0,
+      "from": "reported_k",
+      "group": "hydrolysis_glycoside_rb1_lit2015"
+    },
+    {
+      "id": "aconitine_dry_140c_2021",
+      "T_c": 140.0,
+      "k_per_min": 0.05185985030153428,
+      "r2": 0.7592,
+      "n": 8,
+      "from": "time_series",
+      "group": "pyrolysis_diterpene_alkaloid"
+    },
+    {
+      "id": "aconitine_dry_160c_2021",
+      "T_c": 160.0,
+      "k_per_min": 0.9414924488202221,
+      "r2": 0.9345,
+      "n": 2,
+      "from": "time_series",
+      "group": "pyrolysis_diterpene_alkaloid"
+    }
+  ],
+  "loto": [
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "held_out": "rb1_80c_2020",
+      "T_c": 80.0,
+      "k_measured": 0.00012134996199315005,
+      "k_predicted": 0.0003981323569301366,
+      "pred_over_meas": 3.281,
+      "ea_from_rest_kJ": 48.6,
+      "log10_ratio": 0.516
+    },
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "held_out": "rb1_94c_2020",
+      "T_c": 94.0,
+      "k_measured": 0.0007484413228946785,
+      "k_predicted": 0.00045266852300785787,
+      "pred_over_meas": 0.605,
+      "ea_from_rest_kJ": 101.4,
+      "log10_ratio": -0.218
+    },
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "held_out": "rb1_105c_2020",
+      "T_c": 105.0,
+      "k_measured": 0.0011893405997775858,
+      "k_predicted": 0.0028439533176188355,
+      "pred_over_meas": 2.391,
+      "ea_from_rest_kJ": 140.1,
+      "log10_ratio": 0.379
+    }
+  ],
+  "q10_pairs": [
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "from": "rb1_80c_2020",
+      "to": "rb1_94c_2020",
+      "dT_c": 14.0,
+      "q10": 3.67
+    },
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "from": "rb1_80c_2020",
+      "to": "rb1_105c_2020",
+      "dT_c": 25.0,
+      "q10": 2.49
+    },
+    {
+      "group": "hydrolysis_glycoside_rb1",
+      "from": "rb1_94c_2020",
+      "to": "rb1_105c_2020",
+      "dT_c": 11.0,
+      "q10": 1.52
+    },
+    {
+      "group": "hydrolysis_glycoside_rb1_lit2015",
+      "from": "rb1_lit2015_80c",
+      "to": "rb1_lit2015_100c",
+      "dT_c": 20.0,
+      "q10": 1.86
+    },
+    {
+      "group": "pyrolysis_diterpene_alkaloid",
+      "from": "aconitine_dry_140c_2021",
+      "to": "aconitine_dry_160c_2021",
+      "dT_c": 20.0,
+      "q10": 4.26
+    }
+  ],
+  "groups": {
+    "hydrolysis_glycoside_rb1": {
+      "n_points": 3,
+      "ea_all_kJ": 103.6,
+      "worst_log10_error": 0.516,
+      "verdict": "extrapolation_unreliable"
+    },
+    "hydrolysis_glycoside_rb1_lit2015": {
+      "n_points": 2,
+      "ea_kJ": 68.0,
+      "loto": [],
+      "verdict": "two_points_no_loto"
+    },
+    "pyrolysis_diterpene_alkaloid": {
+      "n_points": 2,
+      "ea_kJ": 215.7,
+      "loto": [],
+      "verdict": "two_points_no_loto"
+    }
+  },
+  "ea_configured_kJ": 103.6,
+  "worst_log10_error": 0.516,
+  "verdict": "extrapolation_unreliable",
+  "criteria": "worst |log10(pred/meas)| > 0.3 → extrapolation_unreliable；0.15~0.3 → acceptable_with_caution；< 0.15 → supported",
+  "note": "留一验证只检验『温度依赖能否外推』，不检验绝对转化率；不同温度的 rb1_*_2020 数据集来自不同年份/批次的人参（105 °C 用 2018 年根，94/80 °C 用 2014 年根），批次差异会混进 Ea；不同反应之间绝不能合并拟合 Ea。"
+}

@@ -1,0 +1,13 @@
+{
+ "what": "互为逆反应的模板对（LHS/RHS 骨架多重集互换）",
+ "caveat": "只证明「两条模板在结构上是彼此的逆」；不代表两条都在本条件下可激活，也不代表方向偏好 —— 方向偏好见 core/direction.py",
+ "loose": true,
+ "templates_loaded": 8926,
+ "templates_skipped": 0,
+ "n_pairs": 101,
+ "by_kind": {
+  "exact": 101
+ },
+ "seconds": 1.4,
+ "output": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\reverse_template_pairs.jsonl"
+}

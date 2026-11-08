@@ -1,0 +1,130 @@
+====================================================================================================
+① 每条规则的 condition_profile（类别名）
+====================================================================================================
+  规则                    类别              profile         优先级可逆
+  ----------------------------------------------------------------------
+  酯水解                   hydrolysis      hydrolysis     0.85   
+  糖苷水解                  hydrolysis      hydrolysis     0.80   
+  酰胺水解                  hydrolysis      hydrolysis     0.60   
+  硫酸酯水解                 hydrolysis      hydrolysis     0.70   
+  磷酸酯水解                 hydrolysis      hydrolysis     0.70   
+  缩醛水解                  hydrolysis      hydrolysis     0.75   
+  半缩醛水解                 hydrolysis      hydrolysis     0.70   
+  羟基氧化                  oxidation       oxidation      0.60   
+  醛氧化                   oxidation       oxidation      0.75   
+  酚氧化成醌                 oxidation       oxidation      0.60   
+  胺氧化                   oxidation       oxidation      0.50   
+  酮还原                   reduction       reduction      0.45   是
+  醌还原                   reduction       reduction      0.45   是
+  脱水                    elimination     thermal        0.60   
+  脱甲基                   demethylation   hydrolysis     0.55   
+  芳香酸脱羧                 decarboxylation thermal        0.70   
+  β-酮酸脱羧                decarboxylation thermal        0.65   
+  芳香环羟基化                hydroxylation   oxidation      0.40   
+  烯烃水合                  hydration       hydrolysis     0.40   是
+  α,β-不饱和羰基水合           hydration       hydrolysis     0.40   是
+  酮-烯醇化                 rearrangement   ambient        0.30   是
+  γ-内酯化                 esterification  thermal        0.50   是
+  δ-内酯化                 esterification  thermal        0.50   是
+  美拉德简化                 condensation    thermal        0.35   
+  伯醇氧化成醛                oxidation       oxidation      0.55   
+  硫醚氧化成亚砜               oxidation       oxidation      0.40   
+  双键环氧化                 oxidation       oxidation      0.35   
+  脱氢成α,β-不饱和羰基          oxidation       oxidation      0.40   
+  醛还原成醇                 reduction       reduction      0.40   
+  双键加氢                  reduction       reduction      0.35   
+  环氧化物开环成二醇             hydrolysis      hydrolysis     0.60   
+  内酰胺开环                 hydrolysis      hydrolysis     0.40   
+  亚胺水解                  hydrolysis      hydrolysis     0.50   
+  分子内半缩醛化               cyclization     ambient        0.50   
+  分子内酰胺化                cyclization     thermal        0.40   
+  分子内脱水成醚               cyclization     thermal        0.30   
+  δ-羟基酸内酯化(备用)          cyclization     thermal        0.45   
+  双键位置异构                rearrangement   thermal        0.30   
+  逆羟醛裂解                 rearrangement   thermal        0.30   
+  丙二酸型脱羧                decarboxylation thermal        0.60   
+  氧化脱氨成羰基               elimination     oxidation      0.35   
+  酯交换                   esterification  hydrolysis     0.55   是
+  酯化(分子间)               esterification  thermal        0.45   是
+  席夫碱生成                 condensation    ambient        0.35   是
+  酰胺化(分子间)              condensation    thermal        0.30   是
+  酯的氨解                  condensation    ambient        0.30   是
+  糖苷化                   condensation    hydrolysis     0.40   是
+  半缩醛形成(分子间)            condensation    ambient        0.40   是
+  Michael加成(硫醇)         addition        ambient        0.35   是
+  Michael加成(胺)          addition        ambient        0.30   是
+  醇醛缩合(分子间)             condensation    ambient        0.30   是
+  硫代半缩醛形成               addition        ambient        0.30   是
+  酰胺脱水成腈                elimination     thermal        0.30   
+  亚砜氧化成砜                oxidation       oxidation      0.30   
+  亚砜还原成硫醚               reduction       reduction      0.30   是
+  肉桂酸型脱羧                decarboxylation thermal        0.50   
+  对二酚氧化成醌               oxidation       oxidation      0.50   是
+  对醌还原成二酚               reduction       reduction      0.50   是
+
+====================================================================================================
+② 8 种工艺各激活了哪些规则
+====================================================================================================
+
+  【煎煮】激活 43/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'decarboxylation': 4, 'esterification': 4, 'elimination': 3, 'condensation': 3, 'cyclization': 3, 'hydration': 2, 'rearrangement': 2, 'demethylation': 1, 'hydroxylation': 1}
+
+  【水提】激活 43/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'decarboxylation': 4, 'esterification': 4, 'elimination': 3, 'condensation': 3, 'cyclization': 3, 'hydration': 2, 'rearrangement': 2, 'demethylation': 1, 'hydroxylation': 1}
+
+  【醇提】激活 43/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'decarboxylation': 4, 'esterification': 4, 'elimination': 3, 'condensation': 3, 'cyclization': 3, 'hydration': 2, 'rearrangement': 2, 'demethylation': 1, 'hydroxylation': 1}
+
+  【酸水解】激活 43/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'decarboxylation': 4, 'esterification': 4, 'elimination': 3, 'condensation': 3, 'cyclization': 3, 'hydration': 2, 'rearrangement': 2, 'demethylation': 1, 'hydroxylation': 1}
+
+  【碱水解】激活 43/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'decarboxylation': 4, 'esterification': 4, 'elimination': 3, 'condensation': 3, 'cyclization': 3, 'hydration': 2, 'rearrangement': 2, 'demethylation': 1, 'hydroxylation': 1}
+
+  【氧化】激活 12/58 条
+      按类别: {'oxidation': 10, 'hydroxylation': 1, 'elimination': 1}
+
+  【还原】激活 6/58 条
+      按类别: {'reduction': 6}
+
+  【酶催化】激活 37/58 条
+      按类别: {'hydrolysis': 10, 'oxidation': 10, 'condensation': 5, 'addition': 3, 'hydration': 2, 'demethylation': 1, 'decarboxylation': 1, 'hydroxylation': 1, 'rearrangement': 1, 'cyclization': 1, 'elimination': 1, 'esterification': 1}
+
+====================================================================================================
+③ 化学常识核查
+====================================================================================================
+  ✓ 酸水解 应激活水解类
+  ✓ 酸水解 不应激活还原类
+  ✓ 还原   应激活还原类
+  ✓ 还原   不应激活氧化类
+  ✓ 氧化   应激活氧化类
+  ✓ 氧化   应激活羟基化
+  ✓ 无氧煎煮 不应激活氧化类
+  ✓ 醇提   应激活酯化/酯交换
+  ✗ 酶催化 应是窄子集
+  ✓ 煎煮   应激活水解类
+  ✓ 水提   应激活水解类
+  ✓ 碱水解 应激活水解类
+
+====================================================================================================
+④ 可疑项：规则类别 与 激活工艺 不搭的
+====================================================================================================
+  ★ 酯水解（hydrolysis）在【醇提】下被激活
+  ★ 糖苷水解（hydrolysis）在【醇提】下被激活
+  ★ 酰胺水解（hydrolysis）在【醇提】下被激活
+  ★ 硫酸酯水解（hydrolysis）在【醇提】下被激活
+  ★ 磷酸酯水解（hydrolysis）在【醇提】下被激活
+  ★ 缩醛水解（hydrolysis）在【醇提】下被激活
+  ★ 半缩醛水解（hydrolysis）在【醇提】下被激活
+  ★ γ-内酯化（esterification）在【酸水解】下被激活
+  ★ δ-内酯化（esterification）在【酸水解】下被激活
+  ★ 环氧化物开环成二醇（hydrolysis）在【醇提】下被激活
+  ★ 内酰胺开环（hydrolysis）在【醇提】下被激活
+  ★ 亚胺水解（hydrolysis）在【醇提】下被激活
+  ★ 酯交换（esterification）在【酸水解】下被激活
+  ★ 酯化(分子间)（esterification）在【酸水解】下被激活
+
+====================================================================================================
+结果：11 通过 / 1 失败
+  ✗ 酶催化 应是窄子集
+====================================================================================================

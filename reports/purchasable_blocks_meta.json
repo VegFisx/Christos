@@ -1,0 +1,41 @@
+{
+  "source": "ord_dataset-1158e351757f315b93cbcbe7bc55f38e.parquet",
+  "n_reactions_scanned": 1771032,
+  "is_full": true,
+  "definition": "reactant-side molecule that never appears on the product side",
+  "identity": "RDKit canonical SMILES after atom-map removal (SetAtomMapNum(0))",
+  "scoring": "per-reaction dedup, no stoichiometry",
+  "middle_segment_counted": false,
+  "n_reactant_molecules": 669467,
+  "n_product_molecules": 942535,
+  "n_both_sides": 371582,
+  "n_blocks_all": 297885,
+  "n_blocks_core": 32439,
+  "n_reagents": 265446,
+  "threshold_core": {
+    "map_ratio": 0.5,
+    "n_mapped": 5
+  },
+  "coconut_skeleton_hits": 3111,
+  "tcm_skeleton_hits": 1373,
+  "mw_core_min": 30.006,
+  "mw_core_median": 246.218,
+  "mw_core_max": 3482.802,
+  "n_core_mw_le_300": 21283,
+  "n_core_freq_ge_10": 13056,
+  "stats": {
+    "有CXSMILES": 1732000,
+    "中段为空": 377102,
+    "产物侧有映射": 1732000,
+    "R_组分总数": 6359416,
+    "P_组分总数": 1914770,
+    "中段非空": 1354898,
+    "R_无法解析": 628,
+    "P_无法解析": 97
+  },
+  "elapsed_sec": 204.8,
+  "check_E_scope": "sampled_products",
+  "check_E_n_products": 30000,
+  "check_E_full_inchikey_overlap": 37,
+  "check_E_skeleton_overlap_stereoisomers": 415
+}

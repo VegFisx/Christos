@@ -1,0 +1,3148 @@
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1 页
+------------------------------------------------------------
+# ==================== FILE: core/cascade.py ====================
+# -*- coding: utf-8 -*-
+"""
+chemreact 核心：级联收敛
+========================
+
+把产物继续当底物往下反应，直到体系稳定。
+
+设计要点（多数沿用了原 src/cascade_reactions.py 的正确思路）：
+
+  1. ★ **每一轮重新计算条件激活**。
+     原 cascade_reactions.py 是开头算一次就固定。但级联过程中体系在变
+     （小分子被消耗、pH 可能漂移），条件层应该每轮重算。
+
+  2. ★ **只迭代不可逆反应**。
+     可逆反应很快达平衡，不会持续产生新分子。
+     把可逆产物也丢进下一轮，级联会虚假膨胀、永不收敛。
+     这一条原实现是对的，保留。
+
+  3. ★ **副产物不进前沿**。
+     水、甲醇、CO2 这类小分子不当作下一轮底物——
+     它们要么是终产物，要么已经过量存在，再迭代没有意义。
+     注意：是「不进前沿」，不是「从结果里删掉」，它们仍然出现在产物表中。
+
+  4. ★ **每轮重算分数**。
+     第 3 轮的产物和第 1 轮的产物，置信度不该一样——
+     离原始成分越远，推断链条越长，不确定性越大。这里用轮数做衰减。
+
+  5. **收敛判据**：一轮下来「新的不可逆产物」少于 min_new 就停。
+"""
+
+from __future__ import annotations
+
+import sys
+from collections import defaultdict
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Sequence
+
+_HERE = Path(__file__).resolve().parent
+_STAGE = _HERE.parent
+for _p in (_STAGE / "rules", _STAGE / "conditions", _STAGE / "libs"):
+    if _p.is_dir() and str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+from engine import Compound, Engine, Product, get_mol     # noqa: E402
+from scorer import score_product, rank, assign_thermo     # noqa: E402
+from model import Conditions                              # noqa: E402
+
+
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 2 页
+------------------------------------------------------------
+# 每远一轮，置信度乘这个系数。第 1 轮不衰减。
+ROUND_DECAY = 0.85
+
+# ★ 热力学覆盖率低于此值就整体回退启发式。
+# 实测教训：中药大分子（附子里的乌头碱类，40~50 个重原子）超出 xTB 可靠范围，
+# 覆盖率会低到 10%。这时如果坚持"能算的用真值、算不出的用启发式"，
+# 同一张排行榜上就混了两套尺度，**比全部用启发式还糟**。
+MIN_THERMO_COVERAGE = 0.5
+
+# ★★ 传播分数门槛：只有分数够高的产物才继续往下反应 ★★
+#
+# 为什么需要它：甘草 15 个成分在煎煮条件下，8 轮涨到 1736 个产物且不见顶。
+# 诊断发现，贡献最大的规则里一半 priority 只有 0.3（=在煎煮条件下只是猜测）——
+# 把猜测级联下去，不确定性指数放大。
+#
+# ★ 为什么是「按分数」而不是「按规则优先级」——这是实测对比出来的：
+#
+#     策略                     轮数  收敛   产物总数  高分产物
+#     A 现状（只按不可逆）        8    否     1736     595
+#     B 按 priority >= 0.5       8    否     1378     561 ← 丢了 225 个高分产物
+#     C 按 score >= 0.35         7    是     1680     595 ← 一个不丢
+#     D 两者都加                 8    否     1392     561 ← 同样丢 225 个
+#
+#   按优先级设门槛会**截断通路**：高优先级规则固然可靠，但低优先级规则的产物
+#   可能继续反应成高分产物，掐掉它们等于砍掉整条路径。
+#   而分数里【已经含了 priority】（rule_match 权重 0.30）**又含了轮数衰减**，
+#   是比 priority 单独更完整的判据——也是唯一能收敛且不丢高分产物的方案。
+#
+# 实测（甘草 15 个成分 / 煎煮 / max_rounds=8）：
+#
+#     门槛    轮数  收敛   产物总数   高分产物(>=0.5)
+#     0.00     8    否      1510        573      ← 旧的"只按不可逆"
+#     0.25     8    否      1522        573
+#     0.35     7    是      1448        573      ← 默认值
+#     0.45     5    是      1137        573      ← 想更快可以调到这个
+#
+#   机制：分数含轮数衰减 0.85^(r-1)，深处产物自然跌破门槛。
+#   所以这个门槛本质上定义了「最多追几步推断」——
+#   追得越深，累积不确定性越大，这个界是有化学意义的，不是拍脑袋。
+MIN_PROPAGATE_SCORE = 0.35
+
+
+@dataclass
+class CascadeResult:
+    seeds: List[Compound]
+    products: List[Product]
+    rounds: int
+    round_stats: List[Dict[str, Any]]
+    converged: bool
+    conditions: Optional[Conditions] = None
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 3 页
+------------------------------------------------------------
+    thermo_stats: Dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def total(self) -> int:
+        return len(self.products)
+
+    def summary(self) -> str:
+        lines = []
+        c = self.conditions
+        lines.append(f"条件：{c.describe() if c else '?'}")
+        lines.append(f"起始成分：{len(self.seeds)} 个")
+        lines.append("")
+        lines.append(f"  {'轮':>3}  {'新增':>6}  {'其中不可逆':>10}")
+        for s in self.round_stats:
+            lines.append(f"  {s['round']:>3}  {s['new']:>6}  {s['irreversible_new']:>10}")
+        lines.append("")
+        real = [p for p in self.products if not p.is_byproduct]
+        byp = [p for p in self.products if p.is_byproduct]
+        lines.append(f"跑了 {self.rounds} 轮，收敛：{'是' if self.converged else '否'}")
+        lines.append(f"产物总数 {self.total}  （主体 {len(real)} + 小分子副产物 {len(byp)}）")
+        return "\n".join(lines)
+
+
+def cascade(engine: Engine,
+            seeds: Sequence[Compound],
+            cond: Conditions,
+            max_rounds: int = 3,
+            threshold: float = 0.15,
+            min_new: int = 10,
+            frontier_limit: int = 300,
+            thermo=None,
+            thermo_top_k: int = 120,
+            min_propagate_score: float = MIN_PROPAGATE_SCORE,
+            ) -> CascadeResult:
+    """迭代反应至稳定态。
+
+    thermo:              core.thermo.Thermo 实例（可选）。
+    thermo_top_k:        只给启发式排名前 k 的非副产物算 ΔG。
+    min_propagate_score: ★传播门槛★ 只有分数 >= 此值的产物才继续往下反应。
+                         这是让级联收敛的关键（见文件顶部常量处的实测对比）。
+                         设成 0 就退回旧行为（不收敛）。
+    """
+    rule_by_id = {r["id"]: r for r in engine.rules}
+
+    all_smiles = {s.smiles for s in seeds}
+    frontier: List[Compound] = [s for s in seeds if get_mol(s.smiles) is not None]
+    collected: Dict[str, Product] = {}
+    round_stats: List[Dict[str, Any]] = []
+
+    for r in range(1, max_rounds + 1):
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 4 页
+------------------------------------------------------------
+        if not frontier:
+            break
+
+        # ★ 每轮重新评估条件、重新算激活（由 engine.step 内部完成）
+        step_products = engine.step(frontier, cond, threshold,
+                                    exclude_smiles=all_smiles, round_no=r)
+
+        new_this_round: List[Product] = []
+        irreversible_new: List[Product] = []
+        below_floor = 0
+
+        for p in step_products:
+            if p.smiles in all_smiles:
+                continue
+            all_smiles.add(p.smiles)
+
+            # ★ 当场打分——传播判断要用它。
+            #   分数 = 五因子加权 × 轮数衰减，其中已含 rule priority 和条件匹配度。
+            rule = rule_by_id.get(p.rule_id, {})
+            base, _d = score_product(p.smiles, rule, p.activation,
+                                     source_smiles=p.source_smiles)
+            p.score = round(base * (ROUND_DECAY ** (r - 1)), 4)
+
+            collected[p.smiles] = p
+            new_this_round.append(p)
+
+            # ★ 传播条件：不可逆 + 非副产物 + 分数达门槛
+            if p.reversible or p.is_byproduct:
+                continue
+            if p.score < min_propagate_score:
+                below_floor += 1
+                continue
+            irreversible_new.append(p)
+
+        round_stats.append({
+            "round": r,
+            "new": len(new_this_round),
+            "irreversible_new": len(irreversible_new),
+            "below_floor": below_floor,
+        })
+
+        if len(irreversible_new) < min_new:
+            break
+
+        frontier = _sample_frontier(irreversible_new, frontier_limit, r + 1)
+
+    # ---- 最终评分 ----
+    # 注意：循环里已经打过分（传播判断要用），这里重算一遍是因为
+    # 上面用的是启发式 stability，而下面可能用真 ΔG 覆盖。
+    pool = list(collected.values())
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 5 页
+------------------------------------------------------------
+    decay = {id(p): (ROUND_DECAY ** max(p.round - 1, 0)) for p in pool}
+
+    for p in pool:
+        rule = rule_by_id.get(p.rule_id, {})
+        base, _d = score_product(p.smiles, rule, p.activation,
+                                 source_smiles=p.source_smiles)
+        p.score = round(base * decay[id(p)], 4)
+
+    # ★ 第二遍：热力学。
+    # 只给启发式排出来的 top-k 算 ΔG——
+    # 实测：245 个产物全算要 15 分钟且大部分超预算失败，
+    # 而真正需要精确排序的只有头部。
+    tstats: Dict[str, Any] = {"skipped": "未启用或 xTB 不可用"}
+    if thermo is not None and getattr(thermo, "available", False) and pool:
+        head = rank(pool, top_k=thermo_top_k, include_byproducts=False)
+        tstats = assign_thermo(head, thermo, rule_by_id)
+        tstats["top_k"] = len(head)
+        tstats["pool"] = len(pool)
+
+        n_ok = sum(1 for p in head if p.stability is not None)
+        coverage = (n_ok / len(head)) if head else 0.0
+        tstats["coverage"] = round(coverage, 3)
+
+        # ★ 覆盖率不足就整体回退。
+        # 理由是实测才发现的一个隐患：如果一部分产物用真 ΔG、另一部分用结构启发式，
+        # 两者尺度不同，放在同一张排行榜上**不可比**——那比全部用启发式还糟。
+        # 一致性优先于局部精度。
+        if coverage < MIN_THERMO_COVERAGE:
+            for p in pool:
+                p.stability = None
+                p.dg_kj = None
+            tstats["reverted"] = (
+                f"ΔG 覆盖率仅 {coverage:.0%}（低于 {MIN_THERMO_COVERAGE:.0%}），"
+                f"为避免两套尺度混用，整体回退启发式"
+            )
+        else:
+            for p in pool:
+                if p.stability is None:
+                    continue
+                rule = rule_by_id.get(p.rule_id, {})
+                base, _d = score_product(p.smiles, rule, p.activation,
+                                         source_smiles=p.source_smiles,
+                                         stability_override=p.stability)
+                p.score = round(base * decay[id(p)], 4)
+
+    converged = bool(round_stats) and round_stats[-1]["irreversible_new"] < min_new
+
+    return CascadeResult(
+        seeds=list(seeds),
+        products=rank(pool),
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 6 页
+------------------------------------------------------------
+        rounds=len(round_stats),
+        round_stats=round_stats,
+        converged=converged,
+        conditions=cond,
+        thermo_stats=tstats,
+    )
+
+
+def _sample_frontier(products: Sequence[Product], limit: int,
+                     next_round: int) -> List[Compound]:
+    """按反应类型均衡采样，避免某一类规则（比如羟基氧化）淹没前沿。
+
+    ★★ 必须确定性排序 ★★
+
+    实测事故：把同一批成分的【输入顺序】打乱后重跑级联，
+    输出只有 22~36% 自重叠（同一个引擎、同一批分子！）。
+
+    根因：这里按【插入顺序】取前 per_rule 个，而插入顺序取决于
+          输入成分的顺序 —— 于是"挑谁进前沿"变成了随机的。
+
+    修法（两处都要确定）：
+      1. 每条规则内部：按【分数降序、同分按 SMILES】排序后取前 per_rule 个
+         （顺带带来好处：高置信产物优先进入前沿）
+      2. 规则之间：轮转取（round-robin），规则按 id 排序
+         —— 既保证每条规则都有机会，又不依赖 dict 的插入顺序
+
+    修完之后：同一批成分不论以什么顺序传入，级联输出完全一致。
+    """
+    if len(products) <= limit:
+        selected = list(products)
+    else:
+        by_rule: Dict[str, List[Product]] = defaultdict(list)
+        for p in products:
+            by_rule[p.rule_id].append(p)
+
+        def _key(p: Product):
+            return (-(p.score or 0.0), p.smiles)
+
+        buckets = {rid: sorted(items, key=_key)
+                   for rid, items in by_rule.items()}
+        per_rule = max(1, limit // max(1, len(buckets)))
+
+        # 轮转：第 0 轮每规则各取 1 个，第 1 轮再各取 1 个……
+        selected = []
+        depth = 0
+        max_depth = max(len(v) for v in buckets.values())
+        while len(selected) < limit and depth < max_depth:
+            for rid in sorted(buckets):
+                if depth < len(buckets[rid]):
+                    selected.append(buckets[rid][depth])
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 7 页
+------------------------------------------------------------
+                    if len(selected) >= limit:
+                        break
+            depth += 1
+
+    return [Compound(smiles=p.smiles, name=f"R{next_round} 中间体",
+                     herb=p.source_herb, source="cascade")
+            for p in selected]
+# ==================== FILE: core/condition_model.py ====================
+# -*- coding: utf-8 -*-
+r"""D2：条件可行性模型（HTE B-H）的**只打标记**接入组件（2026-10-13）。
+
+口径与边界（写死）：
+  * 模型口径 = tools/train_condition_model.py：y = 1 if Yield >= 0.5，
+    特征 = solvent/catalyst/base/source one-hot + 8 个 Additive 布尔 + aryl/amine Morgan(r=2,2048)。
+  * **只用于训练覆盖的反应类**（TRAINED_CLASSES = ("B-H",)）；其它类一律
+    applicable=False，按类降级到规则层（不许外推）。
+  * **不打分、不排序、不删产物**：只给「这套条件会不会有产物」的 p + 档位 + 分布外提示。
+  * 分布外字段会逐条列出来（词表里没有的取值），因为实测：OOD 输入给的是
+    0.8709 这类**常规高分**，不是异常值 —— 不提示就会被误当成可靠分数。
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Sequence
+
+_STAGE = Path(__file__).resolve().parent.parent
+for _p in (_STAGE / "core", _STAGE / "rules", _STAGE / "libs", _STAGE / "tools", _STAGE / "sources"):
+    if _p.is_dir() and str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+MODEL_PATH = _STAGE / "models" / "condition_gate_bh.joblib"
+TRAINED_CLASSES: Sequence[str] = ("B-H",)
+ADD_COLS = ["Additive_" + x for x in
+            ("present", "aromatic_rings", "heteroatom_count", "coordination_flag",
+             "steric_bulk_flag", "pi_rich_flag", "Pd_poisoning", "competes_with_amine")]
+# 档位（第三十七轮建议：不设单一阈值，先切低/中/高）
+BAND_LOW = 0.30
+BAND_HIGH = 0.70
+
+_CACHE: Dict[str, Any] = {}
+
+
+def load(model_path: Optional[Path] = None) -> Dict[str, Any]:
+    """载入模型 + 词表（只读，缓存）。"""
+    key = str(model_path or MODEL_PATH)
+    if "model" not in _CACHE or _CACHE.get("path") != key:
+        import joblib
+        d = joblib.load(key)
+        d["path"] = key
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 8 页
+------------------------------------------------------------
+        d["_nbits"] = int(d.get("nbits", 2048))
+        _CACHE.clear()
+        _CACHE.update(d)
+    return _CACHE
+
+
+def available() -> bool:
+    return Path(MODEL_PATH).exists()
+
+
+def vocab() -> Dict[str, List[str]]:
+    d = load()
+    return {k: sorted(v) for k, v in (d.get("cats") or {}).items()}
+
+
+def band_of(p: float) -> str:
+    if p < BAND_LOW:
+        return "低"
+    if p <= BAND_HIGH:
+        return "中"
+    return "高"
+
+
+def _fp(smiles: str, nbits: int):
+    import numpy as np
+    from rdkit import Chem, RDLogger
+    from rdkit.Chem import rdFingerprintGenerator
+    RDLogger.DisableLog("rdApp.*")
+    gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=nbits)
+    m = Chem.MolFromSmiles(smiles or "")
+    if m is None:
+        return np.zeros(nbits, dtype=np.float32)
+    return np.array(gen.GetFingerprint(m), dtype=np.float32)
+
+
+def score(solvent: str = "", catalyst: str = "", base: str = "", source: str = "",
+          aryl: str = "", amine: str = "", additive: Optional[Sequence[float]] = None,
+          reaction: str = "B-H") -> Dict[str, Any]:
+    """给一套条件打分（**标记用**，不是门控）。
+
+    返回 dict：applicable / note / p / band / ood / trained_classes
+    """
+    out: Dict[str, Any] = {"reaction": reaction, "applicable": False, "p": None,
+                           "band": None, "ood": [], "trained_classes": list(TRAINED_CLASSES),
+                           "model_path": str(MODEL_PATH)}
+    if not available():
+        out["note"] = "模型文件不存在（跑 tools/train_condition_model.py 生成）"
+        return out
+    if str(reaction) not in TRAINED_CLASSES:
+        out["note"] = ("该类没有模型 -> **按类降级**：只用规则层（模型只在 "
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 9 页
+------------------------------------------------------------
+                       + "/".join(TRAINED_CLASSES) + " 上训练过，不许外推）")
+        return out
+    out["applicable"] = True
+
+    import numpy as np
+    d = load()
+    cats = d.get("cats") or {}
+    vals = {"solvent": solvent, "catalyst": catalyst, "base": base, "source": source}
+    parts = []
+    ood = []
+    for k in ("solvent", "catalyst", "base", "source"):
+        v = str(vals.get(k) or "").strip()
+        one = np.zeros(len(cats.get(k) or {}), dtype=np.float32)
+        idx = (cats.get(k) or {}).get(v)
+        if idx is None:
+            ood.append(k + "=" + (v if v else "(空)"))
+        else:
+            one[idx] = 1.0
+        parts.append(one)
+    add = list(additive) if additive is not None else [0.0] * len(ADD_COLS)
+    parts.append(np.array(add, dtype=np.float32))
+    nbits = d["_nbits"]
+    parts.append(_fp(aryl, nbits))
+    parts.append(_fp(amine, nbits))
+    X = np.concatenate(parts)[None, :]
+    p = float(d["model"].predict_proba(X)[0, 1])
+    out["p"] = round(p, 4)
+    out["band"] = band_of(p)
+    out["ood"] = ood
+    if ood:
+        out["note"] = ("有 %d 个字段不在训练词表里（**分布外**）：%s。"
+                       "实测：这类输入给的是常规高分（约 0.87），不是异常值 —— 分数仅供参考，"
+                       "别当门控用。" % (len(ood), "、".join(ood)))
+    else:
+        out["note"] = "全部字段都在训练词表里；仍只是标记（不删产物、不排序）。"
+    return out
+
+
+def describe() -> str:
+    lines = ["条件可行性模型（D2，只打标记）", "  模型：" + str(MODEL_PATH),
+             "  覆盖反应类：" + "/".join(TRAINED_CLASSES) + "（其它类按类降级到规则层）"]
+    if available():
+        d = load()
+        lines.append("  训练：" + str(d.get("trained_on", "?")))
+        lines.append("  接入状态：wired_into_production=" + str(d.get("wired_into_production", "?")))
+        v = vocab()
+        lines.append("  词表：solvent %d / catalyst %d / base %d / source %d" %
+                     (len(v.get("solvent", [])), len(v.get("catalyst", [])),
+                      len(v.get("base", [])), len(v.get("source", []))))
+    else:
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 10 页
+------------------------------------------------------------
+        lines.append("  模型文件缺失")
+    lines.append("  档位：p<%.2f 低 / %.2f~%.2f 中 / >%.2f 高" % (BAND_LOW, BAND_LOW, BAND_HIGH, BAND_HIGH))
+    return "\n".join(lines)
+# ==================== FILE: core/direction.py ====================
+# -*- coding: utf-8 -*-
+r"""方向层：把「能生成就生成」改成「能生成 + 标出它往哪个方向走」
+================================================================
+
+对应框架缺口 ②（方向性/热力学）。设计原则（2026-10-13 与用户商定）：
+
+  1. **不删任何产物。** 只打标记：`方向明确` / `平衡` / `方向可疑` / `方向未定`。
+     判断权仍在用户手里（与"排序/打分停工"同一个决定）。
+  2. **判据表单一真相在 `rules/direction_table.json`**，本模块只读它 ——
+     规则可审查、可改、可关（`enabled=False`），代码里不埋化学知识。
+  3. **优先复用项目里已有的知识**，不另造一套：
+     * `core/smartreact_engine.py` 的 `CONDENSATION_CLASSES`（引擎既有的介质可逆性）
+     * `rules/rules.json` 里 `thermo_unreliable=true` 的规则（气相 xTB 符号系统性错误的
+       那 9 类"水切断键"水解，来自实测 `tools/refine_hydrolysis_boundary.py`）
+  4. **xTB 只作加分项、不作判据**：半经验 ΔG 误差 ±10~20 kJ/mol，且天然产物尺寸根本算不了
+     （`core/thermo.py` 的 `MAX_HEAVY_FOR_XTB=45`）。所以本层默认不调用 xTB。
+
+数据层的第二部分（`direction_evidence.json`，由 `tools/build_direction_evidence.py`
+从 ORD 分片统计）回答的是另一个问题：**"这个反应类型在文献里、在这种溶剂下出现过吗"**。
+它只证明"文献有这个方向"，不证明热力学可行 —— 两者在输出里分列，不混为一谈。
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict, Optional, Tuple
+
+_HERE = Path(__file__).resolve().parent
+_STAGE = _HERE.parent
+for _p in (_STAGE / "core", _STAGE / "conditions", _STAGE / "rules", _STAGE / "libs",
+           _STAGE / "sources"):
+    if _p.is_dir() and str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+DIRECTION_TABLE = _STAGE / "rules" / "direction_table.json"
+DIRECTION_EVIDENCE = _STAGE / "reports" / "direction_evidence.json"
+
+# 输出给用户的四种标记（不要再多，多了等于又替用户做判断）
+# ★ 口径唯一：`rules/direction_table.json` 每个家族都映射到这四个之一。
+#   （第一版我把表里的 label 写成 irreversible/derivatization 等，与这里对不上，
+#     结果 3 项自检 FAIL —— 表与代码必须用同一套枚举。）
+LABELS = {
+    "clear": ("方向明确", "该方向在化学上成立（含：水解侧已被实测确认的那 9 类）"),
+    "equilibrium": ("平衡", "缩合-水解平衡：它同时是另一个方向的底物，别当终产物"),
+    "suspect": ("方向可疑", "与当前介质相反：水相里应往水解走，而非往缩合走"),
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 11 页
+------------------------------------------------------------
+    "undecided": ("方向未定", "判据表覆盖不到（自抽模板），或方向本身取决于试剂/条件"),
+}
+
+# ★ 2026-10-13：形状判据的**失败计数**（AGENTS.md 第六节第 4 条：批量任务禁止静默吞异常）。
+#   为什么要它：如果 rdkit 缺失/坏掉，`Chem.MolFromSmiles` 对每条都会抛，判据整条**静默失效**，
+#   调用方只会看到「方向未定」，看不出是判据坏了。现在会打印 + 计数。
+_SHAPE_FAILS: Dict[str, Any] = {"n": 0, "last": ""}
+
+_CACHE: Dict[str, Any] = {}
+
+
+# ---------------------------------------------------------------- 表 & 证据
+
+def load_table(path: Path = DIRECTION_TABLE) -> Dict[str, Any]:
+    if "table" not in _CACHE:
+        if not path.exists():
+            _CACHE["table"] = {}
+        else:
+            with open(path, encoding="utf-8") as f:
+                _CACHE["table"] = json.load(f)
+    return _CACHE["table"]
+
+
+def class_to_family(table: Optional[Dict[str, Any]] = None) -> Dict[str, str]:
+    """反应类名 -> 家族名。"""
+    if "c2f" in _CACHE:
+        return _CACHE["c2f"]
+    t = table if table is not None else load_table()
+    out: Dict[str, str] = {}
+    for fam, d in (t.get("families") or {}).items():
+        for c in d.get("classes", []):
+            out[c] = fam
+    _CACHE["c2f"] = out
+    return out
+
+
+def condensation_classes() -> frozenset:
+    """引擎既有的缩合类集合（**唯一真相在引擎里**，这里不重复写）。"""
+    if "cond" not in _CACHE:
+        try:
+            from smartreact_engine import CONDENSATION_CLASSES
+            _CACHE["cond"] = frozenset(CONDENSATION_CLASSES)
+        except Exception:                        # noqa: BLE001 —— 兜底：退回表里的家族
+            fam = (load_table().get("families") or {}).get("condensation_reversible", {})
+            _CACHE["cond"] = frozenset(fam.get("classes", []))
+    return _CACHE["cond"]
+
+
+def thermo_unreliable_rules(rules_path: Optional[Path] = None) -> Dict[str, str]:
+    """`rules.json` 里 thermo_unreliable=true 的规则 -> 备注（实测：气相 xTB 对这些符号错）。"""
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 12 页
+------------------------------------------------------------
+    if "unrel" in _CACHE:
+        return _CACHE["unrel"]
+    p = Path(rules_path) if rules_path else (_STAGE / "rules" / "rules.json")
+    out: Dict[str, str] = {}
+    try:
+        with open(p, encoding="utf-8") as f:
+            data = json.load(f)
+        rules = data.get("rules", data) if isinstance(data, dict) else data
+        if isinstance(rules, dict):
+            rules = list(rules.values())
+        for r in rules or []:
+            if not isinstance(r, dict):
+                continue
+            if r.get("thermo_unreliable"):
+                rid = str(r.get("id") or r.get("name") or "")
+                if rid:
+                    out[rid] = str(r.get("thermo_note")
+                                   or r.get("note") or "气相 xTB 对这类水解符号系统性错误")
+    except Exception as ex:                      # noqa: BLE001 —— 打印，不静默
+        print(f"   [warn] 读 rules.json 的 thermo_unreliable 失败："
+              f"{type(ex).__name__}: {ex}")
+    _CACHE["unrel"] = out
+    return out
+
+
+def load_evidence(path: Path = DIRECTION_EVIDENCE) -> Dict[str, Any]:
+    """ORD 侧的条件-方向证据（由 tools/build_direction_evidence.py 生成）。没有就返回空。"""
+    if "evidence" not in _CACHE:
+        if not path.exists():
+            _CACHE["evidence"] = {}
+        else:
+            try:
+                with open(path, encoding="utf-8") as f:
+                    _CACHE["evidence"] = json.load(f)
+            except Exception as ex:              # noqa: BLE001
+                print(f"   [warn] direction_evidence 读不动：{type(ex).__name__}: {ex}")
+                _CACHE["evidence"] = {}
+    return _CACHE["evidence"]
+
+
+# ---------------------------------------------------------------- 判方向
+
+def _medium_bucket(solvent: str, table: Dict[str, Any]) -> str:
+    s = str(solvent or "").strip().lower()
+    med = table.get("medium_rules") or {}
+    for k, d in med.items():
+        for name in d.get("solvents", []):
+            if name.lower() in s:
+                return k
+    return "unknown"
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 13 页
+------------------------------------------------------------
+
+
+def shape_from_element_delta(element_delta) -> str:
+    """★ D1（2026-10-13）**元素收支形状**：从 (dC, dH, dO) 判这一步的形状。
+
+    口径写死（与 ORD 元素收支普查同一套形状定义）：
+      * `dH <= -2 且 dO <= -1` -> `dehydration`（脱了一分子水 / 缩合形状）
+      * `dH >= +2 且 dO >= +1` -> `hydrolysis`（加了一分子水 / 水解或加成形状）
+      * 其它 -> 不作判断（返回空串）
+    为什么它比 `shape_from_co_products` 更值得依赖：副产物是「同批其它产物」，与是否生成水无关；
+    元素收支是**从反应式直接算出来的**，与模板出处无关（实测：9,770 条模板全是 2 个反应物模板，
+    所以「两个底物」就是完整的反应物侧）。
+    """
+    try:
+        dc, dh, do = (int(element_delta[0]), int(element_delta[1]), int(element_delta[2]))
+    except Exception:                            # noqa: BLE001 —— 形状不对就不判，但要计数
+        _SHAPE_FAILS["n"] += 1
+        _SHAPE_FAILS["last"] = "element_delta 形状异常: %r" % (element_delta,)
+        return ""
+    del dc                                       # 只用水/氢的收支，碳数不参与判形状
+    if dh <= -2 and do <= -1:
+        return "dehydration"
+    if dh >= 2 and do >= 1:
+        return "hydrolysis"
+    return ""
+
+
+def shape_from_co_products(co_products) -> str:
+    """★ D1（2026-10-13）可计算形状判据：从**同批副产物**判这一步的脱水/缩合形状。
+
+    口径写死（避免误判）：只有当某个副产物的规范化 SMILES 恰好是 `O`（一分子水）时，
+    才判为 `dehydration`；其它小分子（HCl/醇/胺…）一律不判（返回空串）。
+    只有「生成水」这一侧能从副产物看出来；「消耗水」的水解形状需要反应物侧，属后续工作。
+    """
+    for x in co_products or ():
+        s = str(x or "").strip()
+        if not s:
+            continue
+        try:
+            from rdkit import Chem
+            m = Chem.MolFromSmiles(s)
+            # ★ 注意：水只有 1 个重原子（H2O -> 重原子 O），判据用规范化 SMILES 而不是原子数
+            if m is not None and Chem.MolToSmiles(m) == "O":
+                return "dehydration"
+        except Exception as ex:                  # noqa: BLE001 —— 解析失败不算命中，但**不许静默**
+            _SHAPE_FAILS["n"] += 1
+            _SHAPE_FAILS["last"] = "%s: %s (%s)" % (type(ex).__name__, ex, s[:40])
+            if _SHAPE_FAILS["n"] <= 3:           # 只提示前几次，避免刷屏
+                print("   [warn] 方向层形状判据：副产物解析失败 %r（%s: %s）"
+                      % (s[:40], type(ex).__name__, ex))
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 14 页
+------------------------------------------------------------
+            continue
+    return ""
+
+
+def _co_products_all_small(co_products, max_hac: int = 2) -> bool:
+    """★ D1 收紧（2026-10-14，第四十三轮）：其余产物是否都是小分子（≤max_hac 重原子）。
+
+    用来决定"元素收支"路径可不可信：element_delta 是「**单个产物 vs 整个反应物侧**」算的，
+    多产物模板里其它产物没有被扣掉 -> 会高估"损失"、可能假装成脱水形状。
+    约定：没有副产物记录（单产物情形）-> True（沿用旧行为）；解析失败 -> False（保守，且计数）。
+    """
+    for x in co_products or ():
+        s = str(x or "").strip()
+        if not s:
+            continue
+        try:
+            from rdkit import Chem
+            m = Chem.MolFromSmiles(s)
+        except Exception as ex:                  # noqa: BLE001 —— 计数，不静默
+            _SHAPE_FAILS["n"] += 1
+            _SHAPE_FAILS["last"] = "%s: %s (%s)" % (type(ex).__name__, ex, s[:40])
+            return False
+        if m is None:
+            _SHAPE_FAILS["n"] += 1
+            _SHAPE_FAILS["last"] = "副产物解析失败: %s" % s[:40]
+            return False
+        if m.GetNumHeavyAtoms() > max_hac:
+            return False
+    return True
+
+
+def judge(rule_name: str, cond=None,
+          table: Optional[Dict[str, Any]] = None,
+          evidence: Optional[Dict[str, Any]] = None,
+          with_evidence: bool = True,
+           co_products=None,
+           element_delta=None) -> Dict[str, Any]:
+    """给一条**规则名 + 条件**判方向标记。
+
+    返回 dict：
+      label        clear / equilibrium / suspect / undecided
+      label_cn     中文标记
+      reason       一句话说明（为什么这么判）
+      source       判据来源：table / engine_condensation / rules_thermo_unreliable / none
+      evidence     文献侧证据（可选）：该类型在该溶剂下的 ORD 记录数
+    """
+    t = table if table is not None else load_table()
+    fam = class_to_family(t).get(str(rule_name), "")
+    fdef = (t.get("families") or {}).get(fam, {}) if fam else {}
+    label = str(fdef.get("label") or "undecided")
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 15 页
+------------------------------------------------------------
+    if label not in LABELS:                      # 表里写了不在枚举内的标记 -> 归为"未定"
+        label = "undecided"
+    # 说明用表里的**规则原文**（中文），而不是 direction 那个短代号 —— 界面上不出现
+    # "undecidable" 这种代号（第一版踩过：用户看到的是理由是代号，等于没说）
+    reason = str(fdef.get("rule") or fdef.get("direction") or "")
+    source = "table" if fam else "none"
+
+    solvent = str(getattr(cond, "solvent", "") or "")
+    bucket = _medium_bucket(solvent, t) if t else "unknown"
+
+    # ★ 缩合类：用引擎既有的可逆性知识覆盖（单一真相在引擎里）
+    if str(rule_name) in condensation_classes():
+        source = "engine_condensation"
+        if bucket == "water_like":
+            label, reason = "suspect", "水相：缩合类应往水解方向走，此产物是缩合方向"
+        elif bucket == "nonwater":
+            label, reason = "clear", "非水介质：缩合方向成立（引擎既有行为一致）"
+        else:
+            label, reason = "equilibrium", "缩合-水解平衡（介质不明，按平衡看）"
+
+    # ★ thermo_unreliable：水的【切断】型水解 —— 方向其实是明确的（水解侧）
+    unrel = thermo_unreliable_rules()
+    if str(rule_name) in unrel:
+        label = "clear"
+        reason = "水解侧方向明确（实测：气相 xTB 对这类符号系统性错误，故不采信数值，只取方向）"
+        source = "rules_thermo_unreliable"
+
+    # ★ D1（2026-10-13）：**可计算的形状判据** —— 只补表里没覆盖的具名类（不动已判定的）。
+    #   表是「手写类别清单」，只覆盖缩合类那 10 类 + 9 条水解规则；这一步把判据换成
+    #   「**这一步是否脱掉一分子水**」（从副产物直接算出来），于是任何能算出副产物的具名类都能拿到方向判决。
+    #   ★ 2026-10-13 D1：**也覆盖自抽模板（mined_*）**。原立场是「mined 一律未定」（判据表覆盖不到），
+    #   但「这一步脱没脱掉一分子水」是**从反应本身算出来的**，与模板出处无关 ——
+    #   所以只要副产物里确实有水，就按形状判；判不了（无水）才留在未定。
+    if label == "undecided":
+        # 两条可计算判据，优先用「元素收支」（更普遍：不依赖副产物里是否列了水）
+        # ★ D1 收紧（第四十三轮）：多产物模板里 element_delta 会高估"损失"（其余产物没扣掉），
+        #   所以**只有当其余产物都是小分子（≤2 重原子）**时才按元素收支判形状；
+        #   否则跳过它、只用「副产物是不是水」这条（那条与产物个数无关）。
+        shape = ""
+        src_shape = "element_delta_shape"
+        if _co_products_all_small(co_products):
+            shape = shape_from_element_delta(element_delta)
+        if not shape:
+            shape = shape_from_co_products(co_products)
+            src_shape = "co_product_shape"
+        if shape == "dehydration":
+            source = src_shape
+            if bucket == "water_like":
+                label = "suspect"
+                reason = ("该步脱掉一分子水（脱水/缩合形状，" + src_shape + "）；"
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 16 页
+------------------------------------------------------------
+                          "水相里方向相反，应往水解走")
+            elif bucket == "nonwater":
+                label = "clear"
+                reason = ("该步脱掉一分子水（脱水/缩合形状，" + src_shape + "）；"
+                          "非水介质里该方向成立")
+            else:
+                label = "equilibrium"
+                reason = "该步脱掉一分子水（脱水/缩合形状）；介质不明，按平衡看"
+        elif shape == "hydrolysis":
+            source = src_shape
+            if bucket == "water_like":
+                label = "clear"
+                reason = ("该步加了一分子水（水解/加成形状，" + src_shape + "）；水相里该方向成立")
+            elif bucket == "nonwater":
+                label = "suspect"
+                reason = ("该步加了一分子水（水解/加成形状，" + src_shape + "）；"
+                          "非水介质里方向相反（缺水）")
+            else:
+                label = "equilibrium"
+                reason = "该步加了一分子水（水解/加成形状）；介质不明，按平衡看"
+
+    out: Dict[str, Any] = {
+        "label": label,
+        "label_cn": LABELS.get(label, ("?", ""))[0],
+        "reason": reason,
+        "source": source,
+        "family": fam,
+        "medium": bucket,
+        "solvent": solvent,
+    }
+
+    if with_evidence and evidence is not None:
+        ev = evidence_lookup(str(rule_name), solvent, evidence)
+        if ev:
+            out["evidence"] = ev
+    return out
+
+
+def evidence_lookup(rule_name: str, solvent: str,
+                    evidence: Optional[Dict[str, Any]] = None,
+                    family: str = "") -> Dict[str, Any]:
+    """文献侧证据：该反应类型（或其家族）在 ORD 里、在该溶剂类别下的记录数。
+
+    ★ 只回答"文献里有没有这个方向"，**不回答"热力学可行吗"**。
+    """
+    ev = evidence if evidence is not None else load_evidence()
+    if not ev:
+        return {}
+    per_class = ev.get("per_class") or {}
+    per_family = ev.get("per_family") or {}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 17 页
+------------------------------------------------------------
+    by_solv = (ev.get("by_solvent_class") or {})
+    bucket = str(solvent or "").strip().lower() or "unknown"
+    hit: Dict[str, Any] = {"n_ord": 0, "n_ord_same_solvent": 0,
+                           "samples": ev.get("n_records", 0)}
+    row = per_class.get(rule_name)
+    if row:
+        hit["n_ord"] = int(row.get("n", 0))
+        hit["top_solvents"] = row.get("top_solvents", [])[:3]
+    if family and not row:
+        frow = per_family.get(family)
+        if frow:
+            hit["n_ord"] = int(frow.get("n", 0))
+            hit["top_solvents"] = frow.get("top_solvents", [])[:3]
+            hit["via"] = "family"
+    sc = by_solv.get(bucket, {}) if isinstance(by_solv, dict) else {}
+    if sc:
+        hit["n_ord_same_solvent"] = int(sc.get(rule_name, sc.get("__all__", 0)) or 0)
+    # ★ 数据自身的发表偏倚（实测）：同溶剂桶里「H↗O↗（水解/加成形状）」占多少。
+    #   这是拿 ORD 判方向时必须告诉用户的前提：水解形状在文献里天然稀缺。
+    pats = (ev.get("element_patterns_by_solvent_class") or {}).get(bucket) or {}
+    n_tot = int(pats.get("n", 0) or 0)
+    if n_tot:
+        up = int(pats.get("H_up_O_up", 0) or 0)
+        down = int(pats.get("H_down_O_down", 0) or 0)
+        hit["ord_same_solvent_n"] = n_tot
+        hit["ord_hydrolysis_shape_share"] = round(up / n_tot, 4)
+        hit["ord_dehydration_shape_share"] = round(down / n_tot, 4)
+    med = (ev.get("element_delta_median_by_solvent_class") or {}).get(bucket) or {}
+    if med:
+        hit["ord_median_dH_dO"] = [med.get("dH"), med.get("dO")]
+    if not hit["n_ord"] and not hit["n_ord_same_solvent"] and not n_tot:
+        return {}
+    return hit
+
+
+def summarize(judgements) -> Dict[str, Any]:
+    """一批判定结果 -> 计数（给 build/A/C 的界面用）。"""
+    n: Dict[str, int] = {}
+    for j in judgements:
+        k = str(j.get("label_cn") or "?")
+        n[k] = n.get(k, 0) + 1
+    return n
+
+
+def describe_table(path: Path = DIRECTION_TABLE) -> str:
+    t = load_table(path)
+    lines = [f"方向判据表：{path.name}  版本 {t.get('version', '?')}"]
+    for fam, d in (t.get("families") or {}).items():
+        lines.append(f"  {fam:<28} -> {d.get('label'):<20} {len(d.get('classes', []))} 类")
+    unrel = thermo_unreliable_rules()
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 18 页
+------------------------------------------------------------
+    lines.append(f"  （另有 rules.json 里 thermo_unreliable={len(unrel)} 条：水解侧方向明确）")
+    lines.append(f"  形状判据（D1）：失败计数 {_SHAPE_FAILS['n']}"
+                 + (f"  最后一次：{_SHAPE_FAILS['last']}" if _SHAPE_FAILS["n"] else ""))
+    ev = load_evidence()
+    if ev:
+        lines.append(f"  文献侧证据：{ev.get('source', '?')} 抽样 {ev.get('n_records', 0):,} 条")
+    else:
+        lines.append("  文献侧证据：尚未生成（跑 tools/build_direction_evidence.py）")
+    return "\n".join(lines)
+# ==================== FILE: core/engine.py ====================
+# -*- coding: utf-8 -*-
+"""
+chemreact 核心：反应引擎（单步）
+================================
+
+职责：给定「一条规则 + 一个底物 + 一组条件」，产出候选产物，并带上完整来源追溯。
+
+★ 本模块正面修掉了原 tcm_analyzer.py 的一个硬伤 ★
+
+原代码：
+    def _valid_product(mol, min_mw=100, min_heavy=10):
+        ...
+        if Descriptors.MolWt(mol) < min_mw: return False
+        if mol.GetNumHeavyAtoms() < min_heavy: return False
+
+后果（第 0 轮实测）：**苯甲酸（MW 122，9 个重原子）被过滤掉**。
+而乌头碱"酯水解减毒"的标志性产物正是苯甲酸 + 乙酸——两个都被当成"噪声"删了。
+演示给中药学院的老师看，这一条一问就露馅。
+
+本模块的做法不是"把阈值调小"，而是**不删数据、只做分类**：
+
+    · 价态非法          → 丢弃（这是真正的坏数据）
+    · 单原子 / 分子量 < 2 → 丢弃（H+、单个离子之类，不是产物）
+    · 小分子副产物       → **保留**，但打上 is_byproduct 标记
+                          （水 18、甲醇 32、CO2 44 这类）
+    · 其余              → 正常产物
+
+这样上层 UI 可以默认折叠副产物，但化学账目始终是完整的、可追溯的。
+「删掉不该删的」比「显示太多」危险得多——前者会静默改变结论。
+"""
+
+from __future__ import annotations
+
+import re
+import sys
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+
+from rdkit import Chem, RDLogger
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 19 页
+------------------------------------------------------------
+from rdkit.Chem import AllChem, Descriptors, rdMolDescriptors
+
+RDLogger.DisableLog("rdApp.error")
+RDLogger.DisableLog("rdApp.warning")
+
+_HERE = Path(__file__).resolve().parent
+_STAGE = _HERE.parent
+for _p in (_STAGE / "rules", _STAGE / "conditions", _STAGE / "libs"):
+    if _p.is_dir() and str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+from schema import load_rules, resolve_conditions          # noqa: E402
+from model import Conditions                                # noqa: E402
+from activator import active_rules, activation_score        # noqa: E402
+
+
+# ---------------------------------------------------------------- 阈值
+
+# 低于这个分子量、或重原子数不超过这个值的，标记为「小分子副产物」。
+# 注意：是【标记】不是【删除】。
+BYPRODUCT_MAX_MW = 46.0        # 水 18、甲醇 32、CO2 44 都落在这里；甲酸 46 恰好在上界
+BYPRODUCT_MAX_HEAVY = 2
+
+# 真正的丢弃门槛：低于此值说明根本不是个分子（H+、单原子离子）
+DISCARD_MIN_MW = 2.0
+
+
+# ---------------------------------------------------------------- 数据结构
+
+@dataclass
+class Compound:
+    """一个输入成分（来自药材，或来自上一轮级联）。"""
+    smiles: str
+    name: str = ""
+    herb: str = ""
+    source: str = ""            # "herb" | "cascade" | "user"
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Product:
+    """一个候选产物，自带完整来源追溯（项目简报 §10）。"""
+    smiles: str
+    formula: str
+    mw: float
+    heavy_atoms: int
+
+    rule_id: str
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 20 页
+------------------------------------------------------------
+    rule_name: str
+    category: str
+
+    source_smiles: str
+    source_name: str
+    source_herb: str
+
+    round: int = 0
+    score: float = 0.0
+    is_byproduct: bool = False
+    reversible: bool = False
+    activation: float = 0.0
+
+    # ★ 第三十四轮：activation 的**依据**（"温度窗口命中"/"溶剂不匹配降权"/"试剂角色不匹配"…）。
+    #   动机（实测）：条件层常给出 0.5 这种值，但它其实是"我没匹配上"，
+    #   用户看到 0.5 会误当成"模型判断有一半把握"。把依据带出来，误读就消失了。
+    activation_why: str = ""
+
+    # ★ 与它同时产生的其他片段（含自己）。
+    # 有了这个才能算反应 ΔG——单独一个产物构不成配平的方程。
+    co_products: tuple = ()
+    # ★ D1（2026-10-13）：(dC, dH, dO) = 产物 - 反应物；方向层的「元素收支形状」判据用。空元组 = 没算。
+    element_delta: tuple = ()
+    # ★ D2（2026-10-13）：同一反应里**另一个**底物的规范化 SMILES（条件模型要两个指纹位）。
+    partner_smiles: str = ""
+    # ★ D5（2026-10-13）：这条产物来自的 3 组分模板 support（0 = 不适用/非三组分）。
+    #   用途只有一个：给「只见过一次的套路」打标记（不删产物、不排序）。
+    template_support: int = 0
+
+    # ★ 热力学（由 core/thermo.py 填充，可为空）
+    dg_kj: Optional[float] = None
+    stability: Optional[float] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+    def describe(self) -> str:
+        tag = " [副产物]" if self.is_byproduct else ""
+        return (f"{self.formula:<12} {self.rule_name:<12} "
+                f"来自 {self.source_name or self.source_smiles[:16]:<18} "
+                f"第{self.round}轮 置信 {self.score:.3f}{tag}")
+
+
+# ---------------------------------------------------------------- 分子缓存
+
+_MOL_CACHE: Dict[str, Optional[Chem.Mol]] = {}
+
+
+def get_mol(smiles: str) -> Optional[Chem.Mol]:
+    if smiles not in _MOL_CACHE:
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 21 页
+------------------------------------------------------------
+        m = Chem.MolFromSmiles(smiles)
+        if m is not None:
+            try:
+                Chem.SanitizeMol(m)
+            except Exception:
+                m = None
+        _MOL_CACHE[smiles] = m
+    return _MOL_CACHE[smiles]
+
+
+def classify_product(mol: Chem.Mol) -> Tuple[bool, bool]:
+    """返回 (是否保留, 是否小分子副产物)。
+
+    这是对原 _valid_product 的替代。**只丢真正不是分子的东西**，
+    小分子一律保留但打标记。
+    """
+    try:
+        if Chem.SanitizeMol(Chem.Mol(mol), catchErrors=True) != Chem.SanitizeFlags.SANITIZE_NONE:
+            return False, False
+    except Exception:
+        return False, False
+
+    mw = Descriptors.MolWt(mol)
+    heavy = mol.GetNumHeavyAtoms()
+
+    if mw < DISCARD_MIN_MW or heavy < 1:
+        return False, False          # H+、单原子离子
+
+    is_byproduct = (mw <= BYPRODUCT_MAX_MW) or (heavy <= BYPRODUCT_MAX_HEAVY)
+    return True, is_byproduct
+
+
+# ---------------------------------------------------------------- 原子计数
+# 运行时原子守恒守卫用的小工具。
+# 不 import rules/schema.py 的实现，是为了不让 core 依赖 rules 层。
+
+_FORMULA_TOKEN = re.compile(r"([A-Z][a-z]?)(\d*)")
+
+# 原子计数缓存。守恒守卫对每个产物组都要算一次，
+# cProfile 显示这块占了约 10% 的时间；同一个 SMILES 会被反复算。
+_ATOM_COUNT_CACHE: Dict[str, Dict[str, float]] = {}
+
+
+def _formula_atoms(formula: str) -> Dict[str, float]:
+    """把 'C6H6O2' 解析成 {'C':6,'H':6,'O':2}。支持小数（如 O2 的 0.5 倍）。"""
+    out: Dict[str, float] = {}
+    for el, cnt in _FORMULA_TOKEN.findall(formula or ""):
+        if not el:
+            continue
+        out[el] = out.get(el, 0.0) + (float(cnt) if cnt else 1.0)
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 22 页
+------------------------------------------------------------
+    return out
+
+
+def _atom_counts_of_smiles(smiles: str) -> Dict[str, float]:
+    """含氢的完整原子计数。解析失败返回空字典（调用方据此保守放行）。
+
+    ★ 带缓存 ★ 守恒守卫对每个产物片段都要调用一次，而同一个 SMILES
+    会在不同产物组里反复出现（例如水、葡萄糖）。
+
+    ★★ 必须返回【副本】★★
+      踩过的坑：第一版直接返回缓存里那个 dict，而 _collect 里会原地加
+      co_reagents（`left[el] = left.get(el,0)+c*v`），于是把缓存改脏了 ——
+      同一个底物的原子数被越加越多，守卫判定"配不平"，产物从 455 个掉到 18 个。
+      缓存可以共享，但共享出去的对象【绝不能被调用方改】。
+    """
+    key = smiles
+    hit = _ATOM_COUNT_CACHE.get(key)
+    if hit is not None:
+        return dict(hit)
+    m = get_mol(smiles)
+    if m is None:
+        _ATOM_COUNT_CACHE[key] = {}
+        return {}
+    mh = Chem.AddHs(m)
+    out: Dict[str, float] = {}
+    for a in mh.GetAtoms():
+        s = a.GetSymbol()
+        out[s] = out.get(s, 0.0) + 1.0
+    _ATOM_COUNT_CACHE[key] = out
+    return dict(out)
+
+
+def _add_counts(a: Dict[str, float], b: Dict[str, float]) -> Dict[str, float]:
+    out = dict(a)
+    for k, v in (b or {}).items():
+        out[k] = out.get(k, 0.0) + v
+    return out
+
+
+def _counts_differ(a: Dict[str, float], b: Dict[str, float],
+                   tol: float = 1e-6) -> bool:
+    """两边原子数是否不同。任一边为空（解析失败）时返回 False（保守放行）。"""
+    if not a or not b:
+        return False
+    for k in set(a) | set(b):
+        if abs(a.get(k, 0.0) - b.get(k, 0.0)) > tol:
+            return True
+    return False
+
+
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 23 页
+------------------------------------------------------------
+# ---------------------------------------------------------------- 引擎
+
+class Engine:
+    """单步反应引擎。规则编译结果会缓存，可反复用。"""
+
+    def __init__(self, rules: Sequence[Dict[str, Any]],
+                 profiles: Dict[str, Any],
+                 default_max_products: int = 3):
+        self.rules = list(rules)
+        self.profiles = dict(profiles)
+        self.default_max_products = default_max_products
+        self._rxn_cache: Dict[str, Any] = {}
+        self._nreact_cache: Dict[str, int] = {}
+        self._rdkit_rxn_cache: Dict[str, Any] = {}
+        self._missing_rdchiral_reported = False
+        # ★ 性能：按 SMILES 缓存 rdchiralReactants（原来每条规则都重建一次）
+        self._reactants_cache: Dict[str, Any] = {}
+        # ★ 性能：按规则 id 缓存反应物模板，供便宜预筛用
+        self._template_cache: Dict[str, Any] = {}
+
+    # -------------------------------------------------- rdchiral 编译缓存
+
+    def _reaction(self, rule: Dict[str, Any]):
+        rid = rule["id"]
+        if rid not in self._rxn_cache:
+            from rdchiral.main import rdchiralReaction
+            self._rxn_cache[rid] = rdchiralReaction(rule["smarts"])
+        return self._rxn_cache[rid]
+
+    # -------------------------------------------------- 反应物模板数
+
+    def n_reactants(self, rule: Dict[str, Any]) -> int:
+        """这条规则有几个反应物模板。
+
+        rdchiral 的 rdchiralRun 里写死了 RunReactants((mol,))——单元素元组，
+        所以双反应物规则必须走 rdkit 原生引擎。
+        这类规则（酯交换、席夫碱、酯化…）断的通常是非环键，
+        配合 !@ 约束可行；环状的情况交给对应的单反应物规则。
+        """
+        rid = rule["id"]
+        if rid not in self._nreact_cache:
+            try:
+                rxn = AllChem.ReactionFromSmarts(rule["smarts"])
+                self._nreact_cache[rid] = rxn.GetNumReactantTemplates() if rxn else 0
+            except Exception:
+                self._nreact_cache[rid] = 0
+        return self._nreact_cache[rid]
+
+    def _rdkit_reaction(self, rule: Dict[str, Any]):
+        rid = rule["id"]
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 24 页
+------------------------------------------------------------
+        if rid not in self._rdkit_rxn_cache:
+            self._rdkit_rxn_cache[rid] = AllChem.ReactionFromSmarts(rule["smarts"])
+        return self._rdkit_rxn_cache[rid]
+
+    # -------------------------------------------------- 第二反应物池
+
+    def available_cosubstrates(self, rule: Dict[str, Any],
+                               cond: Optional[Conditions] = None):
+        """按当前条件筛出这条规则可用的第二反应物。
+
+        ★ 池子受条件约束：醇提时才有乙醇，煎煮时只有水。
+          这正是「醇提 ≠ 水提」在化学上落地的关键——
+          乙醇不只改变速率，它本身就参与反应（酯交换）。
+        """
+        out = []
+        for item in (rule.get("co_substrate_pool") or []):
+            if not isinstance(item, dict) or not item.get("smiles"):
+                continue
+            when = item.get("when_solvent")
+            if when and cond is not None and cond.solvent not in when:
+                continue
+            out.append(item)
+        return out
+
+    # -------------------------------------------------- 单条规则 × 单个底物
+
+    def apply_rule(self, rule: Dict[str, Any], sub: Compound,
+                   activation: float, round_no: int,
+                   cond: Optional[Conditions] = None) -> List[Product]:
+        n = self.n_reactants(rule)
+        if n == 2:
+            return self._apply_bireactant(rule, sub, activation, round_no, cond)
+        return self._apply_rdchiral(rule, sub, activation, round_no)
+
+    # -------------------------------------------------- 单反应物（rdchiral）
+
+    def _reactants_obj(self, smiles: str):
+        """按 SMILES 缓存 rdchiralReactants —— 同一个底物只构造一次。
+
+        ★ 为什么必须缓存 ★
+          rdchiralReactants(smiles) 的初始化很贵（要指派立体化学、
+          给每个原子分配 map number）。原来在 _apply_rdchiral 里
+          【每条规则都重新构造一次同一个对象】：
+              43 条规则 × 59 个底物 = 2537 次
+          cProfile 显示 initialization.py 占 36% 的时间，就是这么来的。
+          缓存后降到 59 次。
+        """
+        key = smiles
+        if key not in self._reactants_cache:
+            from rdchiral.main import rdchiralReactants
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 25 页
+------------------------------------------------------------
+            self._reactants_cache[key] = rdchiralReactants(smiles)
+        return self._reactants_cache[key]
+
+    def _achiral_matches(self, rule: Dict[str, Any], reactants_obj) -> bool:
+        """便宜预筛：底物（非手性版）到底匹不匹配这条规则的模板？
+
+        ★ 为什么安全 ★
+          rdchiral/main.py:121 的第一步是
+              outcomes = rxn.rxn.RunReactants((reactants.reactants_achiral,))
+              if not outcomes: return []
+          RunReactants 是【基于子结构匹配】的：匹配不上必然返回空。
+          所以「模板匹配失败 ⇒ 结果必为空」是确定的，
+          预筛只会跳过注定为空的调用，不会丢掉任何产物。
+
+        ★ 必须用【非手性】分子 ★
+          rdchiral 匹配的是 reactants_achiral。若拿带手性的底物去匹配
+          带 @ 的模板，会误判为不匹配（实测 2-丁醇的 R/S 异构体都会挂）。
+          用错会静默丢产物 —— 这是这个优化唯一的坑。
+        """
+        tid = rule["id"]
+        patt = self._template_cache.get(tid)
+        if patt is None:
+            rxn = self._rdkit_reaction(rule)
+            if rxn is None:
+                self._template_cache[tid] = False
+                return True          # 编译不了就放行，交给 rdchiral 自己失败
+            patt = rxn.GetReactantTemplate(0)
+            self._template_cache[tid] = patt
+        if patt is False:
+            return True
+        try:
+            return reactants_obj.reactants_achiral.HasSubstructMatch(patt)
+        except Exception:
+            return True              # 出意外就放行（宁可慢，不可错）
+
+    def _apply_rdchiral(self, rule: Dict[str, Any], sub: Compound,
+                        activation: float, round_no: int) -> List[Product]:
+        from rdchiral.main import rdchiralRun
+
+        try:
+            rxn = self._reaction(rule)
+            r_obj = self._reactants_obj(sub.smiles)
+            # ---- 便宜预筛：77.5% 的 (规则×底物) 组合在这一步就跳过了 ----
+            if not self._achiral_matches(rule, r_obj):
+                self.prefilter_skipped = getattr(self, "prefilter_skipped", 0) + 1
+                return []
+            outcomes = rdchiralRun(rxn, r_obj) or []
+        except Exception:
+            return []
+        return self._collect(rule, sub, activation, round_no, outcomes,
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 26 页
+------------------------------------------------------------
+                             co_substrate=None)
+
+    # -------------------------------------------------- 双反应物（rdkit 原生）
+
+    def _apply_bireactant(self, rule: Dict[str, Any], sub: Compound,
+                          activation: float, round_no: int,
+                          cond: Optional[Conditions]) -> List[Product]:
+        candidates = self.available_cosubstrates(rule, cond)
+        if not candidates:
+            return []
+
+        sub_mol = get_mol(sub.smiles)
+        if sub_mol is None:
+            return []
+        rxn = self._rdkit_reaction(rule)
+        if rxn is None:
+            return []
+
+        limit = rule.get("max_products_per_molecule", self.default_max_products)
+        out: List[Product] = []
+        seen_local = set()
+
+        for item in candidates:
+            co_mol = get_mol(item["smiles"])
+            if co_mol is None:
+                continue
+            try:
+                res = rxn.RunReactants((sub_mol, co_mol))
+            except Exception:
+                continue
+            outcomes = []
+            for pset in res:
+                frags = []
+                for p in pset:
+                    pc = Chem.Mol(p)
+                    try:
+                        Chem.SanitizeMol(pc)
+                    except Exception:
+                        frags = None
+                        break
+                    frags.append(Chem.MolToSmiles(pc))
+                if frags:
+                    outcomes.append(".".join(frags))
+            if not outcomes:
+                continue
+            out = self._collect(rule, sub, activation, round_no, outcomes,
+                                co_substrate=item, limit=limit,
+                                seen_local=seen_local)
+            if out:
+                break       # 池子里第一个能反应的分子就够了
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 27 页
+------------------------------------------------------------
+        return out
+
+    # -------------------------------------------------- 产物整理
+
+    def _collect(self, rule: Dict[str, Any], sub: Compound,
+                 activation: float, round_no: int,
+                 outcomes: Sequence[str],
+                 co_substrate: Optional[Dict[str, Any]] = None,
+                 limit: Optional[int] = None,
+                 seen_local: Optional[set] = None) -> List[Product]:
+        if limit is None:
+            limit = rule.get("max_products_per_molecule", self.default_max_products)
+        if seen_local is None:
+            seen_local = set()
+
+        # ★★ 必须排序：跨进程可复现的前提 ★★
+        #
+        # 实测事故：同一个脚本在独立进程里跑 5 次，
+        #   产物数 462 / 461 / 463 / 458 / 458
+        # 固定 PYTHONHASHSEED=0 之后：
+        #   452 / 452 / 452 —— 完全一致
+        #
+        # 根因在 rdchiral：libs/rdchiral/main.py:131
+        #     final_outcomes = set()
+        #     ...
+        #     return [list(x) for x in final_outcomes]
+        # 它用【集合】收集结果，转 list 时顺序随 Python 的字符串哈希种子变化。
+        # 而下面有 `if len(out) >= limit: break` —— 取"前 N 个"，
+        # 于是每个进程截断下来的产物不一样。
+        #
+        # 排序后，同一组产物在哪个进程都排在同一个位置，截断结果就确定了。
+        outcomes = sorted(outcomes)
+
+        # ★★ 运行时原子守恒守卫 ★★
+        #
+        # 为什么需要它（实测动机）：
+        #   「对醌还原」这条规则的 SMARTS 用 ~（任意键）匹配
+        #   [O]=[C]~[C]~[C]~[C]=[O]。出乎意料的是，它会顺带匹配上
+        #   甾体 3,6-二酮这种【两个 C=O 分处不同环】的结构——
+        #   因为那两个碳之间除了直路，还有一条绕环的远路。
+        #   而这类结构的产物【无法芳香化】，RDKit 不给碳补氢，
+        #   于是产物比底物少 2 个氢 —— 配不平。
+        #
+        #   试过 6 种 SMARTS 约束都排不掉（环内键 @、环成员 R、
+        #   递归 SMARTS、六元环 r6、反应物侧环闭合……）。
+        #
+        # 所以换一个层面解决：**在引擎里守一道**。
+        #   规则声明了 co_reagents / byproducts，那么
+        #       底物 + 陪跑试剂 − 副产物  ==  产物
+        #   必须成立。不成立说明这个产物是错的，直接丢掉。
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 28 页
+------------------------------------------------------------
+        #
+        # 这是通用防线：不止管这一条规则，任何规则（现在或将来）
+        # 产出配不平的产物都会被当场拦下。
+        #
+        # ★ 多片段底物（盐、离子对）要放行 ★
+        #   实测：10-十一烯酸钠 C=CCCCCCCCCC(=O)[O-].[Na+] 会被误杀——
+        #   rdchiral 只返回参与反应的那一片，Na+ 留在原地，
+        #   于是「产物原子数」天然对不上底物。
+        #   这类底物（含 . 的 SMILES）整个跳过守卫。
+        _sub_mol = get_mol(sub.smiles)
+        _guard_on = (_sub_mol is not None
+                     and len(Chem.GetMolFrags(_sub_mol)) == 1)
+
+        # ★ 注意：守卫关闭时，left 必须【保持为空】★
+        #   第一版写成 left = {} 然后照样把 co_reagents 加进去，
+        #   结果这个底物有 co={H2:1}，left 变成了 {H:2}（非空），
+        #   _counts_differ 的「任一边为空就放行」短路失效，照样误杀。
+        left: Dict[str, float] = {}
+        declared: Dict[str, float] = {}
+        if _guard_on:
+            left = _atom_counts_of_smiles(sub.smiles)
+            if co_substrate and co_substrate.get("smiles"):
+                left = _add_counts(left,
+                                   _atom_counts_of_smiles(co_substrate["smiles"]))
+            for formula, n in (rule.get("co_reagents") or {}).items():
+                v = float(n)
+                for el, c in _formula_atoms(formula).items():
+                    left[el] = left.get(el, 0.0) + c * v
+            for formula, n in (rule.get("byproducts") or {}).items():
+                v = float(n)
+                for el, c in _formula_atoms(formula).items():
+                    declared[el] = declared.get(el, 0.0) + c * v
+
+        out: List[Product] = []
+        n_unbalanced = 0
+        for smi in outcomes:
+            if len(out) >= limit:
+                break
+
+            # ---- 守卫：这一组产物的原子数必须配得平 ----
+            right = dict(declared)
+            for part in (p for p in smi.split(".") if p):
+                for el, c in _atom_counts_of_smiles(part).items():
+                    right[el] = right.get(el, 0.0) + c
+            if _counts_differ(left, right):
+                n_unbalanced += 1
+                continue
+
+            # 先把这一组产物全部过一遍有效性检查，
+            # 因为算反应 ΔG 需要知道「这个产物是和哪些同伴一起产生的」，
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 29 页
+------------------------------------------------------------
+            # 单独一个片段构不成配平的方程。
+            parts = [p for p in smi.split(".") if p]
+            valid = []
+            for part in parts:
+                if part in seen_local:
+                    continue
+                mol = get_mol(part)
+                if mol is None:
+                    continue
+                keep, is_by = classify_product(mol)
+                if not keep:
+                    continue
+                valid.append((part, mol, is_by))
+
+            if not valid:
+                continue
+            group = tuple(sorted(p for p, _m, _b in valid))
+
+            for part, mol, is_by in valid:
+                seen_local.add(part)
+                out.append(Product(
+                    smiles=part,
+                    formula=rdMolDescriptors.CalcMolFormula(mol),
+                    mw=round(Descriptors.MolWt(mol), 2),
+                    heavy_atoms=mol.GetNumHeavyAtoms(),
+                    rule_id=rule["id"],
+                    rule_name=rule["name"],
+                    category=rule.get("category", ""),
+                    source_smiles=sub.smiles,
+                    source_name=sub.name,
+                    source_herb=sub.herb,
+                    round=round_no,
+                    is_byproduct=is_by,
+                    reversible=bool(rule.get("reversible", False)),
+                    activation=activation,
+                    co_products=group,
+                ))
+        if n_unbalanced:
+            self.balance_dropped = getattr(self, "balance_dropped", 0) + n_unbalanced
+        return out
+
+    # -------------------------------------------------- 一步：底物池 × 激活规则
+
+    def step(self, compounds: Sequence[Compound], cond: Conditions,
+             threshold: float = 0.15,
+             exclude_smiles: Optional[set] = None,
+             round_no: int = 1) -> List[Product]:
+        """对一批底物跑一轮反应。exclude_smiles 里的产物不再重复产出。"""
+        exclude_smiles = exclude_smiles or set()
+        active = active_rules(self.rules, self.profiles, cond, threshold)
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 30 页
+------------------------------------------------------------
+
+        results: List[Product] = []
+        seen: set = set()
+
+        for sub in sorted(compounds, key=lambda c: c.smiles):
+            # ★ 必须排序 ★
+            #   同一个产物 SMILES 可能由多个底物产出，而这里「谁先产出谁记名」
+            #   （`if p.smiles in seen: continue`）。
+            #   不排序的话，产物的 source_smiles / source_name 就取决于
+            #   调用方传底物的顺序 —— 实测 153 个产物里有 23 个（15%）归属会变，
+            #   而 source_smiles 又参与打分（一致性因子），
+            #   于是级联的前沿选择跟着变，整条链路的输出都不可复现。
+            if get_mol(sub.smiles) is None:
+                continue
+            for rule, act, _reasons in active:
+                for p in self.apply_rule(rule, sub, act, round_no=round_no,
+                                         cond=cond):
+                    if p.smiles in exclude_smiles or p.smiles in seen:
+                        continue
+                    if p.smiles == sub.smiles:
+                        continue          # 自身不算产物
+                    seen.add(p.smiles)
+                    results.append(p)
+        return results
+
+
+# ---------------------------------------------------------------- 便捷入口
+
+def load_engine(rules_path: Optional[str] = None) -> Tuple[Engine, List[Dict], Dict]:
+    p = Path(rules_path) if rules_path else (_STAGE / "rules" / "rules.json")
+    profiles, rules = load_rules(p)
+    return Engine(rules, profiles), rules, profiles
+# ==================== FILE: core/query_base.py ====================
+# -*- coding: utf-8 -*-
+r"""查询式交互的【共用底座】
+============================
+
+用户 2026-10-12 拍板的架构（见 reports/项目接手总结-2026-10-12-收工版.md §一）：
+
+    一次枚举（每条产物带出处：来源底物 / 反应规则 / 第几轮）
+  + 一份索引（产物规范化 SMILES -> InChIKey）
+  -> 三个查询入口（A 查产物 / B 查底物 / C 结果集检索）
+
+本模块只提供底座 + 三个入口的**纯函数实现**；命令行在 `tools/query_engine.py`。
+
+## 三条必须写进界面的边界（用户文档 §一）
+1. **查不到 ≠ 不存在** —— 只等于"当前模板库 + 当前轮数没枚举出来"。
+2. **B 只给一个分子 → 只有单底物化学**；双分子反应必须同时给配体。
+3. **预测出的新产物没有名字** —— 按名称查只对库里已有的分子有效。
+
+
+……（中间 1548 页略；如需可整体提供）……
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1579 页
+------------------------------------------------------------
+LOGDIR = DATAROOT
+if sys.stdout is None or sys.stderr is None:
+    _fh = _open_log()
+    if _fh is not None:
+        LOG = getattr(_fh, "name", None)
+        if sys.stdout is None:
+            sys.stdout = _fh
+        if sys.stderr is None:
+            sys.stderr = _fh
+
+# ★ 引擎解释器：打包后必须指向用户 venv，否则 sys.executable 会是 exe 自身
+VENV_PY = r"D:\TCMAI\venv\Scripts\python.exe"
+if FROZEN:
+    os.environ.setdefault("CHEMREACT_PY", VENV_PY)
+
+
+def free_port(preferred: int = 8765) -> int:
+    with socket.socket() as s:
+        try:
+            s.bind(("127.0.0.1", preferred))
+            return preferred
+        except OSError:
+            s.bind(("127.0.0.1", 0))
+            return s.getsockname()[1]
+
+
+def main() -> int:
+    print("\n==== %s 启动（frozen=%s, base=%s）===="
+          % (time.strftime("%Y-%m-%d %H:%M:%S"), FROZEN, BASE))
+    # ui.py 在 import 时按 __file__ 算 HERE；打包后它在 _MEIPASS 里，正好能找到
+    # 我们 --add-data 带进去的 ui_page.html / chemreact.py。
+    sys.path.insert(0, str(BASE))
+    import ui
+
+    # 产物目录：不要写进程序自身目录（打包后可能只读）——放到 %LOCALAPPDATA%\chemreact\out
+    out_dir = DATAROOT / "out"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    ui.OUT_DIR = out_dir
+
+    port = free_port(8765)
+    ui.PORT = port
+    url = "http://127.0.0.1:%d/" % port
+
+    def serve():
+        try:
+            ui.main()
+        except Exception:                                    # noqa: BLE001
+            traceback.print_exc()
+
+    threading.Thread(target=serve, daemon=True).start()
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1580 页
+------------------------------------------------------------
+    for _ in range(100):                                     # 等服务起来
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=0.2):
+                break
+        except OSError:
+            time.sleep(0.05)
+
+    def edge_app(u: str) -> bool:
+        r"""用 Edge 的 **app 模式**开一个独立窗口（自己的用户数据目录，**不碰用户正在用的 Edge**）。"""
+        edge = (r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+                r"\0C:\Program Files\Microsoft\Edge\Application\msedge.exe").split("\0")
+        prof = LOGDIR / "edge-profile"
+        prof.mkdir(parents=True, exist_ok=True)
+        for e in edge:
+            if Path(e).exists():
+                try:
+                    # ★ windowed 打包后 sys.stdout/stderr 是 None：不给显式句柄时
+                    #   Popen 会因"无效句柄"失败（这就是之前窗口不出现的真凶）。
+                    subprocess.Popen([e, "--app=%s" % u,
+                                      "--user-data-dir=%s" % prof,
+                                      "--window-size=1280,900",
+                                      "--no-first-run", "--no-default-browser-check"],
+                                     stdin=subprocess.DEVNULL,
+                                     stdout=subprocess.DEVNULL,
+                                     stderr=subprocess.DEVNULL,
+                                     close_fds=True)
+                    print("已用 Edge app 模式打开（独立 profile：%s）" % prof)
+                    return True
+                except Exception as ex:                      # noqa: BLE001
+                    print("Edge app 启动失败：%s" % ex)
+        return False
+
+    # ★ 打包版：pythonnet 在 PyInstaller 下起不来 → 直接用 Edge 独立窗口（不再牵扯用户的 Edge）
+    if FROZEN:
+        if edge_app(url):
+            try:
+                while True:
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                pass
+            return 0
+    try:
+        import webview
+        print("pywebview 可用，开原生窗口")
+        webview.create_window("Christos（炼膏师） · 化学反应产物预测与药典判据溯源软件",
+                              url, width=1280, height=900, min_size=(980, 700))
+        webview.start()
+        print("窗口已关闭，退出")
+    except Exception as ex:                                  # noqa: BLE001
+        # 没有 WebView2 运行时 → 退回到默认浏览器（仍然可用）
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1581 页
+------------------------------------------------------------
+        print("[warn] 原生窗口不可用（%s: %s）→ 改用默认浏览器" % (type(ex).__name__, ex))
+        traceback.print_exc()
+        # 回退：Edge app 模式（独立 profile）→ 默认浏览器
+        if not edge_app(url):
+            import webbrowser
+            webbrowser.open(url)
+            print("已用默认浏览器打开")
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            pass
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+# ==================== FILE: integration/tcmai_bridge/start_ui.bat ====================
+@echo off
+cd /d %~dp0
+echo 启动 Christos（炼膏师）三步页（本机）……
+D:\TCMAI\venv\Scripts\python.exe ui.py
+pause
+# ==================== FILE: integration/tcmai_bridge/ui.py ====================
+# -*- coding: utf-8 -*-
+r"""Christos（炼膏师）三步页（真能点的版本）——本机小服务器 + 调用 chemreact.py。
+
+启动：D:\TCMAI\venv\Scripts\python.exe ui.py   （或双击 start_ui.bat）
+只绑 127.0.0.1；只写本目录 out\；引擎就是命令行那条路（chemreact.py predict），
+所以"报告 / 留证 / 开关"与命令行完全一致。
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import subprocess
+import sys
+import threading
+import time
+import urllib.parse
+import webbrowser
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1582 页
+------------------------------------------------------------
+
+HERE = Path(__file__).resolve().parent
+OUT_DIR = HERE / "out"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+PAGE = HERE / "ui_page.html"
+# ★ 第七十五轮（桌面化）：引擎用哪个解释器可配置。
+#   平时 = 当前解释器；打包成 Windows 桌面程序时，由 desktop.py 把 CHEMREACT_PY
+#   指向用户 venv 里的 python.exe（exe 因此不必打包 500 MB 依赖）。
+PY_EXE = os.environ.get("CHEMREACT_PY") or sys.executable
+PORT = int(sys.argv[sys.argv.index("--port") + 1]) if "--port" in sys.argv else 8765
+
+RUNS: dict = {}
+LOCK = threading.Lock()
+
+
+def _now() -> str:
+    return time.strftime("%Y%m%d-%H%M%S")
+
+
+def _safe_name(name: str) -> str:
+    """只允许 中文/字母/数字/点/横线/下划线（防目录穿越）。"""
+    return name if re.fullmatch(r"[\w\u4e00-\u9fff.\-]+", name or "") else ""
+
+
+def _out_dir(form, key: str):
+    """解析可选输出目录：空=默认 out\\；相对路径按本目录解析；建目录失败返回报错。"""
+    x = str(form.get(key, "")).strip()
+    if not x:
+        return OUT_DIR, None
+    p = Path(x)
+    if not p.is_absolute():
+        p = HERE / p
+    try:
+        p.mkdir(parents=True, exist_ok=True)
+    except Exception as ex:
+        return None, "输出目录不可用：%s" % ex
+    return p, None
+
+
+def _start_run(form: dict) -> dict:
+    kind = str(form.get("kind", "predict")).strip()
+    if kind == "routes":
+        target = str(form.get("target", "")).strip()
+        if not target:
+            return {"error": "请填目标分子 SMILES"}
+        try:
+            depth = str(max(1, min(4, int(form.get("depth", 2)))))
+            show = str(max(1, min(10, int(form.get("show", 3)))))
+        except ValueError:
+            return {"error": "深度/显示条数要填数字"}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1583 页
+------------------------------------------------------------
+        od, err = _out_dir(form, "outdir_r")
+        if err:
+            return {"error": err}
+        argv = [PY_EXE, "-u", str(HERE / "chemreact.py"), "routes",
+                "--target", target, "--depth", depth, "--show", show,
+                "--out", str(od)]
+        if str(form.get("usable_only")) in ("1", "true", "on"):
+            argv.append("--usable-only")
+        if str(form.get("retro_blacklist")) in ("1", "true", "on"):
+            argv.append("--retro-blacklist")
+        rid = _now() + "-" + str(int(time.time() * 1000) % 100000)
+        log_path = OUT_DIR / ("ui_%s.log" % rid)
+        with LOCK:
+            busy = [r for r in RUNS.values() if r["proc"].poll() is None]
+            if busy:
+                return {"error": "已有一个任务在跑（%s）；等它完成再试。" % busy[0]["rid"]}
+            f = open(log_path, "w", encoding="utf-8")
+            proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT, cwd=str(HERE))
+            RUNS[rid] = {"proc": proc, "log": log_path, "f": f, "out_dir": od,
+                         "start": time.time(), "result": None}
+        return {"id": rid}
+    herb = str(form.get("herb", "")).strip()
+    smi = str(form.get("smiles", "")).strip()
+    if not herb and not smi:
+        return {"error": "请填药材名（或分子 SMILES）"}
+    limit = str(form.get("limit", "12"))
+    if limit != "all" and not limit.isdigit():
+        return {"error": "成分数量要填整数或 all"}
+    try:
+        rounds = str(max(1, min(5, int(form.get("rounds", 1)))))
+        max_pairs = str(max(10, int(form.get("max_pairs", 4000))))
+    except ValueError:
+        return {"error": "轮数 / 对子预算要填数字"}
+    cond = str(form.get("cond", "煎煮"))
+    od, err = _out_dir(form, "outdir")
+    if err:
+        return {"error": err}
+    argv = [PY_EXE, "-u", str(HERE / "chemreact.py"), "predict",
+            "--limit", limit, "--rounds", rounds, "--cond", cond,
+            "--max-pairs", max_pairs, "--out", str(od)]
+    if herb:
+        argv += ["--herb", herb]
+    else:
+        argv += ["--smiles", smi]
+    if str(form.get("triples")) in ("1", "true", "on"):
+        argv.append("--triples")
+    if str(form.get("fair_pairs")) in ("1", "true", "on"):
+        argv.append("--fair-pairs")
+    if str(form.get("chp_priority")) in ("1", "true", "on"):
+        argv.append("--chp-priority")
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1584 页
+------------------------------------------------------------
+    if str(form.get("herb_lookup")) in ("1", "true", "on"):
+        argv.append("--herb-lookup")
+    if str(form.get("dose_budget")) in ("1", "true", "on"):
+        argv.append("--dose-budget")
+    if str(form.get("herb_order") or "") == "ob":
+        argv += ["--herb-order", "ob"]
+    if str(form.get("reagents", "")).strip():
+        argv += ["--reagents", str(form["reagents"]).strip()]
+    rid = _now() + "-" + str(int(time.time() * 1000) % 100000)
+    log_path = OUT_DIR / ("ui_%s.log" % rid)
+    with LOCK:
+        busy = [r for r in RUNS.values() if r["proc"].poll() is None]
+        if busy:
+            return {"error": "已有一个任务在跑（%s）；等它完成再试。" % busy[0]["rid"]}
+        f = open(log_path, "w", encoding="utf-8")
+        proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT,
+                                cwd=str(HERE))
+        RUNS[rid] = {"proc": proc, "log": log_path, "f": f, "out_dir": od,
+                     "start": time.time(), "result": None}
+    return {"id": rid}
+
+
+def _status(rid: str) -> dict:
+    with LOCK:
+        r = RUNS.get(rid)
+    if not r:
+        return {"error": "没有这个任务"}
+    with LOCK:
+        rc = r["proc"].poll()
+    state = "running" if rc is None else ("done" if rc == 0 else "error")
+    if rc is not None and r["result"] is None:
+        try:
+            r["f"].close()
+        except Exception:
+            pass
+        t0 = r["start"] - 3
+        base_dir = r.get("out_dir") or OUT_DIR
+        cand = sorted((p for p in base_dir.glob("*") if p.stat().st_mtime >= t0),
+                      key=lambda p: -p.stat().st_mtime)
+        rep = next((p.name for p in cand if p.suffix == ".html"), "")
+        csvp = next((p.name for p in cand if p.suffix == ".csv"), "")
+        tsv = next((p.name for p in cand if p.suffix == ".tsv"), "")
+        meta = next((p for p in cand if p.suffix == ".json"), None)
+        meta_info = {}
+        if meta is not None:
+            try:
+                meta_info = json.loads(meta.read_text(encoding="utf-8"))
+            except Exception:
+                meta_info = {}
+        r["result"] = {"report": rep, "csv": csvp, "tsv": tsv, "meta": meta_info}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1585 页
+------------------------------------------------------------
+    try:
+        tail = r["log"].read_text(encoding="utf-8", errors="replace")[-1800:]
+    except Exception:
+        tail = ""
+    out = {"state": state, "tail": tail, "seconds": round(time.time() - r["start"], 1)}
+    if rc is not None:
+        out["rc"] = rc
+    if r["result"]:
+        out.update(r["result"])
+    return out
+
+
+def _lookup_raw(q: str) -> dict:
+    """「查找相似」的后端：**在服务器进程内**直接算，不新起进程、不跑枚举。
+
+    好处：COCONUT 的 5.1 万种名表只在第一次调用时建一次，之后每次不到 100 ms，
+    所以按钮可以做到"点了就出"——不必先跑一遍枚举再看窗口。
+    """
+    q = str(q or "").strip()
+    if not q:
+        return {"query": "", "kind": "", "choices": []}
+    import chemreact as CR                     # 同目录的桥接层（含 _bootstrap）
+    CR._bootstrap()
+    # ★ 方剂优先（第七十五轮修正：`生脉饮` 曾因只查药材/物种库而被误判「未收录」）
+    try:
+        import formula as FM
+        if FM.is_formula_name(q):
+            g = FM.get_formula(q)
+            n = len(g["herbs"]) if g else 0
+            return {"query": q, "kind": "formula",
+                    "choices": [{"group": "方剂", "name": q, "n_compounds": n,
+                                 "note": "方剂：按典籍版本展开成 %d 味" % n}]}
+    except Exception as ex:                    # noqa: BLE001 —— 打印，不静默
+        print("   [warn] 方剂查找失败：%s: %s" % (type(ex).__name__, ex))
+    cw = CR.build_choice_window(q)
+    if not cw:
+        # ★ 未收录时给出**相似方名**（只提示，不自动选）——用户 2026-10-17：三黄汤 → 三黄泻心汤/三黄片
+        sugg = []
+        try:
+            import formula as FM2
+            sugg = [{"group": "方剂(相似)", "name": k, "n_compounds": 0,
+                     "note": "相似方名（点「查找相似」后勾选）"} for k in FM2.find_formulas(q, limit=8)]
+        except Exception:                    # noqa: BLE001
+            pass
+        return {"query": q, "kind": "", "choices": sugg}
+    out = {"query": cw["query"], "kind": cw["kind"], "choices": cw["items"]}
+    # ★ 单段拉丁词（uralensis / glycyrrhiza）→ 按**种加词/属名**反查物种
+    if cw.get("kind") in ("missing", "") and q.isascii() and q.isalpha() and len(q) >= 3:
+        try:
+            import coconut as CO
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1586 页
+------------------------------------------------------------
+            have = {x.get("name") for x in out["choices"]}
+            for sp in CO.species_by_word(q, limit=30):
+                if sp not in have:
+                    out["choices"].append({
+                        "group": "物种", "name": sp, "n_compounds": 0,
+                        "note": "按种加词/属名匹配（COCONUT）"})
+            if out["choices"]:
+                # 有真实物种命中时，去掉「未收录」占位项（第七十五轮分级查找）
+                out["choices"] = [c for c in out["choices"]
+                                  if c.get("group") != "未收录"]
+                out["kind"] = "species"
+        except Exception as ex:                # noqa: BLE001 —— 打印，不静默
+            print("   [warn] 种加词反查失败：%s: %s" % (type(ex).__name__, ex))
+    # ★ 未收录时追加**相似方名**（只提示，不自动选）——用户 2026-10-17：三黄汤 → 三黄泻心汤/三黄片
+    if cw.get("kind") == "missing":
+        try:
+            import formula as FM2
+            have = {x.get("name") for x in out["choices"]}
+            keys = list(FM2._load().keys())
+            cand = []
+            for w in (q[:2], q[:3], q[-2:], q[-3:]):
+                if len(w) >= 2:
+                    cand += [k for k in keys if w in k and k != q]
+            seen, uniq = set(), []
+            for k in cand:
+                if k not in seen:
+                    seen.add(k)
+                    uniq.append(k)
+            for k in uniq[:8]:
+                if k not in have:
+                    out["choices"].append({"group": "方剂(相似)", "name": k,
+                                           "n_compounds": 0,
+                                           "note": "相似方名：勾选后按方剂展开"})
+        except Exception as ex:                # noqa: BLE001 —— 打印，不静默
+            print("   [warn] 相似方名查询失败：%s: %s" % (type(ex).__name__, ex))
+    if cw.get("message"):                      # 彩蛋那句话要原样带出去
+        out["message"] = cw["message"]
+    return out
+
+
+_CHP_NAMES = None
+
+
+def _chp_names() -> set:
+    """药典判据覆盖的药材名（只用于查找结果分档，不改任何数据）。"""
+    global _CHP_NAMES
+    if _CHP_NAMES is None:
+        try:
+            import chp_priority
+            _CHP_NAMES = set(chp_priority.load_map().keys())
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1587 页
+------------------------------------------------------------
+        except Exception as ex:                    # noqa: BLE001 —— 分档失败不中止查找
+            print("   [warn] 药典判据名表加载失败：%s: %s" % (type(ex).__name__, ex))
+            _CHP_NAMES = set()
+    return _CHP_NAMES
+
+
+def _choice_tier(c: dict) -> tuple:
+    g = str(c.get("group") or "")
+    note = str(c.get("note") or "")
+    if g.startswith("方剂"):
+        return "formula", "方剂"
+    if g in ("基元植物", "物种"):
+        return "coconut", "基元植物（COCONUT）"
+    if g == "未收录":
+        return "missing", "未收录"
+    if g == "药材":
+        if "别名" in note:
+            return "alias", "别名候选"
+        if str(c.get("name") or "") in _chp_names():
+            return "chp", "药材 · 药典判据"
+        return "herb", "药材 · 库内"
+    return "other", "其他"
+
+
+_TIER_ORDER = ("formula", "chp", "herb", "coconut", "alias", "other", "missing")
+
+
+def _grade_lookup(out: dict, q: str) -> dict:
+    """在原有 /lookup 结果上补：域 / 粒度 / 来源档计数（不改 choices 本身）。"""
+    q = str(q or "").strip()
+    kind = str(out.get("kind") or "")
+    choices = out.get("choices") or []
+
+    if kind == "formula":
+        domain, gran = "formula", "方剂全名"
+    elif re.search(r"[\u4e00-\u9fff]", q):
+        domain = "chinese"
+        if kind == "alias":
+            gran = "别名（多候选）"
+        elif kind == "herb":
+            gran = "正名" if any(c.get("name") == q for c in choices) else "包含匹配"
+        elif kind == "missing":
+            gran = "无匹配"
+        else:
+            gran = "中文名"
+    elif re.search(r"[A-Za-z]", q):
+        domain = "latin"
+        if kind == "genus":
+            gran = "属名/同属" if len(q.split()) == 1 else "种名/同属"
+        elif kind == "species":
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1588 页
+------------------------------------------------------------
+            gran = "种加词"
+        elif kind == "herb":
+            gran = "药材拉丁名"
+        elif kind == "missing":
+            gran = "无匹配"
+        else:
+            gran = "拉丁名"
+    elif q:
+        domain, gran = "smiles", "SMILES"
+    else:
+        domain, gran = "unknown", "空输入"
+
+    buckets: dict = {}
+    for c in choices:
+        key, label = _choice_tier(c)
+        b = buckets.setdefault(key, {"key": key, "label": label, "count": 0,
+                                     "items": []})
+        b["count"] += 1
+        b["items"].append(c)
+    # 展示顺序：精确名优先 → 成分数多者在前 → 名字；别名档保留索引原序
+    # （这是查找候选的组织方式，不是对产物打分/排序）
+    for key, b in buckets.items():
+        if key != "alias":
+            b["items"].sort(key=lambda c: (
+                0 if c.get("name") == q else 1,
+                -(c.get("n_compounds") or 0),
+                str(c.get("name") or ""),
+            ))
+        b["items"] = b["items"][:50]
+    tiers = [buckets[k] for k in _TIER_ORDER if k in buckets]
+    out["domain"] = domain
+    out["granularity"] = gran
+    out["tiers"] = tiers
+    return out
+
+
+def _lookup(q: str) -> dict:
+    return _grade_lookup(_lookup_raw(q), q)
+
+
+def _formula(name: str) -> dict:
+    """方剂页：返回一个方名下的全部版本（组成 / 剂量 / 出处档 / 抽检）。"""
+    name = str(name or "").strip()
+    if not name:
+        return {"error": "请填方剂名"}
+    try:
+        import chemreact as CR
+        CR._bootstrap()
+        import formula as FM
+        vs = FM.formula_versions(name)
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1589 页
+------------------------------------------------------------
+    except Exception as ex:                        # noqa: BLE001
+        return {"error": "方剂查询失败：%s: %s" % (type(ex).__name__, ex)}
+    if not vs:
+        return {"name": name, "versions": [], "error": "未收录该方剂"}
+    out = []
+    for v in vs:
+        out.append({
+            "source": v.get("source") or "",
+            "source_display": v.get("source_display") or v.get("source") or "",
+            "tier": v.get("tier", -1),
+            "tier_label": v.get("tier_label") or "?",
+            "probe": v.get("probe"),
+            "gongxiao": v.get("gongxiao") or "",
+            "category": v.get("category") or "",
+            "peifang": v.get("peifang") or "",
+            "herbs": v.get("herbs") or [],
+            "grams": v.get("grams") or {},
+            "dose_multiples": v.get("dose_multiples") or {},
+            "unmatched": v.get("unmatched") or [],
+            "url": v.get("url") or "",
+        })
+    # 仅用于方剂页展示：先按出处档（药典 → AI 现查（未核对）），
+    # 同档优先带法定剂量的，再按味数；不改 CLI 的选版逻辑。
+    out.sort(key=lambda x: (x["tier"] if x["tier"] >= 0 else 99,
+                            0 if x["dose_multiples"] else 1,
+                            -len(x["herbs"])))
+    return {"name": vs[0].get("name") or name, "n_versions": len(out),
+            "versions": out}
+
+
+def _history(limit: int = 40) -> dict:
+    """侧边栏历史：读 out\\runs.jsonl（只读，不删不改）。"""
+    p = OUT_DIR / "runs.jsonl"
+    if not p.is_file():
+        return {"runs": []}
+    try:
+        lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception as ex:                        # noqa: BLE001
+        return {"error": "%s: %s" % (type(ex).__name__, ex), "runs": []}
+    runs = []
+    for ln in reversed(lines):
+        ln = ln.strip()
+        if not ln:
+            continue
+        try:
+            runs.append(json.loads(ln))
+        except Exception:
+            continue
+        if len(runs) >= max(1, min(200, limit)):
+            break
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1590 页
+------------------------------------------------------------
+    return {"runs": runs}
+
+
+class Handler(BaseHTTPRequestHandler):
+    def log_message(self, fmt, *a):        # 安静一点
+        pass
+
+    def _send(self, code: int, body: bytes, ctype: str):
+        self.send_response(code)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store, max-age=0")
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        u = urllib.parse.urlparse(self.path)
+        if u.path in ("/", "/index.html"):
+            if not PAGE.exists():
+                return self._send(500, b"ui_page.html missing", "text/plain; charset=utf-8")
+            return self._send(200, PAGE.read_bytes(), "text/html; charset=utf-8")
+        if u.path == "/status":
+            rid = urllib.parse.parse_qs(u.query).get("id", [""])[0]
+            return self._send(200, json.dumps(_status(rid), ensure_ascii=False).encode("utf-8"),
+                              "application/json; charset=utf-8")
+        if u.path == "/shutdown":          # 本机专用：测试/收工时停服务器
+            threading.Thread(target=self.server.shutdown, daemon=True).start()
+            return self._send(200, b"bye", "text/plain; charset=utf-8")
+        if u.path == "/lookup":            # ★「查找相似」：不跑批，立刻返回候选
+            qq = urllib.parse.parse_qs(u.query).get("q", [""])[0].strip()
+            try:
+                res = _lookup(qq)
+            except Exception as ex:        # noqa: BLE001 —— 打印，不静默
+                print("   [warn] /lookup 失败：%s: %s" % (type(ex).__name__, ex))
+                res = {"query": qq, "kind": "", "choices": [],
+                       "error": "%s: %s" % (type(ex).__name__, ex)}
+            return self._send(200, json.dumps(res, ensure_ascii=False).encode("utf-8"),
+                              "application/json; charset=utf-8")
+        if u.path == "/formula":           # ★ 方剂页：全部版本 / 剂量 / 出处档
+            nm = urllib.parse.parse_qs(u.query).get("name", [""])[0].strip()
+            try:
+                res = _formula(nm)
+            except Exception as ex:        # noqa: BLE001
+                print("   [warn] /formula 失败：%s: %s" % (type(ex).__name__, ex))
+                res = {"error": "%s: %s" % (type(ex).__name__, ex), "versions": []}
+            return self._send(200, json.dumps(res, ensure_ascii=False).encode("utf-8"),
+                              "application/json; charset=utf-8")
+        if u.path == "/history":           # ★ 侧边栏历史：只读 out\runs.jsonl
+            try:
+                lim = int(urllib.parse.parse_qs(u.query).get("limit", ["40"])[0])
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1591 页
+------------------------------------------------------------
+            except ValueError:
+                lim = 40
+            try:
+                res = _history(lim)
+            except Exception as ex:        # noqa: BLE001
+                res = {"error": "%s: %s" % (type(ex).__name__, ex), "runs": []}
+            return self._send(200, json.dumps(res, ensure_ascii=False).encode("utf-8"),
+                              "application/json; charset=utf-8")
+        if u.path.startswith("/files/"):
+            name = _safe_name(urllib.parse.unquote(u.path[len("/files/"):]))
+            rid = urllib.parse.parse_qs(u.query).get("rid", [""])[0]
+            base = OUT_DIR
+            if rid:
+                base = (RUNS.get(rid) or {}).get("out_dir") or OUT_DIR
+            else:
+                # 历史记录没有 rid：在本进程跑过的自定义输出目录里找同名文件
+                with LOCK:
+                    for r in RUNS.values():
+                        d = r.get("out_dir") or OUT_DIR
+                        if (d / name).is_file():
+                            base = d
+                            break
+            fp = base / name
+            if not name or not fp.is_file():
+                return self._send(404, b"not found", "text/plain; charset=utf-8")
+            ctype = {".html": "text/html; charset=utf-8", ".csv": "text/csv; charset=utf-8",
+                     ".tsv": "text/tab-separated-values; charset=utf-8",
+                     ".json": "application/json; charset=utf-8"}.get(
+                         fp.suffix, "application/octet-stream")
+            return self._send(200, fp.read_bytes(), ctype)
+        return self._send(404, b"not found", "text/plain; charset=utf-8")
+
+    def do_POST(self):
+        if self.path != "/run":
+            return self._send(404, b"not found", "text/plain; charset=utf-8")
+        n = int(self.headers.get("Content-Length") or 0)
+        form = urllib.parse.parse_qs(self.rfile.read(n).decode("utf-8", "replace"))
+        flat = {k: v[0] for k, v in form.items()}
+        res = _start_run(flat)
+        code = 409 if "error" in res else 200
+        return self._send(code, json.dumps(res, ensure_ascii=False).encode("utf-8"),
+                          "application/json; charset=utf-8")
+
+
+def main() -> int:
+    srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    url = "http://127.0.0.1:%d/" % PORT
+    print("Christos（炼膏师）三步页已启动：%s（Ctrl+C 退出）" % url)
+    if "--no-browser" not in sys.argv:
+        try:
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1592 页
+------------------------------------------------------------
+            webbrowser.open(url)
+        except Exception:
+            pass
+    try:
+        srv.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        with LOCK:
+            for r in RUNS.values():
+                if r["proc"].poll() is None:
+                    r["proc"].terminate()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+# ==================== FILE: integration/tcmai_bridge/ui_page.html ====================
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Christos（炼膏师）· 化学反应预测与药典判据溯源</title>
+<style>
+:root{--bg:#0d1117;--bg2:#010409;--panel:#161b22;--panel2:#1c212b;--line:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#1f6feb;--green:#3fb950;--red:#f85149;--amber:#d29922;--purple:#bc8cff}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+.app{display:flex;min-height:100vh}
+.sidebar{width:236px;flex:0 0 236px;background:var(--bg2);border-right:1px solid var(--line);display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{display:flex;gap:10px;align-items:center;padding:18px 16px 14px}
+.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#1f6feb,#8957e5);display:grid;place-items:center;font-weight:800;font-size:13px}
+.brand b{display:block;font-size:15px}.brand span{display:block;color:var(--muted);font-size:11px}
+.nav{padding:6px 10px;flex:1;overflow:auto}
+.navLabel{color:var(--muted);font-size:11px;letter-spacing:.08em;margin:14px 8px 6px}
+.navBtn{display:flex;gap:9px;align-items:center;width:100%;background:none;border:0;color:var(--text);padding:9px 10px;border-radius:8px;text-align:left;margin:1px 0}
+.navBtn:hover{background:#161b22}.navBtn.active{background:#1f2937;box-shadow:inset 2px 0 0 var(--accent)}
+.navBtn .ico{width:18px;text-align:center;opacity:.9}
+.sideFoot{padding:12px 16px;color:#6e7681;font-size:11px;border-top:1px solid var(--line)}
+.main{flex:1;min-width:0;padding:0 0 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:20}
+.topbar h1{font-size:17px;margin:0}.topbar .sub{color:var(--muted);font-size:12px;margin-top:2px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;white-space:nowrap}
+.pill.idle{color:var(--muted)}.pill.running{color:#d29922;border-color:#9e6a03;background:#2d2100}
+.pill.done{color:#3fb950;border-color:#238636;background:#0f2417}.pill.error{color:#f85149;border-color:#8e1519;background:#2d0b0d}
+.view{padding:22px 28px;max-width:1180px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 16px}
+.cardHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.cardHead h2{font-size:14px;margin:0;letter-spacing:.02em}
+.hint{color:var(--muted);font-size:12px}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1593 页
+------------------------------------------------------------
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+label.field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+input,select{background:#0d1117;border:1px solid #30363d;border-radius:7px;padding:7px 9px;color:var(--text);outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(88,166,255,.15)}
+input[type=checkbox]{width:auto;accent-color:var(--accent)}
+button.primary{background:var(--accent2);border:1px solid #388bfd;color:#fff;padding:9px 18px;border-radius:8px;font-weight:600}
+button.primary:hover{background:#2f81f7}
+button.ghost{background:#21262d;border:1px solid var(--line);padding:6px 12px;border-radius:7px}
+button.ghost:hover{background:#30363d}
+button:disabled{opacity:.5;cursor:not-allowed}
+.hrow{display:flex;gap:8px;align-items:flex-start;margin:6px 0;position:relative;flex-wrap:wrap}
+.inputWrap{position:relative;flex:1;min-width:240px}
+.inputWrap .herbInput{width:100%}
+.searchWrap{position:relative;max-width:620px}
+.searchWrap input{width:100%}
+.acBox{position:absolute;left:0;right:0;top:calc(100% + 5px);background:#161b22;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.45);max-height:380px;overflow:auto;z-index:50;padding:6px}
+.acTier{color:var(--muted);font-size:11px;padding:7px 9px 3px;display:flex;justify-content:space-between}
+.acItem{padding:7px 9px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.acItem:hover,.acItem.active{background:#1f6feb33}
+.acItem .name{font-weight:600}
+.acMore{background:none;border:0;color:var(--accent);font-size:12px;padding:4px 9px}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:16px}
+.verCard{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer}
+.verCard.sel{border-color:var(--accent);box-shadow:0 0 0 2px #1f6feb55}
+.verCard h3{font-size:13px;margin:0 0 6px}
+.badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:11px;border:1px solid var(--line);margin:2px 4px 2px 0}
+.t0{color:#3fb950;border-color:#238636}.t1{color:#58a6ff;border-color:#1f6feb}.t2{color:#39c5cf;border-color:#1b7c83}.t3{color:#bc8cff;border-color:#8957e5}.t4{color:#d29922;border-color:#9e6a03}.t5{color:#f85149;border-color:#8e1519}.t9{color:var(--muted)}
+.tableWrap{overflow:auto;border:1px solid var(--line);border-radius:9px;max-height:420px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#161b22;color:var(--muted);font-weight:600;position:sticky;top:0;z-index:1}
+td input[type=number]{width:76px}
+.resultLinks a{color:var(--accent);margin-right:14px;text-decoration:none}.resultLinks a:hover{text-decoration:underline}
+.logCard{background:var(--bg2);border:1px solid var(--line);border-radius:10px;margin:0 0 16px;overflow:hidden}
+.logCard summary{padding:9px 14px;cursor:pointer;color:var(--muted)}
+pre.log{margin:0;padding:12px 14px;max-height:320px;overflow:auto;white-space:pre-wrap;font-size:12px;color:#c9d1d9}
+.foot{padding:0 28px;color:#6e7681;font-size:11px}
+.histItem{padding:10px 0;border-bottom:1px solid var(--line)}.histItem:last-child{border-bottom:0}
+.histItem .t{font-size:12px;color:var(--muted)}.histItem .n{font-size:13px;margin:2px 0}
+.histItem a{color:var(--accent);font-size:12px;margin-right:10px;text-decoration:none}
+.warn{color:#d29922}.bad{color:#f85149}
+details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 0}
+.formulaHint{flex-basis:100%;color:#d29922;font-size:12px;margin:2px 0 4px 2px}
+@media(max-width:760px){.sidebar{width:64px;flex:0 0 64px}.brand span,.brand b,.navLabel,.navBtn .txt,.sideFoot{display:none}.brand{padding:14px 10px}.navBtn{justify-content:center}.view{padding:16px}.topbar{padding:14px 16px}}
+</style></head><body>
+<div class='app'>
+<aside class='sidebar'>
+  <div class='brand'><div class='logo'>CH</div><div><b>Christos</b><span>炼膏师 · 反应预测</span></div></div>
+  <nav class='nav'>
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1594 页
+------------------------------------------------------------
+    <div class='navLabel'>工作台</div>
+    <button class='navBtn active' data-view='predict'><span class='ico'>◎</span><span class='txt'>单味 / 物种</span></button>
+    <button class='navBtn' data-view='formula'><span class='ico'>▤</span><span class='txt'>方剂（复方）</span></button>
+    <button class='navBtn' data-view='routes'><span class='ico'>↺</span><span class='txt'>找路线</span></button>
+    <div class='navLabel'>记录</div>
+    <button class='navBtn' data-view='history'><span class='ico'>◷</span><span class='txt'>历史记录</span></button>
+    <button class='navBtn' data-view='settings'><span class='ico'>⚙</span><span class='txt'>设置</span></button>
+  </nav>
+  <div class='sideFoot'>只读本机 · 不删产物<br>Christos（炼膏师）V1.0.0</div>
+</aside>
+<main class='main'>
+<header class='topbar'>
+  <div><h1 id='viewTitle'>单味 / 物种 · 预测产物</h1><div class='sub' id='viewSub'>底物 → 产物</div></div>
+  <div id='statusPill' class='pill idle'>空闲</div>
+</header>
+
+<section id='view-predict' class='view'>
+  <div class='card'>
+    <div class='cardHead'><h2>输入来源</h2><span class='hint'>中药材 / 植物学名 / SMILES</span></div>
+    <div id='herbRows'></div>
+    <div class='row'><button type='button' id='addRow' class='ghost'>＋ 再加一味</button>
+      <span class='hint'>一味一行；输入时边打边出候选，「查找相似」用于多选。</span></div>
+    <div class='row'><label class='field' style='flex:1;min-width:260px'>分子 SMILES（可留空）<input id='smiles' placeholder='如 CC(=O)Oc1ccccc1C(=O)O'></label></div>
+    <div class='grid3'>
+      <label class='field'>每味取几个成分<select id='limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
+      <label class='field'>成分排序<select id='herb_order'><option value='marker' selected>marker（默认）</option><option value='ob'>OB 降序（TCMSP）</option></select></label>
+    </div>
+    <div class='row'><label class='check' style='font-size:12px;color:var(--muted)'><input type='checkbox' id='dose_budget'> 重复输入 = 剂量份数（默认关；只记录，不放大配额）</label></div>
+  </div>
+  <div class='card'>
+    <div class='cardHead'><h2>条件与轮数</h2><span class='hint'>默认保守设置</span></div>
+    <div class='grid3'>
+      <label class='field'>条件档案<select id='cond'><option selected>煎煮</option><option>室温浸泡</option><option>水提</option><option>醇提</option><option>酸水解</option><option>碱水解</option><option>酶催化</option><option>还原</option><option>氧化</option><option>无氧煎煮</option></select></label>
+      <label class='field'>轮数<select id='rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>对子预算<input id='max_pairs' value='4000'></label>
+    </div>
+    <details class='adv'><summary>高级选项</summary>
+      <div class='grid3' style='margin-top:6px'>
+        <label class='field'>辅助试剂<input id='reagents' placeholder='如 NaBH4，可留空'></label>
+        <label class='field'>输出目录<input id='outdir' placeholder='默认可留空（out\\）'></label>
+      </div>
+      <div class='row' style='font-size:12px;color:var(--muted)'>
+        <label><input type='checkbox' id='triples'> 三组分模板（慢约 40×）</label>
+        <label><input type='checkbox' id='fair_pairs'> 对子超预算时公平截断</label>
+        <label><input type='checkbox' id='chp_priority'> 药典判据优先（Tier-0 含量测定成分排前）</label>
+      </div>
+    </details>
+  </div>
+  <div class='card'><div class='row' style='margin:0'><button id='go' class='primary'>开始预测</button><span class='hint'>只生成 + 标注 + 留证；每次运行都写运行记录。</span></div></div>
+</section>
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1595 页
+------------------------------------------------------------
+
+<section id='view-formula' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>方剂（复方）</h2><span class='hint'>同名按版本，不合并；切版本 = 换组成</span></div>
+    <div class='searchWrap'><input id='fxInput' placeholder='输入方名，如 四君子汤、六味地黄丸' autocomplete='off'><div id='fxAC' class='acBox' hidden></div></div>
+    <div id='fxStatus' class='hint' style='margin-top:8px'>方剂名支持全名与相似名；版本、剂量、出处档都在下面列出。</div>
+  </div>
+  <div id='fxVersions' class='versions'></div>
+  <div id='fxHerbCard' class='card' hidden>
+    <div class='cardHead'><h2>组成与份数</h2><span id='fxSource' class='hint'></span></div>
+    <div class='tableWrap'><table><thead><tr><th>药材</th><th>法定剂量 (g)</th><th>份数（可改）</th><th>备注</th></tr></thead><tbody id='fxTbody'></tbody></table></div>
+    <div class='row' style='margin-top:10px'><label style='font-size:12px;color:var(--muted)'><input type='checkbox' id='f_dose_budget'> 剂量加权：按份数放大成分配额（默认关）</label></div>
+    <div class='row'><span class='hint'>份数来自药典剂量（以最小剂量为 1 份）；可直接手改，0 = 本次不用该味。</span></div>
+    <div id='fxUnmatched' class='hint'></div>
+  </div>
+  <div id='fxRunCard' class='card' hidden>
+    <div class='cardHead'><h2>运行设置</h2><span class='hint'>与命令行参数一致</span></div>
+    <div class='grid3'>
+      <label class='field'>条件档案<select id='f_cond'><option selected>煎煮</option><option>室温浸泡</option><option>水提</option><option>醇提</option><option>酸水解</option><option>碱水解</option><option>酶催化</option><option>还原</option><option>氧化</option><option>无氧煎煮</option></select></label>
+      <label class='field'>每味成分<select id='f_limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部（较慢）</option></select></label>
+      <label class='field'>轮数<select id='f_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>对子预算<input id='f_max_pairs' value='4000'></label>
+      <label class='field'>辅助试剂<input id='f_reagents' placeholder='可留空'></label>
+      <label class='field'>输出目录<input id='f_outdir' placeholder='默认可留空（out\\）'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <label><input type='checkbox' id='f_triples'> 三组分模板</label>
+      <label><input type='checkbox' id='f_fair_pairs'> 公平截断</label>
+      <label><input type='checkbox' id='f_chp_priority'> 药典判据优先</label>
+    </div>
+    <div class='row'><button id='fxRun' class='primary'>用这个版本预测</button><span class='hint'>按当前选中版本与份数运行。</span></div>
+  </div>
+</section>
+
+<section id='view-routes' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>找路线 · 目标分子</h2><span class='hint'>目标 → 逆合成路线</span></div>
+    <div class='row'><label class='field' style='flex:1;min-width:280px'>目标 SMILES<input id='target' placeholder='如 CC(=O)Oc1ccccc1C(=O)O'></label></div>
+    <div class='grid3'>
+      <label class='field'>深度<select id='depth'><option>1</option><option selected>2</option><option>3</option></select></label>
+      <label class='field'>显示条数<select id='show'><option selected>3</option><option>5</option><option>10</option></select></label>
+      <label class='field'>输出目录<input id='outdir_r' placeholder='默认可留空（out\\）'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'><label><input type='checkbox' id='usable_only'> 只看判为可用的</label><label><input type='checkbox' id='retro_blacklist'> 逆模板黑名单（默认关）</label></div>
+  </div>
+  <div class='card'><div class='row' style='margin:0'><button id='goR' class='primary'>开始找路线</button><span class='hint'>与命令行 routes 子命令同一套逻辑。</span></div></div>
+</section>
+
+<section id='view-history' class='view' hidden>
+  <div class='card'>
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1596 页
+------------------------------------------------------------
+    <div class='cardHead'><h2>历史记录</h2><button id='histRefresh' class='ghost'>刷新</button></div>
+    <div class='hint' style='margin-bottom:8px'>读本机 out\\runs.jsonl；只显示、不删除、不改写。</div>
+    <div id='histList' class='hint'>加载中…</div>
+  </div>
+</section>
+
+<section id='view-settings' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>默认设置</h2><span class='hint'>只影响新任务的初始值</span></div>
+    <div class='grid3'>
+      <label class='field'>默认条件<select id='set_cond'><option selected>煎煮</option><option>室温浸泡</option><option>水提</option><option>醇提</option><option>酸水解</option><option>碱水解</option><option>酶催化</option><option>还原</option><option>氧化</option><option>无氧煎煮</option></select></label>
+      <label class='field'>默认轮数<select id='set_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class='field'>每味成分<select id='set_limit'><option>6</option><option selected>12</option><option>24</option><option value='all'>全部</option></select></label>
+      <label class='field'>对子预算<input id='set_max_pairs' value='4000'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <label><input type='checkbox' id='set_dose_budget'> 默认剂量加权</label>
+      <label><input type='checkbox' id='set_chp_priority'> 默认药典判据优先</label>
+      <label><input type='checkbox' id='set_triples'> 默认三组分模板</label>
+      <label><input type='checkbox' id='set_fair_pairs'> 默认公平截断</label>
+    </div>
+    <div class='row'><button id='setSave' class='primary'>保存默认</button><button id='setReset' class='ghost'>恢复保守默认</button><span id='setMsg' class='hint'></span></div>
+  </div>
+</section>
+
+<div id='results' class='card resultCard' hidden>
+  <div class='cardHead'><h2>结果 · 一页报告</h2><span id='elapsed' class='hint'></span></div>
+  <p class='resultLinks'><a id='rep' target='_blank'>完整一页报告 ↗</a><a id='csv' target='_blank'>台账 CSV</a><a id='tsv' target='_blank'>索引 TSV</a></p>
+  <div id='meta'></div>
+</div>
+
+<details id='logWrap' class='logCard' hidden><summary>运行日志 <span id='logHint' class='hint'></span></summary><pre class='log' id='log'>（等待输出…）</pre></details>
+<footer class='foot'>术语：只生成 + 标注 + 留证；「查不到 ≠ 不存在」。页面筛选只影响显示，不改数据、不排序。</footer>
+</main></div>
+<script>
+let rid=null,t0=0,currentView='predict',lastFormula=null,fxData=null,fxSel=0;
+function q(id){return document.getElementById(id)}
+function esc4(x){return String(x).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function fmtSec(s){s=Math.max(0,Math.round(s||0));const m=Math.floor(s/60);return m?m+' 分 '+(s%60)+' 秒':s+' 秒';}
+function setStatus(cls,text){const p=q('statusPill');p.className='pill '+cls;p.textContent=text;}
+function setView(v){
+  currentView=v;
+  if(location.hash!=='#'+v){try{history.replaceState(null,'','#'+v);}catch(e){}}
+  document.querySelectorAll('.view').forEach(function(x){x.hidden=(x.id!=='view-'+v);});
+  document.querySelectorAll('.navBtn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-view')===v);});
+  q('results').hidden=true;q('logWrap').hidden=true;
+  const titles={predict:['单味 / 物种 · 预测产物','底物 → 产物'],formula:['方剂（复方）','同名按版本；切版本 = 换组成'],routes:['找路线','目标分子 → 逆合成路线'],history:['历史记录','本机 out\\runs.jsonl'],settings:['设置','新任务的默认值']};
+  const t=titles[v]||titles.predict;q('viewTitle').textContent=t[0];q('viewSub').textContent=t[1];
+  if(v==='history') loadHistory();
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1597 页
+------------------------------------------------------------
+  if(v==='settings') loadSettingsUI();
+}
+function mode(m){setView(m==='p'?'predict':(m==='f'?'formula':'routes'));}
+
+function attachAC(input,box,onPick){
+  let timer=null,active=-1,flat=[];
+  function close(){box.hidden=true;box.innerHTML='';active=-1;flat=[];}
+  function mark(){box.querySelectorAll('.acItem').forEach(function(el,i){el.classList.toggle('active',i===active);});}
+  box.addEventListener('mousedown',function(e){e.preventDefault();});
+  function open(j){
+    if(!j||j.error){box.hidden=true;return;}
+    const tiers=j.tiers||[];
+    if(!tiers.length&&(!j.choices||!j.choices.length)){close();return;}
+    flat=[];
+    let h='';
+    if(j.domain||j.granularity){
+      h+='<div class="acTier"><span>'+esc4(domainLabel(j.domain))+' · '+esc4(j.granularity||'')+'</span><span>'+((j.choices||[]).length)+' 条</span></div>';
+    }
+    const groups=tiers.length?tiers:[{key:'all',label:'候选',count:(j.choices||[]).length,items:(j.choices||[])}];
+    groups.forEach(function(g,gi){
+      h+='<div class="acTier"><span>'+esc4(g.label||'')+'</span><span>'+g.count+' 条</span></div>';
+      const showAll=g._all;
+      let shown=0;
+      (g.items||[]).forEach(function(c){
+        if(!showAll&&shown>=5&&g.key!=='missing') return;
+        shown++;
+        flat.push(c);
+        const idx=flat.length-1;
+        h+='<div class="acItem" data-i="'+idx+'"><span><span class="name">'+esc4(c.name)+'</span>'
+          +' <span class="hint">['+esc4(c.group||'')+']</span>'
+          +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')+'</span>'
+          +'<span class="hint">'+(c.n_compounds!==undefined?c.n_compounds+((c.group||'').indexOf('方剂')===0?' 味':' 成分'):'')+'</span></div>';
+      });
+      if(!showAll&&g.count>5){
+        h+='<button type="button" class="acMore" data-g="'+gi+'">'+(g.count>50?'展开前 50 条（共 '+g.count+' 条）':'展开全部 '+g.count+' 条')+'</button>';
+      }
+    });
+    box.innerHTML=h;box.hidden=false;active=-1;
+    box.querySelectorAll('.acItem').forEach(function(el){
+      el.onclick=function(){const c=flat[+el.getAttribute('data-i')];if(c){onPick(c);close();}};
+    });
+    box.querySelectorAll('.acMore').forEach(function(b){
+      b.onclick=function(ev){ev.stopPropagation();const g=groups[+b.getAttribute('data-g')];g._all=true;open(j);};
+    });
+  }
+  input.addEventListener('input',function(){
+    const v=input.value.trim();clearTimeout(timer);
+    if(!v){close();return;}
+    timer=setTimeout(function(){
+      fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1598 页
+------------------------------------------------------------
+        if(input.value.trim()!==v)return;open(j);
+      }).catch(function(){close();});
+    },250);
+  });
+  input.addEventListener('keydown',function(e){
+    if(box.hidden)return;
+    const els=box.querySelectorAll('.acItem');
+    if(e.key==='ArrowDown'){e.preventDefault();active=Math.min(els.length-1,active+1);mark();
+      if(els[active])els[active].scrollIntoView({block:'nearest'});}
+    else if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(0,active-1);mark();
+      if(els[active])els[active].scrollIntoView({block:'nearest'});}
+    else if(e.key==='Enter'&&active>=0){e.preventDefault();els[active].click();}
+    else if(e.key==='Escape'){e.preventDefault();close();}
+  });
+  input.addEventListener('blur',function(){setTimeout(close,180);});
+}
+function domainLabel(d){return {chinese:'中文',latin:'拉丁',formula:'方剂',smiles:'SMILES',unknown:'未识别'}[d]||d||'';}
+
+function addRow(val){
+  const box=document.createElement('div');box.className='hrow';
+  box.innerHTML="<div class='inputWrap'><input class='herbInput' placeholder='中药材：甘草 ｜ 物种学名：Glycyrrhiza uralensis' autocomplete='off'><div class='acBox' hidden></div></div>"
+    +"<button type='button' class='findBtn ghost'>查找相似</button>"
+    +"<button type='button' class='delBtn ghost' title='删掉这一行'>×</button>"
+    +"<div class='findBox' style='display:none;flex-basis:100%;padding:8px 10px;border:1px solid #30363d;border-radius:8px;background:#0d1117'></div>";
+  q('herbRows').appendChild(box);
+  const inp=box.querySelector('.herbInput');inp.value=val||'';
+  box.querySelector('.delBtn').onclick=function(){
+    if(document.querySelectorAll('.hrow').length>1)box.remove();
+    else inp.value='';
+  };
+  box.querySelector('.findBtn').onclick=function(){doFind(box);};
+  attachAC(inp,box.querySelector('.acBox'),function(c){pickChoice(box,c);});
+  return box;
+}
+function pickChoice(box,c){
+  const inp=box.querySelector('.herbInput');inp.value=c.name||'';
+  let hint=box.querySelector('.formulaHint');
+  if((c.group||'').indexOf('方剂')===0){
+    if(!hint){hint=document.createElement('div');hint.className='formulaHint';box.appendChild(hint);}
+    hint.innerHTML='这是方剂「'+esc4(c.name)+'」，请去方剂页选择版本。 <button type="button" class="ghost" style="padding:2px 8px">去方剂页</button>';
+    hint.querySelector('button').onclick=function(){setView('formula');loadFormula(c.name);};
+  }else if(hint){hint.remove();}
+}
+function doFind(box){
+  const inp=box.querySelector('.herbInput'),fb=box.querySelector('.findBox');
+  const v=inp.value.trim();
+  if(!v){fb.style.display='block';fb.innerHTML='<span class="warn">先在这一行填个名字</span>';return;}
+  fb.style.display='block';fb.innerHTML='查找中…（第一次查要建物种索引，约 2 秒）';
+  fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){fb.innerHTML='<span class="warn">出错：'+esc4(j.error)+'</span>';return;}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1599 页
+------------------------------------------------------------
+    if(j.kind==='missing'){fb.innerHTML='（未收录） <button type="button" class="closeBtn ghost">收起</button>';
+      fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};return;}
+    if(j.kind==='egg'){fb.innerHTML='🥚 <b style="color:#b60">'+esc4(j.message||'根本没有这样的中药')+'</b> <button type="button" class="closeBtn ghost">收起</button>';
+      fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};return;}
+    if(!j.choices||!j.choices.length){fb.innerHTML='<span class="hint">「'+esc4(j.query)+'」没有找到相似条目（可能它本身就是唯一一条）</span>';return;}
+    let h='<b>「'+esc4(j.query)+'」找到 '+j.choices.length+' 个</b> <span class="hint">'+(j.kind==='genus'?'同属物种（COCONUT）':(j.kind==='alias'?'别名候选（可能有多个正名）':'同字段药材条目 + 对应基元植物'))+'</span><br>';
+    j.choices.forEach(function(c,i){
+      h+='<label style="display:inline-block;min-width:330px;margin:3px 0"><input type="checkbox" class="fbox" data-i="'+i+'"'
+        +((c.group==='未收录')?' disabled':'')+'> '+esc4(c.name)
+        +' <span class="hint">['+esc4(c.group||'')+']</span>'
+        +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')
+        +((c.group==='未收录')?'':' <span class="hint">（'+c.n_compounds+((c.group||'').indexOf('方剂')===0?' 味':' 个成分')+'）</span>')+'</label>';
+    });
+    h+='<br><button type="button" class="fillBtn primary" style="padding:5px 12px">用勾选的填进这一行</button> <button type="button" class="closeBtn ghost">收起</button>';
+    fb.innerHTML=h;
+    fb.querySelector('.closeBtn').onclick=function(){fb.style.display='none';};
+    fb.querySelector('.fillBtn').onclick=function(){
+      const picked=Array.prototype.map.call(fb.querySelectorAll('.fbox:checked'),function(x){return j.choices[+x.getAttribute('data-i')];});
+      if(!picked.length)return;
+      inp.value=picked[0].name;pickChoice(box,picked[0]);
+      let last=box;for(let k=1;k<picked.length;k++)last=addRow(picked[k].name);
+      fb.style.display='none';
+    };
+  }).catch(function(e){fb.innerHTML='<span class="warn">查找失败：'+esc4(e)+'</span>';});
+}
+function herbList(){
+  return Array.prototype.map.call(document.querySelectorAll('.herbInput'),function(x){return x.value.trim();}).filter(function(x){return x;});
+}
+function precheck(){
+  const rows=Array.prototype.slice.call(document.querySelectorAll('.hrow'));
+  const jobs=rows.map(function(box){
+    const v=box.querySelector('.herbInput').value.trim();if(!v)return Promise.resolve(false);
+    return fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+      if(!j.error&&j.kind!=='missing'&&j.kind!=='egg'&&j.kind!=='formula')return false;
+      const fb=box.querySelector('.findBox');fb.style.display='block';
+      if(j.kind==='formula'){
+        fb.innerHTML='<span class="warn">「'+esc4(v)+'」是方剂，请去方剂页选版本。</span> <button type="button" class="goFx ghost">去方剂页</button>';
+        fb.querySelector('.goFx').onclick=function(){setView('formula');loadFormula(v);};
+      }else if(j.kind==='egg'){
+        fb.innerHTML='🥚 <b style="color:#b60">'+esc4(j.message||'根本没有这样的中药')+'</b> 请换一个已收录的名字';
+      }else if(j.kind==='missing'){
+        fb.innerHTML='<span class="warn">「'+esc4(v)+'」未收录</span> <span class="hint">点「查找相似」看候选，或换一个已收录的名字</span>';
+      }else{
+        fb.innerHTML='<span class="warn">名字检查失败：'+esc4(j.error||'')+'</span>';
+      }
+      return true;
+    }).catch(function(){return false;});
+  });
+  return Promise.all(jobs).then(function(rs){return rs.some(Boolean);});
+}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1600 页
+------------------------------------------------------------
+function submitBody(body){
+  ['go','goR','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=true;});
+  q('results').hidden=true;q('logWrap').hidden=false;q('logWrap').open=true;q('log').textContent='（已提交，等待输出…）';
+  setStatus('running','运行中 0 秒');
+  fetch('/run',{method:'POST',body:body}).then(function(r){return r.json();}).then(function(j){
+    if(j.error){q('log').textContent=j.error;setStatus('error','未启动');['go','goR','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});return;}
+    rid=j.id;t0=Date.now();poll();
+  }).catch(function(e){q('log').textContent='提交失败：'+e;setStatus('error','提交失败');['go','goR','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});});
+}
+function startRoutes(){
+  const t=q('target').value.trim();if(!t){alert('请填目标分子 SMILES');return;}
+  const body=new URLSearchParams({kind:'routes',target:t,depth:q('depth').value,show:q('show').value,usable_only:q('usable_only').checked?1:0,retro_blacklist:q('retro_blacklist').checked?1:0,outdir_r:q('outdir_r').value});
+  lastFormula=null;submitBody(body);
+}
+function submitRun(herb,smi){
+  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value});
+  lastFormula=null;submitBody(body);
+}
+function startRun(){
+  const herbs=herbList(),herb=herbs.join(','),smi=q('smiles').value.trim();
+  if(!herb&&!smi){alert('请填药材名或 SMILES');return;}
+  q('go').disabled=true;setStatus('running','检查名字…');
+  precheck().then(function(bad){
+    if(bad){q('go').disabled=false;setStatus('error','有名字未收录或方剂');return;}
+    submitRun(herb,smi);
+  });
+}
+function poll(){
+  fetch('/status?id='+rid).then(function(r){return r.json();}).then(function(j){
+    if(j.tail!==undefined)q('log').textContent=j.tail||'（运行中…）';
+    if(j.seconds!==undefined)setStatus('running','运行中 '+fmtSec(j.seconds));
+    if(j.state==='running'){setTimeout(poll,1500);return;}
+    ['go','goR','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});
+    if(j.state==='done'){setStatus('done','完成 · '+fmtSec(j.seconds));renderResult(j);}
+    else{setStatus('error','失败（退出码 '+(j.rc!==undefined?j.rc:'?')+'）');q('logWrap').open=true;}
+  }).catch(function(){setTimeout(poll,2500);});
+}
+function renderResult(j){
+  q('results').hidden=false;q('elapsed').textContent='用时 '+fmtSec(j.seconds);
+  const rq=rid?('?rid='+rid):'';
+  if(j.report){q('rep').href='/files/'+encodeURIComponent(j.report)+rq;q('rep').style.display='';}else{q('rep').style.display='none';}
+  if(j.csv){q('csv').href='/files/'+encodeURIComponent(j.csv)+rq;q('csv').style.display='';}else{q('csv').style.display='none';}
+  if(j.tsv){q('tsv').href='/files/'+encodeURIComponent(j.tsv)+rq;q('tsv').style.display='';}else{q('tsv').style.display='none';}
+  const m=j.meta||{};let h='';
+  if(lastFormula){const _tc=(lastFormula.tier>=0&&lastFormula.tier<=5)?('t'+lastFormula.tier):'t9';
+    h+='· 本次按方剂 <b>'+esc4(lastFormula.name)+'</b> 版本「'+esc4(lastFormula.source)+'」<span class="badge '+_tc+'">'+esc4(lastFormula.tier_label||'?')+'</span> 运行；份数：'+esc4(lastFormula.doses)+'<br>';}
+  const sel=m.selection||{};
+  for(const herb in sel){const s=sel[herb];
+    h+='· 药材 <b>'+esc4(herb)+'</b>'+((s.n_doses>1)?(' <b style="color:#d29922">×'+s.n_doses+' 份</b>'):'')
+      +'：可用成分 <b>'+s.n_available+'</b> → 本批取 <b>'+s.n_kept+'</b>（未参与 '+Math.max(0,s.n_available-s.n_kept)+'）'
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1601 页
+------------------------------------------------------------
+      +(s.source==='coconut'?('　<span style="color:#3fb950">来源：COCONUT「'+esc4(s.source_matched)+'」（'+esc4(s.source_how)+'）</span>'):'　<span class="hint">来源：HERB 药材库</span>')+'<br>';
+  }
+  const fm=m.formulas||{},fk=Object.keys(fm);
+  if(fk.length){
+    let rows='';
+    function probeCell(v,urlhint){
+      const p=v.probe;if(!p||!p.verdict)return '未抽检';
+      const col=(p.verdict==='查无')?'#f85149':(p.verdict==='部分命中'?'#d29922':'#3fb950');
+      const u=p.url||urlhint;
+      return '<b style="color:'+col+'">'+esc4(p.verdict)+'</b>'+(u?(' <a href="'+esc4(u)+'" target="_blank" rel="noopener">来源</a>'):'');
+    }
+    fk.forEach(function(fn){
+      const f=fm[fn]||{},vs=f.versions||[];
+      if(!vs.length){rows+='<tr data-tier="'+f.tier+'" data-probe="'+esc4((f.probe&&f.probe.verdict)||'')+'"><td>'+esc4(fn)+'</td><td>本次选用</td><td>'+esc4(f.source_display||f.source||'')+'</td><td>'+esc4(f.tier_label||'?')+'</td><td>'+probeCell(f)+'</td><td>'+f.n_herbs+'</td></tr>';}
+      vs.forEach(function(v,i){rows+='<tr data-tier="'+v.tier+'" data-probe="'+esc4((v.probe&&v.probe.verdict)||'')+'"><td>'+esc4(fn)+'</td><td>'+(i===0?'<b>本次选用</b>':'备选')+'</td><td>'+esc4(v.source_display||v.source||'')+'</td><td>'+esc4(v.tier_label||'?')+'</td><td>'+probeCell(v)+'</td><td>'+v.n_herbs+'</td></tr>';});
+    });
+    h+='· 方剂与出处档（药典 → AI 现查（未核对）；默认<b>全部列出</b>，不隐藏、不排序）；「抽检」= H2 固定样本核对结论：'
+      +'只看 <select id="tierfilter"><option value="all">全部出处</option><option value="0">药典</option><option value="1">ETCM</option><option value="2">ITCM</option><option value="3">CPMCP</option><option value="4">古籍</option><option value="5">AI 现查（未核对）</option><option value="p:查无">抽检=查无</option><option value="p:部分命中">抽检=部分命中</option><option value="p:命中">抽检=命中</option></select>'
+      +'<div class="tableWrap"><table><thead><tr><th>方名</th><th>版本</th><th>出处（库里原样）</th><th>出处分档</th><th>抽检</th><th>味数</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  }
+  const sw=m.switches||{};const sv=Object.keys(sw).map(function(k){return k+'='+(sw[k]===true?'开':sw[k]===false?'关':(Array.isArray(sw[k])?(sw[k].join('、')||'（无）'):sw[k]));}).join(' · ');
+  if(sv)h+='· 开关：'+esc4(sv)+'<br>';
+  const pc=m.pair_coverage||{};
+  if(pc.pairs_used!==undefined){if(pc.pairs_used<pc.pairs_total)h+='<span class="warn">· ⚠ 对子被截断：'+pc.pairs_used+' / '+pc.pairs_total+'（'+esc4(pc.mode)+'）；各成分伙伴数 '+pc.min_partners+'~'+pc.max_partners+'</span><br>';else h+='· 对子：共 '+pc.pairs_total+' 对（未截断）<br>';}
+  const st=m.stats||{};if(st.n_products!==undefined)h+='· 产物 <b>'+st.n_products+'</b> 个 · 出处 <b>'+st.n_paths_kept+'</b> 条 · 耗时 '+st.seconds+' s<br>';
+  q('meta').innerHTML=h;
+  const tf=q('tierfilter');
+  if(tf){tf.onchange=function(){const v=tf.value;document.querySelectorAll('#meta table tbody tr').forEach(function(tr){let show;if(v==='all')show=true;else if(v.indexOf('p:')===0)show=(tr.getAttribute('data-probe')===v.slice(2));else show=(tr.getAttribute('data-tier')===v);tr.style.display=show?'':'none';});};}
+}
+
+function loadFormula(name){
+  q('fxStatus').textContent='查询「'+name+'」…';q('fxVersions').innerHTML='';q('fxHerbCard').hidden=true;q('fxRunCard').hidden=true;
+  fetch('/formula?name='+encodeURIComponent(name)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){q('fxStatus').innerHTML='<span class="bad">'+esc4(j.error)+'</span>';return;}
+    fxData=j;fxSel=0;
+    q('fxStatus').textContent='「'+j.name+'」共 '+j.n_versions+' 个版本（按权威度列示，不合并、不隐藏）。点卡片切换版本。';
+    renderVersions();
+  }).catch(function(e){q('fxStatus').innerHTML='<span class="bad">查询失败：'+esc4(e)+'</span>';});
+}
+function tierBadge(v){
+  const t=(v.tier===undefined?-1:v.tier);const cls=(t>=0&&t<=5)?('t'+t):'t9';
+  return '<span class="badge '+cls+'">'+esc4(v.tier_label||'?')+'</span>';
+}
+function probeBadge(v){
+  const p=v.probe;if(!p||!p.verdict)return '<span class="badge t9">未抽检</span>';
+  const cls=(p.verdict==='查无')?'t5':(p.verdict==='部分命中'?'t4':'t0');
+  return '<span class="badge '+cls+'">抽检：'+esc4(p.verdict)+'</span>';
+}
+function renderVersions(){
+  if(!fxData)return;
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1602 页
+------------------------------------------------------------
+  let h='';
+  fxData.versions.forEach(function(v,i){
+    h+='<div class="verCard'+(i===fxSel?' sel':'')+'" data-i="'+i+'"><h3>'+esc4(v.source_display||v.source||'（未写出处）')+'</h3>'
+      +tierBadge(v)+probeBadge(v)
+      +((v.dose_multiples&&Object.keys(v.dose_multiples).length)?'<span class="badge t0">带法定剂量</span>':'')
+      +'<div class="hint" style="margin-top:6px">'+v.herbs.length+' 味'
+      +(v.unmatched&&v.unmatched.length?('；未匹配（可能为炮制说明/方名引用/库外药材）：'+esc4(v.unmatched.join('、'))):'')+'</div>'
+      +(v.gongxiao?('<div class="hint" style="margin-top:4px">'+esc4(v.gongxiao.slice(0,90))+'</div>'):'')
+      +(v.url?('<div style="margin-top:6px"><a href="'+esc4(v.url)+'" target="_blank" rel="noopener" style="color:var(--accent);font-size:12px">出处链接 ↗</a></div>'):'')
+      +'</div>';
+  });
+  q('fxVersions').innerHTML=h;
+  q('fxVersions').querySelectorAll('.verCard').forEach(function(el){el.onclick=function(){selectVersion(+el.getAttribute('data-i'));};});
+  selectVersion(0);
+}
+function selectVersion(i){
+  if(!fxData||!fxData.versions.length)return;
+  fxSel=i;const v=fxData.versions[i];
+  q('fxVersions').querySelectorAll('.verCard').forEach(function(el){el.classList.toggle('sel',+el.getAttribute('data-i')===i);});
+  q('fxSource').textContent=v.source_display||v.source||'';
+  let rows='';
+  v.herbs.forEach(function(h){
+    const g=(v.grams&&v.grams[h]!==undefined)?v.grams[h]:null;
+    const mult=(v.dose_multiples&&v.dose_multiples[h])?v.dose_multiples[h]:1;
+    rows+='<tr><td><b>'+esc4(h)+'</b></td><td>'+(g===null?'—':g+' g')+'</td>'
+      +'<td><input type="number" min="0" step="1" class="fxMult" data-herb="'+esc4(h)+'" value="'+mult+'"></td>'
+      +'<td class="hint">'+(g===null?'该版本无克数，默认 1 份':'按最小剂量折算')+'</td></tr>';
+  });
+  q('fxTbody').innerHTML=rows;
+  q('fxUnmatched').innerHTML=(v.unmatched&&v.unmatched.length)?('<span class="warn">未匹配（可能为炮制说明/方名引用/库外药材）：'+esc4(v.unmatched.join('、'))+'（运行时会跳过并标注）</span>'):'';
+  q('fxHerbCard').hidden=false;q('fxRunCard').hidden=false;
+}
+function runFormula(){
+  if(!fxData||!fxData.versions.length){alert('先查询并选择一个方剂版本');return;}
+  const v=fxData.versions[fxSel];
+  const names=[];const parts=[];
+  q('fxTbody').querySelectorAll('.fxMult').forEach(function(el){
+    const h=el.getAttribute('data-herb');const k=Math.max(0,parseInt(el.value||'0',10)||0);
+    if(k>0){for(let i=0;i<k;i++)names.push(h);parts.push(h+'×'+k);}
+  });
+  if(!names.length){alert('至少保留一味、份数大于 0');return;}
+  lastFormula={name:fxData.name,source:v.source_display||v.source,
+    tier:v.tier,tier_label:v.tier_label,doses:parts.join('、')};
+  const body=new URLSearchParams({kind:'predict',herb:names.join(','),smiles:'',limit:q('f_limit').value,cond:q('f_cond').value,rounds:q('f_rounds').value,max_pairs:q('f_max_pairs').value,reagents:q('f_reagents').value,triples:q('f_triples').checked?1:0,fair_pairs:q('f_fair_pairs').checked?1:0,chp_priority:q('f_chp_priority').checked?1:0,outdir:q('f_outdir').value,dose_budget:q('f_dose_budget').checked?1:0,herb_order:'marker'});
+  submitBody(body);
+}
+
+function loadHistory(){
+  q('histList').textContent='加载中…';
+  fetch('/history?limit=40').then(function(r){return r.json();}).then(function(j){
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1603 页
+------------------------------------------------------------
+    const runs=j.runs||[];if(!runs.length){q('histList').textContent='还没有运行记录。';return;}
+    let h='';
+    runs.forEach(function(r){
+      const f=r.files||{};const links=[];
+      if(f.report&&f.report!=='(未生成)')links.push('<a href="/files/'+encodeURIComponent(f.report)+'" target="_blank">报告</a>');
+      if(f.csv)links.push('<a href="/files/'+encodeURIComponent(f.csv)+'" target="_blank">CSV</a>');
+      if(f.tsv)links.push('<a href="/files/'+encodeURIComponent(f.tsv)+'" target="_blank">TSV</a>');
+      h+='<div class="histItem"><div class="t">'+esc4(r.ts||'')+' · '+esc4(r.kind||'')+'</div><div class="n">'+esc4(r.note||'')+'</div><div>'+(links.join('')||'<span class="hint">（无文件）</span>')+'</div></div>';
+    });
+    q('histList').innerHTML=h;
+  }).catch(function(e){q('histList').innerHTML='<span class="bad">读取失败：'+esc4(e)+'</span>';});
+}
+
+function settingsObj(){
+  return {cond:q('set_cond').value,rounds:q('set_rounds').value,limit:q('set_limit').value,max_pairs:q('set_max_pairs').value,dose_budget:q('set_dose_budget').checked,chp_priority:q('set_chp_priority').checked,triples:q('set_triples').checked,fair_pairs:q('set_fair_pairs').checked};
+}
+function applySettings(){
+  let s=null;try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'null');}catch(e){s=null;}
+  if(!s)return;
+  if(s.cond!==undefined){q('cond').value=s.cond;q('f_cond').value=s.cond;q('set_cond').value=s.cond;}
+  if(s.rounds!==undefined){q('rounds').value=s.rounds;q('f_rounds').value=s.rounds;q('set_rounds').value=s.rounds;}
+  if(s.limit!==undefined){q('limit').value=s.limit;q('f_limit').value=s.limit;q('set_limit').value=s.limit;}
+  if(s.max_pairs!==undefined){q('max_pairs').value=s.max_pairs;q('f_max_pairs').value=s.max_pairs;q('set_max_pairs').value=s.max_pairs;}
+  q('dose_budget').checked=!!s.dose_budget;q('f_dose_budget').checked=!!s.dose_budget;q('set_dose_budget').checked=!!s.dose_budget;
+  q('chp_priority').checked=!!s.chp_priority;q('f_chp_priority').checked=!!s.chp_priority;q('set_chp_priority').checked=!!s.chp_priority;
+  q('triples').checked=!!s.triples;q('f_triples').checked=!!s.triples;q('set_triples').checked=!!s.triples;
+  q('fair_pairs').checked=!!s.fair_pairs;q('f_fair_pairs').checked=!!s.fair_pairs;q('set_fair_pairs').checked=!!s.fair_pairs;
+}
+function loadSettingsUI(){
+  let s=null;try{s=JSON.parse(localStorage.getItem('chemreact.settings')||'null');}catch(e){s=null;}
+  if(!s)return;
+  if(s.cond!==undefined)q('set_cond').value=s.cond;
+  if(s.rounds!==undefined)q('set_rounds').value=s.rounds;
+  if(s.limit!==undefined)q('set_limit').value=s.limit;
+  if(s.max_pairs!==undefined)q('set_max_pairs').value=s.max_pairs;
+  q('set_dose_budget').checked=!!s.dose_budget;q('set_chp_priority').checked=!!s.chp_priority;
+  q('set_triples').checked=!!s.triples;q('set_fair_pairs').checked=!!s.fair_pairs;
+}
+
+document.querySelectorAll('.navBtn').forEach(function(b){b.onclick=function(){setView(b.getAttribute('data-view'));};});
+q('addRow').onclick=function(){addRow('');};
+q('go').onclick=startRun;q('goR').onclick=startRoutes;q('fxRun').onclick=runFormula;
+q('histRefresh').onclick=loadHistory;
+q('setSave').onclick=function(){localStorage.setItem('chemreact.settings',JSON.stringify(settingsObj()));q('setMsg').textContent='已保存';applySettings();};
+q('setReset').onclick=function(){localStorage.removeItem('chemreact.settings');q('setMsg').textContent='已恢复默认（刷新后生效）';};
+attachAC(q('fxInput'),q('fxAC'),function(c){q('fxInput').value=c.name;loadFormula(c.name);});
+q('fxInput').addEventListener('keydown',function(e){
+  if(e.key==='Enter'&&!e.defaultPrevented&&q('fxInput').value.trim()){
+    e.preventDefault();loadFormula(q('fxInput').value.trim());
+  }
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1604 页
+------------------------------------------------------------
+});
+const _hashRaw=(location.hash||'').replace('#','');
+const _hashParts=_hashRaw.split('=');
+const _hash=_hashParts[0];
+addRow('');applySettings();
+setView(['predict','formula','routes','history','settings'].indexOf(_hash)>=0?_hash:'predict');
+if(_hash==='formula'&&_hashParts[1]){
+  const _nm=decodeURIComponent(_hashParts.slice(1).join('='));
+  q('fxInput').value=_nm;loadFormula(_nm);
+}
+</script></body></html>
+# ==================== FILE: integration/tcmai_bridge.py ====================
+# -*- coding: utf-8 -*-
+r"""第十四轮 / 任务③：TCMAI 接入桥 —— 让 TCMAI 用上 SmartReact 引擎。
+
+⚠ 纪律：`D:\TCMAI` 只读。本文件只【读】tcm.db（通过 TCMAI 的 db_utils），
+  所有产出都在 chemreact-staging。真正的落地补丁见
+  `reports/第十四轮-TCMAI接入方案.md`（要用户确认后才动 TCMAI）。
+
+接口对齐（实测自 D:\TCMAI\src\tcm_analyzer.py:288-352）：
+  输入 compounds: list[dict]，键 smiles / name / herb_name（或 source）
+  输出 products : list[dict]，键 from_herb / from_compound / rxn / formula / smiles / mw
+  本桥的 predict_reactions() 保持同一输入输出形状，替换掉 10 条手写 SMARTS 的那一套。
+
+诚实性约束（必须跟着接口一起给出去）：
+  见 confidence_report()：ORD 上的召回只有 ~28.6%，HTE 真实失败条件上的
+  假阳性率 94.9%、条件门控 AUC 0.530 —— 所以本桥的输出**只能当候选清单/排雷**，
+  不能当"会不会发生"的判定。这句话会同时打印在 demo 里。
+
+用法（只读演示）:
+  python tcmai_bridge.py --demo 甘草
+  python tcmai_bridge.py --confidence
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+STAGE = Path(__file__).resolve().parent.parent
+TCMAI = Path(r"D:\TCMAI")
+for _p in (STAGE / "core", STAGE / "conditions", STAGE / "rules",
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1605 页
+------------------------------------------------------------
+           STAGE / "libs", STAGE / "tools", TCMAI / "src"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+from engine import Compound as CRCompound           # noqa: E402
+from model import Conditions, solvent_class          # noqa: E402
+from smartreact_engine import SmartReactEngine       # noqa: E402
+
+# 煎煮默认条件（与 TCMAI 的「煎煮」模板一致：水 / 100 °C / 60 min / pH 6.5）
+DEFAULT_CONDITIONS = Conditions(solvent="water", temperature=100.0, time_min=60.0, pH=6.5)
+
+# ★ 级联用：哪些反应类型算"不可逆"（会驱动体系继续反应）★
+#   这是【我的判断/建模选择】，不是 ORD 实测值；TCMAI 的 cascade_reactions 需要这个标记。
+#   基于化学常识挑了明显不可逆的类别；其余默认 False（保守，宁可少迭代）。
+IRREVERSIBLE_CLASSES = {
+    "B-H", "suzuki", "ullmann_X", "ullmann_phenol", "chan_lam",
+    "amide_coupling", "esterification", "ester_sulfonic_schotten_baumann",
+    "reductive_amination_aldehyde", "reductive_amination_ketone",
+    "C_C_decarboxylation", "deoxygenative_coupling",
+    "mitsunobu", "williamson", "snar_amine", "snar_alcohol", "snar_thiol",
+    "click", "triazole_synthesis_2", "urea_formation", "amine_acetylation",
+    "amine_sulfonation", "imidazole_condensation_acid", "imidazole_condensation_amine",
+    "cross_electrophile_coupling", "negishi_batch", "negishi_insitu",
+}
+
+_ENGINE: Optional[SmartReactEngine] = None
+
+
+def get_engine(gate_conditions: bool = True) -> SmartReactEngine:
+    """单例（SmartReact 初始化要几秒，别每次新建）。"""
+    global _ENGINE
+    if _ENGINE is None:
+        _ENGINE = SmartReactEngine(gate_conditions=gate_conditions)
+    return _ENGINE
+
+
+def get_reactions() -> Dict[str, Dict[str, Any]]:
+    """兼容 TCMAI `tcm_analyzer.get_reactions()` 的调用面。
+
+    ⚠ 与 TCMAI 旧版不同：本引擎每个"反应类型"背后是几十~上千条模板，
+       **没有单一的 `rxn`（ReactionFromSmarts）对象**。
+       所以调用方不能再用 `rinfo['rxn'].RunReactants(...)` —— 必须换成
+       `predict_reactions()`（本模块已提供同形状输出）。
+       这里返回的 dict 只保留 cascade 需要的 `name` / `irreversible` 字段。
+    """
+    eng = get_engine()
+    return {r["id"]: {"name": r["name"], "rxn": None,
+                      "n_templates": r.get("n_templates"),
+                      "irreversible": r["id"] in IRREVERSIBLE_CLASSES}
+            for r in eng.rules}
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1606 页
+------------------------------------------------------------
+
+
+def predict_reactions(compounds: List[Dict],
+                      conditions: Optional[Conditions] = None,
+                      min_mw: float = 100.0,
+                      min_heavy: int = 10,
+                      gate_conditions: bool = True) -> List[Dict]:
+    """与 TCMAI `predict_reactions()` 同形状：见文件顶部接口说明。
+
+    额外多给三个键（不会影响旧调用方）：`activation`（条件门控分数）、
+    `category`、`gate_note`（被降权/判零的原因）。
+    """
+    cond = conditions or DEFAULT_CONDITIONS
+    eng = get_engine(gate_conditions=gate_conditions)
+    comps: List[CRCompound] = []
+    meta: Dict[str, Dict[str, str]] = {}
+    for c in compounds:
+        if not isinstance(c, dict):
+            continue
+        smi = c.get("smiles")
+        if not smi:
+            continue
+        name = c.get("name", "(无名)")
+        herb = c.get("herb_name") or c.get("source", "")
+        comps.append(CRCompound(smiles=smi, name=name, herb=herb, source="herb"))
+        meta[CRCompound(smiles=smi, name=name, herb=herb, source="herb").to_dict()["smiles"]] = {
+            "name": name, "herb": herb}
+    if len(comps) < 2:
+        return []
+
+    prods = eng.step(comps, cond, round_no=1)
+    out, seen = [], set()
+    for p in prods:
+        if p.mw < min_mw or p.heavy_atoms < min_heavy:
+            continue
+        key = (p.smiles, p.source_name)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            "from_herb": p.source_herb,
+            "from_compound": p.source_name,
+            "rxn": p.rule_name,
+            "formula": p.formula,
+            "smiles": p.smiles,
+            "mw": round(p.mw, 1),
+            # —— 扩展字段（本桥新增）——
+            "activation": round(float(getattr(p, "activation", 0.0)), 3),
+            "category": getattr(p, "category", ""),
+            "gate_note": "",
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1607 页
+------------------------------------------------------------
+        })
+    return out
+
+
+def predict_for_herb(herb_name: str, conditions: Optional[Conditions] = None,
+                     limit: int = 200) -> Dict[str, Any]:
+    """只读演示：从 tcm.db 取药材成分 -> 预测产物。"""
+    from tcm_ro import use_readonly; use_readonly(); from db_utils import find_compounds  # 来自 D:\TCMAI\src（只读）
+    rows = find_compounds(herb_name, limit=limit)
+    prods = predict_reactions(rows, conditions)
+    types: Dict[str, int] = {}
+    for p in prods:
+        types[p["rxn"]] = types.get(p["rxn"], 0) + 1
+    return {"herb": herb_name, "compounds": len(rows),
+            "cond": (conditions or DEFAULT_CONDITIONS).describe(),
+            "n_products": len(prods), "types": dict(sorted(types.items(), key=lambda kv: -kv[1])),
+            "products": prods}
+
+
+def confidence_report() -> Dict[str, Any]:
+    """本引擎现在的可信度（全部实测数字，来自 reports/）。"""
+    rep: Dict[str, Any] = {
+        "ord_coverage_28.6pct": "SmartReact 9770 模板对 ORD 真实文献的泛化命中率（口径见 "
+                                "tools/validate_ord_coverage.py）",
+    }
+    hte = STAGE / "reports" / "hte_negatives_summary.json"
+    if hte.exists():
+        d = json.loads(hte.read_text(encoding="utf-8"))
+        a = d.get("A_template_library_unconditional", {})
+        b = d.get("B_condition_gate", {})
+        rep["hte_recall_positive_control"] = a.get("pos_recall")
+        rep["hte_false_positive_rate"] = a.get("neg_false_positive_rate")
+        rep["hte_negatives_evaluated"] = a.get("neg_pairs_evaluated")
+        rep["hte_condition_gate_auc"] = b.get("auc")
+    return rep
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--demo", metavar="药材", help="只读演示：药材 -> 产物")
+    ap.add_argument("--limit", type=int, default=60)
+    ap.add_argument("--confidence", action="store_true", help="只打印可信度数字")
+    args = ap.parse_args()
+
+    print("=" * 96)
+    print("TCMAI 接入桥（只读；未修改 D:\\TCMAI）")
+    print("=" * 96)
+    rep = confidence_report()
+    for k, v in rep.items():
+        print(f"  {k:<32} {v}")
+
+Christos（炼膏师）化学反应产物预测与药典判据溯源软件 V1.0.0    第 1608 页
+------------------------------------------------------------
+    print("  ⚠ 结论：只能当候选清单/排雷，不能当『会不会发生』的判定。")
+
+    if args.confidence or not args.demo:
+        return 0
+    res = predict_for_herb(args.demo, limit=args.limit)
+    print()
+    print(f"【{res['herb']}】成分 {res['compounds']} 个   条件 {res['cond']}")
+    print(f"  预测产物 {res['n_products']} 个，涉及反应类型 {len(res['types'])} 类:")
+    for t, n in list(res["types"].items())[:12]:
+        print(f"    {t:<34} {n}")
+    print("  前 8 个产物:")
+    for p in res["products"][:8]:
+        print(f"    {p['from_compound'][:16]:<18} {p['rxn']:<26} {p['smiles'][:52]}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

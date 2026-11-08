@@ -1,0 +1,505 @@
+{
+  "generated_at": "2026-10-31",
+  "scope": "炮制（无溶剂/干热/蒸/炙）条件与反应的首批文献源；仅收录能给出处或明确引用关系的条目。",
+  "conditions": [
+    {
+      "method": "蜜炙（蜜炒）",
+      "herb": "甘草",
+      "value": "120",
+      "unit": "°C（药材温度）",
+      "time": "13.5 min",
+      "extra": "700 W",
+      "source": {
+        "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+        "journal": "Natural Product Research",
+        "year": 2026,
+        "doi": "10.1080/14786419.2026.2693245",
+        "pmid": "42378459",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+          "crossref_journal": "Natural Product Research",
+          "crossref_year": "2026"
+        }
+      },
+      "quote": "Stir-frying under controlled intensity and duration (700 W, 13.5 min; drug temperature 120 °C) was identified as optimal."
+    },
+    {
+      "method": "炒黄（炒微黄）",
+      "value": "160–170",
+      "unit": "°C",
+      "time": "未给",
+      "source": {
+        "title": "中药炒制的常见方法及作用",
+        "publisher": "康美中药网",
+        "year": 2018,
+        "url": "https://www.kmzyw.com.cn/baike/20180814/1534236773000.5614.html",
+        "type": "secondary"
+      },
+      "quote": "炒制一般受热温度：炒微黄在160~170℃，炒焦化在190~200℃。"
+    },
+    {
+      "method": "炒黄（个案）",
+      "herb": "莱菔子",
+      "value": "160",
+      "unit": "°C",
+      "time": "3 min",
+      "source": {
+        "title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice",
+        "journal": "Foods",
+        "year": 2026,
+        "doi": "10.3390/foods15203587",
+        "pmid": "42940224",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Stir-Frying Reshapes the Chemical Profile and Metabolic Effects of Raphani Semen in Diabetic Mice: Integrated Analysis of Hepatic Metabolism and Gut Microbiota",
+          "crossref_journal": "Foods",
+          "crossref_year": "2026",
+          "pmcid": "PMC13703343",
+          "open_access": "Y",
+          "oa_url": "https://doi.org/10.3390/foods15203587"
+        }
+      },
+      "quote": "a representative laboratory-scale stir-frying condition (160 °C for 3 min) was selected"
+    },
+    {
+      "method": "炒制（个案）",
+      "herb": "花椒",
+      "value": "120",
+      "unit": "°C",
+      "time": "0–10 min",
+      "source": {
+        "title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper",
+        "journal": "Food Chemistry: X",
+        "year": 2026,
+        "doi": "10.1016/j.fochx.2026.104644",
+        "pmid": "42936424",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Synergistic changes and interrelationships among chemical composition, aroma, and color during the stir-frying of Sichuan pepper (Zanthoxylum bungeanum maxim.)",
+          "crossref_journal": "Food Chemistry: X",
+          "crossref_year": "2026",
+          "pmcid": "PMC13697283",
+          "open_access": "Y",
+          "oa_url": "https://doi.org/10.1016/j.fochx.2026.104644"
+        }
+      },
+      "quote": "during Sichuan pepper stir-frying (0-10 min, 120 °C)"
+    },
+    {
+      "method": "炒焦（炒焦化）",
+      "value": "190–200",
+      "unit": "°C",
+      "time": "未给",
+      "source": {
+        "title": "中药炒制的常见方法及作用",
+        "publisher": "康美中药网",
+        "year": 2018,
+        "url": "https://www.kmzyw.com.cn/baike/20180814/1534236773000.5614.html",
+        "type": "secondary"
+      },
+      "quote": "炒制一般受热温度：炒微黄在160~170℃，炒焦化在190~200℃。"
+    },
+    {
+      "method": "炒炭",
+      "value": "220–300",
+      "unit": "°C",
+      "time": "35–40 min",
+      "source": {
+        "title": "中药制炭的方法及注意事项",
+        "publisher": "康美中药网",
+        "year": 2018,
+        "url": "https://www.kmzyw.com.cn/baike/20180820/1534756563000.4053.html",
+        "type": "secondary"
+      },
+      "quote": "一般温度在220~300℃，时间35~40分钟为度。"
+    },
+    {
+      "method": "麸炒",
+      "value": "中火",
+      "unit": "火力",
+      "adjuvant": "麸皮 5 kg / 50 kg 药材（10% w/w）",
+      "source": {
+        "title": "中药炒制的常见方法及作用",
+        "publisher": "康美中药网",
+        "year": 2018,
+        "url": "https://www.kmzyw.com.cn/baike/20180814/1534236773000.5614.html",
+        "type": "secondary"
+      },
+      "quote": "辅料用量：每50千克净药材用麸皮5千克…（麸炒）一般用中火"
+    },
+    {
+      "method": "文火",
+      "value": "110–130",
+      "unit": "°C",
+      "source": {
+        "title": "中药炮制术语",
+        "publisher": "xztcm.com",
+        "url": "https://xztcm.com/newsinfo.aspx?nid=2389",
+        "type": "secondary"
+      },
+      "quote": "用文火加热的锅，温度约为110℃～130℃。",
+      "note": "与上条 kmzyw 的炒微黄 160–170℃ 不一致；说明“文火”不是统一锅温，条件表以方法学来源为准。"
+    },
+    {
+      "method": "蒸制（高压高温）",
+      "value": "未给（1–4 次循环）",
+      "unit": "",
+      "source": {
+        "title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+        "journal": "Molecules",
+        "year": 2026,
+        "doi": "10.3390/molecules31203706",
+        "pmid": "42943776",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+          "crossref_journal": "Molecules",
+          "crossref_year": "2026",
+          "pmcid": "PMC13707937",
+          "open_access": "Y",
+          "oa_url": "https://doi.org/10.3390/molecules31203706"
+        }
+      },
+      "quote": "1-4 cycles of high-temperature and high-pressure steaming (HTHPS)",
+      "note": "摘要未给温度/时间，需全文。"
+    },
+    {
+      "method": "蒸制（红参）",
+      "herb": "人参",
+      "value": "95–100",
+      "unit": "°C",
+      "time": "2–3 h",
+      "source": {
+        "title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+        "journal": "Molecules",
+        "year": 2020,
+        "doi": "10.3390/molecules25194390",
+        "pmid": "32987784",
+        "type": "peer_reviewed_local_fulltext",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Diversity of Ginsenoside Profiles Produced by Various Processing Technologies",
+          "crossref_journal": "Molecules",
+          "crossref_year": "2020",
+          "pmcid": "PMC7582514",
+          "open_access": "Y",
+          "oa_url": "https://www.mdpi.com/1420-3049/25/19/4390/pdf?version=1600944186"
+        }
+      },
+      "quote": "red ginseng is prepared by steaming fresh ginseng at 95–100 °C for 2–3 h before drying"
+    },
+    {
+      "method": "酒炙",
+      "herb": "柴胡",
+      "value": "135–145",
+      "unit": "°C",
+      "time": "5 min",
+      "extra": "黄酒 10%（100:10）",
+      "source": {
+        "title": "正交试验优选酒柴胡炮制工艺",
+        "journal": "中国医院药学杂志",
+        "year": 2018,
+        "url": "https://zgyyyx.magtechjournal.com/EN/10.13286/j.cnki.chinhosppharmacyj.2018.09.09",
+        "type": "peer_reviewed"
+      },
+      "quote": "最佳炮制工艺条件为柴胡与黄酒用量比为100∶10，酒炙温度135~145℃，酒炙时间5 min。"
+    },
+    {
+      "method": "醋炙",
+      "herb": "延胡索",
+      "value": "84",
+      "unit": "°C",
+      "time": "35 min",
+      "extra": "米醋 37%",
+      "source": {
+        "title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy",
+        "journal": "Biomedical Chromatography",
+        "year": 2026,
+        "doi": "10.1002/bmc.70636",
+        "pmid": "42855447",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Optimization of Vinegar Processing for Yuanhu Zhitong Formula Enhances Antigastric Ulcer Efficacy: An Integrated Pharmacokinetic–Pharmacodynamic and Network Pharmacology Study",
+          "crossref_journal": "Biomedical Chromatography",
+          "crossref_year": "2026",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bmc.70636"
+        }
+      },
+      "quote": "processing temperature of 84°C, vinegar dosage of 37%, and baking time of 35 min"
+    },
+    {
+      "method": "盐炙",
+      "herb": "杜仲",
+      "value": "150",
+      "unit": "°C",
+      "time": "10 min",
+      "extra": "食盐 2%（药典通则 0213：每100 kg 用食盐 2 kg）",
+      "source": {
+        "title": "多指标正交试验法优选杜仲药材最佳炮制工艺",
+        "journal": "药物分析杂志",
+        "year": 2009,
+        "volume": "29(11)",
+        "pages": "1817-1820",
+        "url": "http://dianda.cqvip.com/Qikan/Article/Detail?id=32337407",
+        "type": "peer_reviewed"
+      },
+      "quote": "每1 kg杜仲药材喷洒2%盐水溶液拌匀润透，150 ℃炒制10 min。",
+      "note": "数值取自检索到的摘要（摘要级）；盐用量与药典通则 0213 的 2% 一致。",
+      "pharmacopoeia": {
+        "title": "中国药典 2020 通则 0213 炙法辅料用量（转引：正保医学教育网）",
+        "url": "https://www.med66.com/zhongyaoxue/ziliao/wx2002058108.shtml",
+        "quote": "盐炙时，每100kg药物，用食盐2kg。",
+        "type": "secondary"
+      }
+    },
+    {
+      "method": "盐炙（个案）",
+      "herb": "沙苑子",
+      "value": "100",
+      "unit": "°C",
+      "time": "15 min",
+      "extra": "2% 食盐水 4 mL / 30 g 药材，闷润 8 h",
+      "source": {
+        "title": "沙苑子盐炙工艺优选及其炮制前后抗炎作用研究",
+        "journal": "中草药",
+        "year": 2025,
+        "volume": "56(9)",
+        "pages": "3121-3130",
+        "doi": "10.7501/j.issn.0253-2670.2025.09.010",
+        "url": "https://www.tiprpress.com/zcy/ch/reader/create_pdf.aspx?file_no=20250910&year_id=2025&quarter_id=9&falg=1",
+        "type": "peer_reviewed",
+        "doi_valid": false,
+        "citation_check": {
+          "status": "doi_not_registered",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "note": "doi.org 解析 404：该 DOI 未注册，出处需重查。",
+          "url_ok": "https://www.tiprpress.com/zcy/ch/reader/create_pdf.aspx?file_no=20250910&year_id=2025&quarter_id=9&falg=1"
+        }
+      },
+      "quote": "每30 g沙苑子，加2%食盐水4 mL，闷润8 h，于100 ℃炒15 min。"
+    },
+    {
+      "method": "姜炙",
+      "herb": "黄连",
+      "value": "150",
+      "unit": "°C",
+      "time": "40 min",
+      "extra": "生姜汁 15% 润透（药典通则 0213 通用量：每100 kg 用生姜10 kg）",
+      "source": {
+        "title": "正交设计法优选黄连姜炙工艺",
+        "journal": "中国药师",
+        "year": 2016,
+        "url": "https://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_zgys201602007",
+        "type": "peer_reviewed"
+      },
+      "quote": "黄连的最佳姜炙工艺为：生黄连加15%姜汁润透后，在150℃下烘制40 min，取出，晾凉。",
+      "note": "药典通则为文火、生姜10%；其他报道：厚朴 10%姜汁 170°C/6 min，栀子 10%姜汁 4.5 min。",
+      "pharmacopoeia": {
+        "title": "中国药典 2020 通则 0213 炙法辅料用量（转引：正保医学教育网）",
+        "url": "https://www.med66.com/zhongyaoxue/ziliao/wx2002058108.shtml",
+        "quote": "姜炙时，每100kg药物，用生姜10kg。若无生姜，可用干姜煎汁，用量为生姜的三分之一。",
+        "type": "secondary"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "herb": "甘草（蜜炙）",
+      "observed": "早期糖苷水解成苷元；中期脱水受限水解与二氢黄酮-查尔酮互变；长时间加热导致糖苷降解与美拉德反应",
+      "rule_links": [
+        "hydrolysis_glycoside_001",
+        "elimination_dehydration_001",
+        "maillard_simplified_001"
+      ],
+      "source": {
+        "title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+        "journal": "Natural Product Research",
+        "year": 2026,
+        "doi": "10.1080/14786419.2026.2693245",
+        "pmid": "42378459",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Study on component change regularity in honey-processed licorice processing and verifying its enhanced antiarrhythmic bioactivity",
+          "crossref_journal": "Natural Product Research",
+          "crossref_year": "2026"
+        }
+      },
+      "quote": "During early heating, glycosides were hydrolysed into aglycones; intermediate stages involved dehydration-limited hydrolysis and partial dihydroflavonoid-chalcone conversion; prolonged heating induced glycoside degradation and Maillard reactions."
+    },
+    {
+      "herb": "人参（高压高温蒸制）",
+      "observed": "主要人参皂苷下降，稀有皂苷 Rg3/Rk1/Rg5/Rh1/F4/Rg6 出现",
+      "rule_links": [
+        "hydrolysis_glycoside_001",
+        "elimination_dehydration_001"
+      ],
+      "source": {
+        "title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+        "journal": "Molecules",
+        "year": 2026,
+        "doi": "10.3390/molecules31203706",
+        "pmid": "42943776",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "The Impact of High-Temperature and High-Pressure Steaming Treatment on Bioactive Compounds and Antioxidant Activity in American Ginseng",
+          "crossref_journal": "Molecules",
+          "crossref_year": "2026",
+          "pmcid": "PMC13707937",
+          "open_access": "Y",
+          "oa_url": "https://doi.org/10.3390/molecules31203706"
+        }
+      },
+      "quote": "HTHPS significantly decreased major ginsenoside levels while increasing the content of rare ginsenosides… Rg3, Rk1, Rg5, Rh1, F4, and Rg6"
+    },
+    {
+      "herb": "附子/乌头（炮制）",
+      "observed": "双酯型生物碱的酯水解（C8 乙酰酯、C14 苯甲酸酯）降低毒性",
+      "rule_links": [
+        "hydrolysis_ester_001"
+      ],
+      "source": {
+        "title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity",
+        "journal": "Frontiers in Pharmacology",
+        "year": 2016,
+        "doi": "10.3389/fphar.2016.00367",
+        "pmid": "27761113",
+        "type": "peer_reviewed_local_fulltext",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Ester Hydrolysis Differentially Reduces Aconitine-Induced Anti-hypersensitivity and Acute Neurotoxicity: Involvement of Spinal Microglial Dynorphin Expression and Implications for Aconitum Processing",
+          "crossref_journal": "Frontiers in Pharmacology",
+          "crossref_year": "2016",
+          "pmcid": "PMC5051147",
+          "open_access": "Y",
+          "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2016.00367/pdf"
+        }
+      },
+      "quote": "Aconitum must be generally processed by heating in boiling or steaming water, or treating with a dilute acid or alkali solution for a few hours, to reduce the toxicity"
+    },
+    {
+      "herb": "何首乌（九蒸九晒）",
+      "observed": "糖苷（THSG）水解为苷元；脱水、异构化与美拉德反应参与；结合蒽醌减少、游离蒽醌增加",
+      "rule_links": [
+        "hydrolysis_glycoside_001",
+        "elimination_dehydration_001",
+        "maillard_simplified_001"
+      ],
+      "source": {
+        "title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+        "journal": "Frontiers in Pharmacology",
+        "year": 2018,
+        "doi": "10.3389/fphar.2018.00934",
+        "pmcid": "PMC6121093",
+        "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2018.00934/full",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Integrating Targeted and Untargeted Metabolomics to Investigate the Processing Chemistry of Polygoni Multiflori Radix",
+          "crossref_journal": "Frontiers in Pharmacology",
+          "crossref_year": "2018",
+          "pmcid": "PMC6121093",
+          "open_access": "Y",
+          "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
+        }
+      },
+      "quote": "Several mechanisms, namely hydrolysis, dehydration, isomerization, and Maillard reaction appear to be involved in the chemical transformation that occurs.",
+      "note": "炮制条件：黑豆汁拌蒸 4 h、晒 24 h，重复 9 次。原文的「异构化」无对应炮制证据规则，记为不可映射。"
+    },
+    {
+      "herb": "大黄（酒炙 / 酒蒸 / 炒炭）",
+      "observed": "炮制涉及糖苷水解、碳化、氧化、分解与缩合；结合蒽醌减少、游离蒽醌与 5-HMF 增加",
+      "rule_links": [
+        "hydrolysis_glycoside_001"
+      ],
+      "source": {
+        "title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+        "journal": "Frontiers in Pharmacology",
+        "year": 2024,
+        "doi": "10.3389/fphar.2024.1442297",
+        "pmcid": "PMC11335691",
+        "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2024.1442297/full",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "The application of rhubarb concoctions in traditional Chinese medicine and its compounds, processing methods, pharmacology, toxicology and clinical research",
+          "crossref_journal": "Frontiers in Pharmacology",
+          "crossref_year": "2024",
+          "pmcid": "PMC11335691",
+          "open_access": "Y",
+          "oa_url": "https://doi.org/10.3389/fphar.2024.1442297"
+        }
+      },
+      "quote": "the processing of rhubarb involves not only the hydrolysis of glycosides but also complex chemical changes.",
+      "note": "原文另列 carbonization / oxidation / decomposition / condensation；现有证据规则只映射糖苷水解，其余记为不可映射（规则库无对应炮制证据规则），不硬加。"
+    },
+    {
+      "herb": "莱菔子/花椒（炒制）",
+      "observed": "炒制改变化学成分/挥发性/颜色",
+      "rule_links": [],
+      "source": {
+        "title": "Stir-Frying Reshapes the Chemical Profile… / Synergistic changes…",
+        "type": "peer_reviewed"
+      },
+      "note": "属于成分谱变化，暂未映射到规则。"
+    },
+    {
+      "herb": "地黄（蒸制）",
+      "observed": "蒸制后甜味增强、苦味下降；寡糖水解为甜度更高的糖",
+      "rule_links": [
+        "hydrolysis_glycoside_001"
+      ],
+      "source": {
+        "title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix",
+        "journal": "Foods",
+        "year": 2025,
+        "doi": "10.3390/foods14223932",
+        "pmid": "41300090",
+        "type": "peer_reviewed",
+        "citation_check": {
+          "status": "verified",
+          "checked_at": "2026-11-06T16:26:10",
+          "by": "tools/verify_citations.py (Crossref + EuropePMC + OpenAlex)",
+          "crossref_title": "Chemical Mechanisms Underlying Sweetness Enhancement During Processing of Rehmanniae Radix: Carbohydrate Hydrolysis, Degradation of Bitter Compounds, and Interaction with Taste Receptors",
+          "crossref_journal": "Foods",
+          "crossref_year": "2025",
+          "pmcid": "PMC12651911",
+          "open_access": "Y",
+          "oa_url": "https://www.mdpi.com/2304-8158/14/22/3932/pdf?version=1763388025"
+        }
+      },
+      "quote": "steaming markedly increased sweetness while reducing bitterness … hydrolysis of oligosaccharides into higher-sweetness sugars",
+      "note": "寡糖的糖苷键水解；与 hydrolysis_glycoside_001 的糖苷水解属同一类，但不是逐底物验证。"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+SMARTS: [CX3:1](=[OX1:2])[OX2H:3].[NX3;H1,H2:4][#6:5]>>[C:1](=[O:2])[N:4][#6:5].[OH2:3]
+co_reagents: {}
+co_substrate_pool:
+   smiles=N                when_solvent=None
+   smiles=CN               when_solvent=None
+   smiles=NCC(=O)O         when_solvent=None
+
+============================================================================================
+各工艺下的酰胺化产物，以及是哪条陪跑试剂起作用
+============================================================================================
+
+  【煎煮】可用第二反应物: ['N', 'CN', 'NCC(=O)O']
+      苯甲酸        → C8H9NO        CNC(=O)c1ccccc1
+      苯甲酸        → H2O           O
+      乙酸         → C3H7NO        CNC(C)=O
+      乙酸         → H2O           O
+      水杨酸        → C8H9NO2       CNC(=O)c1ccccc1O
+      水杨酸        → H2O           O
+      甘草次酸型羧酸    → C25H41NO      CNC(=O)C1CCC2C3CCC4C5CC(C)(C)C5CCC4(C)C3CCC12C
+      甘草次酸型羧酸    → H2O           O
+
+  【水提】可用第二反应物: ['N', 'CN', 'NCC(=O)O']
+      苯甲酸        → C8H9NO        CNC(=O)c1ccccc1
+      苯甲酸        → H2O           O
+      乙酸         → C3H7NO        CNC(C)=O
+      乙酸         → H2O           O
+      水杨酸        → C8H9NO2       CNC(=O)c1ccccc1O
+      水杨酸        → H2O           O
+      甘草次酸型羧酸    → C25H41NO      CNC(=O)C1CCC2C3CCC4C5CC(C)(C)C5CCC4(C)C3CCC12C
+      甘草次酸型羧酸    → H2O           O
+
+  【醇提】可用第二反应物: ['N', 'CN', 'NCC(=O)O']
+      苯甲酸        → C8H9NO        CNC(=O)c1ccccc1
+      苯甲酸        → H2O           O
+      乙酸         → C3H7NO        CNC(C)=O
+      乙酸         → H2O           O
+      水杨酸        → C8H9NO2       CNC(=O)c1ccccc1O
+      水杨酸        → H2O           O
+      甘草次酸型羧酸    → C25H41NO      CNC(=O)C1CCC2C3CCC4C5CC(C)(C)C5CCC4(C)C3CCC12C
+      甘草次酸型羧酸    → H2O           O
+
+  【酸水解】可用第二反应物: ['N', 'CN', 'NCC(=O)O']
+      苯甲酸        → C8H9NO        CNC(=O)c1ccccc1
+      苯甲酸        → H2O           O
+      乙酸         → C3H7NO        CNC(C)=O
+      乙酸         → H2O           O
+      水杨酸        → C8H9NO2       CNC(=O)c1ccccc1O
+      水杨酸        → H2O           O
+      甘草次酸型羧酸    → C25H41NO      CNC(=O)C1CCC2C3CCC4C5CC(C)(C)C5CCC4(C)C3CCC12C
+      甘草次酸型羧酸    → H2O           O
+
+  【酶催化】可用第二反应物: ['N', 'CN', 'NCC(=O)O']
+      苯甲酸        → C8H9NO        CNC(=O)c1ccccc1
+      苯甲酸        → H2O           O
+      乙酸         → C3H7NO        CNC(C)=O
+      乙酸         → H2O           O
+      水杨酸        → C8H9NO2       CNC(=O)c1ccccc1O
+      水杨酸        → H2O           O
+      甘草次酸型羧酸    → C25H41NO      CNC(=O)C1CCC2C3CCC4C5CC(C)(C)C5CCC4(C)C3CCC12C
+      甘草次酸型羧酸    → H2O           O
+
+============================================================================================
+判定
+============================================================================================
+
+  陪跑试剂的 when_solvent=None 表示【任何工艺下都可用】。
+  如果被用的是【氨(N)】或【甲胺(CN)】—— 那就不合理：
+    煎煮的水里既没有氨也没有甲胺。
+  如果被用的是【甘氨酸(NCC(=O)O)】—— 尚可辩护：
+    药材里确实有游离氨基酸。
+

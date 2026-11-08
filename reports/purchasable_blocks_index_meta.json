@@ -1,0 +1,15 @@
+{
+  "n_core_blocks": 32439,
+  "n_reagents_included": 265446,
+  "n_full_index": 297274,
+  "n_skeleton_index": 291065,
+  "n_no_inchikey": 1,
+  "n_not_in_old_terminal_set": 294595,
+  "n_old_terminal_set": 277268,
+  "match_levels": {
+    "full_inchikey": "chemically identical",
+    "skeleton": "same skeleton, stereo may differ"
+  },
+  "mw_median": 303.789,
+  "elapsed_sec": 86.0
+}

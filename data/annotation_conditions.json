@@ -1,0 +1,561 @@
+{
+ "18373": {
+  "template_freq": 11,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "6-(4-Bromo-2-chloro-phenylamino)-7-fluoro-3-methyl-3H-benzoimidazole-5-carboxylic acid",
+     "O-(2-vinyloxy-ethyl)-hydroxylamine",
+     "HOBt",
+     "triethylamine",
+     "EDCI"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "ethyl acetate",
+     "dimethylformamide"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "6-(4-Bromo-2-chloro-phenylamino)-7-fluoro-3-(tetrahydro-pyran-2-ylmethyl)-3H-benzoimidazole-5-carboxylic acid",
+     "O-(2-vinyloxy-ethyl)-hydroxylamine",
+     "EDCI",
+     "HOBT",
+     "triethylamine"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "ethyl acetate",
+     "water",
+     "N,N-dimethylformamide"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "6-(4-Bromo-2-chloro-phenylamino)-7-chloro-3-methyl-3H-benzoimidazole-5-carboxylic acid",
+     "O-(2-vinyloxy-ethyl)-hydroxylamine",
+     "HOBt",
+     "triethylamine",
+     "EDCI"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "EtOAc",
+     "dimethylformamide"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "12026": {
+  "template_freq": 5,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "N-(6-amino-pyridin-3-ylmethyl)-N,N′,N′-trimethyl-ethane-1,2-diamine",
+     "NaHCO3",
+     "8-(2,6-difluoro-3,5-dimethoxy-phenyl)-quinoxaline-5-carboxylic acid ethyl ester",
+     "trimethyl aluminum"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "DCM MeOH",
+     "DCM"
+    ],
+    "temp": "80 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "5-imidazol-1-ylmethyl-pyridin-2-ylamine",
+     "NaHCO3",
+     "8-(2,6-difluoro-3,5-dimethoxy-phenyl)-quinoxaline-5-carboxylic acid ethyl ester",
+     "trimethyl aluminum"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "DCM MeOH",
+     "DCM"
+    ],
+    "temp": "80 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "5-(1,1-dioxothiomorpholin-4-ylmethyl)-pyridin-2-ylamine",
+     "NaHCO3",
+     "8-(2,6-difluoro-3,5-dimethoxy-phenyl)-quinoxaline-5-carboxylic acid ethyl ester",
+     "trimethyl aluminum"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "DCM MeOH",
+     "DCM"
+    ],
+    "temp": "80 1",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "5489": {
+  "template_freq": 11,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "potassium iodide",
+     "pyrrolidine"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "20 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "potassium iodide",
+     "piperidine"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "20 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "2-Chloromethyl-5-(4-iodophenyl)-[1,3,4]oxadiazole",
+     "potassium iodide",
+     "morpholine"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "20 1",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "24655": {
+  "template_freq": 5,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "5-nitro-2-[2-(4-nitrophenyl)chroman-6-yloxy]pyridine",
+     "5-amino-2-(2-phenylchroman-6-yloxy)pyridine"
+    ],
+    "reagents": [],
+    "catalysts": [
+     "Zn"
+    ],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "5-nitro-2-[2-(2-nitrophenyl)chroman-6-yloxy]pyridine",
+     "5-amino-2-(2-phenylchroman-6-yloxy)pyridine"
+    ],
+    "reagents": [],
+    "catalysts": [
+     "Zn"
+    ],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "5-nitro-2-[2-(3-nitrophenyl)chroman-6-yloxy]pyridine",
+     "5-amino-2-(2-phenylchroman-6-yloxy)pyridine"
+    ],
+    "reagents": [],
+    "catalysts": [
+     "Zn"
+    ],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "47": {
+  "template_freq": 4,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "2-fluoro-4-iodoaniline",
+     "2-fluoroisonicotinic acid",
+     "dry ice IPA",
+     "lithium bis(trimethylsilyl)amide"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "THF"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-fluoroisonicotinic acid",
+     "2-chloro-4-iodoaniline"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-fluoroisonicotinic acid",
+     "2-methyl-4-iodoaniline"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "35999": {
+  "template_freq": 3,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "sodium hydride",
+     "mesylate",
+     "solketal",
+     "2-ethyl-4-tetradecylphenol"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "dimethylformamide",
+     "dimethylformamide"
+    ],
+    "temp": "80 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "sodium hydride",
+     "mesylate",
+     "solketal",
+     "2-hexyl-4-tetradecylphenol"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "dimethylformamide",
+     "dimethylformamide"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "3-chloro-4-hydroxybenzaldehyde",
+     "((4R)-2,2-dimethyl-[1,3]dioxolan-4-yl)-methanol",
+     "tributylphosphine"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "toluene",
+     "toluene"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "47941": {
+  "template_freq": 5,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "1-(2-(Benzyloxy)biphenyl-3-yl)-1-(2′-methoxybiphenyl-3-yl)ethanol",
+     "para-toluenesulfonic acid"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "ethyl acetate",
+     "toluene"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "1-(2-(Benzyloxy)-3-tert-butylphenyl)-1-(2′-methoxybiphenyl-3-yl)ethanol",
+     "p-toluene sulfonic acid"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "ethyl acetate",
+     "toluene"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "1-(2′-(Benzyloxy)-3′-phenybiphenyl-3-yl)-1-(2-methoxyphenyl)ethanol",
+     "p-toluenesulfonic acid"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "ethyl acetate",
+     "toluene"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "42040": {
+  "template_freq": 5,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "4-(2-pyridinyl)-benzaldehyde",
+     "4-(4-pyridinyl)-benzaldehyde"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "4-(2-pyridinyl)-benzaldehyde",
+     "4-(5-Pyrimidinyl)benzaldehyde"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "4-(2-pyridinyl)-benzaldehyde",
+     "4-quinolinecarboxaldehyde"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "42067": {
+  "template_freq": 11,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "((S)-7-Amino-6-oxo-6,7-dihydro-dibenzo[b,d]azepin-5-yl)-acetic acid methyl ester",
+     "2-methyl-N-(2,2,3,3,3-pentafluoro-propyl)-malonamic acid",
+     "1-hydroxybenzotriazole",
+     "N-ethyldiisopropylamine",
+     "EDC"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "THF"
+    ],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "(S)-7-amino-5-(2-benzyloxy-ethyl)-5H,7H-dibenzo[b,d]azepin-6-one",
+     "2-methyl-N-(2,2,3,3,3-pentafluoro-propyl)-malonamic acid"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-methoxy-N-(2,2,3,3,3-pentafluoro-propyl)-malonamic acid",
+     "(S)-7-amino-5-(2-benzyloxy-ethyl)-5H,7H-dibenzo[b,d]azepin-6-one",
+     "example 1c"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "29966": {
+  "template_freq": 3,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "[6-(4,4,5,5-Tetramethyl-[1,3,2]dioxaborolan-2-yl)-thianthren-2-yl]-carbamic acid tert-butyl ester",
+     "2-Chloro-6-morpholin-4-yl-pyran-4-one",
+     "K2CO3"
+    ],
+    "reagents": [],
+    "catalysts": [
+     "Pd(PPh3)4"
+    ],
+    "solvents": [
+     "1,4-dioxane"
+    ],
+    "temp": "100 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "2-Chloro-6-morpholin-4-yl-pyran-4-one",
+     "2-(4-Methoxymethoxy-thianthren-1-yl)-4,4,5,5-tetramethyl-[1,3,2]dioxaborolane",
+     "potassium carbonate"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "dioxane"
+    ],
+    "temp": "90 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "[5-(4,4,5,5-Tetramethyl-[1,3,2]dioxaborolan-2-yl)-9H-thioxanthen-2-yl]-carbamic acid tert-butyl ester",
+     "2-chloro-6-morpholin-4-yl-pyran-4-one",
+     "K2CO3"
+    ],
+    "reagents": [],
+    "catalysts": [
+     "Pd(PPh3)4"
+    ],
+    "solvents": [
+     "1,4-dioxane"
+    ],
+    "temp": "100 1",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ },
+ "29967": {
+  "template_freq": 10,
+  "n_rxn_ids": 3,
+  "examples": [
+   {
+    "reactants": [
+     "N-(tert-butyl)-N′-[(1R)-2-hydroxy-1-(3-nitrobenzyl)ethyl]thiourea",
+     "hydrochloric acid"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "0 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "ethanol",
+     "N-(tert-butyl)-N′-[(1R)-2-hydroxy-1-(3-thienylmethyl)ethyl]thiourea",
+     "hydrochloric acid",
+     "diethyl ether"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [
+     "acetone"
+    ],
+    "temp": "100 1",
+    "time": "",
+    "pressure": ""
+   },
+   {
+    "reactants": [
+     "hydrochloric acid",
+     "solid",
+     "N-(tert-butyl)-N′-[2-hydroxy-1-(3-nitrophenyl)ethyl]thiourea"
+    ],
+    "reagents": [],
+    "catalysts": [],
+    "solvents": [],
+    "temp": "100 1",
+    "time": "",
+    "pressure": ""
+   }
+  ]
+ }
+}

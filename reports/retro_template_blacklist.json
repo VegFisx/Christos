@@ -1,0 +1,792 @@
+{
+ "generated": "2026-10-14 23:40:26",
+ "source_audit_jsonl": "reports\\retro_template_audit.jsonl",
+ "source_audit_summary": "reports\\retro_template_audit_summary.json",
+ "criterion": "n_try >= 5 且 n_usable == 0",
+ "criterion_note": "来自 reports/retro_template_audit.jsonl 的实测（56 个目标 × 3,025 条逆模板；口径见 tools/audit_retro_templates.py）",
+ "template_lib": "reports\\retro_templates_clustered.jsonl",
+ "verify_vs_lib": {
+  "n_lib_rows": 3228,
+  "n_blacklist_in_lib": 51,
+  "n_missing": 0,
+  "missing_smarts": [],
+  "n_noop_missing": 0
+ },
+ "n_entries": 51,
+ "n_exempted": 3,
+ "exempt_note": "留出复测（COCONUT 64 个新目标）里产出过可用切断 -> 移出 never-usable；证据 reports/_holdout_blacklist_check.json（用户拍板 2026-10-14）",
+ "exempted": [
+  {
+   "smarts": "[C:1]/[CH;D2;+0:2]=[CH;D2;+0:3]\\[C:4]>>[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[C:4]",
+   "idx": 1270,
+   "holdout": {
+    "targets": 64,
+    "n_try": 24,
+    "n_usable": 6
+   }
+  },
+  {
+   "smarts": "[C:1]/[CH;D2;+0:2]=[CH;D2;+0:3]/[C:4]>>[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[C:4]",
+   "idx": 1271,
+   "holdout": {
+    "targets": 64,
+    "n_try": 24,
+    "n_usable": 6
+   }
+  },
+  {
+   "smarts": "[C:2]-[CH;D2;+0:1]=[CH;D2;+0:3]-[C:4]>>C=[CH;D2;+0:1]-[C:2].C=[CH;D2;+0:3]-[C:4]",
+   "idx": 1613,
+   "holdout": {
+    "targets": 64,
+    "n_try": 24,
+    "n_usable": 12
+   }
+  }
+ ],
+ "n_noop_entries": 3,
+ "noop_note": "全等 no-op（同一分子原样两边穿过）——随同一开关丢弃；来源 reports/template_identity_audit.json",
+ "n_weak_not_included": 7,
+ "weak_note": "n_try<5 且 n_usable==0 —— 证据不足，不入黑名单（下次体检样本扩大再看）",
+ "weak_idx_n_try": [
+  {
+   "idx": 1160,
+   "n_try": 1
+  },
+  {
+   "idx": 1456,
+   "n_try": 2
+  },
+  {
+   "idx": 1614,
+   "n_try": 1
+  },
+  {
+   "idx": 1615,
+   "n_try": 1
+  },
+  {
+   "idx": 2500,
+   "n_try": 4
+  },
+  {
+   "idx": 2893,
+   "n_try": 1
+  },
+  {
+   "idx": 2894,
+   "n_try": 1
+  }
+ ],
+ "comparison_before_after": {
+  "before": {
+   "n_try": 24871,
+   "R2_前体大于目标": 14993,
+   "R1_残基路线": 9022,
+   "n_usable": 676,
+   "R3_惰性小分子": 180,
+   "usable_rate": 0.0272,
+   "n_unusable": 24195,
+   "n_templates_with_hits": 86
+  },
+  "after": {
+   "n_try": 4039,
+   "R1_残基路线": 3327,
+   "n_usable": 676,
+   "R2_前体大于目标": 36,
+   "usable_rate": 0.1674,
+   "n_unusable": 3363,
+   "n_templates_with_hits": 32
+  },
+  "note": "前后对比 = 同一份体检数据里「用全部模板」vs「砍掉 never-usable 54 条」；after 的聚合 = 开关打开后搜索侧的等价效果（模板不再产出这些切断）"
+ },
+ "check_vs_summary": "重算 n_try 24,871 vs 汇总 24871、n_usable 676 vs 676、never-usable 54 vs 54 -> 一致 OK",
+ "noop_entries": [
+  {
+   "smarts": "[O;H0;D1;+0:4]=[S;H0;D4;+0:2](=[O;H0;D1;+0:5])(-[OH;D1;+0:1])-[OH;D1;+0:3]>>[O;H0;D1;+0:1]=[S;H0;D4;+0:2](=[O;H0;D1;+0:3])(-[OH;D1;+0:4])-[OH;D1;+0:5]",
+   "kind": "noop",
+   "line": 529,
+   "evidence": "同一分子原样出现在反应两边（映射号集合一致）；只会把目标自己当前体还回来"
+  },
+  {
+   "smarts": "[O;D1;H1:1]-[P;H0;D4;+0:2](-[O;D1;H1:3])(=[O;H0;D1;+0:5])-[OH;D1;+0:4]>>[O;D1;H1:1]-[P;H0;D4;+0:2](-[O;D1;H1:3])(=[O;H0;D1;+0:4])-[OH;D1;+0:5]",
+   "kind": "noop",
+   "line": 1414,
+   "evidence": "同一分子原样出现在反应两边（映射号集合一致）；只会把目标自己当前体还回来"
+  },
+  {
+   "smarts": "[#8:1]-[C:2](=[O;D1;H0:3])-[C;H0;D3;+0:4](=[CH2;D1;+0:6])-[CH3;D1;+0:5]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C;H0;D3;+0:4](=[CH2;D1;+0:5])-[CH3;D1;+0:6]",
+   "kind": "noop",
+   "line": 2358,
+   "evidence": "同一分子原样出现在反应两边（映射号集合一致）；只会把目标自己当前体还回来"
+  }
+ ],
+ "n_r2_family_entries": 29,
+ "r2_family_note": "第二批（B8）：保护基/官能化添加逆用族 —— 50k 抽样内全部切断为 R2 且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json",
+ "r2_family_entries": [
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1)-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7:2]-[CH2;D2;+0:1]-[C:3]>>O=[C;H0;D3;+0:1](-[#7:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 2274,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(-C)(-C)-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>N#C-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1713,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[n;H0;D2;+0:1]:[c:3]>>[O-]-[n+;H0;D3:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 3346,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-C-c1:c:c:c:c:c:1)-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:1]-[NH;D2;+0:2]-[C:3]>>[C:1]-[N;H0;D3;+0:2](-[C:3])-C-c1:c:c:c:c:c:1",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[CH2;D2;+0:1]-[#7:3]-[CH2;D2;+0:4]-[C:5]>>O=[C;H0;D3;+0:1](-[C:2])-[#7:3]-[C;H0;D3;+0:4](=O)-[C:5]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1824,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>F-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>N-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1289,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1289,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>Cl-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:4]:[cH;D2;+0:3]:[cH;D2;+0:1]:[c:2]>>C-[c;H0;D3;+0:1](:[c:2]):[c;H0;D3;+0:3](-F):[c:4]",
+   "kind": "r2_family",
+   "n_cuts_sample": 15602,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>O-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>F-C(-F)(-F)-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-c1:c:c:c:c:c:1)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C=C-C-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[c:2]:[cH;D2;+0:1]:[c:3]>>C-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 30064,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-O-C-C1-c2:c:c:c:c:c:2-c2:c:c:c:c:c:2-1)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O=C(-[N;H0;D3;+0:1](-[C:2])-[C:3])-c1:c:c:c:c:c:1",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:2]:[cH;D2;+0:1]:[c:3]>>O-C(=O)-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1289,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>O-C(=O)-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1713,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[C:2]-[NH;D2;+0:1]-[C:3]>>C-N(-C-c1:c:c:c:c:c:1)-c1:n:c:n:c2:c(-N3-C-C-O-C-C-3):n:c(-[N;H0;D3;+0:1](-[C:2])-[C:3]):n:c:1:2",
+   "kind": "r2_family",
+   "n_cuts_sample": 1154,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  },
+  {
+   "smarts": "[#7;a:4]:[c:3]:[cH;D2;+0:1]:[c:2]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4]",
+   "kind": "r2_family",
+   "n_cuts_sample": 1713,
+   "n_usable_sample": 0,
+   "evidence": "50k 抽样内全部切断为 R2（前体更大）且 0 可用；来源 reports/paper/results/blacklist_ext_r2.json"
+  }
+ ],
+ "entries": [
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 47,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH2;D2;+0:3]-[OH;D1;+0:4]",
+   "idx": 61,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[C:3]>>[C:1]-[C;H0;D4;+0:2]1(-[C:3])-O-C-C-[O;H0;D2;+0:4]-1",
+   "idx": 83,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 180
+   }
+  },
+  {
+   "smarts": "[C:3]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[C:4]>>C-O-[C;H0;D4;+0:1](-[O;H0;D2;+0:2]-C)(-[C:3])-[C:4]",
+   "idx": 84,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 180
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 126,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 170,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 185,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C-[Si](-C-C)(-C-C)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 186,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 198,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[C@@H;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]",
+   "idx": 205,
+   "n_try": 788,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 788
+   }
+  },
+  {
+   "smarts": "[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]",
+   "idx": 206,
+   "n_try": 788,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 788
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C=C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 273,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 274,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]",
+   "idx": 275,
+   "n_try": 788,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 788
+   }
+  },
+  {
+   "smarts": "[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]",
+   "idx": 276,
+   "n_try": 788,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 788
+   }
+  },
+  {
+   "smarts": "[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]",
+   "idx": 277,
+   "n_try": 788,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 788
+   }
+  },
+  {
+   "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]",
+   "idx": 306,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C1-C-C-C-C-O-1",
+   "idx": 324,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]",
+   "idx": 337,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:1]=[C:2]-[OH;D1;+0:3]>>[O;D1;H0:1]=[C:2]-[O;H0;D2;+0:3]-C-c1:c:c:c:c:c:1",
+   "idx": 341,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 404,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 405,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]",
+   "idx": 421,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 180
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]",
+   "idx": 422,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 180
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1",
+   "idx": 483,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]",
+   "idx": 551,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 664,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[CH3;D1;+0:1]>>C-[CH2;D2;+0:1]-[C:2]",
+   "idx": 686,
+   "n_try": 658,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 658
+   }
+  },
+  {
+   "smarts": "[C:2]-[C;H0;D3;+0:3](=[O;D1;H0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH;D2;+0:3]=[O;D1;H0:4]",
+   "idx": 857,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 205
+   }
+  },
+  {
+   "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[C:4]>>C-[OH;D1;+0:1].C=[C;H0;D3;+0:2](-[C:3])-[C:4]",
+   "idx": 877,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R3_惰性小分子": 180
+   }
+  },
+  {
+   "smarts": "[OH;D1;+0:1]-[C:2](-[C:3]-[OH;D1;+0:4])-[C:5]-[OH;D1;+0:6]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2](-[C:3]-[O;H0;D2;+0:4]-C(-C)=O)-[C:5]-[O;H0;D2;+0:6]-C(-C)=O",
+   "idx": 886,
+   "n_try": 124,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 124
+   }
+  },
+  {
+   "smarts": "[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C@@H;D3;+0:5](-[C:6])-[OH;D1;+0:7]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C;H0;D3;+0:5](-[C:6])=[O;H0;D1;+0:7]",
+   "idx": 890,
+   "n_try": 131,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 131
+   }
+  },
+  {
+   "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C-c1:c:c:c:c:c:1",
+   "idx": 918,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[CH2;D2;+0:1]-[C:3]=[O;D1;H0:4]>>C-O-C(=O)-[CH;D3;+0:1](-[C:2])-[C:3]=[O;D1;H0:4]",
+   "idx": 929,
+   "n_try": 14,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 14
+   }
+  },
+  {
+   "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>[O-;H0;D1:1]-[C:2]=[O;D1;H0:3]",
+   "idx": 1056,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 205
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]",
+   "idx": 1120,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 180
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]",
+   "idx": 1121,
+   "n_try": 180,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 180
+   }
+  },
+  {
+   "smarts": "[OH;D1;+0:1]-[C:2]-[C:3]-[OH;D1;+0:4]>>C-C1(-C)-[O;H0;D2;+0:1]-[C:2]-[C:3]-[O;H0;D2;+0:4]-1",
+   "idx": 1227,
+   "n_try": 432,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 432
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-C(-C)-C)-C(-C)-C",
+   "idx": 1260,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c:c:c:1",
+   "idx": 1303,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[OH;D1;+0:3]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[O;H0;D2;+0:4]-C-c1:c:c:c:c:c:1",
+   "idx": 1317,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 205
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 1339,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C=C-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 1700,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c(-[N+](=O)-[O-]):c:c:1",
+   "idx": 1730,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 2067,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[OH;D1;+0:4]>>N#[C;H0;D2;+0:1]-[C:2].[OH-;D0:3].[OH2;D0;+0:4]",
+   "idx": 2080,
+   "n_try": 205,
+   "n_usable": 0,
+   "reasons": {
+    "R1_残基路线": 205
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 2184,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>C-N(-C)-C(=O)-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 2373,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C(-c1:c:c:c:c:c:1)(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1",
+   "idx": 2414,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  },
+  {
+   "smarts": "[C:2]-[CH3;D1;+0:1]>>Cl-[CH2;D2;+0:1]-[C:2]",
+   "idx": 2458,
+   "n_try": 658,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 658
+   }
+  },
+  {
+   "smarts": "[C:2]-[OH;D1;+0:1]>>O=C-[O;H0;D2;+0:1]-[C:2]",
+   "idx": 3006,
+   "n_try": 603,
+   "n_usable": 0,
+   "reasons": {
+    "R2_前体大于目标": 603
+   }
+  }
+ ]
+}

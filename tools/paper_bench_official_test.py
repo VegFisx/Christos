@@ -152,6 +152,14 @@ def _init() -> None:
             kw[key] = conv(_os.environ[env])
     if _os.environ.get("CHEMCREACT_BENCH_MONO_CO_REAGENT"):
         kw["mono_include_co_reagent"] = True
+    # ★ 第129轮：跑「CLI 同配置」（curated 模板 + 严格氧化还原门），用于和命令行口径对齐
+    if _os.environ.get("CHEMCREACT_BENCH_CLI_CONFIG"):
+        kw["use_curated_templates"] = True
+        kw["strict_redox_gate"] = True
+    # ★ 第128轮：重排序（只改顺序；候选集合不变）
+    if _os.environ.get("CHEMCREACT_BENCH_RERANK"):
+        kw["rerank_model"] = (_os.environ.get("CHEMCREACT_RERANK_MODEL")
+                              or str(_HERE.parent / "reports" / "rank_model_20261107.pkl"))
     _G["eng"] = SmartReactEngine(**kw)
     _G["cond"] = T.get_template("煎煮")
     _G["Compound"] = Compound

@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-11-06 11:49:36",
+  "protocol": {
+    "condition": "煎煮",
+    "rounds": 1,
+    "max_pairs": 400,
+    "seed_source": "sources/herb.py::compounds_of_herb（与生产同一函数）",
+    "herb_order": "marker",
+    "order_note": "marker 优先 → 分子量降序 → 按结构去重",
+    "top_n": 12,
+    "include_precursors": false
+  },
+  "cases": {
+    "甘草": {
+      "n_components_with_structure": 342,
+      "n_seeds_used": 12,
+      "seeds": [
+        "Licorice-saponin f3",
+        "Ammo-nium glycyrrhizinate",
+        "Licorice-saponin c2",
+        "Licorice glycoside a",
+        "Licorice glycoside e",
+        "Liquiritin apioside",
+        "Licuraside",
+        "Liquiritigenin-7-o-beta-d-apiofuranosyl-4'-o-beta-d-gluoco-pyranoside",
+        "3,22-dihydroxy-11-oxo-delta(12)-oleanene-27-alpha-methoxycarbonyl-29-oic acid",
+        "Apioglycyrrhizin_qt",
+        "Licoriisoflavan a",
+        "Artonin e"
+      ],
+      "precursors": [
+        {
+          "id": "HBIN028191",
+          "name": "甘草酸 glycyrrhizin",
+          "rank": 0,
+          "in_seeds": false
+        },
+        {
+          "id": "HBIN033383",
+          "name": "甘草苷 liquiritin",
+          "rank": 286,
+          "in_seeds": false
+        }
+      ],
+      "seconds": 461.1,
+      "n_hops": 6668,
+      "target": "甘草次酸 glycyrrhetinic acid",
+      "target_status": "consistent",
+      "target_rule": "hydrolysis_glycoside_001",
+      "target_round": "-"
+    },
+    "人参": {
+      "n_components_with_structure": 387,
+      "n_seeds_used": 12,
+      "seeds": [
+        "(2r,3s,4s,5r,6r)-2-(hydroxymethyl)-6-[[(3s,5r,8r,9r,10r,12r,13r,14r,17s)-12-hydroxy-4,4,8,10,14-pentamethyl-17-[(2z)-6-methylhepta-2,5-dien-2-yl]-2,3,5,6,7,9,11,12,13,15,16,17-dodecahydro-1h-cyclopenta[a]phenanthren-3-yl]oxy]oxane-3,4,5-triol",
+        "Dammarane",
+        "5-heptadec-12-enylresorcinol",
+        "Mal",
+        "Pangamic acid",
+        "Girinimbin",
+        "5-[(3as,6r,6ar)-2-keto-1,3,3a,4,6,6a-hexahydrothieno[3,4-d]imidazol-6-yl]valeric acid",
+        "1-hexadecyne",
+        "Nn-dimethyldecanamide",
+        "Mav",
+        "D-erythro-isocitric acid",
+        "L-erythro-isocitric acid"
+      ],
+      "precursors": [
+        {
+          "id": "HBIN027729",
+          "name": "人参皂苷 Rb1 ginsenoside Rb1",
+          "rank": 298,
+          "in_seeds": false
+        }
+      ],
+      "seconds": 31.5,
+      "n_hops": 2210,
+      "target": "人参皂苷 Rg3",
+      "target_status": "not_found",
+      "target_rule": "-",
+      "target_round": "-"
+    },
+    "附子": {
+      "n_components_with_structure": 136,
+      "n_seeds_used": 12,
+      "seeds": [
+        "Alpha-chaconine",
+        "(3r,8s,9r,10r,13r,14s,17r)-3-hydroxy-4,4,9,13,14-pentamethyl-17-[(e,2r)-6-methyl-7-[(2r,3r,4s,5s,6r)-3,4,5-trihydroxy-6-[[(2r,3r,4s,5s,6r)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxymethyl]oxan-2-yl]oxyhept-5-en-2-yl]-1,2,3,7,8,10,12,15,16,17-decahydr",
+        "Hokbusine(8-o-methylbenzoylmesaconine)",
+        "Stock1n-53073",
+        "Hetisine",
+        "Pyrrolezanthine",
+        "Zoba eg",
+        "Demethyldelavaine a",
+        "Demethyldelavaine b",
+        "14-benzoyl-8-o-methyl-aconine i",
+        "Hokbusine a",
+        "14-o-veratroylneoline"
+      ],
+      "precursors": [
+        {
+          "id": "HBIN014582",
+          "name": "乌头碱 aconitine",
+          "rank": 127,
+          "in_seeds": false
+        },
+        {
+          "id": "HBIN034775",
+          "name": "中乌头碱 mesaconitine",
+          "rank": 126,
+          "in_seeds": false
+        },
+        {
+          "id": "HBIN029816",
+          "name": "次乌头碱 hypaconitine",
+          "rank": 129,
+          "in_seeds": false
+        }
+      ],
+      "seconds": 245.6,
+      "n_hops": 4321,
+      "target": "苯甲酰乌头原碱 benzoylaconine",
+      "target_status": "product_only",
+      "target_rule": "mined_extra",
+      "target_round": "-"
+    }
+  }
+}

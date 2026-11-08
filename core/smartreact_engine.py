@@ -393,7 +393,9 @@ class SmartReactEngine:
                  triple_templates_path=None,
                  max_triples: int = 200,
                  triple_min_support: int = 2,
-                 triple_workers: int = 4):
+                 triple_workers: int = 4,
+                 # ★ 第 128 轮：学习型重排序模型路径（None = 关闭，保持发射序）
+                 rerank_model=None):
         from smartreact import ReactionEnumerator
 
         self.default_max_products = default_max_products
@@ -435,6 +437,15 @@ class SmartReactEngine:
         #   extent 的参数全是未标定的建模选择 → 只允许标注，不允许门控。
         #   只有 kinetics.json 的 validation.gate_enabled=true（=补了文献标定）才放行。
         self._extent_gate_ok = bool(_extent.gating_allowed())
+        # ★ 第 128 轮：学习型重排序（可选，默认关）。只改顺序，不改候选集合。
+        #   模型缺失/损坏/特征不符 → core/rerank.py 自己退回发射序，这里不需要 try。
+        self._reranker = None
+        if rerank_model:
+            try:
+                import rerank as _rerank
+                self._reranker = _rerank.load(rerank_model if isinstance(rerank_model, str) else None)
+            except Exception as ex:                  # noqa: BLE001
+                print(f"   [warn] 重排序器加载失败，保持发射序：{ex}")
         self.gate_tol_C = gate_tol_C
         # Strict redox gate: honour an explicitly stated atmosphere even when
         # no auxiliary reagents were supplied.  Off by default so benchmark
@@ -1940,6 +1951,18 @@ class SmartReactEngine:
             "gated_zero_by_type": dict(sorted(self.gate_stats.items(),
                                               key=lambda x: -x[1])[:10]),
         }
+        # ★ 第 128 轮：学习型重排序（默认关闭；只改顺序，不改候选集合）
+        if self._reranker is not None and len(out) > 1:
+            _before = [getattr(p, "rule_id", "") for p in out]
+            out = self._reranker.reorder(out, self, cond)
+            _after = [getattr(p, "rule_id", "") for p in out]
+            if _after != _before:
+                self.stats["reranked"] = 1
+                for _i, _p in enumerate(out):
+                    try:
+                        _p.seq = _i          # 重排后 seq 跟着新顺序走，展示层无需改变
+                    except Exception:
+                        pass
         if self.verbose:
             print(f"   [step r{round_no}] 底物 {len(subs)} 对 {len(pairs)} "
                   f"原始产物 {n_raw} 保留 {len(out)} ({self.stats['seconds']}s)")

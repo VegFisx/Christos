@@ -1,0 +1,201 @@
+{
+  "n_targets": 60,
+  "stat": {
+    "路线数": 115,
+    "步数_2": 30,
+    "步数_1": 7,
+    "含极端小分子/无机碳": 44,
+    "步数_3": 78
+  },
+  "examples": [
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)O)C1",
+      "steps": [
+        {
+          "t": "CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)O)C1",
+          "p": [
+            "CC(C)(C)OC(=O)N1CCC(CN)C1",
+            "O=C(O)c1cnc(Cl)nc1Cl"
+          ]
+        },
+        {
+          "t": "O=C(O)c1cnc(Cl)nc1Cl",
+          "p": [
+            "Clc1ccnc(Cl)n1",
+            "O=C=O"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1",
+      "steps": [
+        {
+          "t": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1",
+            "NCC1CCNC1"
+          ]
+        },
+        {
+          "t": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1",
+            "O=C=O"
+          ]
+        },
+        {
+          "t": "CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(N)c1",
+            "Clc1ccnc(Cl)n1"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1",
+      "steps": [
+        {
+          "t": "CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "CSc1ncc(C(=O)O)c(Cl)n1",
+            "NC1(c2ccccc2)CC1"
+          ]
+        },
+        {
+          "t": "CSc1ncc(C(=O)O)c(Cl)n1",
+          "p": [
+            "CSc1nccc(Cl)n1",
+            "O=C=O"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1",
+      "steps": [
+        {
+          "t": "CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "O=C(O)c1cnc(S)nc1NC1(c2ccccc2)CC1",
+            "O=C([O-])[O-]"
+          ]
+        },
+        {
+          "t": "O=C([O-])[O-]",
+          "p": [
+            "O=C([O-])O"
+          ]
+        },
+        {
+          "t": "O=C([O-])O",
+          "p": [
+            "O=C(O)O"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CSc1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "steps": [
+        {
+          "t": "CSc1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "NC(=O)c1cnc(S)nc1NC1(c2ccccc2)CC1",
+            "O=C([O-])[O-]"
+          ]
+        },
+        {
+          "t": "O=C([O-])[O-]",
+          "p": [
+            "O=C([O-])O"
+          ]
+        },
+        {
+          "t": "O=C([O-])O",
+          "p": [
+            "O=C(O)O"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "steps": [
+        {
+          "t": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "CS(=O)c1ncc(C#N)c(NC2(c3ccccc3)CC2)n1",
+            "O=C([O-])[O-]"
+          ]
+        },
+        {
+          "t": "O=C([O-])[O-]",
+          "p": [
+            "O=C([O-])O"
+          ]
+        },
+        {
+          "t": "O=C([O-])O",
+          "p": [
+            "O=C(O)O"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CN1CCC[C@H]1C(=O)Nc1cccc(N)c1",
+      "steps": [
+        {
+          "t": "CN1CCC[C@H]1C(=O)Nc1cccc(N)c1",
+          "p": [
+            "CCCBr",
+            "CN[C@@H](C)C(=O)Nc1cccc(N)c1"
+          ]
+        },
+        {
+          "t": "CN[C@@H](C)C(=O)Nc1cccc(N)c1",
+          "p": [
+            "CN[C@@H](C)C(N)=O",
+            "Nc1cccc(Br)c1"
+          ]
+        },
+        {
+          "t": "CN[C@@H](C)C(N)=O",
+          "p": [
+            "CN[C@@H](C)C(=O)O",
+            "N"
+          ]
+        }
+      ]
+    },
+    {
+      "target": "CCOC(=O)c1cnc(Cl)nc1NCc1cnn(C)c1",
+      "steps": [
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1NCc1cnn(C)c1",
+          "p": [
+            "CCOC(=O)c1cnc(Cl)nc1N",
+            "Cn1cc(C=O)cn1"
+          ]
+        },
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1N",
+          "p": [
+            "CCO",
+            "Nc1nc(Cl)ncc1C(=O)Cl"
+          ]
+        },
+        {
+          "t": "Nc1nc(Cl)ncc1C(=O)Cl",
+          "p": [
+            "N",
+            "O=C(Cl)c1cnc(Cl)nc1Cl"
+          ]
+        }
+      ]
+    }
+  ],
+  "elapsed_sec": 174.8
+}

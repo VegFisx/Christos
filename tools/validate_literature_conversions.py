@@ -39,7 +39,10 @@ import query_base as qb
 
 RDLogger.DisableLog("rdApp.*")
 
-DB = "file:D:/TCMAI/tcm.db?mode=ro"
+import os
+
+_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
+DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 PUBMED_XML = STAGE / "reports" / "paper" / "literature_validation_pubmed_20261030.xml"
 PUBCHEM_JSON = STAGE / "reports" / "paper" / "pubchem_literature_validation_20261030.json"
 OUT_JSON = STAGE / "reports" / "paper" / "literature_validation_20261030.json"

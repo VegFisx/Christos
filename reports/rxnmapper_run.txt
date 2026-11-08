@@ -1,0 +1,19 @@
+D:\ProgramData\DSHNS\chemreact-staging\libs\rxnmapper\batched_mapper.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+=== 首次会从 HuggingFace 下模型（约 350MB），请等 ===
+  模型加载耗时 0.2s
+
+  【酰胺缩合】CC(=O)O.CCN>>CC(=O)NCC
+      映射   O[C:4]([CH3:5])=[O:6].[CH3:1][CH2:2][NH2:3]>>[CH3:1][CH2:2][NH:3][C:4]([CH3:5])=[O:6]
+      置信度 0.730
+  【对二酚氧化】Oc1ccc(O)cc1.O=O>>O=C1C=CC(=O)C=C1
+      映射   O=O.[OH:1][c:2]1[cH:3][cH:4][c:5]([OH:6])[cH:7][cH:8]1>>[O:1]=[C:2]1[CH:3]=[CH:4][C:5](=[O:6])[CH:7]=[CH:8]1
+      置信度 0.543
+  【酯水解】CC(=O)OCC.O>>CC(=O)O.CCO
+      映射   [CH3:1][C:2](=[O:3])[O:7][CH2:6][CH3:5].[OH2:4]>>[CH3:1][C:2](=[O:3])[OH:4].[CH3:5][CH2:6][OH:7]
+      置信度 0.993
+  【糖苷水解】COC1OC(CO)C(O)C(O)C1O.O>>OC1OC(CO)C(O)C(O)C1O.CO
+      映射   [CH3:1][O:8][CH:7]1[O:6][CH:5]([CH2:4][OH:3])[CH:13]([OH:14])[CH:11]([OH:12])[CH:9]1[OH:10].[OH2:2]>>[CH3:1][OH:2].[OH:3][CH2:4][CH:5]1[O:6][CH:7]([OH:8])[CH:9]([OH:10])[CH:11]([OH:12])[CH:13]1[OH:14]
+      置信度 0.896
+
+  4 条反应总耗时 0.1s （平均 0.04s/条，CPU）

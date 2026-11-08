@@ -1,0 +1,1266 @@
+{
+  "n": 80,
+  "summary": {
+    "部分前体可得": 64,
+    "一步到位": 12,
+    "有切断但前体都不可得": 4
+  },
+  "targets": [
+    {
+      "name": "(+)-medioresinol",
+      "smiles": "COc1cc(C2OCC3C(c4cc(OC)c(O)c(OC)c4)OCC23)ccc1O",
+      "MW": 388.4,
+      "n_dis": 2008,
+      "n_all_terminal": 0,
+      "n_some_terminal": 943,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "COc1cc(C2OCC3C(c4ccc(O)c(Br)c4)OCC23)cc(OC)c1O"
+        ]
+      }
+    },
+    {
+      "name": "Hibicuslide a",
+      "smiles": "CC(=O)CC1(O)C(=O)C(C)=C2OCC(C)c3ccc(C)c1c32",
+      "MW": 300.4,
+      "n_dis": 1568,
+      "n_all_terminal": 0,
+      "n_some_terminal": 140,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Hypericum",
+      "smiles": "CC1(C)SC2C(NC=O)C(=O)N2C1C(=O)O",
+      "MW": 244.3,
+      "n_dis": 2008,
+      "n_all_terminal": 0,
+      "n_some_terminal": 697,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "reductive_amination_ketone",
+        "precursors": [
+          "CC(C)(S)CC(=O)O",
+          "O=CNC1C(=O)[N-]C1S"
+        ]
+      }
+    },
+    {
+      "name": "Orthosiphol v",
+      "smiles": "C=CC1(C)CC(O)C2C(O)(C1=O)C(OC(C)=O)CC1C(C)(C)C(OC(C)=O)C(O)C(OC(=O)c3ccccc3)C12C",
+      "MW": 572.7,
+      "n_dis": 2006,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1386,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "C=CC1(C)CC(O)C2C(O)(C1=O)C(Br)CC1C(C)(C)C(OC(C)=O)C(O)C(OC(=O)c3ccccc3)C12C",
+          "CC(=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Epimedokoreanin b",
+      "smiles": "CC(C)=CCc1cc(-c2cc(=O)c3c(O)cc(O)c(CC=C(C)C)c3o2)cc(O)c1O",
+      "MW": 422.5,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 744,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CC(C)=CCc1c(O)cc(O)c2c(=O)cc(-c3cc(O)c(O)c(CCO[PH](=O)O)c3)oc12"
+        ]
+      }
+    },
+    {
+      "name": "Ikshusterol",
+      "smiles": "CCC(CCC(C)C1CCC2C3C(O)C=C4CC(O)CCC4(C)C3CCC12C)C(C)C",
+      "MW": 430.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 4,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)C(CBr)CCC(C)C1CCC2C3C(O)C=C4CC(O)CCC4(C)C3CCC12C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Ugonin c",
+      "smiles": "COc1c(-c2ccc(O)cc2)oc2c3c(cc(O)c2c1=O)OC(C)C3(C)C",
+      "MW": 368.4,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1411,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC1Oc2cc(O)c3c(=O)c(Br)c(-c4ccc(O)cc4)oc3c2C1(C)C",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Ethyl margarate",
+      "smiles": "CCCCCCCCCCCCCCCCC(=O)OCC",
+      "MW": 298.5,
+      "n_dis": 1304,
+      "n_all_terminal": 476,
+      "n_some_terminal": 1288,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CCCCCCCCCCCCCCCCC(=O)O",
+          "CCI"
+        ]
+      }
+    },
+    {
+      "name": "Taxiphyllin",
+      "smiles": "N#CC(OC1OC(CO)C(O)C(O)C1O)c1ccc(O)cc1",
+      "MW": 311.3,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1304,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "N#CC(Br)c1ccc(O)cc1",
+          "OCC1OC(O)C(O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "Indomethacin",
+      "smiles": "COc1ccc2c(c1)c(CC(=O)O)c(C)n2C(=O)c1ccc(Cl)cc1",
+      "MW": 357.8,
+      "n_dis": 2001,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1305,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "Cc1c(CC(=O)O)c2cc(Br)ccc2n1C(=O)c1ccc(Cl)cc1"
+        ]
+      }
+    },
+    {
+      "name": "Papaveroline",
+      "smiles": "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O",
+      "MW": 283.3,
+      "n_dis": 932,
+      "n_all_terminal": 48,
+      "n_some_terminal": 316,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "C_C_decarboxylation",
+        "precursors": [
+          "O=C(O)O",
+          "Oc1ccc(Cc2nccc3cc(O)c(O)cc23)cc1O"
+        ]
+      }
+    },
+    {
+      "name": "Selina-4(14),7(11)-dien-8-one",
+      "smiles": "C=C1CCCC2(C)CC(=O)C(=C(C)C)CC12",
+      "MW": 218.3,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 16,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "C=C1CCCC2(C)CC(=O)C(O[PH](=O)O)CC12",
+          "CC"
+        ]
+      }
+    },
+    {
+      "name": "2-methoxy-4-vinylphenol_qt",
+      "smiles": "COc1cc(CC2COCC2C(O)c2ccc(O)c(OC)c2)ccc1O",
+      "MW": 360.4,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 824,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "COc1cc(C(O)C2COCC2Cc2ccc(O)c(Br)c2)ccc1O"
+        ]
+      }
+    },
+    {
+      "name": "Vitrofolal e",
+      "smiles": "COc1cc(-c2cc(C=O)cc3cc(OC)c(O)cc23)ccc1O",
+      "MW": 324.3,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1086,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "COc1cc2cc(C=O)cc(-c3ccc(O)c(Br)c3)c2cc1O"
+        ]
+      }
+    },
+    {
+      "name": "(-)-14beta-hydroxymatrine",
+      "smiles": "O=C1C(O)CCC2C3CCCN4CCCC(CN12)C34",
+      "MW": 264.4,
+      "n_dis": 2008,
+      "n_all_terminal": 0,
+      "n_some_terminal": 52,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "reductive_amination_ketone",
+        "precursors": [
+          "CCCC1CC(CC)C2CCC(O)C(=O)N2C1",
+          "CCCNCCC"
+        ]
+      }
+    },
+    {
+      "name": "Pyrethrosin",
+      "smiles": "C=C1C(=O)OC2CC3(C)OC3CCC(C)=CC(OC(C)=O)C12",
+      "MW": 306.4,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 482,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "C=C1C(=O)OC2CC3(C)OC3CCC(C)=CC(Br)C12",
+          "CC(=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Thymidine",
+      "smiles": "Cc1cn(C2CC(O)C(CO)O2)c(=O)[nH]c1=O",
+      "MW": 242.2,
+      "n_dis": 2002,
+      "n_all_terminal": 31,
+      "n_some_terminal": 919,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "negishi_insitu",
+        "precursors": [
+          "CCl",
+          "O=c1[nH]c(=O)n(C2CC(O)C(CO)O2)cc1I"
+        ]
+      }
+    },
+    {
+      "name": "Hypogaeic acid",
+      "smiles": "CCCCCCCCC=CCCCCCC(=O)O",
+      "MW": 254.4,
+      "n_dis": 64,
+      "n_all_terminal": 0,
+      "n_some_terminal": 48,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CCCCCCC(=O)O",
+          "CCCCCCCCCO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Quercetin 3-o-galactoside",
+      "smiles": "O=c1c(OC2OC(CO)C(O)C(O)C2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+      "MW": 464.4,
+      "n_dis": 2001,
+      "n_all_terminal": 249,
+      "n_some_terminal": 1379,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+          "OCC1OC(O)C(O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "Alpha-cortolone",
+      "smiles": "CC12CCC(O)CC1CCC1C2C(=O)CC2(C)C1CCC2(O)C(O)CO",
+      "MW": 366.5,
+      "n_dis": 48,
+      "n_all_terminal": 0,
+      "n_some_terminal": 4,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC12CC(=O)C3C(CCC4CC(O)CC[C@@]43Br)C1CCC2(O)C(O)CO",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "5-methyoxymarmesin",
+      "smiles": "COc1c2c(cc3oc(=O)ccc13)OC(C(C)(C)O)C2",
+      "MW": 276.3,
+      "n_dis": 2001,
+      "n_all_terminal": 642,
+      "n_some_terminal": 1817,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(C)(O)C1Cc2c(cc3oc(=O)ccc3c2O)O1",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Ebractelatinoside b",
+      "smiles": "COc1cc(O)c(Cc2c(OC3OC(CO)C(O)C(O)C3O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+      "MW": 538.5,
+      "n_dis": 2008,
+      "n_all_terminal": 86,
+      "n_some_terminal": 1488,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "COc1cc(O)c(Cc2c(O)cc(OC)c(C(C)=O)c2O)c(O)c1C(C)=O",
+          "OCC1OC(O)C(O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "Protostrychnine",
+      "smiles": "O=C1CC(O)C2C3CC4N(CCC45c4ccccc4N1C25)CC3=CCO",
+      "MW": 352.4,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 0,
+      "n_forward_ok": 0,
+      "example": null
+    },
+    {
+      "name": "Lactose",
+      "smiles": "OCC1OC(OC2C(CO)OC(O)C(O)C2O)C(O)C(O)C1O",
+      "MW": 342.3,
+      "n_dis": 2006,
+      "n_all_terminal": 208,
+      "n_some_terminal": 1091,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "OCC(O)C(O)C(Br)OC1C(CO)OC(O)C(O)C1O",
+          "OCC(O)C(O)C(O)CO"
+        ]
+      }
+    },
+    {
+      "name": "1-hydroxy-2,7,9-trideacetylbaccatin i",
+      "smiles": "CC(=O)OC1CC2(O)C(O)C3C4(CO4)C(OC(C)=O)CC(O)C3(C)C(O)C(OC(C)=O)C(=C1C)C2(C)C",
+      "MW": 526.6,
+      "n_dis": 2008,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1384,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)Br",
+          "CC(=O)OC1C2=C(C)C(O)CC(O)(C(O)C3C4(CO4)C(OC(C)=O)CC(O)C3(C)C1O)C2(C)C"
+        ]
+      }
+    },
+    {
+      "name": "Icariside b4",
+      "smiles": "CC(=O)CCC1=C(C)CC(O)CC1(C)COC1OC(CO)C(O)C(O)C1O",
+      "MW": 388.5,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1262,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)CCC1=C(C)CC(O)CC1(C)CBr",
+          "OCC1OC(O)C(O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "Emindole pb",
+      "smiles": "C=CC(C)(C)n1cc(CC2CCC3C(=CCC4OC(C(C)(C)O)CCC43C)C2(C)C)c2ccccc21",
+      "MW": 489.7,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 176,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "negishi_insitu",
+        "precursors": [
+          "C=CC(C)(C)O",
+          "CC(C)(O)C1CCC2(C)C(CC=C3C2CCC(Cc2cn(Br)c4ccccc24)C3(C)C)O1"
+        ]
+      }
+    },
+    {
+      "name": "Cedrusinin",
+      "smiles": "COc1cc(C2Oc3ccc(CCCOC(C)=O)cc3C2COC(C)=O)ccc1OC(C)=O",
+      "MW": 456.5,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1175,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)OCCCc1ccc2c(c1)C(COC(C)=O)C(c1ccc(OC(C)=O)c(Br)c1)O2",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Stigmastadienone",
+      "smiles": "CCC(CCC(C)C1CCC2C3CCC4=CC=CC(=O)C4(C)C3CCC12C)C(C)C",
+      "MW": 410.7,
+      "n_dis": 88,
+      "n_all_terminal": 0,
+      "n_some_terminal": 4,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)C(CBr)CCC(C)C1CCC2C3CCC4=CC=CC(=O)C4(C)C3CCC12C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Clavorubin",
+      "smiles": "Cc1cc2c(c(O)c1C(=O)O)C(=O)c1c(O)cc(O)c(O)c1C2=O",
+      "MW": 330.2,
+      "n_dis": 1024,
+      "n_all_terminal": 0,
+      "n_some_terminal": 504,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CO",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Tetradecanol",
+      "smiles": "CCCCCCCCCCCCCCO",
+      "MW": 214.4,
+      "n_dis": 32,
+      "n_all_terminal": 0,
+      "n_some_terminal": 16,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CCCBr",
+          "OCCCCCCCCCCCBr"
+        ]
+      }
+    },
+    {
+      "name": "Nodosin",
+      "smiles": "C=C1C(=O)C23CC1CC(O)C2C12COC(O)C1C(C)(C)CCC2OC3=O",
+      "MW": 362.4,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 0,
+      "n_forward_ok": 0,
+      "example": null
+    },
+    {
+      "name": "Vitamin d",
+      "smiles": "C=C1CCC(O)CC1=CC=C1CCCC2(C)C1CCC2C(C)CCC(O)C(C)(C)O",
+      "MW": 416.6,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 0,
+      "n_forward_ok": 0,
+      "example": null
+    },
+    {
+      "name": "Tagalsin g",
+      "smiles": "C=CC1(C)CCC2(C)C(CCC3(C)C(C)=C(O)C(=O)CC32)C1",
+      "MW": 302.5,
+      "n_dis": 88,
+      "n_all_terminal": 0,
+      "n_some_terminal": 24,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "C=CC1(C)CCC2(C)C(CCC(C)(C(C)O[PH](=O)O)C2CC=O)C1",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Fritillebeinol",
+      "smiles": "CC(=O)OC1CCC2(C)C3CCC4CC3(CCC2C1(C)C)CC4(O)CO",
+      "MW": 364.5,
+      "n_dis": 1304,
+      "n_all_terminal": 0,
+      "n_some_terminal": 930,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)Br",
+          "CC1(C)C(O)CCC2(C)C3CCC4CC3(CCC12)CC4(O)CO"
+        ]
+      }
+    },
+    {
+      "name": "3-o-(2' e,4'z-decadienoyl)-5-o-acetylingenol",
+      "smiles": "CCCCCC=CC=CC(=O)OC1C(C)=CC23C(=O)C(C=C(CO)C(OC(C)=O)C12O)C1C(CC3C)C1(C)C",
+      "MW": 540.7,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 718,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)O",
+          "CCCCCC=CC=CC(=O)OC1C(C)=CC23C(=O)C(C=C(CO)C(Br)C12O)C1C(CC3C)C1(C)C"
+        ]
+      }
+    },
+    {
+      "name": "Niveusin c",
+      "smiles": "C=C1C(=O)OC2C=C(C)C3(O)CC(O)C(C)(CC(OC(=O)C(C)=CC)C12)O3",
+      "MW": 378.4,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 62,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "C=C1C(=O)OC2C=C(C)C3(O)CC(O)C(C)(CC(O)C12)O3",
+          "CC=C(C)C(=O)Cl"
+        ]
+      }
+    },
+    {
+      "name": "Campest-5-en-3beta-ol",
+      "smiles": "CC(C)C(C)CCC(C)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C",
+      "MW": 400.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 10,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(CCC(C)[C@@H](C)Br)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Thalictricoside",
+      "smiles": "O=[N+]([O-])CCc1ccc(OC2OC(COC3OCC(O)C(O)C3O)C(O)C(O)C2O)cc1",
+      "MW": 461.4,
+      "n_dis": 2008,
+      "n_all_terminal": 0,
+      "n_some_terminal": 285,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "O=[N+]([O-])CCc1ccc(O)cc1",
+          "OC1COC(OCC2OC(Br)C(O)C(O)C2O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "Ancistroheynine b",
+      "smiles": "COc1c2c(cc(O)c1-c1c(C)cc3cccc(OC)c3c1O)CC(C)N=C2C",
+      "MW": 391.5,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1444,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "COc1cccc2cc(C)c(-c3c(O)cc4c(c3Br)C(C)=NC(C)C4)c(O)c12"
+        ]
+      }
+    },
+    {
+      "name": "Ganoderic acid b",
+      "smiles": "CC(CC(=O)CC(C)C1CC(=O)C2(C)C3=C(C(=O)CC12C)C1(C)CCC(O)C(C)(C)C1CC3O)C(=O)O",
+      "MW": 516.7,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 20,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CCC(C)C(=O)O",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Ecdysone",
+      "smiles": "CC(C(O)CCC(C)(C)O)C1CCC2(O)C3=CC(=O)C4CC(O)C(O)CC4(C)C3CCC12C",
+      "MW": 464.6,
+      "n_dis": 72,
+      "n_all_terminal": 0,
+      "n_some_terminal": 10,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)(O)CCBr",
+          "CC(C1CCC2(O)C3=CC(=O)C4CC(O)C(O)CC4(C)C3CCC12C)[C@H](O)Br"
+        ]
+      }
+    },
+    {
+      "name": "29-norlanost-9(11)-enol",
+      "smiles": "CC(C)CCCC(C)C1CCC2(C)C3CCC4C(C)C(O)CCC4(C)C3=CCC12C",
+      "MW": 414.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 12,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)CBr",
+          "CC(CCBr)C1CCC2(C)C3CCC4C(C)C(O)CCC4(C)C3=CCC12C"
+        ]
+      }
+    },
+    {
+      "name": "8-o-methyl-1-epi-dioncophylline b",
+      "smiles": "COc1c(-c2ccc3cc(C)cc(OC)c3c2O)ccc2c1C(C)NC(C)C2",
+      "MW": 377.5,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 620,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "reductive_amination_aldehyde",
+        "precursors": [
+          "CC",
+          "COc1cc(CC(C)[NH-])ccc1-c1ccc2cc(C)cc(OC)c2c1O"
+        ]
+      }
+    },
+    {
+      "name": "Primulagenin a",
+      "smiles": "CC1(C)CCC2(CO)C(O)CC3(C)C(=CCC4C5(C)CCC(O)C(C)(C)C5CCC43C)C2C1",
+      "MW": 458.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 8,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC1(C)C(O)CCC2(C)C1CCC1(C)C2CC=C2C3C[C@](C)(Br)CCC3(CO)C(O)CC21C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Supraene",
+      "smiles": "CC(C)=CCCC(C)=CCCC(C)=CCCC=C(C)CCC=C(C)CCC=C(C)C",
+      "MW": 410.7,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 40,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CC(C)=CCCC(C)=CCCC(C)=CCCC=C(C)CCC=C(C)CCCO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Tunicatachalcone",
+      "smiles": "COC1=CC(=O)C(CC=C(C)C)(CC=C(C)C)C(=O)C1=C(O)C=Cc1ccccc1",
+      "MW": 406.5,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1344,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(C)=CCC1(CC=C(C)C)C(=O)C=C(Br)C(=C(O)C=Cc2ccccc2)C1=O",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Tuliposide f",
+      "smiles": "C=C(CCO)C(=O)OC1OC(COC(=O)C(=C)C(O)CO)C(O)C(O)C1O",
+      "MW": 392.4,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 32,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CCCO",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Hippeastrine",
+      "smiles": "CN1CCC2=CC(O)C3OC(=O)c4cc5c(cc4C3C21)OCO5",
+      "MW": 315.3,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 56,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "reductive_amination_ketone",
+        "precursors": [
+          "CCC1=CC(O)C2OC(=O)c3cc4c(cc3C2C1)OCO4",
+          "CCNC"
+        ]
+      }
+    },
+    {
+      "name": "Loganic acid_qt",
+      "smiles": "CC1C(O)CC2C(C(=O)O)=COC(O)C21",
+      "MW": 214.2,
+      "n_dis": 1328,
+      "n_all_terminal": 0,
+      "n_some_terminal": 20,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CO",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Brachystamide d",
+      "smiles": "CC(C)CNC(=O)C=CC=CCCCCCCCCCC=Cc1ccc2c(c1)OCO2",
+      "MW": 425.6,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 509,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "chan_lam",
+        "precursors": [
+          "BC(=O)C=CC=CCCCCCCCCCC=Cc1ccc2c(c1)OCO2",
+          "CC(C)CN"
+        ]
+      }
+    },
+    {
+      "name": "Δ8-tetrahydrocannabinol",
+      "smiles": "CCCCCc1cc(O)c2c(c1)OC(C)(C)C1CC=C(C)CC21",
+      "MW": 314.5,
+      "n_dis": 984,
+      "n_all_terminal": 0,
+      "n_some_terminal": 720,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CCCCCc1cc(O)c2c(c1)OC(C)(C)C(CCO[PH](=O)O)C2C"
+        ]
+      }
+    },
+    {
+      "name": "1,7-dihydroxy-3,4,8-trimethoxy xanthones",
+      "smiles": "COc1cc(O)c2c(=O)c3c(OC)c(O)ccc3oc2c1OC",
+      "MW": 318.3,
+      "n_dis": 2004,
+      "n_all_terminal": 260,
+      "n_some_terminal": 1648,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CCl",
+          "COc1c(O)cc(O)c2c(=O)c3c(OC)c(O)ccc3oc12"
+        ]
+      }
+    },
+    {
+      "name": "Andrographidine c",
+      "smiles": "COc1cc(OC2OC(CO)C(O)C(O)C2O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+      "MW": 460.4,
+      "n_dis": 2008,
+      "n_all_terminal": 86,
+      "n_some_terminal": 1488,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "COc1cc(O)c2c(=O)cc(-c3ccccc3)oc2c1OC",
+          "OCC1OC(O)C(O)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "N-isobutyl-2 e,4 e,12 e-tetradecatrien-8,10-di-ynamide",
+      "smiles": "CC=CC#CC#CCCC=CC=CC(=O)NCC(C)C",
+      "MW": 269.4,
+      "n_dis": 1732,
+      "n_all_terminal": 0,
+      "n_some_terminal": 519,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "chan_lam",
+        "precursors": [
+          "BC(=O)C=CC=CCCC#CC#CC=CC",
+          "CC(C)CN"
+        ]
+      }
+    },
+    {
+      "name": "5-nonadecylresorcinol-3-o-methyl ether",
+      "smiles": "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(OC)c1",
+      "MW": 390.7,
+      "n_dis": 2002,
+      "n_all_terminal": 506,
+      "n_some_terminal": 1662,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CCCCCCCCCCCCCCCCCCCc1cc(O)cc(O)c1",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Ethyl 6-acetoxyhexanoate",
+      "smiles": "CCOC(=O)CCCCCOC(C)=O",
+      "MW": 202.2,
+      "n_dis": 2004,
+      "n_all_terminal": 441,
+      "n_some_terminal": 1715,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)Br",
+          "CCOC(=O)CCCCCO"
+        ]
+      }
+    },
+    {
+      "name": "Peucenidin",
+      "smiles": "CC(=O)OC1c2c(ccc3ccc(=O)oc23)OC1C(C)(C)OC(=O)C=C(C)C",
+      "MW": 386.4,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1425,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)Br",
+          "CC(C)=CC(=O)OC(C)(C)C1Oc2ccc3ccc(=O)oc3c2C1O"
+        ]
+      }
+    },
+    {
+      "name": "Schisanlactone e",
+      "smiles": "C=C(C)C1CCC2C3(C)CCC(C(C)C4CC=C(C)C(=O)O4)C3(C)CCC23CC13CCC(=O)O",
+      "MW": 468.7,
+      "n_dis": 1352,
+      "n_all_terminal": 0,
+      "n_some_terminal": 128,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "C=C(C)C1CCC2C3(C)CCC(C(C)C(O)CC=CC)C3(C)CCC23CC13CCC(=O)O",
+          "CC=C(C)C(=O)Cl"
+        ]
+      }
+    },
+    {
+      "name": "(20r)-epi-verazine",
+      "smiles": "CC1CCC(C(C)C2CCC3C4CC=C5CC(O)CCC5(C)C4CCC23C)=NC1",
+      "MW": 397.6,
+      "n_dis": 72,
+      "n_all_terminal": 0,
+      "n_some_terminal": 12,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC(C)CCO[PH](=O)O",
+          "CCCC(C)C"
+        ]
+      }
+    },
+    {
+      "name": "Champanone a",
+      "smiles": "CC1(C)C(=O)C(C(=O)C=Cc2ccccc2)C(=O)C(C)(C)C1=O",
+      "MW": 312.4,
+      "n_dis": 892,
+      "n_all_terminal": 0,
+      "n_some_terminal": 540,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "heck",
+        "precursors": [
+          "Brc1ccccc1",
+          "C=CC(=O)C1C(=O)C(C)(C)C(=O)C(C)(C)C1=O"
+        ]
+      }
+    },
+    {
+      "name": "Sanggenol e",
+      "smiles": "CC(C)=CCCC(C)=CCc1c(O)c(CC=C(C)C)cc(C2Oc3c(CC=C(C)C)c(O)cc(O)c3C(=O)C2O)c1O",
+      "MW": 576.7,
+      "n_dis": 2001,
+      "n_all_terminal": 0,
+      "n_some_terminal": 740,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CC(C)=CCc1cc(C2Oc3c(CC=C(C)C)c(O)cc(O)c3C(=O)C2O)c(O)c(CC=C(C)CCCO[PH](=O)O)c1O"
+        ]
+      }
+    },
+    {
+      "name": "Beta-sitosterol",
+      "smiles": "CCC(CCC(C)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C)C(C)C",
+      "MW": 414.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 4,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)C(CBr)CCC(C)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Monnieraside i",
+      "smiles": "O=C(OC1C(OCCc2ccc(O)cc2)OC(CO)C(O)C1O)c1ccc(O)cc1",
+      "MW": 420.4,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 930,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "O=C(O)c1ccc(O)cc1",
+          "OCC1OC(OCCc2ccc(O)cc2)C(Br)C(O)C1O"
+        ]
+      }
+    },
+    {
+      "name": "7beta,23ξ-dihydroxy-3,11,15-trioxolanosta-8,-20e(22)-dien-26-oicacid",
+      "smiles": "CC(=CC(O)CC(C)C(=O)O)C1CC(=O)C2(C)C3=C(C(=O)CC12C)C1(C)CCC(=O)C(C)(C)C1CC3O",
+      "MW": 514.7,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 24,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CC(CC(O)CO[PH](=O)O)C(=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Neodiospyrin",
+      "smiles": "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+      "MW": 374.3,
+      "n_dis": 1560,
+      "n_all_terminal": 48,
+      "n_some_terminal": 708,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "C_C_decarboxylation",
+        "precursors": [
+          "Cc1cc(O)c2c(c1)C(=O)C=C(c1c(C)cc(O)c3c1C(=O)C=CC3=O)C2=O",
+          "O=C(O)O"
+        ]
+      }
+    },
+    {
+      "name": "Dihydrotricetin",
+      "smiles": "O=C1CC(c2cc(O)c(O)c(O)c2)Oc2cc(O)cc(O)c21",
+      "MW": 304.3,
+      "n_dis": 784,
+      "n_all_terminal": 0,
+      "n_some_terminal": 156,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "negishi_insitu",
+        "precursors": [
+          "O=C1CC(Cl)Oc2cc(O)cc(O)c21",
+          "Oc1cc(O)c(O)c(O)c1"
+        ]
+      }
+    },
+    {
+      "name": "Dracorhodin",
+      "smiles": "COc1c2ccc(-c3ccccc3)oc-2cc(=O)c1C",
+      "MW": 266.3,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1402,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "Cc1c(Br)c2ccc(-c3ccccc3)oc-2cc1=O"
+        ]
+      }
+    },
+    {
+      "name": "Pierisformoside d",
+      "smiles": "CCC(=O)OC1C2CCC3C(C)(O)C4CC(O)C(C)(C)C4(O)C(O)C(OC(C)=O)C13CC2(C)O",
+      "MW": 484.6,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1432,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC(=O)OC1C(O)C2(O)C(CC(O)C2(C)C)C(C)(O)C2CCC3C(O)C12CC3(C)O",
+          "CCC(=O)Br"
+        ]
+      }
+    },
+    {
+      "name": "Stigmast-9(11)-en-3-ol",
+      "smiles": "CCC(CCC(C)C1CCC2C3CCC4CC(O)CCC4(C)C3=CCC12C)C(C)C",
+      "MW": 414.7,
+      "n_dis": 56,
+      "n_all_terminal": 0,
+      "n_some_terminal": 4,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "cross_electrophile_coupling",
+        "precursors": [
+          "CC(C)C(CBr)CCC(C)C1CCC2C3CCC4CC(O)CCC4(C)C3=CCC12C",
+          "CCl"
+        ]
+      }
+    },
+    {
+      "name": "Isotaifine",
+      "smiles": "CCn1c2occc2c(=O)c2cccc(OC)c21",
+      "MW": 243.3,
+      "n_dis": 2001,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1457,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CCn1c2occc2c(=O)c2cccc(Br)c21",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Pranferin",
+      "smiles": "COc1ccc2ccc(=O)oc2c1C1OC(C)(C)OC1(C)C",
+      "MW": 304.3,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 486,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CC1(C)OC(c2c(Br)ccc3ccc(=O)oc23)C(C)(C)O1",
+          "CO"
+        ]
+      }
+    },
+    {
+      "name": "Pendulamine a",
+      "smiles": "COc1cc2c(c(OC)c1O)C(=O)N1CCc3cc(O)ccc3C1C2",
+      "MW": 341.4,
+      "n_dis": 2002,
+      "n_all_terminal": 0,
+      "n_some_terminal": 0,
+      "n_forward_ok": 0,
+      "example": null
+    },
+    {
+      "name": "Yangonin",
+      "smiles": "COc1ccc(C=Cc2cc(OC)cc(=O)o2)cc1",
+      "MW": 258.3,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1144,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "COc1cc(C=Cc2ccc(Br)cc2)oc(=O)c1"
+        ]
+      }
+    },
+    {
+      "name": "(z)-caryophyllene",
+      "smiles": "C=C1CCC=C(C)CCC2C1CC2(C)C",
+      "MW": 204.4,
+      "n_dis": 72,
+      "n_all_terminal": 0,
+      "n_some_terminal": 10,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "C=C(CCCO[PH](=O)O)C1CC(C)(C)C1CC",
+          "CC"
+        ]
+      }
+    },
+    {
+      "name": "5-hydroxy-7-(4-hydroxy-3-methoxyphenyl)-1-phenyl-3-heptanone",
+      "smiles": "COc1cc(CCC(O)CC(=O)CCc2ccccc2)ccc1O",
+      "MW": 328.4,
+      "n_dis": 2001,
+      "n_all_terminal": 0,
+      "n_some_terminal": 1157,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "ester_schotten_baumann",
+        "precursors": [
+          "CO",
+          "O=C(CCc1ccccc1)CC(O)CCc1ccc(O)c(Br)c1"
+        ]
+      }
+    },
+    {
+      "name": "Ganoderic acid u",
+      "smiles": "CC(=CCCC(C)C1CCC2(C)C3=C(CCC12C)C1(C)CCC(O)C(C)(C)C1CC3O)C(=O)O",
+      "MW": 472.7,
+      "n_dis": 96,
+      "n_all_terminal": 0,
+      "n_some_terminal": 20,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CC",
+          "CC(CCCO[PH](=O)O)C1CCC2(C)C3=C(CCC12C)C1(C)CCC(O)C(C)(C)C1CC3O"
+        ]
+      }
+    },
+    {
+      "name": "Dihydroimpranine",
+      "smiles": "CC1CCC(C(C)C2C=CC3C4CC(O)C5CC(O)CCC5(C)C4CC3(C)C2)N(C)C1",
+      "MW": 429.7,
+      "n_dis": 2004,
+      "n_all_terminal": 0,
+      "n_some_terminal": 56,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "reductive_amination_ketone",
+        "precursors": [
+          "CC(C)CCCC(C)C1C=CC2C3CC(O)C4CC(O)CCC4(C)C3CC2(C)C1",
+          "CNCC(C)C"
+        ]
+      }
+    },
+    {
+      "name": "Plumbagic acid",
+      "smiles": "CC(CC(=O)O)C(=O)c1cccc(O)c1O",
+      "MW": 224.2,
+      "n_dis": 816,
+      "n_all_terminal": 0,
+      "n_some_terminal": 188,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "horner_wadsworth_emmons",
+        "precursors": [
+          "CO",
+          "CO[PH](=O)O"
+        ]
+      }
+    },
+    {
+      "name": "Ecliptalbine",
+      "smiles": "Cc1cnc(C(C)C2CCC3C4CC=C5CC(O)CCC5(C)C4CCC23C)c(O)c1",
+      "MW": 409.6,
+      "n_dis": 1252,
+      "n_all_terminal": 0,
+      "n_some_terminal": 412,
+      "n_forward_ok": 0,
+      "example": {
+        "reaction": "negishi_insitu",
+        "precursors": [
+          "CC(c1ncc(Br)cc1O)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C",
+          "CCl"
+        ]
+      }
+    }
+  ]
+}

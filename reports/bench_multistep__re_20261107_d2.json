@@ -1,0 +1,4574 @@
+{
+  "n_targets": 300,
+  "max_depth": 2,
+  "beam": 4,
+  "n_templates": 16891,
+  "success": 143,
+  "rate": 0.4767,
+  "depth_hist": {
+    "1": 55,
+    "2": 88
+  },
+  "elapsed_sec": 905.8,
+  "targets": [
+    {
+      "target": "CC(=O)Nc1cc(N)ccc1OCCN1CCCC1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 329,
+        "可用路线": 5,
+        "重复路线跳过": 1,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 357,
+        "达路线上限": 1,
+        "耗时秒": 4.43
+      }
+    },
+    {
+      "target": "CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 401,
+        "可用路线": 3,
+        "重复路线跳过": 9,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 867,
+        "达路线上限": 1,
+        "耗时秒": 3.69
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 380,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 438,
+        "可用路线": 2,
+        "重复路线跳过": 5,
+        "不可用:R4_荒谬前体(CO2/无机小分子)": 1,
+        "达路线上限": 1,
+        "耗时秒": 2.38
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2nc(On3nnc4ccccc43)ncc2C(N)=O)C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 390,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 566,
+        "耗时秒": 5.93
+      }
+    },
+    {
+      "target": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 239,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 769,
+        "耗时秒": 6.61
+      }
+    },
+    {
+      "target": "NC1(c2ccccc2)CC1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 6,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 0,
+        "耗时秒": 0.31
+      }
+    },
+    {
+      "target": "CCOC(=O)c1cnc(SC)nc1NC1(c2ccccc2)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 116,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 172,
+        "耗时秒": 1.69
+      }
+    },
+    {
+      "target": "CSc1ncc(C(=O)O)c(NC2(c3ccccc3)CC2)n1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 95,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 129,
+        "耗时秒": 1.76
+      }
+    },
+    {
+      "target": "CSc1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 115,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 147,
+        "耗时秒": 1.73
+      }
+    },
+    {
+      "target": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 126,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 167,
+        "耗时秒": 1.83
+      }
+    },
+    {
+      "target": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 223,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 653,
+        "耗时秒": 6.09
+      }
+    },
+    {
+      "target": "CN1CCC[C@H]1C(=O)Nc1cccc([N+](=O)[O-])c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 215,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 251,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 1.61
+      }
+    },
+    {
+      "target": "CN1CCC[C@H]1C(=O)Nc1cccc(N)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 214,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 323,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 1.93
+      }
+    },
+    {
+      "target": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 381,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 885,
+        "耗时秒": 6.13
+      }
+    },
+    {
+      "target": "CCOC(=O)c1cnc(Cl)nc1NCc1cnn(C)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 135,
+        "可用路线": 3,
+        "重复路线跳过": 6,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 270,
+        "达路线上限": 1,
+        "耗时秒": 1.57
+      }
+    },
+    {
+      "target": "Cn1cc(CNc2nc(Cl)ncc2C(=O)O)cn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 114,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 209,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.14
+      }
+    },
+    {
+      "target": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3cnn(C)c3)n2)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 244,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 801,
+        "耗时秒": 5.2
+      }
+    },
+    {
+      "target": "NC(=O)c1cnc(Cl)cc1NCc1cccnc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 121,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 106,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.97
+      }
+    },
+    {
+      "target": "Nc1ccc(F)c(NC(=O)N2CCCC2)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 245,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 51,
+        "达路线上限": 1,
+        "耗时秒": 1.03
+      }
+    },
+    {
+      "target": "NC(=O)c1cnc(Nc2ccc(F)c(NC(=O)N3CCCC3)c2)cc1NCc1cccnc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 382,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 508,
+        "耗时秒": 4.09
+      }
+    },
+    {
+      "target": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 120,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 275,
+        "耗时秒": 13.55
+      }
+    },
+    {
+      "target": "O=[N+]([O-])c1cccc(Br)c1O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 61,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 60,
+        "达路线上限": 1,
+        "耗时秒": 0.62
+      }
+    },
+    {
+      "target": "COc1c(Br)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 100,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.35
+      }
+    },
+    {
+      "target": "COc1c(-c2cccc(C(=O)O)c2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 184,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 416,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 3.2
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1cccc(C(=O)O)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 178,
+        "可用路线": 4,
+        "重复路线跳过": 8,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 278,
+        "达路线上限": 1,
+        "耗时秒": 2.13
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 62,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 116,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 1.14
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 218,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 373,
+        "耗时秒": 8.82
+      }
+    },
+    {
+      "target": "O=[N+]([O-])c1cc(F)cc(Br)c1O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 69,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 44,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 0.6
+      }
+    },
+    {
+      "target": "COc1c(Br)cc(F)cc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 110,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 12,
+        "无切断方案": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.55
+      }
+    },
+    {
+      "target": "COc1c(-c2cccc(C(=O)O)c2)cc(F)cc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 192,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 541,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 3.55
+      }
+    },
+    {
+      "target": "O=C(O)c1cccc(-c2cc(F)cc([N+](=O)[O-])c2O)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 166,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 411,
+        "耗时秒": 3.42
+      }
+    },
+    {
+      "target": "Nc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 157,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 340,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 2.79
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 226,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 401,
+        "耗时秒": 9.92
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 74,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 169,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.56
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 230,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 409,
+        "耗时秒": 6.71
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 238,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 437,
+        "耗时秒": 7.11
+      }
+    },
+    {
+      "target": "Brc1ccc2c(c1)CC2",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 52,
+        "可用路线": 4,
+        "重复路线跳过": 2,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 2,
+        "无切断方案": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.38
+      }
+    },
+    {
+      "target": "CCOC(=O)c1c(C)[nH]c(C(=O)O)c1C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 125,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 179,
+        "不可用:R1_残基路线": 1,
+        "无切断方案": 1,
+        "耗时秒": 1.14
+      }
+    },
+    {
+      "target": "CCOC(=O)c1c(C)[nH]c(I)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 85,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 77,
+        "耗时秒": 0.7
+      }
+    },
+    {
+      "target": "CCOC(=O)c1c(C)c(I)n(C)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 107,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 121,
+        "耗时秒": 0.78
+      }
+    },
+    {
+      "target": "CCOC(=O)c1c(C)c(-c2cccc([N+](=O)[O-])c2OC)n(C)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 162,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 263,
+        "耗时秒": 2.2
+      }
+    },
+    {
+      "target": "CCOC(=O)c1c(C)c(-c2cccc(N)c2OC)n(C)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 159,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 112,
+        "耗时秒": 1.47
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 54,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 96,
+        "耗时秒": 1.05
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 210,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 349,
+        "耗时秒": 10.78
+      }
+    },
+    {
+      "target": "Brc1cccc(-c2nnn[nH]2)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 34,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 32,
+        "无切断方案": 3,
+        "达路线上限": 1,
+        "耗时秒": 0.7
+      }
+    },
+    {
+      "target": "COc1ccccc1-c1cccc(-c2nnn[nH]2)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 146,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 34,
+        "达路线上限": 1,
+        "耗时秒": 1.33
+      }
+    },
+    {
+      "target": "Oc1ccccc1-c1cccc(-c2nnn[nH]2)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 123,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 34,
+        "达路线上限": 1,
+        "耗时秒": 1.29
+      }
+    },
+    {
+      "target": "O=[N+]([O-])c1cccc(-c2cccc(-c3nnn[nH]3)c2)c1O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 133,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 245,
+        "可用路线": 3,
+        "重复路线跳过": 9,
+        "达路线上限": 1,
+        "耗时秒": 2.59
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 149,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 481,
+        "耗时秒": 3.34
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3)C(=O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 76,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 143,
+        "可用路线": 1,
+        "重复路线跳过": 1,
+        "耗时秒": 1.97
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(C(=O)O)o2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 66,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 151,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "耗时秒": 1.5
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1ccc(C(=O)O)o1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 62,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 105,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "无切断方案": 1,
+        "耗时秒": 1.1
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 98,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 93,
+        "耗时秒": 4.75
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(-c3nnn[nH]3)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 203,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 321,
+        "耗时秒": 4.98
+      }
+    },
+    {
+      "target": "Cc1cc(Br)c(O)c([N+](=O)[O-])c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "可用路线": 4,
+        "重复路线跳过": 6,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 54,
+        "无切断方案": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.72
+      }
+    },
+    {
+      "target": "COc1c(Br)cc(C)cc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 118,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 2,
+        "无切断方案": 1,
+        "耗时秒": 0.46
+      }
+    },
+    {
+      "target": "COc1ccc(C)cc1C1=CC=CC(C(=O)O)([N+](=O)[O-])C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 88,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 202,
+        "耗时秒": 2.14
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 240,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 443,
+        "耗时秒": 7.25
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(C(=O)O)s2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 74,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 214,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.97
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1ccc(C(=O)O)s1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 70,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 129,
+        "可用路线": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.34
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 120,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 194,
+        "耗时秒": 6.17
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 220,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 383,
+        "耗时秒": 12.36
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 218,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 377,
+        "耗时秒": 13.1
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 110,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 105,
+        "耗时秒": 2.36
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 242,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 714,
+        "耗时秒": 11.82
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 106,
+        "深度1_递归分支": 0,
+        "耗时秒": 2.88
+      }
+    },
+    {
+      "target": "CC1(C)CC(=O)c2ccc(Br)cc21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 106,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 44,
+        "达路线上限": 1,
+        "耗时秒": 0.74
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2(C)C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 147,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 477,
+        "耗时秒": 3.43
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3(C)C)C(=O)C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 157,
+        "耗时秒": 2.14
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(C(=O)O)s2)cc(C)cc1[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 86,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 139,
+        "耗时秒": 1.79
+      }
+    },
+    {
+      "target": "COc1c(N)cc(C)cc1-c1ccc(C(=O)O)s1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 82,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 111,
+        "耗时秒": 1.21
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(C)cc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 118,
+        "深度1_递归分支": 0,
+        "耗时秒": 3.32
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(-c3nnn[nH]3)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 191,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 285,
+        "耗时秒": 5.63
+      }
+    },
+    {
+      "target": "O=C(O)c1cc(Br)co1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 47,
+        "可用路线": 4,
+        "达路线上限": 1,
+        "耗时秒": 0.25
+      }
+    },
+    {
+      "target": "COc1c(-c2coc(C(=O)O)c2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 154,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 340,
+        "可用路线": 3,
+        "重复路线跳过": 9,
+        "达路线上限": 1,
+        "耗时秒": 2.51
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1coc(C(=O)O)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 150,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 154,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 1.56
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2coc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 200,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 321,
+        "耗时秒": 4.66
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 228,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 407,
+        "耗时秒": 9.92
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 232,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 670,
+        "耗时秒": 10.95
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2coc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 188,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 285,
+        "耗时秒": 5.48
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(C=O)cc2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 229,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 285,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 2.31
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(N3C=NCC3)cc2)cccc1[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 213,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 527,
+        "耗时秒": 3.93
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2ccc(C3=NCCN3)cc2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 209,
+        "深度1_递归分支": 0,
+        "耗时秒": 5.52
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(C)cc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 130,
+        "深度1_递归分支": 0,
+        "耗时秒": 1.6
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 118,
+        "深度1_递归分支": 0,
+        "耗时秒": 1.49
+      }
+    },
+    {
+      "target": "O=C1CCc2ccc(Br)cc21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 87,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 24,
+        "达路线上限": 1,
+        "耗时秒": 0.6
+      }
+    },
+    {
+      "target": "C=C1CCc2ccc(Br)cc21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 49,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 48,
+        "达路线上限": 1,
+        "耗时秒": 0.64
+      }
+    },
+    {
+      "target": "CC1CCc2ccc(Br)cc21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 65,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 64,
+        "达路线上限": 1,
+        "耗时秒": 0.66
+      }
+    },
+    {
+      "target": "CC1=CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc21",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 113,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 354,
+        "耗时秒": 3.0
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)CC3)C(=O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 53,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 162,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "耗时秒": 1.87
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)CC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 209,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 530,
+        "耗时秒": 12.47
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 97,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 276,
+        "耗时秒": 7.65
+      }
+    },
+    {
+      "target": "CC=C1CCc2ccc(Br)cc21",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 52,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 39,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 0.72
+      }
+    },
+    {
+      "target": "CCC1CCc2ccc(Br)cc21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 69,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 24,
+        "达路线上限": 1,
+        "耗时秒": 0.62
+      }
+    },
+    {
+      "target": "CCC1CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc21",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 132,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 428,
+        "耗时秒": 3.22
+      }
+    },
+    {
+      "target": "CCC1CCc2ccc(N3N=C(C)CC3=O)cc21",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 57,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 170,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "耗时秒": 2.39
+      }
+    },
+    {
+      "target": "CCC1CCc2ccc(N3N=C(C)C(=NNc4cccc(-c5cccc(C(=O)O)c5)c4O)C3=O)cc21",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 213,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 542,
+        "耗时秒": 12.2
+      }
+    },
+    {
+      "target": "CCC1CCc2ccc(N3N=C(C)C(=NNc4cc(C)cc(-c5cccc(C(=O)O)c5)c4O)C3=O)cc21",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 223,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 590,
+        "耗时秒": 13.13
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)(C)CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 112,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 277,
+        "耗时秒": 9.55
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)C(C)CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 89,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 282,
+        "耗时秒": 7.88
+      }
+    },
+    {
+      "target": "CC1(C)Cc2ccc(Br)cc2C1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 60,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 24,
+        "达路线上限": 1,
+        "耗时秒": 0.62
+      }
+    },
+    {
+      "target": "CC1(C)C=c2ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc2=C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 85,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 250,
+        "耗时秒": 2.69
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CC(C)(C)C3)C(=O)C1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 48,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 147,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 1.99
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CC(C)(C)C3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 84,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 271,
+        "耗时秒": 7.25
+      }
+    },
+    {
+      "target": "COc1c(-c2ccc(C(=O)O)o2)cc(C)cc1[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 78,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 180,
+        "耗时秒": 1.63
+      }
+    },
+    {
+      "target": "COc1c(N)cc(C)cc1-c1ccc(C(=O)O)o1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 74,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 119,
+        "耗时秒": 1.07
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(C)cc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 110,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 105,
+        "耗时秒": 5.48
+      }
+    },
+    {
+      "target": "COc1c(-c2nc(C(=O)O)c(C)s2)cccc1[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 115,
+        "耗时秒": 1.58
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1nc(C(=O)O)c(C)s1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 73,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 93,
+        "耗时秒": 1.04
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2nc(C(=O)O)c(C)s2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 109,
+        "深度1_递归分支": 0,
+        "耗时秒": 2.91
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(C)cc(-c2ccc(C(=O)O)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 122,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 117,
+        "耗时秒": 2.75
+      }
+    },
+    {
+      "target": "COc1c(-c2csc(C(=O)O)c2)cccc1[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 160,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 288,
+        "耗时秒": 2.59
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1csc(C(=O)O)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 156,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 159,
+        "可用路线": 5,
+        "达路线上限": 1,
+        "耗时秒": 1.72
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2csc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 204,
+        "深度1_递归分支": 0,
+        "耗时秒": 2.05
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2csc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 192,
+        "深度1_递归分支": 0,
+        "耗时秒": 3.44
+      }
+    },
+    {
+      "target": "COC(=O)c1cc(Br)oc1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 91,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 106,
+        "耗时秒": 1.0
+      }
+    },
+    {
+      "target": "COC(=O)c1cc(-c2cccc([N+](=O)[O-])c2OC)oc1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 131,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 237,
+        "耗时秒": 2.24
+      }
+    },
+    {
+      "target": "COc1c(-c2cc(C(=O)O)c(C)o2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 84,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 222,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "耗时秒": 2.08
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1cc(C(=O)O)c(C)o1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 80,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 195,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "耗时秒": 1.53
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cc(C(=O)O)c(C)o2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 130,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 203,
+        "耗时秒": 5.66
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(-c2cccc([N+](=O)[O-])c2OC)o1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 121,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 206,
+        "可用路线": 2,
+        "重复路线跳过": 4,
+        "耗时秒": 1.53
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(-c2cccc(N)c2OC)o1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 117,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 103,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "耗时秒": 1.0
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(-c2cccc(N)c2O)o1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 92,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 66,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "耗时秒": 0.96
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCCC5)N=C3C)c2O)o1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 166,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 105,
+        "耗时秒": 3.45
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCC5)N=C3C)c2O)o1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 154,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 93,
+        "耗时秒": 7.33
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CC(C)(C)C3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 204,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 611,
+        "耗时秒": 10.14
+      }
+    },
+    {
+      "target": "O=C(c1ccc[nH]1)C(Cl)(Cl)Cl",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 15,
+        "可用路线": 3,
+        "达路线上限": 1,
+        "耗时秒": 0.24
+      }
+    },
+    {
+      "target": "O=C(c1cc(I)c[nH]1)C(Cl)(Cl)Cl",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 43,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 67,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 0.6
+      }
+    },
+    {
+      "target": "COC(=O)c1cc(I)c[nH]1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 100,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 119,
+        "达路线上限": 1,
+        "耗时秒": 0.79
+      }
+    },
+    {
+      "target": "COC(=O)c1cc(I)cn1S(=O)(=O)c1ccc(C)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 111,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 39,
+        "耗时秒": 1.1
+      }
+    },
+    {
+      "target": "COC(=O)c1cc(-c2cccc([N+](=O)[O-])c2OC)cn1S(=O)(=O)c1ccc(C)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 247,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 411,
+        "耗时秒": 4.47
+      }
+    },
+    {
+      "target": "COc1c(-c2c[nH]c(C(=O)O)c2)cccc1[N+](=O)[O-]",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 173,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 260,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 2.38
+      }
+    },
+    {
+      "target": "COc1c(N)cccc1-c1c[nH]c(C(=O)O)c1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 169,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 95,
+        "达路线上限": 1,
+        "耗时秒": 1.39
+      }
+    },
+    {
+      "target": "Nc1cccc(-c2c[nH]c(C(=O)O)c2)c1O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 144,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 60,
+        "达路线上限": 1,
+        "耗时秒": 1.32
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2c[nH]c(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 217,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 216,
+        "耗时秒": 3.95
+      }
+    },
+    {
+      "target": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2c[nH]c(C(=O)O)c2)c1O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 205,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 192,
+        "耗时秒": 4.3
+      }
+    },
+    {
+      "target": "CC(C#N)=C[C@@H]1[C@@H](C(=O)OCc2c(F)c(F)c(C)c(F)c2F)C1(C)C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 79,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 170,
+        "耗时秒": 1.47
+      }
+    },
+    {
+      "target": "COc1c(F)c(F)c(COC(=O)[C@@H]2[C@@H](C=C(C)C#N)C2(C)C)c(F)c1F",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 101,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 93,
+        "耗时秒": 0.88
+      }
+    },
+    {
+      "target": "C=CCc1c(F)c(F)c(COC(=O)[C@@H]2[C@@H](C=C(C)C#N)C2(C)C)c(F)c1F",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 100,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 144,
+        "耗时秒": 1.37
+      }
+    },
+    {
+      "target": "CCOC(=O)c1nc2ccccc2c(OCc2ccccc2)c1Cl",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 121,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 260,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 2.27
+      }
+    },
+    {
+      "target": "Cc1ccc2c(c1)c(OCc1ccccc1)c(C)c(C)[n+]2[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 103,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 311,
+        "耗时秒": 2.35
+      }
+    },
+    {
+      "target": "CC(=O)OCc1nc2ccc(C)cc2c(OCc2ccccc2)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 123,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 362,
+        "耗时秒": 3.08
+      }
+    },
+    {
+      "target": "Cc1ccc(S(=O)(=O)OCc2nc3ccccc3c(OCc3ccccc3)c2C)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 97,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 239,
+        "耗时秒": 3.64
+      }
+    },
+    {
+      "target": "Cc1ccc2nc(CO)c(C)c(OCc3ccccc3)c2c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 89,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 275,
+        "耗时秒": 2.44
+      }
+    },
+    {
+      "target": "COc1cccc2c(OCc3ccccc3)c(C)c(CO)nc12",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 116,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 307,
+        "耗时秒": 3.07
+      }
+    },
+    {
+      "target": "Cc1c(CCl)nc2ccc(F)cc2c1OCc1ccccc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 88,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 255,
+        "耗时秒": 2.09
+      }
+    },
+    {
+      "target": "Cc1c(CBr)nc2ccccc2c1OCc1ccccc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 189,
+        "可用路线": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.74
+      }
+    },
+    {
+      "target": "CCOP(=O)(Cc1nc2ccccc2c(OCc2ccccc2)c1C)OCC",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 73,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 143,
+        "耗时秒": 2.63
+      }
+    },
+    {
+      "target": "Cc1c(CCCCO)[nH]c2ccccc2c1=O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 49,
+        "可用路线": 4,
+        "重复路线跳过": 2,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 92,
+        "达路线上限": 1,
+        "耗时秒": 1.21
+      }
+    },
+    {
+      "target": "CCCCCCCN(Cc1nc2ccccc2c(OCc2ccccc2)c1C)C(C)=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 310,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 525,
+        "耗时秒": 3.95
+      }
+    },
+    {
+      "target": "CCCCCCCSCc1nc2ccccc2c(OCc2ccccc2)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 127,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 359,
+        "耗时秒": 2.97
+      }
+    },
+    {
+      "target": "CCCCCCCS(=O)Cc1nc2ccccc2c(OCc2ccccc2)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 125,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 351,
+        "耗时秒": 3.3
+      }
+    },
+    {
+      "target": "CCCCCNC(=O)OCc1nc2ccccc2c(OCc2ccccc2)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 137,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 373,
+        "耗时秒": 3.64
+      }
+    },
+    {
+      "target": "CC(C)(C)COCCCCO",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 64,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 50,
+        "达路线上限": 1,
+        "耗时秒": 0.43
+      }
+    },
+    {
+      "target": "CCOC(=O)CCCCc1ccc2c(c1)OCCO2",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 178,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 114,
+        "达路线上限": 1,
+        "耗时秒": 1.07
+      }
+    },
+    {
+      "target": "OCCCCCc1ccc2c(c1)OCCO2",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 124,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 50,
+        "达路线上限": 1,
+        "耗时秒": 0.8
+      }
+    },
+    {
+      "target": "Fc1ccc(OCCCCOCc2ccccc2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 86,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 130,
+        "可用路线": 5,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.23
+      }
+    },
+    {
+      "target": "C=COCCCCOCc1ccccc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 51,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.36
+      }
+    },
+    {
+      "target": "c1ccc(COCCCCOC2CC2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 55,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 165,
+        "可用路线": 1,
+        "重复路线跳过": 1,
+        "耗时秒": 1.17
+      }
+    },
+    {
+      "target": "O=CCCCOC1CC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 51,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 135,
+        "可用路线": 1,
+        "重复路线跳过": 1,
+        "耗时秒": 0.78
+      }
+    },
+    {
+      "target": "FC(F)(F)c1cc(OCCCCOCc2ccccc2)ncn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 74,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 45,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.88
+      }
+    },
+    {
+      "target": "Oc1cccc(OCC2CCC3(CC2)OCCO3)c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 129,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 358,
+        "耗时秒": 1.65
+      }
+    },
+    {
+      "target": "O=C(CCc1ccccc1)N1CCN(C(=O)n2ccnc2)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 426,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 959,
+        "耗时秒": 3.57
+      }
+    },
+    {
+      "target": "Cc1c(CCC(=O)NCCCc2ccccc2)nc2ccccc2c1OCc1ccccc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 173,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 526,
+        "耗时秒": 4.87
+      }
+    },
+    {
+      "target": "Oc1cccc(SCC2CCOCC2)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 73,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 59,
+        "可用路线": 3,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 0.82
+      }
+    },
+    {
+      "target": "c1ccc(COc2cccc(OCC3CCC4(CC3)OCCO4)c2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 163,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 520,
+        "耗时秒": 3.34
+      }
+    },
+    {
+      "target": "Cc1c(COc2cccc(OCC3CCNCC3)c2)nc2ccccc2c1OCc1ccccc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 181,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 575,
+        "耗时秒": 5.63
+      }
+    },
+    {
+      "target": "CS(=O)(=O)N1CCC(COc2cccc(OCc3ccccc3)c2)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 127,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 376,
+        "耗时秒": 2.88
+      }
+    },
+    {
+      "target": "O=C(COc1cccc(O)c1)N1CCOCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 301,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 904,
+        "可用路线": 3,
+        "重复路线跳过": 9,
+        "达路线上限": 1,
+        "耗时秒": 2.22
+      }
+    },
+    {
+      "target": "O=C1CCC(COc2cccc(O)c2)CC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 109,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 293,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 1.39
+      }
+    },
+    {
+      "target": "Fc1cccc(OCC2CCOCC2)n1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 54,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 50,
+        "可用路线": 4,
+        "达路线上限": 1,
+        "耗时秒": 0.81
+      }
+    },
+    {
+      "target": "c1ccc(COc2cccc(N3CCCCC3)c2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 134,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 185,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.4
+      }
+    },
+    {
+      "target": "Cc1ccc(S(=O)(=O)OCCC2CCOCC2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 68,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 236,
+        "可用路线": 1,
+        "重复路线跳过": 3,
+        "耗时秒": 2.13
+      }
+    },
+    {
+      "target": "CC(C)(O)COc1cccc(OCc2ccccc2)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 111,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 150,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.43
+      }
+    },
+    {
+      "target": "CC(=O)CCCOc1cccc(OCc2ccccc2)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 121,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 123,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.4
+      }
+    },
+    {
+      "target": "CCCCCC(=O)N1CCN(Cc2nc3ccccc3c(OCc3ccccc3)c2C)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 481,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1775,
+        "耗时秒": 7.83
+      }
+    },
+    {
+      "target": "COc1cccc2c(OCc3ccccc3)c(C)c(COc3cccc(OCC4CCOCC4)c3)nc12",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 210,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 678,
+        "耗时秒": 6.63
+      }
+    },
+    {
+      "target": "Oc1cncc(OCC2CCOCC2)c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 94,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 92,
+        "可用路线": 4,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 0.85
+      }
+    },
+    {
+      "target": "Fc1cc(COCC2CCOCC2)ccn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 49,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 35,
+        "可用路线": 4,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 0.8
+      }
+    },
+    {
+      "target": "OC1(CCc2ccc(OCc3ccccc3)cc2)CCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 109,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 354,
+        "可用路线": 1,
+        "耗时秒": 2.54
+      }
+    },
+    {
+      "target": "OC1(CCc2ccc(OCc3ccccc3)cc2)CCCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 125,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 210,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.72
+      }
+    },
+    {
+      "target": "CC(=O)/C=C/c1ccc(OCc2ccccc2)nc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 111,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.34
+      }
+    },
+    {
+      "target": "Cc1c(CO[C@@H]2CC[C@@H](N3CCCC3=O)CC2)nc2ccccc2c1OCc1ccccc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 292,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1019,
+        "耗时秒": 6.07
+      }
+    },
+    {
+      "target": "Cc1c(CO[C@@H]2CC[C@@H](N(C)C(=O)C3CCCC3)CC2)nc2ccccc2c1OCc1ccccc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 279,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 969,
+        "耗时秒": 6.37
+      }
+    },
+    {
+      "target": "COC(=O)c1cnc(OCc2nc3ccccc3c(OCc3ccccc3)c2C)nc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 180,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 571,
+        "耗时秒": 4.54
+      }
+    },
+    {
+      "target": "Cc1c(CCCCCOc2ccc(F)cc2)[nH]c2ccccc2c1=O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 95,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 139,
+        "可用路线": 3,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 2.45
+      }
+    },
+    {
+      "target": "Cc1c(COc2cccc(OCC3CCOCC3)c2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 117,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 559,
+        "耗时秒": 3.87
+      }
+    },
+    {
+      "target": "Cc1c(COc2ccc(CCC3(O)CCCC3)cc2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 135,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 470,
+        "耗时秒": 7.87
+      }
+    },
+    {
+      "target": "Cc1c(COc2cc(OCCC(C)(C)O)ccn2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 106,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 540,
+        "耗时秒": 3.91
+      }
+    },
+    {
+      "target": "CCOC(=O)N[C@@H]1CC[C@@H](OCc2[nH]c3ccccc3c(=O)c2C)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 120,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 271,
+        "耗时秒": 4.31
+      }
+    },
+    {
+      "target": "Cc1c(CCC2CCNCC2)[nH]c2ccccc2c1=O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 71,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 96,
+        "可用路线": 4,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 1.41
+      }
+    },
+    {
+      "target": "CCCCCCCSCc1[nH]c2ccccc2c(=O)c1C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 75,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 85,
+        "可用路线": 4,
+        "达路线上限": 1,
+        "耗时秒": 1.7
+      }
+    },
+    {
+      "target": "CCCCCCC(=O)NCc1[nH]c2ccccc2c(=O)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 106,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 203,
+        "耗时秒": 2.93
+      }
+    },
+    {
+      "target": "CCCCCOC(=O)NCc1[nH]c2ccccc2c(=O)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 87,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 100,
+        "耗时秒": 2.35
+      }
+    },
+    {
+      "target": "CCCCCNC(=O)NCc1[nH]c2ccccc2c(=O)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 108,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 97,
+        "耗时秒": 2.72
+      }
+    },
+    {
+      "target": "CCCCCCS(=O)(=O)NCc1[nH]c2ccccc2c(=O)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 59,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 95,
+        "耗时秒": 2.37
+      }
+    },
+    {
+      "target": "Cc1c(OC(=O)N(C)c2ccc3c(c2)CCC3)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 163,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 24,
+        "耗时秒": 1.49
+      }
+    },
+    {
+      "target": "CCCCCCCS(=O)(=O)Cc1[nH]c2ccccc2c(=O)c1C",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 63,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 81,
+        "耗时秒": 2.43
+      }
+    },
+    {
+      "target": "Cc1c(COc2ccc(C(=O)O)c(OCC3CCOCC3)c2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 155,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 697,
+        "耗时秒": 6.3
+      }
+    },
+    {
+      "target": "Cc1c(COc2ccc(C(=O)N3CCOCC3)c(OCC3CCOCC3)c2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 350,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 294,
+        "耗时秒": 3.09
+      }
+    },
+    {
+      "target": "Cc1c(COc2cc(OCC3CCOCC3)cc(-c3nnn[nH]3)c2)[nH]c2ccccc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 121,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 582,
+        "耗时秒": 5.15
+      }
+    },
+    {
+      "target": "Cc1c(COc2cccc(OCC3CCOCC3)c2)[nH]c2ccc(-c3ccccc3C(=O)O)cc2c1=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 249,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 655,
+        "耗时秒": 10.13
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 400,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 460,
+        "可用路线": 3,
+        "重复路线跳过": 7,
+        "达路线上限": 1,
+        "耗时秒": 4.17
+      }
+    },
+    {
+      "target": "CC(=O)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 336,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 766,
+        "耗时秒": 4.57
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1C[C@@H](OS(C)(=O)=O)C[C@@H]1COS(C)(=O)=O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 279,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 508,
+        "耗时秒": 2.15
+      }
+    },
+    {
+      "target": "OCc1ccc(Cc2nc3ccccc3s2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 25,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 227,
+        "可用路线": 4,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.62
+      }
+    },
+    {
+      "target": "ClCc1ccc(Cc2nc3ccccc3s2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 28,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 51,
+        "可用路线": 4,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.08
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CC2CC1CN2Cc1ccc(Cc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 386,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 414,
+        "耗时秒": 4.58
+      }
+    },
+    {
+      "target": "OCc1ccc(Cc2nc3ccccc3o2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 23,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 100,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.26
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1C[C@@H]2C[C@H]1CN2CCc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 464,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 623,
+        "可用路线": 3,
+        "重复路线跳过": 6,
+        "达路线上限": 1,
+        "耗时秒": 4.99
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1C[C@@H]2C[C@H]1CN2CCOc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 499,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 715,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 5.25
+      }
+    },
+    {
+      "target": "O=C(CO)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 346,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1110,
+        "耗时秒": 6.04
+      }
+    },
+    {
+      "target": "NCC(=O)N1C[C@H]2C[C@@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 334,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 896,
+        "耗时秒": 5.65
+      }
+    },
+    {
+      "target": "NC(=O)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 285,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 928,
+        "耗时秒": 5.17
+      }
+    },
+    {
+      "target": "COCC(=O)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 352,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1135,
+        "耗时秒": 6.51
+      }
+    },
+    {
+      "target": "CS(=O)(=O)N1C[C@@H]2C[C@H]1CN2Cc1ccc(Cc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 174,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 457,
+        "耗时秒": 3.94
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)CN1C[C@@H]2C[C@H]1CN2Cc1ccc(Oc2nc3ccccc3s2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 459,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1234,
+        "耗时秒": 7.4
+      }
+    },
+    {
+      "target": "O=C(O)c1ccc(Oc2nc3ccccc3s2)cc1F",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 70,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 76,
+        "达路线上限": 1,
+        "耗时秒": 0.98
+      }
+    },
+    {
+      "target": "OCc1ccc(Oc2nc3ccccc3s2)cc1F",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 41,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 38,
+        "达路线上限": 1,
+        "耗时秒": 0.78
+      }
+    },
+    {
+      "target": "NCC(=O)N1CCC2CN(Cc3ccc(Oc4nc5ccccc5s4)cc3)CC21",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 365,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 410,
+        "达路线上限": 1,
+        "耗时秒": 2.91
+      }
+    },
+    {
+      "target": "NS(=O)(=O)N1CC2CN(Cc3ccc(Oc4nc5ccccc5s4)cc3)CC2C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 193,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 665,
+        "耗时秒": 3.92
+      }
+    },
+    {
+      "target": "NC(=O)N1CC2CN(Cc3ccc(Oc4nc5ccc(F)cc5s4)cc3)CC2C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 334,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 374,
+        "耗时秒": 5.45
+      }
+    },
+    {
+      "target": "Cc1ccc2nc(Oc3ccc(CCO)cc3)sc2c1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 75,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 91,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 2.01
+      }
+    },
+    {
+      "target": "Cc1ccc2nc(Oc3ccc(CCS(C)(=O)=O)cc3)sc2c1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 67,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 222,
+        "耗时秒": 2.3
+      }
+    },
+    {
+      "target": "Cc1cccc2sc(Oc3ccc(CCN4CC5CN(C(N)=O)CC5C4)cc3)nc12",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 355,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 300,
+        "耗时秒": 6.44
+      }
+    },
+    {
+      "target": "COC(=O)c1ccc(CN2CC3CN(Cc4ccc(Oc5nc6ccccc6s5)cc4)CC3C2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 401,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1329,
+        "耗时秒": 8.18
+      }
+    },
+    {
+      "target": "O=C(O)c1ccc(CN2CC3CN(Cc4ccc(Oc5nc6ccccc6s5)cc4)CC3C2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 361,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1178,
+        "耗时秒": 8.21
+      }
+    },
+    {
+      "target": "O=C(O)CN1CC2CN(Cc3ccc(Oc4nc5ccccc5s4)cc3)CC2C1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 365,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1067,
+        "耗时秒": 5.93
+      }
+    },
+    {
+      "target": "O=C(OCCl)Oc1ccc([N+](=O)[O-])cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 52,
+        "可用路线": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 41,
+        "达路线上限": 1,
+        "耗时秒": 0.75
+      }
+    },
+    {
+      "target": "O=C(OCI)Oc1ccc([N+](=O)[O-])cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 49,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 49,
+        "耗时秒": 0.98
+      }
+    },
+    {
+      "target": "O=C(O)CC1(CNC(=O)OC(OC(=O)c2ccccc2)c2ccccc2)CCCCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 140,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 131,
+        "可用路线": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.99
+      }
+    },
+    {
+      "target": "c1ccc(C2SCCCS2)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 18,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 12,
+        "达路线上限": 1,
+        "耗时秒": 0.41
+      }
+    },
+    {
+      "target": "OC(Cc1ccccc1)C1(c2ccccc2)SCCCS1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 62,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 139,
+        "耗时秒": 2.19
+      }
+    },
+    {
+      "target": "O=C(c1ccccc1)C(O)Cc1ccccc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 86,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 122,
+        "达路线上限": 1,
+        "耗时秒": 1.26
+      }
+    },
+    {
+      "target": "CC(C)C(Cl)OC(=O)NCC1(CC(=O)O)CCCCC1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 105,
+        "可用路线": 3,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 97,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.26
+      }
+    },
+    {
+      "target": "CC(C)C(OC(=O)NCC1(CC(=O)O)CCCCC1)OC(=O)c1cccnc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 129,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 210,
+        "可用路线": 1,
+        "耗时秒": 2.68
+      }
+    },
+    {
+      "target": "CC(C)C(Cl)OC(=O)NCC1(CC(=O)OCc2ccccc2)CCCCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 127,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 381,
+        "可用路线": 4,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 2.69
+      }
+    },
+    {
+      "target": "CCOC(C)(OCC)C(=O)O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 68,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 64,
+        "达路线上限": 1,
+        "耗时秒": 0.66
+      }
+    },
+    {
+      "target": "CC(C)C1SCCCS1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 18,
+        "可用路线": 5,
+        "重复路线跳过": 1,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 14,
+        "达路线上限": 1,
+        "耗时秒": 0.36
+      }
+    },
+    {
+      "target": "CCCC(O)C1(C(C)C)SCCCS1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 50,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 93,
+        "可用路线": 1,
+        "重复路线跳过": 1,
+        "不可用:R1_残基路线": 1,
+        "耗时秒": 0.89
+      }
+    },
+    {
+      "target": "CCCC(O)C(=O)C(C)C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 61,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 90,
+        "可用路线": 4,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.63
+      }
+    },
+    {
+      "target": "CCCC(OC(=O)NCC1(CC(=O)O)CCCCC1)OC(=O)C(C)C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 148,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 163,
+        "可用路线": 3,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 1.47
+      }
+    },
+    {
+      "target": "COC(=O)CC1(CNC(=O)OC(Cl)C(C)C)CCCCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 154,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 369,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 1.79
+      }
+    },
+    {
+      "target": "COC(=O)CC1(CNC(=O)OC(OC(=O)C(C)C)C(C)C)CCCCC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 194,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 606,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 2.81
+      }
+    },
+    {
+      "target": "COC(=O)CC1(CNC(=O)OC(OC(=O)c2ccccc2)C(C)C)CCCCC1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 180,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.02
+      }
+    },
+    {
+      "target": "CC(C)CC(CNC(=O)OC(C)OC(=O)C(C)C)CC(=O)O",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 128,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 334,
+        "耗时秒": 2.16
+      }
+    },
+    {
+      "target": "CC(C)CC(CNC(=O)OC(OC(=O)C(C)C)C(C)C)CC(=O)O",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 130,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 264,
+        "可用路线": 1,
+        "耗时秒": 2.07
+      }
+    },
+    {
+      "target": "CC1(C(=O)O)OCCO1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 86,
+        "可用路线": 3,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 48,
+        "达路线上限": 1,
+        "耗时秒": 0.4
+      }
+    },
+    {
+      "target": "CCCCCCCC(=O)O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 95,
+        "可用路线": 4,
+        "达路线上限": 1,
+        "耗时秒": 0.27
+      }
+    },
+    {
+      "target": "CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 51,
+        "可用路线": 3,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 72,
+        "达路线上限": 1,
+        "耗时秒": 0.67
+      }
+    },
+    {
+      "target": "C[Si](C)(C)CC[Si](C)(C)O[Si](C)(C)CCCOCC1CO1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.16
+      }
+    },
+    {
+      "target": "C[Si](C)(C)CC[Si](C)(C)O[Si](C)(C)CCCOCC(O)CN1CCN(CCO)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.6
+      }
+    },
+    {
+      "target": "C[Si](C)(C)CC[Si](C)(C)O[Si](C)(C)CCCOCC(O)CNCCOCCO",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.37
+      }
+    },
+    {
+      "target": "C[Si](C)(C)CC[Si](C)(C)O[Si](C)(C)CCCOCC(O)CNCCOCCOCCO",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.4
+      }
+    },
+    {
+      "target": "O=C(CCl)OCCOC(=O)CCl",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 110,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 64,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.42
+      }
+    },
+    {
+      "target": "Nc1ccc(OCC(=O)OCCOC(=O)COc2ccc(N)cc2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 1,
+      "n_usable": 1,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 222,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 643,
+        "可用路线": 1,
+        "耗时秒": 3.45
+      }
+    },
+    {
+      "target": "O=C(CCl)OCCCCOC(=O)CCl",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 120,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 83,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.48
+      }
+    },
+    {
+      "target": "C=C(C)C(=O)NCCC[Si](OC)(OC)OC",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.24
+      }
+    },
+    {
+      "target": "CCCCc1nc(Cl)c(C(=O)OCC(=O)O)n1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 281,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 836,
+        "耗时秒": 8.5
+      }
+    },
+    {
+      "target": "O=C(CCO)OCc1ccccc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 58,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 0.38
+      }
+    },
+    {
+      "target": "COP(=O)(OC)O[C@H]1CO[C@H]2[C@@H]1OC[C@H]2O[N+](=O)[O-]",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 43,
+        "可用路线": 5,
+        "重复路线跳过": 7,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 125,
+        "达路线上限": 1,
+        "耗时秒": 1.32
+      }
+    },
+    {
+      "target": "COP(=O)(O)O[C@H]1CO[C@H]2[C@@H]1OC[C@H]2O[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 43,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 87,
+        "无切断方案": 1,
+        "耗时秒": 1.06
+      }
+    },
+    {
+      "target": "COP(=O)(OCCl)O[C@H]1CO[C@H]2[C@@H]1OC[C@H]2O[N+](=O)[O-]",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 49,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 94,
+        "耗时秒": 1.17
+      }
+    },
+    {
+      "target": "CC(C)(O)C(=O)c1ccc(OCCOCC2CO2)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 138,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 137,
+        "可用路线": 4,
+        "重复路线跳过": 6,
+        "达路线上限": 1,
+        "耗时秒": 1.34
+      }
+    },
+    {
+      "target": "CC(=O)OCCc1ccc(C(=O)C(C)C)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 110,
+        "可用路线": 4,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 86,
+        "达路线上限": 1,
+        "耗时秒": 0.96
+      }
+    },
+    {
+      "target": "COC(=O)CCN(CCC[Si](OC)(OC)OC)CCC(=O)OC",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.47
+      }
+    },
+    {
+      "target": "COP(=O)(CCOc1ccc(C(=O)C(C)(C)O)cc1)OC",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 96,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 33,
+        "耗时秒": 1.13
+      }
+    },
+    {
+      "target": "CC(C)C(=O)c1ccc(CCBr)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 78,
+        "可用路线": 4,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 6,
+        "达路线上限": 1,
+        "耗时秒": 0.48
+      }
+    },
+    {
+      "target": "CC(C)(Br)C(=O)c1ccc(CCBr)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 80,
+        "可用路线": 6,
+        "重复路线跳过": 2,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 16,
+        "达路线上限": 1,
+        "耗时秒": 0.57
+      }
+    },
+    {
+      "target": "CC(C)(O)C(=O)c1ccc(CCBr)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 85,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 42,
+        "达路线上限": 1,
+        "耗时秒": 0.76
+      }
+    },
+    {
+      "target": "CC(C)(O)C(=O)c1ccc(CCP(=O)(O)O)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 77,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 83,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 1.23
+      }
+    },
+    {
+      "target": "COP(=O)(CCC(c1ccc(C(=O)C(C)(C)O)cc1)c1ccc(C(=O)C(C)(C)O)cc1)OC",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 117,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 148,
+        "耗时秒": 2.71
+      }
+    },
+    {
+      "target": "COC(=O)CC(c1ccccc1)c1ccc(C(=O)C(C)C)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 131,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 89,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.3
+      }
+    },
+    {
+      "target": "COC(=O)CC(c1ccccc1)c1ccc(C(=O)C(C)(C)Br)cc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 129,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 89,
+        "可用路线": 3,
+        "重复路线跳过": 1,
+        "达路线上限": 1,
+        "耗时秒": 1.32
+      }
+    },
+    {
+      "target": "CC(C)(O)C(=O)c1ccc(C(CC(=O)O)c2ccccc2)cc1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 92,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 24,
+        "达路线上限": 1,
+        "耗时秒": 0.97
+      }
+    },
+    {
+      "target": "COc1ccc(C(=O)C2(O)CCCCC2C(=O)NCCC[SiH3])cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 0,
+        "无切断方案": 1,
+        "耗时秒": 0.59
+      }
+    },
+    {
+      "target": "COc1ccc(C(=O)C2(O)CCCCC2C(=O)N(CCO)CCO)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 391,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 708,
+        "耗时秒": 3.96
+      }
+    },
+    {
+      "target": "COC(=O)CC(c1ccccc1)c1ccc(C(=O)C2(Br)CCCCC2)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 175,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 441,
+        "耗时秒": 3.29
+      }
+    },
+    {
+      "target": "O=C(C1(O)CCCCC1c1ccc(CCO)cc1)C1(O)CCCCC1c1ccc(CCO)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 190,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 154,
+        "耗时秒": 6.82
+      }
+    },
+    {
+      "target": "O=C(Nc1ccc(Cl)c(F)c1)C(F)(F)F",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 78,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 68,
+        "可用路线": 6,
+        "重复路线跳过": 2,
+        "达路线上限": 1,
+        "耗时秒": 0.8
+      }
+    },
+    {
+      "target": "COC(=O)/C=C/c1cc(Cl)ccc1-n1cnnn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 136,
+        "深度1_递归分支": 3,
+        "深度2_切断方案": 340,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 1.89
+      }
+    },
+    {
+      "target": "O=C(O)/C=C/c1cc(Cl)ccc1-n1cnnn1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 91,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 305,
+        "耗时秒": 2.02
+      }
+    },
+    {
+      "target": "COC(=O)C[C@H](NC(=O)/C=C/c1cc(Cl)ccc1-n1cnnn1)C(=O)Nc1ccc(C(=O)O)cc1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 286,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 848,
+        "耗时秒": 6.03
+      }
+    },
+    {
+      "target": "NC1CCCCNC1=O",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 70,
+        "可用路线": 3,
+        "重复路线跳过": 4,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 57,
+        "达路线上限": 1,
+        "耗时秒": 0.64
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)C(Cc1ccccc1)N=C(c1ccccc1)c1ccccc1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 157,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 229,
+        "可用路线": 3,
+        "重复路线跳过": 3,
+        "达路线上限": 1,
+        "耗时秒": 2.53
+      }
+    },
+    {
+      "target": "Cc1ccc([N+](=O)[O-])c(-c2c([N+](=O)[O-])ccc(C)c2C)c1C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 172,
+        "深度1_递归分支": 2,
+        "深度2_切断方案": 207,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 2.2
+      }
+    },
+    {
+      "target": "Cc1ccc(N)c(-c2c(N)ccc(C)c2C)c1C",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 166,
+        "深度1_递归分支": 1,
+        "深度2_切断方案": 69,
+        "可用路线": 2,
+        "重复路线跳过": 2,
+        "耗时秒": 1.24
+      }
+    },
+    {
+      "target": "Clc1cc(Nc2cnccn2)ncn1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 53,
+        "可用路线": 5,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 32,
+        "达路线上限": 1,
+        "耗时秒": 0.48
+      }
+    },
+    {
+      "target": "NCC1CCN(c2cc(Nc3cnccn3)ncn2)CC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 91,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 211,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 1.78
+      }
+    },
+    {
+      "target": "N#Cc1cnc(Nc2cc(Cl)ncn2)cn1",
+      "ok": true,
+      "depth": 1,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 69,
+        "可用路线": 5,
+        "重复路线跳过": 3,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 35,
+        "达路线上限": 1,
+        "耗时秒": 0.59
+      }
+    },
+    {
+      "target": "N#Cc1cnc(Nc2cc(NCC3CCNCC3)ncn2)cn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 2,
+      "n_usable": 2,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 123,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 256,
+        "可用路线": 2,
+        "重复路线跳过": 6,
+        "耗时秒": 2.25
+      }
+    },
+    {
+      "target": "N#Cc1cnc(Nc2cc(NCC3CCOCC3)ncn2)cn1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 111,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 197,
+        "可用路线": 5,
+        "重复路线跳过": 7,
+        "达路线上限": 1,
+        "耗时秒": 1.76
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2cc(Br)ncc2[N+](=O)[O-])CC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 354,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 954,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 3.83
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2cc(Nc3cnc(C#N)cn3)ncc2[N+](=O)[O-])CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 383,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 1007,
+        "耗时秒": 5.87
+      }
+    },
+    {
+      "target": "CC(C)(C)OC(=O)N1CCC(CNc2cc(Nc3cnc(C#N)cn3)ncc2N)CC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 378,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 972,
+        "耗时秒": 5.74
+      }
+    },
+    {
+      "target": "N#Cc1cnc(Nc2cc(NCC3CCNCC3)c(N)cn2)cn1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 135,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 301,
+        "耗时秒": 2.74
+      }
+    },
+    {
+      "target": "CC(=O)Nc1cnc(Nc2cnc(C#N)cn2)cc1NCC1CCNCC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 185,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 535,
+        "耗时秒": 3.87
+      }
+    },
+    {
+      "target": "COC(=O)c1cnc(Cl)cc1NCC1CCN(C(=O)OC(C)(C)C)CC1",
+      "ok": true,
+      "depth": 2,
+      "n_routes": 3,
+      "n_usable": 3,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 431,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 770,
+        "可用路线": 3,
+        "重复路线跳过": 5,
+        "达路线上限": 1,
+        "耗时秒": 3.39
+      }
+    },
+    {
+      "target": "COC(=O)c1cnc(Nc2cnc(C#N)cn2)cc1NCC1CCNCC1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 208,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 544,
+        "耗时秒": 3.49
+      }
+    },
+    {
+      "target": "N#Cc1cnc(Nc2cc(NCC3CCNCC3)c(C(=O)Nc3ccccc3)cn2)cn1",
+      "ok": false,
+      "depth": null,
+      "n_routes": 0,
+      "n_usable": 0,
+      "stat": {
+        "启发式": 1,
+        "深度1_切断方案": 178,
+        "深度1_递归分支": 4,
+        "深度2_切断方案": 536,
+        "耗时秒": 4.91
+      }
+    }
+  ]
+}

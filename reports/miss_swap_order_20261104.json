@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-11-04 18:35:34",
+  "n_miss": 226,
+  "configs": {
+    "original": {
+      "hit": 0,
+      "n": 226,
+      "seconds": 18.7
+    },
+    "both_orders": {
+      "hit": 0,
+      "n": 226,
+      "seconds": 18.5
+    },
+    "both_orders+mined_wide": {
+      "hit": 7,
+      "n": 226,
+      "seconds": 12.2
+    }
+  }
+}

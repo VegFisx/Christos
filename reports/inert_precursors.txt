@@ -1,0 +1,35 @@
+5 个目标上'全部前体可得'的路线 764 条
+
+前体重原子数分布（重原子数: 出现次数）：
+     2 原子 :    652  ( 42.7%)
+     3 原子 :     10  (  0.7%)
+     4 原子 :     48  (  3.1%)
+     8 原子 :      8  (  0.5%)
+     9 原子 :      8  (  0.5%)
+    10 原子 :    112  (  7.3%)
+    19 原子 :    642  ( 42.0%)
+    31 原子 :     48  (  3.1%)
+
+★ 惰性小分子(<=2 重原子: 水/甲醇/乙烷/氯甲烷/CO2…)占全部前体的 652/1528 = 42.7%
+
+含这类小分子的路线占比，按反应类型（前 12）：
+   100.0%    156/156   snar_alcohol
+   100.0%    156/156   ester_schotten_baumann
+   100.0%    104/104   esterification
+   100.0%     78/78    ester_sulfonic_schotten_baumann
+   100.0%     60/60    mitsunobu
+   100.0%     52/52    williamson
+   100.0%     36/36    ullmann_phenol
+     0.0%      0/48    C_C_decarboxylation
+
+例子:
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']
+   [ester_schotten_baumann] ['CCl', 'O=c1c2cc(O)c(O)cc2oc2cc(O)cc(O)c12']

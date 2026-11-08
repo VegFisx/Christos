@@ -38,7 +38,10 @@ for _p in (ROOT / "core", ROOT / "conditions", ROOT / "tools", ROOT / "sources")
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-DB = "file:D:/TCMAI/tcm.db?mode=ro"
+import os
+
+_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
+DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 
 # 预设档（preset 臂）与文献条件（lit 臂）逐条对照。
 # literature 字段里的数值必须能在 reports/paper/paozhi_sources_20261031.json、

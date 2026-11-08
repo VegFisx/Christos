@@ -1,0 +1,44 @@
+========================================================================================
+condition_profile 的类型分布
+========================================================================================
+Counter({'str': 63})
+
+前 12 条的实际值：
+  酯水解                    'hydrolysis'
+  糖苷水解                   'hydrolysis'
+  酰胺水解                   'hydrolysis'
+  硫酸酯水解                  'hydrolysis'
+  磷酸酯水解                  'hydrolysis'
+  缩醛水解                   'hydrolysis'
+  半缩醛水解                  'hydrolysis'
+  羟基氧化                   'oxidation'
+  醛氧化                    'oxidation'
+  酚氧化成醌                  'oxidation'
+  胺氧化                    'oxidation'
+  酮还原                    'reduction'
+
+不同的 condition_profile 取值（去重）：
+   17 条  thermal
+   15 条  hydrolysis
+   13 条  oxidation
+   11 条  ambient
+    7 条  reduction
+
+--- 找一条有 profile 的规则，看完整字段 ---
+{
+  "id": "hydrolysis_ester_001",
+  "name": "酯水解",
+  "category": "hydrolysis",
+  "smarts": "[C:1](=[O:2])[O:3][#6:4]>>[C:1](=[O:2])[O:3][H].[C:4][OH]",
+  "reversible": false,
+  "co_reagents": {
+    "H2O": 1
+  },
+  "byproducts": {},
+  "condition_profile": "hydrolysis",
+  "priority": 0.85,
+  "status": "active",
+  "notes": "实测差值 O1H2，补 1 分子水即配平。乌头碱减毒主途径。引擎须用 RDChiral：rdkit 原生 RunReactants 在环内断键时会复制原子。 【修复】取代基碳原写成 [C:]（只匹配脂肪碳），导致【酚酯/芳基酰胺】等芳香取代底物匹配不上。已改为 [#6:]（任意碳）。同类问题见糖苷水解。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】",
+  "max_products_per_molecule": 3,
+  "thermo_unreliable": true
+}

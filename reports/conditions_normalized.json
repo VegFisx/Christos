@@ -1,0 +1,1710 @@
+{
+  "ART": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "Boronate_SaturatedAliphatic",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Bromide_Het5",
+      "X-Bromide_Het5Het5",
+      "X-Bromide_Het5Het6",
+      "X-Bromide_Het5Phe",
+      "X-Bromide_Het6"
+    ]
+  },
+  "B-H": {
+    "n_ord_matched": 786,
+    "solvents": [
+      "toluene",
+      "water",
+      "1,4-dioxane",
+      "DMF",
+      "EtOH",
+      "EtOAc"
+    ],
+    "catalysts": [
+      "Pd2(dba)3",
+      "Pd(OAc)2",
+      "BINAP"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "potassium carbonate",
+      "cesium carbonate",
+      "DIPEA",
+      "water",
+      "sodium tert-butoxide"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -78.0,
+      "median": 100.0,
+      "max": 250.0,
+      "n": 271,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 100.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 3.0,
+      "max": 10080.0,
+      "n": 205,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_AcyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_CyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_CyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_CyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_Primary_SaturatedAliphatic",
+      "Amine_Primary_UnsaturatedAliphatic"
+    ]
+  },
+  "C_C_decarboxylation": {
+    "n_ord_matched": 4,
+    "solvents": [
+      "water",
+      "DMSO",
+      "DMF",
+      "toluene",
+      "EtOAc"
+    ],
+    "catalysts": [
+      "CuI",
+      "copper(I) iodide"
+    ],
+    "auxiliary_reagents": [
+      "NaOH",
+      "NaH",
+      "water ether",
+      "potassium trifluoroacetate",
+      "toluene",
+      "sodium 2,2,3,3,3-pentafluoropropanoate"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 120.0,
+      "median": 135.0,
+      "max": 150.0,
+      "n": 2,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 135.0
+    },
+    "time_min": {
+      "median": 20.0,
+      "min": 20.0,
+      "max": 20.0,
+      "n": 1,
+      "default": 20.0
+    },
+    "ph": null,
+    "template_categories": [
+      "EsterAcyclic",
+      "Acid_SaturatedAliphatic",
+      "Acid_UnsaturatedAliphatic",
+      "Acid_Aromatic",
+      "Acid_Heteroaromatic",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe"
+    ]
+  },
+  "amide_coupling": {
+    "n_ord_matched": 1285,
+    "solvents": [
+      "DMF",
+      "DCM",
+      "water",
+      "THF",
+      "EtOAc"
+    ],
+    "catalysts": [
+      "DMF",
+      "DMAP",
+      "4-dimethylaminopyridine",
+      "N,N-dimethylformamide",
+      "4-(dimethylamino)pyridine",
+      "4-Dimethylaminopyridine"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "HATU",
+      "DIPEA",
+      "HOBt",
+      "DIEA",
+      "EDC"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -60.0,
+      "median": 25.0,
+      "max": 200.0,
+      "n": 135,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 25.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 2.0,
+      "max": 14400.0,
+      "n": 618,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Acid_SaturatedAliphatic",
+      "Acid_UnsaturatedAliphatic",
+      "Acid_Aromatic",
+      "Acid_Heteroaromatic",
+      "Thioacid_SaturatedAliphatic",
+      "Thioacid_UnsaturatedAliphatic",
+      "Thioacid_Aromatic",
+      "Thioacid_Heteroaromatic"
+    ]
+  },
+  "amine_acetylation": {
+    "n_ord_matched": 493,
+    "solvents": [
+      "DCM",
+      "THF",
+      "water"
+    ],
+    "catalysts": [
+      "DMAP",
+      "4-dimethylaminopyridine",
+      "4-fluorobenzoyl chloride",
+      "pyridine",
+      "N,N-dimethylpyridine-4-amine",
+      "4-DMAP"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "water",
+      "pyridine",
+      "Et3N",
+      "hydrochloric acid",
+      "DIPEA"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -60.0,
+      "median": 0.0,
+      "max": 130.0,
+      "n": 66,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 0.0
+    },
+    "time_min": {
+      "median": 120.0,
+      "min": 3.0,
+      "max": 4320.0,
+      "n": 285,
+      "default": 120.0
+    },
+    "ph": null,
+    "template_categories": [
+      "AcidX-Bromide_SaturatedAliphatic",
+      "AcidX-Bromide_UnsaturatedAliphatic",
+      "AcidX-Chloride_SaturatedAliphatic",
+      "AcidX-Chloride_UnsaturatedAliphatic",
+      "AcidX-Fluoride_SaturatedAliphatic",
+      "AcidX-Fluoride_UnsaturatedAliphatic",
+      "AcidX-Iodide_SaturatedAliphatic",
+      "AcidX-Iodide_UnsaturatedAliphatic"
+    ]
+  },
+  "amine_sulfonation": {
+    "n_ord_matched": 315,
+    "solvents": [
+      "pyridine",
+      "DCM",
+      "water",
+      "THF"
+    ],
+    "catalysts": [
+      "DMAP",
+      "4-dimethylaminopyridine",
+      "zinc",
+      "4-Dimethylaminopyridine",
+      "nickel(II) chloride",
+      "4-dimethylamino-pyridine"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "pyridine",
+      "hydrochloric acid",
+      "Triethylamine",
+      "water",
+      "HCl"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -30.0,
+      "median": 0.0,
+      "max": 150.0,
+      "n": 47,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 0.0
+    },
+    "time_min": {
+      "median": 240.0,
+      "min": 4.0,
+      "max": 7200.0,
+      "n": 171,
+      "default": 240.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Sulfonic_Aliphatic",
+      "Sulfonyl-Bromide_Aliphatic",
+      "Sulfonyl-Chloride_Aliphatic",
+      "Sulfonyl-Fluoride_Aliphatic",
+      "Sulfonyl-Iodide_Aliphatic",
+      "Sulfonyl-Triflate_Aliphatic",
+      "Sulfonic_Aromatic",
+      "Sulfonyl-Bromide_Aromatic"
+    ]
+  },
+  "chan_lam": {
+    "n_ord_matched": 5,
+    "solvents": [
+      "DCM"
+    ],
+    "catalysts": [
+      "copper(II) acetate",
+      "copper (II) acetate",
+      "copper diacetate"
+    ],
+    "auxiliary_reagents": [
+      "pyridine",
+      "triethylamine",
+      "4-(5-chloro-2-methoxy-phenyl)-pyridine-2,6-diamine trifluoroacetic acid salt",
+      "4A",
+      "water"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": {
+      "median": 740.0,
+      "min": 40.0,
+      "max": 1440.0,
+      "n": 2,
+      "default": 740.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Boronic_SaturatedAliphatic",
+      "Boronic_UnsaturatedAliphatic",
+      "BoronicCyclic",
+      "Boronic_Aromatic",
+      "Boronic_Heteroaromatic",
+      "Boronate_SaturatedAliphatic",
+      "Boronate_UnsaturatedAliphatic",
+      "Boronate_Aromatic"
+    ]
+  },
+  "cross_electrophile_coupling": {
+    "n_ord_matched": 17,
+    "solvents": [
+      "THF",
+      "Et2O",
+      "water",
+      "1,4-dioxane"
+    ],
+    "catalysts": [
+      "zinc",
+      "ZnBr2",
+      "[1,1′-bis(diphenylphosphino)ferrocene]palladium(II) chloride",
+      "Zinc",
+      "Palladium(II) acetate",
+      "[1,1′-bis(diphenylphosphino)-ferrocene]dichloro palladium(II)"
+    ],
+    "auxiliary_reagents": [
+      "magnesium",
+      "bis(pinacolato)diboron",
+      "potassium acetate",
+      "bromo[4-(methoxycarbonyl)benzyl]zinc",
+      "1,2-dibromoethane",
+      "Grignard reagent"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 70.0,
+      "max": 90.0,
+      "n": 7,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 70.0
+    },
+    "time_min": {
+      "median": 105.0,
+      "min": 10.0,
+      "max": 4320.0,
+      "n": 10,
+      "default": 105.0
+    },
+    "ph": null,
+    "template_categories": [
+      "X-Bromide_Aliph",
+      "X-Chloride_Aliph",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Bromide_Het5",
+      "X-Bromide_Het5Het5",
+      "X-Bromide_Het5Het6",
+      "X-Bromide_Het5Phe"
+    ]
+  },
+  "deoxygenative_coupling": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "PrimaryAlcoholAliphatic",
+      "PrimaryAlcoholAromatic",
+      "SecondaryAlcoholAliphaticAcyclic",
+      "SecondaryAlcoholAliphaticCyclic",
+      "SecondaryAlcoholAromaticAcyclic",
+      "SecondaryAlcoholAromaticCyclic",
+      "SecondaryAlcoholMixAcyclic",
+      "SecondaryAlcoholMixCyclic"
+    ]
+  },
+  "ester_schotten_baumann": {
+    "n_ord_matched": 93,
+    "solvents": [
+      "pyridine",
+      "DCM",
+      "THF",
+      "toluene"
+    ],
+    "catalysts": [
+      "4-dimethylaminopyridine",
+      "DMAP",
+      "benzyltriethylammonium chloride",
+      "p-methoxyphenol"
+    ],
+    "auxiliary_reagents": [
+      "pyridine",
+      "triethylamine",
+      "water",
+      "hydrochloric acid",
+      "ice",
+      "Triethylamine"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 22.0,
+      "max": 100.0,
+      "n": 12,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 22.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 5.0,
+      "max": 5760.0,
+      "n": 54,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "PrimaryAlcoholAliphatic",
+      "PrimaryAlcoholAromatic",
+      "SecondaryAlcoholAliphaticAcyclic",
+      "SecondaryAlcoholAliphaticCyclic",
+      "SecondaryAlcoholAromaticAcyclic",
+      "SecondaryAlcoholAromaticCyclic",
+      "SecondaryAlcoholMixAcyclic",
+      "SecondaryAlcoholMixCyclic"
+    ]
+  },
+  "ester_sulfonic_schotten_baumann": {
+    "n_ord_matched": 132,
+    "solvents": [
+      "DCM",
+      "pyridine",
+      "water"
+    ],
+    "catalysts": [
+      "DMAP",
+      "N,N-dimethylpyridin-4-amine",
+      "dimethylamino pyridine"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "pyridine",
+      "water",
+      "ice water",
+      "hydrochloric acid",
+      "ice"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -78.0,
+      "median": 0.0,
+      "max": 115.0,
+      "n": 30,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 0.0
+    },
+    "time_min": {
+      "median": 120.0,
+      "min": 10.0,
+      "max": 5760.0,
+      "n": 89,
+      "default": 120.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Sulfonyl-Bromide_Aliphatic",
+      "Sulfonyl-Chloride_Aliphatic",
+      "Sulfonyl-Fluoride_Aliphatic",
+      "Sulfonyl-Iodide_Aliphatic",
+      "Sulfonyl-Triflate_Aliphatic",
+      "Sulfonyl-Bromide_Aromatic",
+      "Sulfonyl-Chloride_Aromatic",
+      "Sulfonyl-Fluoride_Aromatic"
+    ]
+  },
+  "esterification": {
+    "n_ord_matched": 190,
+    "solvents": [
+      "DCM",
+      "EtOAc",
+      "CHCl3",
+      "DMF",
+      "water"
+    ],
+    "catalysts": [
+      "4-dimethylaminopyridine",
+      "DMAP",
+      "sulfuric acid",
+      "N,N-dimethylpyridin-4-amine",
+      "p-toluenesulphonic acid",
+      "4-(dimethylamino)pyridine"
+    ],
+    "auxiliary_reagents": [
+      "sulfuric acid",
+      "thionyl chloride",
+      "HCl",
+      "dicyclohexylcarbodiimide",
+      "H2SO4",
+      "ice water"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 36.0,
+      "max": 130.0,
+      "n": 25,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 36.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 10.0,
+      "max": 11520.0,
+      "n": 76,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Acid_SaturatedAliphatic",
+      "Acid_UnsaturatedAliphatic",
+      "Acid_Aromatic",
+      "Acid_Heteroaromatic",
+      "Thioacid_SaturatedAliphatic",
+      "Thioacid_UnsaturatedAliphatic",
+      "Thioacid_Aromatic",
+      "Thioacid_Heteroaromatic"
+    ]
+  },
+  "heck": {
+    "n_ord_matched": 12,
+    "solvents": [
+      "DMF",
+      "Et3N",
+      "MeCN",
+      "NMP",
+      "EtOAc",
+      "DIPEA"
+    ],
+    "catalysts": [
+      "Pd(OAc)2",
+      "tetrakis(triphenylphosphine)palladium(0)",
+      "palladium(II) acetate",
+      "triphenylphosphine",
+      "palladium (II) acetate",
+      "Dichlorobis(triphenylphosphine)palladium"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "tri-o-tolylphosphine",
+      "compound I",
+      "N-tert.butylamine",
+      "HCl",
+      "tri-(o-toly) phosphine"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 82.0,
+      "median": 100.0,
+      "max": 160.0,
+      "n": 8,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 100.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 300.0,
+      "max": 2400.0,
+      "n": 3,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "AlkeneTerminal",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe",
+      "X-Triflate_Phe",
+      "X-Triflate_PhePhe",
+      "X-Bromide_Het5"
+    ]
+  },
+  "horner_wadsworth_emmons": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "PhosphoricEster_SaturatedAliphatic",
+      "PhosphoricEster_UnsaturatedAliphatic",
+      "Aldehyde_SaturatedAliphatic",
+      "Aldehyde_UnsaturatedAliphatic",
+      "Aldehyde_Aromatic",
+      "Aldehyde_Heteroaromatic"
+    ]
+  },
+  "imidazole_Xketone_synthesis": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "Amidine",
+      "XKetoneAliphaticFluoride",
+      "XKetoneAliphaticChloride",
+      "XKetoneAliphaticBromide",
+      "XKetoneAliphaticIodide",
+      "XKetoneAliphaticTriflate",
+      "XKetoneAromaticFluoride",
+      "XKetoneAromaticChloride"
+    ]
+  },
+  "imidazole_condensation_acid": {
+    "n_ord_matched": 29,
+    "solvents": [
+      "water",
+      "EtOAc",
+      "DMF",
+      "DCM",
+      "phosphorus oxychloride"
+    ],
+    "catalysts": [],
+    "auxiliary_reagents": [
+      "HCl",
+      "sodium bicarbonate",
+      "polyphosphoric acid",
+      "NaOH",
+      "Et3N",
+      "water"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 117.5,
+      "max": 200.0,
+      "n": 14,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 117.5
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 7.5,
+      "max": 2880.0,
+      "n": 11,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Acid_SaturatedAliphatic",
+      "Acid_UnsaturatedAliphatic",
+      "Acid_Aromatic",
+      "Acid_Heteroaromatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_AcyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_Primary_SaturatedAliphatic"
+    ]
+  },
+  "imidazole_condensation_amine": {
+    "n_ord_matched": 16,
+    "solvents": [
+      "DMF",
+      "EtOH",
+      "water",
+      "DMA",
+      "toluene",
+      "NMP"
+    ],
+    "catalysts": [
+      "acetic acid"
+    ],
+    "auxiliary_reagents": [
+      "Ammonium acetate",
+      "K2CO3",
+      "Oxone",
+      "ferric chloride",
+      "Na2S2O5",
+      "oxone"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 70.0,
+      "max": 100.0,
+      "n": 5,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 70.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 90.0,
+      "max": 480.0,
+      "n": 7,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Aldehyde_SaturatedAliphatic",
+      "Aldehyde_UnsaturatedAliphatic",
+      "Aldehyde_Aromatic",
+      "Aldehyde_Heteroaromatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_AcyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_Primary_SaturatedAliphatic"
+    ]
+  },
+  "mitsunobu": {
+    "n_ord_matched": 130,
+    "solvents": [
+      "THF",
+      "toluene",
+      "DCM",
+      "EtOAc"
+    ],
+    "catalysts": [
+      "acetic acid"
+    ],
+    "auxiliary_reagents": [
+      "triphenylphosphine",
+      "diethyl azodicarboxylate",
+      "tributylphosphine",
+      "diisopropyl azodicarboxylate",
+      "DEAD",
+      "DIAD"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -5.0,
+      "median": 4.0,
+      "max": 70.0,
+      "n": 29,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 4.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 10.0,
+      "max": 3600.0,
+      "n": 77,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Phenol",
+      "PhenolHeteroaromatic5membered",
+      "PhenolHeteroaromatic6membered",
+      "Thiophenol",
+      "ThiophenolHeteroaromatic5membered",
+      "ThiophenolHeteroaromatic6membered",
+      "PrimaryAlcoholAliphatic",
+      "PrimaryAlcoholAromatic"
+    ]
+  },
+  "negishi_batch": {
+    "n_ord_matched": 24,
+    "solvents": [
+      "THF",
+      "EtOAc",
+      "water",
+      "ammonium chloride"
+    ],
+    "catalysts": [
+      "Pd(PPh3)4",
+      "PdCl2(dppf)",
+      "tetrakis(triphenylphosphine)palladium(0)",
+      "tetrakis(triphenylphosphine)palladium",
+      "zinc",
+      "bis(tri-tert-butylphosphine)palladium"
+    ],
+    "auxiliary_reagents": [
+      "solution",
+      "ammonium chloride",
+      "benzylzinc bromide",
+      "2-pyridylzinc bromide",
+      "HCl",
+      "EtOAc"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 20.0,
+      "median": 65.0,
+      "max": 100.0,
+      "n": 10,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 65.0
+    },
+    "time_min": {
+      "median": 225.0,
+      "min": 10.0,
+      "max": 2880.0,
+      "n": 14,
+      "default": 225.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Metals",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe",
+      "X-Triflate_Phe",
+      "X-Triflate_PhePhe",
+      "X-Bromide_Het5"
+    ]
+  },
+  "negishi_insitu": {
+    "n_ord_matched": 10,
+    "solvents": [
+      "THF",
+      "DMF",
+      "water",
+      "DMA",
+      "NH4Cl"
+    ],
+    "catalysts": [
+      "zinc",
+      "Zinc",
+      "ZnBr2",
+      "Palladium(II) acetate",
+      "tetrakis(triphenylphosphine)palladium(O)",
+      "Pd2(dba)3"
+    ],
+    "auxiliary_reagents": [
+      "1,2-dibromoethane",
+      "bromo[4-(methoxycarbonyl)benzyl]zinc",
+      "TMS-Cl",
+      "2-dicylochexylphosphino-2′,6′-dimethoxy-1′,1′,biphenyl",
+      "sec-butyllithium",
+      "ethyl acetate"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 20.0,
+      "median": 60.0,
+      "max": 80.0,
+      "n": 8,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 60.0
+    },
+    "time_min": {
+      "median": 60.0,
+      "min": 5.0,
+      "max": 480.0,
+      "n": 9,
+      "default": 60.0
+    },
+    "ph": null,
+    "template_categories": [
+      "X-Chloride_Aliph",
+      "X-Bromide_Aliph",
+      "X-Iodide_Aliph",
+      "X-Triflate_Aliph",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe"
+    ]
+  },
+  "oxadiazole_condensation": {
+    "n_ord_matched": 5,
+    "solvents": [
+      "THF"
+    ],
+    "catalysts": [],
+    "auxiliary_reagents": [
+      "Burgess reagent",
+      "HATU",
+      "TEA",
+      "ice water",
+      "sodium hydrogencarbonate",
+      "Phosphorus oxychloride"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 150.0,
+      "median": 150.0,
+      "max": 150.0,
+      "n": 1,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 150.0
+    },
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "HydrazineTerminalCarbamoyl",
+      "HydroxyAmidine",
+      "Acid_SaturatedAliphatic",
+      "Acid_UnsaturatedAliphatic",
+      "Acid_Aromatic",
+      "Acid_Heteroaromatic"
+    ]
+  },
+  "pinacolatoborylation": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "AliphaticDiboronate",
+      "AlkeneTerminal"
+    ]
+  },
+  "reductive_amination_aldehyde": {
+    "n_ord_matched": 250,
+    "solvents": [
+      "MeOH",
+      "DCE",
+      "AcOH",
+      "DCM"
+    ],
+    "catalysts": [
+      "acetic acid",
+      "zinc chloride",
+      "titanium tetraisopropoxide",
+      "Titanium (IV) isopropoxide",
+      "platinum on carbon",
+      "NaCNBH3 ZnCl2"
+    ],
+    "auxiliary_reagents": [
+      "sodium triacetoxyborohydride",
+      "acetic acid",
+      "NaBH(OAc)3",
+      "sodium cyanoborohydride",
+      "sodium borohydride",
+      "Sodium triacetoxyborohydride"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -20.0,
+      "median": 39.5,
+      "max": 150.0,
+      "n": 22,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 39.5
+    },
+    "time_min": {
+      "median": 240.0,
+      "min": 2.0,
+      "max": 8640.0,
+      "n": 140,
+      "default": 240.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Aldehyde_SaturatedAliphatic",
+      "Aldehyde_UnsaturatedAliphatic",
+      "Aldehyde_Aromatic",
+      "Aldehyde_Heteroaromatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_AcyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_CyclicSecondary_SaturatedAliphatic-SaturatedAliphatic"
+    ]
+  },
+  "reductive_amination_ketone": {
+    "n_ord_matched": 116,
+    "solvents": [
+      "MeOH",
+      "AcOH",
+      "DCM",
+      "DCE"
+    ],
+    "catalysts": [
+      "palladium-on-charcoal",
+      "titanium (IV) chloride",
+      "acetic acid",
+      "palladium",
+      "Peariman's catalyst",
+      "Platinum dioxide"
+    ],
+    "auxiliary_reagents": [
+      "sodium triacetoxyborohydride",
+      "acetic acid",
+      "sodium cyanoborohydride",
+      "Sodium triacetoxyborohydride",
+      "NaBH(OAc)3",
+      "decaborane"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 60.0,
+      "max": 100.0,
+      "n": 5,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 60.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 5.0,
+      "max": 98880.0,
+      "n": 60,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "KetoneAromaticCyclic",
+      "KetoneAromaticAcyclic",
+      "KetoneAliphaticCyclic",
+      "KetoneAliphaticAcyclic",
+      "KetoneMixCyclic",
+      "KetoneMixAcyclic",
+      "Thioketone",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic"
+    ]
+  },
+  "sn2_nheterocycle": {
+    "n_ord_matched": 239,
+    "solvents": [
+      "DMF",
+      "water",
+      "EtOAc",
+      "THF"
+    ],
+    "catalysts": [
+      "tetrabutylammonium iodide",
+      "trimethylcetylammonium bromide",
+      "tetra-n-butylammonium iodide",
+      "tetrabutyl ammonium bromide"
+    ],
+    "auxiliary_reagents": [
+      "sodium hydride",
+      "potassium carbonate",
+      "NaH",
+      "water",
+      "K2CO3",
+      "cesium carbonate"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -20.0,
+      "median": 62.5,
+      "max": 150.0,
+      "n": 62,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 62.5
+    },
+    "time_min": {
+      "median": 90.0,
+      "min": 5.0,
+      "max": 4320.0,
+      "n": 140,
+      "default": 90.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Heterocycle5_1NH",
+      "Heterocycle5_polyHetNH",
+      "X-Bromide_Aliph",
+      "X-Bromide_Nitrile",
+      "X-Chloride_Aliph",
+      "X-Chloride_Nitrile",
+      "X-Iodide_Aliph",
+      "X-Iodide_Nitrile"
+    ]
+  },
+  "snar_alcohol": {
+    "n_ord_matched": 32,
+    "solvents": [
+      "DMF",
+      "NMP",
+      "water",
+      "toluene"
+    ],
+    "catalysts": [
+      "CuCl",
+      "tetra-n-butylammonium bromide",
+      "copper(II) oxide",
+      "copper (I) bromide",
+      "copper(I) chloride",
+      "Pd(dba)2"
+    ],
+    "auxiliary_reagents": [
+      "potassium carbonate",
+      "cesium carbonate",
+      "water",
+      "Sodium hydride",
+      "Cs2CO3",
+      "sodium hydride"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 100.0,
+      "max": 160.0,
+      "n": 15,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 100.0
+    },
+    "time_min": {
+      "median": 330.0,
+      "min": 10.0,
+      "max": 4320.0,
+      "n": 12,
+      "default": 330.0
+    },
+    "ph": null,
+    "template_categories": [
+      "PrimaryAlcoholAliphatic",
+      "PrimaryAlcoholAromatic",
+      "SecondaryAlcoholAliphaticAcyclic",
+      "SecondaryAlcoholAliphaticCyclic",
+      "SecondaryAlcoholAromaticAcyclic",
+      "SecondaryAlcoholAromaticCyclic",
+      "SecondaryAlcoholMixAcyclic",
+      "SecondaryAlcoholMixCyclic"
+    ]
+  },
+  "snar_amine": {
+    "n_ord_matched": 793,
+    "solvents": [
+      "water",
+      "DMSO",
+      "THF",
+      "DMF",
+      "MeCN",
+      "EtOH"
+    ],
+    "catalysts": [
+      "Pd(OAc)2",
+      "Pd2(dba)3",
+      "palladium (II) acetate",
+      "Pd2dba3"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "potassium carbonate",
+      "water",
+      "DIPEA",
+      "K2CO3",
+      "N,N-diisopropylethylamine"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -78.0,
+      "median": 100.0,
+      "max": 250.0,
+      "n": 267,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 100.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 3.0,
+      "max": 10080.0,
+      "n": 229,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "X-Chloride_Phe",
+      "X-Chloride_PhePhe",
+      "X-Chloride_Het5",
+      "X-Chloride_Het5Het5",
+      "X-Chloride_Het5Het6",
+      "X-Chloride_Het5Phe",
+      "X-Chloride_Het6",
+      "X-Chloride_Het6Het5"
+    ]
+  },
+  "snar_thiol": {
+    "n_ord_matched": 22,
+    "solvents": [
+      "THF",
+      "EtOH",
+      "DMF",
+      "MeCN"
+    ],
+    "catalysts": [
+      "Pd2(dba)3",
+      "4,5-bis(diphenylphosphino)-9,9-dimethylxanthene",
+      "4,5-bis(diphenylphosphino)-9,9-dimethyl-9H-xanthene",
+      "PdCl2(dppf)",
+      "tetrakis(triphenylphosphine)palladium(0)"
+    ],
+    "auxiliary_reagents": [
+      "N,N-diisopropylethylamine",
+      "diisopropylethylamine",
+      "N-ethyl-N-isopropylpropan-2-anine",
+      "cesium carbonate",
+      "CH2Cl2",
+      "Sodium hydride"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 50.0,
+      "median": 85.0,
+      "max": 210.0,
+      "n": 8,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 85.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 10.0,
+      "max": 960.0,
+      "n": 5,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "PrimaryThiolAliphatic",
+      "PrimaryThiolAromatic",
+      "SecondaryThiolAliphaticAcyclic",
+      "SecondaryThiolAliphaticCyclic",
+      "SecondaryThiolAromaticAcyclic",
+      "SecondaryThiolAromaticCyclic",
+      "SecondaryThiolMixAcyclic",
+      "SecondaryThiolMixCyclic"
+    ]
+  },
+  "sonogashira": {
+    "n_ord_matched": 182,
+    "solvents": [
+      "Et3N",
+      "DMF",
+      "EtOAc",
+      "THF"
+    ],
+    "catalysts": [
+      "CuI",
+      "copper(I) iodide",
+      "copper(I)iodide",
+      "dichlorobis(triphenylphosphine)palladium(II)",
+      "PdCl2(PPh3)2"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "triphenylphosphine",
+      "triethyl amine",
+      "tetrahydrofuran",
+      "cuprous iodide",
+      "diisopropylamine"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -2.5,
+      "median": 80.0,
+      "max": 150.0,
+      "n": 55,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 80.0
+    },
+    "time_min": {
+      "median": 420.0,
+      "min": 10.0,
+      "max": 4320.0,
+      "n": 54,
+      "default": 420.0
+    },
+    "ph": null,
+    "template_categories": [
+      "AlkyneTerminalAromatic",
+      "AlkyneTerminalAliphatic",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe",
+      "X-Triflate_Phe",
+      "X-Triflate_PhePhe"
+    ]
+  },
+  "suzuki": {
+    "n_ord_matched": 666,
+    "solvents": [
+      "water",
+      "toluene",
+      "1,4-dioxane",
+      "DMF",
+      "DME"
+    ],
+    "catalysts": [
+      "Pd(PPh3)4",
+      "tetrakis(triphenylphosphine)palladium(0)",
+      "tetrakis(triphenylphosphine)palladium",
+      "Pd(dppf)Cl2",
+      "PdCl2(dppf)",
+      "Pd(OAc)2"
+    ],
+    "auxiliary_reagents": [
+      "sodium carbonate",
+      "Na2CO3",
+      "potassium carbonate",
+      "K3PO4",
+      "K2CO3",
+      "water"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 90.0,
+      "max": 185.0,
+      "n": 249,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 90.0
+    },
+    "time_min": {
+      "median": 240.0,
+      "min": 5.0,
+      "max": 1560.0,
+      "n": 133,
+      "default": 240.0
+    },
+    "ph": null,
+    "template_categories": [
+      "BoronicCyclic",
+      "Boronic_Aromatic",
+      "Boronic_Heteroaromatic",
+      "Boronate_Aromatic",
+      "Boronate_Heteroaromatic",
+      "TrifluoroBoronateAromatic",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe"
+    ]
+  },
+  "tetrazole_synthesis": {
+    "n_ord_matched": 2,
+    "solvents": [
+      "THF",
+      "toluene"
+    ],
+    "catalysts": [],
+    "auxiliary_reagents": [
+      "{[4-(2′-amino-6′-methyl-biphenyl-3-sulfonyl)-5-methylsulfanyl-thiophen-2-yl]-imino-methyl}-carbamic acid tert-butyl ester",
+      "3-aminopropionitrile",
+      "dibutyltin oxide"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 80.0,
+      "median": 80.0,
+      "max": 80.0,
+      "n": 1,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 80.0
+    },
+    "time_min": {
+      "median": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "n": 1,
+      "default": 30.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Azide",
+      "Nitrile_SaturatedAliphatic",
+      "Nitrile_UnsaturatedAliphatic",
+      "Nitrile_Aromatic",
+      "Nitrile_Heteroaromatic"
+    ]
+  },
+  "triazole_synthesis_1": {
+    "n_ord_matched": 1,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "Azide",
+      "AlkyneTerminalAromatic",
+      "AlkyneTerminalAliphatic"
+    ]
+  },
+  "triazole_synthesis_2": {
+    "n_ord_matched": 0,
+    "solvents": [],
+    "catalysts": [],
+    "auxiliary_reagents": [],
+    "bases": [],
+    "reagents": [],
+    "temp_C": null,
+    "time_min": null,
+    "ph": null,
+    "template_categories": [
+      "HydrazineTerminalCarbamoyl",
+      "Nitrile_SaturatedAliphatic",
+      "Nitrile_UnsaturatedAliphatic",
+      "Nitrile_Aromatic",
+      "Nitrile_Heteroaromatic",
+      "IsoCyanate_SaturatedAliphatic",
+      "IsoCyanate_UnsaturatedAliphatic",
+      "IsoCyanate_Aromatic"
+    ]
+  },
+  "ullmann_X": {
+    "n_ord_matched": 22,
+    "solvents": [
+      "THF",
+      "water",
+      "Et2O",
+      "1,4-dioxane"
+    ],
+    "catalysts": [
+      "[1,1′-bis(diphenylphosphino)ferrocene]dichloropalladium(II)",
+      "zinc chloride",
+      "tetrakis(triphenylphosphine)palladium",
+      "Pd(PPh3)4",
+      "zincate",
+      "[1,1′-bis(diphenylphosphino)ferrocene]palladium(II) chloride"
+    ],
+    "auxiliary_reagents": [
+      "bis(pinacolato)diboron",
+      "potassium acetate",
+      "dichloromethane",
+      "potassium carbonate",
+      "lithium chloride",
+      "DCM"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -78.0,
+      "median": 80.0,
+      "max": 90.0,
+      "n": 12,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 80.0
+    },
+    "time_min": {
+      "median": 150.0,
+      "min": 5.0,
+      "max": 4320.0,
+      "n": 10,
+      "default": 150.0
+    },
+    "ph": null,
+    "template_categories": [
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe",
+      "X-Triflate_Phe",
+      "X-Triflate_PhePhe",
+      "X-Bromide_Het5",
+      "X-Bromide_Het5Het5"
+    ]
+  },
+  "ullmann_phenol": {
+    "n_ord_matched": 112,
+    "solvents": [
+      "DMF",
+      "water",
+      "DMSO",
+      "MeCN"
+    ],
+    "catalysts": [
+      "4-dimethylaminopyridine",
+      "CuCl",
+      "copper(II) oxide",
+      "copper (I) bromide",
+      "copper(I) chloride",
+      "Pd(dba)2"
+    ],
+    "auxiliary_reagents": [
+      "potassium carbonate",
+      "water",
+      "cesium carbonate",
+      "Cs2CO3",
+      "K2CO3",
+      "sodium hydride"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 100.0,
+      "max": 200.0,
+      "n": 52,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 100.0
+    },
+    "time_min": {
+      "median": 105.0,
+      "min": 10.0,
+      "max": 4320.0,
+      "n": 50,
+      "default": 105.0
+    },
+    "ph": null,
+    "template_categories": [
+      "Phenol",
+      "PhenolHeteroaromatic5membered",
+      "PhenolHeteroaromatic6membered",
+      "X-Bromide_Phe",
+      "X-Bromide_PhePhe",
+      "X-Iodide_Phe",
+      "X-Iodide_PhePhe",
+      "X-Triflate_Phe"
+    ]
+  },
+  "urea_formation": {
+    "n_ord_matched": 149,
+    "solvents": [
+      "THF",
+      "DCM",
+      "toluene",
+      "benzene"
+    ],
+    "catalysts": [
+      "phosphate",
+      "triethylamine"
+    ],
+    "auxiliary_reagents": [
+      "triethylamine",
+      "Et3N",
+      "diisopropylethylamine",
+      "water",
+      "HCl",
+      "urea"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": 0.0,
+      "median": 60.0,
+      "max": 110.0,
+      "n": 14,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 60.0
+    },
+    "time_min": {
+      "median": 480.0,
+      "min": 0.3,
+      "max": 8640.0,
+      "n": 68,
+      "default": 480.0
+    },
+    "ph": null,
+    "template_categories": [
+      "IsoCyanate_SaturatedAliphatic",
+      "IsoCyanate_UnsaturatedAliphatic",
+      "IsoCyanate_Aromatic",
+      "IsoCyanate_Heteroaromatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-SaturatedAliphatic",
+      "Amine_AcyclicSecondary_SaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_AcyclicSecondary_UnsaturatedAliphatic-UnsaturatedAliphatic",
+      "Amine_CyclicSecondary_SaturatedAliphatic-SaturatedAliphatic"
+    ]
+  },
+  "williamson": {
+    "n_ord_matched": 543,
+    "solvents": [
+      "DMF",
+      "water",
+      "acetone",
+      "MeCN"
+    ],
+    "catalysts": [
+      "tetrabutylammonium iodide",
+      "potassium iodide",
+      "silver oxide",
+      "zinc chloride",
+      "silver imidazolate",
+      "copper bronze"
+    ],
+    "auxiliary_reagents": [
+      "potassium carbonate",
+      "sodium hydride",
+      "K2CO3",
+      "water",
+      "NaH",
+      "cesium carbonate"
+    ],
+    "bases": [],
+    "reagents": [],
+    "temp_C": {
+      "min": -10.0,
+      "median": 65.0,
+      "max": 150.0,
+      "n": 131,
+      "units": [
+        "CELSIUS"
+      ],
+      "default": 65.0
+    },
+    "time_min": {
+      "median": 180.0,
+      "min": 2.0,
+      "max": 5760.0,
+      "n": 260,
+      "default": 180.0
+    },
+    "ph": null,
+    "template_categories": [
+      "X-Bromide_Aliph",
+      "X-Bromide_Nitrile",
+      "X-Chloride_Aliph",
+      "X-Chloride_Nitrile",
+      "X-Iodide_Aliph",
+      "X-Iodide_Nitrile",
+      "X-Triflate_Aliph",
+      "X-Triflate_Nitrile"
+    ]
+  }
+}

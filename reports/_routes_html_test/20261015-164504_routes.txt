@@ -1,0 +1,12 @@
+路线 1（1 步） 可用=True 原因=ok
+   1. [rdchiral_retro]
+      目标 CC(=O)Oc1ccccc1C(=O)O
+      前体 CC(=O)O[在池内] | O=C(O)c1ccccc1O[在池内]
+      终点：['CC(=O)O [COCONUT]', 'O=C(O)c1ccccc1O [COCONUT]']
+路线 2（1 步） 可用=True 原因=ok
+   1. [rdchiral_retro]
+      目标 CC(=O)Oc1ccccc1C(=O)O
+      前体 CC(=O)O[在池内] | O=C(O)c1ccccc1Cl[在池内]
+      终点：['CC(=O)O [COCONUT]', 'O=C(O)c1ccccc1Cl [COCONUT]']
+
+统计: {'启发式': 1, '深度1_切断方案': 95, '可用路线': 2, '重复路线跳过': 2, '耗时秒': 1.91}

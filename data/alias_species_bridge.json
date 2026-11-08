@@ -1,0 +1,2460 @@
+{
+ "[檵木]继木": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "一包花": {
+  "done": true,
+  "qid": "Q11090704",
+  "sci": "Polygala koi",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "曲江远志"
+ },
+ "一匹绸": {
+  "done": true,
+  "qid": "Q15482501",
+  "sci": "Argyreia capitiformis",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "毛藤花"
+ },
+ "一匹草": {
+  "done": true,
+  "qid": "Q4987356",
+  "sci": "Bulbophyllum andersonii",
+  "coconut_species": "bulbophyllum andersonii",
+  "n_compounds": 8,
+  "label": "梳帽卷瓣兰"
+ },
+ "一口红": {
+  "done": true,
+  "qid": "Q10894559",
+  "sci": "Ilex pedunculosa",
+  "coconut_species": "ilex pedunculosa",
+  "n_compounds": 3,
+  "label": "具柄冬青"
+ },
+ "一味药": {
+  "done": true,
+  "qid": "Q15249239",
+  "sci": "Indigofera bungeana",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "河北木蓝"
+ },
+ "一扫光": {
+  "done": true,
+  "qid": "Q15231605",
+  "sci": "Synotis erythropappa",
+  "coconut_species": "synotis erythropappa",
+  "n_compounds": 11,
+  "label": "红缨合耳菊"
+ },
+ "一把伞": {
+  "done": true,
+  "qid": "Q4069210",
+  "sci": "Arisaema erubescens",
+  "coconut_species": "arisaema erubescens",
+  "n_compounds": 64,
+  "label": "一把伞南星"
+ },
+ "一把篾": {
+  "done": true,
+  "qid": "Q10864583",
+  "sci": "Tetrastigma delavayi",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "七小叶崖爬藤"
+ },
+ "一把蔑": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "一把香": {
+  "done": true,
+  "qid": "Q10863938",
+  "sci": "Wikstroemia dolichantha",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "一把香"
+ },
+ "一支箭": {
+  "done": true,
+  "qid": "Q847497",
+  "sci": "Ophioglossum vulgatum",
+  "coconut_species": "ophioglossum vulgatum",
+  "n_compounds": 107,
+  "label": "瓶尔小草"
+ },
+ "一文钱": {
+  "done": true,
+  "qid": "Q10863947",
+  "sci": "Stephania delavayi",
+  "coconut_species": "stephania delavayi",
+  "n_compounds": 67,
+  "label": "一文钱"
+ },
+ "一枝旗": {
+  "done": true,
+  "qid": "Q15246601",
+  "sci": "Lepidomicrosorium buergerianum",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "鳞果星蕨"
+ },
+ "一柱香": {
+  "done": true,
+  "qid": "Q160095",
+  "sci": "Verbascum thapsus",
+  "coconut_species": "verbascum thapsus",
+  "n_compounds": 81,
+  "label": "毛蕊花"
+ },
+ "一点血": {
+  "done": true,
+  "qid": "Q10864001",
+  "sci": "Begonia wilsonii",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "一点血"
+ },
+ "一皮草": {
+  "done": true,
+  "qid": "Q11076237",
+  "sci": "Lepisorus contortus",
+  "coconut_species": "lepisorus contortus",
+  "n_compounds": 31,
+  "label": "扭瓦韦"
+ },
+ "一碗泡": {
+  "done": true,
+  "qid": "Q15239861",
+  "sci": "Polygala furcata",
+  "coconut_species": "polygala furcata",
+  "n_compounds": 6,
+  "label": "肾果小扁豆"
+ },
+ "一箭球": {
+  "done": true,
+  "qid": "Q863690",
+  "sci": "Kyllinga brevifolia",
+  "coconut_species": "kyllinga brevifolia",
+  "n_compounds": 21,
+  "label": "短叶水蜈蚣"
+ },
+ "一颗针": {
+  "done": true,
+  "qid": "Q158397",
+  "sci": "Berberis thunbergii",
+  "coconut_species": "berberis thunbergii",
+  "n_compounds": 35,
+  "label": "日本小檗"
+ },
+ "丁榔皮": {
+  "done": true,
+  "qid": "Q11298798",
+  "sci": "Cornus macrophylla",
+  "coconut_species": "cornus macrophylla",
+  "n_compounds": 1,
+  "label": "梾木"
+ },
+ "丁癸草": {
+  "done": true,
+  "qid": "Q10864364",
+  "sci": "Zornia gibbosa",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "丁癸草"
+ },
+ "丁茄": {
+  "done": true,
+  "qid": "Q311420",
+  "sci": "Solanum incanum",
+  "coconut_species": "solanum incanum",
+  "n_compounds": 57,
+  "label": "丁茄"
+ },
+ "丁萝卜": {
+  "done": true,
+  "qid": "Q10914585",
+  "sci": "Crepidiastrum taiwanianum",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "台湾假还阳参"
+ },
+ "丁蛎": {
+  "done": true,
+  "qid": "Q13810830",
+  "sci": "Malleus malleus",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "黑丁蛎"
+ },
+ "丁香蓼": {
+  "done": true,
+  "qid": "Q6860534",
+  "sci": "Ludwigia prostrata",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "丁香蓼"
+ },
+ "七厘丹": {
+  "done": true,
+  "qid": "Q11179411",
+  "sci": "Veratrum japonicum",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "牯岭藜芦"
+ },
+ "七叶仔": {
+  "done": true,
+  "qid": "Q15546569",
+  "sci": "Munronia pinnata",
+  "coconut_species": "munronia pinnata",
+  "n_compounds": 32,
+  "label": "小芙蓉"
+ },
+ "七叶胆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "七叶薯": {
+  "done": true,
+  "qid": "Q10864523",
+  "sci": "Dioscorea esquirolii",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "七叶薯蓣"
+ },
+ "七星剑": {
+  "done": true,
+  "qid": "Q15239062",
+  "sci": "Mosla chinensis",
+  "coconut_species": "mosla chinensis",
+  "n_compounds": 287,
+  "label": "石香薷"
+ },
+ "七星草": {
+  "done": true,
+  "qid": "Q5876449",
+  "sci": "Lepisorus thunbergianus",
+  "coconut_species": "lepisorus thunbergianus",
+  "n_compounds": 27,
+  "label": "瓦韦"
+ },
+ "七星鱼": {
+  "done": true,
+  "qid": "Q728752",
+  "sci": "Channa asiatica",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "月鳢"
+ },
+ "七爪风": {
+  "done": true,
+  "qid": "Q15247744",
+  "sci": "Rubus reflexus",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "锈毛莓"
+ },
+ "七角枫": {
+  "done": true,
+  "qid": "Q11144452",
+  "sci": "Macropanax undulatus",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "波缘大参"
+ },
+ "七角白蔹": {
+  "done": true,
+  "qid": "Q15232378",
+  "sci": "Ampelopsis humulifolia",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "葎叶蛇葡萄"
+ },
+ "七角风": {
+  "done": true,
+  "qid": "Q15225541",
+  "sci": "Macropanax rosthornii",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "短梗大参"
+ },
+ "七里香": {
+  "done": true,
+  "qid": "Q238591",
+  "sci": "Murraya paniculata",
+  "coconut_species": "murraya paniculata",
+  "n_compounds": 619,
+  "label": "月橘"
+ },
+ "七鳃鳗": {
+  "done": true,
+  "qid": "Q178729",
+  "sci": "Lethenteron camtschaticum",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "七鳃鳗"
+ },
+ "万寿菊花": {
+  "done": true,
+  "qid": "Q759876",
+  "sci": "Tagetes erecta",
+  "coconut_species": "tagetes erecta",
+  "n_compounds": 103,
+  "label": "万寿菊"
+ },
+ "万年柏": {
+  "done": true,
+  "qid": "Q5874988",
+  "sci": "Asplenium incisum",
+  "coconut_species": "asplenium incisum",
+  "n_compounds": 1,
+  "label": "虎尾铁角蕨"
+ },
+ "万年藓": {
+  "done": true,
+  "qid": "Q140350",
+  "sci": "Climacium dendroides",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "万年藓"
+ },
+ "万年青": {
+  "done": true,
+  "qid": "Q714180",
+  "sci": "Ficus microcarpa",
+  "coconut_species": "ficus microcarpa",
+  "n_compounds": 51,
+  "label": "榕樹"
+ },
+ "三出叶委陵菜": {
+  "done": true,
+  "qid": "Q15228552",
+  "sci": "Potentilla betonicifolia",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "白萼委陵菜"
+ },
+ "三加皮": {
+  "done": true,
+  "qid": "Q15225398",
+  "sci": "Eleutherococcus trifoliatus",
+  "coconut_species": "eleutherococcus trifoliatus",
+  "n_compounds": 36,
+  "label": "白簕"
+ },
+ "三匹叶": {
+  "done": true,
+  "qid": "Q15236957",
+  "sci": "Campylotropis delavayi",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "西南杭子梢"
+ },
+ "三匹箭": {
+  "done": true,
+  "qid": "Q4034362",
+  "sci": "Arisaema petiolulatum",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "三匹箭"
+ },
+ "三十六荡": {
+  "done": true,
+  "qid": "Q10943796",
+  "sci": "Tylophora ovata",
+  "coconut_species": "tylophora ovata",
+  "n_compounds": 16,
+  "label": "娃儿藤"
+ },
+ "三升米": {
+  "done": true,
+  "qid": "Q1235415",
+  "sci": "Ribes fasciculatum",
+  "coconut_species": "ribes fasciculatum",
+  "n_compounds": 10,
+  "label": "簇花茶藨子"
+ },
+ "三叉苦": {
+  "done": true,
+  "qid": "Q10919698",
+  "sci": "Tetradium ruticarpum",
+  "coconut_species": "tetradium ruticarpum",
+  "n_compounds": 27,
+  "label": "吴茱萸"
+ },
+ "三叶乌蔹莓": {
+  "done": true,
+  "qid": "Q603596",
+  "sci": "Cayratia trifolia",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "三叶乌蔹莓"
+ },
+ "三叶委陵菜根": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "三叶崖爬藤": {
+  "done": true,
+  "qid": "Q10865501",
+  "sci": "Tetrastigma hemsleyanum",
+  "coconut_species": "tetrastigma hemsleyanum",
+  "n_compounds": 12,
+  "label": "三叶崖爬藤"
+ },
+ "三叶排草": {
+  "done": true,
+  "qid": "Q10865530",
+  "sci": "Lysimachia insignis",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "三叶香草"
+ },
+ "三叶木蓝": {
+  "done": true,
+  "qid": "Q10865507",
+  "sci": "Indigofera trifoliata",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "三叶木蓝"
+ },
+ "三叶槭根": {
+  "done": true,
+  "qid": "Q608412",
+  "sci": "Acer henryi",
+  "coconut_species": "acer henryi",
+  "n_compounds": 4,
+  "label": "建始槭"
+ },
+ "三叶海棠": {
+  "done": true,
+  "qid": "Q1144822",
+  "sci": "Malus sieboldii",
+  "coconut_species": "malus sieboldii",
+  "n_compounds": 42,
+  "label": "三叶海棠"
+ },
+ "三叶莲": {
+  "done": true,
+  "qid": "Q50138939",
+  "sci": "Holboellia latifolia",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "八月瓜"
+ },
+ "三叶豆": {
+  "done": true,
+  "qid": "Q632559",
+  "sci": "Cajanus cajan",
+  "coconut_species": "cajanus cajan",
+  "n_compounds": 155,
+  "label": "木豆"
+ },
+ "三叶铜钱草": {
+  "done": true,
+  "qid": "Q158576",
+  "sci": "Oxalis acetosella",
+  "coconut_species": "oxalis acetosella",
+  "n_compounds": 6,
+  "label": "白花酢浆草"
+ },
+ "三对叶丹参": {
+  "done": true,
+  "qid": "Q7406921",
+  "sci": "Salvia trijuga",
+  "coconut_species": "salvia trijuga",
+  "n_compounds": 41,
+  "label": "三叶鼠尾草"
+ },
+ "三对节": {
+  "done": true,
+  "qid": "Q3595077",
+  "sci": "Rotheca serrata",
+  "coconut_species": "rotheca serrata",
+  "n_compounds": 26,
+  "label": "三对节"
+ },
+ "三张叶": {
+  "done": true,
+  "qid": "Q10865498",
+  "sci": "Potentilla freyniana",
+  "coconut_species": "potentilla freyniana",
+  "n_compounds": 1,
+  "label": "三叶委陵菜"
+ },
+ "三方草": {
+  "done": true,
+  "qid": "Q4338322",
+  "sci": "Carex kobomugi",
+  "coconut_species": "carex kobomugi",
+  "n_compounds": 21,
+  "label": "筛草"
+ },
+ "三月泡": {
+  "done": true,
+  "qid": "Q2705473",
+  "sci": "Rubus rosifolius",
+  "coconut_species": "rubus rosifolius",
+  "n_compounds": 32,
+  "label": "空心泡"
+ },
+ "三朵云": {
+  "done": true,
+  "qid": "Q11323886",
+  "sci": "Euphorbia sieboldiana",
+  "coconut_species": "euphorbia sieboldiana",
+  "n_compounds": 21,
+  "label": "钩腺大戟"
+ },
+ "三枝叶": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "三枝标": {
+  "done": true,
+  "qid": "Q10866608",
+  "sci": "Pronephrium triphyllum",
+  "coconut_species": "pronephrium triphyllum",
+  "n_compounds": 81,
+  "label": "三羽新月蕨"
+ },
+ "三棱草": {
+  "done": true,
+  "qid": "Q1258277",
+  "sci": "Pinellia ternata",
+  "coconut_species": "pinellia ternata",
+  "n_compounds": 259,
+  "label": "半夏"
+ },
+ "三棱马尾": {
+  "done": true,
+  "qid": "Q1035921",
+  "sci": "Carex satsumensis",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "砂地薹草"
+ },
+ "三楞草": {
+  "done": true,
+  "qid": "Q42068",
+  "sci": "Cyperus iria",
+  "coconut_species": "cyperus iria",
+  "n_compounds": 13,
+  "label": "碎米莎草"
+ },
+ "三点金草": {
+  "done": true,
+  "qid": "Q65939797",
+  "sci": "Grona triflora",
+  "coconut_species": "grona triflora",
+  "n_compounds": 5,
+  "label": "蠅翼草"
+ },
+ "生地": {
+  "done": true,
+  "qid": "Q1071605",
+  "sci": "Rehmannia glutinosa",
+  "coconut_species": "rehmannia glutinosa",
+  "n_compounds": 352,
+  "label": "地黃"
+ },
+ "黄耆": {
+  "done": true,
+  "qid": "Q15532251",
+  "sci": "Astragalus membranaceus",
+  "coconut_species": "astragalus membranaceus",
+  "n_compounds": 219,
+  "label": "黄芪"
+ },
+ "制何首乌": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "桂心": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "硬脂酸镁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "糊精": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水杨酸甲酯": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "姜半夏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "官桂": {
+  "done": true,
+  "qid": "Q15607965",
+  "sci": "Cinnamomum wilsonii",
+  "coconut_species": "cinnamomum wilsonii",
+  "n_compounds": 15,
+  "label": "川桂"
+ },
+ "胆星": {
+  "done": true,
+  "qid": "Q4069209",
+  "sci": "Arisaema amurense",
+  "coconut_species": "arisaema amurense",
+  "n_compounds": 35,
+  "label": "东北天南星"
+ },
+ "炙草": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "苯甲酸钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "切": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "芎": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "归尾": {
+  "done": true,
+  "qid": "Q2051387",
+  "sci": "Angelica sinensis",
+  "coconut_species": "angelica sinensis",
+  "n_compounds": 676,
+  "label": "当归"
+ },
+ "岗梅": {
+  "done": true,
+  "qid": "Q11115336",
+  "sci": "Ilex asprella",
+  "coconut_species": "ilex asprella",
+  "n_compounds": 21,
+  "label": "梅葉冬青"
+ },
+ "清半夏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "龟版": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "桉油": {
+  "done": true,
+  "qid": "Q159528",
+  "sci": "Eucalyptus globulus",
+  "coconut_species": "eucalyptus globulus",
+  "n_compounds": 650,
+  "label": "蓝桉"
+ },
+ "芒消": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "竹叶": {
+  "done": true,
+  "qid": "Q135731",
+  "sci": "Bambusa ventricosa",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "佛肚竹"
+ },
+ "甘油": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "桑皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "归身": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "酒浸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "马来酸氯苯那敏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "焙）半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "豹骨": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炙": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去白": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "制天南星": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "聚山梨酯": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "川椒": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "五味": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "对乙酰氨基酚": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羟苯乙酯": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "玄胡": {
+  "done": true,
+  "qid": "Q11065097",
+  "sci": "Corydalis yanhusuo",
+  "coconut_species": "corydalis yanhusuo",
+  "n_compounds": 107,
+  "label": "延胡索"
+ },
+ "枯矾": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "盐酸麻黄碱": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "维生素B": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "虎胫骨": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "川萆薢": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蛇胆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "净": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "龙脑": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "盐酸苯海拉明": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "苯甲酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "杞子": {
+  "done": true,
+  "qid": "Q196332",
+  "sci": "Lycium barbarum",
+  "coconut_species": "lycium barbarum",
+  "n_compounds": 207,
+  "label": "宁夏枸杞"
+ },
+ "大熟地": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水飞": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去皮尖双仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "生黄耆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "氯化铵": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "九节菖蒲": {
+  "done": true,
+  "qid": "Q2544575",
+  "sci": "Acorus gramineus",
+  "coconut_species": "acorus gramineus",
+  "n_compounds": 225,
+  "label": "金钱菖蒲"
+ },
+ "盐酸小檗碱": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去白瓤": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水银": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水飞过": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "桂心半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "香墨": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "另": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "大生地": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "槐枝": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "葶苈": {
+  "done": true,
+  "qid": "Q159128",
+  "sci": "Draba nemorosa",
+  "coconut_species": "draba nemorosa",
+  "n_compounds": 19,
+  "label": "葶苈"
+ },
+ "金果榄": {
+  "done": true,
+  "qid": "Q50875434",
+  "sci": "Tinospora capillipes",
+  "coconut_species": "tinospora capillipes",
+  "n_compounds": 40,
+  "label": "金果榄"
+ },
+ "芥穗": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "碳酸氢钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "防已": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羊毛脂": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "微晶纤维素": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羧甲基淀粉钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "取出": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山萸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "酒浸宿": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炒）半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "不见火": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "芙蓉叶": {
+  "done": true,
+  "qid": "Q159534",
+  "sci": "Hibiscus × rosa-sinensis",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "朱槿"
+ },
+ "铁粉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "别": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白蔻仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "维生素E": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炙黄耆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "维生素C": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "梨": {
+  "done": true,
+  "qid": "Q434",
+  "sci": "Pyrus",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "梨属"
+ },
+ "象皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "别捣": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "取净": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山栀仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "咖啡因": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蛤粉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "熟军": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去皮脐）半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "酥炙": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "乙醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "柿霜": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "石莲肉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "涂生姜汁炙令香熟": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "细": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "诃黎勒皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "怀生地": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "法夏": {
+  "done": true,
+  "qid": "Q4069210",
+  "sci": "Arisaema erubescens",
+  "coconut_species": "arisaema erubescens",
+  "n_compounds": 64,
+  "label": "一把伞南星"
+ },
+ "芸香浸膏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "五指柑": {
+  "done": true,
+  "qid": "Q14807863",
+  "sci": "Vitex negundo",
+  "coconut_species": "vitex negundo",
+  "n_compounds": 540,
+  "label": "黄荆"
+ },
+ "硼酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山梨酸钾": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炒令黄燥": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "黄耆半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "金盏银盘": {
+  "done": true,
+  "qid": "Q15231061",
+  "sci": "Bidens biternata",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "金盏银盘"
+ },
+ "小茴": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "腰黄": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "硬脂酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "生用": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "海蛤": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蕲艾": {
+  "done": true,
+  "qid": "Q4797490",
+  "sci": "Artemisia argyi",
+  "coconut_species": "artemisia argyi",
+  "n_compounds": 484,
+  "label": "艾草"
+ },
+ "生草": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "茅术": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "荆芥炭": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水杨酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "焙）半": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "浮海石": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "楂肉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "杠板归": {
+  "done": true,
+  "qid": "Q11099680",
+  "sci": "Polygonum perfoliatum",
+  "coconut_species": "polygonum perfoliatum",
+  "n_compounds": 14,
+  "label": "杠板归"
+ },
+ "羚羊": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "麦门冬半": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "甜葶苈": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水翁花": {
+  "done": true,
+  "qid": "Q7663992",
+  "sci": "Syzygium nervosum",
+  "coconut_species": "syzygium nervosum",
+  "n_compounds": 124,
+  "label": "水翁"
+ },
+ "火消": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "龟版胶": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "糯米": {
+  "done": true,
+  "qid": "Q161426",
+  "sci": "Oryza sativa",
+  "coconut_species": "oryza sativa",
+  "n_compounds": 644,
+  "label": "水稻"
+ },
+ "山奈": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山梨酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "烈香杜鹃": {
+  "done": true,
+  "qid": "Q15240042",
+  "sci": "Rhododendron anthopogonoides",
+  "coconut_species": "rhododendron anthopogonoides",
+  "n_compounds": 45,
+  "label": "烈香杜鹃"
+ },
+ "炙干": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "捣": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "细生地": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "取": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白芨": {
+  "done": true,
+  "qid": "Q159003",
+  "sci": "Bletilla striata",
+  "coconut_species": "bletilla striata",
+  "n_compounds": 122,
+  "label": "白芨"
+ },
+ "聚乙二醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羊耳菊": {
+  "done": true,
+  "qid": "Q15579419",
+  "sci": "Duhaldea cappa",
+  "coconut_species": "duhaldea cappa",
+  "n_compounds": 96,
+  "label": "羊耳菊"
+ },
+ "冬青油": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "橡胶": {
+  "done": true,
+  "qid": "Q156538",
+  "sci": "Hevea brasiliensis",
+  "coconut_species": "hevea brasiliensis",
+  "n_compounds": 30,
+  "label": "橡膠樹"
+ },
+ "氯化钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白糖": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "二甲基亚砜": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "川柏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "取肉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "黄耆半": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "鸡苏叶": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "丙二醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山银花": {
+  "done": true,
+  "qid": "Q10905550",
+  "sci": "Lonicera confusa",
+  "coconut_species": "lonicera confusa",
+  "n_compounds": 61,
+  "label": "华南忍冬"
+ },
+ "用皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "泡参": {
+  "done": true,
+  "qid": "Q11143996",
+  "sci": "Adenophora potaninii",
+  "coconut_species": "adenophora potaninii",
+  "n_compounds": 3,
+  "label": "泡沙参"
+ },
+ "酒萸肉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炒）半": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "手参": {
+  "done": true,
+  "qid": "Q157442",
+  "sci": "Gymnadenia conopsea",
+  "coconut_species": "gymnadenia conopsea",
+  "n_compounds": 107,
+  "label": "手参"
+ },
+ "怀熟地": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "熬": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "秋石": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "片脑": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白葡萄干": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "麸炒）半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "艾炭": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "寸冬": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "猪去氧胆酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白石脂": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "芎半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "片芩": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去皮骨": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "绵裹": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "黑山栀": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "鹿肉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "牛蒡": {
+  "done": true,
+  "qid": "Q26932",
+  "sci": "Arctium lappa",
+  "coconut_species": "arctium lappa",
+  "n_compounds": 241,
+  "label": "牛蒡"
+ },
+ "焦栀": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "韭子": {
+  "done": true,
+  "qid": "Q42285",
+  "sci": "Allium tuberosum",
+  "coconut_species": "allium tuberosum",
+  "n_compounds": 95,
+  "label": "韭菜"
+ },
+ "对羟基苯甲酸乙酯": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "东风桔": {
+  "done": true,
+  "qid": "Q15240100",
+  "sci": "Atalantia buxifolia",
+  "coconut_species": "atalantia buxifolia",
+  "n_compounds": 167,
+  "label": "酒饼簕"
+ },
+ "面粉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "祖师麻": {
+  "done": true,
+  "qid": "Q5221657",
+  "sci": "Daphne tangutica",
+  "coconut_species": "daphne tangutica",
+  "n_compounds": 22,
+  "label": "唐古特瑞香"
+ },
+ "白酒": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "腹皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "磷酸氢钙": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "半枫荷": {
+  "done": true,
+  "qid": "Q1763648",
+  "sci": "Semiliquidambar cathayensis",
+  "coconut_species": "",
+  "n_compounds": 0,
+  "label": "半枫荷"
+ },
+ "雪胆": {
+  "done": true,
+  "qid": "Q15248555",
+  "sci": "Hemsleya chinensis",
+  "coconut_species": "hemsleya chinensis",
+  "n_compounds": 8,
+  "label": "雪胆"
+ },
+ "胡桃": {
+  "done": true,
+  "qid": "Q46871",
+  "sci": "Juglans regia",
+  "coconut_species": "juglans regia",
+  "n_compounds": 198,
+  "label": "普通胡桃"
+ },
+ "酒曲": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "银朱": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "驴鞭": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白茯": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "牙消": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "清炙草": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "氧化镁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "醋淬次": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "单糖浆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "象牙屑": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "胆酸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "熟地-": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炙令黄": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白石英": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "液体石蜡": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "盐酸异丙嗪": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "干蟾": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "三乙醇胺": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "碳酸钙": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炒干": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "针砂": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蔻仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "略": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "细切": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白降丹": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "明雄": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "佐太": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "姜制": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "鹿尾": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蒸熟": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "雄蚕蛾": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羧甲基纤维素钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "去刺": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "玉葡萄根": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "生耆": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "十二烷基硫酸钠": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "栀仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "焦术": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "川巴戟": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "人中黄": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "白花蛇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "芒消半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "干蝎": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "生苡仁": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "聚乙烯醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "山梨醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "渣驯膏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "雄精": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "益母膏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "醋淬": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "猪芩": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "陈胆星": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "茯芩": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "蝎梢": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "水柏枝": {
+  "done": true,
+  "qid": "Q162609",
+  "sci": "Myricaria germanica",
+  "coconut_species": "myricaria germanica",
+  "n_compounds": 14,
+  "label": "水柏枝"
+ },
+ "炒黄色": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "萆薢半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "扑尔敏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "羟丙基甲基纤维素": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "炒冬术": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "樟油": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "马牙消": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "密陀僧": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "藏菖蒲": {
+  "done": true,
+  "qid": "Q158008",
+  "sci": "Acorus calamus",
+  "coconut_species": "acorus calamus",
+  "n_compounds": 370,
+  "label": "菖蒲"
+ },
+ "瓜萎子": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "菟丝": {
+  "done": true,
+  "qid": "Q5366185",
+  "sci": "Cuscuta chinensis",
+  "coconut_species": "cuscuta chinensis",
+  "n_compounds": 67,
+  "label": "菟丝子"
+ },
+ "官桂半两": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "猴骨": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "刮去皱皮": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "海粉": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "氨茶碱": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "土鳖": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "姜汁炙": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "制川朴": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "飞": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "光明盐": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "捣膏": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "十八醇": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "冬日": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ },
+ "六味地黄丸": {
+  "done": true,
+  "qid": "",
+  "sci": "",
+  "coconut_species": "",
+  "n_compounds": 0
+ }
+}

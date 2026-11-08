@@ -1,0 +1,19 @@
+对苯醌: O=C1C=CC(=O)C=C1  重原子: 8
+  idx0 O 芳香=False 邻居=[(1, 'DOUBLE')]
+  idx1 C 芳香=False 邻居=[(0, 'DOUBLE'), (2, 'SINGLE'), (7, 'SINGLE')]
+  idx2 C 芳香=False 邻居=[(1, 'SINGLE'), (3, 'DOUBLE')]
+  idx3 C 芳香=False 邻居=[(2, 'DOUBLE'), (4, 'SINGLE')]
+  idx4 C 芳香=False 邻居=[(3, 'SINGLE'), (5, 'DOUBLE'), (6, 'SINGLE')]
+  idx5 O 芳香=False 邻居=[(4, 'DOUBLE')]
+  idx6 C 芳香=False 邻居=[(4, 'SINGLE'), (7, 'DOUBLE')]
+  idx7 C 芳香=False 邻居=[(6, 'DOUBLE'), (1, 'SINGLE')]
+
+[O:1]=[C:2][#6:5][#6:6][C:3]=[O:4]               匹配 0  ()
+[O:1]=[C:2][C:5][C:6][C:3]=[O:4]                 匹配 0  ()
+[O]=[C][C][C][C]=[O]                             匹配 0  ()
+[O:1]=[C:2][#6:5][C:3]=[O:4]                     匹配 0  ()
+[O:1]=[C:2][#6:5][#6:6][#6:7][C:3]=[O:4]         匹配 0  ()
+
+对照：1,4-萘醌
+  [O:1]=[C:2][#6:5][#6:6][C:3]=[O:4]             匹配 1
+  [O:1]=[C:2][C:5][C:6][C:3]=[O:4]               匹配 0

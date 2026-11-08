@@ -1,0 +1,392 @@
+{
+ "sampled": 1456,
+ "testable": 969,
+ "hits": 411,
+ "coverage": 0.4241486068111455,
+ "stat": {
+  "命中": 411,
+  "未命中": 558,
+  "底物数=3(跳过)": 167,
+  "底物数=5(跳过)": 58,
+  "底物数=4(跳过)": 96,
+  "底物数=6(跳过)": 30,
+  "底物数=7(跳过)": 14,
+  "底物数=8(跳过)": 6,
+  "底物数=1(跳过)": 84,
+  "底物数=15(跳过)": 1,
+  "底物数=14(跳过)": 2,
+  "底物数=11(跳过)": 3,
+  "底物数=9(跳过)": 2,
+  "底物数=0(跳过)": 22,
+  "无产物(跳过)": 1,
+  "底物数=10(跳过)": 1
+ },
+ "hit_templates": {
+  "B-H": 133,
+  "snar_amine": 39,
+  "amide_coupling": 38,
+  "reductive_amination_aldehyde": 16,
+  "ester_schotten_baumann": 1,
+  "amine_acetylation": 5,
+  "suzuki": 115,
+  "ullmann_X": 1,
+  "cross_electrophile_coupling": 1,
+  "williamson": 7,
+  "mitsunobu": 1,
+  "ullmann_phenol": 2,
+  "reductive_amination_ketone": 4,
+  "amine_sulfonation": 38,
+  "snar_alcohol": 4,
+  "snar_thiol": 5,
+  "C_C_decarboxylation": 24,
+  "urea_formation": 1,
+  "sonogashira": 1
+ },
+ "miss_examples": [
+  {
+   "reaction_id": "ord-2996dfdd337244988de62e12bd857f58",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-98740ba1c61e42afbf7f7d12f038bff6",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-d3bf215cf76441e4922064905afd536f",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-54b9a7cd21a44d239130a5392901a794",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-f05a3a67e19e4c0994dc6bb3ecf61cc0",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-abe7279d16ce4b098964ac7a32957785",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-b19af635309b426797bc8886e409bd8a",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-d560178d1d62499ea17700ba128cd064",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-bbb8a98a95df4c53b55a2d548e0b3319",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-27d74db70f024daca00a793a73b106bd",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-c69520efa98f4cf1a2e508bf197389c5",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-45a6d236ed2c489a95bf181273228ba8",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-ec198f10c6b54c69a55df9579fdfe8d7",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-8ded12783f644b7d9d2cfbc9c5a27d5b",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-fad5b04a99eb4e54bd675e634380c5ff",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-90e4154252bb4259b420235d8ad32459",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "O=S(=O)(Oc1ccccc1)C(F)(F)F"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-860887e0bf9c42d484f6ad6256eff82b",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-edee93962c894fd5ab7a9a40961daf4e",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-6baee24ccd5f446e9f4dc2d69b422a15",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-d7823a08c2664306b03d5f8e9ca5c7c9",
+   "file": "ord_dataset-0316886541d9435489859c2ad7edc863.parquet",
+   "reactants": [
+    "C=Cc1ccccc1",
+    "c1ccc(cc1)I"
+   ],
+   "expected": [
+    "C(=C\\c1ccccc1)/c1ccccc1",
+    "C=C(c1ccccc1)c1ccccc1",
+    "COc1cc(OC)cc(OC)c1"
+   ],
+   "n_enumerated": 1
+  },
+  {
+   "reaction_id": "ord-db50a15a339746ce8c18bfc5414104ec",
+   "file": "ord_dataset-0c75d67751634f0594b24b9f498b77c2.parquet",
+   "reactants": [
+    "Cn1cnc(C#N)c1",
+    "Fc1ccccc1Br"
+   ],
+   "expected": [
+    "CC(C)(C)c1ccc(-c2ccc(C(C)(C)C)cc2)cc1",
+    "Cn1cnc(C#N)c1-c1ccccc1F"
+   ],
+   "n_enumerated": 0
+  },
+  {
+   "reaction_id": "ord-5c6fff186d8b4aa88903850a157279fa",
+   "file": "ord_dataset-0c75d67751634f0594b24b9f498b77c2.parquet",
+   "reactants": [
+    "Cn1cnc(C#N)c1",
+    "Fc1ccccc1Br"
+   ],
+   "expected": [
+    "CC(C)(C)c1ccc(-c2ccc(C(C)(C)C)cc2)cc1",
+    "Cn1cnc(C#N)c1-c1ccccc1F"
+   ],
+   "n_enumerated": 0
+  },
+  {
+   "reaction_id": "ord-03687202f39c4812aead1b918fd3a4c1",
+   "file": "ord_dataset-0c75d67751634f0594b24b9f498b77c2.parquet",
+   "reactants": [
+    "Cn1cnc(C#N)c1",
+    "Fc1ccccc1Br"
+   ],
+   "expected": [
+    "CC(C)(C)c1ccc(-c2ccc(C(C)(C)C)cc2)cc1",
+    "Cn1cnc(C#N)c1-c1ccccc1F"
+   ],
+   "n_enumerated": 0
+  },
+  {
+   "reaction_id": "ord-f0773f44e34e41dba162e50973e330ed",
+   "file": "ord_dataset-0c75d67751634f0594b24b9f498b77c2.parquet",
+   "reactants": [
+    "Cn1cnc(C#N)c1",
+    "Fc1ccccc1Br"
+   ],
+   "expected": [
+    "CC(C)(C)c1ccc(-c2ccc(C(C)(C)C)cc2)cc1",
+    "Cn1cnc(C#N)c1-c1ccccc1F"
+   ],
+   "n_enumerated": 0
+  },
+  {
+   "reaction_id": "ord-dad0e68901894d5d82ab6013d9dbb3ed",
+   "file": "ord_dataset-0c75d67751634f0594b24b9f498b77c2.parquet",
+   "reactants": [
+    "Cn1cnc(C#N)c1",
+    "Fc1ccccc1Br"
+   ],
+   "expected": [
+    "CC(C)(C)c1ccc(-c2ccc(C(C)(C)C)cc2)cc1",
+    "Cn1cnc(C#N)c1-c1ccccc1F"
+   ],
+   "n_enumerated": 0
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-11-04 13:31:40",
+  "condition": "煎煮",
+  "seed": 20261014,
+  "real_pairs": {
+    "n": 500,
+    "hit_rate": 1.0,
+    "mean_products": 24.34,
+    "median_products": 21.0,
+    "p90_products": 44,
+    "zero_rate": 0.0
+  },
+  "decoy_pairs": {
+    "n": 500,
+    "hit_rate": 0.998,
+    "mean_products": 23.95,
+    "median_products": 21.0,
+    "p90_products": 46,
+    "zero_rate": 0.002
+  },
+  "errors": {
+    "real": 0,
+    "decoy": 0
+  },
+  "specificity_estimate": 0.002,
+  "note": "诱饵对 = 把真反应的 A、B 两个反应物拆开重配。hit_rate 是假阳性上界：两个活性分子凑一起确实可能真反应，所以 specificity_estimate 偏保守偏低。",
+  "seconds": 111.9
+}

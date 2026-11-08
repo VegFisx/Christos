@@ -1,0 +1,101 @@
+========================================================================================================
+手写的分子数据（应为数据库来源）
+========================================================================================================
+
+【★验收用例★】9 个文件，273 处
+    tools\cases.py                                62 处
+        行46: COC(=O)c1ccccc1
+        行47: O=C(O)c1ccccc1
+    tools\reaction_cases.json                     62 处
+        行6: COC(=O)c1ccccc1
+        行10: O=C(O)c1ccccc1
+    tools\cases2.py                               43 处
+        行28: COP(=O)(O)O
+        行30: COC(C)O
+    tools\reaction_cases2.json                    43 处
+        行6: COP(=O)(O)O
+        行19: COC(C)O
+    tools\patch_cases.py                          22 处
+        行19: CC(N)=O
+        行19: CC(=O)O
+    tools\patch_cases3.py                         21 处
+        行26: O=C1C=CC(=O)C=C1
+        行27: Oc1ccc(O)cc1
+    tools\patch_cases2.py                         12 处
+        行13: O=C1C=CC(=O)C=C1
+        行16: O=C1C=CC=CC1=O
+    tools\verify_para_rules_for_cases.py           7 处
+        行19: rdApp.warning
+        行34: Oc1ccc(O)cc1
+
+【★规则库★】1 个文件，26 处
+    rules\rules.json                              26 处
+        行231: COS(=O)(=O)O
+        行355: CCc1ccccc1N
+
+【诊断/工具】93 个文件，554 处
+    tools\probe_matrix.py                         68 处
+        行39: rdApp.warning
+        行45: CC(C)O
+    tools\audit_delta.py                          30 处
+        行47: rdApp.warning
+        行54: CC(C)O
+    tools\design_para_final.py                    24 处
+        行23: rdApp.warning
+        行35: O=C1C=CC(=O)C=C1
+    tools\design_para_v3.py                       18 处
+        行21: rdApp.warning
+        行28: O=C1C=CC(=O)C=C1
+    tools\design_para_quinone.py                  17 处
+        行20: rdApp.warning
+        行37: Oc1ccc(O)cc1
+    tools\fix_overmatch_final.py                  16 处
+        行17: rdApp.warning
+        行20: O=C1C=CC(=O)C=C1
+    tools\diag_draft_rules.py                     15 处
+        行23: OC(=O)CC(=O)O
+        行24: CC(=O)CC(=O)O
+    tools\tighten_recursive.py                    15 处
+        行14: rdApp.warning
+        行17: O=C1C=CC(=O)C=C1
+
+【其他】11 个文件，40 处
+    rules\rules.pre-finalize.json                  8 处
+        行961: NCC(=O)O
+        行989: NCC(=O)O
+    api\predict.py                                 8 处
+        行25: COC(=O)c1ccccc1
+        行461: COC(=O)c1ccccc1
+    rules\schema.py                                7 处
+        行53: rdApp.warning
+        行83: C7H6O2
+    core\scorer.py                                 4 处
+        行46: [CX3]=[CX3]=[CX3]
+        行47: [CX3H1]=[OX1]
+    rules\sanity.py                                2 处
+        行56: rdApp.warning
+        行62: [#8]-[#8]
+    conditions\model.py                            2 处
+        行74: Conditions
+        行84: Conditions
+    core\engine.py                                 2 处
+        行44: rdApp.warning
+        行173: C6H6O2
+    core\thermo.py                                 2 处
+        行86: [H][H]
+        行91: [C-]#[O+]
+
+========================================================================================================
+判定标准
+========================================================================================================
+
+  ✅ 可以手写的：
+     · 规则 SMARTS —— 这是【化学知识】，数据库里没有（论文 TableS1 只有 23 条）
+     · 教科书级小分子（水、乙醇、苯甲酸）—— 无歧义
+
+  ❌ 不该手写的：
+     · 天然产物 / 药材成分的 SMILES —— tcm.db 里有，手写必错
+     · 验收用例的底物 —— 目标是「真实底物用例」，应该来自 tcm.db
+     · 陪跑试剂池 —— 应来自数据库或明确的化学定义
+
+总计手写分子数据 893 处，涉及 114 个文件

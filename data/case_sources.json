@@ -1,0 +1,630 @@
+{
+ "schema": 1,
+ "built_at": "2026-10-16 17:16:22",
+ "archive_dir": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\第七十五轮-用例DB化-存档",
+ "files": {
+  "reaction_cases.json": {
+   "old_sha256": "afe58167410788032b4a2bb79605fae046589e581a4dc595dfc2207b50cd2231",
+   "old_path": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\第七十五轮-用例DB化-存档\\reaction_cases.json",
+   "cases": 41,
+   "molecules_from_db": 55,
+   "molecules_literal": 20
+  },
+  "reaction_cases2.json": {
+   "old_sha256": "3d713dbf502c43c271f9c6b1e4c48bf5fa8a36d5612c90f3fe9e1a2cee67eb59",
+   "old_path": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\第七十五轮-用例DB化-存档\\reaction_cases2.json",
+   "cases": 25,
+   "molecules_from_db": 31,
+   "molecules_literal": 23
+  }
+ },
+ "counts": {
+  "reaction_cases.json": {
+   "db": 55,
+   "lit": 20
+  },
+  "reaction_cases2.json": {
+   "db": 31,
+   "lit": 23
+  }
+ },
+ "literals": [
+  {
+   "file": "reaction_cases.json",
+   "case": "hyd_glycoside_salicin",
+   "field": "smiles",
+   "smiles": "CO[C@H]1O[C@@H](CO)[C@H](O)[C@@H](O)[C@@H]1O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "hyd_acetal_benzaldehyde",
+   "field": "smiles",
+   "smiles": "COC(OC)c1ccccc1"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "hyd_sulfate",
+   "field": "smiles",
+   "smiles": "COS(=O)(=O)O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "ox_phenol_quinone",
+   "field": "expect_any",
+   "smiles": "O=C1C=CC=CC1=O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "ox_sulfide_sulfoxide",
+   "field": "expect_any",
+   "smiles": "CSC=O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "red_double_bond",
+   "field": "smiles",
+   "smiles": "C=CC"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "red_double_bond",
+   "field": "expect_any",
+   "smiles": "CCC"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "dec_beta_keto",
+   "field": "smiles",
+   "smiles": "CC(=O)CC(=O)O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cond_schiff",
+   "field": "expect_any",
+   "smiles": "O=C(O)CN=Cc1ccccc1"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cond_amidation",
+   "field": "expect_any",
+   "smiles": "CC(=O)NCC(=O)O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cond_aminolysis",
+   "field": "expect_any",
+   "smiles": "CC(=O)NCC(=O)O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cyc_delta_lactone",
+   "field": "smiles",
+   "smiles": "OCCCCC(=O)O"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cyc_delta_lactone",
+   "field": "expect_any",
+   "smiles": "O=C1CCCCO1"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cyc_hemiacetal",
+   "field": "smiles",
+   "smiles": "O=CCCCO"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cyc_hemiacetal",
+   "field": "expect_any",
+   "smiles": "OC1CCCO1"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "cyc_ether",
+   "field": "expect_any",
+   "smiles": "C1CCOC1"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "eli_dehydration",
+   "field": "expect_any",
+   "smiles": "CC=CC"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "rea_double_bond_isomer",
+   "field": "smiles",
+   "smiles": "CC=CC"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "rea_double_bond_isomer",
+   "field": "expect_any",
+   "smiles": "C=CCC"
+  },
+  {
+   "file": "reaction_cases.json",
+   "case": "rea_retro_aldol",
+   "field": "smiles",
+   "smiles": "CC(O)CC=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_phosphate",
+   "field": "smiles",
+   "smiles": "COP(=O)(O)O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_hemiacetal",
+   "field": "smiles",
+   "smiles": "COC(C)O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_epoxide",
+   "field": "smiles",
+   "smiles": "CC1CO1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_imine",
+   "field": "smiles",
+   "smiles": "CN=Cc1ccccc1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_alkene",
+   "field": "smiles",
+   "smiles": "CC=C"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "hyd_enone",
+   "field": "expect_any",
+   "smiles": "OCCC=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "ox_amine",
+   "field": "expect_any",
+   "smiles": "CC=N"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "ox_epoxide",
+   "field": "smiles",
+   "smiles": "CC=C"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "ox_epoxide",
+   "field": "expect_any",
+   "smiles": "CC1CO1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "ox_dehydro_enone",
+   "field": "expect_any",
+   "smiles": "CC=CC=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "red_quinone",
+   "field": "smiles",
+   "smiles": "O=C1C=CC=CC1=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "eli_amide_to_nitrile",
+   "field": "expect_any",
+   "smiles": "CC#N"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "est_delta_lactone",
+   "field": "smiles",
+   "smiles": "OCCCCC(=O)O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "est_delta_lactone",
+   "field": "expect_any",
+   "smiles": "O=C1CCCCO1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "cond_maillard",
+   "field": "smiles",
+   "smiles": "OCC=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_glycosylation",
+   "field": "expect_any",
+   "smiles": "CCO[C@H]1O[C@@H](CO)[C@H](O)[C@@H](O)[C@@H]1O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_hemiacetal",
+   "field": "expect_any",
+   "smiles": "OC(OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O)c1ccccc1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_hemiacetal",
+   "field": "expect_any",
+   "smiles": "COC(O)c1ccccc1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_michael_amine",
+   "field": "expect_any",
+   "smiles": "O=CCCNCC(=O)O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_aldol",
+   "field": "expect_any",
+   "smiles": "CC(O)CC=O"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "bi_thiohemiacetal",
+   "field": "expect_any",
+   "smiles": "CSC(O)c1ccccc1"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "ox_para_anthrahydroquinone",
+   "field": "smiles",
+   "smiles": "Oc1c2ccccc2c(O)c2ccccc12"
+  },
+  {
+   "file": "reaction_cases2.json",
+   "case": "red_para_anthraquinone",
+   "field": "expect_any",
+   "smiles": "Oc1c2ccccc2c(O)c2ccccc12"
+  }
+ ],
+ "by_case": {
+  "reaction_cases.json": {
+   "hyd_ester_benzoate": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_ester_ethylacetate": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_glycoside_salicin": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_amide_acetamide": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_acetal_benzaldehyde": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_sulfate": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_lactam": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "ox_primary_alcohol": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "ox_aldehyde": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "ox_hydroxyl_isopropanol": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "ox_phenol_quinone": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "ox_sulfide_sulfoxide": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 1
+   },
+   "ox_aromatic_hydroxyl": {
+    "substrate": "db",
+    "n_expect_db": 3,
+    "n_expect_lit": 0
+   },
+   "red_ketone": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "red_aldehyde": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "red_double_bond": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "red_sulfoxide": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "dec_aromatic": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "dec_beta_keto": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "dec_malonic": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "dec_cinnamic": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cond_esterification": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cond_transesterification": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cond_schiff": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "cond_amidation": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "cond_aminolysis": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "add_michael_thiol": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cyc_gamma_lactone": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cyc_delta_lactone": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "cyc_hemiacetal": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "cyc_lactam": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "cyc_ether": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "eli_dehydration": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "eli_demethylation": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "rea_double_bond_isomer": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "rea_retro_aldol": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "gate_oxidation_off_n2": {
+    "substrate": "-",
+    "n_expect_db": 0,
+    "n_expect_lit": 0
+   },
+   "gate_oxidation_on_air": {
+    "substrate": "-",
+    "n_expect_db": 0,
+    "n_expect_lit": 0
+   },
+   "gate_reduction_only_h2": {
+    "substrate": "-",
+    "n_expect_db": 0,
+    "n_expect_lit": 0
+   },
+   "gate_reduction_on_h2": {
+    "substrate": "-",
+    "n_expect_db": 0,
+    "n_expect_lit": 0
+   },
+   "gate_hydrolysis_on_acid": {
+    "substrate": "-",
+    "n_expect_db": 0,
+    "n_expect_lit": 0
+   }
+  },
+  "reaction_cases2.json": {
+   "hyd_phosphate": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_hemiacetal": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_epoxide": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_imine": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "hyd_alkene": {
+    "substrate": "lit",
+    "n_expect_db": 2,
+    "n_expect_lit": 0
+   },
+   "hyd_enone": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "ox_amine": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 1
+   },
+   "ox_epoxide": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "ox_dehydro_enone": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "ox_sulfoxide_sulfone": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "red_quinone": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "eli_deamination": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "eli_amide_to_nitrile": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "rea_keto_enol": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "est_delta_lactone": {
+    "substrate": "lit",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "cond_maillard": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "bi_glycosylation": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 1
+   },
+   "bi_hemiacetal": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 2
+   },
+   "bi_michael_amine": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "bi_aldol": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "bi_thiohemiacetal": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   },
+   "ox_para_diphenol": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "ox_para_anthrahydroquinone": {
+    "substrate": "lit",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "red_para_quinone": {
+    "substrate": "db",
+    "n_expect_db": 1,
+    "n_expect_lit": 0
+   },
+   "red_para_anthraquinone": {
+    "substrate": "db",
+    "n_expect_db": 0,
+    "n_expect_lit": 1
+   }
+  }
+ },
+ "tcm_db": {
+  "note": "运行时由 tools/case_db.py 只读解析 InChIKey"
+ }
+}

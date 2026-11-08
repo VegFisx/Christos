@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-11-04 13:44:10",
+  "n_evaluated": 3000,
+  "n_miss": 226,
+  "miss_rate": 0.0753,
+  "classes": {
+    "technical_stereo_or_tautomer": 38,
+    "same_formula_isomer": 32,
+    "undecided": 156
+  },
+  "two_step_probe": {
+    "n": 50,
+    "reachable": 0
+  },
+  "want_rings": {
+    "mean": 2.88,
+    "median": 3.0,
+    "share_0ring": 0.04
+  },
+  "cand_median": 17.0,
+  "seconds": 250.3
+}

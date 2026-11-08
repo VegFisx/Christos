@@ -1,0 +1,3622 @@
+{
+  "n_targets": 100,
+  "depth": 3,
+  "beam": 4,
+  "success": 45,
+  "fail": 55,
+  "gap_hist": {
+    "1": 55
+  },
+  "n_missing_unique": 1907,
+  "recover": {
+    "还是不在任何集合里": 399,
+    "重原子数9-15": 36,
+    "重原子数<=8": 19,
+    "重原子数>25": 188,
+    "重原子数16-25": 157,
+    "落在【砌块含试剂】宽集合里": 1
+  },
+  "detail_top400": [
+    {
+      "smiles": "O=C(OO)c1cccc(Cl)c1",
+      "count": 59,
+      "heavy_atoms": 11,
+      "MW": 172.6,
+      "formula": "C7H5ClO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCCCCl",
+      "count": 44,
+      "heavy_atoms": 5,
+      "MW": 92.6,
+      "formula": "C4H9Cl",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)OC(C)(C)C",
+      "count": 38,
+      "heavy_atoms": 8,
+      "MW": 116.2,
+      "formula": "C6H12O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(Br)c1O",
+      "count": 21,
+      "heavy_atoms": 26,
+      "MW": 413.3,
+      "formula": "C19H17BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1[nH]c(I)c(C)c1C(=O)O",
+      "count": 20,
+      "heavy_atoms": 11,
+      "MW": 265.0,
+      "formula": "C7H8INO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1c(C(=O)O)c(C)n(C)c1I",
+      "count": 20,
+      "heavy_atoms": 12,
+      "MW": 279.1,
+      "formula": "C8H10INO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=C([O-])[O-]",
+      "count": 18,
+      "heavy_atoms": 4,
+      "MW": 60.0,
+      "formula": "CO3-2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NCCCNc1nc(On2nnc3ccccc32)ncc1C(N)=O",
+      "count": 17,
+      "heavy_atoms": 31,
+      "MW": 428.5,
+      "formula": "C19H24N8O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCNC(=O)OC(C)(C)C",
+      "count": 17,
+      "heavy_atoms": 10,
+      "MW": 145.2,
+      "formula": "C7H15NO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN[C@@H](C)C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 16,
+      "heavy_atoms": 31,
+      "MW": 419.5,
+      "formula": "C22H25N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Brc1cccc(-c2nnn[nH]2)c1",
+      "count": 16,
+      "heavy_atoms": 12,
+      "MW": 225.0,
+      "formula": "C7H5BrN4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C(C)CC(C)C",
+      "count": 16,
+      "heavy_atoms": 7,
+      "MW": 98.2,
+      "formula": "C7H14",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2c(C)c(C(=O)O)c(C)n2C)cccc1[N+](=O)[O-]",
+      "count": 14,
+      "heavy_atoms": 22,
+      "MW": 304.3,
+      "formula": "C15H16N2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(N)cccc1-c1c(C)c(C(=O)O)c(C)n1C",
+      "count": 14,
+      "heavy_atoms": 20,
+      "MW": 274.3,
+      "formula": "C15H18N2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1\\C(=O)COC1=O",
+      "count": 12,
+      "heavy_atoms": 28,
+      "MW": 388.5,
+      "formula": "C23H32O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)[nH]c(I)c1C",
+      "count": 12,
+      "heavy_atoms": 13,
+      "MW": 293.1,
+      "formula": "C9H12INO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccccc2OC)n(C)c1C",
+      "count": 12,
+      "heavy_atoms": 21,
+      "MW": 287.4,
+      "formula": "C17H21NO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)N(NC(=O)O)c1ccc2c(c1)C(C)(C)CC2",
+      "count": 12,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H24N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)CCCl",
+      "count": 12,
+      "heavy_atoms": 6,
+      "MW": 106.6,
+      "formula": "C5H11Cl",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1ccccc1-c1ccc(C(=O)O)s1",
+      "count": 12,
+      "heavy_atoms": 16,
+      "MW": 234.3,
+      "formula": "C12H10O3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1ccc(C)cc1-c1ccc(C(=O)O)s1",
+      "count": 12,
+      "heavy_atoms": 17,
+      "MW": 248.3,
+      "formula": "C13H12O3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=CCc2ccc(N(NC(=O)O)C(=O)OC(C)(C)C)cc21",
+      "count": 12,
+      "heavy_atoms": 22,
+      "MW": 304.3,
+      "formula": "C16H20N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N(NC(=O)O)C(=O)OC(C)(C)C)cc21",
+      "count": 12,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H24N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(Br)c1O",
+      "count": 11,
+      "heavy_atoms": 27,
+      "MW": 427.3,
+      "formula": "C20H19BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1",
+      "count": 10,
+      "heavy_atoms": 14,
+      "MW": 188.2,
+      "formula": "C11H12N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCBr",
+      "count": 10,
+      "heavy_atoms": 3,
+      "MW": 109.0,
+      "formula": "C2H5Br",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)c1cccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)c1",
+      "count": 10,
+      "heavy_atoms": 25,
+      "MW": 350.5,
+      "formula": "C19H30N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cccc(C(C)C)c2)C(=O)C1",
+      "count": 10,
+      "heavy_atoms": 16,
+      "MW": 216.3,
+      "formula": "C13H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "count": 10,
+      "heavy_atoms": 31,
+      "MW": 418.4,
+      "formula": "C22H18N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "count": 10,
+      "heavy_atoms": 31,
+      "MW": 434.5,
+      "formula": "C22H18N4O4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)N(NC(=O)O)c1ccc2c(c1)C(C)(C)CC2(C)C",
+      "count": 10,
+      "heavy_atoms": 25,
+      "MW": 348.4,
+      "formula": "C19H28N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=C(O)c1cc(Br)co1",
+      "count": 10,
+      "heavy_atoms": 9,
+      "MW": 191.0,
+      "formula": "C5H3BrO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C/C(=O)O",
+      "count": 8,
+      "heavy_atoms": 25,
+      "MW": 348.5,
+      "formula": "C21H32O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(Br)cc2)C(=O)C1",
+      "count": 8,
+      "heavy_atoms": 14,
+      "MW": 253.1,
+      "formula": "C10H9BrN2O",
+      "in_wide_set": true,
+      "wide_tag": "ORD_reagent(1)"
+    },
+    {
+      "smiles": "O=N[O-]",
+      "count": 8,
+      "heavy_atoms": 3,
+      "MW": 46.0,
+      "formula": "NO2-",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=[N+]([O-])[O-]",
+      "count": 8,
+      "heavy_atoms": 4,
+      "MW": 62.0,
+      "formula": "NO3-",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=[N+]([O-])c1cccc(S(=O)(=O)OCCO)c1",
+      "count": 8,
+      "heavy_atoms": 16,
+      "MW": 247.2,
+      "formula": "C8H9NO6S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "OCCCl",
+      "count": 8,
+      "heavy_atoms": 4,
+      "MW": 80.5,
+      "formula": "C2H5ClO",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc1",
+      "count": 8,
+      "heavy_atoms": 23,
+      "MW": 322.4,
+      "formula": "C17H26N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)c1ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc1",
+      "count": 8,
+      "heavy_atoms": 25,
+      "MW": 350.5,
+      "formula": "C19H30N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C(C)C)cc2)C(=O)C1",
+      "count": 8,
+      "heavy_atoms": 16,
+      "MW": 216.3,
+      "formula": "C13H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1ccccc1-c1ccc(N2C=NCC2)cc1",
+      "count": 8,
+      "heavy_atoms": 19,
+      "MW": 252.3,
+      "formula": "C16H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C1=NCCN1",
+      "count": 8,
+      "heavy_atoms": 5,
+      "MW": 70.1,
+      "formula": "C3H6N2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(Cl)cc2)cccc1[N+](=O)[O-]",
+      "count": 8,
+      "heavy_atoms": 18,
+      "MW": 263.7,
+      "formula": "C13H10ClNO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Brc1ccc(N2C=NCC2)cc1",
+      "count": 8,
+      "heavy_atoms": 12,
+      "MW": 225.1,
+      "formula": "C9H9BrN2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(Br)cccc1[N+](=O)[O-]",
+      "count": 8,
+      "heavy_atoms": 12,
+      "MW": 232.0,
+      "formula": "C7H6BrNO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(Nc2cccc(N)c2)nc1NC1(c2ccccc2)CC1",
+      "count": 7,
+      "heavy_atoms": 27,
+      "MW": 360.4,
+      "formula": "C20H20N6O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 7,
+      "heavy_atoms": 32,
+      "MW": 428.4,
+      "formula": "C24H20N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 7,
+      "heavy_atoms": 33,
+      "MW": 442.5,
+      "formula": "C25H22N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(On2nnc3ccccc32)nc1NCC1CCN(C(=O)O)C1",
+      "count": 6,
+      "heavy_atoms": 29,
+      "MW": 398.4,
+      "formula": "C17H18N8O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(On2nnc3ccccc32)nc1NCCCC=O",
+      "count": 6,
+      "heavy_atoms": 25,
+      "MW": 341.3,
+      "formula": "C15H15N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C=O)CNc1nc(On2nnc3ccccc32)ncc1C(N)=O",
+      "count": 6,
+      "heavy_atoms": 25,
+      "MW": 341.3,
+      "formula": "C15H15N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCCl",
+      "count": 6,
+      "heavy_atoms": 3,
+      "MW": 64.5,
+      "formula": "C2H5Cl",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)[O-]",
+      "count": 6,
+      "heavy_atoms": 5,
+      "MW": 73.1,
+      "formula": "C4H9O-",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)[nH]c(-c2cccc(N)c2OC)c1C",
+      "count": 6,
+      "heavy_atoms": 21,
+      "MW": 288.3,
+      "formula": "C16H20N2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1CCc2ccc(N(N)C=O)cc21",
+      "count": 6,
+      "heavy_atoms": 14,
+      "MW": 190.2,
+      "formula": "C11H14N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)C(C)CC3)C(=O)C1=NNc1cccc(Br)c1O",
+      "count": 6,
+      "heavy_atoms": 27,
+      "MW": 427.3,
+      "formula": "C20H19BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(On2nnc3ccccc32)nc1NCCCCBr",
+      "count": 5,
+      "heavy_atoms": 25,
+      "MW": 406.2,
+      "formula": "C15H16BrN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(CBr)CNc1nc(On2nnc3ccccc32)ncc1C(N)=O",
+      "count": 5,
+      "heavy_atoms": 25,
+      "MW": 406.2,
+      "formula": "C15H16BrN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[CH][C@@](C)(CC[CH]OC(C)(C)O)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 5,
+      "heavy_atoms": 25,
+      "MW": 350.5,
+      "formula": "C20H30O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)[nH]c(-c2cccc([N+](=O)[O-])c2OC)c1C",
+      "count": 5,
+      "heavy_atoms": 23,
+      "MW": 318.3,
+      "formula": "C16H18N2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N3N=C(C)C(=NNc4cccc(Br)c4O)C3=O)cc21",
+      "count": 5,
+      "heavy_atoms": 28,
+      "MW": 441.3,
+      "formula": "C21H21BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(On2nnc3ccccc32)nc1NCCCCCl",
+      "count": 4,
+      "heavy_atoms": 25,
+      "MW": 361.8,
+      "formula": "C15H16ClN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(CCl)CNc1nc(On2nnc3ccccc32)ncc1C(N)=O",
+      "count": 4,
+      "heavy_atoms": 25,
+      "MW": 361.8,
+      "formula": "C15H16ClN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)N1C(=O)CC(CNc2nc(On3nnc4ccccc43)ncc2C(N)=O)C1=O",
+      "count": 4,
+      "heavy_atoms": 35,
+      "MW": 482.5,
+      "formula": "C21H22N8O6",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(Nc2cccc(N)c2)nc1NCc1ccccc1",
+      "count": 4,
+      "heavy_atoms": 25,
+      "MW": 334.4,
+      "formula": "C18H18N6O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CC=C[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 4,
+      "heavy_atoms": 33,
+      "MW": 443.5,
+      "formula": "C24H25N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1C=C[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 4,
+      "heavy_atoms": 28,
+      "MW": 388.5,
+      "formula": "C23H32O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@H]2[C@@](C)(C=C[C@H]3OC(C)(C)OC[C@]32C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 4,
+      "heavy_atoms": 28,
+      "MW": 388.5,
+      "formula": "C23H32O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)C1=C/C=C1/C(=O)OC[C@H]1O",
+      "count": 4,
+      "heavy_atoms": 28,
+      "MW": 388.5,
+      "formula": "C23H32O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC=C2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 4,
+      "heavy_atoms": 28,
+      "MW": 388.5,
+      "formula": "C23H32O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NN(C=O)c1ccc2c(c1)CCC2",
+      "count": 4,
+      "heavy_atoms": 13,
+      "MW": 176.2,
+      "formula": "C10H12N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1",
+      "count": 4,
+      "heavy_atoms": 17,
+      "MW": 226.3,
+      "formula": "C14H14N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1cccc(N2N=C(C)CC2=O)c1",
+      "count": 4,
+      "heavy_atoms": 15,
+      "MW": 202.3,
+      "formula": "C12H14N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 4,
+      "heavy_atoms": 35,
+      "MW": 466.5,
+      "formula": "C27H22N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1cccc(N2N=C(C)C(=NNc3cccc(-c4cccc(C(=O)O)c4)c3O)C2=O)c1",
+      "count": 4,
+      "heavy_atoms": 33,
+      "MW": 442.5,
+      "formula": "C25H22N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 4,
+      "heavy_atoms": 36,
+      "MW": 484.5,
+      "formula": "C27H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCS(C)(=O)=O",
+      "count": 4,
+      "heavy_atoms": 6,
+      "MW": 108.2,
+      "formula": "C3H8O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)Cl",
+      "count": 4,
+      "heavy_atoms": 6,
+      "MW": 108.5,
+      "formula": "C3H5ClO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "[N-]=[N+]=[N-]",
+      "count": 4,
+      "heavy_atoms": 3,
+      "MW": 42.0,
+      "formula": "N3-",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cccc(-c2cccc(-c3nnn[nH]3)c2)c1O",
+      "count": 4,
+      "heavy_atoms": 37,
+      "MW": 490.5,
+      "formula": "C27H22N8O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)C1([N+](=O)[O-])C=CC=C(c2cc(C)ccc2OC)C1",
+      "count": 4,
+      "heavy_atoms": 22,
+      "MW": 303.3,
+      "formula": "C16H17NO5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1ccc(C)cc1C1=CC#CC(C(=O)O)([N+](=O)[O-])C1",
+      "count": 4,
+      "heavy_atoms": 21,
+      "MW": 287.3,
+      "formula": "C15H13NO5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cc(C)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 4,
+      "heavy_atoms": 36,
+      "MW": 480.5,
+      "formula": "C28H24N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)o2)c1O",
+      "count": 4,
+      "heavy_atoms": 34,
+      "MW": 456.5,
+      "formula": "C25H20N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1cccc(N2N=C(C)C(=NNc3cccc(-c4ccc(C(=O)O)o4)c3O)C2=O)c1",
+      "count": 4,
+      "heavy_atoms": 32,
+      "MW": 432.4,
+      "formula": "C23H20N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cccc(-c2coc(C(=O)O)c2)c1O",
+      "count": 4,
+      "heavy_atoms": 34,
+      "MW": 456.5,
+      "formula": "C25H20N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)cc2F)cccc1[N+](=O)[O-]",
+      "count": 4,
+      "heavy_atoms": 23,
+      "MW": 315.3,
+      "formula": "C16H14FN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)cc2N)cccc1[N+](=O)[O-]",
+      "count": 4,
+      "heavy_atoms": 23,
+      "MW": 312.3,
+      "formula": "C16H16N4O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)cc2Cl)cccc1[N+](=O)[O-]",
+      "count": 4,
+      "heavy_atoms": 23,
+      "MW": 331.8,
+      "formula": "C16H14ClN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)cc2Br)cccc1[N+](=O)[O-]",
+      "count": 4,
+      "heavy_atoms": 23,
+      "MW": 376.2,
+      "formula": "C16H14BrN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2ccc(C3=NCCN3Cc3ccccc3)cc2)c1O",
+      "count": 4,
+      "heavy_atoms": 43,
+      "MW": 568.7,
+      "formula": "C35H32N6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Brc1ccc(C2=NCCN2)cc1",
+      "count": 4,
+      "heavy_atoms": 12,
+      "MW": 225.1,
+      "formula": "C9H9BrN2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cc(C)cc(-c2ccc(C(=O)O)s2)c1O",
+      "count": 4,
+      "heavy_atoms": 35,
+      "MW": 486.6,
+      "formula": "C26H22N4O4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC=CC3)C(=O)C1=NNc1cccc(-c2ccc(C(=O)O)s2)c1O",
+      "count": 4,
+      "heavy_atoms": 34,
+      "MW": 472.5,
+      "formula": "C25H20N4O4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1cccc(N2N=C(C)C(=NNc3cccc(-c4ccc(C(=O)O)s4)c3O)C2=O)c1",
+      "count": 4,
+      "heavy_atoms": 32,
+      "MW": 448.5,
+      "formula": "C23H20N4O4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)O)cc21",
+      "count": 4,
+      "heavy_atoms": 22,
+      "MW": 304.3,
+      "formula": "C16H20N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)O)cc21",
+      "count": 4,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H24N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N3N=C(C)C(=NNc4cc(C)cc(Br)c4O)C3=O)cc21",
+      "count": 4,
+      "heavy_atoms": 29,
+      "MW": 455.4,
+      "formula": "C22H23BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC1(c2ccccc2)CC1",
+      "count": 3,
+      "heavy_atoms": 10,
+      "MW": 133.2,
+      "formula": "C9H11N",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3F)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 334.4,
+      "formula": "C15H15FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3cccc(F)c3)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 334.4,
+      "formula": "C15H15FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3N)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 331.4,
+      "formula": "C15H17N5O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3cccc(N)c3)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 331.4,
+      "formula": "C15H17N5O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3Cl)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 350.8,
+      "formula": "C15H15ClN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3cccc(Cl)c3)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 350.8,
+      "formula": "C15H15ClN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3Br)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 395.3,
+      "formula": "C15H15BrN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3cccc(Br)c3)CC2)n1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 395.3,
+      "formula": "C15H15BrN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C\\[C@H](O)CCl",
+      "count": 3,
+      "heavy_atoms": 26,
+      "MW": 383.0,
+      "formula": "C22H35ClO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C\\[C@H](O)CO",
+      "count": 3,
+      "heavy_atoms": 26,
+      "MW": 364.5,
+      "formula": "C22H36O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(I)n(C(=O)OC(C)(C)C)c1C",
+      "count": 3,
+      "heavy_atoms": 20,
+      "MW": 393.2,
+      "formula": "C14H20INO4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)O)c1ccc2c(c1)C(C)(C)CC2",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H24N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2",
+      "count": 3,
+      "heavy_atoms": 28,
+      "MW": 390.5,
+      "formula": "C22H34N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)N(NC(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2",
+      "count": 3,
+      "heavy_atoms": 28,
+      "MW": 390.5,
+      "formula": "C22H34N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)C1([N+](=O)[O-])C=CC=C(c2cc(C)ccc2OC)C1",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 317.3,
+      "formula": "C17H19NO5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1ccc(C)cc1C1=CC=CC(C(=O)OCc2ccccc2)([N+](=O)[O-])C1",
+      "count": 3,
+      "heavy_atoms": 28,
+      "MW": 379.4,
+      "formula": "C22H21NO5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cccc([N+](=O)[O-])c2OC)s1",
+      "count": 3,
+      "heavy_atoms": 20,
+      "MW": 293.3,
+      "formula": "C13H11NO5S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(C(=O)OCc3ccccc3)s2)cccc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 26,
+      "MW": 369.4,
+      "formula": "C19H15NO5S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cccc(N)c2OC)s1",
+      "count": 3,
+      "heavy_atoms": 18,
+      "MW": 263.3,
+      "formula": "C13H13NO3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(N)cccc1-c1ccc(C(=O)OCc2ccccc2)s1",
+      "count": 3,
+      "heavy_atoms": 24,
+      "MW": 339.4,
+      "formula": "C19H17NO3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(C(=O)O)s2)cc(C)c(F)c1N",
+      "count": 3,
+      "heavy_atoms": 19,
+      "MW": 281.3,
+      "formula": "C13H12FNO3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2(C)C",
+      "count": 3,
+      "heavy_atoms": 30,
+      "MW": 418.6,
+      "formula": "C24H38N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)N(NC(=O)OC(C)(C)C)c1ccc2c(c1)C(C)(C)CC2(C)C",
+      "count": 3,
+      "heavy_atoms": 30,
+      "MW": 418.6,
+      "formula": "C24H38N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cc(C)cc([N+](=O)[O-])c2OC)s1",
+      "count": 3,
+      "heavy_atoms": 21,
+      "MW": 307.3,
+      "formula": "C14H13NO5S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(C(=O)OCc3ccccc3)s2)cc(C)cc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 27,
+      "MW": 383.4,
+      "formula": "C20H17NO5S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cc(C)cc(N)c2OC)s1",
+      "count": 3,
+      "heavy_atoms": 19,
+      "MW": 277.3,
+      "formula": "C14H15NO3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(N)cc(C)cc1-c1ccc(C(=O)OCc2ccccc2)s1",
+      "count": 3,
+      "heavy_atoms": 25,
+      "MW": 353.4,
+      "formula": "C20H19NO3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)c(F)c2)cccc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 315.3,
+      "formula": "C16H14FN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)c(N)c2)cccc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 312.3,
+      "formula": "C16H16N4O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)c(Cl)c2)cccc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 331.8,
+      "formula": "C16H14ClN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COc1c(-c2ccc(N3C=NCC3)c(Br)c2)cccc1[N+](=O)[O-]",
+      "count": 3,
+      "heavy_atoms": 23,
+      "MW": 376.2,
+      "formula": "C16H14BrN3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1)C(C)=CC2",
+      "count": 3,
+      "heavy_atoms": 27,
+      "MW": 374.5,
+      "formula": "C21H30N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC(C)(C)OC(=O)N(NC(=O)OC(C)(C)C)c1ccc2c(c1)C(C)=CC2",
+      "count": 3,
+      "heavy_atoms": 27,
+      "MW": 374.5,
+      "formula": "C21H30N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)C(C)CC5)N=C3C)c2O)s1",
+      "count": 3,
+      "heavy_atoms": 35,
+      "MW": 488.6,
+      "formula": "C26H24N4O4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N(NC(=O)OC(C)(C)CC)C(=O)OC(C)(C)C)cc21",
+      "count": 3,
+      "heavy_atoms": 28,
+      "MW": 390.5,
+      "formula": "C22H34N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)CC)cc21",
+      "count": 3,
+      "heavy_atoms": 28,
+      "MW": 390.5,
+      "formula": "C22H34N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1ccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)C(C)CC5)N=C3C)c2O)o1",
+      "count": 3,
+      "heavy_atoms": 35,
+      "MW": 472.5,
+      "formula": "C26H24N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)N1CCC(CNc2c(C(N)=O)cnc(On3nnc4ccccc43)[n+]2[O-])C1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 470.5,
+      "formula": "C21H26N8O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)N1CCC(CNc2nc(On3nnc4ccccc43)[n+]([O-])cc2C(N)=O)C1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 470.5,
+      "formula": "C21H26N8O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(On2nnc3ccccc32)nc1NCCCCO",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 343.3,
+      "formula": "C15H17N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(CO)CNc1nc(On2nnc3ccccc32)ncc1C(N)=O",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 343.3,
+      "formula": "C15H17N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(Cl)n1",
+      "count": 2,
+      "heavy_atoms": 13,
+      "MW": 219.7,
+      "formula": "C6H6ClN3O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1nc(NC2(c3ccccc3)CC2)c(C(N)=O)c[n+]1[O-]",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 332.4,
+      "formula": "C15H16N4O3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)[n+]1[O-]",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 332.4,
+      "formula": "C15H16N4O3S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccc(F)cc3)CC2)n1",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 334.4,
+      "formula": "C15H15FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccc(N)cc3)CC2)n1",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 331.4,
+      "formula": "C15H17N5O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccc(Cl)cc3)CC2)n1",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 350.8,
+      "formula": "C15H15ClN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C#N)c(NC2(c3ccccc3)CC2)n1",
+      "count": 2,
+      "heavy_atoms": 21,
+      "MW": 298.4,
+      "formula": "C15H14N4OS",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccc(Br)cc3)CC2)n1",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 395.3,
+      "formula": "C15H15BrN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1cccc(C2(Nc3nc(S(C)=O)ncc3C(N)=O)CC2)c1F",
+      "count": 2,
+      "heavy_atoms": 24,
+      "MW": 348.4,
+      "formula": "C16H17FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1ccc(C2(Nc3nc(S(C)=O)ncc3C(N)=O)CC2)cc1F",
+      "count": 2,
+      "heavy_atoms": 24,
+      "MW": 348.4,
+      "formula": "C16H17FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1cc(C2(Nc3nc(S(C)=O)ncc3C(N)=O)CC2)ccc1F",
+      "count": 2,
+      "heavy_atoms": 24,
+      "MW": 348.4,
+      "formula": "C16H17FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1c(F)cccc1C1(Nc2nc(S(C)=O)ncc2C(N)=O)CC1",
+      "count": 2,
+      "heavy_atoms": 24,
+      "MW": 348.4,
+      "formula": "C16H17FN4O2S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Cl",
+      "count": 2,
+      "heavy_atoms": 4,
+      "MW": 78.5,
+      "formula": "C2H3ClO",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2nc(NC3(c4ccccc4)CC3)c(C(N)=O)c[n+]2[O-])c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 418.5,
+      "formula": "C22H22N6O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)[n+]2[O-])c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 418.5,
+      "formula": "C22H22N6O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)ccc1F",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 420.4,
+      "formula": "C22H21FN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1F",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 420.4,
+      "formula": "C22H21FN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(F)cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 420.4,
+      "formula": "C22H21FN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1ccc(F)c(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 420.4,
+      "formula": "C22H21FN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)ccc1N",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 417.5,
+      "formula": "C22H23N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1N",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 417.5,
+      "formula": "C22H23N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(N)cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 417.5,
+      "formula": "C22H23N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1ccc(N)c(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 417.5,
+      "formula": "C22H23N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)ccc1Cl",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 436.9,
+      "formula": "C22H21ClN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1Cl",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 436.9,
+      "formula": "C22H21ClN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cc(Cl)cc(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 436.9,
+      "formula": "C22H21ClN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1ccc(Cl)c(Nc2ncc(C(N)=O)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 436.9,
+      "formula": "C22H21ClN6O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Cl)c1",
+      "count": 2,
+      "heavy_atoms": 11,
+      "MW": 169.6,
+      "formula": "C8H8ClNO",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(N)nc1NC1(c2ccccc2)CC1",
+      "count": 2,
+      "heavy_atoms": 20,
+      "MW": 269.3,
+      "formula": "C14H15N5O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(=O)Nc1cccc(Nc2ncc(C#N)c(NC3(c4ccccc4)CC3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 29,
+      "MW": 384.4,
+      "formula": "C22H20N6O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(Nc2cccc(Cl)c2)nc1NC1(c2ccccc2)CC1",
+      "count": 2,
+      "heavy_atoms": 27,
+      "MW": 379.9,
+      "formula": "C20H18ClN5O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(Nc2cccc(Br)c2)nc1NC1(c2ccccc2)CC1",
+      "count": 2,
+      "heavy_atoms": 27,
+      "MW": 424.3,
+      "formula": "C20H18BrN5O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NC(=O)c1cnc(Nc2cccc(NC(=O)[C@@H]3CCCN3)c2)nc1NCc1ccccc1",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 431.5,
+      "formula": "C23H25N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(N)n2)c1",
+      "count": 2,
+      "heavy_atoms": 26,
+      "MW": 355.4,
+      "formula": "C17H21N7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2nc(NCc3ccccc3)c(C(N)=O)c[n+]2[O-])c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 461.5,
+      "formula": "C24H27N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)[n+]2[O-])c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 461.5,
+      "formula": "C24H27N7O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)ccc1F",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 463.5,
+      "formula": "C24H26FN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1F",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 463.5,
+      "formula": "C24H26FN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cc(F)cc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 463.5,
+      "formula": "C24H26FN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1ccc(F)c(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 463.5,
+      "formula": "C24H26FN7O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)ccc1N",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C24H28N8O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cccc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1N",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C24H28N8O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1cc(N)cc(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C24H28N8O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CN1CCC[C@H]1C(=O)Nc1ccc(N)c(Nc2ncc(C(N)=O)c(NCc3ccccc3)n2)c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C24H28N8O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1CC[P+](c1ccccc1)(c1ccccc1)c1ccccc1",
+      "count": 2,
+      "heavy_atoms": 40,
+      "MW": 553.7,
+      "formula": "C37H46O2P+",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=C1OC[C@@H](O)C1=O",
+      "count": 2,
+      "heavy_atoms": 8,
+      "MW": 116.1,
+      "formula": "C4H4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@](C)(CBr)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 413.4,
+      "formula": "C20H29BrO4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C\\[C@H](O)CBr",
+      "count": 2,
+      "heavy_atoms": 26,
+      "MW": 427.4,
+      "formula": "C22H35BrO3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1OC(C)=O",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 432.6,
+      "formula": "C25H36O6",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@@H]2[C@]3(C)COC(C)(CC)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 2,
+      "heavy_atoms": 29,
+      "MW": 404.5,
+      "formula": "C24H36O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1C#C[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 386.5,
+      "formula": "C23H30O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "C=C1CC[C@H]2[C@@](C)(C#C[C@H]3OC(C)(C)OC[C@]32C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 386.5,
+      "formula": "C23H30O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.3,
+      "formula": "C13H13FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.3,
+      "formula": "C13H13FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.3,
+      "formula": "C13H13FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 229.3,
+      "formula": "C13H15N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 229.3,
+      "formula": "C13H15N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 229.3,
+      "formula": "C13H15N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 248.7,
+      "formula": "C13H13ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 248.7,
+      "formula": "C13H13ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 248.7,
+      "formula": "C13H13ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cccc(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 188.2,
+      "formula": "C11H12N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Br)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 293.2,
+      "formula": "C13H13BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Br)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 293.2,
+      "formula": "C13H13BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Br)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 293.2,
+      "formula": "C13H13BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cccc(Br)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 253.1,
+      "formula": "C10H9BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2O)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2O)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(O)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2C)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 228.3,
+      "formula": "C14H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2C)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 228.3,
+      "formula": "C14H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(C)c3c(c2)CCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 228.3,
+      "formula": "C14H16N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 482.5,
+      "formula": "C28H26N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1cccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 468.5,
+      "formula": "C27H24N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)OCc3ccccc3)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 41,
+      "MW": 544.6,
+      "formula": "C33H28N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(Br)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 489.4,
+      "formula": "C25H21BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2ccccc2)c1O",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 410.5,
+      "formula": "C25H22N4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 472.5,
+      "formula": "C26H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 472.5,
+      "formula": "C26H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 472.5,
+      "formula": "C26H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 469.5,
+      "formula": "C26H23N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 469.5,
+      "formula": "C26H23N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 469.5,
+      "formula": "C26H23N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 488.9,
+      "formula": "C26H21ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 488.9,
+      "formula": "C26H21ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 488.9,
+      "formula": "C26H21ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1C=O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 466.5,
+      "formula": "C27H22N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cccc(C)c2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 428.4,
+      "formula": "C24H20N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cccc(-c2cc(F)cc(NN=C3C(=O)N(c4ccc5c(c4)CCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 500.5,
+      "formula": "C28H25FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1cccc(-c2cc(F)cc(NN=C3C(=O)N(c4ccc5c(c4)CCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 486.5,
+      "formula": "C27H23FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)OCc3ccccc3)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 42,
+      "MW": 562.6,
+      "formula": "C33H27FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(Br)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 507.4,
+      "formula": "C25H20BrFN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2ccccc2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 428.5,
+      "formula": "C25H21FN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 490.5,
+      "formula": "C26H20F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 490.5,
+      "formula": "C26H20F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 490.5,
+      "formula": "C26H20F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1c(O)c(-c2cccc(C(=O)O)c2)cc(F)c1F",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 490.5,
+      "formula": "C26H20F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 487.5,
+      "formula": "C26H22FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 487.5,
+      "formula": "C26H22FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 487.5,
+      "formula": "C26H22FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1c(N)c(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 487.5,
+      "formula": "C26H22FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 506.9,
+      "formula": "C26H20ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 506.9,
+      "formula": "C26H20ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 506.9,
+      "formula": "C26H20ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1c(O)c(-c2cccc(C(=O)O)c2)cc(F)c1Cl",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 506.9,
+      "formula": "C26H20ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1C=O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 484.5,
+      "formula": "C27H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)cc2)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 446.4,
+      "formula": "C24H19FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cccc(C)c2)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 446.4,
+      "formula": "C24H19FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCC3)C(=O)C1=NNc1cc(F)cc(Br)c1O",
+      "count": 2,
+      "heavy_atoms": 27,
+      "MW": 431.3,
+      "formula": "C19H16BrFN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 246.3,
+      "formula": "C14H15FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 246.3,
+      "formula": "C14H15FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 246.3,
+      "formula": "C14H15FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 243.3,
+      "formula": "C14H17N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 243.3,
+      "formula": "C14H17N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 243.3,
+      "formula": "C14H17N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 262.7,
+      "formula": "C14H15ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 262.7,
+      "formula": "C14H15ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 262.7,
+      "formula": "C14H15ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1ccc(N2N=C(C)CC2=O)cc1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 202.3,
+      "formula": "C12H14N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Br)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 307.2,
+      "formula": "C14H15BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Br)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 307.2,
+      "formula": "C14H15BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Br)c3c(c2)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 307.2,
+      "formula": "C14H15BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NN(C=O)c1ccc2c(c1)CCCC2",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 190.2,
+      "formula": "C11H14N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(Br)c(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 267.1,
+      "formula": "C11H11BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(C)c(Br)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 267.1,
+      "formula": "C11H11BrN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2O)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 244.3,
+      "formula": "C14H16N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2O)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 244.3,
+      "formula": "C14H16N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(O)c3c(c2)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 244.3,
+      "formula": "C14H16N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CC#CC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 224.3,
+      "formula": "C14H12N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2C)CCCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 18,
+      "MW": 242.3,
+      "formula": "C15H18N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 496.6,
+      "formula": "C29H28N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)OCc3ccccc3)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 42,
+      "MW": 558.6,
+      "formula": "C34H30N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(Br)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 503.4,
+      "formula": "C26H23BrN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2ccccc2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 424.5,
+      "formula": "C26H24N4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 486.5,
+      "formula": "C27H23FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 486.5,
+      "formula": "C27H23FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 486.5,
+      "formula": "C27H23FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 483.5,
+      "formula": "C27H25N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 483.5,
+      "formula": "C27H25N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 483.5,
+      "formula": "C27H25N5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 503.0,
+      "formula": "C27H23ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 503.0,
+      "formula": "C27H23ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 503.0,
+      "formula": "C27H23ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1C=O",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 480.5,
+      "formula": "C28H24N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1ccc(N2N=C(C)C(=NNc3cccc(-c4cccc(C(=O)O)c4)c3O)C2=O)cc1",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 442.5,
+      "formula": "C25H22N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cccc(-c2cc(F)cc(NN=C3C(=O)N(c4ccc5c(c4)CCCC5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 38,
+      "MW": 514.6,
+      "formula": "C29H27FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)OCc3ccccc3)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 43,
+      "MW": 576.6,
+      "formula": "C34H29FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(Br)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 521.4,
+      "formula": "C26H22BrFN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2ccccc2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 442.5,
+      "formula": "C26H23FN4O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 504.5,
+      "formula": "C27H22F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 504.5,
+      "formula": "C27H22F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 504.5,
+      "formula": "C27H22F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1c(O)c(-c2cccc(C(=O)O)c2)cc(F)c1F",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 504.5,
+      "formula": "C27H22F2N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 501.5,
+      "formula": "C27H24FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 501.5,
+      "formula": "C27H24FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 501.5,
+      "formula": "C27H24FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1c(N)c(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 501.5,
+      "formula": "C27H24FN5O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 520.9,
+      "formula": "C27H22ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 520.9,
+      "formula": "C27H22ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 520.9,
+      "formula": "C27H22ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1c(O)c(-c2cccc(C(=O)O)c2)cc(F)c1Cl",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 520.9,
+      "formula": "C27H22ClFN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCCC3)C(=O)C1=NNc1cc(F)cc(-c2cccc(C(=O)O)c2)c1C=O",
+      "count": 2,
+      "heavy_atoms": 37,
+      "MW": 498.5,
+      "formula": "C28H23FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1ccc(N2N=C(C)C(=NNc3cc(F)cc(-c4cccc(C(=O)O)c4)c3O)C2=O)cc1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C25H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCc1cccc(N2N=C(C)C(=NNc3cc(F)cc(-c4cccc(C(=O)O)c4)c3O)C2=O)c1",
+      "count": 2,
+      "heavy_atoms": 34,
+      "MW": 460.5,
+      "formula": "C25H21FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "O=C(Cl)C(=O)Cl",
+      "count": 2,
+      "heavy_atoms": 6,
+      "MW": 126.9,
+      "formula": "C2Cl2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)[nH]c(I)c1Br",
+      "count": 2,
+      "heavy_atoms": 13,
+      "MW": 358.0,
+      "formula": "C8H9BrINO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1[nH]c(I)c(C)c1Br",
+      "count": 2,
+      "heavy_atoms": 9,
+      "MW": 299.9,
+      "formula": "C6H7BrIN",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(I)n(S(=O)(=O)c2ccc(C)cc2)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 447.3,
+      "formula": "C16H18INO4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(I)n(S(C)(=O)=O)c1C",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 371.2,
+      "formula": "C10H14INO4S",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CI",
+      "count": 2,
+      "heavy_atoms": 2,
+      "MW": 141.9,
+      "formula": "CH3I",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(Br)c(I)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 372.0,
+      "formula": "C9H11BrINO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "Cc1c(Br)c(C)n(C)c1I",
+      "count": 2,
+      "heavy_atoms": 10,
+      "MW": 314.0,
+      "formula": "C7H9BrIN",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cc2ccccc2[nH]1",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 189.2,
+      "formula": "C11H11NO2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(F)ccc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 350.3,
+      "formula": "C17H19FN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(F)cc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 350.3,
+      "formula": "C17H19FN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(F)c([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 350.3,
+      "formula": "C17H19FN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(N)ccc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 347.4,
+      "formula": "C17H21N3O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(N)cc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 347.4,
+      "formula": "C17H21N3O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(N)c([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 347.4,
+      "formula": "C17H21N3O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(Cl)ccc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 366.8,
+      "formula": "C17H19ClN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(Cl)cc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 366.8,
+      "formula": "C17H19ClN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(Cl)c([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 366.8,
+      "formula": "C17H19ClN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(Br)ccc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 411.3,
+      "formula": "C17H19BrN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(Br)cc([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 411.3,
+      "formula": "C17H19BrN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(Br)c([N+](=O)[O-])c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 25,
+      "MW": 411.3,
+      "formula": "C17H19BrN2O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(F)ccc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H21FN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(F)cc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H21FN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(F)c(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 320.4,
+      "formula": "C17H21FN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(N)ccc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 317.4,
+      "formula": "C17H23N3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(N)cc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 317.4,
+      "formula": "C17H23N3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(N)c(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 317.4,
+      "formula": "C17H23N3O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(Cl)ccc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 336.8,
+      "formula": "C17H21ClN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(Cl)cc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 336.8,
+      "formula": "C17H21ClN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(Cl)c(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 336.8,
+      "formula": "C17H21ClN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2c(Br)ccc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 381.3,
+      "formula": "C17H21BrN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2cc(Br)cc(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 381.3,
+      "formula": "C17H21BrN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1c(C)c(-c2ccc(Br)c(N)c2OC)n(C)c1C",
+      "count": 2,
+      "heavy_atoms": 23,
+      "MW": 381.3,
+      "formula": "C17H21BrN2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(F)c(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 206.2,
+      "formula": "C11H11FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccccc2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 13,
+      "MW": 174.2,
+      "formula": "C10H10N2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(Cl)c(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 222.7,
+      "formula": "C11H11ClN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(O)c(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 204.2,
+      "formula": "C11H12N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 234.2,
+      "formula": "C12H11FN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 234.2,
+      "formula": "C12H11FN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 234.2,
+      "formula": "C12H11FN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 231.3,
+      "formula": "C12H13N3O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 231.3,
+      "formula": "C12H13N3O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 231.3,
+      "formula": "C12H13N3O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 250.7,
+      "formula": "C12H11ClN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 250.7,
+      "formula": "C12H11ClN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 250.7,
+      "formula": "C12H11ClN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(O)cc2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 14,
+      "MW": 190.2,
+      "formula": "C10H10N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Br)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 295.1,
+      "formula": "C12H11BrN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Br)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 295.1,
+      "formula": "C12H11BrN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Br)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 295.1,
+      "formula": "C12H11BrN2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "NN(C=O)c1ccc2c(c1)CCO2",
+      "count": 2,
+      "heavy_atoms": 13,
+      "MW": 178.2,
+      "formula": "C9H10N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2O)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.2,
+      "formula": "C12H12N2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2O)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.2,
+      "formula": "C12H12N2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(O)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 232.2,
+      "formula": "C12H12N2O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(I)c(C)c2)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 15,
+      "MW": 314.1,
+      "formula": "C11H11IN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2C)OCC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2C)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(C)c3c(c2)CCO3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 17,
+      "MW": 230.3,
+      "formula": "C13H14N2O2",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCOC(=O)c1cccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCO5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 36,
+      "MW": 484.5,
+      "formula": "C27H24N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(F)c(C)c2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 446.4,
+      "formula": "C24H19FN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "COC(=O)c1cccc(-c2cccc(NN=C3C(=O)N(c4ccc5c(c4)CCO5)N=C3C)c2O)c1",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 470.5,
+      "formula": "C26H22N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)OCc3ccccc3)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 41,
+      "MW": 546.6,
+      "formula": "C32H26N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccccc2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 414.4,
+      "formula": "C23H18N4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(Br)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 491.3,
+      "formula": "C24H19BrN4O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(Cl)c(C)c2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 462.9,
+      "formula": "C24H19ClN4O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(O)c(C)c2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 33,
+      "MW": 444.4,
+      "formula": "C24H20N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2ccccc2)c1O",
+      "count": 2,
+      "heavy_atoms": 31,
+      "MW": 412.4,
+      "formula": "C24H20N4O3",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)OCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 474.4,
+      "formula": "C25H19FN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 474.4,
+      "formula": "C25H19FN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 474.4,
+      "formula": "C25H19FN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)OCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 471.5,
+      "formula": "C25H21N5O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2N)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 471.5,
+      "formula": "C25H21N5O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(N)c3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 471.5,
+      "formula": "C25H21N5O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2Cl)OCC3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 490.9,
+      "formula": "C25H19ClN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2Cl)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 490.9,
+      "formula": "C25H19ClN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(Cl)c3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 490.9,
+      "formula": "C25H19ClN4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2)CCO3)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1C=O",
+      "count": 2,
+      "heavy_atoms": 35,
+      "MW": 468.5,
+      "formula": "C26H20N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc(O)cc2)C(=O)C1=NNc1cccc(-c2cccc(C(=O)O)c2)c1O",
+      "count": 2,
+      "heavy_atoms": 32,
+      "MW": 430.4,
+      "formula": "C23H18N4O5",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc2c(cc1F)CCC2(C)C",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 394.5,
+      "formula": "C21H31FN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1F)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 394.5,
+      "formula": "C21H31FN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc(F)c2c(c1)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 394.5,
+      "formula": "C21H31FN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc2c(cc1N)CCC2(C)C",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 391.5,
+      "formula": "C21H33N3O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1N)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 391.5,
+      "formula": "C21H33N3O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc(N)c2c(c1)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 391.5,
+      "formula": "C21H33N3O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc2c(cc1Cl)CCC2(C)C",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 410.9,
+      "formula": "C21H31ClN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1Cl)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 410.9,
+      "formula": "C21H31ClN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc(Cl)c2c(c1)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 410.9,
+      "formula": "C21H31ClN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CCC1(C)CCc2ccc(N(NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc21",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 390.5,
+      "formula": "C22H34N2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc2c(cc1Br)CCC2(C)C",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 455.4,
+      "formula": "C21H31BrN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1ccc2c(c1Br)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 455.4,
+      "formula": "C21H31BrN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC(C)(C)OC(=O)NN(C(=O)OC(C)(C)C)c1cc(Br)c2c(c1)C(C)(C)CC2",
+      "count": 2,
+      "heavy_atoms": 28,
+      "MW": 455.4,
+      "formula": "C21H31BrN2O4",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2F)CCC3(C)C)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 19,
+      "MW": 260.3,
+      "formula": "C15H17FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2ccc3c(c2F)C(C)(C)CC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 19,
+      "MW": 260.3,
+      "formula": "C15H17FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc(F)c3c(c2)C(C)(C)CC3)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 19,
+      "MW": 260.3,
+      "formula": "C15H17FN2O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    },
+    {
+      "smiles": "CC1=NN(c2cc3c(cc2N)CCC3(C)C)C(=O)C1",
+      "count": 2,
+      "heavy_atoms": 19,
+      "MW": 257.3,
+      "formula": "C15H19N3O",
+      "in_wide_set": false,
+      "wide_tag": ""
+    }
+  ],
+  "elapsed_sec": 318.1
+}

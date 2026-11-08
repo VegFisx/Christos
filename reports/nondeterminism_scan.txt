@@ -1,0 +1,89 @@
+====================================================================================================
+静态扫描：非确定性来源
+====================================================================================================
+
+【A set迭代取前N】4 处
+    core\engine.py:223
+        for k in set(a) | set(b):
+    core\engine.py:412
+        for p in pset:
+    rules\schema.py:486
+        prods = [Chem.Mol(p) for p in pset]
+    rules\schema.py:500
+        product_groups.append([Chem.Mol(p) for p in pset])
+
+【A list(set(】0 处
+
+【B random】0 处
+
+【C time参与逻辑】6 处
+    core\thermo.py:122
+        self._t0 = time.time()
+    core\thermo.py:151
+        return self.budget_sec - (time.time() - self._t0)
+    core\thermo.py:178
+        t0 = time.time()
+    core\thermo.py:183
+        self.stats.seconds += time.time() - t0
+    api\predict.py:336
+        t0 = time.time()
+    api\predict.py:445
+        elapsed=time.time() - t0,
+
+【D dict.values取前N】0 处
+
+【E sorted无key】16 处
+    core\cascade.py:297
+        for rid in sorted(buckets):
+    core\engine.py:460
+        outcomes = sorted(outcomes)
+    conditions\model.py:54
+        p.append(f"未知溶剂 {self.solvent!r}，允许：{sorted(SOLVENTS)}")
+    conditions\model.py:56
+        p.append(f"未知催化剂 {self.catalyst!r}，允许：{sorted(x for x in CATALYSTS if x)}")
+    conditions\model.py:58
+        p.append(f"未知气氛 {self.atmosphere!r}，允许：{sorted(ATMOSPHERES)}")
+    conditions\model.py:78
+        raise ValueError(f"Conditions 不认识的字段：{sorted(unknown)}")
+    conditions\templates.py:83
+        raise KeyError(f"没有条件模板 {name!r}，可用：{sorted(TEMPLATES)}")
+    rules\sanity.py:140
+        syms = sorted(pm.GetAtomWithIdx(i).GetSymbol() for i in ring)
+    rules\sanity.py:180
+        f"{cat} 类反应通常的副产物是 {sorted(allowed) or '无'}，"
+    rules\sanity.py:202
+        f"{cat} 类反应通常消耗 {sorted(allowed) or '无'}，但这里写了 {formula}"))
+    rules\schema.py:147
+        for el in sorted(set(left) | set(right)):
+    rules\schema.py:155
+        return "".join(f"{el}{counts[el]:g}" for el in sorted(counts) if counts[el])
+    rules\schema.py:251
+        orphan = sorted(set(pt_maps) - set(rt_maps))
+    rules\schema.py:261
+        for n in sorted(set(rt_maps) & set(pt_maps))
+    …… 另有 2 处
+
+【F 环境变量】0 处
+
+【G 并发】0 处
+
+【H set推导】3 处
+    conditions\model.py:75
+        known = {f for f in cls.__dataclass_fields__}
+    rules\stereo.py:170
+        touched = {mol_idx for patt_idx, mol_idx in enumerate(match)
+    rules\stereo.py:172
+        spectators = {i for i in centers if i not in touched}
+
+====================================================================================================
+★ 重点：把 set/dict 迭代结果【直接用于顺序】的地方
+====================================================================================================
+  （无）
+====================================================================================================
+结论
+====================================================================================================
+
+  · B/C/F/G 这几类如果【没有】命中，说明没有随机数、没有时间参与逻辑、
+    没有环境变量依赖、没有并发 —— 这些都是好消息。
+  · A/E/D 需要人工看：set 迭代本身无害，**有害的是拿它的顺序去"取前 N"**。
+

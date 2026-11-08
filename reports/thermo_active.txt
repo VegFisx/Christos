@@ -1,0 +1,38 @@
+========================================================================================
+① thermo_xtb 能不能导入 / xTB 二进制在不在
+========================================================================================
+  ✓ import thermo_xtb 成功
+    CACHE_DIR = D:\TCMAI\data\xtb_cache
+      XTB = Path(r"D:\TCMAI\tools\xtb\xtb-6.7.1\bin\xtb.exe")
+      XTB = Path(r"D:\TCMAI\tools\xtb\xtb-6.7.1\bin\xtb.exe")
+      XTB = Path(r"D:\TCMAI\tools\xtb\xtb-6.7.1\bin\xtb.exe")
+
+========================================================================================
+② Thermo 实例是否可用
+========================================================================================
+  enabled=True: available=True  budget=300.0s
+  enabled=False: available=False  budget=300.0s
+
+========================================================================================
+③ 打分时到底用没用 ΔG
+========================================================================================
+  scorer.py 里与 ΔG/thermo 相关的行：21
+      而你项目里 `src/thermo_xtb.py` 正好能算
+      真正的做法：接 src/thermo_xtb.py 算反应 ΔG。
+      stability_override：由 core/thermo.py 算出的热力学稳定性（0~1）。
+      def stability_from_dg_absolute(dg_kj: float) -> float:
+      if dg_kj <= lo:
+      if dg_kj >= hi:
+      return round((hi - dg_kj) / (hi - lo), 4)
+      def assign_thermo(products, thermo, rule_by_id: Dict[str, Any]) -> Dict[str, Any]:
+      直接改写入参 product 对象的 dg_kj / stability 字段。
+      if thermo is None or not getattr(thermo, "available", False):
+      stats["skipped"] = "thermo 不可用"
+      eq = thermo.build_equation(rule, p.source_smiles, p.co_products)
+      cache[key] = thermo.reaction_dg(*eq) if eq else None
+      dg = cache[key]
+
+========================================================================================
+④ 引擎实际统计：跑一小批，看 computed / budget_exhausted
+========================================================================================
+  eng.thermo 存在: False

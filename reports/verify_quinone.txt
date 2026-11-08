@@ -1,0 +1,19 @@
+【醌还原】完整配置
+   smarts = "[O:1]=[C:2][C:3]=[O:4]>>[OH:1][C:2][C:3][OH:4]"
+   co_reagents = {"H2": 2}
+   byproducts = {}
+   condition_profile = "reduction"
+   priority = 0.45
+   max_products_per_molecule = 2
+
+   底物 C6H4O2 + co={'H2': 2} - by={}
+   产物 OC1C=CC=CC1O = C6H8O2
+
+   ★ 校验器的判据: 底物原子 + co原子 == 产物原子 + by原子
+      左边 = C6H4O2 + {'H2': 2} = C6H6O2
+      右边 = C6H8O2 + {} = C6H8O2
+      → 应该判 UNBALANCED！（差 2 个 H）
+
+=== 试着修：让产物芳香化 ===
+  原(给 C6H8O2)    [('OC1C=CC=CC1O', 'C6H8O2')]
+  芳香化版           [('Oc1ccccc1O', 'C6H6O2')]

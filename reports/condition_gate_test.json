@@ -1,0 +1,123 @@
+{
+  "n_cond_types": 37,
+  "zero_by_cond": {
+    "室温水浸": [
+      "C_C_decarboxylation",
+      "heck",
+      "oxadiazole_condensation",
+      "tetrazole_synthesis"
+    ],
+    "煎煮 100°C": [
+      "mitsunobu",
+      "oxadiazole_condensation"
+    ],
+    "乙醇回流": [
+      "C_C_decarboxylation",
+      "oxadiazole_condensation"
+    ],
+    "高温久煎": [
+      "C_C_decarboxylation",
+      "amine_acetylation",
+      "amine_sulfonation",
+      "cross_electrophile_coupling",
+      "ester_schotten_baumann",
+      "ester_sulfonic_schotten_baumann",
+      "esterification",
+      "imidazole_condensation_amine",
+      "mitsunobu",
+      "negishi_batch",
+      "negishi_insitu",
+      "oxadiazole_condensation",
+      "reductive_amination_aldehyde",
+      "reductive_amination_ketone",
+      "sn2_nheterocycle",
+      "sonogashira",
+      "tetrazole_synthesis",
+      "ullmann_X",
+      "urea_formation",
+      "williamson"
+    ],
+    "低温冷浸": [
+      "C_C_decarboxylation",
+      "heck",
+      "oxadiazole_condensation",
+      "snar_thiol",
+      "tetrazole_synthesis"
+    ]
+  },
+  "dynamic": {
+    "室温水浸": {
+      "products": 1357,
+      "types": 6,
+      "gated_zero": 0,
+      "gated_by_type": {},
+      "type_list": [
+        "amide_coupling",
+        "esterification",
+        "mined_extra",
+        "mined_mono",
+        "mitsunobu",
+        "reductive_amination_ketone"
+      ]
+    },
+    "煎煮 100°C": {
+      "products": 1356,
+      "types": 5,
+      "gated_zero": 5,
+      "gated_by_type": {
+        "mitsunobu": 5
+      },
+      "type_list": [
+        "amide_coupling",
+        "esterification",
+        "mined_extra",
+        "mined_mono",
+        "reductive_amination_ketone"
+      ]
+    },
+    "乙醇回流": {
+      "products": 1357,
+      "types": 6,
+      "gated_zero": 0,
+      "gated_by_type": {},
+      "type_list": [
+        "amide_coupling",
+        "esterification",
+        "mined_extra",
+        "mined_mono",
+        "mitsunobu",
+        "reductive_amination_ketone"
+      ]
+    },
+    "高温久煎": {
+      "products": 1352,
+      "types": 3,
+      "gated_zero": 15,
+      "gated_by_type": {
+        "esterification": 6,
+        "mitsunobu": 5,
+        "reductive_amination_ketone": 4
+      },
+      "type_list": [
+        "amide_coupling",
+        "mined_extra",
+        "mined_mono"
+      ]
+    },
+    "低温冷浸": {
+      "products": 1357,
+      "types": 6,
+      "gated_zero": 0,
+      "gated_by_type": {},
+      "type_list": [
+        "amide_coupling",
+        "esterification",
+        "mined_extra",
+        "mined_mono",
+        "mitsunobu",
+        "reductive_amination_ketone"
+      ]
+    }
+  },
+  "elapsed_sec": 56.6
+}

@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-11-04 23:42:43",
+  "rows": [
+    {
+      "want": "C#CC(O)(C=CI)CCCCC",
+      "reactants": [
+        "CCCCCC(=O)C=CI",
+        "C#[C][Mg+]"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "C=CC(O)C1CCCCC1",
+      "reactants": [
+        "C=[CH][Mg+]",
+        "O=CC1CCCCC1"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "CSCCc1nc2cc(-c3cn(C(=O)OC(C)(C)C)c4cc(F)ccc34)ccc2o1",
+      "reactants": [
+        "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+        "CSCCc1nc2cc(-c3c[nH]c4cc(F)ccc34)ccc2o1"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "C[Si](C)(C)CC(O)(Cn1cncn1)c1ccccc1",
+      "reactants": [
+        "C[Si](C)(C)[CH2][Mg+]",
+        "O=C(Cn1cncn1)c1ccccc1"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "CCOC(=O)[C@@H](CCCC1CCN(C(=O)OCc2ccccc2)CC1)N[C@H]1COc2ccccc2N(CC(=O)OCc2ccccc2)C1=O",
+      "reactants": [
+        "CCOC(=O)C(=O)CCCC1CCN(C(=O)OCc2ccccc2)CC1",
+        "N[C@H]1COc2ccccc2N(CC(=O)OCc2ccccc2)C1=O"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "O=C1CCc2cc3ccccc3n2C1",
+      "reactants": [
+        "CC(C)(C)OC(=O)C1C(=O)CCc2cc3ccccc3n21"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "COC(=O)c1cccc([C@@H]2C[C@H]2C(=O)OC(C)(C)C)c1",
+      "reactants": [
+        "C[S+](C)(C)=O",
+        "COC(=O)c1cccc(/C=C/C(=O)OC(C)(C)C)c1"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    },
+    {
+      "want": "COc1cc(C(C)C)ccc1C1COc2c(C)c(C)cc(C)c21",
+      "reactants": [
+        "COc1cc(C(C)C)ccc1-c1coc2c(C)c(C)cc(C)c12"
+      ],
+      "fires_any": 0,
+      "strict": 0,
+      "flat": 0,
+      "stereo_diffs": []
+    }
+  ]
+}

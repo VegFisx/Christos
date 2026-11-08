@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 23:39:15",
+  "generated_at": "2026-11-06 23:37:19",
   "validation_type": "formula decoction literature comparison: product + path + rule family",
   "formula": "四逆汤",
   "herbs": {
@@ -17,7 +17,7 @@
   "condition": "煎煮",
   "max_pairs": 200,
   "n_hops_round1": 1096,
-  "seconds_round1": 52.9,
+  "seconds_round1": 53.3,
   "rules_round1": {
     "esterification": 63,
     "mitsunobu": 19,

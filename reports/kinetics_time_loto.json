@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-11-06T17:14:27",
+  "source": "conditions/kinetics_measurements.json",
+  "model": "first_order y = 1 - exp(-k t), k fitted on remaining points",
+  "criteria": "max|err| <= 0.05 supported; <= 0.10 acceptable_with_caution; else unreliable",
+  "overall": "unreliable",
+  "datasets": [
+    {
+      "id": "rb1_105c_2020",
+      "reaction": "hydrolysis_glycoside_rb1",
+      "temp_C": 105,
+      "n_points": 4,
+      "max_abs_err": 0.2981,
+      "mean_abs_err": 0.1665,
+      "verdict": "unreliable",
+      "detail": [
+        {
+          "t_min": 360.0,
+          "measured": 0.059,
+          "predicted": 0.3571,
+          "abs_err": 0.2981
+        },
+        {
+          "t_min": 720.0,
+          "measured": 0.4295,
+          "predicted": 0.5956,
+          "abs_err": 0.1661
+        },
+        {
+          "t_min": 960.0,
+          "measured": 0.6381,
+          "predicted": 0.694,
+          "abs_err": 0.0559
+        },
+        {
+          "t_min": 1440.0,
+          "measured": 0.8694,
+          "predicted": 0.7236,
+          "abs_err": 0.1458
+        }
+      ]
+    },
+    {
+      "id": "rb1_80c_2020",
+      "reaction": "hydrolysis_glycoside_rb1",
+      "temp_C": 80,
+      "n_points": 4,
+      "max_abs_err": 0.265,
+      "mean_abs_err": 0.1602,
+      "verdict": "unreliable",
+      "detail": [
+        {
+          "t_min": 5760.0,
+          "measured": 0.2538,
+          "predicted": 0.5188,
+          "abs_err": 0.265
+        },
+        {
+          "t_min": 8640.0,
+          "measured": 0.564,
+          "predicted": 0.6645,
+          "abs_err": 0.1005
+        },
+        {
+          "t_min": 11520.0,
+          "measured": 0.6733,
+          "predicted": 0.7803,
+          "abs_err": 0.107
+        },
+        {
+          "t_min": 14400.0,
+          "measured": 0.8961,
+          "predicted": 0.728,
+          "abs_err": 0.1681
+        }
+      ]
+    },
+    {
+      "id": "aconitine_dry_140c_2021",
+      "reaction": "pyrolysis_diterpene_alkaloid",
+      "temp_C": 140,
+      "n_points": 8,
+      "max_abs_err": 0.1902,
+      "mean_abs_err": 0.1105,
+      "verdict": "unreliable",
+      "detail": [
+        {
+          "t_min": 1.0,
+          "measured": 0.0805,
+          "predicted": 0.0505,
+          "abs_err": 0.03
+        },
+        {
+          "t_min": 3.0,
+          "measured": 0.294,
+          "predicted": 0.1434,
+          "abs_err": 0.1506
+        },
+        {
+          "t_min": 5.0,
+          "measured": 0.3395,
+          "predicted": 0.2271,
+          "abs_err": 0.1124
+        },
+        {
+          "t_min": 10.0,
+          "measured": 0.3492,
+          "predicted": 0.4071,
+          "abs_err": 0.0579
+        },
+        {
+          "t_min": 15.0,
+          "measured": 0.5123,
+          "predicted": 0.5436,
+          "abs_err": 0.0313
+        },
+        {
+          "t_min": 20.0,
+          "measured": 0.5353,
+          "predicted": 0.6653,
+          "abs_err": 0.13
+        },
+        {
+          "t_min": 25.0,
+          "measured": 0.5776,
+          "predicted": 0.7678,
+          "abs_err": 0.1902
+        },
+        {
+          "t_min": 30.0,
+          "measured": 0.879,
+          "predicted": 0.6971,
+          "abs_err": 0.1819
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "rb1_94c_2020",
+      "why": "fewer_than_4_points",
+      "n": 3
+    },
+    {
+      "id": "rb1_lit2015_80c",
+      "why": "no_time_series"
+    },
+    {
+      "id": "rb1_lit2015_100c",
+      "why": "no_time_series"
+    },
+    {
+      "id": "aconitine_dry_160c_2021",
+      "why": "fewer_than_4_points",
+      "n": 2
+    }
+  ],
+  "note": "误差按绝对转化率计；这些序列来自同一批实验，所以本验证只说明'时间维度在这个体系内可预测'，不说明跨体系、跨基质可迁移。"
+}

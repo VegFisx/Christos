@@ -1,0 +1,269 @@
+{
+  "criteria_version": 2,
+  "n_targets": 100,
+  "depth": 3,
+  "beam": 4,
+  "max_routes": 3,
+  "goal_with_routes": 80,
+  "goal_usable_any": 44,
+  "goal_usable_first": 44,
+  "formal_rate": 0.8,
+  "usable_rate": 0.44,
+  "first_route_usable_rate": 0.44,
+  "n_routes": 212,
+  "n_routes_usable": 109,
+  "rule_hits": {
+    "R1_残基路线": 137,
+    "R4_荒谬前体(CO2/无机小分子)": 1
+  },
+  "bad_examples": [
+    {
+      "target": "CC(=O)Nc1cc(N)ccc1OCCN1CCCC1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "CC(=O)Nc1cc(N)ccc1OCCN1CCCC1",
+          "p": [
+            "BrCCN1CCCC1",
+            "CC(=O)Nc1cc(N)ccc1O"
+          ]
+        },
+        {
+          "t": "CC(=O)Nc1cc(N)ccc1O",
+          "p": [
+            "CC(=O)Nc1ccccc1O",
+            "CON"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C1",
+          "p": [
+            "CC(C)(C)OC(=O)Cl",
+            "CCOC(=O)c1cnc(Cl)nc1NCC1CCNC1"
+          ]
+        },
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1NCC1CCNC1",
+          "p": [
+            "CCOC(=O)c1cnc(Cl)[n+]([O-])c1",
+            "NCC1CCNC1"
+          ]
+        },
+        {
+          "t": "CCOC(=O)c1cnc(Cl)[n+]([O-])c1",
+          "p": [
+            "CC(=O)OO",
+            "CCOC(=O)c1cnc(Cl)nc1"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1",
+      "route_idx": 1,
+      "steps": [
+        {
+          "t": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(NCC3CCNC3)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1",
+            "NCC1CCNC1"
+          ]
+        },
+        {
+          "t": "CC(=O)Nc1cccc(Nc2ncc(C(=O)O)c(Cl)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1",
+            "O=C=O"
+          ]
+        },
+        {
+          "t": "CC(=O)Nc1cccc(Nc2nccc(Cl)n2)c1",
+          "p": [
+            "CC(=O)Nc1cccc(N)c1",
+            "Clc1ccnc(Cl)n1"
+          ]
+        }
+      ],
+      "rules": [
+        "R4_荒谬前体(CO2/无机小分子)"
+      ]
+    },
+    {
+      "target": "CSc1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "CSc1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "CSc1ncc(C#N)c(NC2(c3ccccc3)CC2)n1",
+            "O=C([O-])[O-]"
+          ]
+        },
+        {
+          "t": "O=C([O-])[O-]",
+          "p": [
+            "O=C([O-])O"
+          ]
+        },
+        {
+          "t": "O=C([O-])O",
+          "p": [
+            "O=C(O)O"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "CS(=O)c1ncc(C(N)=O)c(NC2(c3ccccc3)CC2)n1",
+          "p": [
+            "CS(=O)c1ncc(C#N)c(NC2(c3ccccc3)CC2)n1",
+            "O=C([O-])[O-]"
+          ]
+        },
+        {
+          "t": "O=C([O-])[O-]",
+          "p": [
+            "O=C([O-])O"
+          ]
+        },
+        {
+          "t": "O=C([O-])O",
+          "p": [
+            "O=C(O)O"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "CCOC(=O)c1cnc(Cl)nc1NCc1cnn(C)c1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1NCc1cnn(C)c1",
+          "p": [
+            "CCOC(=O)c1cnc(Cl)nc1N",
+            "Cn1cc(C=O)cn1"
+          ]
+        },
+        {
+          "t": "CCOC(=O)c1cnc(Cl)nc1N",
+          "p": [
+            "CCOC(=O)c1cnc(Cl)nc1Cl",
+            "N"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "route_idx": 1,
+      "steps": [
+        {
+          "t": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+          "p": [
+            "C=C1CC[C@@H]2[C@](C)(CBr)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+            "C=C1CC[CH][C@@](C)(CC[CH]OC(C)(C)O)[C@@H]1C/C=C1/C(=O)OC[C@H]1O"
+          ]
+        },
+        {
+          "t": "C=C1CC[C@@H]2[C@](C)(CBr)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+          "p": [
+            "BrC(Br)(Br)Br",
+            "C=C1CC[C@@H]2[C@](C)(CO)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+      "route_idx": 2,
+      "steps": [
+        {
+          "t": "C=C1CC[C@@H]2[C@]3(C)COC(C)(C)O[C@@H]3CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+          "p": [
+            "C=C1CC[C@@H]2[C@](C)(CBr)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+            "C=C1CC[CH][C@@](C)(CC[CH]OC(C)(C)O)[C@@H]1C/C=C1/C(=O)OC[C@H]1O"
+          ]
+        },
+        {
+          "t": "C=C1CC[C@@H]2[C@](C)(CBr)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O",
+          "p": [
+            "BrP(Br)Br",
+            "C=C1CC[C@@H]2[C@](C)(CO)[C@H](O)CC[C@@]2(C)[C@@H]1C/C=C1/C(=O)OC[C@H]1O"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "COc1c(Br)cccc1[N+](=O)[O-]",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "COc1c(Br)cccc1[N+](=O)[O-]",
+          "p": [
+            "CO",
+            "O=[N+]([O-])c1cccc(Br)c1F"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    },
+    {
+      "target": "COc1c(N)cccc1-c1cccc(C(=O)O)c1",
+      "route_idx": 3,
+      "steps": [
+        {
+          "t": "COc1c(N)cccc1-c1cccc(C(=O)O)c1",
+          "p": [
+            "COc1c(N)cccc1-c1ccccc1",
+            "O=C=O"
+          ]
+        },
+        {
+          "t": "COc1c(N)cccc1-c1ccccc1",
+          "p": [
+            "CO",
+            "Nc1cc(-c2ccccc2)ccc1O"
+          ]
+        }
+      ],
+      "rules": [
+        "R1_残基路线"
+      ]
+    }
+  ],
+  "elapsed_sec": 525.8
+}

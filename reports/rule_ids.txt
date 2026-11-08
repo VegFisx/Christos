@@ -1,0 +1,37 @@
+=== 真实规则 ID ===
+  半缩醛水解                  hydrolysis_hemiacetal_001                  active
+  酚氧化成醌                  oxidation_phenol_quinone_001               active
+  醌还原                    reduction_quinone_001                      active
+  脱甲基                    demethylation_aromatic_001                 active
+  芳香环羟基化                 hydroxylation_aromatic_001                 active
+  γ-内酯化                  esterification_gamma_lactone_001           active
+  δ-内酯化                  esterification_delta_lactone_001           active
+  硫醚氧化成亚砜                oxidation_sulfide_001                      active
+  双键加氢                   reduction_alkene_001                       active
+  内酰胺开环                  hydrolysis_lactam_001                      active
+  分子内半缩醛化                cyclization_hemiacetal_001                 active
+  分子内酰胺化                 cyclization_lactam_001                     active
+  分子内脱水成醚                cyclization_ether_001                      active
+  δ-羟基酸内酯化(备用)           cyclization_lactone_delta_001              active
+  逆羟醛裂解                  rearrangement_retro_aldol_001              active
+  席夫碱生成                  condensation_schiff_base_001               active
+  酰胺化(分子间)               amidation_intermolecular_001               active
+  酯的氨解                   aminolysis_ester_001                       active
+  半缩醛形成(分子间)             condensation_hemiacetal_001                active
+  Michael加成(硫醇)          addition_michael_thiol_001                 active
+  Michael加成(胺)           addition_michael_amine_001                 active
+  硫代半缩醛形成                addition_thiohemiacetal_001                active
+  亚砜还原成硫醚                reduction_sulfoxide_001                    active
+  肉桂酸型脱羧                 decarboxylation_cinnamic_001               active
+
+=== 这些规则在哪个条件下激活 ===
+  煎煮       激活: ['半缩醛水解', '酰胺化(分子间)']
+  水提       激活: ['半缩醛水解', '酰胺化(分子间)']
+  醇提       激活: ['半缩醛水解', '酰胺化(分子间)']
+  酸水解      激活: ['半缩醛水解', '酰胺化(分子间)']
+  碱水解      激活: ['半缩醛水解', '酰胺化(分子间)']
+  氧化       激活: []
+  还原       激活: []
+  酶催化      激活: ['半缩醛水解', '席夫碱生成', '酯的氨解', '半缩醛形成(分子间)', 'Michael加成(硫醇)', 'Michael加成(胺)', '硫代半缩醛形成']
+  室温浸泡     激活: ['半缩醛水解', '席夫碱生成', '酯的氨解', '半缩醛形成(分子间)', 'Michael加成(硫醇)', 'Michael加成(胺)', '硫代半缩醛形成']
+  无氧煎煮     激活: ['半缩醛水解', '酰胺化(分子间)']

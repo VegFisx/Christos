@@ -1,0 +1,185 @@
+========================================================================================
+① venv 里已有哪些包
+========================================================================================
+  包目录 156 个，dist-info 137 个
+
+========================================================================================
+② libs 里哪些【遮蔽】了 venv（同名）
+========================================================================================
+  同名包 49 个：
+      PIL
+      annotated_types
+      attr
+      attrs
+      certifi
+      charset_normalizer
+      click
+      cloudpickle
+      colorama
+      dateutil
+      dill
+      dotenv
+      et_xmlfile
+      fsspec
+      google
+      idna
+      joblib
+      markdown_it
+      mdurl
+      multiprocess
+      numpy
+      numpy.libs
+      openpyxl
+      packaging
+      pandas
+      pandas.libs
+      psutil
+      pyarrow
+      pyarrow.libs
+      pydantic
+      pydantic_core
+      pygments
+      rdkit
+      rdkit-stubs
+      rdkit.libs
+      requests
+      rich
+      scipy
+      scipy.libs
+      setuptools
+      six
+      tests
+      tqdm
+      typing_extensions
+      typing_inspection
+      tzdata
+      urllib3
+      xxhash
+      yaml
+
+  libs 里同时存在的 dist-info（也一并删，避免 pip 认为已装）：
+      annotated-types
+      attrs
+      certifi
+      charset-normalizer
+      click
+      cloudpickle
+      colorama
+      dill
+      et-xmlfile
+      fsspec
+      idna
+      joblib
+      markdown-it-py
+      mdurl
+      multiprocess
+      numpy
+      openpyxl
+      packaging
+      pandas
+      pillow
+      protobuf
+      psutil
+      pyarrow
+      pydantic
+      pydantic-core
+      pygments
+      python-dateutil
+      python-dotenv
+      pyyaml
+      rdkit
+      requests
+      rich
+      scipy
+      setuptools
+      six
+      tqdm
+      typing-extensions
+      typing-inspection
+      tzdata
+      urllib3
+      xxhash
+
+========================================================================================
+③ 关键包版本对照
+========================================================================================
+  rdkit        venv 有    libs 有     ★遮蔽★
+  numpy        venv 有    libs 有     ★遮蔽★
+  scipy        venv 有    libs 有     ★遮蔽★
+  pandas       venv 有    libs 有     ★遮蔽★
+  pyarrow      venv 有    libs 有     ★遮蔽★
+  pydantic     venv 有    libs 有     ★遮蔽★
+  requests     venv 有    libs 有     ★遮蔽★
+  urllib3      venv 有    libs 有     ★遮蔽★
+  certifi      venv 有    libs 有     ★遮蔽★
+
+========================================================================================
+④ 处置
+========================================================================================
+  【演练】将删除 89 项（加 --apply 才真删）:
+      annotated_types
+      annotated_types-0.8.0.dist-info
+      attr
+      attrs
+      attrs-26.1.0.dist-info
+      certifi
+      certifi-2026.7.22.dist-info
+      charset_normalizer
+      charset_normalizer-3.5.2.dist-info
+      click
+      click-8.5.0.dist-info
+      cloudpickle
+      cloudpickle-3.1.2.dist-info
+      colorama
+      colorama-0.4.6.dist-info
+      dateutil
+      dill
+      dill-0.4.1.dist-info
+      dotenv
+      et_xmlfile
+      et_xmlfile-2.0.0.dist-info
+      fsspec
+      fsspec-2026.9.0.dist-info
+      google
+      idna
+      idna-3.20.dist-info
+      joblib
+      joblib-1.6.0.dist-info
+      markdown_it
+      markdown_it_py-4.2.0.dist-info
+      mdurl
+      mdurl-0.1.2.dist-info
+      multiprocess
+      multiprocess-0.70.19.dist-info
+      numpy
+      numpy-1.26.4.dist-info
+      numpy.libs
+      openpyxl
+      openpyxl-3.1.5.dist-info
+      packaging
+      …… 另有 49 项
+
+========================================================================================
+⑤ 删除后 libs 里还剩什么（应全是 venv 没有的新包）
+========================================================================================
+  剩余包目录 121 个，其中仍与 venv 同名的: 49
+      ★ PIL
+      ★ annotated_types
+      ★ attr
+      ★ attrs
+      ★ certifi
+      ★ charset_normalizer
+      ★ click
+      ★ cloudpickle
+      ★ colorama
+      ★ dateutil
+      ★ dill
+      ★ dotenv
+      ★ et_xmlfile
+      ★ fsspec
+      ★ google
+      ★ idna
+      ★ joblib
+      ★ markdown_it
+      ★ mdurl
+      ★ multiprocess

@@ -30,7 +30,9 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-TCM_DEFAULT = r"D:\TCMAI\tcm.db"
+import os
+
+TCM_DEFAULT = (os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
 _CHUNK = 400                     # SQLite 默认变量上限 999，留余量
 
 

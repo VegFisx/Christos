@@ -1,0 +1,85 @@
+{
+ "n": 50016,
+ "n_fail": 22292,
+ "n_fail_zero_candidate": 503,
+ "by_reactant_count": {
+  "1": {
+   "n": 14534,
+   "hit": 2216,
+   "rate": 0.1525
+  },
+  "2": {
+   "n": 35391,
+   "hit": 25508,
+   "rate": 0.7207
+  },
+  "3": {
+   "n": 91,
+   "hit": 0,
+   "rate": 0.0
+  }
+ },
+ "by_class": {
+  "1": {
+   "n": 15151,
+   "rate": 0.7086,
+   "n_fail": 4415,
+   "fail_zero_candidate": 84
+  },
+  "2": {
+   "n": 11896,
+   "rate": 0.842,
+   "n_fail": 1880,
+   "fail_zero_candidate": 21
+  },
+  "3": {
+   "n": 5662,
+   "rate": 0.6552,
+   "n_fail": 1952,
+   "fail_zero_candidate": 23
+  },
+  "4": {
+   "n": 909,
+   "rate": 0.1628,
+   "n_fail": 761,
+   "fail_zero_candidate": 11
+  },
+  "5": {
+   "n": 672,
+   "rate": 0.1964,
+   "n_fail": 540,
+   "fail_zero_candidate": 0
+  },
+  "6": {
+   "n": 8237,
+   "rate": 0.1691,
+   "n_fail": 6844,
+   "fail_zero_candidate": 60
+  },
+  "7": {
+   "n": 4614,
+   "rate": 0.0954,
+   "n_fail": 4174,
+   "fail_zero_candidate": 194
+  },
+  "8": {
+   "n": 811,
+   "rate": 0.6486,
+   "n_fail": 285,
+   "fail_zero_candidate": 5
+  },
+  "9": {
+   "n": 1834,
+   "rate": 0.2568,
+   "n_fail": 1363,
+   "fail_zero_candidate": 104
+  },
+  "10": {
+   "n": 230,
+   "rate": 0.6609,
+   "n_fail": 78,
+   "fail_zero_candidate": 1
+  }
+ },
+ "note": "50k 镜像文件试剂列为空——单反应物记录多对应'另一反应物/催化剂未入列'，属数据缺口"
+}

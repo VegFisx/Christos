@@ -1,0 +1,64 @@
+{
+ "what": "零产率数据能否校准方向判据（先测有没有信号）",
+ "ord_side": {
+  "files": {
+   "negative_examples.jsonl": {
+    "n": 449,
+    "by_kind": {
+     "?": 449
+    },
+    "solvent_buckets": {},
+    "n_with_reaction_type": 0
+   },
+   "negative_yield_zero.jsonl": {
+    "n": 404,
+    "solvent_buckets": {},
+    "fields": [
+     "all_yields",
+     "cxsmiles",
+     "notes_head",
+     "reaction_id",
+     "real_percent_yield_zero",
+     "temperature",
+     "v2_valid"
+    ]
+   },
+   "negative_clean.jsonl": {
+    "n": 17,
+    "solvent_buckets": {},
+    "fields": [
+     "all_yields",
+     "contexts",
+     "cxsmiles",
+     "label",
+     "label_why",
+     "matched",
+     "notes_head",
+     "reaction_id",
+     "real_percent_yield_zero",
+     "review",
+     "solvents",
+     "source",
+     "temperature",
+     "yields"
+    ]
+   }
+  }
+ },
+ "hte_side": {
+  "n_groups_total": 5752,
+  "n_groups_with_both": 459,
+  "zero_records_by_bucket": {
+   "nonwater": 6307,
+   "unknown": 574
+  },
+  "pos_records_by_bucket": {
+   "nonwater": 9975,
+   "unknown": 390
+  },
+  "zero_rate_by_bucket": {
+   "nonwater": 0.3874,
+   "unknown": 0.5954
+  }
+ }
+}

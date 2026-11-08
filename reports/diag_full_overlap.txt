@@ -1,0 +1,164 @@
+砌块 297,885
+   扫 400,000，唯一产物 309,590  84s
+   扫 800,000，唯一产物 544,577  178s
+   扫 1,200,000，唯一产物 732,460  272s
+   扫 1,600,000，唯一产物 894,548  369s
+产物分子 957,164（412s）已缓存
+   [砌块]      500/297,885  0s
+   [砌块]    5,500/297,885  1s
+   [砌块]   10,500/297,885  3s
+   [砌块]   15,500/297,885  5s
+   [砌块]   20,500/297,885  6s
+   [砌块]   25,500/297,885  8s
+   [砌块]   30,500/297,885  10s
+   [砌块]   35,500/297,885  12s
+   [砌块]   40,500/297,885  13s
+   [砌块]   45,500/297,885  15s
+   [砌块]   50,500/297,885  17s
+   [砌块]   55,500/297,885  19s
+   [砌块]   60,500/297,885  21s
+   [砌块]   65,500/297,885  23s
+   [砌块]   70,500/297,885  24s
+   [砌块]   75,500/297,885  26s
+   [砌块]   80,500/297,885  28s
+   [砌块]   85,500/297,885  30s
+   [砌块]   90,500/297,885  32s
+   [砌块]   95,500/297,885  34s
+   [砌块]  100,500/297,885  36s
+   [砌块]  105,500/297,885  38s
+   [砌块]  110,500/297,885  40s
+   [砌块]  115,500/297,885  42s
+   [砌块]  120,500/297,885  43s
+   [砌块]  125,500/297,885  45s
+   [砌块]  130,500/297,885  47s
+   [砌块]  135,500/297,885  49s
+   [砌块]  140,500/297,885  51s
+   [砌块]  145,500/297,885  53s
+   [砌块]  150,500/297,885  55s
+   [砌块]  155,500/297,885  57s
+   [砌块]  160,500/297,885  59s
+   [砌块]  165,500/297,885  61s
+   [砌块]  170,500/297,885  63s
+   [砌块]  175,500/297,885  65s
+   [砌块]  180,500/297,885  67s
+   [砌块]  185,500/297,885  69s
+   [砌块]  190,500/297,885  71s
+   [砌块]  195,500/297,885  73s
+   [砌块]  200,500/297,885  75s
+   [砌块]  205,500/297,885  77s
+   [砌块]  210,500/297,885  79s
+   [砌块]  215,500/297,885  81s
+   [砌块]  220,500/297,885  83s
+   [砌块]  225,500/297,885  85s
+   [砌块]  230,500/297,885  87s
+   [砌块]  235,500/297,885  89s
+   [砌块]  240,500/297,885  91s
+   [砌块]  245,500/297,885  93s
+   [砌块]  250,500/297,885  95s
+   [砌块]  255,500/297,885  97s
+   [砌块]  260,500/297,885  99s
+   [砌块]  265,500/297,885  101s
+   [砌块]  270,500/297,885  103s
+   [砌块]  275,500/297,885  105s
+   [砌块]  280,500/297,885  107s
+   [砌块]  285,500/297,885  109s
+   [砌块]  290,500/297,885  110s
+   [砌块]  295,500/297,885  112s
+砌块 full IK 297,274（挂死 0）
+   [产物]      500/30,000  0s
+   [产物]    5,500/30,000  2s
+   [产物]   10,500/30,000  4s
+   [产物]   15,500/30,000  6s
+   [产物]   20,500/30,000  8s
+   [产物]   25,500/30,000  10s
+产物 full IK 29,999（抽样 30,000，挂死 0）
+
+========================================================================================
+★ full InChIKey 撞 41 个
+========================================================================================
+   其中 canonical SMILES 完全相同 : 12
+   互变异构体等价（RDKit 规范化）: 39
+   其余                          : -10
+
+   BETWOISRMRIFCG-GCOVDLRRSA-N
+      砌块 C=Cc1c(O[C@H]2CC[C@H](C(C)(C)C)CC2)ccc2cc([C@]3(C)COC(=O)N3)ccc12  (C26H33NO3, n=1, map=0.0)
+      产物 C=Cc1c(O[C@@H]2CC[C@@H](C(C)(C)C)CC2)ccc2cc([C@]3(C)COC(=O)N3)ccc12  (C26H33NO3)
+      identical=False  tautomer_eq=True
+   BQNVOJRAHONGMT-UHFFFAOYSA-N
+      砌块 Oc1nc2ccc(C(F)(F)F)cc2nc1O  (C9H5F3N2O2, n=2, map=1.0)
+      产物 O=c1[nH]c2ccc(C(F)(F)F)cc2[nH]c1=O  (C9H5F3N2O2)
+      identical=False  tautomer_eq=True
+   CLSKNUFUNUNQLD-UHFFFAOYSA-N
+      砌块 Cc1cc(Cl)ccc1-c1cccc(CCl)c1  (C14H12Cl2, n=1, map=1.0)
+      产物 Cc1cc(Cl)ccc1-c1cccc(CCl)c1  (C14H12Cl2)
+      identical=True  tautomer_eq=True
+   CUCLETIUOWBVFI-UHFFFAOYSA-N
+      砌块 N#Cc1c(O)cc(-c2cccc(Br)c2)nc1-c1ccc(Oc2ccccc2)cc1  (C24H15BrN2O2, n=1, map=1.0)
+      产物 N#Cc1c(-c2ccc(Oc3ccccc3)cc2)[nH]c(-c2cccc(Br)c2)cc1=O  (C24H15BrN2O2)
+      identical=False  tautomer_eq=True
+   DRGGCXKJFXNNFI-UHFFFAOYSA-N
+      砌块 COC1CCC(C(=O)Cl)CC1  (C8H13ClO2, n=6, map=1.0)
+      产物 COC1CCC(C(=O)Cl)CC1  (C8H13ClO2)
+      identical=True  tautomer_eq=True
+   FJVTTYANJLAOAX-UHFFFAOYSA-N
+      砌块 Oc1ccc(CCCCc2nnn[nH]2)cc1  (C11H14N4O, n=1, map=1.0)
+      产物 Oc1ccc(CCCCc2nn[nH]n2)cc1  (C11H14N4O)
+      identical=False  tautomer_eq=True
+   FJZMPIHEKLPXJX-UHFFFAOYSA-N
+      砌块 Cc1cc(-c2c[nH]nc2N)ccn1  (C9H10N4, n=32, map=1.0)
+      产物 Cc1cc(-c2cn[nH]c2N)ccn1  (C9H10N4)
+      identical=False  tautomer_eq=True
+   FMMPQOKCEGMIJY-UHFFFAOYSA-N
+      砌块 COC(=O)c1ccc2nc(O)c(Cl)nc2c1  (C10H7ClN2O3, n=4, map=1.0)
+      产物 COC(=O)c1ccc2[nH]c(=O)c(Cl)nc2c1  (C10H7ClN2O3)
+      identical=False  tautomer_eq=True
+   FUNWSYKLFDLUIZ-UHFFFAOYSA-N
+      砌块 Cc1[nH]nc2cc([N+](=O)[O-])ccc12  (C8H7N3O2, n=1, map=1.0)
+      产物 Cc1n[nH]c2cc([N+](=O)[O-])ccc12  (C8H7N3O2)
+      identical=False  tautomer_eq=True
+   GAYWCADKXYCKCG-UHFFFAOYSA-N
+      砌块 Sc1nnc(-c2cccnc2)[nH]1  (C7H6N4S, n=2, map=1.0)
+      产物 Sc1n[nH]c(-c2cccnc2)n1  (C7H6N4S)
+      identical=False  tautomer_eq=True
+   GDXABUJCXZZPBI-UHFFFAOYSA-N
+      砌块 Clc1cc2nc[nH]c2cn1  (C6H4ClN3, n=1, map=1.0)
+      产物 Clc1cc2nc[nH]c2cn1  (C6H4ClN3)
+      identical=True  tautomer_eq=True
+   HSQYLEJMIWEJBM-UHFFFAOYSA-N
+      砌块 [Li][C]1(C)C=C(C)C(C)=C1C  (C9H13Li, n=2, map=1.0)
+      产物 [Li][CH]1C(C)=C(C)C(C)=C1C  (C9H13Li)
+      identical=False  tautomer_eq=False
+   HZIWWZDDTWLGRR-UHFFFAOYSA-N
+      砌块 Cc1cc(C)c(-c2nc(C3CCOC3)[nH]c2C)cc1C(=O)O  (C17H20N2O3, n=1, map=1.0)
+      产物 Cc1cc(C)c(-c2[nH]c(C3CCOC3)nc2C)cc1C(=O)O  (C17H20N2O3)
+      identical=False  tautomer_eq=True
+   IGBZOHMCHDADGY-UHFFFAOYSA-N
+      砌块 C=COC(=O)C(CC)CCCC  (C10H18O2, n=1, map=1.0)
+      产物 C=COC(=O)C(CC)CCCC  (C10H18O2)
+      identical=True  tautomer_eq=True
+   ILJRUIIBSAQSGA-UHFFFAOYSA-N
+      砌块 CCCc1n[nH]c(C(=O)OCC)c1Cl  (C9H13ClN2O2, n=2, map=1.0)
+      产物 CCCc1[nH]nc(C(=O)OCC)c1Cl  (C9H13ClN2O2)
+      identical=False  tautomer_eq=True
+   KCVGSZUWLHARLH-UHFFFAOYSA-N
+      砌块 Cc1nc(=O)n2nc(-c3ccccc3Cl)c(I)c2[nH]1  (C12H8ClIN4O, n=1, map=1.0)
+      产物 Cc1nc2c(I)c(-c3ccccc3Cl)nn2c(=O)[nH]1  (C12H8ClIN4O)
+      identical=False  tautomer_eq=True
+   KNCZUXHSQJQWIB-UHFFFAOYSA-N
+      砌块 O=c1ccc(=O)c2c(=O)c3ccccc3c(=O)c1=2  (C14H6O4, n=1, map=1.0)
+      产物 O=c1ccc(=O)c2c(=O)c3ccccc3c(=O)c1=2  (C14H6O4)
+      identical=True  tautomer_eq=True
+   LLRCHCURQABDLS-UHFFFAOYSA-N
+      砌块 Cc1nc(C)c(I)c(=O)[nH]1  (C6H7IN2O, n=1, map=1.0)
+      产物 Cc1nc(C)c(I)c(O)n1  (C6H7IN2O)
+      identical=False  tautomer_eq=True
+   MRAUNPAHJZDYCK-BYPYZUCNSA-N
+      砌块 NC(=NCCC[C@H](N)C(=O)O)N[N+](=O)[O-]  (C6H13N5O4, n=2, map=1.0)
+      产物 N=C(NCCC[C@H](N)C(=O)O)N[N+](=O)[O-]  (C6H13N5O4)
+      identical=False  tautomer_eq=True
+   MVQYLCCFLXTECO-UHFFFAOYSA-N
+      砌块 C#CCOc1ccc(OC)c(OC)c1  (C11H12O3, n=1, map=1.0)
+      产物 C#CCOc1ccc(OC)c(OC)c1  (C11H12O3)
+      identical=True  tautomer_eq=True
+
+-> D:\ProgramData\DSHNS\chemreact-staging\reports\overlap_diag.json

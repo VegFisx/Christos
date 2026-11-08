@@ -1,0 +1,12 @@
+{
+  "criterion": "generated_precursors_subset_of_real_reactants",
+  "n_test": 24,
+  "test_frac": 0.85,
+  "new_templates": 3025,
+  "new_hit": 20,
+  "new_recall": 0.8333,
+  "baseline_templates": 9770,
+  "baseline_hit": 3,
+  "baseline_recall": 0.125,
+  "elapsed_sec": 478.1
+}

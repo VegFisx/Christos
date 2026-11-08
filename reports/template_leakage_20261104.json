@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-11-04 12:19:44",
+  "templates_with_example": 9770,
+  "n_test": 50016,
+  "exact_reaction_in_templates": 0,
+  "exact_share": 0.0,
+  "same_substrates_other_product": 0,
+  "same_substrates_share": 0.0,
+  "any_substrate_overlap": 0,
+  "any_substrate_share": 0.0,
+  "seconds": 21.8,
+  "samples": {
+    "exact": [],
+    "substrates": []
+  }
+}

@@ -1,0 +1,27 @@
+========================================================================================
+① 同一进程内连查 4 次，比对 SMILES 集合
+========================================================================================
+  第1次: 60 行, 49 个不同 SMILES
+  第2次: 60 行, 49 个不同 SMILES
+  第3次: 60 行, 49 个不同 SMILES
+  第4次: 60 行, 49 个不同 SMILES
+  第2次 vs 第1次: 对称差 0
+  第3次 vs 第1次: 对称差 0
+  第4次 vs 第1次: 对称差 0
+
+========================================================================================
+② 顺序是否一致
+========================================================================================
+  第1次前 5 个: ['Ammo-nium glycyrrhizinate', 'Monoammonium glycyrrhizinate', 'Glycyrrhizic acid', 'Glycyrrhizin', 'Araboglycyrrhizin']
+           后 5 个: ['20-hexadecanoylingenol', 'Sitogluside', 'Cartormin', 'Ginkgetin', 'Isoginkgetin']
+  第2次前 5 个: ['Ammo-nium glycyrrhizinate', 'Monoammonium glycyrrhizinate', 'Glycyrrhizic acid', 'Glycyrrhizin', 'Araboglycyrrhizin']
+           后 5 个: ['20-hexadecanoylingenol', 'Sitogluside', 'Cartormin', 'Ginkgetin', 'Isoginkgetin']
+
+========================================================================================
+③ 看 find_compounds 的 SQL 有没有 ORDER BY
+========================================================================================
+  limit: int = 300,
+  SELECT
+  WHERE hc.herb_id IN ({ph_herb})
+  ORDER BY
+  for ing_id in order[:limit]:

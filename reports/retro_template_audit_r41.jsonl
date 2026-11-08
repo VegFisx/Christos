@@ -1,0 +1,86 @@
+{"idx": 47, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 61, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH2;D2;+0:3]-[OH;D1;+0:4]", "blacklisted": true, "n_try": 205, "R1_残基路线": 205}
+{"idx": 83, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[C:3]>>[C:1]-[C;H0;D4;+0:2]1(-[C:3])-O-C-C-[O;H0;D2;+0:4]-1", "blacklisted": true, "n_try": 180, "R2_前体大于目标": 180}
+{"idx": 84, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[C:4]>>C-O-[C;H0;D4;+0:1](-[O;H0;D2;+0:2]-C)(-[C:3])-[C:4]", "blacklisted": true, "n_try": 180, "R2_前体大于目标": 180}
+{"idx": 88, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[CH;D2;+0:5]-[C:4])-[C:3]>>O=[C;H0;D3;+0:1](-[C:2])-[C:3].[C:4]-[CH2;D2;+0:5]-[P+](-c1:c:c:c:c:c:1)(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1", "blacklisted": false, "n_try": 166, "R1_残基路线": 158, "n_usable": 4, "R2_前体大于目标": 4}
+{"idx": 107, "name": "rdchiral_retro", "smarts": "[C:3]-[O;H0;D2;+0:4]-[CH2;D2;+0:1]-[C:2]>>Br-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 108, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:4]-[C:3]>>Br-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 109, "name": "rdchiral_retro", "smarts": "[#8:3]-[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:5]-[C:4]>>Cl-[CH2;D2;+0:1]-[C:2]-[#8:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 126, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 129, "name": "rdchiral_retro", "smarts": "[C:4]-[O;H0;D2;+0:5]-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3]>>Cl-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 130, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[O;H0;D2;+0:5]-[C:4]>>Cl-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 170, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 185, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 186, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C-[Si](-C-C)(-C-C)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 198, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 205, "name": "rdchiral_retro", "smarts": "[C:1]-[C@@H;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]", "blacklisted": true, "n_try": 788, "R1_残基路线": 788}
+{"idx": 206, "name": "rdchiral_retro", "smarts": "[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 788, "R1_残基路线": 788}
+{"idx": 273, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C=C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 274, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 275, "name": "rdchiral_retro", "smarts": "[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 788, "R1_残基路线": 788}
+{"idx": 276, "name": "rdchiral_retro", "smarts": "[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 788, "R1_残基路线": 788}
+{"idx": 277, "name": "rdchiral_retro", "smarts": "[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]>>[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]", "blacklisted": true, "n_try": 788, "R1_残基路线": 788}
+{"idx": 306, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 324, "name": "rdchiral_retro", "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C1-C-C-C-C-O-1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 337, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 341, "name": "rdchiral_retro", "smarts": "[O;D1;H0:1]=[C:2]-[OH;D1;+0:3]>>[O;D1;H0:1]=[C:2]-[O;H0;D2;+0:3]-C-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 353, "name": "rdchiral_retro", "smarts": "[C:4]-[O;H0;D2;+0:5]-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3]>>O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 354, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[O;H0;D2;+0:5]-[C:4]>>O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 404, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 405, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>C-C-C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 421, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 180, "R1_残基路线": 180}
+{"idx": 422, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[C@@H;D3;+0:2](-[OH;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 180, "R1_残基路线": 180}
+{"idx": 451, "name": "rdchiral_retro", "smarts": "[C:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[C:4]>>[C:1]-[CH;D2;+0:2]=[CH;D2;+0:3]-[C:4]", "blacklisted": false, "n_try": 704, "R1_残基路线": 690, "n_usable": 14}
+{"idx": 452, "name": "rdchiral_retro", "smarts": "[C:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[C:4]>>[C:1]/[CH;D2;+0:2]=[CH;D2;+0:3]/[C:4]", "blacklisted": false, "n_try": 704, "R1_残基路线": 690, "n_usable": 14}
+{"idx": 483, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 551, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 664, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 686, "name": "rdchiral_retro", "smarts": "[C:2]-[CH3;D1;+0:1]>>C-[CH2;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 658, "R2_前体大于目标": 658}
+{"idx": 857, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:3](=[O;D1;H0:4])-[OH;D1;+0:1]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[CH;D2;+0:3]=[O;D1;H0:4]", "blacklisted": true, "n_try": 205, "R1_残基路线": 205}
+{"idx": 877, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[C:4]>>C-[OH;D1;+0:1].C=[C;H0;D3;+0:2](-[C:3])-[C:4]", "blacklisted": true, "n_try": 180, "R3_惰性小分子": 180}
+{"idx": 886, "name": "rdchiral_retro", "smarts": "[OH;D1;+0:1]-[C:2](-[C:3]-[OH;D1;+0:4])-[C:5]-[OH;D1;+0:6]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2](-[C:3]-[O;H0;D2;+0:4]-C(-C)=O)-[C:5]-[O;H0;D2;+0:6]-C(-C)=O", "blacklisted": true, "n_try": 124, "R2_前体大于目标": 124}
+{"idx": 890, "name": "rdchiral_retro", "smarts": "[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C@@H;D3;+0:5](-[C:6])-[OH;D1;+0:7]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[C;H0;D3;+0:5](-[C:6])=[O;H0;D1;+0:7]", "blacklisted": true, "n_try": 131, "R1_残基路线": 131}
+{"idx": 918, "name": "rdchiral_retro", "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 929, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[C:3]=[O;D1;H0:4]>>C-O-C(=O)-[CH;D3;+0:1](-[C:2])-[C:3]=[O;D1;H0:4]", "blacklisted": true, "n_try": 14, "R2_前体大于目标": 14}
+{"idx": 952, "name": "rdchiral_retro", "smarts": "[C:3]-[O;H0;D2;+0:4]-[CH2;D2;+0:1]-[C:2]>>C-S(=O)(=O)-O-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 954, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-[C:4]>>C-S(=O)(=O)-[CH2;D2;+0:1]-[C:2].O-C-C-[O;H0;D2;+0:3]-[C:4]", "blacklisted": false, "n_try": 32, "R1_残基路线": 28, "n_usable": 4}
+{"idx": 955, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:4]-[C:3]>>O-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 956, "name": "rdchiral_retro", "smarts": "[C:3]-[O;H0;D2;+0:4]-[CH2;D2;+0:1]-[C:2]>>O-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 1041, "name": "rdchiral_retro", "smarts": "[C:1]-[CH;D3;+0:2](-[C:5])-[CH2;D2;+0:3]-[C:4]>>[C:1]-[C;H0;D3;+0:2](=[CH;D2;+0:3]-[C:4])-[C:5]", "blacklisted": false, "n_try": 368, "R1_残基路线": 360, "n_usable": 8}
+{"idx": 1042, "name": "rdchiral_retro", "smarts": "[C:1]-[CH;D3;+0:2](-[CH2;D2;+0:3]-[C:4])-[C:5]>>[C:1]-[C;H0;D3;+0:2](=[CH;D2;+0:3]-[C:4])-[C:5]", "blacklisted": false, "n_try": 368, "R1_残基路线": 360, "n_usable": 8}
+{"idx": 1056, "name": "rdchiral_retro", "smarts": "[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]>>[O-;H0;D1:1]-[C:2]=[O;D1;H0:3]", "blacklisted": true, "n_try": 205, "R1_残基路线": 205}
+{"idx": 1120, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]>>[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]", "blacklisted": true, "n_try": 180, "R1_残基路线": 180}
+{"idx": 1121, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:1]-[CH;D3;+0:2](-[C:3])-[OH;D1;+0:4]", "blacklisted": true, "n_try": 180, "R1_残基路线": 180}
+{"idx": 1160, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[C:4]-[C:5]=[O;D1;H0:6]>>[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4]-[C:5]=[O;D1;H0:6]", "blacklisted": false, "n_try": 1, "R1_残基路线": 1}
+{"idx": 1161, "name": "rdchiral_retro", "smarts": "[#8:3]-[C:4](=[O;D1;H0:5])-[C;H0;D4;+0:6](-[CH2;D2;+0:1]-[C:2])(-[C:7])-[C:8]>>Br-[CH2;D2;+0:1]-[C:2].[#8:3]-[C:4](=[O;D1;H0:5])-[CH;D3;+0:6](-[C:7])-[C:8]", "blacklisted": false, "n_try": 368, "R1_残基路线": 344, "n_usable": 24}
+{"idx": 1208, "name": "rdchiral_retro", "smarts": "[C:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[C:4]>>[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[C:4]", "blacklisted": false, "n_try": 704, "R1_残基路线": 690, "n_usable": 14}
+{"idx": 1227, "name": "rdchiral_retro", "smarts": "[OH;D1;+0:1]-[C:2]-[C:3]-[OH;D1;+0:4]>>C-C1(-C)-[O;H0;D2;+0:1]-[C:2]-[C:3]-[O;H0;D2;+0:4]-1", "blacklisted": true, "n_try": 432, "R2_前体大于目标": 432}
+{"idx": 1260, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)-[Si](-[O;H0;D2;+0:1]-[C:2])(-C(-C)-C)-C(-C)-C", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 1270, "name": "rdchiral_retro", "smarts": "[C:1]/[CH;D2;+0:2]=[CH;D2;+0:3]\\[C:4]>>[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[C:4]", "blacklisted": true, "n_try": 28, "R1_残基路线": 28}
+{"idx": 1271, "name": "rdchiral_retro", "smarts": "[C:1]/[CH;D2;+0:2]=[CH;D2;+0:3]/[C:4]>>[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[C:4]", "blacklisted": true, "n_try": 28, "R1_残基路线": 28}
+{"idx": 1303, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 1317, "name": "rdchiral_retro", "smarts": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:4])-[OH;D1;+0:3]>>[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[O;H0;D2;+0:4]-C-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 205, "R2_前体大于目标": 205}
+{"idx": 1339, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 1456, "name": "rdchiral_retro", "smarts": "[O;D1;H0:4]=[C:3]-[C:2]-[OH;D1;+0:1]>>C-C(=O)-[O;H0;D2;+0:1]-[C:2]-[C:3]=[O;D1;H0:4]", "blacklisted": false, "n_try": 2, "R2_前体大于目标": 2}
+{"idx": 1613, "name": "rdchiral_retro", "smarts": "[C:2]-[CH;D2;+0:1]=[CH;D2;+0:3]-[C:4]>>C=[CH;D2;+0:1]-[C:2].C=[CH;D2;+0:3]-[C:4]", "blacklisted": true, "n_try": 28, "R1_残基路线": 26, "n_usable": 2}
+{"idx": 1614, "name": "rdchiral_retro", "smarts": "[C:3]=[CH;D2;+0:4]-[CH2;D2;+0:1]-[C:2]>>C=C-[CH2;D2;+0:1]-[C:2].[C:3]=[CH2;D1;+0:4]", "blacklisted": false, "n_try": 1, "R1_残基路线": 1}
+{"idx": 1615, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[CH;D2;+0:4]=[C:3]>>C=C-[CH2;D2;+0:1]-[C:2].[C:3]=[CH2;D1;+0:4]", "blacklisted": false, "n_try": 1, "R1_残基路线": 1}
+{"idx": 1617, "name": "rdchiral_retro", "smarts": "[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[O;H0;D2;+0:5]-[C:4]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=O)-[C:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 1700, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C=C-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 1730, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>O=C(-[O;H0;D2;+0:1]-[C:2])-c1:c:c:c(-[N+](=O)-[O-]):c:c:1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 2048, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[O;H0;D2;+0:5]-[C:4]>>Br-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 2067, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-[Si](-C)(-C)-C-C-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 2080, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[OH;D1;+0:4]>>N#[C;H0;D2;+0:1]-[C:2].[OH-;D0:3].[OH2;D0;+0:4]", "blacklisted": true, "n_try": 205, "R1_残基路线": 205}
+{"idx": 2169, "name": "rdchiral_retro", "smarts": "[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[O;H0;D2;+0:5]-[C:4]>>N#[C;H0;D2;+0:1]-[C:2].O-S(=O)(=O)-[OH;D1;+0:3].[C:4]-[OH;D1;+0:5]", "blacklisted": false, "n_try": 34, "n_usable": 34}
+{"idx": 2184, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 2248, "name": "rdchiral_retro", "smarts": "[C:2]-[CH;D3;+0:1](-[O;H0;D2;+0:6]-[C:5]=[O;D1;H0:4])-[C:3]>>O-[CH;D3;+0:1](-[C:2])-[C:3].[O;D1;H0:4]=[C:5]-[OH;D1;+0:6]", "blacklisted": false, "n_try": 60, "n_usable": 60}
+{"idx": 2321, "name": "rdchiral_retro", "smarts": "[C:3]-[O;H0;D2;+0:4]-[CH2;D2;+0:1]-[C:2]>>I-[CH2;D2;+0:1]-[C:2].[C:3]-[OH;D1;+0:4]", "blacklisted": false, "n_try": 32, "n_usable": 32}
+{"idx": 2365, "name": "rdchiral_retro", "smarts": "[C:4]-[CH2;D2;+0:3]-[O;H0;D2;+0:1]-[C:2]>>C-S(=O)(=O)-[O;H0;D2;+0:1]-[C:2].O-[CH2;D2;+0:3]-[C:4]", "blacklisted": false, "n_try": 32, "R2_前体大于目标": 28, "n_usable": 4}
+{"idx": 2373, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>C-N(-C)-C(=O)-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 2414, "name": "rdchiral_retro", "smarts": "[C:1]-[OH;D1;+0:2]>>[C:1]-[O;H0;D2;+0:2]-C(-c1:c:c:c:c:c:1)(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}
+{"idx": 2443, "name": "rdchiral_retro", "smarts": "[C:4]-[C;H0;D3;+0:5](=[O;H0;D1;+0:7])-[O;H0;D2;+0:6]-[CH;D3;+0:1](-[C:2])-[C:3]>>O-[CH;D3;+0:1](-[C:2])-[C:3].[C:4]-[C;H0;D3;+0:5](=[O;H0;D1;+0:6])-[OH;D1;+0:7]", "blacklisted": false, "n_try": 60, "n_usable": 60}
+{"idx": 2458, "name": "rdchiral_retro", "smarts": "[C:2]-[CH3;D1;+0:1]>>Cl-[CH2;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 658, "R2_前体大于目标": 658}
+{"idx": 2500, "name": "rdchiral_retro", "smarts": "[#8:1]-[C:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[C:5]>>[#8:1]-[C:2]-[C@H;D3;+0:3](-[OH;D1;+0:4])-[C:5]", "blacklisted": false, "n_try": 4, "R1_残基路线": 4}
+{"idx": 2893, "name": "rdchiral_retro", "smarts": "[C:4]=[C:3]-[CH2;D2;+0:1]-[C:2]>>O=[C;H0;D3;+0:1](-[C:2])-[C:3]=[C:4]", "blacklisted": false, "n_try": 1, "R2_前体大于目标": 1}
+{"idx": 2894, "name": "rdchiral_retro", "smarts": "[C:2]-[CH2;D2;+0:1]-[C:3]=[C:4]>>O=[C;H0;D3;+0:1](-[C:2])-[C:3]=[C:4]", "blacklisted": false, "n_try": 1, "R2_前体大于目标": 1}
+{"idx": 3006, "name": "rdchiral_retro", "smarts": "[C:2]-[OH;D1;+0:1]>>O=C-[O;H0;D2;+0:1]-[C:2]", "blacklisted": true, "n_try": 603, "R2_前体大于目标": 603}

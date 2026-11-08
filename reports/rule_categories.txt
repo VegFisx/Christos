@@ -1,0 +1,30 @@
+规则字段: ['byproducts', 'category', 'co_reagents', 'co_substrate_pool', 'condition_profile', 'id', 'max_products_per_molecule', 'name', 'notes', 'priority', 'probe_substrates', 'reversible', 'smarts', 'status']
+
+category 分布（启用规则）:
+   hydrolysis        10
+   oxidation         10
+   condensation      7
+   reduction         6
+   decarboxylation   4
+   esterification    4
+   cyclization       4
+   elimination       3
+   rearrangement     3
+   addition          3
+   hydration         2
+   demethylation     1
+   hydroxylation     1
+
+含水规则的实际 id / category:
+   酯水解                  id=hydrolysis_ester_001                 cat=hydrolysis
+   糖苷水解                 id=hydrolysis_glycoside_001             cat=hydrolysis
+   酰胺水解                 id=hydrolysis_amide_001                 cat=hydrolysis
+   硫酸酯水解                id=hydrolysis_sulfate_001               cat=hydrolysis
+   磷酸酯水解                id=hydrolysis_phosphate_001             cat=hydrolysis
+   缩醛水解                 id=hydrolysis_acetal_001                cat=hydrolysis
+   半缩醛水解                id=hydrolysis_hemiacetal_001            cat=hydrolysis
+   烯烃水合                 id=hydration_alkene_001                 cat=hydration
+   α,β-不饱和羰基水合          id=hydration_enone_001                  cat=hydration
+   环氧化物开环成二醇            id=hydrolysis_epoxide_001               cat=hydrolysis
+   内酰胺开环                id=hydrolysis_lactam_001                cat=hydrolysis
+   亚胺水解                 id=hydrolysis_imine_001                 cat=hydrolysis

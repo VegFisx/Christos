@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-11-07",
+  "source": "PubChem PUG REST (compound/cid/<id>/property)",
+  "note": "只收录能从 PubChem 按 CID 取到的结构；取不到的一律记在 unavailable，不手写。",
+  "compounds": {
+    "atractylosidic_acid": {
+      "cid": 442005,
+      "title": "Atractylosidic acid",
+      "formula": "C30H46O16S2",
+      "smiles": "CC(C)CC(=O)O[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@@H]2C[C@H]([C@H]3CC[C@@]45C[C@@H](CC[C@H]4[C@@]3(C2)C)C(=C)[C@@H]5O)C(=O)O)CO)OS(=O)(=O)O)OS(=O)(=O)O",
+      "inchikey": "FYQXODZRNSCOTR-QLKRWLHJSA-N",
+      "skeleton_prefix": "FYQXODZRNSCOTR",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/442005",
+      "fetched_at": "2026-11-07",
+      "why": "文献目标：苍耳子砂炒脱羧产物（ATR 骨架）"
+    },
+    "atractylosidic_acid_iso_a": {
+      "cid": 23619477,
+      "title": "Atractylic Acid",
+      "formula": "C30H46O16S2",
+      "smiles": "CC(C)CC(=O)O[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@@H]2C[C@H]([C@@H]3CC[C@]45C[C@H](CC[C@@H]4[C@]3(C2)C)C(=C)[C@@H]5O)C(=O)O)CO)OS(=O)(=O)O)OS(=O)(=O)O",
+      "inchikey": "FYQXODZRNSCOTR-ANFZLNLLSA-N",
+      "skeleton_prefix": "FYQXODZRNSCOTR",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/23619477",
+      "fetched_at": "2026-11-07",
+      "why": "同一骨架的立体异构条目"
+    },
+    "atractylosidic_acid_iso_b": {
+      "cid": 6325952,
+      "title": "(1R,4R,5R,7R,9R,10S,13R,15S)-15-hydroxy-7-[(2S,3R,4R,5R,6R)-6-(hydroxymethyl)-3-(3-methylbutanoyloxy)-4,5-disulfooxyoxan-2-yl]oxy-9-methyl-14-methylidenetetracyclo[11.2.1.01,10.04,9]hexadecane-5-carboxylic acid",
+      "formula": "C30H46O16S2",
+      "smiles": "CC(C)CC(=O)O[C@@H]1[C@H]([C@@H]([C@H](O[C@@H]1O[C@@H]2C[C@H]([C@H]3CC[C@@]45C[C@@H](CC[C@H]4[C@@]3(C2)C)C(=C)[C@@H]5O)C(=O)O)CO)OS(=O)(=O)O)OS(=O)(=O)O",
+      "inchikey": "FYQXODZRNSCOTR-BGQFEECHSA-N",
+      "skeleton_prefix": "FYQXODZRNSCOTR",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6325952",
+      "fetched_at": "2026-11-07",
+      "why": "同一骨架的立体异构条目"
+    },
+    "atractylosidic_acid_flat": {
+      "cid": 2255,
+      "title": "15-Hydroxy-7-[6-(hydroxymethyl)-3-(3-methylbutanoyloxy)-4,5-disulfooxyoxan-2-yl]oxy-9-methyl-14-methylidenetetracyclo[11.2.1.01,10.04,9]hexadecane-5-carboxylic acid",
+      "formula": "C30H46O16S2",
+      "smiles": "CC(C)CC(=O)OC1C(C(C(OC1OC2CC(C3CCC45CC(CCC4C3(C2)C)C(=C)C5O)C(=O)O)CO)OS(=O)(=O)O)OS(=O)(=O)O",
+      "inchikey": "FYQXODZRNSCOTR-UHFFFAOYSA-N",
+      "skeleton_prefix": "FYQXODZRNSCOTR",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2255",
+      "fetched_at": "2026-11-07",
+      "why": "同一骨架、无立体信息的条目"
+    }
+  },
+  "unavailable": [
+    {
+      "label": "THSG 苷元",
+      "query": "2,3,5,4'-tetrahydroxystilbene",
+      "reason": "PubChem 无该名称条目（5281717 是 2,3',4,5'- 异构体，不是苷元）"
+    },
+    {
+      "label": "JNB 开环酸",
+      "query": "jolkinolide B ring-opened acid",
+      "reason": "PubChem 只有 jolkinolide B 本体（CID 161954），无开环酸条目"
+    }
+  ]
+}

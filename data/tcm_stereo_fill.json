@@ -1,0 +1,1303 @@
+{
+  "generated_at": "2026-11-07",
+  "source": "PubChem PUG REST by name; accepted only on formula + InChIKey skeleton",
+  "note": "只收录 isomeric_smiles 为空、且确有手性中心的条目；tcm.db 只读，未写入。",
+  "compounds": {
+    "HBIN044152": {
+      "name": "Sitogluside",
+      "smiles": "CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)C(C)C",
+      "inchikey": "NPJICTMALKLTFW-OFUAXYCQSA-N",
+      "formula": "C35H60O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015652": {
+      "name": "alpha-pinene",
+      "smiles": "CC1=CCC2CC1C2(C)C",
+      "inchikey": "GRWFGVWFFZKLTI-UHFFFAOYSA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018012": {
+      "name": "beta-caryophyllene",
+      "smiles": "C/C/1=C\\CCC(=C)[C@H]2CC([C@@H]2CC1)(C)C",
+      "inchikey": "NPNUFJAVOOONJE-GFUGXAQUSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042339": {
+      "name": "(R)-linalool",
+      "smiles": "CC(=CCC[C@](C)(C=C)O)C",
+      "inchikey": "CDOSHBSSFJOMGT-JTQLQIEISA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN033245": {
+      "name": "limonene",
+      "smiles": "CC1=CCC(CC1)C(=C)C",
+      "inchikey": "XMGQYMWWDOXHJM-UHFFFAOYSA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN024310": {
+      "name": "d-limonene",
+      "smiles": "CC1=CC[C@@H](CC1)C(=C)C",
+      "inchikey": "XMGQYMWWDOXHJM-JTQLQIEISA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045973": {
+      "name": "terpinen-4-ol",
+      "smiles": "CC1=CCC(CC1)(C(C)C)O",
+      "inchikey": "WRYLYDPHFGVWKC-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN029419": {
+      "name": "Hirsutrin",
+      "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O",
+      "inchikey": "OVSQVDMCBVZWGM-QSOFNFLRSA-N",
+      "formula": "C21H20O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN029382": {
+      "name": "higenamine",
+      "smiles": "C1CNC(C2=CC(=C(C=C21)O)O)CC3=CC=C(C=C3)O",
+      "inchikey": "WZRCQWQRFZITDX-UHFFFAOYSA-N",
+      "formula": "C16H17NO3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020996": {
+      "name": "citronellol",
+      "smiles": "CC(CCC=C(C)C)CCO",
+      "inchikey": "QMVPMAAFGQKVCJ-UHFFFAOYSA-N",
+      "formula": "C10H20O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN036803": {
+      "name": "nerolidol",
+      "smiles": "CC(=CCC/C(=C/CCC(C)(C=C)O)/C)C",
+      "inchikey": "FQTLCLSUCSAZDY-SDNWHVSQSA-N",
+      "formula": "C15H26O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018233": {
+      "name": "beta-phellandrene",
+      "smiles": "CC(C)C1CCC(=C)C=C1",
+      "inchikey": "LFJQCDVYDGGFCH-UHFFFAOYSA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020993": {
+      "name": "citronellal",
+      "smiles": "CC(CCC=C(C)C)CC=O",
+      "inchikey": "NEHNMFOYXAPHSD-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018052": {
+      "name": "beta-daucosterol",
+      "smiles": "CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)C(C)C",
+      "inchikey": "NPJICTMALKLTFW-OFUAXYCQSA-N",
+      "formula": "C35H60O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN029837": {
+      "name": "hyperoside",
+      "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@H]([C@H](O4)CO)O)O)O)O)O",
+      "inchikey": "OVSQVDMCBVZWGM-DTGCRPNFSA-N",
+      "formula": "C21H20O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026012": {
+      "name": "eucalyptol",
+      "smiles": "CC1(C2CCC(O1)(CC2)C)C",
+      "inchikey": "WEEGYLXZBRQIMU-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040076": {
+      "name": "piperitone",
+      "smiles": "CC1=CC(=O)C(CC1)C(C)C",
+      "inchikey": "YSTPAHQEHQSRJD-UHFFFAOYSA-N",
+      "formula": "C10H16O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN034281": {
+      "name": "Mairin",
+      "smiles": "CC(=C)[C@@H]1CC[C@]2([C@H]1[C@H]3CC[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O)C)C(=O)O",
+      "inchikey": "QGJZLNKBHJESQX-FZFNOLFKSA-N",
+      "formula": "C30H48O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015955": {
+      "name": "Amyrin",
+      "smiles": "C[C@@]12CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(CC[C@@H](C5(C)C)O)C)C)[C@@H]1CC(CC2)(C)C)C",
+      "inchikey": "JFSHUTJDVKUMTJ-QHPUVITPSA-N",
+      "formula": "C30H50O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015462": {
+      "name": "α-copaene",
+      "smiles": "CC1=CC[C@H]2[C@H]3[C@@H]1[C@@]2(CC[C@H]3C(C)C)C",
+      "inchikey": "VLXDPFLIRFYIME-BTFPBAQTSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN037638": {
+      "name": "obaculactone",
+      "smiles": "C[C@@]12CC[C@H]3[C@]([C@@]14[C@H](O4)C(=O)O[C@H]2C5=COC=C5)(C(=O)C[C@@H]6[C@@]37COC(=O)C[C@@H]7OC6(C)C)C",
+      "inchikey": "KBDSLGBFQAGHBE-MSGMIQHVSA-N",
+      "formula": "C26H30O8",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045092": {
+      "name": "suffruticoside a",
+      "smiles": "CC(=O)C1=C(C=C(C=C1)OC)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO[C@H]3[C@@H]([C@](CO3)(COC(=O)C4=CC(=C(C(=C4)O)O)O)O)O)O)O)O",
+      "inchikey": "QNVPMKAFCVXMFH-NDDHQHNUSA-N",
+      "formula": "C27H32O16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045975": {
+      "name": "terpinene-4-ol",
+      "smiles": "CC1=CCC(CC1)(C(C)C)O",
+      "inchikey": "WRYLYDPHFGVWKC-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031002": {
+      "name": "isoorientin",
+      "smiles": "C1=CC(=C(C=C1C2=CC(=O)C3=C(O2)C=C(C(=C3O)[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O)O",
+      "inchikey": "ODBRNZZJSYPIDI-VJXVFPJBSA-N",
+      "formula": "C21H20O11",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN025445": {
+      "name": "(-)-Epoxycaryophyllene",
+      "smiles": "C[C@@]12CC[C@@H]3[C@H](CC3(C)C)C(=C)CC[C@H]1O2",
+      "inchikey": "NVEQFIOZRFFVFW-RGCMKSIDSA-N",
+      "formula": "C15H24O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040583": {
+      "name": "poriferast-5-en-3beta-ol",
+      "smiles": "CC[C@@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C)C(C)C",
+      "inchikey": "KZJWDPNRJALLNS-FBZNIEFRSA-N",
+      "formula": "C29H50O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN034504": {
+      "name": "marmesin",
+      "smiles": "CC(C)([C@@H]1CC2=C(O1)C=C3C(=C2)C=CC(=O)O3)O",
+      "inchikey": "FWYSBEAFFPBAQU-LBPRGKRZSA-N",
+      "formula": "C14H14O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN024325": {
+      "name": "d-mannitol",
+      "smiles": "C([C@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)O",
+      "inchikey": "FBPFZTCFMRRESA-KVTDHHQDSA-N",
+      "formula": "C6H14O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020619": {
+      "name": "cinaroside",
+      "smiles": "C1=CC(=C(C=C1C2=CC(=O)C3=C(C=C(C=C3O2)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O)O",
+      "inchikey": "PEFNSGRTCBGNAN-QNDFHXLGSA-N",
+      "formula": "C21H20O11",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN009299": {
+      "name": "3-octanol",
+      "smiles": "CCCCCC(CC)O",
+      "inchikey": "NMRPBPVERJPACX-UHFFFAOYSA-N",
+      "formula": "C8H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031297": {
+      "name": "isotetrandrine",
+      "smiles": "CN1CCC2=CC(=C3C=C2[C@@H]1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)C[C@@H]6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC",
+      "inchikey": "WVTKBKWTSCPRNU-XZWHSSHBSA-N",
+      "formula": "C38H42N2O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN023204": {
+      "name": "delta-elemene",
+      "smiles": "CC(C)C1=C[C@@H]([C@@](CC1)(C)C=C)C(=C)C",
+      "inchikey": "MXDMETWAEGIFOE-CABCVRRESA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020998": {
+      "name": "citronellyl acetate",
+      "smiles": "CC(CCC=C(C)C)CCOC(=O)C",
+      "inchikey": "JOZKFWLRHCDGJA-UHFFFAOYSA-N",
+      "formula": "C12H22O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020643": {
+      "name": "cineole",
+      "smiles": "CC1(C2CCC(O1)(CC2)C)C",
+      "inchikey": "WEEGYLXZBRQIMU-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019800": {
+      "name": "carvone",
+      "smiles": "CC1=CCC(CC1=O)C(=C)C",
+      "inchikey": "ULDHMXUKGWMISQ-UHFFFAOYSA-N",
+      "formula": "C10H14O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040747": {
+      "name": "proanthocyanidin b2",
+      "smiles": "C1[C@H]([C@H](OC2=C1C(=CC(=C2[C@@H]3[C@H]([C@H](OC4=CC(=CC(=C34)O)O)C5=CC(=C(C=C5)O)O)O)O)O)C6=CC(=C(C=C6)O)O)O",
+      "inchikey": "XFZJEEAOWLFHDH-NFJBMHMQSA-N",
+      "formula": "C30H26O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031192": {
+      "name": "isorhynchophylline",
+      "smiles": "CC[C@H]1CN2CC[C@@]3([C@@H]2C[C@@H]1/C(=C\\OC)/C(=O)OC)C4=CC=CC=C4NC3=O",
+      "inchikey": "DAXYUDFNWXHGBE-VKCGGMIFSA-N",
+      "formula": "C22H28N2O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN023970": {
+      "name": "dihydroquercetin",
+      "smiles": "C1=CC(=C(C=C1[C@@H]2[C@H](C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+      "inchikey": "CXQWRCVTCMQVQX-LSDHHAIUSA-N",
+      "formula": "C15H12O7",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045261": {
+      "name": "(+)-Syringaresinol",
+      "smiles": "COC1=CC(=CC(=C1O)OC)[C@@H]2[C@H]3CO[C@@H]([C@H]3CO2)C4=CC(=C(C(=C4)OC)O)OC",
+      "inchikey": "KOWMJRJXZMEZLD-HCIHMXRSSA-N",
+      "formula": "C22H26O8",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN034749": {
+      "name": "menthone",
+      "smiles": "C[C@@H]1CC[C@H](C(=O)C1)C(C)C",
+      "inchikey": "NFLGAXVYCFJBMK-BDAKNGLRSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN030496": {
+      "name": "isoborneol",
+      "smiles": "C[C@@]12CC[C@@H](C1(C)C)C[C@H]2O",
+      "inchikey": "DTGKSKDOIYIVQL-MRTMQBJTSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028902": {
+      "name": "Hederagenol",
+      "smiles": "C[C@]12CC[C@@H]([C@@]([C@@H]1CC[C@@]3([C@@H]2CC=C4[C@]3(CC[C@@]5([C@H]4CC(CC5)(C)C)C(=O)O)C)C)(C)CO)O",
+      "inchikey": "PGOYMURMZNDHNS-MYPRUECHSA-N",
+      "formula": "C30H48O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015211": {
+      "name": "alloaromadendrene",
+      "smiles": "C[C@@H]1CC[C@H]2[C@@H]1[C@H]3[C@H](C3(C)C)CCC2=C",
+      "inchikey": "ITYNGVSTWVVPIC-DHGKCCLASA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026628": {
+      "name": "folicacid",
+      "smiles": "C1=CC(=CC=C1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N",
+      "inchikey": "OVBPIULPVIDEAO-LBPRGKRZSA-N",
+      "formula": "C19H19N7O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN030056": {
+      "name": "imperialine",
+      "smiles": "C[C@H]1CC[C@H]2[C@@]([C@@H]3CC[C@@H]4[C@H]([C@@H]3CN2C1)C[C@H]5[C@H]4CC(=O)[C@@H]6[C@@]5(CC[C@@H](C6)O)C)(C)O",
+      "inchikey": "IQDIERHFZVCNRZ-LRCDAWNTSA-N",
+      "formula": "C27H43NO3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045252": {
+      "name": "Syrigin",
+      "smiles": "COC1=CC(=CC(=C1O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO)O)O)O)OC)/C=C/CO",
+      "inchikey": "QJVXKWHHAMZTBY-GCPOEHJPSA-N",
+      "formula": "C17H24O9",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN024455": {
+      "name": "d-pseudoephedrine",
+      "smiles": "C[C@@H]([C@H](C1=CC=CC=C1)O)NC",
+      "inchikey": "KWGRBVOPPLSCSI-WCBMZHEXSA-N",
+      "formula": "C10H15NO",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018026": {
+      "name": "beta-Citronellol",
+      "smiles": "CC(CCC=C(C)C)CCO",
+      "inchikey": "QMVPMAAFGQKVCJ-UHFFFAOYSA-N",
+      "formula": "C10H20O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN000573": {
+      "name": "1,2,3,4,6-pentagalloylglucose",
+      "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)OC(=O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O)OC(=O)C5=CC(=C(C(=C5)O)O)O)OC(=O)C6=CC(=C(C(=C6)O)O)O",
+      "inchikey": "QJYNZEYHSMRWBK-NIKIMHBISA-N",
+      "formula": "C41H32O26",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN033376": {
+      "name": "liquiritigenin",
+      "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O)C3=CC=C(C=C3)O",
+      "inchikey": "FURUXTVZLHCCNA-AWEZNQCLSA-N",
+      "formula": "C15H12O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015475": {
+      "name": "(+)-alpha-Curcumene",
+      "smiles": "CC1=CC=C(C=C1)[C@@H](C)CCC=C(C)C",
+      "inchikey": "VMYXUZSZMNBRCN-AWEZNQCLSA-N",
+      "formula": "C15H22",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040771": {
+      "name": "procyanidin b3",
+      "smiles": "C1[C@@H]([C@H](OC2=C1C(=CC(=C2[C@H]3[C@@H]([C@H](OC4=CC(=CC(=C34)O)O)C5=CC(=C(C=C5)O)O)O)O)O)C6=CC(=C(C=C6)O)O)O",
+      "inchikey": "XFZJEEAOWLFHDH-AVFWISQGSA-N",
+      "formula": "C30H26O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN022822": {
+      "name": "d-catechin",
+      "smiles": "C1[C@@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C=C3)O)O)O",
+      "inchikey": "PFTAWBLQPZVEMU-DZGCQCFKSA-N",
+      "formula": "C15H14O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042860": {
+      "name": "salireposide",
+      "smiles": "C1=CC=C(C=C1)C(=O)OCC2=C(C=CC(=C2)O)O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O",
+      "inchikey": "UQCOPGRRWQCCFR-BFMVXSJESA-N",
+      "formula": "C20H22O9",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042307": {
+      "name": "riboflavine",
+      "smiles": "CC1=CC2=C(C=C1C)N(C3=NC(=O)NC(=O)C3=N2)C[C@@H]([C@@H]([C@@H](CO)O)O)O",
+      "inchikey": "AUNGANRZJHBGPY-SCRDCRAPSA-N",
+      "formula": "C17H20N4O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042249": {
+      "name": "rhodioloside",
+      "smiles": "C1=CC(=CC=C1CCO[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO)O)O)O)O",
+      "inchikey": "ILRCGYURZSFMEG-RKQHYHRCSA-N",
+      "formula": "C14H20O7",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN039336": {
+      "name": "Peruviol",
+      "smiles": "CC(=CCC/C(=C\\CC[C@@](C)(C=C)O)/C)C",
+      "inchikey": "FQTLCLSUCSAZDY-QKXCFHHRSA-N",
+      "formula": "C15H26O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN037086": {
+      "name": "n-methylephedrine",
+      "smiles": "CC(C(C1=CC=CC=C1)O)N(C)C",
+      "inchikey": "FMCGSUUBYTWNDP-UHFFFAOYSA-N",
+      "formula": "C11H17NO",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN036135": {
+      "name": "myricomplanoside",
+      "smiles": "COC1=C(C(=CC(=C1)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O",
+      "inchikey": "RUJHFBFKZCYVLZ-ROSPJSJWSA-N",
+      "formula": "C22H22O13",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015727": {
+      "name": "α-tocopherol",
+      "smiles": "CC1=C(C2=C(CCC(O2)(C)CCCC(C)CCCC(C)CCCC(C)C)C(=C1O)C)C",
+      "inchikey": "GVJHHUAWPYXKBD-UHFFFAOYSA-N",
+      "formula": "C29H50O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015035": {
+      "name": "alanine",
+      "smiles": "C[C@@H](C(=O)O)N",
+      "inchikey": "QNAYBMKLOCPYGJ-REOHCLBHSA-N",
+      "formula": "C3H7NO2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042128": {
+      "name": "reticuline",
+      "smiles": "CN1CCC2=CC(=C(C=C2[C@@H]1CC3=CC(=C(C=C3)OC)O)O)OC",
+      "inchikey": "BHLYRWXGMIUIHG-HNNXBMFYSA-N",
+      "formula": "C19H23NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031087": {
+      "name": "isopteropodine",
+      "smiles": "C[C@H]1[C@@H]2CN3CC[C@@]4([C@@H]3C[C@@H]2C(=CO1)C(=O)OC)C5=CC=CC=C5NC4=O",
+      "inchikey": "JMIAZDVHNCCPDM-PFDNRQJHSA-N",
+      "formula": "C21H24N2O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026994": {
+      "name": "galanal a",
+      "smiles": "C[C@]12CCCC([C@@H]1CC[C@@]3([C@@H]2CC=C(C[C@@H]3O)C=O)C=O)(C)C",
+      "inchikey": "UDKRLAJJSYRYRU-VYMYIBDJSA-N",
+      "formula": "C20H30O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN023197": {
+      "name": "delta-cadinene",
+      "smiles": "CC1=C[C@H]2[C@@H](CCC(=C2CC1)C)C(C)C",
+      "inchikey": "FUCYIEXQVQJBKY-ZFWWWQNUSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN047945": {
+      "name": "vincetoxicoside b",
+      "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=CC(=C3C(=C2)OC(=C(C3=O)O)C4=CC(=C(C=C4)O)O)O)O)O)O",
+      "inchikey": "QPHXPNUXTNHJOF-XNFUJFQVSA-N",
+      "formula": "C21H20O11",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN033045": {
+      "name": "l-galactoheptulose",
+      "smiles": "C([C@@H]([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O)O",
+      "inchikey": "HSNZZMHEPUFJNZ-UISOVIGQSA-N",
+      "formula": "C7H14O7",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028878": {
+      "name": "Hederagenin 3-O-arabinoside",
+      "smiles": "C[C@]12CC[C@@H]([C@@]([C@@H]1CC[C@@]3([C@@H]2CC=C4[C@]3(CC[C@@]5([C@H]4CC(CC5)(C)C)C(=O)O)C)C)(C)CO)O[C@H]6[C@@H]([C@H]([C@H](CO6)O)O)O",
+      "inchikey": "QUBNLZCADIYAFW-RITZIESXSA-N",
+      "formula": "C35H56O8",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026118": {
+      "name": "eupafolin-7-glucoside",
+      "smiles": "COC1=C(C=C2C(=C1O)C(=O)C=C(O2)C3=CC(=C(C=C3)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O",
+      "inchikey": "DMXHXBGUNHLMQO-IWLDQSELSA-N",
+      "formula": "C22H22O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021802": {
+      "name": "Crystal VI",
+      "smiles": "C([C@@H](C(=O)O)N)C(=O)N",
+      "inchikey": "DCXYFEDJOCDNAF-REOHCLBHSA-N",
+      "formula": "C4H8N2O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019736": {
+      "name": "carene-3",
+      "smiles": "CC1=CCC2C(C1)C2(C)C",
+      "inchikey": "BQOFWKZOCNGFEC-UHFFFAOYSA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015502": {
+      "name": "alpha-elemene",
+      "smiles": "CC(C)C1=CC(=C(C)C)CC[C@@]1(C)C=C",
+      "inchikey": "QDUJKDRUFBJYSQ-OAHLLOKOSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045011": {
+      "name": "stylopine",
+      "smiles": "C1CN2CC3=C(C[C@H]2C4=CC5=C(C=C41)OCO5)C=CC6=C3OCO6",
+      "inchikey": "UXYJCYXWJGAKQY-HNNXBMFYSA-N",
+      "formula": "C19H17NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN043724": {
+      "name": "Senkyunolide A",
+      "smiles": "CCCC[C@H]1C2=C(C=CCC2)C(=O)O1",
+      "inchikey": "ZPIKVDODKLJKIN-NSHDSACASA-N",
+      "formula": "C12H16O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040809": {
+      "name": "proline",
+      "smiles": "C1C[C@H](NC1)C(=O)O",
+      "inchikey": "ONIBWKKTOPOVIA-BYPYZUCNSA-N",
+      "formula": "C5H9NO2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN032762": {
+      "name": "laurolitsine",
+      "smiles": "COC1=C(C=C2C[C@H]3C4=C(C2=C1)C(=C(C=C4CCN3)O)OC)O",
+      "inchikey": "KYVJVURXKAZJRK-LBPRGKRZSA-N",
+      "formula": "C18H19NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN025699": {
+      "name": "erythritol",
+      "smiles": "C([C@H]([C@H](CO)O)O)O",
+      "inchikey": "UNXHWFMMPAWVPI-ZXZARUISSA-N",
+      "formula": "C4H10O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019526": {
+      "name": "canadine",
+      "smiles": "COC1=C(C2=C(CC3C4=CC5=C(C=C4CCN3C2)OCO5)C=C1)OC",
+      "inchikey": "VZTUIEROBZXUFA-UHFFFAOYSA-N",
+      "formula": "C20H21NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019007": {
+      "name": "bulbocapnine",
+      "smiles": "CN1CCC2=CC3=C(C4=C2[C@@H]1CC5=C4C(=C(C=C5)OC)O)OCO3",
+      "inchikey": "LODGIKWNLDQZBM-LBPRGKRZSA-N",
+      "formula": "C19H19NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018951": {
+      "name": "BU3",
+      "smiles": "C[C@H]([C@@H](C)O)O",
+      "inchikey": "OWBTYPJTUOEWEK-QWWZWVQMSA-N",
+      "formula": "C4H10O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015436": {
+      "name": "α-carotene",
+      "smiles": "CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/C=C/C=C(\\C)/C=C/C=C(\\C)/C=C/C2C(=CCCC2(C)C)C)/C)/C",
+      "inchikey": "ANVAOWXLWRTKGA-JLTXGRSLSA-N",
+      "formula": "C40H56",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015410": {
+      "name": "alpha-bisabolol",
+      "smiles": "CC1=CC[C@@H](CC1)[C@@](C)(CCC=C(C)C)O",
+      "inchikey": "RGZSQWQPBWRIAQ-LSDHHAIUSA-N",
+      "formula": "C15H26O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015037": {
+      "name": "alantolactone",
+      "smiles": "C[C@H]1CCC[C@]2(C1=C[C@H]3[C@@H](C2)OC(=O)C3=C)C",
+      "inchikey": "PXOYOCNNSUAQNS-AGNJHWRGSA-N",
+      "formula": "C15H20O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN007460": {
+      "name": "3,4-di-o-caffeoylquinic acid",
+      "smiles": "C1[C@H]([C@H]([C@@H](C[C@@]1(C(=O)O)O)OC(=O)/C=C/C2=CC(=C(C=C2)O)O)OC(=O)/C=C/C3=CC(=C(C=C3)O)O)O",
+      "inchikey": "UFCLZKMFXSILNL-PSEXTPKNSA-N",
+      "formula": "C25H24O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN004383": {
+      "name": "24-Ethylcholest-4-en-3-one",
+      "smiles": "CCC(CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CCC4=CC(=O)CC[C@]34C)C)C(C)C",
+      "inchikey": "RUVUHIUYGJBLGI-DOUXTHCPSA-N",
+      "formula": "C29H48O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN047137": {
+      "name": "triolein",
+      "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)OCC(OC(=O)CCCCCCC/C=C\\CCCCCCCC)COC(=O)CCCCCCC/C=C\\CCCCCCCC",
+      "inchikey": "PHYFQTYBJUILEZ-IUPFWZBJSA-N",
+      "formula": "C57H104O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN043757": {
+      "name": "Sennoside C",
+      "smiles": "C1=CC2=C(C(=C1)O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)C(=O)C4=C([C@@H]2[C@@H]5C6=C(C(=CC=C6)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO)O)O)O)C(=O)C8=C5C=C(C=C8O)C(=O)O)C=C(C=C4O)CO",
+      "inchikey": "ZFWOUNNKSHIAFK-RDAFFBQNSA-N",
+      "formula": "C42H40O19",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040817": {
+      "name": "pronuciferine",
+      "smiles": "CN1CCC2=CC(=C(C3=C2[C@H]1CC34C=CC(=O)C=C4)OC)OC",
+      "inchikey": "WUYQEGNOQLRQAQ-CQSZACIVSA-N",
+      "formula": "C19H21NO3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028044": {
+      "name": "Glucosol",
+      "smiles": "C[C@@H]1CC[C@@]2(CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(C[C@H]([C@@H](C5(C)C)O)O)C)C)[C@@H]2[C@H]1C)C)C(=O)O",
+      "inchikey": "HFGSQOYIOKBQOW-ZSDYHTTISA-N",
+      "formula": "C30H48O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN027441": {
+      "name": "Genioisidic acid",
+      "smiles": "C1C=C([C@@H]2[C@H]1C(=CO[C@H]2O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)C(=O)O)CO",
+      "inchikey": "ZJDOESGVOWAULF-OGJQONSISA-N",
+      "formula": "C16H22O10",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026382": {
+      "name": "farnesiferol a",
+      "smiles": "C[C@@]12CC[C@H](C([C@H]1CCC(=C)[C@@H]2COC3=CC4=C(C=C3)C=CC(=O)O4)(C)C)O",
+      "inchikey": "FCWYNTDTQPCVPG-WTMJVXIESA-N",
+      "formula": "C24H30O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020280": {
+      "name": "chenodeoxycholic acid",
+      "smiles": "C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C",
+      "inchikey": "RUDATBOHQWOJDD-BSWAIDMHSA-N",
+      "formula": "C24H40O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019189": {
+      "name": "Byakangelicin",
+      "smiles": "CC(C)([C@@H](COC1=C2C(=C(C3=C1OC(=O)C=C3)OC)C=CO2)O)O",
+      "inchikey": "PKRPFNXROFUNDE-LLVKDONJSA-N",
+      "formula": "C17H18O7",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN002101": {
+      "name": "1,8-cineol",
+      "smiles": "CC1(C2CCC(O1)(CC2)C)C",
+      "inchikey": "WEEGYLXZBRQIMU-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN047450": {
+      "name": "tyrosine",
+      "smiles": "C1=CC(=CC=C1C[C@@H](C(=O)O)N)O",
+      "inchikey": "OUYCCCASQSFEME-QMMMGPOBSA-N",
+      "formula": "C9H11NO3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN046230": {
+      "name": "thalrugosine",
+      "smiles": "CN1CCC2=CC(=C3C=C2[C@@H]1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)C[C@@H]6C7=C(O3)C(=C(C=C7CCN6C)OC)O)OC)OC",
+      "inchikey": "IIQSJHUEZBTSAT-URLMMPGGSA-N",
+      "formula": "C37H40N2O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN043899": {
+      "name": "shikonin",
+      "smiles": "CC(=CC[C@H](C1=CC(=O)C2=C(C=CC(=C2C1=O)O)O)O)C",
+      "inchikey": "NEZONWMXZKDMKF-SNVBAGLBSA-N",
+      "formula": "C16H16O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN039303": {
+      "name": "Peroxyergosterol",
+      "smiles": "C[C@H](/C=C/[C@H](C)C(C)C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@]24C=C[C@@]5([C@@]3(CC[C@@H](C5)O)C)OO4)C",
+      "inchikey": "VXOZCESVZIRHCJ-KGHQQZOUSA-N",
+      "formula": "C28H44O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN037936": {
+      "name": "Oleanic acid",
+      "smiles": "C[C@]12CC[C@@H](C([C@@H]1CC[C@@]3([C@@H]2CC=C4[C@]3(CC[C@@]5([C@H]4CC(CC5)(C)C)C(=O)O)C)C)(C)C)O",
+      "inchikey": "MIJYXULNPSFWEK-GTOFXWBISA-N",
+      "formula": "C30H48O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN029542": {
+      "name": "hopene ii",
+      "smiles": "CC(C)[C@H]1CCC2=C3CC[C@@H]4[C@]5(CCCC([C@@H]5CC[C@]4([C@@]3(CC[C@]12C)C)C)(C)C)C",
+      "inchikey": "WGNURPYJZZHCBQ-ZNABNZNXSA-N",
+      "formula": "C30H50",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN022832": {
+      "name": "d-corydaline",
+      "smiles": "C[C@@H]1[C@@H]2C3=CC(=C(C=C3CCN2CC4=C1C=CC(=C4OC)OC)OC)OC",
+      "inchikey": "VRSRXLJTYQVOHC-YEJXKQKISA-N",
+      "formula": "C22H27NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021297": {
+      "name": "columbianetin acetate",
+      "smiles": "CC(=O)OC(C)(C)[C@@H]1CC2=C(O1)C=CC3=C2OC(=O)C=C3",
+      "inchikey": "IQTTZQQJJBEAIM-ZDUSSCGKSA-N",
+      "formula": "C16H16O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021258": {
+      "name": "colchamine",
+      "smiles": "CN[C@H]1CCC2=CC(=C(C(=C2C3=CC=C(C(=O)C=C13)OC)OC)OC)OC",
+      "inchikey": "NNJPGOLRFBJNIW-HNNXBMFYSA-N",
+      "formula": "C21H25NO5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020930": {
+      "name": "cissamine",
+      "smiles": "C[N@@+]12CCC3=CC(=C(C=C3[C@@H]1CC4=C(C2)C(=C(C=C4)OC)O)O)OC",
+      "inchikey": "LKLWVKCEYSPQHL-KKSFZXQISA-O",
+      "formula": "C20H24NO4+",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019822": {
+      "name": "caryophyllene epoxide",
+      "smiles": "CC1(CC2C1CCC3(C(O3)CCC2=C)C)C",
+      "inchikey": "NVEQFIOZRFFVFW-UHFFFAOYSA-N",
+      "formula": "C15H24O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015427": {
+      "name": "alpha-calacorene",
+      "smiles": "CC1=CC[C@H](C2=C1C=CC(=C2)C)C(C)C",
+      "inchikey": "CUUMXRBKJIDIAY-ZDUSSCGKSA-N",
+      "formula": "C15H20",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN047821": {
+      "name": "verbascoside",
+      "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)O[C@@H]2[C@H]([C@@H](O[C@@H]([C@H]2OC(=O)/C=C/C3=CC(=C(C=C3)O)O)CO)OCCC4=CC(=C(C=C4)O)O)O)O)O)O",
+      "inchikey": "FBSKJMQYURKNSU-ZLSOWSIRSA-N",
+      "formula": "C29H36O15",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN036592": {
+      "name": "neocomplanoside",
+      "smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)OC2=C(OC3=CC(=CC(=C3C2=O)O)OC)C4=CC=C(C=C4)O)O)O)O",
+      "inchikey": "DDGCBCUITQFEFG-ZTHZTRLZSA-N",
+      "formula": "C24H24O12",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031895": {
+      "name": "kaempferol-3-o-beta-d-glucoside",
+      "smiles": "C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O",
+      "inchikey": "JPUKWEQWGBDDQB-QSOFNFLRSA-N",
+      "formula": "C21H20O11",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN030377": {
+      "name": "isoacteoside",
+      "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)O[C@H]2[C@@H]([C@H](O[C@H]([C@@H]2O)OCCC3=CC(=C(C=C3)O)O)COC(=O)/C=C/C4=CC(=C(C=C4)O)O)O)O)O)O",
+      "inchikey": "FNMHEHXNBNCPCI-QEOJJFGVSA-N",
+      "formula": "C29H36O15",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN029131": {
+      "name": "heraclenin",
+      "smiles": "CC1([C@H](O1)COC2=C3C(=CC4=C2OC=C4)C=CC(=O)O3)C",
+      "inchikey": "CTJZWFCPUDPLME-LLVKDONJSA-N",
+      "formula": "C16H14O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN025254": {
+      "name": "(-)-epiafzelechin",
+      "smiles": "C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC=C(C=C3)O)O",
+      "inchikey": "RSYUFYQTACJFML-UKRRQHHQSA-N",
+      "formula": "C15H14O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021920": {
+      "name": "cuparene",
+      "smiles": "CC1=CC=C(C=C1)[C@@]2(CCCC2(C)C)C",
+      "inchikey": "SLKPBCXNFNIJSV-HNNXBMFYSA-N",
+      "formula": "C15H22",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020031": {
+      "name": "celastrol",
+      "smiles": "CC1=C(C(=O)C=C2C1=CC=C3[C@]2(CC[C@@]4([C@@]3(CC[C@@]5([C@H]4C[C@](CC5)(C)C(=O)O)C)C)C)C)O",
+      "inchikey": "KQJSQWZMSAGSHN-JJWQIEBTSA-N",
+      "formula": "C29H38O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN016562": {
+      "name": "Arabinose",
+      "smiles": "C1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O",
+      "inchikey": "SRBFZHDQGSBBOR-HWQSCIPKSA-N",
+      "formula": "C5H10O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015676": {
+      "name": "alpha-Solamarine",
+      "smiles": "C[C@H]1CC[C@]2([C@H]([C@H]3[C@@H](O2)C[C@@H]4[C@@]3(CC[C@H]5[C@H]4CC=C6[C@@]5(CC[C@@H](C6)O[C@H]7[C@@H]([C@H]([C@H]([C@H](O7)CO)O)O[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O)O[C@H]9[C@@H]([C@@H]([C@H]([C@@H](O9)C)O)O)O)C)C)C)NC1",
+      "inchikey": "QCTMYNGDIBTNSK-AQZQQWEISA-N",
+      "formula": "C45H73NO16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN014418": {
+      "name": "acetoin",
+      "smiles": "CC(C(=O)C)O",
+      "inchikey": "ROWKJAVDOGWPAT-UHFFFAOYSA-N",
+      "formula": "C4H8O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN000039": {
+      "name": "10579-93-8",
+      "smiles": "C/C/1=C\\CCC(=C)[C@@H]2CC([C@H]2CC1)(C)C",
+      "inchikey": "NPNUFJAVOOONJE-IOMPXFEGSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN047621": {
+      "name": "ursonic acid",
+      "smiles": "C[C@@H]1CC[C@@]2(CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(CCC(=O)C5(C)C)C)C)[C@@H]2[C@H]1C)C)C(=O)O",
+      "inchikey": "MUCRYNWJQNHDJH-OADIDDRXSA-N",
+      "formula": "C30H46O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN046709": {
+      "name": "trans-alpha-bergamotene",
+      "smiles": "CC1=CC[C@H]2C[C@@H]1[C@]2(C)CCC=C(C)C",
+      "inchikey": "YMBFCQPIMVLNIU-SOUVJXGZSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045577": {
+      "name": "tau-cadinol",
+      "smiles": "CC1=C[C@H]2[C@@H](CC[C@]([C@@H]2CC1)(C)O)C(C)C",
+      "inchikey": "LHYHMMRYTDARSZ-XQLPTFJDSA-N",
+      "formula": "C15H26O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN043772": {
+      "name": "serine",
+      "smiles": "C([C@@H](C(=O)O)N)O",
+      "inchikey": "MTCFGRXMJLQNBG-REOHCLBHSA-N",
+      "formula": "C3H7NO3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN043394": {
+      "name": "Schottenol",
+      "smiles": "CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3C2=CC[C@@H]4[C@@]3(CC[C@@H](C4)O)C)C)C(C)C",
+      "inchikey": "YSKVBPGQYRAUQO-UZSYLJJSSA-N",
+      "formula": "C29H50O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN039107": {
+      "name": "penniclavine",
+      "smiles": "CN1C[C@@](C=C2[C@H]1CC3=CNC4=CC=CC2=C34)(CO)O",
+      "inchikey": "KCHBNRCSCHMJFD-ZBFHGGJFSA-N",
+      "formula": "C16H18N2O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN034560": {
+      "name": "matsutake alcohol",
+      "smiles": "CCCCCC(C=C)O",
+      "inchikey": "VSMOENVRRABVKN-UHFFFAOYSA-N",
+      "formula": "C8H16O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN032702": {
+      "name": "l-asparagine",
+      "smiles": "C([C@@H](C(=O)O)N)C(=O)N",
+      "inchikey": "DCXYFEDJOCDNAF-REOHCLBHSA-N",
+      "formula": "C4H8N2O3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN030585": {
+      "name": "isochondrodendrin",
+      "smiles": "CN1CCC2=CC(=C(C3=C2[C@H]1CC4=CC=C(C=C4)OC5=C6[C@@H](CC7=CC=C(O3)C=C7)N(CCC6=CC(=C5O)OC)C)O)OC",
+      "inchikey": "XIOGHHPVBVXQIV-VSGBNLITSA-N",
+      "formula": "C36H38N2O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028045": {
+      "name": "glucosyringicacid",
+      "smiles": "COC1=CC(=CC(=C1OC2C(C(C(C(O2)CO)O)O)O)OC)C(=O)O",
+      "inchikey": "BLKMDORKRDACEI-UHFFFAOYSA-N",
+      "formula": "C15H20O10",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028007": {
+      "name": "Glucobrassicin-1-Sulfonate",
+      "smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)O)C/C(=N/OS(=O)(=O)O)/S[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O",
+      "inchikey": "JZFQZINWXSEVSO-URUUWQEUSA-N",
+      "formula": "C16H20N2O12S3",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN027153": {
+      "name": "gamma-nonalactone",
+      "smiles": "CCCCCC1CCC(=O)O1",
+      "inchikey": "OALYTRUKMRCXNH-UHFFFAOYSA-N",
+      "formula": "C9H16O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026046": {
+      "name": "Eudesma-4(14),11-diene",
+      "smiles": "CC(=C)C1CCC2(CCCC(=C)C2C1)C",
+      "inchikey": "YOVSPTNQHMDJAG-UHFFFAOYSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN024456": {
+      "name": "d-quercitol",
+      "smiles": "C1[C@H]([C@@H](C([C@H]([C@@H]1O)O)O)O)O",
+      "inchikey": "IMPKVMRTXBRHRB-MBMOQRBOSA-N",
+      "formula": "C6H12O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN018225": {
+      "name": "beta-peltatin",
+      "smiles": "COC1=CC(=CC(=C1OC)OC)[C@H]2[C@@H]3[C@@H](CC4=C(C5=C(C=C24)OCO5)O)COC3=O",
+      "inchikey": "HLBPOYVRLSXWJJ-PDSMFRHLSA-N",
+      "formula": "C22H22O8",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN015036": {
+      "name": "alantolacetone",
+      "smiles": "CC1CCCC2(C1=CC3C(C2)OC(=O)C3=C)C",
+      "inchikey": "PXOYOCNNSUAQNS-UHFFFAOYSA-N",
+      "formula": "C15H20O2",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN013402": {
+      "name": "7-o-methylaromadendrin",
+      "smiles": "COC1=CC(=C2C(=C1)O[C@@H]([C@H](C2=O)O)C3=CC=C(C=C3)O)O",
+      "inchikey": "LZLGHWHSUZVUFZ-JKSUJKDBSA-N",
+      "formula": "C16H14O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN010077": {
+      "name": "4,6-dimethyl dodecane",
+      "smiles": "CCCCCCC(C)CC(C)CCC",
+      "inchikey": "FNUQJWPIADDMRS-UHFFFAOYSA-N",
+      "formula": "C14H30",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN009284": {
+      "name": "3-o-caffeoylquinic acid",
+      "smiles": "C1[C@H]([C@H]([C@@H](C[C@@]1(C(=O)O)O)OC(=O)/C=C/C2=CC(=C(C=C2)O)O)O)O",
+      "inchikey": "CWVRJTMFETXNAD-JUHZACGLSA-N",
+      "formula": "C16H18O9",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN001394": {
+      "name": "1,4-cineole",
+      "smiles": "CC(C)C12CCC(O1)(CC2)C",
+      "inchikey": "RFFOTVCVTJUTAD-UHFFFAOYSA-N",
+      "formula": "C10H18O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN049052": {
+      "name": "Zosimin",
+      "smiles": "C/C=C(/C)\\C(=O)OC(C)(C)[C@@H]1CC2=C(O1)C=CC3=C2OC(=O)C=C3",
+      "inchikey": "JRIBPWOXWIRQOQ-GHAIFCDISA-N",
+      "formula": "C19H20O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN048475": {
+      "name": "XAT",
+      "smiles": "C/C(=C\\C=C\\C=C(\\C=C\\C=C(\\C=C\\[C@@]12O[C@@]1(C[C@H](CC2(C)C)O)C)/C)/C)/C=C/C=C(/C=C/[C@@]34O[C@@]3(C[C@H](CC4(C)C)O)C)\\C",
+      "inchikey": "SZCBXWMUOPQSOX-WVJDLNGLSA-N",
+      "formula": "C40H56O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN046822": {
+      "name": "trans-pinocarveol",
+      "smiles": "CC1([C@@H]2C[C@H]1C(=C)[C@H](C2)O)C",
+      "inchikey": "LCYXQUJDODZYIJ-VGMNWLOBSA-N",
+      "formula": "C10H16O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN046315": {
+      "name": "THM",
+      "smiles": "CC1=CN(C(=O)NC1=O)[C@H]2C[C@@H]([C@H](O2)CO)O",
+      "inchikey": "IQFYYKKMVGJFEH-XLPZGREQSA-N",
+      "formula": "C10H14N2O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN045194": {
+      "name": "swertisin",
+      "smiles": "COC1=C(C(=C2C(=C1)OC(=CC2=O)C3=CC=C(C=C3)O)O)[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O",
+      "inchikey": "ABRULANJVVJLFI-DGHBBABESA-N",
+      "formula": "C22H22O10",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN044775": {
+      "name": "stemonidine",
+      "smiles": "C[C@H]1C[C@H](OC1=O)[C@@H]2CC[C@H]3N2CCC[C@@H]([C@@]34C[C@@H](C(=O)O4)C)OC",
+      "inchikey": "TZPKEJFBTXRNTK-OSPICLMDSA-N",
+      "formula": "C19H29NO5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN042945": {
+      "name": "Sanchinoside C1",
+      "smiles": "CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(C[C@@H]([C@@H]4[C@@]3(CC[C@@H](C4(C)C)O)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)O)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C",
+      "inchikey": "YURJSTAIMNSZAE-HHNZYBFYSA-N",
+      "formula": "C42H72O14",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN041155": {
+      "name": "pterocarpin",
+      "smiles": "COC1=CC2=C(C=C1)[C@H]3[C@@H](CO2)C4=CC5=C(C=C4O3)OCO5",
+      "inchikey": "YLZYAUCOYZKLMA-SJCJKPOMSA-N",
+      "formula": "C17H14O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN040783": {
+      "name": "procyanidin c1",
+      "smiles": "C1[C@H]([C@H](OC2=C1C(=CC(=C2[C@@H]3[C@H]([C@H](OC4=C(C(=CC(=C34)O)O)[C@@H]5[C@H]([C@H](OC6=CC(=CC(=C56)O)O)C7=CC(=C(C=C7)O)O)O)C8=CC(=C(C=C8)O)O)O)O)O)C9=CC(=C(C=C9)O)O)O",
+      "inchikey": "MOJZMWJRUKIQGL-XILRTYJMSA-N",
+      "formula": "C45H38O18",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN039759": {
+      "name": "physcion 8-glucoside",
+      "smiles": "CC1=CC2=C(C(=C1)O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)C(=O)C4=C(C2=O)C=C(C=C4O)OC",
+      "inchikey": "WLXGUTUUWXVZNM-DQMLXFRHSA-N",
+      "formula": "C22H22O10",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN039055": {
+      "name": "peganine",
+      "smiles": "C1CN2CC3=CC=CC=C3N=C2[C@@H]1O",
+      "inchikey": "YIICVSCAKJMMDJ-SNVBAGLBSA-N",
+      "formula": "C11H12N2O",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN038127": {
+      "name": "(+)-o-methylthalicberine",
+      "smiles": "CN1CCC2=CC3=C(C=C2[C@@H]1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)C[C@H]6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC",
+      "inchikey": "UUURWWVPMHAACP-KYJUHHDHSA-N",
+      "formula": "C38H42N2O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN035690": {
+      "name": "monopalmitin",
+      "smiles": "CCCCCCCCCCCCCCCC(=O)OCC(CO)O",
+      "inchikey": "QHZLMUACJMDIAE-UHFFFAOYSA-N",
+      "formula": "C19H38O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031474": {
+      "name": "jatamansin",
+      "smiles": "C/C=C(/C)\\C(=O)O[C@@H]1CC2=C(C=CC3=C2OC(=O)C=C3)OC1(C)C",
+      "inchikey": "RRHCDWLSHIIIIT-NVWZYQMFSA-N",
+      "formula": "C19H20O5",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN031326": {
+      "name": "isotuberostemonine",
+      "smiles": "CC[C@@H]1[C@H]2CCCCN3[C@H]2[C@@H](C[C@H]3[C@@H]4C[C@@H](C(=O)O4)C)[C@H]5[C@@H]1OC(=O)[C@H]5C",
+      "inchikey": "GYOGHROCTSEKDY-UEIGSNQUSA-N",
+      "formula": "C22H33NO4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN030904": {
+      "name": "isolongifolene",
+      "smiles": "CC1(CCC=C2[C@@]13CC[C@@H](C3)C2(C)C)C",
+      "inchikey": "CQUAYTJDLQBXCQ-NHYWBVRUSA-N",
+      "formula": "C15H24",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN028041": {
+      "name": "glucoside",
+      "smiles": "C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O",
+      "inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+      "formula": "C6H12O6",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN027670": {
+      "name": "gingerol",
+      "smiles": "CCCCC[C@@H](CC(=O)CCC1=CC(=C(C=C1)O)OC)O",
+      "inchikey": "NLDDIKRKFXEWBK-AWEZNQCLSA-N",
+      "formula": "C17H26O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN026267": {
+      "name": "evodin",
+      "smiles": "C[C@@]12CC[C@H]3[C@]([C@@]14[C@H](O4)C(=O)O[C@H]2C5=COC=C5)(C(=O)C[C@@H]6[C@@]37COC(=O)C[C@@H]7OC6(C)C)C",
+      "inchikey": "KBDSLGBFQAGHBE-MSGMIQHVSA-N",
+      "formula": "C26H30O8",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021976": {
+      "name": "curcumene",
+      "smiles": "CC1=CC=C(C=C1)C(C)CCC=C(C)C",
+      "inchikey": "VMYXUZSZMNBRCN-UHFFFAOYSA-N",
+      "formula": "C15H22",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN021577": {
+      "name": "corynoxine",
+      "smiles": "CC[C@@H]1CN2CC[C@@]3([C@@H]2C[C@@H]1/C(=C\\OC)/C(=O)OC)C4=CC=CC=C4NC3=O",
+      "inchikey": "DAXYUDFNWXHGBE-NRAMRBJXSA-N",
+      "formula": "C22H28N2O4",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN020330": {
+      "name": "Chinoinin",
+      "smiles": "C1=C2C(=CC(=C1O)O)OC3=C(C2=O)C(=C(C(=C3)O)[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O",
+      "inchikey": "AEDDIBAIWPIIBD-ZJKJAXBQSA-N",
+      "formula": "C19H18O11",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019735": {
+      "name": "carene",
+      "smiles": "CC1=CCC2C(C1)C2(C)C",
+      "inchikey": "BQOFWKZOCNGFEC-UHFFFAOYSA-N",
+      "formula": "C10H16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    },
+    "HBIN019510": {
+      "name": "campneoside i",
+      "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)O[C@@H]2[C@H]([C@@H](O[C@@H]([C@H]2OC(=O)/C=C/C3=CC(=C(C=C3)O)O)CO)OCC(C4=CC(=C(C=C4)O)O)OC)O)O)O)O",
+      "inchikey": "OWIYIDLFNMCIFO-HGTLEYCVSA-N",
+      "formula": "C30H38O16",
+      "fetched_at": "2026-11-07",
+      "verified_by": "formula + flat-SMILES identity"
+    }
+  }
+}

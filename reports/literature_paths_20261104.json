@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T23:37:59",
+  "generated_at": "2026-11-06T23:35:20",
   "validation_type": "retrospective literature comparison: product + path (two-step)",
   "condition": "煎煮 (100 C / 60 min / pH 6.5)",
   "protocol": "种子单轮枚举 + 从文献中间体单独起跑一轮；不用全量多轮枚举（成本爆炸）",
@@ -9,7 +9,7 @@
       "key": "glycyrrhizic_acid",
       "label_zh": "甘草酸 → 甘草次酸",
       "literature_path": "Hydrothermal hydrolysis produces glycyrrhetinic acid and glycyrrhetinic acid 3-O-mono-beta-D-glucuronide through consecutive and parallel reactions.",
-      "seconds_round1": 2.9,
+      "seconds_round1": 2.8,
       "n_round1_products": 76,
       "route": "seed_to_target_in_round1",
       "intermediates": [
@@ -42,7 +42,7 @@
           "in_round1": true,
           "intermediate_to_target": true,
           "onward_rule": "hydrolysis_glycoside_001",
-          "seconds_round2": 3.2
+          "seconds_round2": 3.1
         }
       ],
       "product_hit": true,
@@ -57,7 +57,7 @@
       "key": "aconitine_benzoylaconine",
       "label_zh": "乌头碱 → 苯甲酰乌头原碱",
       "literature_path": "Hydrolysis removes the C8 acetylester from the diester C19-diterpenoid skeleton.",
-      "seconds_round1": 2.5,
+      "seconds_round1": 2.4,
       "n_round1_products": 32,
       "route": "seed_to_target_in_round1",
       "intermediates": [],
@@ -104,21 +104,13 @@
         },
         {
           "name": "Isoquercitin",
-          "required": false,
-          "status": "chain_ok",
-          "in_round1": true,
-          "intermediate_to_target": true,
-          "onward_rule": "hydrolysis_glycoside_001",
-          "seconds_round2": 2.5
+          "status": "not_in_local_db",
+          "required": false
         },
         {
           "name": "Isoquercetrin",
-          "required": false,
-          "status": "absent",
-          "in_round1": false,
-          "intermediate_to_target": false,
-          "onward_rule": "",
-          "seconds_round2": 2.6
+          "status": "not_in_local_db",
+          "required": false
         }
       ],
       "product_hit": true,

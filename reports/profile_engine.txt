@@ -1,0 +1,48 @@
+成分 60 个
+可解析 59 个
+煎煮激活规则 43 条
+
+================================================================================================
+① (规则 × 底物) 的匹配率 —— 有多少组合是白跑的？
+================================================================================================
+  样本 (规则×底物) 组合: 240
+  其中【真正匹配】的     : 54  (22.5%)
+  ★ 白跑的               : 186  (77.5%)
+  rdchiral 累计耗时      : 0.44s
+
+================================================================================================
+② 单次耗时对比：便宜的 SMARTS 预筛 vs rdchiral 调用
+================================================================================================
+  预筛 200 次: 0 ms  (0.000 ms/次)
+  rdchiral 200 次: 154 ms  (0.769 ms/次)
+
+================================================================================================
+③ cProfile：热函数排名
+================================================================================================
+  
+     ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+          1    0.001    0.001    3.340    3.340 D:\ProgramData\DSHNS\chemreact-staging\core\engine.py:476(step)
+       1075    0.001    0.000    3.338    0.003 D:\ProgramData\DSHNS\chemreact-staging\core\engine.py:281(apply_
+        975    0.014    0.000    3.311    0.003 D:\ProgramData\DSHNS\chemreact-staging\core\engine.py:291(_apply
+        975    0.730    0.001    1.693    0.002 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\main.py:96(
+     818073    0.142    0.000    1.321    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:78(__iter
+        975    0.177    0.000    1.189    0.001 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\initializat
+     801917    0.237    0.000    1.167    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:65(__geti
+     826773    0.141    0.000    0.531    0.000 {built-in method builtins.len}
+       1950    0.358    0.000    0.512    0.000 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\initializat
+        989    0.027    0.000    0.420    0.000 D:\ProgramData\DSHNS\chemreact-staging\core\engine.py:355(_colle
+     818073    0.159    0.000    0.390    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:60(__len_
+       1323    0.108    0.000    0.356    0.000 D:\ProgramData\DSHNS\chemreact-staging\core\engine.py:178(_atom_
+     601613    0.294    0.000    0.294    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:90(_getRD
+        707    0.229    0.000    0.230    0.000 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\clean.py:9(
+     626211    0.180    0.000    0.180    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:87(_sizeC
+        975    0.054    0.000    0.156    0.000 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\bonds.py:22
+     200304    0.119    0.000    0.119    0.000 D:\TCMAI\venv\Lib\site-packages\rdkit\Chem\__init__.py:99(_getRD
+      37165    0.038    0.000    0.076    0.000 D:\ProgramData\DSHNS\chemreact-staging\libs\rdchiral\chiral.py:3
+  
+  
+
+================================================================================================
+④ 重复调用同一底物：有没有缓存
+================================================================================================
+  第一次 2.25s   第二次 2.26s   加速 0.99×

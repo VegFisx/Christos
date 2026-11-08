@@ -887,6 +887,8 @@ def cmd_predict(a) -> int:
         "paozhi_base_templates": bool(getattr(a, "paozhi_base_templates", False)),
         # ★ 第84轮：反应进程层（time/pH/催化剂 参与产物生成）；默认关
         "condition_extent": bool(getattr(a, "condition_extent", False)),
+        # ★ 第128轮：学习型重排序
+        "rerank": bool(getattr(a, "rerank", False)),
     }
     # ★ 出处分档（第七十五轮 H1）：tier 随方剂进 meta 顶层的 formulas 与台账；
     #   versions 列出**全部**版本（含 AI 现查），供网页「按出处单独筛看」用 ——
@@ -1077,6 +1079,7 @@ def cmd_predict(a) -> int:
                       use_mined_top_conditions=True,
                       strict_redox_gate=True,
                       condition_extent=bool(getattr(a, "condition_extent", False)),
+                      rerank=bool(getattr(a, "rerank", False)),
                       cond_override=_cond_override,
                       meta_extra={"selection": selection, "switches": switches,
                                   "pair_coverage": cov, "formulas": formulas_meta})
@@ -1476,6 +1479,10 @@ def main() -> int:
     pp.add_argument("--condition-extent", action="store_true", dest="condition_extent",
                     help="按时间/温度/pH/催化剂估算反应进程，只写进台账与报告的标注列"
                          "（不筛选、不删产物；参数未标定，见 AGENTS 第12节）")
+    # ★ 第128轮：学习型重排序（默认关；只改顺序，候选集合与召回不变）
+    pp.add_argument("--rerank", action="store_true", dest="rerank",
+                    help="用离线训练的重排序模型调整候选顺序（默认关；只改顺序，"
+                         "候选集合不变；模型缺失时自动退回发射序）")
     pp.add_argument("--no-direction", action="store_true", dest="no_direction")
     pp.add_argument("--no-score", action="store_true", dest="no_score")
     pp.add_argument("--no-ik-cache", action="store_true", dest="no_ik_cache")

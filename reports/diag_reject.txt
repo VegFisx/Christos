@@ -1,0 +1,50 @@
+==================================================================================
+逐个尝试 rdchiralReaction / rdchiralRun，打印完整报错
+==================================================================================
+
+==================================================================================
+【酰胺水解】 hydrolysis_amide_001
+  当前 SMARTS : [C:1](=[O:2])!@[N:3][C:4]>>[C:1](=[O:2])[O:5][H].[N:3][C:4]
+  去 !@ 后    : [C:1](=[O:2])[N:3][C:4]>>[C:1](=[O:2])[O:5][H].[N:3][C:4]
+  底物        : 乙酰苯胺  CC(=O)Nc1ccccc1
+
+  ── 模板[原样] ──
+     rdkit 编译      : OK  (1 反应物 / 2 产物模板)
+     rdchiralReaction: OK   属性=['atoms_pt_idx_to_map', 'atoms_pt_map', 'atoms_rt_idx_to_map', 'atoms_rt_map', 'pt_bond_dirs_by_mapnum', 'reaction_smarts', 'required_bond_defs_coreatoms', 'required_rt_bond_defs', 'reset', 'rt_bond_dirs_by_mapnum', 'rxn', 'template_p', 'template_r']
+     rdchiralRun     : （无产物 / 不匹配）
+
+  ── 模板[去!@] ──
+     rdkit 编译      : OK  (1 反应物 / 2 产物模板)
+     rdchiralReaction: OK   属性=['atoms_pt_idx_to_map', 'atoms_pt_map', 'atoms_rt_idx_to_map', 'atoms_rt_map', 'pt_bond_dirs_by_mapnum', 'reaction_smarts', 'required_bond_defs_coreatoms', 'required_rt_bond_defs', 'reset', 'rt_bond_dirs_by_mapnum', 'rxn', 'template_p', 'template_r']
+     rdchiralRun     : （无产物 / 不匹配）
+
+==================================================================================
+【胺氧化】 oxidation_amine_001
+  当前 SMARTS : [CX4H2:1][NX3H2:2]>>[CX3H1:1]=[O:5].[N:2]
+  底物        : 邻乙基苯胺  CCc1ccccc1N
+
+  ── 模板[原样] ──
+     rdkit 编译      : OK  (1 反应物 / 2 产物模板)
+     rdchiralReaction: OK   属性=['atoms_pt_idx_to_map', 'atoms_pt_map', 'atoms_rt_idx_to_map', 'atoms_rt_map', 'pt_bond_dirs_by_mapnum', 'reaction_smarts', 'required_bond_defs_coreatoms', 'required_rt_bond_defs', 'reset', 'rt_bond_dirs_by_mapnum', 'rxn', 'template_p', 'template_r']
+     rdchiralRun     : （无产物 / 不匹配）
+
+==================================================================================
+【酯化】 esterification_intramolecular_001
+  当前 SMARTS : [OX2H:1][CX4:2][CX3:3](=[OX1:4])[OX2H:5]>>[O:1]1[CX4:2][CX3:3](=[OX1:4])[OH:5]1
+  底物        : 4-羟基丁酸  OCCCC(=O)O
+
+  ── 模板[原样] ──
+     rdkit 编译      : OK  (1 反应物 / 1 产物模板)
+     rdchiralReaction: OK   属性=['atoms_pt_idx_to_map', 'atoms_pt_map', 'atoms_rt_idx_to_map', 'atoms_rt_map', 'pt_bond_dirs_by_mapnum', 'reaction_smarts', 'required_bond_defs_coreatoms', 'required_rt_bond_defs', 'reset', 'rt_bond_dirs_by_mapnum', 'rxn', 'template_p', 'template_r']
+     rdchiralRun     : （无产物 / 不匹配）
+
+==================================================================================
+附加：rdchiral 对 '.' 和环闭合的容忍度测试
+==================================================================================
+  ✓ 普通单产物              rdchiral 接受
+  ✓ 两片段产物              rdchiral 接受
+  ✓ 产物用新原子编号           rdchiral 接受
+  ✓ 新原子上带显式H           rdchiral 接受
+  ✓ 新原子无H指定            rdchiral 接受
+  ✓ 带环闭合的产物            rdchiral 接受
+  ✓ !@ 键约束             rdchiral 接受

@@ -1,0 +1,55 @@
+=== 3 条规则的全部字段 ===
+
+【分子内半缩醛化】
+   id: "cyclization_hemiacetal_001"
+   name: "分子内半缩醛化"
+   category: "cyclization"
+   smarts: [CX3H1:1](=[OX1:2])[CX4:3][CX4:4][CX4:5][OX2H:6]>>[C:1]1([OH...
+   reversible: false
+   co_reagents: {}
+   byproducts: {}
+   condition_profile: "ambient"
+   priority: 0.1
+   max_products_per_molecule: 1
+   status: "active"
+   notes: ★已修★ SMARTS 链写错了：原来写成 C1=O2-C3-...，意思是碳氧双键后氧【再连】C3；正确应是 O2 作...
+   probe_substrates: [{"smiles": "O=CCCCO", "name": "4-羟基丁醛"}, {"smiles": "O=CCCCCO", "name": "5-羟基戊醛"}]
+
+【分子内酰胺化】
+   id: "cyclization_lactam_001"
+   name: "分子内酰胺化"
+   category: "cyclization"
+   smarts: [CX3:1](=[OX1:2])([OX2H:7])[CX4:3][CX4:4][CX4:5][NX3H2:6]>>[...
+   reversible: false
+   co_reagents: {}
+   byproducts: {}
+   condition_profile: "thermal"
+   priority: 0.1
+   max_products_per_molecule: 1
+   status: "active"
+   notes: ★已修★ 两处问题：① 反应物里漏了羧基的 OH，配平账目不清；② 产物把氮写成 [NX3H2]，但成环后氮有 2 个重...
+   probe_substrates: [{"smiles": "NCCCC(=O)O", "name": "4-氨基丁酸"}, {"smiles": "NCCCCC(=O)O", "name": "5-氨基戊酸"}]
+
+【肉桂酸型脱羧】
+   id: "decarboxylation_cinnamic_001"
+   name: "肉桂酸型脱羧"
+   category: "decarboxylation"
+   smarts: [c:1][CX3H:2]=[CX3H:3][CX3:4](=[OX1:5])[OX2H:6]>>[c:1][CX3H:...
+   reversible: false
+   co_reagents: {}
+   byproducts: {}
+   condition_profile: "thermal"
+   priority: 0.1
+   max_products_per_molecule: 1
+   status: "active"
+   notes: 肉桂酸 / 咖啡酸 / 阿魏酸型脱羧，生成对应的乙烯基酚（如 4-乙烯基苯酚）。★与「芳香酸脱羧」不同：那个断的是芳环上...
+   probe_substrates: [{"smiles": "OC(=O)/C=C/c1ccccc1", "name": "肉桂酸"}, {"smiles": "OC(=O)/C=C/c1ccc(O)c(O)c1", "name": "咖啡酸"}, {"smiles": "OC(=O)/C=C/c1ccc(O)c(OC)c1", "name": "阿魏酸"}]
+
+=== 对比一条能正常激活的规则 ===
+【酯水解】condition_profile = "hydrolysis"
+
+=== 单独算激活分 ===
+  分子内半缩醛化              score=0.1000  why=[]
+  分子内酰胺化               score=0.1000  why=[]
+  肉桂酸型脱羧               score=0.1000  why=[]
+  酯水解                  score=0.8500  why=[]

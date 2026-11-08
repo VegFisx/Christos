@@ -1,0 +1,382 @@
+{
+  "generated_at": "2026-11-06 13:23:29",
+  "protocol": {
+    "rounds": 1,
+    "max_pairs": 400,
+    "curated_rule_ids": "rules/paozhi_evidence.json",
+    "use_base_templates": false,
+    "criterion": "结构(InChIKey14) 优先，其次分子式"
+  },
+  "cases": [
+    {
+      "tag": "miyan_licorice",
+      "label": "蜜炙甘草：甘草酸 → 甘草次酸",
+      "source": "10.1080/14786419.2026.2693245",
+      "lit_desc": "120 °C / 13.5 min（蜜炙甘草研究）",
+      "preset": {
+        "cond": "炮制·蜜炙",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 120,
+          "time_min": 13.5,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "honey",
+        "n_products": 234,
+        "n_hops": 268,
+        "seconds": 8.9,
+        "hit": {
+          "product": "CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CCC43C)C2C1",
+          "formula": "C30H46O4",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "inchikey14"
+        },
+        "target_name": "Glycyrrhetinic acid",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_extra",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 120,
+          "time_min": 13.5,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "honey",
+        "n_products": 234,
+        "n_hops": 268,
+        "seconds": 8.5,
+        "hit": {
+          "product": "CC1(C(=O)O)CCC2(C)CCC3(C)C(=CC(=O)C4C5(C)CCC(O)C(C)(C)C5CCC43C)C2C1",
+          "formula": "C30H46O4",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "inchikey14"
+        },
+        "target_name": "Glycyrrhetinic acid",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_extra",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    },
+    {
+      "tag": "cuyan_langdu",
+      "label": "醋炙狼毒：JNB → 开环酸",
+      "source": "10.19540/j.cnki.cjcmm.20221111.301",
+      "lit_desc": "160 °C / 6% 乙酸 / 40 min",
+      "preset": {
+        "cond": "炮制·醋炙",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 84,
+          "time_min": 35,
+          "pH": 3.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "auto",
+        "n_products": 26,
+        "n_hops": 33,
+        "seconds": 2.4,
+        "hit": {
+          "product": "CC1=C2C(O)C3(O)CCC4C(C)(C)CCCC4(C)C3C3OC23OC1=O",
+          "formula": "C20H28O5",
+          "rule": "hydrolysis_epoxide_001",
+          "match": "formula"
+        },
+        "target_name": "C20H28O5",
+        "all_rules_seen": [
+          "hydrolysis_epoxide_001",
+          "hydrolysis_ester_001",
+          "hydrolysis_lactone_5ring_001",
+          "mined_extra",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 160,
+          "time_min": 40,
+          "pH": 1.6,
+          "atmosphere": "air"
+        },
+        "adjuvant": "vinegar",
+        "n_products": 26,
+        "n_hops": 33,
+        "seconds": 2.5,
+        "hit": {
+          "product": "CC1=C2C(O)C3(O)CCC4C(C)(C)CCCC4(C)C3C3OC23OC1=O",
+          "formula": "C20H28O5",
+          "rule": "hydrolysis_epoxide_001",
+          "match": "formula"
+        },
+        "target_name": "C20H28O5",
+        "all_rules_seen": [
+          "hydrolysis_epoxide_001",
+          "hydrolysis_ester_001",
+          "hydrolysis_lactone_5ring_001",
+          "mined_extra",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    },
+    {
+      "tag": "chaohuang_cangerzi",
+      "label": "炒黄苍耳子：CATR → ATR",
+      "source": "二手来源（见 template_verification 炒黄条目）",
+      "lit_desc": "160–170 °C（微炒，二手来源）；时长取档内 10 min",
+      "preset": {
+        "cond": "炮制·炒黄",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 165,
+          "time_min": 10,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 19,
+        "n_hops": 24,
+        "seconds": 2.3,
+        "hit": {
+          "product": "[H]C1(C(=O)O)CC(OC2OC(CO)C(OS(=O)(=O)O)C(OS(=O)(=O)O)C2OC(=O)CC(C)C)CC2(C)C1CCC13CC(CCC21)C(=C)C3O",
+          "formula": "C30H46O16S2",
+          "rule": "decarboxylation_001",
+          "match": "formula"
+        },
+        "target_name": "C30H46O16S2",
+        "all_rules_seen": [
+          "decarboxylation_001",
+          "elimination_dehydration_001",
+          "hydrolysis_ester_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 165,
+          "time_min": 10,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 19,
+        "n_hops": 24,
+        "seconds": 2.3,
+        "hit": {
+          "product": "[H]C1(C(=O)O)CC(OC2OC(CO)C(OS(=O)(=O)O)C(OS(=O)(=O)O)C2OC(=O)CC(C)C)CC2(C)C1CCC13CC(CCC21)C(=C)C3O",
+          "formula": "C30H46O16S2",
+          "rule": "decarboxylation_001",
+          "match": "formula"
+        },
+        "target_name": "C30H46O16S2",
+        "all_rules_seen": [
+          "decarboxylation_001",
+          "elimination_dehydration_001",
+          "hydrolysis_ester_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    },
+    {
+      "tag": "zhengzhi_ginseng",
+      "label": "蒸制人参：Rb1 → Rg3",
+      "source": "10.3390/molecules25194390 / 10.1016/j.jgr.2017.02.003",
+      "lit_desc": "95–100 °C / 2–3 h（红参蒸制）",
+      "preset": {
+        "cond": "炮制·蒸制",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 100,
+          "time_min": 120,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 77,
+        "n_hops": 89,
+        "seconds": 3.5,
+        "hit": {
+          "product": "CC(C)=CCCC(C)(O)C1CCC2(C)C1C(O)CC1C3(C)CCC(OC4OC(CO)C(O)C(O)C4OC4OC(CO)C(O)C(O)C4O)C(C)(C)C3CCC12C",
+          "formula": "C42H72O13",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "inchikey14"
+        },
+        "target_name": "20(r)-ginsenoside rg3",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 98,
+          "time_min": 150,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 77,
+        "n_hops": 89,
+        "seconds": 3.6,
+        "hit": {
+          "product": "CC(C)=CCCC(C)(O)C1CCC2(C)C1C(O)CC1C3(C)CCC(OC4OC(CO)C(O)C(O)C4OC4OC(CO)C(O)C(O)C4O)C(C)(C)C3CCC12C",
+          "formula": "C42H72O13",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "inchikey14"
+        },
+        "target_name": "20(r)-ginsenoside rg3",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    },
+    {
+      "tag": "chaijiao_binglang",
+      "label": "炒焦槟榔：槟榔碱 → 去甲槟榔碱",
+      "source": "10.7501/j.issn.0253-2670.2026.06.008（区间来源）",
+      "lit_desc": "200 °C / 20 min（焦槟榔代表值；区间见 217–286 °C 的焦麦芽报道）",
+      "preset": {
+        "cond": "炮制·炒焦",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 195,
+          "time_min": 10,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 7,
+        "n_hops": 7,
+        "seconds": 2.3,
+        "hit": {
+          "product": "[H]N1CCC=C(C(=O)OC)C1",
+          "formula": "C7H11NO2",
+          "rule": "demethylation_n_001",
+          "match": "inchikey14"
+        },
+        "target_name": "Guvacoline",
+        "all_rules_seen": [
+          "demethylation_n_001",
+          "hydrolysis_ester_001",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "none",
+          "temperature": 200,
+          "time_min": 20,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 7,
+        "n_hops": 7,
+        "seconds": 2.2,
+        "hit": {
+          "product": "[H]N1CCC=C(C(=O)OC)C1",
+          "formula": "C7H11NO2",
+          "rule": "demethylation_n_001",
+          "match": "inchikey14"
+        },
+        "target_name": "Guvacoline",
+        "all_rules_seen": [
+          "demethylation_n_001",
+          "hydrolysis_ester_001",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    },
+    {
+      "tag": "zhengzhi_Heshouwu",
+      "label": "蒸制何首乌：THSG → 苷元",
+      "source": "10.3390/molecules25194390（工况借用，非何首乌原文）",
+      "lit_desc": "95–100 °C / 2–3 h（与红参蒸制同源的蒸制工况）",
+      "preset": {
+        "cond": "炮制·蒸制",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 100,
+          "time_min": 120,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 24,
+        "n_hops": 33,
+        "seconds": 2.4,
+        "hit": {
+          "product": "Oc1ccc(C=Cc2cc(O)cc(O)c2O)cc1",
+          "formula": "C14H12O4",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "formula"
+        },
+        "target_name": "C14H12O4",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "lit": {
+        "cond": "炮制·自定义",
+        "cond_values": {
+          "solvent": "water",
+          "temperature": 98,
+          "time_min": 150,
+          "pH": 7.0,
+          "atmosphere": "air"
+        },
+        "adjuvant": "none",
+        "n_products": 24,
+        "n_hops": 33,
+        "seconds": 2.3,
+        "hit": {
+          "product": "Oc1ccc(C=Cc2cc(O)cc(O)c2O)cc1",
+          "formula": "C14H12O4",
+          "rule": "hydrolysis_glycoside_001",
+          "match": "formula"
+        },
+        "target_name": "C14H12O4",
+        "all_rules_seen": [
+          "elimination_dehydration_001",
+          "hydrolysis_glycoside_001",
+          "mined_mono"
+        ]
+      },
+      "verdict": "both"
+    }
+  ],
+  "summary": {
+    "n_cases": 6,
+    "lit_only": 0,
+    "preset_only": 0,
+    "same": 6
+  }
+}

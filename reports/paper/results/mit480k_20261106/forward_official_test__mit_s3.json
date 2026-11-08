@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-06T14:42:10",
+  "source": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\paper\\data\\uspto50k_official\\raw_test.csv",
+  "n_reactions": 9794,
+  "n_scored": 9794,
+  "n_errors": 0,
+  "recall_1step": 0.7055,
+  "top1": 0.3232,
+  "top3": 0.4495,
+  "top5": 0.5119,
+  "top10": 0.6055,
+  "mrr": 0.4126,
+  "candidate_stats": {
+    "mean": 20.3
+  },
+  "by_class_recall": {
+    "mit": {
+      "n": 9794,
+      "rate": 0.7055
+    }
+  },
+  "seconds": 441.3,
+  "config_env": {
+    "CHEMCREACT_BENCH_OUT": "reports/paper/results/mit480k_20261106",
+    "CHEMCREACT_BENCH_SHARD": "3/4",
+    "CHEMCREACT_BENCH_SRC": "mit",
+    "CHEMCREACT_BENCH_TAG": "mit_s3"
+  }
+}

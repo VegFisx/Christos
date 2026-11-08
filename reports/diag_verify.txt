@@ -1,0 +1,55 @@
+========================================================================================
+① 基础：SMARTS 的 X / D / H 在肉桂酸上到底是什么
+========================================================================================
+肉桂酸: OC(=O)/C=C/c1ccccc1
+  原子idx  1 C  重原子邻居=3  含H总连接=3  显式H=0  芳香=False
+  原子idx  3 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=False
+  原子idx  4 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=False
+  原子idx  5 C  重原子邻居=3  含H总连接=3  显式H=0  芳香=True
+  原子idx  6 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=True
+  原子idx  7 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=True
+  原子idx  8 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=True
+  原子idx  9 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=True
+  原子idx 10 C  重原子邻居=2  含H总连接=3  显式H=1  芳香=True
+
+各写法能否匹配到羧基旁边的那个 CH：
+  [CX3H]     匹配
+  [CX2H]     不匹配
+  [CH]       匹配
+  [CX2H1]    不匹配
+  [CX3H1]    匹配
+  [cX3H]     匹配
+  [CX3]      匹配
+
+========================================================================================
+② 三条 verify 规则：rdkit vs rdchiral，手工底物
+========================================================================================
+
+【分子内半缩醛化】cyclization_hemiacetal_001
+  SMARTS: [CX3H1:1]=[OX1:2][CX4:3][CX4:4][CX4:5][OX2H:6]>>[C:1]1([OH:2])[CX4:3][CX4:4][CX4:5][O:6]1
+  rdkit 编译: OK（1 反应物 / 1 产物）
+  rdchiral 接受: OK
+    4-羟基丁醛       rdkit=0  
+                 rdchiral=0  
+    5-羟基戊醛       rdkit=0  
+                 rdchiral=0  
+
+【分子内酰胺化】cyclization_lactam_001
+  SMARTS: [CX3:1](=[OX1:2])[CX4:3][CX4:4][CX4:5][NX3H2:6]>>[C:1]1(=[O:2])[CX4:3][CX4:4][CX4:5][N:6]1
+  rdkit 编译: OK（1 反应物 / 1 产物）
+  rdchiral 接受: OK
+    4-氨基丁酸       rdkit=1   → (价态非法)
+                 rdchiral=0  
+    5-氨基戊酸       rdkit=0  
+                 rdchiral=0  
+
+【肉桂酸型脱羧】decarboxylation_cinnamic_001
+  SMARTS: [c:1][CX3H:2]=[CX3H:3][CX3:4](=[OX1:5])[OX2H:6]>>[c:1][CX3H:2]=[CX3:3].[C](=[O])=[O]
+  rdkit 编译: OK（1 反应物 / 2 产物）
+  rdchiral 接受: OK
+    肉桂酸          rdkit=1   → C=Cc1ccccc1 + O=C=O
+                 rdchiral=1   → C=Cc1ccccc1.O=C=O
+    咖啡酸          rdkit=1   → C=Cc1ccc(O)c(O)c1 + O=C=O
+                 rdchiral=1   → C=Cc1ccc(O)c(O)c1.O=C=O
+    阿魏酸          rdkit=1   → C=Cc1ccc(O)c(OC)c1 + O=C=O
+                 rdchiral=1   → C=Cc1ccc(O)c(OC)c1.O=C=O

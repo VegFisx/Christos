@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+Supporting Information.tex
+visuals/
+model/
+Manuscript Visuals.ipynb
+__pycache__/
+*.pkl

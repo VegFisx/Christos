@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/WXtgRPcgAzxcb+AaYmME+kKSEek</id>
+  <title>arXiv Query: search_query=all:"retrosynthesis" AND all:"evaluation"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-10-14T14:34:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22retrosynthesis%22+AND+all:%22evaluation%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>49</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2310.19796v3</id>
+    <title>Re-evaluating Retrosynthesis Algorithms with Syntheseus</title>
+    <updated>2024-09-06T17:55:53Z</updated>
+    <link href="https://arxiv.org/abs/2310.19796v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.19796v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated Synthesis Planning has recently re-emerged as a research area at the intersection of chemistry and machine learning. Despite the appearance of steady progress, we argue that imperfect benchmarks and inconsistent comparisons mask systematic shortcomings of existing techniques, and unnecessarily hamper progress. To remedy this, we present a synthesis planning library with an extensive benchmarking framework, called syntheseus, which promotes best practice by default, enabling consistent meaningful evaluation of single-step models and multi-step planning algorithms. We demonstrate the capabilities of syntheseus by re-evaluating several previous retrosynthesis algorithms, and find that the ranking of state-of-the-art models changes in controlled evaluation experiments. We end with guidance for future works in this area, and call the community to engage in the discussion on how to improve benchmarks for synthesis planning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-30T17:59:04Z</published>
+    <arxiv:comment>Accepted for publication in Faraday Discussions</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Krzysztof Maziarz</name>
+    </author>
+    <author>
+      <name>Austin Tripp</name>
+    </author>
+    <author>
+      <name>Guoqing Liu</name>
+    </author>
+    <author>
+      <name>Megan Stanley</name>
+    </author>
+    <author>
+      <name>Shufang Xie</name>
+    </author>
+    <author>
+      <name>Piotr Gaiński</name>
+    </author>
+    <author>
+      <name>Philipp Seidl</name>
+    </author>
+    <author>
+      <name>Marwin Segler</name>
+    </author>
+    <arxiv:doi>10.1039/D4FD00093E</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1039/D4FD00093E" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2308.16212v2</id>
+    <title>RetroBridge: Modeling Retrosynthesis with Markov Bridges</title>
+    <updated>2024-03-26T11:32:36Z</updated>
+    <link href="https://arxiv.org/abs/2308.16212v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2308.16212v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrosynthesis planning is a fundamental challenge in chemistry which aims at designing reaction pathways from commercially available starting materials to a target molecule. Each step in multi-step retrosynthesis planning requires accurate prediction of possible precursor molecules given the target molecule and confidence estimates to guide heuristic search algorithms. We model single-step retrosynthesis planning as a distribution learning problem in a discrete state space. First, we introduce the Markov Bridge Model, a generative framework aimed to approximate the dependency between two intractable discrete distributions accessible via a finite sample of coupled data points. Our framework is based on the concept of a Markov bridge, a Markov process pinned at its endpoints. Unlike diffusion-based methods, our Markov Bridge Model does not need a tractable noise distribution as a sampling proxy and directly operates on the input product molecules as samples from the intractable prior distribution. We then address the retrosynthesis planning problem with our novel framework and introduce RetroBridge, a template-free retrosynthesis modeling approach that achieves state-of-the-art results on standard evaluation benchmarks.</summary>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.BM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-08-30T15:09:22Z</published>
+    <arxiv:primary_category term="q-bio.QM"/>
+    <author>
+      <name>Ilia Igashov</name>
+    </author>
+    <author>
+      <name>Arne Schneuing</name>
+    </author>
+    <author>
+      <name>Marwin Segler</name>
+    </author>
+    <author>
+      <name>Michael Bronstein</name>
+    </author>
+    <author>
+      <name>Bruno Correia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2301.05864v1</id>
+    <title>Recent advances in artificial intelligence for retrosynthesis</title>
+    <updated>2023-01-14T09:29:39Z</updated>
+    <link href="https://arxiv.org/abs/2301.05864v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2301.05864v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrosynthesis is the cornerstone of organic chemistry, providing chemists in material and drug manufacturing access to poorly available and brand-new molecules. Conventional rule-based or expert-based computer-aided synthesis has obvious limitations, such as high labor costs and limited search space. In recent years, dramatic breakthroughs driven by artificial intelligence have revolutionized retrosynthesis. Here we aim to present a comprehensive review of recent advances in AI-based retrosynthesis. For single-step and multi-step retrosynthesis both, we first list their goal and provide a thorough taxonomy of existing methods. Afterwards, we analyze these methods in terms of their mechanism and performance, and introduce popular evaluation metrics for them, in which we also provide a detailed comparison among representative methods on several public datasets. In the next part we introduce popular databases and established platforms for retrosynthesis. Finally, this review concludes with a discussion about promising research directions in this field.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.BM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-14T09:29:39Z</published>
+    <arxiv:comment>27 pages, 6 figurs, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zipeng Zhong</name>
+    </author>
+    <author>
+      <name>Jie Song</name>
+    </author>
+    <author>
+      <name>Zunlei Feng</name>
+    </author>
+    <author>
+      <name>Tiantao Liu</name>
+    </author>
+    <author>
+      <name>Lingxiang Jia</name>
+    </author>
+    <author>
+      <name>Shaolun Yao</name>
+    </author>
+    <author>
+      <name>Tingjun Hou</name>
+    </author>
+    <author>
+      <name>Mingli Song</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.04688v1</id>
+    <title>URSA: Chemistry-Aware Benchmark for Utilitarian Retrosynthesis Assessment</title>
+    <updated>2026-07-06T05:32:09Z</updated>
+    <link href="https://arxiv.org/abs/2607.04688v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.04688v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Synthesis planning aiming to find pathways of reactions for a target molecule is one of the most important and challenging tasks in drug discovery. Recent progress has produced both specialized deep-learning retrosynthesis systems and general-purpose large language models, but objective comparison remains difficult due to the lack of flexible, chemically interpretable benchmarking protocols. In the current study, we are introducing the URSA (Utilitarian RetroSynthesis Assessment) evaluation framework that provides the opportunity to benchmark the synthetic routes not only from a formal perspective, such as convergence to commercially available starting materials, but also from a chemical plausibility perspective, mimicking the way expert chemists evaluate the reactions and routes. The study covers a comprehensive evaluation of both conventional end-to-end retrosynthesis solutions and LLMs for the synthesis planning task on a set of novel, diverse target molecules with undisclosed synthetic routes, which represent realistic tasks in the daily drug design routine. We find that while LLMs can support high-level strategic planning, they currently underperform specialized retrosynthesis models in reliably solving synthesis planning tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T05:32:09Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Bogdan Zagribelnyy</name>
+    </author>
+    <author>
+      <name>Ivan Ilin</name>
+    </author>
+    <author>
+      <name>Nikita Bondarev</name>
+    </author>
+    <author>
+      <name>Anton Morgunov</name>
+    </author>
+    <author>
+      <name>Arkadii Lin</name>
+    </author>
+    <author>
+      <name>Maksim Kuznetsov</name>
+    </author>
+    <author>
+      <name>Rim Shayakhmetov</name>
+    </author>
+    <author>
+      <name>Vladimir Aladinskiy</name>
+    </author>
+    <author>
+      <name>Alex Aliper</name>
+    </author>
+    <author>
+      <name>Alex Zhavoronkov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.10900v1</id>
+    <title>RetroOOD: Understanding Out-of-Distribution Generalization in Retrosynthesis Prediction</title>
+    <updated>2023-12-18T03:12:19Z</updated>
+    <link href="https://arxiv.org/abs/2312.10900v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.10900v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine learning-assisted retrosynthesis prediction models have been gaining widespread adoption, though their performances oftentimes degrade significantly when deployed in real-world applications embracing out-of-distribution (OOD) molecules or reactions. Despite steady progress on standard benchmarks, our understanding of existing retrosynthesis prediction models under the premise of distribution shifts remains stagnant. To this end, we first formally sort out two types of distribution shifts in retrosynthesis prediction and construct two groups of benchmark datasets. Next, through comprehensive experiments, we systematically compare state-of-the-art retrosynthesis prediction models on the two groups of benchmarks, revealing the limitations of previous in-distribution evaluation and re-examining the advantages of each model. More remarkably, we are motivated by the above empirical insights to propose two model-agnostic techniques that can improve the OOD generalization of arbitrary off-the-shelf retrosynthesis prediction algorithms. Our preliminary experiments show their high potential with an average performance improvement of 4.6%, and the established benchmarks serve as a foothold for further retrosynthesis prediction research towards OOD generalization.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-18T03:12:19Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yemin Yu</name>
+    </author>
+    <author>
+      <name>Luotian Yuan</name>
+    </author>
+    <author>
+      <name>Ying Wei</name>
+    </author>
+    <author>
+      <name>Hanyu Gao</name>
+    </author>
+    <author>
+      <name>Xinhai Ye</name>
+    </author>
+    <author>
+      <name>Zhihua Wang</name>
+    </author>
+    <author>
+      <name>Fei Wu</name>
+    </author>
+  </entry>
+</feed>

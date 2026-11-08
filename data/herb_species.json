@@ -1,0 +1,5768 @@
+{
+ "一枝黄花": {
+  "latin_raw": [
+   "Solidago decurrens"
+  ],
+  "species": [
+   "solidago decurrens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d4545071b2c03079c48a63b2460fe236"
+ },
+ "丁公藤": {
+  "latin_raw": [
+   "Erycibe obtusifolia",
+   "Erycibe schmidtii"
+  ],
+  "species": [
+   "erycibe obtusifolia",
+   "erycibe schmidtii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e1b4032cb8bce248fcd322b76f0cb44c"
+ },
+ "丁香": {
+  "latin_raw": [
+   "Eugenia caryophyllata"
+  ],
+  "species": [
+   "eugenia caryophyllata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f2148e8416073613a71b05e0fbb3102a"
+ },
+ "三七": {
+  "latin_raw": [
+   "Panax notoginseng"
+  ],
+  "species": [
+   "panax notoginseng"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c99195b1ae3ea144a872b1f8df6bae93"
+ },
+ "三棱": {
+  "latin_raw": [
+   "Sparganium stoloniferum"
+  ],
+  "species": [
+   "sparganium stoloniferum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a651bd580bf52451672b4563c9520a0e"
+ },
+ "三白草": {
+  "latin_raw": [
+   "Saururus chinensis"
+  ],
+  "species": [
+   "saururus chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bbf64e85e85b77483b6414b380f344e4"
+ },
+ "三颗针": {
+  "latin_raw": [
+   "Berberis soulieana",
+   "Berberis wilsonae",
+   "Berberis poiretii",
+   "Berberis vernae"
+  ],
+  "species": [
+   "berberis soulieana",
+   "berberis wilsonae",
+   "berberis poiretii",
+   "berberis vernae"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=64f37f7299b531c77eb3167fb8b82fb8"
+ },
+ "丝瓜络": {
+  "latin_raw": [
+   "Luffa cylindrica"
+  ],
+  "species": [
+   "luffa cylindrica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b3b0d3ca8ceced6b6d90c97210fc7ff"
+ },
+ "两头尖": {
+  "latin_raw": [
+   "Anemone raddeana"
+  ],
+  "species": [
+   "anemone raddeana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e5a9289cb6bf3ccb94e3839fde7d9be7"
+ },
+ "两面针": {
+  "latin_raw": [
+   "Zanthoxylum nitidum"
+  ],
+  "species": [
+   "zanthoxylum nitidum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=13da15f9b41b57f48c4592d74a3977bf"
+ },
+ "丹参": {
+  "latin_raw": [
+   "Salvia miltiorrhiza"
+  ],
+  "species": [
+   "salvia miltiorrhiza"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6780aa28cb90238d385c4c992f607c7d"
+ },
+ "乌梅": {
+  "latin_raw": [
+   "Prunus mume"
+  ],
+  "species": [
+   "prunus mume"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=338c6586c23b7effe48d9ab98533ab13"
+ },
+ "乌梢蛇": {
+  "latin_raw": [
+   "Ptyas dhumnades"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c76ba7de60022ba71bf4a2e03d2457c0"
+ },
+ "乌药": {
+  "latin_raw": [
+   "Lindera aggregata"
+  ],
+  "species": [
+   "lindera aggregata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1fa94adece6d6dd2125e93b1443f4737"
+ },
+ "九里香": {
+  "latin_raw": [
+   "Murraya exotica",
+   "Murraya paniculata"
+  ],
+  "species": [
+   "murraya exotica",
+   "murraya paniculata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7104122fefc7921eb73b60351cfc3862"
+ },
+ "九香虫": {
+  "latin_raw": [
+   "Coridius chinensis"
+  ],
+  "species": [
+   "corylus chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cc002254f3e0fa9d9bc10d82c396be01"
+ },
+ "乳香": {
+  "latin_raw": [
+   "Boswellia carterii",
+   "Boswellia bhaw"
+  ],
+  "species": [
+   "boswellia carterii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=925921a91c10c879640111f90460979c"
+ },
+ "云芝": {
+  "latin_raw": [
+   "Coriolus versicolor"
+  ],
+  "species": [
+   "coriolus versicolor"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=158929fa694e0b9d8c65830becbc04f7"
+ },
+ "五倍子": {
+  "latin_raw": [
+   "Rhus chinensis",
+   "Rhus potaninii",
+   "Rhus punjabensis",
+   "Melaphis chinensis"
+  ],
+  "species": [
+   "rhus chinensis",
+   "rhus potaninii",
+   "rhus punjabensis",
+   "melaphis chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=17747dcba97c9c57288b6eb333783736"
+ },
+ "五加皮": {
+  "latin_raw": [
+   "Acanthopanax gracilistylus"
+  ],
+  "species": [
+   "acanthopanax gracilistylus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ecef37c0c531751f4dc5e3defb07a353"
+ },
+ "五味子": {
+  "latin_raw": [
+   "Schisandra chinensis"
+  ],
+  "species": [
+   "schisandra chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=63a7cd74310f771d6b3bcb85a4677cb4"
+ },
+ "亚麻子": {
+  "latin_raw": [
+   "Linum usitatissimum"
+  ],
+  "species": [
+   "linum usitatissimum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=79c4c340d15a347d9fe4daa168e20565"
+ },
+ "京大戟": {
+  "latin_raw": [
+   "Euphorbia pekinensis"
+  ],
+  "species": [
+   "euphorbia pekinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c19e86e4e7e814fadebaa6b8f4bb1d67"
+ },
+ "人参": {
+  "latin_raw": [
+   "Panax ginseng"
+  ],
+  "species": [
+   "panax ginseng"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=91b37a689217e7d918bb127d47d7319d"
+ },
+ "人参叶": {
+  "latin_raw": [
+   "Panax ginseng"
+  ],
+  "species": [
+   "panax ginseng"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4874e352450a75a88288e080c8e3ad1d"
+ },
+ "仙茅": {
+  "latin_raw": [
+   "Curculigo orchioides"
+  ],
+  "species": [
+   "curculigo orchioides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=06283e8b8abb8210b331fa0f48a8cb44"
+ },
+ "仙鹤草": {
+  "latin_raw": [
+   "Agrimonia pilosa"
+  ],
+  "species": [
+   "agrimonia pilosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=55c7c872983d81db449a8166595399ad"
+ },
+ "伊贝母": {
+  "latin_raw": [
+   "Fritillaria walujewii",
+   "Fritillaria pallidiflora"
+  ],
+  "species": [
+   "fritillaria walujewii",
+   "fritillaria pallidiflora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f07aedd1c09c00ae5d63ea0f76f278ed"
+ },
+ "伸筋草": {
+  "latin_raw": [
+   "Lycopodium japonicum"
+  ],
+  "species": [
+   "lycopodium japonicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f54d55f4a3c0454f922c82b67520c8d6"
+ },
+ "何首乌": {
+  "latin_raw": [
+   "Polygonum multiflorum"
+  ],
+  "species": [
+   "polygonum multiflorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=002a4e6b44275fe69e503fe91beb58fd"
+ },
+ "余甘子": {
+  "latin_raw": [
+   "Phyllanthus emblica"
+  ],
+  "species": [
+   "phyllanthus emblica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a134bc02a29a118ce273144a67d368ed"
+ },
+ "佛手": {
+  "latin_raw": [
+   "Citrus medica"
+  ],
+  "species": [
+   "citrus medica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1f17d92da43d4ef266ef1fb923bb1c07"
+ },
+ "佩兰": {
+  "latin_raw": [
+   "Eupatorium fortunei"
+  ],
+  "species": [
+   "eupatorium fortunei"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b8bc030a437fb8dd5c7bf9840cf3d1ec"
+ },
+ "使君子": {
+  "latin_raw": [
+   "Quisqualis indica"
+  ],
+  "species": [
+   "quisqualis indica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9f474e653fb7732766454682bdf4b2c7"
+ },
+ "侧柏叶": {
+  "latin_raw": [
+   "Platycladus orientalis"
+  ],
+  "species": [
+   "platycladus orientalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ce1d5611ee359dd35879a2d5c86bc487"
+ },
+ "僵蚕": {
+  "latin_raw": [
+   "Bombyx mori",
+   "Beauveria bassiana"
+  ],
+  "species": [
+   "beauveria bassiana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a4e9a341e94c916f77b9bb80a57c03d5"
+ },
+ "儿茶": {
+  "latin_raw": [
+   "Acacia catechu"
+  ],
+  "species": [
+   "acacia catechu"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a9622fa74eef6e70dac20bed6ead5427"
+ },
+ "党参": {
+  "latin_raw": [
+   "Codonopsis pilosula",
+   "Codonopsis tangshen"
+  ],
+  "species": [
+   "codonopsis pilosula",
+   "codonopsis tangshen"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=99d500c8a81bdba21d37509c505e6c3f"
+ },
+ "全蝎": {
+  "latin_raw": [
+   "Buthus martensii"
+  ],
+  "species": [
+   "buthus martensii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c34bcab8bd3f2dd2603181657ab37468"
+ },
+ "八角茴香": {
+  "latin_raw": [
+   "Illicium verum"
+  ],
+  "species": [
+   "illicium verum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=905eafd27cdc77e48514ad238566bc27"
+ },
+ "关黄柏": {
+  "latin_raw": [
+   "Phellodendron amurense"
+  ],
+  "species": [
+   "phellodendron amurense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a61cc737c1dd343674f0d8025ab15976"
+ },
+ "冬凌草": {
+  "latin_raw": [
+   "Rabdosia rubescens"
+  ],
+  "species": [
+   "rabdosia rubescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=06ce4ab4330cb6a3ca22f4681d75cea8"
+ },
+ "冬瓜皮": {
+  "latin_raw": [
+   "Benincasa hispida"
+  ],
+  "species": [
+   "benincasa hispida"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=65018b43d425546139aa980cb72709d3"
+ },
+ "冬葵果": {
+  "latin_raw": [
+   "Malva verticillata"
+  ],
+  "species": [
+   "malva verticillata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b552f79ace09117d8afe302e00d26976"
+ },
+ "冬虫夏草": {
+  "latin_raw": [
+   "Ophiocordyceps sinensis"
+  ],
+  "species": [
+   "ophiocordyceps sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f777b0437016d53525bfde9f92b21210"
+ },
+ "决明子": {
+  "latin_raw": [
+   "Cassia obtusifolia",
+   "Cassia tora"
+  ],
+  "species": [
+   "cassia obtusifolia",
+   "cassia tora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d3d818fec47f94aa1c38056c3ea285ba"
+ },
+ "凌霄花": {
+  "latin_raw": [
+   "Campsis grandiflora",
+   "Campsis radicans"
+  ],
+  "species": [
+   "campsis grandiflora",
+   "campsis radicans"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3fd49ec9e5904039de2c3723a8eebcbf"
+ },
+ "刀豆": {
+  "latin_raw": [
+   "Canavalia gladiata"
+  ],
+  "species": [
+   "canavalia gladiata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c21a0b6a6800b33d89af29e370143ff9"
+ },
+ "刺五加": {
+  "latin_raw": [
+   "Acanthopanax senticosus"
+  ],
+  "species": [
+   "acanthopanax senticosus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9559476728549dfceb01eabbe0296c1d"
+ },
+ "前胡": {
+  "latin_raw": [
+   "Peucedanum praeruptorum"
+  ],
+  "species": [
+   "peucedanum praeruptorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3682d9e75d70de933fe75113d709af7d"
+ },
+ "功劳木": {
+  "latin_raw": [
+   "Mahonia bealei",
+   "Mahonia fortunei"
+  ],
+  "species": [
+   "mahonia bealei",
+   "mahonia fortunei"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bdc4e168aeaac4062678872c87f98620"
+ },
+ "化橘红": {
+  "latin_raw": [
+   "Citrus grandis"
+  ],
+  "species": [
+   "citrus grandis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a9169b73535c8411a430a3a5a0002774"
+ },
+ "北刘寄奴": {
+  "latin_raw": [
+   "Siphonostegia chinensis"
+  ],
+  "species": [
+   "siphonostegia chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=994b151b97fff7f85b088d5e82305a93"
+ },
+ "北沙参": {
+  "latin_raw": [
+   "Glehnia littoralis"
+  ],
+  "species": [
+   "glehnia littoralis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=85e396ffa98566ab040a0cff1c08be6e"
+ },
+ "北豆根": {
+  "latin_raw": [
+   "Menispermum dauricum"
+  ],
+  "species": [
+   "menispermum dauricum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e2156170b5263ecbb8f665d06e09c7dc"
+ },
+ "千年健": {
+  "latin_raw": [
+   "Homalomena occulta"
+  ],
+  "species": [
+   "homalomena occulta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c968e70af755b99871fe8033ac43d212"
+ },
+ "千里光": {
+  "latin_raw": [
+   "Senecio scandens"
+  ],
+  "species": [
+   "senecio scandens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b2263af265fbe73f9af6b36b4e508034"
+ },
+ "千金子": {
+  "latin_raw": [
+   "Euphorbia lathyris"
+  ],
+  "species": [
+   "euphorbia lathyris"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=367c4930aa530f874758fd891bd72fa9"
+ },
+ "升麻": {
+  "latin_raw": [
+   "Cimicifuga heracleifolia",
+   "Cimicifuga dahurica",
+   "Cimicifuga foetida"
+  ],
+  "species": [
+   "cimicifuga heracleifolia",
+   "cimicifuga dahurica",
+   "cimicifuga foetida"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=478175a5d66a4d3fdbb21d07b220485a"
+ },
+ "半夏": {
+  "latin_raw": [
+   "Pinellia ternata"
+  ],
+  "species": [
+   "pinellia ternata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c86fb8c13d2669feaba369d448f75ee6"
+ },
+ "半枝莲": {
+  "latin_raw": [
+   "Scutellaria barbata"
+  ],
+  "species": [
+   "scutellaria barbata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=388ae6e16478e6e81b3544c41dedd512"
+ },
+ "半边莲": {
+  "latin_raw": [
+   "Lobelia chinensis"
+  ],
+  "species": [
+   "lobelia chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a03a72d381a49eb82dfa87a5f09e48d6"
+ },
+ "华山参": {
+  "latin_raw": [
+   "Physochlaina infundibularis"
+  ],
+  "species": [
+   "physochlaina infundibularis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3f5b5d2de37370d437df115d1ce9d5b4"
+ },
+ "南五味子": {
+  "latin_raw": [
+   "Schisandra sphenanthera"
+  ],
+  "species": [
+   "schisandra sphenanthera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=25366429d9d2279906c05b744dfe177e"
+ },
+ "南板蓝根": {
+  "latin_raw": [
+   "Baphicacanthus cusia"
+  ],
+  "species": [
+   "baphicacanthus cusia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b266b4686a50dce975398e70a08f4c45"
+ },
+ "南沙参": {
+  "latin_raw": [
+   "Adenophora tetraphylla",
+   "Adenophora stricta"
+  ],
+  "species": [
+   "adenophora triphylla",
+   "adenophora stricta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=92d8ee82160020886d72b85d3b459427"
+ },
+ "南鹤虱": {
+  "latin_raw": [
+   "Daucus carota"
+  ],
+  "species": [
+   "daucus carota"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=29139f9004646beb8b3291f0f548ce49"
+ },
+ "卷柏": {
+  "latin_raw": [
+   "Selaginella tamariscina",
+   "Selaginella pulvinata"
+  ],
+  "species": [
+   "selaginella tamariscina",
+   "selaginella pulvinata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=01b3645bd69a14a55c0c97a0f4c1fa9b"
+ },
+ "厚朴": {
+  "latin_raw": [
+   "Magnolia officinalis"
+  ],
+  "species": [
+   "magnolia officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ac9ec12d0554003b0b9cf7d48187d2cd"
+ },
+ "厚朴花": {
+  "latin_raw": [
+   "Magnolia officinalis"
+  ],
+  "species": [
+   "magnolia officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8dbd8ea8466dd5fd9ef78039bbf359b4"
+ },
+ "合欢皮": {
+  "latin_raw": [
+   "Albizia julibrissin"
+  ],
+  "species": [
+   "albizia julibrissin"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ad42b76e5bd6c9473117598eece35845"
+ },
+ "合欢花": {
+  "latin_raw": [
+   "Albizia julibrissin"
+  ],
+  "species": [
+   "albizia julibrissin"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=030e7a7b1febfef18ef66be49ca28a3d"
+ },
+ "吴茱萸": {
+  "latin_raw": [
+   "Euodia rutaecarpa"
+  ],
+  "species": [
+   "euodia rutaecarpa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6b58b5599cab97395e809da2b284b6cc"
+ },
+ "哈蟆油": {
+  "latin_raw": [
+   "Rana dybowskii"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0b27441ebadbf6e44fa0f285efd553a3"
+ },
+ "商陆": {
+  "latin_raw": [
+   "Phytolacca acinosa",
+   "Phytolacca americana"
+  ],
+  "species": [
+   "phytolacca acinosa",
+   "phytolacca americana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=12cc733dd499a08094239d639c999cea"
+ },
+ "四季青": {
+  "latin_raw": [
+   "Ilex chinensis"
+  ],
+  "species": [
+   "ilex chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c999bc937cd28a255ef7222b5fa0115d"
+ },
+ "土木香": {
+  "latin_raw": [
+   "Inula helenium"
+  ],
+  "species": [
+   "inula helenium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=afe2891d26ea351b81f917d26a160848"
+ },
+ "土茯苓": {
+  "latin_raw": [
+   "Smilax glabra"
+  ],
+  "species": [
+   "smilax glabra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1dff954ea7ce0938d10cc3b700923866"
+ },
+ "土荆皮": {
+  "latin_raw": [
+   "Pseudolarix amabilis"
+  ],
+  "species": [
+   "pseudolarix amabilis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ae7ee3f5041fc23e4135af2cd72a9c25"
+ },
+ "土贝母": {
+  "latin_raw": [
+   "Bolbostemma paniculatum"
+  ],
+  "species": [
+   "bolbostemma paniculatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=92390feb0a5f3d67a3b1178b7eb748a7"
+ },
+ "地枫皮": {
+  "latin_raw": [
+   "Illicium difengpi"
+  ],
+  "species": [
+   "illicium difengpi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f0d5be122fcc7854584c5ab8afed06a0"
+ },
+ "地榆": {
+  "latin_raw": [
+   "Sanguisorba officinalis"
+  ],
+  "species": [
+   "sanguisorba officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=eb3a31044aa898c277d720cc5ca55b2f"
+ },
+ "地肤子": {
+  "latin_raw": [
+   "Kochia scoparia"
+  ],
+  "species": [
+   "kochia scoparia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d4692db4fb1b2bc7048f8d3f6cdbcc6e"
+ },
+ "地锦草": {
+  "latin_raw": [
+   "Euphorbia humifusa",
+   "Euphorbia maculata"
+  ],
+  "species": [
+   "euphorbia humifusa",
+   "euphorbia maculata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2ee8149b5432cbe454ae0ee72e497292"
+ },
+ "地骨皮": {
+  "latin_raw": [
+   "Lycium chinense",
+   "Lycium barbarum"
+  ],
+  "species": [
+   "lycium chinense",
+   "lycium barbarum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=11d08ddda3f4f965167129135ae1e452"
+ },
+ "地黄": {
+  "latin_raw": [
+   "Rehmannia glutinosa"
+  ],
+  "species": [
+   "rehmannia glutinosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9d5cbac645b2b6556d45ef22c966a71c"
+ },
+ "地龙": {
+  "latin_raw": [
+   "Pheretima aspergillum",
+   "Pheretima vulgaris",
+   "Pheretima guillelmi",
+   "Pheretima pectinifera"
+  ],
+  "species": [
+   "pherethima aspergillum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=76661598c6735cccb89a275257f6784f"
+ },
+ "垂盆草": {
+  "latin_raw": [
+   "Sedum sarmentosum"
+  ],
+  "species": [
+   "sedum sarmentosum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c5a85934c6dddfd46f9a8c0bc0846868"
+ },
+ "墨旱莲": {
+  "latin_raw": [
+   "Eclipta prostrata"
+  ],
+  "species": [
+   "eclipta prostrata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=238b529dd88f0aa8c58bc28ea343b307"
+ },
+ "夏天无": {
+  "latin_raw": [
+   "Corydalis decumbens"
+  ],
+  "species": [
+   "corydalis decumbens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=673728067bf66ebfd65bbc0d32f4d018"
+ },
+ "夏枯草": {
+  "latin_raw": [
+   "Prunella vulgaris"
+  ],
+  "species": [
+   "prunella vulgaris"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c6bbd02799d8fb3804643fb439c54bcc"
+ },
+ "大叶紫珠": {
+  "latin_raw": [
+   "Callicarpa macrophylla"
+  ],
+  "species": [
+   "callicarpa macrophylla"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=33c84be363a456d9c61d29ed4c4b5949"
+ },
+ "大枣": {
+  "latin_raw": [
+   "Ziziphus jujuba"
+  ],
+  "species": [
+   "ziziphus jujuba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8d2453bbd629bece89c7589c6394fff2"
+ },
+ "大皂角": {
+  "latin_raw": [
+   "Gleditsia sinensis"
+  ],
+  "species": [
+   "gleditsia sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7c72da58d3c54158457b98a87e3cba1f"
+ },
+ "大腹皮": {
+  "latin_raw": [
+   "Areca catechu"
+  ],
+  "species": [
+   "areca catechu"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f28dafb79556a072283490267a2d0f8d"
+ },
+ "大蒜": {
+  "latin_raw": [
+   "Allium sativum"
+  ],
+  "species": [
+   "allium sativum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=84b6af556254dba1aef123c16e8618be"
+ },
+ "大蓟": {
+  "latin_raw": [
+   "Cirsium japonicum"
+  ],
+  "species": [
+   "cirsium japonicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6e8faffa17bee1b2013759bc68759982"
+ },
+ "大血藤": {
+  "latin_raw": [
+   "Sargentodoxa cuneata"
+  ],
+  "species": [
+   "sargentodoxa cuneata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=db9dc558696f7194b815bd9312f322d1"
+ },
+ "大青叶": {
+  "latin_raw": [
+   "Isatis indigotica"
+  ],
+  "species": [
+   "isatis indigotica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=28a5352bff9527952cc08c704b75a0e6"
+ },
+ "大黄": {
+  "latin_raw": [
+   "Rheum palmatum",
+   "Rheum tanguticum",
+   "Rheum officinale"
+  ],
+  "species": [
+   "rheum palmatum",
+   "rheum tanguticum",
+   "rheum officinale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2c6137d4e466971b29e05a5fe3974945"
+ },
+ "天仙子": {
+  "latin_raw": [
+   "Hyoscyamus niger"
+  ],
+  "species": [
+   "hyoscyamus niger"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=055d7f3e6ebebe5963a7f2721c0f934a"
+ },
+ "天冬": {
+  "latin_raw": [
+   "Asparagus cochinchinensis"
+  ],
+  "species": [
+   "asparagus cochinchinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e193aa77e5cc590c7b90bdac6d3cad2a"
+ },
+ "天南星": {
+  "latin_raw": [
+   "Arisaema erubescens",
+   "Arisaema heterophyllum",
+   "Arisaema amurense"
+  ],
+  "species": [
+   "arisaema erubescens",
+   "arisaema heterophyllum",
+   "arisaema amurense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a3b86e8795d3775f5dbf4b3a164fcd5e"
+ },
+ "天山雪莲": {
+  "latin_raw": [
+   "Saussurea involucrata"
+  ],
+  "species": [
+   "saussurea involucrata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=83f22c523f2232987233ec7c134a83e4"
+ },
+ "天竺黄": {
+  "latin_raw": [
+   "Bambusa textilis",
+   "Schizostachyum chinense"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=412d2e00f4c1f7aefdc608dadb07dd39"
+ },
+ "天花粉": {
+  "latin_raw": [
+   "Trichosanthes kirilowii",
+   "Trichosanthes rosthornii"
+  ],
+  "species": [
+   "trichosanthes kirilowii",
+   "trichosanthes rosthornii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=51958a94401616143cb1f269eb7fa64d"
+ },
+ "天葵子": {
+  "latin_raw": [
+   "Semiaquilegia adoxoides"
+  ],
+  "species": [
+   "semiaquilegia adoxoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1b9bbc52683af23d417c22612397adec"
+ },
+ "天麻": {
+  "latin_raw": [
+   "Gastrodia elata"
+  ],
+  "species": [
+   "gastrodia elata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ff2b8ba9bb8e02a37cc1499f12fed83b"
+ },
+ "太子参": {
+  "latin_raw": [
+   "Pseudostellaria heterophylla"
+  ],
+  "species": [
+   "pseudostellaria heterophylla"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b18669bf5ffd557af2da429667c00d67"
+ },
+ "女贞子": {
+  "latin_raw": [
+   "Ligustrum lucidum"
+  ],
+  "species": [
+   "ligustrum lucidum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f29c941a2848b0efd12afac09960f52b"
+ },
+ "委陵菜": {
+  "latin_raw": [
+   "Potentilla chinensis"
+  ],
+  "species": [
+   "potentilla chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1ad075f05beec3d0126f61ec07bbc0cd"
+ },
+ "姜黄": {
+  "latin_raw": [
+   "Curcuma longa"
+  ],
+  "species": [
+   "curcuma longa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=821101da15eb96bad96d4169da6006ff"
+ },
+ "威灵仙": {
+  "latin_raw": [
+   "Clematis chinensis",
+   "Clematis hexapetala",
+   "Clematis manshurica"
+  ],
+  "species": [
+   "clematis chinensis",
+   "clematis hexapetala",
+   "clematis manshurica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ac6f361e0638028da9cf38c0416bccbb"
+ },
+ "娑罗子": {
+  "latin_raw": [
+   "Aesculus chinensis",
+   "Aesculus wilsonii"
+  ],
+  "species": [
+   "aesculus chinensis",
+   "aesculus wilsonii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8f5efbca5ede856857c12bb42998de8d"
+ },
+ "安息香": {
+  "latin_raw": [
+   "Styrax tonkinensis"
+  ],
+  "species": [
+   "styrax tonkinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=94786af6989897cf17b3a31280e60c79"
+ },
+ "密蒙花": {
+  "latin_raw": [
+   "Buddleja officinalis"
+  ],
+  "species": [
+   "buddleja officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=726aa105dc103b78d11ba175309e71f7"
+ },
+ "射干": {
+  "latin_raw": [
+   "Belamcanda chinensis"
+  ],
+  "species": [
+   "belamcanda chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cad0303094fb055c78a565939767f90a"
+ },
+ "小叶莲": {
+  "latin_raw": [
+   "Sinopodophyllum hexandrum"
+  ],
+  "species": [
+   "sinopodophyllum hexandrum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=606999e2f9b571b584c5513f1e8eb8d1"
+ },
+ "小茴香": {
+  "latin_raw": [
+   "Foeniculum vulgare"
+  ],
+  "species": [
+   "foeniculum vulgare"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2a091e329ce172d46274328fa2f0a412"
+ },
+ "小蓟": {
+  "latin_raw": [
+   "Cirsium setosum"
+  ],
+  "species": [
+   "cirsium setosum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0d56ca6e20fdd4527c632d215308675e"
+ },
+ "小通草": {
+  "latin_raw": [
+   "Stachyurus himalaicus",
+   "Stachyurus chinensis",
+   "Helwingia japonica"
+  ],
+  "species": [
+   "stachyurus himalaicus",
+   "stachyurus chinensis",
+   "helwingia japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=846b18f7debee30e362a4954379ecfd2"
+ },
+ "小驳骨": {
+  "latin_raw": [
+   "Gendarussa vulgaris"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6a462486adfcee2c0fa78b84cfe43ebb"
+ },
+ "山慈菇": {
+  "latin_raw": [
+   "Cremastra appendiculata",
+   "Pleione bulbocodioides",
+   "Pleione yunnanensis"
+  ],
+  "species": [
+   "cremastra appendiculata",
+   "pleione bulbocodioides",
+   "pleione yunnanensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=93813e16640a56ecb88606b3cce13719"
+ },
+ "山柰": {
+  "latin_raw": [
+   "Kaempferia galanga"
+  ],
+  "species": [
+   "kaempferia galanga"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=301113066f3ea6fde0c97a64c915d58f"
+ },
+ "山楂": {
+  "latin_raw": [
+   "Crataegus pinnatifida"
+  ],
+  "species": [
+   "crataegus pinnatifida"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5ff70b88e39a66ac2fc711602ffa5336"
+ },
+ "山楂叶": {
+  "latin_raw": [
+   "Crataegus pinnatifida"
+  ],
+  "species": [
+   "crataegus pinnatifida"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=08db3b61b617c5eadcbeeffd69624286"
+ },
+ "山茱萸": {
+  "latin_raw": [
+   "Cornus officinalis"
+  ],
+  "species": [
+   "cornus officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ce086b5b43fc83fcb489a95793a5ba41"
+ },
+ "山药": {
+  "latin_raw": [
+   "Dioscorea opposita"
+  ],
+  "species": [
+   "dioscorea opposita"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=182e8eacf57517a8c43a43d12c755fba"
+ },
+ "山豆根": {
+  "latin_raw": [
+   "Sophora tonkinensis"
+  ],
+  "species": [
+   "sophora tonkinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2fe4eae68748c47b8eb16132d5af8047"
+ },
+ "山银花": {
+  "latin_raw": [
+   "Lonicera macranthoides",
+   "Lonicera hypoglauca",
+   "Lonicera confusa",
+   "Lonicera fulvotomentosa"
+  ],
+  "species": [
+   "lonicera macranthoides",
+   "lonicera hypoglauca",
+   "lonicera confusa",
+   "lonicera fulvotomentosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b50164dafe9e95dd69a2ecc722b21965"
+ },
+ "山香圆叶": {
+  "latin_raw": [
+   "Turpinia arguta"
+  ],
+  "species": [
+   "turpinia arguta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e0be688b5aef7e6aa425dd23f858a7ea"
+ },
+ "山麦冬": {
+  "latin_raw": [
+   "Liriope spicata",
+   "Liriope muscari"
+  ],
+  "species": [
+   "liriope spicata",
+   "liriope muscari"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4bf38b2e526e414c5958d30c99079c38"
+ },
+ "岩白菜": {
+  "latin_raw": [
+   "Bergenia purpurascens"
+  ],
+  "species": [
+   "bergenia purpurascens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2c7e79cf281310351e700cb008de1ec8"
+ },
+ "川乌": {
+  "latin_raw": [
+   "Aconitum carmichaelii"
+  ],
+  "species": [
+   "aconitum carmichaelii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=22a8c56ec2b7e1a5df6eb1832bdb6ba3"
+ },
+ "川射干": {
+  "latin_raw": [
+   "Iris tectorum"
+  ],
+  "species": [
+   "iris tectorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fb2c3b16b93aa82bc03ab6bf70a9e6bc"
+ },
+ "川木通": {
+  "latin_raw": [
+   "Clematis armandii",
+   "Clematis montana"
+  ],
+  "species": [
+   "clematis armandii",
+   "clematis montana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=def6ac99e1e909775e4a6e6af5f4d6e4"
+ },
+ "川木香": {
+  "latin_raw": [
+   "Vladimiria souliei"
+  ],
+  "species": [
+   "vladimiria souliei"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=972c5eb5c7a82821f51426d20b707449"
+ },
+ "川楝子": {
+  "latin_raw": [
+   "Melia toosendan"
+  ],
+  "species": [
+   "melia toosendan"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=70672f2800ec4fc6adb74c2affee3c4c"
+ },
+ "川牛膝": {
+  "latin_raw": [
+   "Cyathula officinalis"
+  ],
+  "species": [
+   "cyathula officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1881fa5dd1227623d41a9f727c2fa449"
+ },
+ "川芎": {
+  "latin_raw": [
+   "Ligusticum chuanxiong"
+  ],
+  "species": [
+   "ligusticum chuanxiong"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b78797c2616a8543f5b41a0adbb292a"
+ },
+ "川贝母": {
+  "latin_raw": [
+   "Fritillaria cirrhosa",
+   "Fritillaria unibracteata",
+   "Fritillaria przewalskii",
+   "Fritillaria delavayi"
+  ],
+  "species": [
+   "fritillaria cirrhosa",
+   "fritillaria unibracteata",
+   "fritillaria przewalskii",
+   "fritillaria delavayi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bd826f506ad33e4714a4400119222f87"
+ },
+ "巫山淫羊藿": {
+  "latin_raw": [
+   "Epimedium wushanense"
+  ],
+  "species": [
+   "epimedium wushanense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5017811f74b5860f4d48908fa7bcd5d1"
+ },
+ "巴戟天": {
+  "latin_raw": [
+   "Morinda officinalis"
+  ],
+  "species": [
+   "morinda officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cdf3279e9bcb79498cbca9e0df71ae49"
+ },
+ "巴豆": {
+  "latin_raw": [
+   "Croton tiglium"
+  ],
+  "species": [
+   "croton tiglium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9a3a3fcf310c353ce181764b31bf6d09"
+ },
+ "布渣叶": {
+  "latin_raw": [
+   "Microcos paniculata"
+  ],
+  "species": [
+   "microcos paniculata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3e13a9516711369e0f124323c9267313"
+ },
+ "常山": {
+  "latin_raw": [
+   "Dichroa febrifuga"
+  ],
+  "species": [
+   "dichroa febrifuga"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fd768a380f675567beb25e6bcdec6c09"
+ },
+ "干姜": {
+  "latin_raw": [
+   "Zingiber officinale"
+  ],
+  "species": [
+   "zingiber officinale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=410d7cca81b5e774975f8ebec075ef5d"
+ },
+ "干漆": {
+  "latin_raw": [
+   "Toxicodendron vernicifluum"
+  ],
+  "species": [
+   "toxicodendron vernicifluum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=251192b3e36930e9e6c0f913027f88a9"
+ },
+ "平贝母": {
+  "latin_raw": [
+   "Fritillaria ussuriensis"
+  ],
+  "species": [
+   "fritillaria ussuriensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b1853de7302fc6009173939a4f6478a3"
+ },
+ "广东紫珠": {
+  "latin_raw": [
+   "Callicarpa kwangtungensis"
+  ],
+  "species": [
+   "callicarpa kwangtungensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bcdeb6ee436cf8cd6dbeeebe0ce012dd"
+ },
+ "广枣": {
+  "latin_raw": [
+   "Choerospondias axillaris"
+  ],
+  "species": [
+   "choerospondias axillaris"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=17278c6e5832f796e6d0ed684cb10ec8"
+ },
+ "广藿香": {
+  "latin_raw": [
+   "Pogostemon cablin"
+  ],
+  "species": [
+   "pogostemon cablin"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=08d95d5722e8b3366f42b279f3d7d6e1"
+ },
+ "广金钱草": {
+  "latin_raw": [
+   "Desmodium styracifolium"
+  ],
+  "species": [
+   "desmodium styracifolium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fd491cac610d12c46adfc55afe95093a"
+ },
+ "当归": {
+  "latin_raw": [
+   "Angelica sinensis"
+  ],
+  "species": [
+   "angelica sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=df4d44e9408c257c1b03c5307c3fd46d"
+ },
+ "当药": {
+  "latin_raw": [
+   "Swertia pseudochinensis"
+  ],
+  "species": [
+   "swertia pseudochinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8dd9b377965781a2bf643c63131eed2c"
+ },
+ "徐长卿": {
+  "latin_raw": [
+   "Cynanchum paniculatum"
+  ],
+  "species": [
+   "cynanchum paniculatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c3b4f49c42b4eb320f10db6e900163a6"
+ },
+ "忍冬藤": {
+  "latin_raw": [
+   "Lonicera japonica"
+  ],
+  "species": [
+   "lonicera japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6db9381004ca9f226632140a23dbf519"
+ },
+ "急性子": {
+  "latin_raw": [
+   "Impatiens balsamina"
+  ],
+  "species": [
+   "impatiens balsamina"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=89639a3ef255576f5b04bfaf0f6c8f43"
+ },
+ "拳参": {
+  "latin_raw": [
+   "Polygonum bistorta"
+  ],
+  "species": [
+   "polygonum bistorta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9c086edce04ddd81243ad99580a8ccb0"
+ },
+ "救必应": {
+  "latin_raw": [
+   "Ilex rotunda"
+  ],
+  "species": [
+   "ilex rotunda"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=41da8adc857a5e475901f5b22f91bc67"
+ },
+ "斑蝥": {
+  "latin_raw": [
+   "Mylabris phalerata",
+   "Mylabris cichorii"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=45362559e6e1d99c675a4bc44d09c7a1"
+ },
+ "断血流": {
+  "latin_raw": [
+   "Clinopodium polycephalum",
+   "Clinopodium chinense"
+  ],
+  "species": [
+   "clinopodium polycephalum",
+   "clinopodium chinense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1a67fb707f1d28925311451f8fc604a3"
+ },
+ "旋覆花": {
+  "latin_raw": [
+   "Inula japonica",
+   "Inula britannica"
+  ],
+  "species": [
+   "inula japonica",
+   "inula britannica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e738d499a289718a5bf350c264fc46b1"
+ },
+ "昆布": {
+  "latin_raw": [
+   "Laminaria japonica",
+   "Ecklonia kurome"
+  ],
+  "species": [
+   "laminaria japonica",
+   "ecklonia kurome"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=12996b6ada822240572e10eae079d6dd"
+ },
+ "明党参": {
+  "latin_raw": [
+   "Changium smyrnioides"
+  ],
+  "species": [
+   "changium smyrnioides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2d89d6ad2a4b4cb358bf02e80eec5b42"
+ },
+ "暴马子皮": {
+  "latin_raw": [
+   "Syringa reticulata"
+  ],
+  "species": [
+   "syringa reticulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1fb6ec963076452c3aa1c3fec36d16fc"
+ },
+ "月季花": {
+  "latin_raw": [
+   "Rosa chinensis"
+  ],
+  "species": [
+   "rosa chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=84fae7b50214cbf922fdad501a3c10ff"
+ },
+ "木棉花": {
+  "latin_raw": [
+   "Gossampinus malabarica"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cf58f508d41f7c56155561a7d60d9102"
+ },
+ "木瓜": {
+  "latin_raw": [
+   "Chaenomeles speciosa"
+  ],
+  "species": [
+   "chaenomeles speciosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=54d18ab87ea43a5da27d0f57eb8b08e1"
+ },
+ "木芙蓉叶": {
+  "latin_raw": [
+   "Hibiscus mutabilis"
+  ],
+  "species": [
+   "hibiscus mutabilis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a0c207e336573d1d908384e1af84fa16"
+ },
+ "木蝴蝶": {
+  "latin_raw": [
+   "Oroxylum indicum"
+  ],
+  "species": [
+   "oroxylum indicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=51d53574edd77ebfa625527fc9fa7186"
+ },
+ "木贼": {
+  "latin_raw": [
+   "Equisetum hyemale"
+  ],
+  "species": [
+   "equisetum hyemale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1ff9e3281adbf52336d3a5b1ecfcba58"
+ },
+ "木通": {
+  "latin_raw": [
+   "Akebia quinata",
+   "Akebia trifoliata"
+  ],
+  "species": [
+   "akebia quinata",
+   "akebia trifoliata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a54ee86e4697bafe70236e65f1671ecd"
+ },
+ "木香": {
+  "latin_raw": [
+   "Aucklandia lappa"
+  ],
+  "species": [
+   "aucklandia lappa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e561f9aee28512a6a22513ac03058962"
+ },
+ "木鳖子": {
+  "latin_raw": [
+   "Momordica cochinchinensis"
+  ],
+  "species": [
+   "momordica cochinchinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f062105491d5822b7867d0463c534194"
+ },
+ "朱砂根": {
+  "latin_raw": [
+   "Ardisia crenata"
+  ],
+  "species": [
+   "ardisia crenata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=103145f14b8e3d342bae1c4658c9a09c"
+ },
+ "杜仲": {
+  "latin_raw": [
+   "Eucommia ulmoides"
+  ],
+  "species": [
+   "eucommia ulmoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=abaab6228c78dcf197dd8588cfdaf22a"
+ },
+ "杜仲叶": {
+  "latin_raw": [
+   "Eucommia ulmoides"
+  ],
+  "species": [
+   "eucommia ulmoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=70120a74bfea6f17ff488f69b1844223"
+ },
+ "杠板归": {
+  "latin_raw": [
+   "Polygonum perfoliatum"
+  ],
+  "species": [
+   "polygonum perfoliatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=19b06ea0e9c37f703de4ea84f330c548"
+ },
+ "松花粉": {
+  "latin_raw": [
+   "Pinus massoniana",
+   "Pinus tabuliformis"
+  ],
+  "species": [
+   "pinus massoniana",
+   "pinus tabuliformis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=54f477ed3c865d4da4d9b02f538f5744"
+ },
+ "板蓝根": {
+  "latin_raw": [
+   "Isatis indigotica"
+  ],
+  "species": [
+   "isatis indigotica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=869502e86427cf366068ca37e6137acd"
+ },
+ "枇杷叶": {
+  "latin_raw": [
+   "Eriobotrya japonica"
+  ],
+  "species": [
+   "eriobotrya japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e17f3ccbdca0efa717ce6944b05264ce"
+ },
+ "枫香脂": {
+  "latin_raw": [
+   "Liquidambar formosana"
+  ],
+  "species": [
+   "liquidambar formosana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b8facfd65aeadc5814779c18e7d07921"
+ },
+ "枳壳": {
+  "latin_raw": [
+   "Citrus aurantium"
+  ],
+  "species": [
+   "citrus aurantium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=521bc6fd6bc2e54e9937f3a3e066b69d"
+ },
+ "枳实": {
+  "latin_raw": [
+   "Citrus aurantium",
+   "Citrus sinensis"
+  ],
+  "species": [
+   "citrus aurantium",
+   "citrus sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=73f61ca32acae76fc047b3ceebfabc13"
+ },
+ "枸杞子": {
+  "latin_raw": [
+   "Lycium barbarum"
+  ],
+  "species": [
+   "lycium barbarum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=14b85a9c1067b33e043ad0a4d50a9968"
+ },
+ "枸骨叶": {
+  "latin_raw": [
+   "Ilex cornuta"
+  ],
+  "species": [
+   "ilex cornuta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5a18db930c9bf7e54fffb2ff9c4e97f7"
+ },
+ "柏子仁": {
+  "latin_raw": [
+   "Platycladus orientalis"
+  ],
+  "species": [
+   "platycladus orientalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4380247192b6035c9606dd5f0236f930"
+ },
+ "柴胡": {
+  "latin_raw": [
+   "Bupleurum chinense",
+   "Bupleurum scorzonerifolium"
+  ],
+  "species": [
+   "bupleurum chinense",
+   "bupleurum scorzonerifolium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=503e2306e4e390cc795f5d77fd81b8f1"
+ },
+ "柿蒂": {
+  "latin_raw": [
+   "Diospyros kaki"
+  ],
+  "species": [
+   "diospyros kaki"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b9a28258a4ddae85b20de0c16d76dca"
+ },
+ "栀子": {
+  "latin_raw": [
+   "Gardenia jasminoides"
+  ],
+  "species": [
+   "gardenia jasminoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=16bf705946de09fa462a9edc6fe427fd"
+ },
+ "核桃仁": {
+  "latin_raw": [
+   "Juglans regia"
+  ],
+  "species": [
+   "juglans regia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2bcce57f372b853cbf0fdcd1753fd70b"
+ },
+ "桂枝": {
+  "latin_raw": [
+   "Cinnamomum cassia"
+  ],
+  "species": [
+   "cinnamomum cassia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=35b1776c10f00d0a807c3c2b0101523a"
+ },
+ "桃仁": {
+  "latin_raw": [
+   "Prunus persica",
+   "Prunus davidiana"
+  ],
+  "species": [
+   "prunus persica",
+   "prunus davidiana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cc682d68b57d611a98848d9b7cd22053"
+ },
+ "桃枝": {
+  "latin_raw": [
+   "Prunus persica"
+  ],
+  "species": [
+   "prunus persica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=83b784790a928a152560886f29c47570"
+ },
+ "桑叶": {
+  "latin_raw": [
+   "Morus alba"
+  ],
+  "species": [
+   "morus alba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=80a22dc8d88eee02b9faed8ccc9baea4"
+ },
+ "桑寄生": {
+  "latin_raw": [
+   "Taxillus chinensis"
+  ],
+  "species": [
+   "taxillus chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9bfed8dc1a24fada8188628013e3d4d5"
+ },
+ "桑枝": {
+  "latin_raw": [
+   "Morus alba"
+  ],
+  "species": [
+   "morus alba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=74869d25f258577d0e433539fe87ba92"
+ },
+ "桑椹": {
+  "latin_raw": [
+   "Morus alba"
+  ],
+  "species": [
+   "morus alba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=429aaca4653d6e657867e2266f7125c6"
+ },
+ "桑白皮": {
+  "latin_raw": [
+   "Morus alba"
+  ],
+  "species": [
+   "morus alba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=259dad969ec86451a15ac86352db93fc"
+ },
+ "桑螵蛸": {
+  "latin_raw": [
+   "Tenodera sinensis",
+   "Statilia maculata",
+   "Hierodula patellifera"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=994da0c9b0ff6321f7b2a74fa905e6a3"
+ },
+ "桔梗": {
+  "latin_raw": [
+   "Platycodon grandiflorum"
+  ],
+  "species": [
+   "platycodon grandiflorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8cdffa9899303eee04f11ee349635deb"
+ },
+ "梅花": {
+  "latin_raw": [
+   "Prunus mume"
+  ],
+  "species": [
+   "prunus mume"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5c450f64bbd65190a53454f71b19de26"
+ },
+ "棕榈": {
+  "latin_raw": [
+   "Trachycarpus fortunei"
+  ],
+  "species": [
+   "trachycarpus fortunei"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a1ad3b2b2e3921c901d8e804b2f1b779"
+ },
+ "椿皮": {
+  "latin_raw": [
+   "Ailanthus altissima"
+  ],
+  "species": [
+   "ailanthus altissima"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d304919941eae3a77e004d4f41c65589"
+ },
+ "楮实子": {
+  "latin_raw": [
+   "Broussonetia papyrifera"
+  ],
+  "species": [
+   "broussonetia papyrifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c0814d665662eb65c7145918a319c2b9"
+ },
+ "榧子": {
+  "latin_raw": [
+   "Torreya grandis"
+  ],
+  "species": [
+   "torreya grandis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=32db2fd21897fcf3291f45f7ebd45040"
+ },
+ "榼藤子": {
+  "latin_raw": [
+   "Entada phaseoloides"
+  ],
+  "species": [
+   "entada phaseoloides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e67624eb38a4641762633df4ff5c09fa"
+ },
+ "槐花": {
+  "latin_raw": [
+   "Sophora japonica"
+  ],
+  "species": [
+   "sophora japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3a5a686b4fa3c3c568f0d6b121052b8c"
+ },
+ "槐角": {
+  "latin_raw": [
+   "Sophora japonica"
+  ],
+  "species": [
+   "sophora japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e45cbbe1d11be25a5c70f99134ac20a2"
+ },
+ "槟榔": {
+  "latin_raw": [
+   "Areca catechu"
+  ],
+  "species": [
+   "areca catechu"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b41010b6a01d68745a53180ce36fe69d"
+ },
+ "槲寄生": {
+  "latin_raw": [
+   "Viscum coloratum"
+  ],
+  "species": [
+   "viscum coloratum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=abc2f8d467aba4b267c7045eb00cf3c1"
+ },
+ "橘核": {
+  "latin_raw": [
+   "Citrus reticulata"
+  ],
+  "species": [
+   "citrus reticulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6ab0f5765136d336edf0f32aaaeeee69"
+ },
+ "橘红": {
+  "latin_raw": [
+   "Citrus reticulata"
+  ],
+  "species": [
+   "citrus reticulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f2cf716f6f948a4b47ddc6affef2129c"
+ },
+ "檀香": {
+  "latin_raw": [
+   "Santalum album"
+  ],
+  "species": [
+   "santalum album"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8daa2ae7f5299357a0d408a7935afbc6"
+ },
+ "款冬花": {
+  "latin_raw": [
+   "Tussilago farfara"
+  ],
+  "species": [
+   "tussilago farfara"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5e784f00eb22e469cc427d22f8d7c5a3"
+ },
+ "母丁香": {
+  "latin_raw": [
+   "Eugenia caryophyllata"
+  ],
+  "species": [
+   "eugenia caryophyllata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5a166faceccc2d6319bd6d06aa0f7824"
+ },
+ "毛诃子": {
+  "latin_raw": [
+   "Terminalia bellirica"
+  ],
+  "species": [
+   "terminalia bellirica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dafddad9353fd70a517d1b1ed405de29"
+ },
+ "水牛角": {
+  "latin_raw": [
+   "Bubalus bubalis"
+  ],
+  "species": [
+   "bubalus bubalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5edded9930e72825dddbed0060d6a12f"
+ },
+ "水红花子": {
+  "latin_raw": [
+   "Polygonum orientale"
+  ],
+  "species": [
+   "polygonum orientale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7ee8062cc81f9afbb56d9c29be3582a7"
+ },
+ "水蛭": {
+  "latin_raw": [
+   "Whitmania pigra",
+   "Hirudo nipponia",
+   "Whitmania acranulata"
+  ],
+  "species": [
+   "whitmania pigra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7849f40851e9874861071ebedc39d1b8"
+ },
+ "水飞蓟": {
+  "latin_raw": [
+   "Silybum marianum"
+  ],
+  "species": [
+   "silybum marianum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ec378967a06ee0b0e17fd158feeba4c8"
+ },
+ "沉香": {
+  "latin_raw": [
+   "Aquilaria sinensis"
+  ],
+  "species": [
+   "aquilaria sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=601f6869c11c8eccd3adb1ccca57a23e"
+ },
+ "沙棘": {
+  "latin_raw": [
+   "Hippophae rhamnoides"
+  ],
+  "species": [
+   "hippophae rhamnoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8e2863134e49ea7934902b20fd831458"
+ },
+ "沙苑子": {
+  "latin_raw": [
+   "Astragalus complanatus"
+  ],
+  "species": [
+   "astragalus complanatus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=80dfeadd94d488ffcf5eb10ff902b888"
+ },
+ "没药": {
+  "latin_raw": [
+   "Commiphora myrrha",
+   "Commiphora molmol"
+  ],
+  "species": [
+   "commiphora myrrha",
+   "commiphora molmol"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8d2869aa202387b8e46a20c25cfbfd26"
+ },
+ "油松节": {
+  "latin_raw": [
+   "Pinus tabuliformis",
+   "Pinus massoniana"
+  ],
+  "species": [
+   "pinus tabuliformis",
+   "pinus massoniana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=28e1598617385be0e65fe7e1fb32c4bf"
+ },
+ "泽兰": {
+  "latin_raw": [
+   "Lycopus lucidus"
+  ],
+  "species": [
+   "lycopus lucidus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0bfa38fcc4f1227776b4db001b26ebd4"
+ },
+ "泽泻": {
+  "latin_raw": [
+   "Alisma orientale",
+   "Alisma plantago"
+  ],
+  "species": [
+   "alisma orientale",
+   "alisma plantago"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=db86b722606474382a04794f9448bb96"
+ },
+ "洋金花": {
+  "latin_raw": [
+   "Datura metel"
+  ],
+  "species": [
+   "datura metel"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4a0ee56f8f040507ec71961db71412b6"
+ },
+ "洪连": {
+  "latin_raw": [
+   "Lagotis brevituba"
+  ],
+  "species": [
+   "lagotis brevituba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5bc34924a0032e94a160aec732035b91"
+ },
+ "浙贝母": {
+  "latin_raw": [
+   "Fritillaria thunbergii"
+  ],
+  "species": [
+   "fritillaria thunbergii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a43ce4b6cf808373d2d832c4200e0ff7"
+ },
+ "浮萍": {
+  "latin_raw": [
+   "Spirodela polyrrhiza"
+  ],
+  "species": [
+   "spirodela polyrrhiza"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b485227e5c4d4e488bb4160d742b2401"
+ },
+ "海藻": {
+  "latin_raw": [
+   "Sargassum pallidum",
+   "Sargassum fusiforme"
+  ],
+  "species": [
+   "sargassum pallidum",
+   "sargassum fusiforme"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=045bf453b56b5a8d032c2e1c53e572ce"
+ },
+ "海螵蛸": {
+  "latin_raw": [
+   "Sepiella maindroni",
+   "Sepia esculenta"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2266efa59cd6feb14e6240028ff14cf9"
+ },
+ "海金沙": {
+  "latin_raw": [
+   "Lygodium japonicum"
+  ],
+  "species": [
+   "lygodium japonicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=010377223b347ff61dac38e07dd55042"
+ },
+ "海风藤": {
+  "latin_raw": [
+   "Piper kadsura"
+  ],
+  "species": [
+   "piper kadsura"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5222a7770862008099bb9680c019b03e"
+ },
+ "海马": {
+  "latin_raw": [
+   "Hippocampus kelloggi",
+   "Hippocampus histrix",
+   "Hippocampus kuda",
+   "Hippocampus trimaculatus"
+  ],
+  "species": [
+   "hippocampus kuda"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=408dcd583d6f0e5bed4fd73e62a88afa"
+ },
+ "海龙": {
+  "latin_raw": [
+   "Solegnathus hardwickii",
+   "Syngnathoides biaculeatus",
+   "Syngnathus schlegeli"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6172230fe71cada71498372d17f3df50"
+ },
+ "淡竹叶": {
+  "latin_raw": [
+   "Lophatherum gracile"
+  ],
+  "species": [
+   "lophatherum gracile"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9c2f2f2380a9906133d43403940662b7"
+ },
+ "淫羊藿": {
+  "latin_raw": [
+   "Epimedium brevicornu",
+   "Epimedium sagittatum",
+   "Epimedium pubescens",
+   "Epimedium koreanum"
+  ],
+  "species": [
+   "epimedium brevicornu",
+   "epimedium sagittatum",
+   "epimedium pubescens",
+   "epimedium koreanum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1d44d29dd90b4e9fcb3d4a19aaae8c1e"
+ },
+ "湖北贝母": {
+  "latin_raw": [
+   "Fritillaria hupehensis"
+  ],
+  "species": [
+   "fritillaria hupehensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5ded2183daa5100aa5fa4202311cea0c"
+ },
+ "滇鸡血藤": {
+  "latin_raw": [
+   "Kadsura interior"
+  ],
+  "species": [
+   "kadsura interior"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9f002d7e8e93d0854de66d0f89f7aa44"
+ },
+ "满山红": {
+  "latin_raw": [
+   "Rhododendron dauricum"
+  ],
+  "species": [
+   "rhododendron dauricum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=01eeb7a3e0b7c42c6a0ac2a0ee8dc461"
+ },
+ "漏芦": {
+  "latin_raw": [
+   "Rhaponticum uniflorum"
+  ],
+  "species": [
+   "rhaponticum uniflorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=51c7fb9159daf6b5e452d3ced380e6cc"
+ },
+ "火麻仁": {
+  "latin_raw": [
+   "Cannabis sativa"
+  ],
+  "species": [
+   "cannabis sativa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=56d60c2f38930aa8cf6250a1dcc68a49"
+ },
+ "灯心草": {
+  "latin_raw": [
+   "Juncus effusus"
+  ],
+  "species": [
+   "juncus effusus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b3607aaabb56dd43f8d95aec63e6e2fb"
+ },
+ "灵芝": {
+  "latin_raw": [
+   "Ganoderma lucidum",
+   "Ganoderma sinense"
+  ],
+  "species": [
+   "ganoderma lucidum",
+   "ganoderma sinense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=70259c5e18d6b6deb024d2ca0f0063f9"
+ },
+ "片姜黄": {
+  "latin_raw": [
+   "Curcuma wenyujin"
+  ],
+  "species": [
+   "curcuma wenyujin"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a06b1cff12ec92519f96e5af6779f5f7"
+ },
+ "牛膝": {
+  "latin_raw": [
+   "Achyranthes bidentata"
+  ],
+  "species": [
+   "achyranthes bidentata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5665ca920d3e3bfac4b150746f98c017"
+ },
+ "牛蒡子": {
+  "latin_raw": [
+   "Arctium lappa"
+  ],
+  "species": [
+   "arctium lappa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=00002103f803812dd43252a9c5cc3c36"
+ },
+ "牡丹皮": {
+  "latin_raw": [
+   "Paeonia suffruticosa"
+  ],
+  "species": [
+   "paeonia suffruticosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=243d3ce4b69f669a00598e910b51ed9a"
+ },
+ "牡荆叶": {
+  "latin_raw": [
+   "Vitex negundo"
+  ],
+  "species": [
+   "vitex negundo"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4408c3cca022a2e235f19f4033ce82f2"
+ },
+ "牡蛎": {
+  "latin_raw": [
+   "Crassostrea gigas",
+   "Crassostrea talienwhanensis",
+   "Crassostrea ariakensis"
+  ],
+  "species": [
+   "crassostrea gigas"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3880f9cdb736b76ed4a293144cdcd2ba"
+ },
+ "牵牛子": {
+  "latin_raw": [
+   "Pharbitis purpurea"
+  ],
+  "species": [
+   "pharbitis purpurea"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9e012959d0444d42c2cf43abaef2a33c"
+ },
+ "狗脊": {
+  "latin_raw": [
+   "Cibotium barometz"
+  ],
+  "species": [
+   "cibotium barometz"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=faa365669d2256c77ffac62258dfae58"
+ },
+ "独一味": {
+  "latin_raw": [
+   "Lamiophlomis rotata"
+  ],
+  "species": [
+   "lamiophlomis rotata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ba437e53559eef0ea477c03cacc2b094"
+ },
+ "独活": {
+  "latin_raw": [
+   "Angelica pubescens"
+  ],
+  "species": [
+   "angelica pubescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b9085039f9f693db2d2f1b0d1ffe0a81"
+ },
+ "狼毒": {
+  "latin_raw": [
+   "Euphorbia ebracteolata",
+   "Euphorbia fischeriana"
+  ],
+  "species": [
+   "euphorbia ebracteolata",
+   "euphorbia fischeriana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a26c8d5c6200ecea9dffb06ff7838a32"
+ },
+ "猪牙皂": {
+  "latin_raw": [
+   "Gleditsia sinensis"
+  ],
+  "species": [
+   "gleditsia sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4e453abf8f34e77dddf2396a116e4133"
+ },
+ "猪苓": {
+  "latin_raw": [
+   "Polyporus umbellatus"
+  ],
+  "species": [
+   "polyporus umbellatus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4170df0ee47b0a4aba3e757bffdc9679"
+ },
+ "猫爪草": {
+  "latin_raw": [
+   "Ranunculus ternatus"
+  ],
+  "species": [
+   "ranunculus ternatus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dd4fe6873a39a006792b36a0592c310c"
+ },
+ "玄参": {
+  "latin_raw": [
+   "Scrophularia ningpoensis"
+  ],
+  "species": [
+   "scrophularia ningpoensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f09cd9baeaa0d56a0e0802924f9e161a"
+ },
+ "玉竹": {
+  "latin_raw": [
+   "Polygonatum odoratum"
+  ],
+  "species": [
+   "polygonatum odoratum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d04cb2586db7634f5e2f693857b86069"
+ },
+ "王不留行": {
+  "latin_raw": [
+   "Vaccaria segetalis"
+  ],
+  "species": [
+   "vaccaria segetalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bf61d8944e9e3d8efc9b4d4d9c861dde"
+ },
+ "玫瑰花": {
+  "latin_raw": [
+   "Rosa rugosa"
+  ],
+  "species": [
+   "rosa rugosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c22c45ad2dd8b91090432c1580da1280"
+ },
+ "珍珠": {
+  "latin_raw": [
+   "Pinctada fucata",
+   "Hyriopsis cumingii",
+   "Cristaria plicata"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7fe60d21a6d64739b94137b9cfa419ee"
+ },
+ "珍珠母": {
+  "latin_raw": [
+   "Hyriopsis cumingii",
+   "Cristaria plicata",
+   "Pinctada fucata"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=31cee492069336dd05d76ba5731d00e0"
+ },
+ "珠子参": {
+  "latin_raw": [
+   "Panax japonicus"
+  ],
+  "species": [
+   "panax japonicus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=371b586b753ef066b9fdc9ce47be9376"
+ },
+ "瓜子金": {
+  "latin_raw": [
+   "Polygala japonica"
+  ],
+  "species": [
+   "polygala japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=42c844977a703653bf89eb2b8304bede"
+ },
+ "瓜蒌": {
+  "latin_raw": [
+   "Trichosanthes kirilowii",
+   "Trichosanthes rosthornii"
+  ],
+  "species": [
+   "trichosanthes kirilowii",
+   "trichosanthes rosthornii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b4590a260e466a09b6f0e8ea4aca71e6"
+ },
+ "瓜蒌子": {
+  "latin_raw": [
+   "Trichosanthes kirilowii",
+   "Trichosanthes rosthornii"
+  ],
+  "species": [
+   "trichosanthes kirilowii",
+   "trichosanthes rosthornii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4eff0edfe6538eb3947c34383db75cc5"
+ },
+ "瓜蒌皮": {
+  "latin_raw": [
+   "Trichosanthes kirilowii",
+   "Trichosanthes rosthornii"
+  ],
+  "species": [
+   "trichosanthes kirilowii",
+   "trichosanthes rosthornii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ae7b41d9bd46d8e95277ce8f63a5cb79"
+ },
+ "瓦松": {
+  "latin_raw": [
+   "Orostachys fimbriata"
+  ],
+  "species": [
+   "orostachys fimbriata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=700a3c45e3889689086a3141f7ed440f"
+ },
+ "瓦楞子": {
+  "latin_raw": [
+   "Scapharca kagoshimensis",
+   "Tegillarca granosa",
+   "Scapharca broughtonii"
+  ],
+  "species": [
+   "scapharca broughtonii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f98e28bbab6ab569682468d0a86b5b48"
+ },
+ "甘松": {
+  "latin_raw": [
+   "Nardostachys jatamansi"
+  ],
+  "species": [
+   "nardostachys jatamansi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6742d51eaaa6e6f0d52cae51677b4851"
+ },
+ "甘草": {
+  "latin_raw": [
+   "Glycyrrhiza uralensis",
+   "Glycyrrhiza inflata",
+   "Glycyrrhiza glabra"
+  ],
+  "species": [
+   "glycyrrhiza uralensis",
+   "glycyrrhiza inflata",
+   "glycyrrhiza glabra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=41a0f82e8b800c16a44017c2e6906606"
+ },
+ "甘遂": {
+  "latin_raw": [
+   "Euphorbia kansui"
+  ],
+  "species": [
+   "euphorbia kansui"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=65b350b7f9681ef46c48d89f87834b78"
+ },
+ "甜瓜子": {
+  "latin_raw": [
+   "Cucumis melo"
+  ],
+  "species": [
+   "cucumis melo"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f69fe0159a2150aec486daa00286a228"
+ },
+ "生姜": {
+  "latin_raw": [
+   "Zingiber officinale"
+  ],
+  "species": [
+   "zingiber officinale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4177d448e47a73b4c49c426dbe2d88eb"
+ },
+ "番泻叶": {
+  "latin_raw": [
+   "Cassia angustifolia",
+   "Cassia acutifolia"
+  ],
+  "species": [
+   "cassia angustifolia",
+   "cassia acutifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=10e0f748f7f7d2f5c73dbf2b0217818c"
+ },
+ "白前": {
+  "latin_raw": [
+   "Cynanchum stauntonii",
+   "Cynanchum glaucescens"
+  ],
+  "species": [
+   "cynanchum stauntonii",
+   "cynanchum glaucescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0f4727bf896f16ecbb0fdef03b77fed0"
+ },
+ "白及": {
+  "latin_raw": [
+   "Bletilla striata"
+  ],
+  "species": [
+   "bletilla striata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3f7934dd00a32c378d7efbd088daa507"
+ },
+ "白头翁": {
+  "latin_raw": [
+   "Pulsatilla chinensis"
+  ],
+  "species": [
+   "pulsatilla chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6e783940dda86ef1089bfad6906f9fc3"
+ },
+ "白屈菜": {
+  "latin_raw": [
+   "Chelidonium majus"
+  ],
+  "species": [
+   "chelidonium majus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=54077c9e2850383484cd60cd06454e9a"
+ },
+ "白扁豆": {
+  "latin_raw": [
+   "Dolichos lablab"
+  ],
+  "species": [
+   "dolichos lablab"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fe3ddc2099210f6292d8fe7a351aafae"
+ },
+ "白术": {
+  "latin_raw": [
+   "Atractylodes macrocephala"
+  ],
+  "species": [
+   "atractylodes macrocephala"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f990f0792c447fb5de68104a0374ed6a"
+ },
+ "白果": {
+  "latin_raw": [
+   "Ginkgo biloba"
+  ],
+  "species": [
+   "ginkgo biloba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=30d3cdf325942223cee544d53f6bcca6"
+ },
+ "白芍": {
+  "latin_raw": [
+   "Paeonia lactiflora"
+  ],
+  "species": [
+   "paeonia lactiflora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=053aee8708dfe32255a3914704be65f2"
+ },
+ "白芷": {
+  "latin_raw": [
+   "Angelica dahurica"
+  ],
+  "species": [
+   "angelica dahurica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1e92895d894deb29d9e9d4537353a91a"
+ },
+ "白茅根": {
+  "latin_raw": [
+   "Imperata cylindrica"
+  ],
+  "species": [
+   "imperata cylindrica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d9401301f8df81e40595343fdc1282b6"
+ },
+ "白蔹": {
+  "latin_raw": [
+   "Ampelopsis japonica"
+  ],
+  "species": [
+   "ampelopsis japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a262dacd7f732effed7f64f54a4d7769"
+ },
+ "白薇": {
+  "latin_raw": [
+   "Cynanchum atratum",
+   "Cynanchum versicolor"
+  ],
+  "species": [
+   "cynanchum atratum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cd7e422f3a27bed03d5193c1e5f9fc68"
+ },
+ "白附子": {
+  "latin_raw": [
+   "Typhonium giganteum"
+  ],
+  "species": [
+   "typhonium giganteum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=04e8478a841eab1150268c4b366f3d11"
+ },
+ "白鲜皮": {
+  "latin_raw": [
+   "Dictamnus dasycarpus"
+  ],
+  "species": [
+   "dictamnus dasycarpus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f0f2d7641d7e9b4ff9616ab0d59eacc3"
+ },
+ "百合": {
+  "latin_raw": [
+   "Lilium lancifolium",
+   "Lilium brownii",
+   "Lilium pumilum"
+  ],
+  "species": [
+   "lilium lancifolium",
+   "lilium brownii",
+   "lilium pumilum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=19d265ac68431cb7dfd537654cae4e70"
+ },
+ "百部": {
+  "latin_raw": [
+   "Stemona sessilifolia",
+   "Stemona japonica",
+   "Stemona tuberosa"
+  ],
+  "species": [
+   "stemona sessilifolia",
+   "stemona japonica",
+   "stemona tuberosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d653c09057027049e632b9c49ae5676b"
+ },
+ "皂角刺": {
+  "latin_raw": [
+   "Gleditsia sinensis"
+  ],
+  "species": [
+   "gleditsia sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9b997907d267f7a8de04b36a81df234b"
+ },
+ "益智": {
+  "latin_raw": [
+   "Alpinia oxyphylla"
+  ],
+  "species": [
+   "alpinia oxyphylla"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fee0374b882f411900abd930f37ea023"
+ },
+ "益母草": {
+  "latin_raw": [
+   "Leonurus japonicus"
+  ],
+  "species": [
+   "leonurus japonicus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=18ec6de4ee3bc6b1c142bb8aed0c4ec6"
+ },
+ "瞿麦": {
+  "latin_raw": [
+   "Dianthus superbus",
+   "Dianthus chinensis"
+  ],
+  "species": [
+   "dianthus superbus",
+   "dianthus chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=216f2217e07bd92a72cb413441225785"
+ },
+ "知母": {
+  "latin_raw": [
+   "Anemarrhena asphodeloides"
+  ],
+  "species": [
+   "anemarrhena asphodeloides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1be2a8ba1b424104ff75c8fdbeff7b35"
+ },
+ "矮地茶": {
+  "latin_raw": [
+   "Ardisia japonica"
+  ],
+  "species": [
+   "ardisia japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0c0b99b536b053802bdcfaef5d27df65"
+ },
+ "石决明": {
+  "latin_raw": [
+   "Haliotis diversicolor",
+   "Haliotis discus",
+   "Haliotis ovina",
+   "Haliotis rubra"
+  ],
+  "species": [
+   "haliotis diversicolor"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=61231a296d17e412dfa82ef31fcaae68"
+ },
+ "石吊兰": {
+  "latin_raw": [
+   "Lysionotus pauciflorus"
+  ],
+  "species": [
+   "lysionotus pauciflorus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dbefa97b5464f5480f2fbc9e79a37449"
+ },
+ "石斛": {
+  "latin_raw": [
+   "Dendrobium nobile",
+   "Dendrobium huoshanense",
+   "Dendrobium chrysotoxum",
+   "Dendrobium fimbriatum"
+  ],
+  "species": [
+   "dendrobium nobile",
+   "dendrobium huoshanense",
+   "dendrobium chrysotoxum",
+   "dendrobium fimbriatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cf30d0cfe8364ec76d83754d8b921d74"
+ },
+ "石榴皮": {
+  "latin_raw": [
+   "Punica granatum"
+  ],
+  "species": [
+   "punica granatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8eb1089ce07b4b068396f9c824331271"
+ },
+ "石菖蒲": {
+  "latin_raw": [
+   "Acorus tatarinowii"
+  ],
+  "species": [
+   "acorus tatarinowii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d4705f0e91ff27afb2d0ffd62d2ea428"
+ },
+ "石韦": {
+  "latin_raw": [
+   "Pyrrosia sheareri",
+   "Pyrrosia lingua",
+   "Pyrrosia petiolosa"
+  ],
+  "species": [
+   "pyrrosia sheareri",
+   "pyrrosia lingua",
+   "pyrrosia petiolosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=66f793283ce796eac2dd4c195d6d7a7e"
+ },
+ "砂仁": {
+  "latin_raw": [
+   "Amomum villosum",
+   "Amomum longiligulare"
+  ],
+  "species": [
+   "amomum villosum",
+   "amomum longiligulare"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b75b35254001c97bada28cc554c394ac"
+ },
+ "禹州漏芦": {
+  "latin_raw": [
+   "Echinops latifolius",
+   "Echinops grijsii"
+  ],
+  "species": [
+   "echinops latifolius",
+   "echinops grijsii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9b633fee2e324206dc4363480534db19"
+ },
+ "秦皮": {
+  "latin_raw": [
+   "Fraxinus rhynchophylla",
+   "Fraxinus chinensis",
+   "Fraxinus szaboana",
+   "Fraxinus stylosa"
+  ],
+  "species": [
+   "fraxinus rhynchophylla",
+   "fraxinus chinensis",
+   "fraxinus szaboana",
+   "fraxinus stylosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=03e57e9685b3ec58dd36ae4b18548231"
+ },
+ "秦艽": {
+  "latin_raw": [
+   "Gentiana macrophylla",
+   "Gentiana straminea",
+   "Gentiana crassicaulis",
+   "Gentiana dahurica"
+  ],
+  "species": [
+   "gentiana macrophylla",
+   "gentiana straminea",
+   "gentiana crassicaulis",
+   "gentiana dahurica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=830dc7cbe73c980cfc1b3c4189feaa54"
+ },
+ "积雪草": {
+  "latin_raw": [
+   "Centella asiatica"
+  ],
+  "species": [
+   "centella asiatica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b56abdbc3383a392e368afdd33f65d18"
+ },
+ "稻芽": {
+  "latin_raw": [
+   "Oryza sativa"
+  ],
+  "species": [
+   "oryza sativa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a1d5f772dcd553a8962fc785892c9632"
+ },
+ "穿山龙": {
+  "latin_raw": [
+   "Dioscorea nipponica"
+  ],
+  "species": [
+   "dioscorea nipponica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=372d4099ac8843bb745b7826206952d5"
+ },
+ "穿心莲": {
+  "latin_raw": [
+   "Andrographis paniculata"
+  ],
+  "species": [
+   "andrographis paniculata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b5082076536763cdd3d1804feba40ee"
+ },
+ "竹节参": {
+  "latin_raw": [
+   "Panax japonicus"
+  ],
+  "species": [
+   "panax japonicus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=aa05ae914532820ce77ef97598cf9bc0"
+ },
+ "竹茹": {
+  "latin_raw": [
+   "Bambusa tuldoides",
+   "Sinocalamus beecheyanus",
+   "Phyllostachys nigra"
+  ],
+  "species": [
+   "phyllostachys nigra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=55fa5a43b9697cd31820c484eba66977"
+ },
+ "筋骨草": {
+  "latin_raw": [
+   "Ajuga decumbens"
+  ],
+  "species": [
+   "ajuga decumbens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e75cd89a4e69d4494ded7fd854aafa6d"
+ },
+ "粉萆薢": {
+  "latin_raw": [
+   "Dioscorea hypoglauca"
+  ],
+  "species": [
+   "dioscorea hypoglauca"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=62f1b9aeb3ca2a54ba3ff0f34148637e"
+ },
+ "粉葛": {
+  "latin_raw": [
+   "Pueraria thomsonii"
+  ],
+  "species": [
+   "pueraria thomsonii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=880c908c1b2dbec96e63be78c1abf83e"
+ },
+ "紫珠叶": {
+  "latin_raw": [
+   "Callicarpa formosana"
+  ],
+  "species": [
+   "callicarpa formosana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6d3af32b22d922b766b898f97a6ad8f6"
+ },
+ "紫花前胡": {
+  "latin_raw": [
+   "Peucedanum decursivum"
+  ],
+  "species": [
+   "peucedanum decursivum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=73715685ec0ee6b157e6552d8196b4f7"
+ },
+ "紫花地丁": {
+  "latin_raw": [
+   "Viola yedoensis"
+  ],
+  "species": [
+   "viola yedoensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=84f534b16bb8c7b3f03fdd0f873fb686"
+ },
+ "紫苏叶": {
+  "latin_raw": [
+   "Perilla frutescens"
+  ],
+  "species": [
+   "perilla frutescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=af1a0dd51dddefcd0dc3f7cc132d6bc7"
+ },
+ "紫苏子": {
+  "latin_raw": [
+   "Perilla frutescens"
+  ],
+  "species": [
+   "perilla frutescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5300b9724e4331a96210468fa614bcd4"
+ },
+ "紫苏梗": {
+  "latin_raw": [
+   "Perilla frutescens"
+  ],
+  "species": [
+   "perilla frutescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=67fa97dba0d97d39db2fab08dc6b248b"
+ },
+ "紫草": {
+  "latin_raw": [
+   "Arnebia euchroma",
+   "Arnebia guttata"
+  ],
+  "species": [
+   "arnebia euchroma",
+   "arnebia guttata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f3b19fdf60f6acacaed792ec37a7b8c0"
+ },
+ "紫菀": {
+  "latin_raw": [
+   "Aster tataricus"
+  ],
+  "species": [
+   "aster tataricus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5b2222b30074f2fdcf07d81f96b63662"
+ },
+ "紫萁贯众": {
+  "latin_raw": [
+   "Osmunda japonica"
+  ],
+  "species": [
+   "osmunda japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5662cea0425dbba5a79320d6dcaf7416"
+ },
+ "红参": {
+  "latin_raw": [
+   "Panax ginseng"
+  ],
+  "species": [
+   "panax ginseng"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e6abb46c47a106d666deb876a36af3c4"
+ },
+ "红大戟": {
+  "latin_raw": [
+   "Knoxia valerianoides"
+  ],
+  "species": [
+   "knoxia valerianoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=14e44349e3ffabbff8e13a82f18d83e1"
+ },
+ "红景天": {
+  "latin_raw": [
+   "Rhodiola crenulata"
+  ],
+  "species": [
+   "rhodiola crenulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=edade4c6fee18bebd60fb5a56c359d9c"
+ },
+ "红芪": {
+  "latin_raw": [
+   "Hedysarum polybotrys"
+  ],
+  "species": [
+   "hedysarum polybotrys"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f9677dd2e6cf4bb1b3a8cf6c8c72417d"
+ },
+ "红花": {
+  "latin_raw": [
+   "Carthamus tinctorius"
+  ],
+  "species": [
+   "carthamus tinctorius"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=28a62da9cf7a2bf25f45662884d4cec4"
+ },
+ "红花龙胆": {
+  "latin_raw": [
+   "Gentiana rhodantha"
+  ],
+  "species": [
+   "gentiana rhodantha"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cd6448c3c4e28b5cf265cf3f7c6719f8"
+ },
+ "红豆蔻": {
+  "latin_raw": [
+   "Alpinia galanga"
+  ],
+  "species": [
+   "alpinia galanga"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c161ec13ad9c911f694c433f0436ff13"
+ },
+ "细辛": {
+  "latin_raw": [
+   "Asarum heterotropoides",
+   "Asarum sieboldii"
+  ],
+  "species": [
+   "asarum heterotropoides",
+   "asarum sieboldii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7f7588faf0ba35fcb721e728c1bdfbc7"
+ },
+ "络石藤": {
+  "latin_raw": [
+   "Trachelospermum jasminoides"
+  ],
+  "species": [
+   "trachelospermum jasminoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9276fd00a6f8c3bcdf96fef665f7a74b"
+ },
+ "续断": {
+  "latin_raw": [
+   "Dipsacus asper"
+  ],
+  "species": [
+   "dipsacus asper"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e68deec8da1f8a651f7ae74b42d9a0b4"
+ },
+ "绵萆薢": {
+  "latin_raw": [
+   "Dioscorea spongiosa",
+   "Dioscorea futschauensis"
+  ],
+  "species": [
+   "dioscorea spongiosa",
+   "dioscorea futschauensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c6ddf1577435d304589e3786f3ed6972"
+ },
+ "绵马贯众": {
+  "latin_raw": [
+   "Dryopteris crassirhizoma"
+  ],
+  "species": [
+   "dryopteris crassirhizoma"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=20d404a259d9112155b41f3c1d07b379"
+ },
+ "罂粟壳": {
+  "latin_raw": [
+   "Papaver somniferum"
+  ],
+  "species": [
+   "papaver somniferum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dadb63229fbad5219bedff4b636ed996"
+ },
+ "罗布麻叶": {
+  "latin_raw": [
+   "Apocynum venetum"
+  ],
+  "species": [
+   "apocynum venetum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=708729415b0327f10fa37974825d5cc8"
+ },
+ "罗汉果": {
+  "latin_raw": [
+   "Siraitia grosvenorii"
+  ],
+  "species": [
+   "siraitia grosvenorii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=63e17a902c1484ba07cdd01a9ac1eb05"
+ },
+ "羌活": {
+  "latin_raw": [
+   "Notopterygium incisum",
+   "Notopterygium franchetii"
+  ],
+  "species": [
+   "notopterygium incisum",
+   "notopterygium franchetii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=391e45ddc6d2ec16c6dce004af9e4408"
+ },
+ "羚羊角": {
+  "latin_raw": [
+   "Saiga tatarica"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7170d867500c6de5a51023351b3c011a"
+ },
+ "翻白草": {
+  "latin_raw": [
+   "Potentilla discolor"
+  ],
+  "species": [
+   "potentilla discolor"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0129104f41ec6c8755d42871cd9f228f"
+ },
+ "翼首草": {
+  "latin_raw": [
+   "Pterocephalus hookeri"
+  ],
+  "species": [
+   "pterocephalus hookeri"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=16deb11bfb38877446a208beef423151"
+ },
+ "老鹳草": {
+  "latin_raw": [
+   "Erodium stephanianum",
+   "Geranium wilfordii",
+   "Geranium carolinianum"
+  ],
+  "species": [
+   "erodium stephanianum",
+   "geranium wilfordii",
+   "geranium carolinianum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bcb842d166cc1c248754ccd2d8433d9a"
+ },
+ "肉桂": {
+  "latin_raw": [
+   "Cinnamomum cassia"
+  ],
+  "species": [
+   "cinnamomum cassia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=497fda66e54928b75c55be02d1b7e673"
+ },
+ "肉苁蓉": {
+  "latin_raw": [
+   "Cistanche deserticola",
+   "Cistanche tubulosa"
+  ],
+  "species": [
+   "cistanche deserticola",
+   "cistanche tubulosa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b2d3746c1c645f4a52c7d6b49c1f538d"
+ },
+ "肿节风": {
+  "latin_raw": [
+   "Sarcandra glabra"
+  ],
+  "species": [
+   "sarcandra glabra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=41bbd5438fddff466d877bccefc686c3"
+ },
+ "胖大海": {
+  "latin_raw": [
+   "Sterculia lychnophora"
+  ],
+  "species": [
+   "sterculia lychnophora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f9b8404a1df14a7ca3ef197633367e08"
+ },
+ "胡椒": {
+  "latin_raw": [
+   "Piper nigrum"
+  ],
+  "species": [
+   "piper nigrum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5965ee5a8697638f50ce7c605e87d8e4"
+ },
+ "胡芦巴": {
+  "latin_raw": [
+   "Trigonella foenum"
+  ],
+  "species": [
+   "trigonella foenum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cef42322436da74e0f514681eb9c73b0"
+ },
+ "胡黄连": {
+  "latin_raw": [
+   "Picrorhiza scrophulariiflora"
+  ],
+  "species": [
+   "picrorhiza scrophulariiflora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=702fa3699a52d3a0c33d57f345f8cb5b"
+ },
+ "臭灵丹草": {
+  "latin_raw": [
+   "Laggera pterodonta"
+  ],
+  "species": [
+   "laggera pterodonta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cb6b73bc30e40ae55fccc13b406a17e9"
+ },
+ "艾叶": {
+  "latin_raw": [
+   "Artemisia argyi"
+  ],
+  "species": [
+   "artemisia argyi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=639d694dd06d0e85a3ea88c338df928e"
+ },
+ "芡实": {
+  "latin_raw": [
+   "Euryale ferox"
+  ],
+  "species": [
+   "euryale ferox"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=540bb3e750dbb49d7eefabefe908a526"
+ },
+ "芥子": {
+  "latin_raw": [
+   "Sinapis alba",
+   "Brassica juncea"
+  ],
+  "species": [
+   "sinapis alba",
+   "brassica juncea"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8da40a55b06d621c9e39384c3dd190bc"
+ },
+ "芦根": {
+  "latin_raw": [
+   "Phragmites communis"
+  ],
+  "species": [
+   "phragmites communis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5973cfc5f49d534e60d939617c1fa761"
+ },
+ "芦荟": {
+  "latin_raw": [
+   "Aloe barbadensis",
+   "Aloe ferox"
+  ],
+  "species": [
+   "aloe barbadensis",
+   "aloe ferox"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d9652cac0c69f8d34d783ac74aa13677"
+ },
+ "芫花": {
+  "latin_raw": [
+   "Daphne genkwa"
+  ],
+  "species": [
+   "daphne genkwa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a0565c9ef60efa8ae6e381241a8fb438"
+ },
+ "花椒": {
+  "latin_raw": [
+   "Zanthoxylum schinifolium",
+   "Zanthoxylum bungeanum"
+  ],
+  "species": [
+   "zanthoxylum schinifolium",
+   "zanthoxylum bungeanum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fbb5d624e41d8391bcb1434548756414"
+ },
+ "苍术": {
+  "latin_raw": [
+   "Atractylodes lancea",
+   "Atractylodes chinensis"
+  ],
+  "species": [
+   "atractylodes lancea",
+   "atractylodes chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f513c92330249890b75cd5d8d00269eb"
+ },
+ "苍耳子": {
+  "latin_raw": [
+   "Xanthium sibiricum"
+  ],
+  "species": [
+   "xanthium sibiricum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2ce6f317b6cdd93b6e77b745133a69d0"
+ },
+ "苏合香": {
+  "latin_raw": [
+   "Liquidambar orientalis"
+  ],
+  "species": [
+   "liquidambar orientalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0c82d3f653d5d533fe9d014b7a1ed683"
+ },
+ "苏木": {
+  "latin_raw": [
+   "Caesalpinia sappan"
+  ],
+  "species": [
+   "caesalpinia sappan"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d7dab4ce6679156b7965f0c0a9ce375d"
+ },
+ "苘麻子": {
+  "latin_raw": [
+   "Abutilon theophrasti"
+  ],
+  "species": [
+   "abutilon theophrasti"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1e9e70f129e3f7021c177740c82f3d62"
+ },
+ "苦参": {
+  "latin_raw": [
+   "Sophora flavescens"
+  ],
+  "species": [
+   "sophora flavescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=936575db5c4046aceaaa1d994dd4dc57"
+ },
+ "苦地丁": {
+  "latin_raw": [
+   "Corydalis bungeana"
+  ],
+  "species": [
+   "corydalis bungeana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=69c11a76120024bfc7780eb5188bab8c"
+ },
+ "苦木": {
+  "latin_raw": [
+   "Picrasma quassioides"
+  ],
+  "species": [
+   "picrasma quassioides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=86f99abb10270793041b03c6964fb581"
+ },
+ "苦杏仁": {
+  "latin_raw": [
+   "Prunus armeniaca",
+   "Prunus sibirica",
+   "Prunus mandshurica"
+  ],
+  "species": [
+   "prunus armeniaca",
+   "prunus sibirica",
+   "prunus mandshurica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1fe668a2a3eeabc95d71a8d7a20a2868"
+ },
+ "苦楝皮": {
+  "latin_raw": [
+   "Melia toosendan",
+   "Melia azedarach"
+  ],
+  "species": [
+   "melia toosendan",
+   "melia azedarach"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4b1457c857309501b38ab081a43cf10d"
+ },
+ "茜草": {
+  "latin_raw": [
+   "Rubia cordifolia"
+  ],
+  "species": [
+   "rubia cordifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f3f75787682b5a60964cb429154e68b0"
+ },
+ "茯苓": {
+  "latin_raw": [
+   "Poria cocos"
+  ],
+  "species": [
+   "poria cocos"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=808269bc4a5e16db69bd726c6ab47b6f"
+ },
+ "茯苓皮": {
+  "latin_raw": [
+   "Poria cocos"
+  ],
+  "species": [
+   "poria cocos"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=faef009c7f0fe5f3c055d4db42234edf"
+ },
+ "茵陈": {
+  "latin_raw": [
+   "Artemisia scoparia",
+   "Artemisia capillaris"
+  ],
+  "species": [
+   "artemisia scoparia",
+   "artemisia capillaris"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ba4443541e32b3cec3f7e4932d4a40e4"
+ },
+ "茺蔚子": {
+  "latin_raw": [
+   "Leonurus japonicus"
+  ],
+  "species": [
+   "leonurus japonicus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9e903e84d2c8d6a7424dec8c13d6fc5c"
+ },
+ "荆芥": {
+  "latin_raw": [
+   "Schizonepeta tenuifolia"
+  ],
+  "species": [
+   "schizonepeta tenuifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=280463bf6f2034ff77796848424d3767"
+ },
+ "荆芥穗": {
+  "latin_raw": [
+   "Schizonepeta tenuifolia"
+  ],
+  "species": [
+   "schizonepeta tenuifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d14d572626c5474b44929e5b8e007392"
+ },
+ "草乌": {
+  "latin_raw": [
+   "Aconitum kusnezoffii"
+  ],
+  "species": [
+   "aconitum kusnezoffii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=76e68659e167049c16c6ec1f082e1af4"
+ },
+ "草乌叶": {
+  "latin_raw": [
+   "Aconitum kusnezoffii"
+  ],
+  "species": [
+   "aconitum kusnezoffii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=733862b920cad00f374cc3746ffdd9c1"
+ },
+ "草果": {
+  "latin_raw": [
+   "Amomum tsaoko"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6c8333b51da42de147dc0a6781477739"
+ },
+ "草豆蔻": {
+  "latin_raw": [
+   "Alpinia katsumadai"
+  ],
+  "species": [
+   "alpinia katsumadai"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=65333f245402416449c2034455f082c5"
+ },
+ "荔枝核": {
+  "latin_raw": [
+   "Litchi chinensis"
+  ],
+  "species": [
+   "litchi chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=83a3a7e4b4f79ba8050724a0c17405ec"
+ },
+ "荜澄茄": {
+  "latin_raw": [
+   "Litsea cubeba"
+  ],
+  "species": [
+   "litsea cubeba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=30a7c0caa841e8cd79cb2935cdce6a7e"
+ },
+ "荜茇": {
+  "latin_raw": [
+   "Piper longum"
+  ],
+  "species": [
+   "piper longum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bcc8154038087479a30a9a078b455e1d"
+ },
+ "荷叶": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=54f0d4cf9054f5726672ab5d2b0b6908"
+ },
+ "莪术": {
+  "latin_raw": [
+   "Curcuma phaeocaulis",
+   "Curcuma kwangsiensis",
+   "Curcuma wenyujin"
+  ],
+  "species": [
+   "curcuma phaeocaulis",
+   "curcuma kwangsiensis",
+   "curcuma wenyujin"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bee5f583357d63102fb966707b1467e7"
+ },
+ "莱菔子": {
+  "latin_raw": [
+   "Raphanus sativus"
+  ],
+  "species": [
+   "raphanus sativus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=aa951b88ecd1feaec6a8fbd7b2a0c5f6"
+ },
+ "莲子": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=394ae4bf824177c53b1154ab5a7766ba"
+ },
+ "莲子心": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d5fae03f893b8aace71a8f5a6345d977"
+ },
+ "莲房": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=095c61f0f31868b80cb1506c895ada63"
+ },
+ "莲须": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=576430d2bcecf9838e5998dd640af53c"
+ },
+ "菊花": {
+  "latin_raw": [
+   "Chrysanthemum morifolium"
+  ],
+  "species": [
+   "chrysanthemum morifolium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a8b7fcd10159c83fb4a34505f125e73f"
+ },
+ "菊苣": {
+  "latin_raw": [
+   "Cichorium glandulosum",
+   "Cichorium intybus"
+  ],
+  "species": [
+   "cichorium glandulosum",
+   "cichorium intybus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9d2441e1224f969f7dcd0685b3fb959a"
+ },
+ "菝葜": {
+  "latin_raw": [
+   "Smilax china"
+  ],
+  "species": [
+   "smilax china"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6272bffda796c30e5b83e757c969cb53"
+ },
+ "菟丝子": {
+  "latin_raw": [
+   "Cuscuta australis",
+   "Cuscuta chinensis"
+  ],
+  "species": [
+   "cuscuta australis",
+   "cuscuta chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b5794dbd5c6f806bc37667c6bde975e3"
+ },
+ "菥蓂": {
+  "latin_raw": [
+   "Thlaspi arvense"
+  ],
+  "species": [
+   "thlaspi arvense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8bad61c652d4bcf495782ca73af17dda"
+ },
+ "萹蓄": {
+  "latin_raw": [
+   "Polygonum aviculare"
+  ],
+  "species": [
+   "polygonum aviculare"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=95c5088ec377e21e1badc8758a132247"
+ },
+ "葛根": {
+  "latin_raw": [
+   "Pueraria lobata"
+  ],
+  "species": [
+   "pueraria lobata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e8e6b537ae334bbd23d4086b72f20fd3"
+ },
+ "葶苈子": {
+  "latin_raw": [
+   "Descurainia sophia",
+   "Lepidium apetalum"
+  ],
+  "species": [
+   "descurainia sophia",
+   "lepidium apetalum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f24133afbdfcd361d5f136bd975ca306"
+ },
+ "蒲公英": {
+  "latin_raw": [
+   "Taraxacum mongolicum",
+   "Taraxacum borealisinense"
+  ],
+  "species": [
+   "taraxacum mongolicum",
+   "taraxacum borealisinense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0c77db2c0a67fbed98c7232c17dc6bf2"
+ },
+ "蒲黄": {
+  "latin_raw": [
+   "Typha angustifolia",
+   "Typha orientalis"
+  ],
+  "species": [
+   "typha angustifolia",
+   "typha orientalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=15a6607e3039eeed4c0161704946aae2"
+ },
+ "蒺藜": {
+  "latin_raw": [
+   "Tribulus terrestris"
+  ],
+  "species": [
+   "tribulus terrestris"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=da5c5c7094955167ff9925ee77cc9310"
+ },
+ "蓍草": {
+  "latin_raw": [
+   "Achillea alpina"
+  ],
+  "species": [
+   "achillea alpina"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9c318afb428b2c69f91e6f86b733e3da"
+ },
+ "蓖麻子": {
+  "latin_raw": [
+   "Ricinus communis"
+  ],
+  "species": [
+   "ricinus communis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=62bba8eec6ed023d07a1e7c67765eef1"
+ },
+ "蓝布正": {
+  "latin_raw": [
+   "Geum aleppicum",
+   "Geum japonicum"
+  ],
+  "species": [
+   "geum aleppicum",
+   "geum japonicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=38848f9a4403f670812982e04db9e9c9"
+ },
+ "蓼大青叶": {
+  "latin_raw": [
+   "Polygonum tinctorium"
+  ],
+  "species": [
+   "polygonum tinctorium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5e8982dd9ff900617bb6847b2f15d064"
+ },
+ "蔓荆子": {
+  "latin_raw": [
+   "Vitex trifolia"
+  ],
+  "species": [
+   "vitex trifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3f410c66ae510dbe3d9dd57282f908d3"
+ },
+ "蕤仁": {
+  "latin_raw": [
+   "Prinsepia uniflora"
+  ],
+  "species": [
+   "prinsepia uniflora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=01ab8148761789e53b88d83fa48be727"
+ },
+ "蕲蛇": {
+  "latin_raw": [
+   "Deinagkistrodon acutus"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8eef5446cc12aab6c271be07c70ea26d"
+ },
+ "薄荷": {
+  "latin_raw": [
+   "Mentha haplocalyx"
+  ],
+  "species": [
+   "mentha haplocalyx"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=428386c2e9a07e7cfe67392607e204e9"
+ },
+ "薏苡仁": {
+  "latin_raw": [
+   "Coix lacryma"
+  ],
+  "species": [
+   "coix lacryma"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=00bbfdc66155c3eed9c5dbd63b439678"
+ },
+ "薤白": {
+  "latin_raw": [
+   "Allium macrostemon",
+   "Allium chinense"
+  ],
+  "species": [
+   "allium macrostemon",
+   "allium chinense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ec68c9ce174f437cae8e430883f82cba"
+ },
+ "藁本": {
+  "latin_raw": [
+   "Ligusticum sinense",
+   "Ligusticum jeholense"
+  ],
+  "species": [
+   "ligusticum sinense",
+   "ligusticum jeholense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4245c362da3c1bbd7cfe35b77b2af1e2"
+ },
+ "藏菖蒲": {
+  "latin_raw": [
+   "Acorus calamus"
+  ],
+  "species": [
+   "acorus calamus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=984c0ed09987c2a693c45233494a1c69"
+ },
+ "藕节": {
+  "latin_raw": [
+   "Nelumbo nucifera"
+  ],
+  "species": [
+   "nelumbo nucifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=18bd95ddac1997efef4bad7012e9d6fc"
+ },
+ "虎杖": {
+  "latin_raw": [
+   "Polygonum cuspidatum"
+  ],
+  "species": [
+   "polygonum cuspidatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7a0d4e4d4ffb9af05c1de43904692e5b"
+ },
+ "虫白蜡": {
+  "latin_raw": [
+   "Ericerus pela",
+   "Fraxinus chinensis",
+   "Ligustrum lucidum"
+  ],
+  "species": [
+   "ericerus pela",
+   "fraxinus chinensis",
+   "ligustrum lucidum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e0e6239347078e8a97fcd4bcd24cf657"
+ },
+ "蛇床子": {
+  "latin_raw": [
+   "Cnidium monnieri"
+  ],
+  "species": [
+   "cnidium monnieri"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5eda9954ecca72daf2e68e14c297a197"
+ },
+ "蛇蜕": {
+  "latin_raw": [
+   "Elaphe taeniura",
+   "Elaphe carinata",
+   "Ptyas dhumnades"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dfc1300267585f0dd1efc63832ddec2b"
+ },
+ "蛤壳": {
+  "latin_raw": [
+   "Meretrix meretrix",
+   "Cyclina sinensis"
+  ],
+  "species": [
+   "meretrix petechialis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f3224691b649e3822edbe0687bf7cc1c"
+ },
+ "蛤蚧": {
+  "latin_raw": [
+   "Gekko gecko"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5e3b8059a7d5b0e1e5c3a1b645403a3c"
+ },
+ "蜂房": {
+  "latin_raw": [
+   "Polistes olivaceus",
+   "Polistes jokahamae",
+   "Parapolybia varia"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6c6e171f24a46414ad92ad9e2146ecf2"
+ },
+ "蜂胶": {
+  "latin_raw": [
+   "Apis mellifera"
+  ],
+  "species": [
+   "apis mellifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4ea2f8e5a88b60f82d1a2f4cf08fd5c7"
+ },
+ "蜂蜜": {
+  "latin_raw": [
+   "Apis cerana",
+   "Apis mellifera"
+  ],
+  "species": [
+   "apis cerana",
+   "apis mellifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9b0b2a730ce5a023b934cd2ed476546b"
+ },
+ "蜂蜡": {
+  "latin_raw": [
+   "Apis cerana",
+   "Apis mellifera"
+  ],
+  "species": [
+   "apis cerana",
+   "apis mellifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dfe57ce36859b6b9f0a41764643dad65"
+ },
+ "蜈蚣": {
+  "latin_raw": [
+   "Scolopendra subspinipes"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4a17f0f46541c2af944e8cc63340d256"
+ },
+ "蜘蛛香": {
+  "latin_raw": [
+   "Valeriana jatamansi"
+  ],
+  "species": [
+   "valeriana jatamansi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=6b9c4425f51533f88960608f9643cfa6"
+ },
+ "蝉蜕": {
+  "latin_raw": [
+   "Cryptotympana atrata"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a3ea0e1b2d185a7d5767ef88bd387de0"
+ },
+ "蟾酥": {
+  "latin_raw": [
+   "Bufo bufo",
+   "Bufo melanostictus"
+  ],
+  "species": [
+   "bufo bufo",
+   "bufo melanostictus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f90e4bf0761ffdb9e0d5700a2eb2af43"
+ },
+ "血竭": {
+  "latin_raw": [
+   "Daemonorops draco"
+  ],
+  "species": [
+   "daemonorops draco"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7d8f345c5d1c35c9802ce22fefa554dc"
+ },
+ "补骨脂": {
+  "latin_raw": [
+   "Psoralea corylifolia"
+  ],
+  "species": [
+   "psoralea corylifolia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b752f24393a18fd5c81ac852c2d21428"
+ },
+ "裸花紫珠": {
+  "latin_raw": [
+   "Callicarpa nudiflora"
+  ],
+  "species": [
+   "callicarpa nudiflora"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=25ed865c823eddfb32bb24e0f8cc6234"
+ },
+ "西河柳": {
+  "latin_raw": [
+   "Tamarix chinensis"
+  ],
+  "species": [
+   "tamarix chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=419a51b8369456d18243df5e86a8c31e"
+ },
+ "西洋参": {
+  "latin_raw": [
+   "Panax quinquefolium"
+  ],
+  "species": [
+   "panax quinquefolium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4b4da05146ffe0ad753069ef40ff1ade"
+ },
+ "西瓜霜": {
+  "latin_raw": [
+   "Citrullus lanatus"
+  ],
+  "species": [
+   "citrullus lanatus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=432320d04cec128b4a251bdc9a800620"
+ },
+ "西红花": {
+  "latin_raw": [
+   "Crocus sativus"
+  ],
+  "species": [
+   "crocus sativus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=005fcda048704c07415c7100aa7b719a"
+ },
+ "西青果": {
+  "latin_raw": [
+   "Terminalia chebula"
+  ],
+  "species": [
+   "terminalia chebula"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1937f41f47a95b157494e3a5a3841182"
+ },
+ "覆盆子": {
+  "latin_raw": [
+   "Rubus chingii"
+  ],
+  "species": [
+   "rubus chingii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e42f03b48e9665250b135dd796340710"
+ },
+ "诃子": {
+  "latin_raw": [
+   "Terminalia chebula"
+  ],
+  "species": [
+   "terminalia chebula"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bd637c19ef6eaebb54f773f452ed0f48"
+ },
+ "谷精草": {
+  "latin_raw": [
+   "Eriocaulon buergerianum"
+  ],
+  "species": [
+   "eriocaulon buergerianum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a790b1b4ca840a2dd411b27c98d726cb"
+ },
+ "谷芽": {
+  "latin_raw": [
+   "Setaria italica"
+  ],
+  "species": [
+   "setaria italica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2c0f9270f35b1c19900f55b9bd975cb5"
+ },
+ "豆蔻": {
+  "latin_raw": [
+   "Amomum kravanh",
+   "Amomum compactum"
+  ],
+  "species": [
+   "amomum kravanh",
+   "amomum compactum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b8987bc3a1da29dae9bd5a739c4cc09"
+ },
+ "豨莶草": {
+  "latin_raw": [
+   "Siegesbeckia orientalis",
+   "Siegesbeckia pubescens",
+   "Siegesbeckia glabrescens"
+  ],
+  "species": [
+   "siegesbeckia orientalis",
+   "siegesbeckia pubescens",
+   "siegesbeckia glabrescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5dbea65be3abadd12b0cc2b744c007d4"
+ },
+ "贯叶金丝桃": {
+  "latin_raw": [
+   "Hypericum perforatum"
+  ],
+  "species": [
+   "hypericum perforatum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0e8c8d3d08a67e691f5812af77844595"
+ },
+ "赤小豆": {
+  "latin_raw": [
+   "Vigna umbellata",
+   "Vigna angularis"
+  ],
+  "species": [
+   "vigna umbellata",
+   "vigna angularis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=97e7c4025d67c0836f5d2bc9bfe7d3c7"
+ },
+ "赤芍": {
+  "latin_raw": [
+   "Paeonia lactiflora",
+   "Paeonia veitchii"
+  ],
+  "species": [
+   "paeonia lactiflora",
+   "paeonia veitchii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d257470418182a8ed8a53e59fecbdbd6"
+ },
+ "路路通": {
+  "latin_raw": [
+   "Liquidambar formosana"
+  ],
+  "species": [
+   "liquidambar formosana"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c01a02917db1289c5eb7981d09365199"
+ },
+ "车前子": {
+  "latin_raw": [
+   "Plantago asiatica",
+   "Plantago depressa"
+  ],
+  "species": [
+   "plantago asiatica",
+   "plantago depressa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ac2a3693543c12bc41c235505d46c85d"
+ },
+ "车前草": {
+  "latin_raw": [
+   "Plantago asiatica",
+   "Plantago depressa"
+  ],
+  "species": [
+   "plantago asiatica",
+   "plantago depressa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9a9bfb4ea1f97146c7b1d23808cb72bf"
+ },
+ "辛夷": {
+  "latin_raw": [
+   "Magnolia biondii",
+   "Magnolia denudata",
+   "Magnolia sprengeri"
+  ],
+  "species": [
+   "magnolia biondii",
+   "magnolia denudata",
+   "magnolia sprengeri"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=209a44ffe1bc24f21e25f6903d56cad1"
+ },
+ "辣椒": {
+  "latin_raw": [
+   "Capsicum annuum"
+  ],
+  "species": [
+   "capsicum annuum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=adc48144039b5837d635e922d295836e"
+ },
+ "远志": {
+  "latin_raw": [
+   "Polygala tenuifolia",
+   "Polygala sibirica"
+  ],
+  "species": [
+   "polygala tenuifolia",
+   "polygala sibirica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=66f7fd0472751944a3af22219e8408ba"
+ },
+ "连翘": {
+  "latin_raw": [
+   "Forsythia suspensa"
+  ],
+  "species": [
+   "forsythia suspensa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d478562ba7a011c909435bbd6954ced6"
+ },
+ "连钱草": {
+  "latin_raw": [
+   "Glechoma longituba"
+  ],
+  "species": [
+   "glechoma longituba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ee427cf517c77e2d4568af1df5d96b7a"
+ },
+ "通关藤": {
+  "latin_raw": [
+   "Marsdenia tenacissima"
+  ],
+  "species": [
+   "marsdenia tenacissima"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=853a7e85ab6a172ed00a0e0a8520c09a"
+ },
+ "通草": {
+  "latin_raw": [
+   "Tetrapanax papyri"
+  ],
+  "species": [
+   "tetrapanax papyrifer"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9e38885c06a3737e81b69eac127c5842"
+ },
+ "郁李仁": {
+  "latin_raw": [
+   "Prunus humilis",
+   "Prunus japonica",
+   "Prunus pedunculata"
+  ],
+  "species": [
+   "prunus humilis",
+   "prunus japonica",
+   "prunus pedunculata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f6e6a55c8ff9ec8b2fd3146c318319e1"
+ },
+ "郁金": {
+  "latin_raw": [
+   "Curcuma wenyujin",
+   "Curcuma longa",
+   "Curcuma kwangsiensis",
+   "Curcuma phaeocaulis"
+  ],
+  "species": [
+   "curcuma wenyujin",
+   "curcuma longa",
+   "curcuma kwangsiensis",
+   "curcuma phaeocaulis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2f38b1d1b2a2ac770c0e125320b4953b"
+ },
+ "酸枣仁": {
+  "latin_raw": [
+   "Ziziphus jujuba"
+  ],
+  "species": [
+   "ziziphus jujuba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7b5d462d7fa15b6a6e7cb434f448ba50"
+ },
+ "重楼": {
+  "latin_raw": [
+   "Paris polyphylla"
+  ],
+  "species": [
+   "paris polyphylla"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7ff6cb8cef9e3a1d65f564b4c84144b9"
+ },
+ "野木瓜": {
+  "latin_raw": [
+   "Stauntonia chinensis"
+  ],
+  "species": [
+   "stauntonia chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e1d3ddf9adbad6a8bf632e1fcb05d48f"
+ },
+ "野菊花": {
+  "latin_raw": [
+   "Chrysanthemum indicum"
+  ],
+  "species": [
+   "chrysanthemum indicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e19227955f6cfb3292bc5c09b7da1317"
+ },
+ "野马追": {
+  "latin_raw": [
+   "Eupatorium lindleyanum"
+  ],
+  "species": [
+   "eupatorium lindleyanum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=39ad9579a3e750e603662fcf985feb6f"
+ },
+ "金果榄": {
+  "latin_raw": [
+   "Tinospora sagittata",
+   "Tinospora capillipes"
+  ],
+  "species": [
+   "tinospora sagittata",
+   "tinospora capillipes"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=bef82b5799a630d0bc8adf3534860730"
+ },
+ "金樱子": {
+  "latin_raw": [
+   "Rosa laevigata"
+  ],
+  "species": [
+   "rosa laevigata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3a2707457df00c459be4f4f9ad87b127"
+ },
+ "金沸草": {
+  "latin_raw": [
+   "Inula linariifolia",
+   "Inula japonica"
+  ],
+  "species": [
+   "inula linariifolia",
+   "inula japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=653874031531ad69ad74e61e86b78810"
+ },
+ "金荞麦": {
+  "latin_raw": [
+   "Fagopyrum dibotrys"
+  ],
+  "species": [
+   "fagopyrum dibotrys"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9750080e54c622e35375852735aab71b"
+ },
+ "金钱白花蛇": {
+  "latin_raw": [
+   "Bungarus multicinctus"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=15c705c12c3262c3614eb8b7bb506403"
+ },
+ "金钱草": {
+  "latin_raw": [
+   "Lysimachia christinae"
+  ],
+  "species": [
+   "lysimachia christinae"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c143cdfe497bdeda16267a20d473cec1"
+ },
+ "金铁锁": {
+  "latin_raw": [
+   "Psammosilene tunicoides"
+  ],
+  "species": [
+   "psammosilene tunicoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9a9789e5e09f66f4e0da8fe51fdf9358"
+ },
+ "金银花": {
+  "latin_raw": [
+   "Lonicera japonica"
+  ],
+  "species": [
+   "lonicera japonica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=468c3659c6596476ee8384485ae4accd"
+ },
+ "金龙胆草": {
+  "latin_raw": [
+   "Conyza blinii"
+  ],
+  "species": [
+   "conyza blinii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c25d1c04e41b8f5a8ad02e107f4b5ea0"
+ },
+ "钩藤": {
+  "latin_raw": [
+   "Uncaria rhynchophylla",
+   "Uncaria macrophylla",
+   "Uncaria hirsuta",
+   "Uncaria sinensis"
+  ],
+  "species": [
+   "uncaria rhynchophylla",
+   "uncaria macrophylla",
+   "uncaria hirsuta",
+   "uncaria sinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9db4f8d96868203527f6bbad9c64cbb3"
+ },
+ "铁皮石斛": {
+  "latin_raw": [
+   "Dendrobium officinale"
+  ],
+  "species": [
+   "dendrobium officinale"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f66a8d49f42426891926fc60f6904be9"
+ },
+ "银杏叶": {
+  "latin_raw": [
+   "Ginkgo biloba"
+  ],
+  "species": [
+   "ginkgo biloba"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4e7ac34180524461bd5f514e69bddde2"
+ },
+ "银柴胡": {
+  "latin_raw": [
+   "Stellaria dichotoma"
+  ],
+  "species": [
+   "stellaria dichotoma"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5b98acdb5bee99e5989308cabe13ebb8"
+ },
+ "锁阳": {
+  "latin_raw": [
+   "Cynomorium songaricum"
+  ],
+  "species": [
+   "cynomorium songaricum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a690faea9b2d06e95e4385611a779bbe"
+ },
+ "锦灯笼": {
+  "latin_raw": [
+   "Physalis alkekengi"
+  ],
+  "species": [
+   "physalis alkekengi"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=137cb1923f7deeafc78cb4a66b76288d"
+ },
+ "闹羊花": {
+  "latin_raw": [
+   "Rhododendron molle"
+  ],
+  "species": [
+   "rhododendron molle"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=aa97430a42ba377e9710bc9d73938ca1"
+ },
+ "防己": {
+  "latin_raw": [
+   "Stephania tetrandra"
+  ],
+  "species": [
+   "stephania tetrandra"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1c093b06a2fec3c12c077c98274be021"
+ },
+ "防风": {
+  "latin_raw": [
+   "Saposhnikovia divaricata"
+  ],
+  "species": [
+   "saposhnikovia divaricata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=af1229d07b9fe81d53ac57d249aa0297"
+ },
+ "阿胶": {
+  "latin_raw": [
+   "Equus asinus"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c47bde4d2f1ea9ba3bd76c1e8e0fad8a"
+ },
+ "阿魏": {
+  "latin_raw": [
+   "Ferula sinkiangensis",
+   "Ferula fukanensis"
+  ],
+  "species": [
+   "ferula sinkiangensis",
+   "ferula fukanensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=cfcf5a3ba8a9cb68a6bcf0f85108bc92"
+ },
+ "附子": {
+  "latin_raw": [
+   "Aconitum carmichaelii"
+  ],
+  "species": [
+   "aconitum carmichaelii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=14cbe169c30de5debee82581652fe585"
+ },
+ "陈皮": {
+  "latin_raw": [
+   "Citrus reticulata"
+  ],
+  "species": [
+   "citrus reticulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=670b418969197c3ea9953a7c1f4d383c"
+ },
+ "降香": {
+  "latin_raw": [
+   "Dalbergia odorifera"
+  ],
+  "species": [
+   "dalbergia odorifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5cb5c4a97961cf027b5b6bf8520e315d"
+ },
+ "雷丸": {
+  "latin_raw": [
+   "Omphalia lapidescens"
+  ],
+  "species": [
+   "omphalia lapidescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=21901ae9ca128d281e16e33dbaf47409"
+ },
+ "青叶胆": {
+  "latin_raw": [
+   "Swertia mileensis"
+  ],
+  "species": [
+   "swertia mileensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=ea876bb4fb0117e7139cf4ef0477b447"
+ },
+ "青果": {
+  "latin_raw": [
+   "Canarium album"
+  ],
+  "species": [
+   "canarium album"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=556862c902ea87cfea2ad869f36283e3"
+ },
+ "青皮": {
+  "latin_raw": [
+   "Citrus reticulata"
+  ],
+  "species": [
+   "citrus reticulata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=314d5b88cf0f3ba5fdd2a33555dc8f2e"
+ },
+ "青葙子": {
+  "latin_raw": [
+   "Celosia argentea"
+  ],
+  "species": [
+   "celosia argentea"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2735942f51bda729210d6e86153d7fd4"
+ },
+ "青蒿": {
+  "latin_raw": [
+   "Artemisia annua"
+  ],
+  "species": [
+   "artemisia annua"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=fd00c3af51e2cbafff2e6866214fe7da"
+ },
+ "青风藤": {
+  "latin_raw": [
+   "Sinomenium acutum"
+  ],
+  "species": [
+   "sinomenium acutum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2e7e4c902c086ceb8b814f5cf7672390"
+ },
+ "青黛": {
+  "latin_raw": [
+   "Baphicacanthus cusia",
+   "Polygonum tinctorium",
+   "Isatis indigotica"
+  ],
+  "species": [
+   "baphicacanthus cusia",
+   "polygonum tinctorium",
+   "isatis indigotica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=146170de28e0148d8f8634447ac15060"
+ },
+ "韭菜子": {
+  "latin_raw": [
+   "Allium tuberosum"
+  ],
+  "species": [
+   "allium tuberosum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=23f7ab9ef3873ecfdf49be552f8a700f"
+ },
+ "预知子": {
+  "latin_raw": [
+   "Akebia quinata",
+   "Akebia trifoliata"
+  ],
+  "species": [
+   "akebia quinata",
+   "akebia trifoliata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=06bd5b4ca1065f1dee2dc55cfd784e13"
+ },
+ "颠茄草": {
+  "latin_raw": [
+   "Atropa belladonna"
+  ],
+  "species": [
+   "atropa belladonna"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dc62078aed9433f7966e478dc348ec2f"
+ },
+ "飞扬草": {
+  "latin_raw": [
+   "Euphorbia hirta"
+  ],
+  "species": [
+   "euphorbia hirta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=d1187163af224776b70c53b44e266a99"
+ },
+ "首乌藤": {
+  "latin_raw": [
+   "Polygonum multiflorum"
+  ],
+  "species": [
+   "polygonum multiflorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=4f0f5f13897e0873b0a98e8911a2d9fb"
+ },
+ "香加皮": {
+  "latin_raw": [
+   "Periploca sepium"
+  ],
+  "species": [
+   "periploca sepium"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3b31cfdc42e96a6eee1b18939e65e421"
+ },
+ "香橼": {
+  "latin_raw": [
+   "Citrus medica",
+   "Citrus wilsonii"
+  ],
+  "species": [
+   "citrus medica",
+   "citrus wilsonii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e5a23fcd62c22d3467d303e0a57762c7"
+ },
+ "香薷": {
+  "latin_raw": [
+   "Mosla chinensis"
+  ],
+  "species": [
+   "mosla chinensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=39f7289087ec8d29700b08e0847daa31"
+ },
+ "香附": {
+  "latin_raw": [
+   "Cyperus rotundus"
+  ],
+  "species": [
+   "cyperus rotundus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8bbd42e17fed2d387821a654c9a3d95b"
+ },
+ "马勃": {
+  "latin_raw": [
+   "Lasiosphaera fenzlii",
+   "Calvatia gigantea",
+   "Calvatia lilacina"
+  ],
+  "species": [
+   "lasiosphaera fenzlii",
+   "calvatia gigantea",
+   "calvatia lilacina"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c8aea73bf74e72862bb86c7f5e6194f0"
+ },
+ "马鞭草": {
+  "latin_raw": [
+   "Verbena officinalis"
+  ],
+  "species": [
+   "verbena officinalis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9c0568ba09995ec4b1cf8b9fc33f26c2"
+ },
+ "马齿苋": {
+  "latin_raw": [
+   "Portulaca oleracea"
+  ],
+  "species": [
+   "portulaca oleracea"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=996acf3d0972c7a4760410469a5c36bd"
+ },
+ "骨碎补": {
+  "latin_raw": [
+   "Drynaria fortunei"
+  ],
+  "species": [
+   "drynaria fortunei"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=77f88e0761e005613fca7e5904490178"
+ },
+ "高山辣根菜": {
+  "latin_raw": [
+   "Pegaeophyton scapiflorum"
+  ],
+  "species": [
+   "pegaeophyton scapiflorum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=855b7a175260581bedd95e9732c03703"
+ },
+ "高良姜": {
+  "latin_raw": [
+   "Alpinia officinarum"
+  ],
+  "species": [
+   "alpinia officinarum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=10fda1cb6af8c6040f41e33578754520"
+ },
+ "鱼腥草": {
+  "latin_raw": [
+   "Houttuynia cordata"
+  ],
+  "species": [
+   "houttuynia cordata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=2611907ef02483cb9fbfe1e80ca1c038"
+ },
+ "鳖甲": {
+  "latin_raw": [
+   "Pelodiscus sinensis"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=47c6c62613b48970d3c5db740649e4b2"
+ },
+ "鸡内金": {
+  "latin_raw": [
+   "Gallus gallus"
+  ],
+  "species": [
+   "fel gallus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=19852a2dbb55cd4255564ea8da6b5632"
+ },
+ "鸡冠花": {
+  "latin_raw": [
+   "Celosia cristata"
+  ],
+  "species": [
+   "celosia cristata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=116d3142d56af438ad49e85590e01a3d"
+ },
+ "鸡血藤": {
+  "latin_raw": [
+   "Spatholobus suberectus"
+  ],
+  "species": [
+   "spatholobus suberectus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1648fb6d5022363269221005912be716"
+ },
+ "鸡骨草": {
+  "latin_raw": [
+   "Abrus cantoniensis"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e977d3fdb51944f46846db0bf110e1a2"
+ },
+ "鸦胆子": {
+  "latin_raw": [
+   "Brucea javanica"
+  ],
+  "species": [
+   "brucea javanica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=7467a9a16174236dda1fb0b69e4b68c2"
+ },
+ "鸭跖草": {
+  "latin_raw": [
+   "Commelina communis"
+  ],
+  "species": [
+   "commelina communis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=5e9461bd32e5aa8b052976a76a3248d1"
+ },
+ "鹅不食草": {
+  "latin_raw": [
+   "Centipeda minima"
+  ],
+  "species": [
+   "centipeda minima"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=aefd77281336d643dc1b845e0f0f0b45"
+ },
+ "鹤虱": {
+  "latin_raw": [
+   "Carpesium abrotanoides"
+  ],
+  "species": [
+   "carpesium abrotanoides"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=1127e7b2fa00e48117a151d1fca076c7"
+ },
+ "鹿茸": {
+  "latin_raw": [
+   "Cervus nippon",
+   "Cervus elaphus"
+  ],
+  "species": [
+   "cervus nippon",
+   "cervus elaphus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=b68fe59d9c65733706c876ee4df6dbe8"
+ },
+ "鹿衔草": {
+  "latin_raw": [
+   "Pyrola calliantha",
+   "Pyrola decorata"
+  ],
+  "species": [
+   "pyrola calliantha",
+   "pyrola decorata"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=311a9b25bab9ef23958f00a5490caa3e"
+ },
+ "鹿角": {
+  "latin_raw": [
+   "Cervus elaphus",
+   "Cervus nippon"
+  ],
+  "species": [
+   "cervus elaphus",
+   "cervus nippon"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=dfc1e6a3273edca1e6e79165428aed7f"
+ },
+ "麝香": {
+  "latin_raw": [
+   "Moschus berezovskii",
+   "Moschus chrysogaster",
+   "Moschus moschiferus"
+  ],
+  "species": [
+   "moschus berezovskii",
+   "moschus chrysogaster",
+   "moschus moschiferus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=22db75b029899f2f6d414f274864801b"
+ },
+ "麦冬": {
+  "latin_raw": [
+   "Ophiopogon japonicus"
+  ],
+  "species": [
+   "ophiopogon japonicus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=3bb78d45603f4142e24590adfcacfc22"
+ },
+ "麦芽": {
+  "latin_raw": [
+   "Hordeum vulgare"
+  ],
+  "species": [
+   "hordeum vulgare"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9763923b4bca0ad7505f8581e3ce471d"
+ },
+ "麻黄": {
+  "latin_raw": [
+   "Ephedra sinica",
+   "Ephedra intermedia",
+   "Ephedra equisetina"
+  ],
+  "species": [
+   "ephedra sinica",
+   "ephedra intermedia",
+   "ephedra equisetina"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=aa21bc223c9104104c2eed305f50da71"
+ },
+ "麻黄根": {
+  "latin_raw": [
+   "Ephedra sinica",
+   "Ephedra intermedia"
+  ],
+  "species": [
+   "ephedra sinica",
+   "ephedra intermedia"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=a0a909c20c01d4bd40d8da85cf2894e7"
+ },
+ "黄山药": {
+  "latin_raw": [
+   "Dioscorea panthaica"
+  ],
+  "species": [
+   "dioscorea panthaica"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=25220b54aff64693c7dd4b9ed3746a3e"
+ },
+ "黄柏": {
+  "latin_raw": [
+   "Phellodendron chinense"
+  ],
+  "species": [
+   "phellodendron chinense"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=f7e18fc6a0d515effc16ad9668c7acc7"
+ },
+ "黄精": {
+  "latin_raw": [
+   "Polygonatum kingianum",
+   "Polygonatum sibiricum",
+   "Polygonatum cyrtonema"
+  ],
+  "species": [
+   "polygonatum kingianum",
+   "polygonatum sibiricum",
+   "polygonatum cyrtonema"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9d8d0370127512bd1fe36e7ccde7cffe"
+ },
+ "黄芩": {
+  "latin_raw": [
+   "Scutellaria baicalensis"
+  ],
+  "species": [
+   "scutellaria baicalensis"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=eb9bdcdb38210ca77dc76bf768478685"
+ },
+ "黄芪": {
+  "latin_raw": [
+   "Astragalus membranaceus"
+  ],
+  "species": [
+   "astragalus membranaceus"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=c07f9302071c772e7f204cf6fda51a60"
+ },
+ "黄藤": {
+  "latin_raw": [
+   "Fibraurea recisa"
+  ],
+  "species": [
+   "fibraurea recisa"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=eef337746ac2dd6f1b0a7a286b353264"
+ },
+ "黄蜀葵花": {
+  "latin_raw": [
+   "Abelmoschus manihot"
+  ],
+  "species": [
+   "abelmoschus manihot"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=11b50ba30ba6bf22cc4cb384a8850050"
+ },
+ "黄连": {
+  "latin_raw": [
+   "Coptis chinensis",
+   "Coptis deltoidea",
+   "Coptis teeta"
+  ],
+  "species": [
+   "coptis chinensis",
+   "coptis deltoidea",
+   "coptis teeta"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e0585b3b794dd722512991ef1ae8b501"
+ },
+ "黑种草子": {
+  "latin_raw": [
+   "Nigella glandulifera"
+  ],
+  "species": [
+   "nigella glandulifera"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=8e04e76a267834d7132b73249521840e"
+ },
+ "黑芝麻": {
+  "latin_raw": [
+   "Sesamum indicum"
+  ],
+  "species": [
+   "sesamum indicum"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=0a75a88a203dbcdd21803389fa056c34"
+ },
+ "龙眼肉": {
+  "latin_raw": [
+   "Dimocarpus longan"
+  ],
+  "species": [
+   "dimocarpus longan"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9d9b486fafe1a918d076e7e6f7fb3c4b"
+ },
+ "龙胆": {
+  "latin_raw": [
+   "Gentiana manshurica",
+   "Gentiana scabra",
+   "Gentiana triflora",
+   "Gentiana rigescens"
+  ],
+  "species": [
+   "gentiana manshurica",
+   "gentiana scabra",
+   "gentiana triflora",
+   "gentiana rigescens"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=37bd3e85b2a3789a3a6b9b92c6326fc5"
+ },
+ "龙脷叶": {
+  "latin_raw": [
+   "Sauropus spatulifolius"
+  ],
+  "species": [],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=9912d84e29deb19c1a3a5962a510b5f5"
+ },
+ "龟甲": {
+  "latin_raw": [
+   "Mauremys reevesii"
+  ],
+  "species": [
+   "mauremys reevesii"
+  ],
+  "source": "中国药典2025版一部",
+  "url": "https://db2.ouryao.com/yd2025/view.php?id=e28677860dc16214cfd3d6710ce71c69"
+ }
+}

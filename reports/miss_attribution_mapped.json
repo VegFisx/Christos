@@ -1,0 +1,876 @@
+{
+ "sampled": 2500,
+ "stat": {
+  "可测": 1754,
+  "命中": 548,
+  "未命中": 1206,
+  "  └ A类: 无模板匹配": 926,
+  "  └ B类: 模板触发但产物错": 280
+ },
+ "a_by_nbonds": {
+  "1": 734,
+  "2": 117,
+  "4": 2,
+  "0": 67,
+  "3": 6
+ },
+ "formed_a": {
+  "C=O1杂 - 酰胺N": 20,
+  "C=O2杂 - 酰胺N": 68,
+  "C1杂 - 胺N(N)": 78,
+  "C=O3杂 - 酰胺N": 28,
+  "C环=O1杂 - 酰胺N": 7,
+  "C环=O2杂 - 酰胺N": 13,
+  "Br - C1杂": 14,
+  "S3杂 - 唑N": 6,
+  "Car1杂 - I": 8,
+  "Si1杂 - 羟基O": 11,
+  "C环 - C环": 12,
+  "Car - Car": 18,
+  "Car3杂 - 胺N(N)": 5,
+  "C=O2杂 - 醚/酯O": 7,
+  "羟基O - 酰胺N": 1,
+  "C1杂 - 羟基O": 8,
+  "羟基O - 胺N(N)": 1,
+  "Car=O3杂 - 唑N": 10,
+  "C - C2杂": 2,
+  "C - C=O1杂": 10,
+  "Car1杂 - 醚/酯O": 15,
+  "Car2杂 - 唑N": 18,
+  "Car1杂 - 唑N": 40,
+  "Car - C环1杂": 5,
+  "Car3杂 - 唑N": 13,
+  "C2杂 - 唑N": 1,
+  "Sn2杂 - 羟基O": 1,
+  "C=O2杂 - 羟基O": 15,
+  "Car - Car2杂": 2,
+  "Car1杂 - S": 4,
+  "C1杂 - 酰胺N": 18,
+  "C=O3杂 - 醚/酯O": 4,
+  "C1杂 - 唑N": 19,
+  "Car1杂 - Cl": 6,
+  "C - C环1杂": 7,
+  "Car1杂 - 胺N(N)": 16,
+  "S1杂 - 羟基O": 4,
+  "Car=O2杂 - 唑N": 7,
+  "C - C": 22,
+  "C=O1杂 - 羟基O": 7,
+  "C环2杂 - 醚/酯O": 6,
+  "Car2杂 - 胺N(N)": 9,
+  "Car - C环": 7,
+  "S环1杂 - 羟基O": 2,
+  "C=O2杂 - Car1杂": 1,
+  "Br - Car1杂": 11,
+  "Car3杂 - 醚/酯O": 6,
+  "C=O1杂 - Car": 25,
+  "C1杂 - 醚/酯O": 39,
+  "C1杂 - C=O2杂": 1,
+  "C环=O3杂 - 酰胺N": 7,
+  "C环=O3杂 - 醚/酯O": 1,
+  "C环1杂 - 醚/酯O": 15,
+  "Car2杂 - 醚/酯O": 6,
+  "S3杂 - 胺N(N)": 5,
+  "C1杂 - P": 2,
+  "C=O2杂 - Car": 4,
+  "C1杂 - C1杂": 3,
+  "C=O1杂 - Car1杂": 4,
+  "C1杂 - S": 8,
+  "C=O2杂 - C环1杂": 2,
+  "Car1杂 - Sar": 8,
+  "C1杂 - Car1杂": 4,
+  "C1杂 - C环": 4,
+  "C=O2杂 - S": 4,
+  "C - C1杂": 23,
+  "C - C环": 6,
+  "C - Car": 12,
+  "C环1杂 - 唑N": 1,
+  "唑N - 胺N(N)": 2,
+  "C环2杂 - S环": 4,
+  "C1杂 - Car": 15,
+  "Car1杂 - 酰胺N": 3,
+  "Br - Car3杂": 1,
+  "C1杂 - Cl": 9,
+  "C2杂 - 胺N(N)": 4,
+  "C1杂 - C环1杂": 2,
+  "C环=O2杂 - S": 1,
+  "C=O1杂 - C=O1杂": 2,
+  "C环1杂 - C环1杂": 2,
+  "C1杂 - S2杂": 1,
+  "Car1杂 - Car1杂": 1,
+  "Car - Car1杂": 9,
+  "唑N - 唑N": 7,
+  "C1杂 - C=O1杂": 2,
+  "Car2杂 - S": 1,
+  "C=O1杂 - Car2杂": 1,
+  "P4杂 - 羟基O": 1,
+  "胺N(N) - 胺N(N)": 2,
+  "Car2杂 - Cl": 7,
+  "C环2杂 - S": 1,
+  "Car2杂 - 酚O/芳醚O": 3,
+  "Car1杂 - P3杂": 1,
+  "Car3杂 - Cl": 3,
+  "C - C=O2杂": 3,
+  "C2杂 - 酰胺N": 1,
+  "Car2杂 - S2杂": 1,
+  "Car1杂 - F": 3,
+  "Car=O3杂 - 酚O/芳醚O": 3,
+  "Car - Car=O2杂": 2,
+  "Car1杂 - 羟基O": 3,
+  "Sar1杂 - 唑N": 1,
+  "Car1杂 - S3杂": 1,
+  "C - Car2杂": 2,
+  "C环1杂 - 胺N(N)": 15,
+  "Car=O3杂 - 羟基O": 1,
+  "Car - C环=O1杂": 1,
+  "C环1杂 - C环=O2杂": 1,
+  "C - Car1杂": 3,
+  "C环 - C环1杂": 6,
+  "C=O3杂 - 唑N": 2,
+  "P4杂 - 胺N(N)": 1,
+  "C环=O2杂 - 羟基O": 1,
+  "S4杂 - 胺N(N)": 1,
+  "唑N - 羟基O": 5,
+  "S1杂 - 胺N(N)": 1,
+  "Car3杂 - 酚O/芳醚O": 1,
+  "C环 - C环=O1杂": 2,
+  "Car1杂 - Sn": 1,
+  "C环1杂 - S环": 2,
+  "C环2杂 - 酰胺N": 3,
+  "Cl1杂 - S3杂": 1,
+  "Car2杂 - Sn": 3,
+  "Car=O2杂 - S": 1,
+  "C - C环2杂": 2,
+  "C环=O2杂 - 醚/酯O": 1,
+  "Car2杂 - Si": 2,
+  "Car=O2杂 - 羟基O": 3,
+  "C1杂 - C3杂": 3,
+  "C=O2杂 - Cl": 6,
+  "C环1杂 - 酰胺N": 1,
+  "Car=O1杂 - S": 1,
+  "C=O2杂 - P3杂": 1,
+  "Car2杂 - Sar": 2,
+  "Car - 胺N(N)": 1,
+  "C环 - C环2杂": 2,
+  "B2杂 - Car1杂": 2,
+  "C1杂 - Si": 1,
+  "Cl - C环1杂": 1,
+  "C=O1杂 - C环": 1,
+  "C环1杂 - S": 1,
+  "Car=O1杂 - 羟基O": 1,
+  "C3杂 - C=O2杂": 1,
+  "Car1杂 - 酚O/芳醚O": 2,
+  "C环2杂 - 羟基O": 1,
+  "C=O2杂 - Car2杂": 1,
+  "C - 酰胺N": 1,
+  "C1杂 - Si3杂": 1,
+  "C环1杂 - 羟基O": 3,
+  "C环=O1杂 - 羟基O": 1,
+  "S2杂 - 胺N(N)": 1,
+  "C1杂 - I": 1,
+  "C=O2杂 - 唑N": 4,
+  "S1杂 - 酰胺N": 1,
+  "C=O2杂 - 胺N(N)": 1,
+  "Car1杂 - Mg1杂": 1,
+  "C1杂 - P3杂": 2,
+  "S2杂 - 羟基O": 1,
+  "C=O3杂 - 羟基O": 1,
+  "Car1杂 - C环1杂": 1,
+  "Car1杂 - Car2杂": 1,
+  "C2杂 - P3杂": 1,
+  "C=O1杂 - S": 1
+ },
+ "broken_a": {
+  "C2杂 - 羟基O": 1,
+  "C=O2杂 - 胺N(N)": 2,
+  "羟基O - 胺N(N)": 2,
+  "C环1杂 - 羟基O": 1,
+  "C1杂 - 羟基O": 11,
+  "S - 酰胺N": 1,
+  "C环=O2杂 - 羟基O": 4,
+  "Br - C环1杂": 1,
+  "C环 - C环1杂": 1,
+  "C=O2杂 - Cl": 2,
+  "C=O2杂 - 羟基O": 3,
+  "Car1杂 - 胺N(N)": 1,
+  "C1杂 - 胺N(N)": 1,
+  "C - 羟基O": 1,
+  "C1杂 - Cl": 3,
+  "C1杂 - I": 2,
+  "C环=O1杂 - 羟基O": 1,
+  "Br - C1杂": 1
+ },
+ "formed_b": {
+  "Car=O2杂 - 唑N": 4,
+  "Car1杂 - 唑N": 16,
+  "C=O1杂 - Car": 4,
+  "C环2杂 - 醚/酯O": 2,
+  "C1杂 - 胺N(N)": 32,
+  "C=O2杂 - 羟基O": 2,
+  "C环=O2杂 - 酰胺N": 11,
+  "C环=O1杂 - 酰胺N": 2,
+  "C1杂 - 醚/酯O": 10,
+  "Car - Car1杂": 8,
+  "Car1杂 - 羟基O": 1,
+  "Car1杂 - Cl": 1,
+  "C=O3杂 - 酰胺N": 5,
+  "Car3杂 - 胺N(N)": 5,
+  "Car - Car": 11,
+  "C1杂 - 唑N": 9,
+  "Car2杂 - 唑N": 12,
+  "Car - C环=O1杂": 2,
+  "Car - C环": 8,
+  "Car1杂 - 胺N(N)": 9,
+  "C=O1杂 - Car1杂": 1,
+  "C=O2杂 - 酰胺N": 40,
+  "Car2杂 - 酚O/芳醚O": 1,
+  "羟基O - 酰胺N": 1,
+  "Car=O3杂 - 唑N": 3,
+  "C环1杂 - 胺N(N)": 6,
+  "Car2杂 - 胺N(N)": 9,
+  "Car1杂 - 醚/酯O": 7,
+  "C环 - C环1杂": 3,
+  "C1杂 - 酰胺N": 3,
+  "C1杂 - Cl": 2,
+  "S3杂 - 羟基O": 3,
+  "C=O1杂 - 酰胺N": 5,
+  "Car2杂 - 醚/酯O": 3,
+  "C - Car1杂": 4,
+  "C - C": 10,
+  "Car3杂 - 唑N": 3,
+  "C - Car": 10,
+  "Car1杂 - S": 2,
+  "C1杂 - S": 2,
+  "C=O2杂 - 唑N": 1,
+  "C1杂 - Car": 4,
+  "Br - C1杂": 1,
+  "Car2杂 - Cl": 2,
+  "Car1杂 - 酚O/芳醚O": 1,
+  "Car1杂 - Car1杂": 1,
+  "C - C1杂": 3,
+  "C环 - C环": 2,
+  "C环1杂 - 酰胺N": 4,
+  "唑N - 唑N": 1,
+  "Car - Car2杂": 1,
+  "C=O2杂 - 醚/酯O": 1,
+  "C - C环": 2,
+  "S环3杂 - 酰胺N": 1,
+  "C1杂 - C=O2杂": 1,
+  "C1杂 - 羟基O": 1,
+  "C环=O3杂 - 酰胺N": 2,
+  "C环=O3杂 - 醚/酯O": 2,
+  "C=O3杂 - 醚/酯O": 1,
+  "Car3杂 - 醚/酯O": 1,
+  "S3杂 - 胺N(N)": 5,
+  "Car1杂 - Si": 1,
+  "C环1杂 - 醚/酯O": 3,
+  "Car1杂 - Sar": 1,
+  "Car1杂 - C环1杂": 2,
+  "C2杂 - 唑N": 1,
+  "C环1杂 - 唑N": 1,
+  "Car=O2杂 - 酚O/芳醚O": 1,
+  "Car1杂 - F": 1,
+  "C - C=O2杂": 1,
+  "C=O2杂 - Car": 2,
+  "Car2杂 - Sar": 1,
+  "C1杂 - C=O1杂": 1,
+  "C=O1杂 - 羟基O": 1,
+  "C1杂 - Car2杂": 1,
+  "C环2杂 - 胺N(N)": 1,
+  "C2杂 - 醚/酯O": 1
+ },
+ "formed_a1": {
+  "C=O1杂 - 酰胺N": 20,
+  "C=O2杂 - 酰胺N": 65,
+  "C1杂 - 胺N(N)": 73,
+  "C=O3杂 - 酰胺N": 28,
+  "Br - C1杂": 14,
+  "S3杂 - 唑N": 5,
+  "Car1杂 - I": 8,
+  "Si1杂 - 羟基O": 11,
+  "C=O2杂 - 醚/酯O": 6,
+  "羟基O - 酰胺N": 1,
+  "C1杂 - 羟基O": 8,
+  "羟基O - 胺N(N)": 1,
+  "C - C2杂": 2,
+  "C - C=O1杂": 10,
+  "Car1杂 - 醚/酯O": 12,
+  "Car - C环1杂": 3,
+  "Car3杂 - 唑N": 4,
+  "C2杂 - 唑N": 1,
+  "Sn2杂 - 羟基O": 1,
+  "C=O2杂 - 羟基O": 15,
+  "Car - Car2杂": 1,
+  "Car1杂 - S": 4,
+  "C1杂 - 酰胺N": 17,
+  "C=O3杂 - 醚/酯O": 4,
+  "C1杂 - 唑N": 19,
+  "Car1杂 - Cl": 6,
+  "C - C环1杂": 7,
+  "Car1杂 - 胺N(N)": 15,
+  "S1杂 - 羟基O": 4,
+  "C - C": 22,
+  "C=O1杂 - 羟基O": 7,
+  "C环2杂 - 醚/酯O": 2,
+  "Car2杂 - 胺N(N)": 8,
+  "Car - C环": 5,
+  "S环1杂 - 羟基O": 2,
+  "C=O2杂 - Car1杂": 1,
+  "Br - Car1杂": 11,
+  "Car1杂 - 唑N": 5,
+  "Car3杂 - 醚/酯O": 6,
+  "C=O1杂 - Car": 22,
+  "C1杂 - 醚/酯O": 34,
+  "C1杂 - C=O2杂": 1,
+  "Car2杂 - 醚/酯O": 6,
+  "S3杂 - 胺N(N)": 5,
+  "C1杂 - P": 2,
+  "C=O2杂 - Car": 3,
+  "C1杂 - C1杂": 3,
+  "C=O1杂 - Car1杂": 4,
+  "C1杂 - S": 7,
+  "C=O2杂 - C环1杂": 2,
+  "C1杂 - Car1杂": 4,
+  "C1杂 - C环": 3,
+  "C=O2杂 - S": 4,
+  "C - C1杂": 23,
+  "C - C环": 6,
+  "C - Car": 9,
+  "C环1杂 - 唑N": 1,
+  "唑N - 胺N(N)": 2,
+  "C1杂 - Car": 13,
+  "Car1杂 - 酰胺N": 3,
+  "Br - Car3杂": 1,
+  "C1杂 - Cl": 9,
+  "C2杂 - 胺N(N)": 4,
+  "C1杂 - C环1杂": 1,
+  "C环=O2杂 - S": 1,
+  "C=O1杂 - C=O1杂": 2,
+  "C1杂 - S2杂": 1,
+  "C1杂 - C=O1杂": 2,
+  "Car2杂 - S": 1,
+  "C=O1杂 - Car2杂": 1,
+  "P4杂 - 羟基O": 1,
+  "胺N(N) - 胺N(N)": 2,
+  "Car2杂 - Cl": 7,
+  "C环2杂 - S": 1,
+  "Car1杂 - P3杂": 1,
+  "Car3杂 - Cl": 3,
+  "C - C=O2杂": 3,
+  "C2杂 - 酰胺N": 1,
+  "Car2杂 - S2杂": 1,
+  "Car1杂 - F": 3,
+  "C环=O1杂 - 酰胺N": 5,
+  "Car1杂 - 羟基O": 2,
+  "Car1杂 - S3杂": 1,
+  "Car - Car": 3,
+  "C - Car2杂": 2,
+  "C环1杂 - 胺N(N)": 6,
+  "Car=O3杂 - 羟基O": 1,
+  "C环=O3杂 - 酰胺N": 2,
+  "Car - C环=O1杂": 1,
+  "C - Car1杂": 3,
+  "C=O3杂 - 唑N": 2,
+  "C环 - C环": 1,
+  "P4杂 - 胺N(N)": 1,
+  "C环=O2杂 - 羟基O": 1,
+  "S4杂 - 胺N(N)": 1,
+  "唑N - 羟基O": 5,
+  "Car3杂 - 胺N(N)": 4,
+  "S1杂 - 胺N(N)": 1,
+  "Car1杂 - Sn": 1,
+  "Car2杂 - 唑N": 1,
+  "Cl1杂 - S3杂": 1,
+  "Car2杂 - Sn": 3,
+  "Car=O2杂 - S": 1,
+  "Car2杂 - Si": 2,
+  "Car=O2杂 - 羟基O": 3,
+  "C1杂 - C3杂": 3,
+  "C=O2杂 - Cl": 6,
+  "Car=O1杂 - S": 1,
+  "C=O2杂 - P3杂": 1,
+  "B2杂 - Car1杂": 2,
+  "C1杂 - Si": 1,
+  "Cl - C环1杂": 1,
+  "C=O1杂 - C环": 1,
+  "C环1杂 - S": 1,
+  "C环1杂 - 醚/酯O": 1,
+  "Car=O1杂 - 羟基O": 1,
+  "C3杂 - C=O2杂": 1,
+  "C=O2杂 - Car2杂": 1,
+  "C - 酰胺N": 1,
+  "C1杂 - Si3杂": 1,
+  "C环1杂 - 羟基O": 1,
+  "C环=O1杂 - 羟基O": 1,
+  "S2杂 - 胺N(N)": 1,
+  "C - C环2杂": 1,
+  "C=O2杂 - 唑N": 4,
+  "S1杂 - 酰胺N": 1,
+  "C=O2杂 - 胺N(N)": 1,
+  "C环=O2杂 - 酰胺N": 1,
+  "Car1杂 - Mg1杂": 1,
+  "C1杂 - P3杂": 2,
+  "S2杂 - 羟基O": 1,
+  "C=O3杂 - 羟基O": 1,
+  "Car=O2杂 - 唑N": 1,
+  "Car1杂 - Car2杂": 1,
+  "C2杂 - P3杂": 1,
+  "C=O1杂 - S": 1
+ },
+ "formed_a2": {
+  "C环=O1杂 - 酰胺N": 2,
+  "C环=O2杂 - 酰胺N": 12,
+  "C环 - C环": 11,
+  "Car - Car": 15,
+  "Car3杂 - 胺N(N)": 1,
+  "Car=O3杂 - 唑N": 10,
+  "Car2杂 - 唑N": 17,
+  "Car1杂 - 唑N": 35,
+  "C=O2杂 - 酰胺N": 3,
+  "Car=O2杂 - 唑N": 6,
+  "C环=O3杂 - 酰胺N": 5,
+  "C环=O3杂 - 醚/酯O": 1,
+  "C环1杂 - 醚/酯O": 14,
+  "C=O1杂 - Car": 3,
+  "C1杂 - 胺N(N)": 5,
+  "Car1杂 - Sar": 8,
+  "C环2杂 - S环": 4,
+  "C - Car": 3,
+  "C环2杂 - 醚/酯O": 4,
+  "C环1杂 - C环1杂": 2,
+  "Car1杂 - Car1杂": 1,
+  "Car - Car1杂": 9,
+  "C1杂 - C环": 1,
+  "唑N - 唑N": 7,
+  "Car2杂 - 酚O/芳醚O": 3,
+  "C1杂 - C环1杂": 1,
+  "Car - C环": 2,
+  "C=O2杂 - Car": 1,
+  "Car=O3杂 - 酚O/芳醚O": 3,
+  "Car - Car=O2杂": 2,
+  "Sar1杂 - 唑N": 1,
+  "C1杂 - Car": 2,
+  "C环1杂 - C环=O2杂": 1,
+  "Car - C环1杂": 2,
+  "C环 - C环1杂": 6,
+  "Car3杂 - 酚O/芳醚O": 1,
+  "Car3杂 - 唑N": 9,
+  "C环 - C环=O1杂": 2,
+  "C环1杂 - S环": 2,
+  "C环2杂 - 酰胺N": 3,
+  "C - C环2杂": 1,
+  "C环=O2杂 - 醚/酯O": 1,
+  "C环1杂 - 胺N(N)": 9,
+  "Car1杂 - 醚/酯O": 3,
+  "Car - Car2杂": 1,
+  "C环1杂 - 酰胺N": 1,
+  "Car2杂 - Sar": 2,
+  "C1杂 - 醚/酯O": 5,
+  "Car - 胺N(N)": 1,
+  "Car1杂 - 胺N(N)": 1,
+  "C环 - C环2杂": 2,
+  "Car1杂 - 羟基O": 1,
+  "Car1杂 - 酚O/芳醚O": 2,
+  "C=O2杂 - 醚/酯O": 1,
+  "C1杂 - 酰胺N": 1,
+  "C环2杂 - 羟基O": 1,
+  "Car2杂 - 胺N(N)": 1,
+  "C环1杂 - 羟基O": 2,
+  "C1杂 - I": 1,
+  "C1杂 - S": 1,
+  "S3杂 - 唑N": 1,
+  "Car1杂 - C环1杂": 1
+ },
+ "a_examples": [
+  {
+   "reactants": [
+    "CC(C)(C)[S@@](N)=O",
+    "O=Cc1c(F)ccc(Cl)c1F"
+   ],
+   "product": "CC(C)(C)[S@](=O)/N=C/c1c(F)ccc(Cl)c1F",
+   "formed": [
+    "C=O1杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)C(C)(C(N)=O)N1CC=CC1",
+    "O=C(O)c1ccc2ccccc2n1"
+   ],
+   "product": "CC(C)C(C)(NC(=O)c1ccc2ccccc2n1)C(N)=O",
+   "formed": [
+    "C=O2杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "C=O",
+    "OC1(c2cc(F)cc(F)c2)CCNC1"
+   ],
+   "product": "CN1CCC(O)(c2cc(F)cc(F)c2)C1",
+   "formed": [
+    "C1杂 - 胺N(N)"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CCOC(=O)C(C)N1CCCC(N)C1=O",
+    "COC(=O)Cl"
+   ],
+   "product": "CCOC(=O)C(C)N1CCCC(NC(=O)OC)C1=O",
+   "formed": [
+    "C=O3杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)I",
+    "Cc1ccc(S(=O)(=O)Nc2ccc(C#N)cc2[N+](=O)[O-])cc1"
+   ],
+   "product": "Cc1ccc(S(=O)(=O)N(c2ccc(C#N)cc2[N+](=O)[O-])C(C)C)cc1",
+   "formed": [
+    "C1杂 - 胺N(N)"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "O=S(Br)Br",
+    "OCc1ccc(OCCCl)cc1"
+   ],
+   "product": "ClCCOc1ccc(CBr)cc1",
+   "formed": [
+    "Br - C1杂"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)(C#N)c1ccc(-n2c(=O)[nH]c3cnc4ccc(Br)cc4c32)cc1",
+    "O=S(=O)(Cl)c1cccc2cccnc12"
+   ],
+   "product": "CC(C)(C#N)c1ccc(-n2c(=O)n(S(=O)(=O)c3cccc4cccnc34)c3cnc4ccc(Br)cc4c32)cc1",
+   "formed": [
+    "S3杂 - 唑N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CNCC#N",
+    "Cc1ccc(-c2cccc(/C=C/C(=O)Nc3ccc(CCl)cc3)c2)cc1"
+   ],
+   "product": "Cc1ccc(-c2cccc(/C=C/C(=O)Nc3ccc(CN(C)CC#N)cc3)c2)cc1",
+   "formed": [
+    "C1杂 - 胺N(N)"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CCNC(=O)Nc1ccc(-c2nc(N3CC4CCC(C3)O4)c3cnn(C4CCN(C(=O)OCC)CC4)c3n2)cc1",
+    "Nc1cccc(CO)c1"
+   ],
+   "product": "COC(=O)N1CCC(n2ncc3c(N4CC5CCC(C4)O5)nc(-c4ccc(NC(=O)Nc5cccc(CO)c5)cc4)nc32)CC1",
+   "formed": [
+    "C=O3杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "Cc1cc(Cl)nc(N)n1",
+    "O=C1CCC(=O)N1I"
+   ],
+   "product": "Cc1nc(N)nc(Cl)c1I",
+   "formed": [
+    "Car1杂 - I"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)(C)[Si](C)(C)Cl",
+    "C[C@H](O)CCO"
+   ],
+   "product": "C[C@H](O)CCO[Si](C)(C)C(C)(C)C",
+   "formed": [
+    "Si1杂 - 羟基O"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)(C)c1nnc(N)o1",
+    "O=C(Cl)OCC(Cl)(Cl)Cl"
+   ],
+   "product": "CC(C)(C)c1nnc(NC(=O)OCC(Cl)(Cl)Cl)o1",
+   "formed": [
+    "C=O3杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(=O)O",
+    "N#Cc1ccsc1"
+   ],
+   "product": "COC(=N)c1ccsc1",
+   "formed": [
+    "C=O2杂 - 醚/酯O"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "Clc1ccc2c(c1)C(c1ccccc1Cl)=NCc1cncnc1-2",
+    "O=C(OO)c1cccc(Cl)c1"
+   ],
+   "product": "[O-][N+]1=C(c2ccccc2Cl)c2cc(Cl)ccc2-c2ncncc2C1",
+   "formed": [
+    "羟基O - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "C(=C1CCC(Cc2ccccc2)CC1)c1nc2ccccc2[nH]1",
+    "C1CCOC1"
+   ],
+   "product": "OC(c1nc2ccccc2[nH]1)C1CCC(Cc2ccccc2)CC1",
+   "formed": [
+    "C1杂 - 羟基O"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CCOC(=O)CCCCC(=O)c1ccccc1",
+    "Cc1oc(-c2ccccc2)nc1COc1ccc(CON)cc1"
+   ],
+   "product": "CCOC(=O)CCCC/C(=N\\OCc1ccc(OCc2nc(-c3ccccc3)oc2C)cc1)c1ccccc1",
+   "formed": [
+    "C=O1杂 - 酰胺N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CC(C)(C)NC(=O)[C@@H]1C[C@H](Oc2ccccc2)CN1",
+    "Oc1cccc2ccccc12"
+   ],
+   "product": "NC(=O)[C@@H]1CCCN1Oc1cccc2ccccc12",
+   "formed": [
+    "羟基O - 胺N(N)"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "BrC(Br)(Br)Br",
+    "CCC(CC=O)n1cc(-c2ncnc3c2ccn3COCC[Si](C)(C)C)cn1"
+   ],
+   "product": "CCC(CC=C(Br)Br)n1cc(-c2ncnc3c2ccn3COCC[Si](C)(C)C)cn1",
+   "formed": [
+    "C - C2杂"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "CON(C)C(=O)c1sccc1S(=O)(=O)Nc1onc(C)c1Br",
+    "Cc1ccc([CH2][Mg][Cl])cc1"
+   ],
+   "product": "Cc1ccc(CC(=O)c2sccc2S(=O)(=O)Nc2onc(C)c2Br)cc1",
+   "formed": [
+    "C - C=O1杂"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "COCCO",
+    "Cc1cc(N2C[C@H](S(=O)(=O)c3ccc(F)cc3Cl)C[C@H]2C(=O)NC2(C#N)CC2)n(C2CCOCC2)n1"
+   ],
+   "product": "COCCOc1ccc(S(=O)(=O)[C@@H]2C[C@@H](C(=O)NC3(C#N)CC3)N(c3cc(C)nn3C3CCOCC3)C2)c(Cl)c1",
+   "formed": [
+    "Car1杂 - 醚/酯O"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "Brc1cccc2c1OCCO2",
+    "O=C1CCN(Cc2ccccc2)CC1"
+   ],
+   "product": "OC1(c2cccc3c2OCCO3)CCN(Cc2ccccc2)CC1",
+   "formed": [
+    "Car - C环1杂"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "Nc1cc(Cl)ncn1",
+    "O=C1CCC(=O)N1I"
+   ],
+   "product": "Nc1ncnc(Cl)c1I",
+   "formed": [
+    "Car1杂 - I"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "Cc1ncc[nH]1",
+    "O=[N+]([O-])c1cc2c(NCc3ccccc3)nc(Cl)nc2s1"
+   ],
+   "product": "Cc1nccn1-c1nc(NCc2ccccc2)c2cc([N+](=O)[O-])sc2n1",
+   "formed": [
+    "Car3杂 - 唑N"
+   ],
+   "broken": []
+  },
+  {
+   "reactants": [
+    "C1COCO1",
+    "CC(=O)N(C(C)=O)c1nc2nc[nH]c2c(=O)[nH]1"
+   ],
+   "product": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+   "formed": [
+    "C2杂 - 唑N"
+   ],
+   "broken": [
+    "C2杂 - 羟基O"
+   ]
+  },
+  {
+   "reactants": [
+    "CCC(CC)CO",
+    "CCC[CH2][Sn](=[O])[CH2]CCC"
+   ],
+   "product": "CCC[CH2][Sn]([CH2]CCC)([O]CC(CC)CC)[O][Sn]([CH2]CCC)([CH2]CCC)[O]CC(CC)CC",
+   "formed": [
+    "Sn2杂 - 羟基O"
+   ],
+   "broken": []
+  }
+ ],
+ "a_multi_examples": [
+  {
+   "reactants": [
+    "NN",
+    "O=C(O)CCC(=O)c1ccc(CCn2ccnc2)s1"
+   ],
+   "product": "O=C1CCC(c2ccc(CCn3ccnc3)s2)=NN1",
+   "formed": [
+    "C环=O1杂 - 酰胺N",
+    "C环=O2杂 - 酰胺N"
+   ]
+  },
+  {
+   "reactants": [
+    "CC(=O)Nc1nc2ccc(-c3ccnc(Cl)n3)cc2s1",
+    "CCN(C(C)C)C(C)C"
+   ],
+   "product": "CC(=O)Nc1nc2ccc(-c3ccnc(N4CCCC4c4ccccc4C)n3)cc2s1",
+   "formed": [
+    "C环 - C环",
+    "Car - Car",
+    "Car - Car",
+    "Car3杂 - 胺N(N)"
+   ]
+  },
+  {
+   "reactants": [
+    "C1COCCO1",
+    "CCOC(=O)CNc1cc(Cl)c(Cl)cc1C(N)=O"
+   ],
+   "product": "CCOC(=O)Cn1c(=O)[nH]c(=O)c2cc(Cl)c(Cl)cc21",
+   "formed": [
+    "Car=O3杂 - 唑N",
+    "Car=O3杂 - 唑N"
+   ]
+  },
+  {
+   "reactants": [
+    "NN",
+    "O=Cc1c(Cl)ncnc1Cl"
+   ],
+   "product": "Clc1ncnc2[nH]ncc12",
+   "formed": [
+    "Car2杂 - 唑N",
+    "Car1杂 - 唑N"
+   ]
+  },
+  {
+   "reactants": [
+    "COC(=O)c1ccc(OCc2c(-c3cccc(F)c3)noc2C)nc1",
+    "COC(=O)c1ccc(OCc2c(-c3cccnc3)noc2C)nc1"
+   ],
+   "product": "Cc1onc(-c2cccnc2)c1COc1ccc(C(=O)NCC2CC2)cn1",
+   "formed": [
+    "C环 - C环",
+    "C=O2杂 - 酰胺N"
+   ]
+  },
+  {
+   "reactants": [
+    "CC(NC(N)=S)c1nc2ccccc2[nH]1",
+    "CCOC(=O)CC#N"
+   ],
+   "product": "CC(c1nc2ccccc2[nH]1)n1c(N)cc(=O)[nH]c1=S",
+   "formed": [
+    "Car=O2杂 - 唑N",
+    "Car2杂 - 唑N"
+   ]
+  },
+  {
+   "reactants": [
+    "COC(=O)[C@H](O)CNc1cc(F)c2c(c1)oc(=O)n2C(C)C",
+    "O=C(n1ccnc1)n1ccnc1"
+   ],
+   "product": "COC(=O)[C@H]1CN(c2cc(F)c3c(c2)oc(=O)n3C(C)C)C(=O)O1",
+   "formed": [
+    "C环=O3杂 - 酰胺N",
+    "C环=O3杂 - 醚/酯O"
+   ]
+  },
+  {
+   "reactants": [
+    "CC(=O)C(=Cc1ccccc1)c1ccncc1",
+    "CC(C)(C)OC(=O)N1CCC(CC(=O)C(=Cc2ccc(F)cc2)c2ccncc2)CC1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC(CC(=O)C2(c3ccncc3)OC2c2ccc(F)cc2)CC1",
+   "formed": [
+    "C环1杂 - 醚/酯O",
+    "C环1杂 - 醚/酯O"
+   ]
+  },
+  {
+   "reactants": [
+    "O=C(Cl)c1cccc(C(=O)Cl)c1",
+    "c1ccc(Oc2ccccc2)cc1"
+   ],
+   "product": "O=C(c1ccc(Oc2ccccc2)cc1)c1cccc(C(=O)c2ccc(Oc3ccccc3)cc2)c1",
+   "formed": [
+    "C=O1杂 - Car",
+    "C=O1杂 - Car"
+   ]
+  },
+  {
+   "reactants": [
+    "C=CC#N",
+    "CNCCNC"
+   ],
+   "product": "CN(CCC#N)CCN(C)CCC#N",
+   "formed": [
+    "C1杂 - 胺N(N)",
+    "C1杂 - 胺N(N)"
+   ]
+  }
+ ]
+}

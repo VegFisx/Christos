@@ -1,0 +1,1002 @@
+[
+ {
+  "序号": 1,
+  "方名": "丁香散",
+  "出处": "《叶氏女科》卷二。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://health.baidu.com/m/detail/ar_7096815533108865924",
+  "理由": "组成字面重合 2/3"
+ },
+ {
+  "序号": 2,
+  "方名": "乌药散",
+  "出处": "《朱氏集验方》卷一。",
+  "判定": "部分命中",
+  "覆盖率": 0.2,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.baidu.com/item/乌药散/7785801",
+  "理由": "组成字面重合 1/5"
+ },
+ {
+  "序号": 3,
+  "方名": "五苓散",
+  "出处": "《痘科类编》卷三。",
+  "判定": "命中",
+  "覆盖率": 0.714,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=wLCAmAiATV9L0znYlQJG234AHbyMTXOmCcZb0s7TOpy9O1ShTjiq0zpx7HOglprTcUfuu01WKNTznkLcV7mPWY7ow6lhF9LR27UxnZ99NED%2B0T7y15ibA%2Bm9h2YCETglc5WNLPVnyhzGD0xsL4tpqtO5lgcFAl0Sm4jb6Y7iXFKnZx9bU3O3zTu0DazlXXhJmWwKPfH8e192dvFxt",
+  "理由": "五苓散：源组成茯苓/猪苓/泽泻/肉桂/炒白术，与本条（泽泻/白术/赤茯苓/猪苓/肉桂/姜/枣）一致"
+ },
+ {
+  "序号": 4,
+  "方名": "五苓散",
+  "出处": "《金鉴》卷五十四。",
+  "判定": "命中",
+  "覆盖率": 0.833,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=e%2B3mJojfAPCEXbiz%2BYfLPAv9LvdZwVo7%2BbdxaXOOU8ybWdij1NQKe4FCRlyE%2FLs05u1ZyyrKUJvmaAdk9EwauvImSkDShNmmaBbhAtfDbFy80xA8RZxbDGdNwymAGz2mXPmE9y23U%2FTgQaAJ67cCws4fpeG%2FaK5KMCUcN75dOwmjUm6oV6jtFPeWR3Mvbj9xwsYtJlInFXCe8Q51h",
+  "理由": "五苓散《金鉴》版：源 5/6 一致，差异仅小茴香（该版本加味）"
+ },
+ {
+  "序号": 5,
+  "方名": "人参败毒散",
+  "出处": "《回春》卷三。",
+  "判定": "部分命中",
+  "覆盖率": 0.333,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.youlai.cn/ask/909750zO8VT.html",
+  "理由": "组成字面重合 1/3"
+ },
+ {
+  "序号": 6,
+  "方名": "仁丹",
+  "出处": "《幼幼新书》卷三十一引张涣方。",
+  "判定": "部分命中",
+  "覆盖率": 0.125,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search/soa26fe579cc0fd39b6ec92e951c2f361e?search=%E4%BB%81%E4%B8%B9%E7%9A%84%E6%88%90%E5%88%86%E6%9C%89%E5%93%AA%E4%BA%9B&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "理由": "组成字面重合 1/8"
+ },
+ {
+  "序号": 7,
+  "方名": "伤痛宁片",
+  "出处": "《上海市药品标准》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.jianke.com/product/172657.html",
+  "理由": "组成字面重合 0/7"
+ },
+ {
+  "序号": 8,
+  "方名": "何人饮",
+  "出处": "《黑热病证治指南》。",
+  "判定": "部分命中",
+  "覆盖率": 0.1,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=erS4XMNsozM7e0%2Fu8DzS0MSVEwmJaingni1T4cmR2lUFv%2FJ9C%2FHb4rASQemzyLecfYVRQfZzU8OvHqPStJb51jsqhDEGgp9HCjR%2F9I68sdp%2FKytrbsbc3M2gDn1nFq4h9MMMctYsaZKiOBPlpoHf14FDQ3IDlzA85PNG%2BREHByWEOCiA6h8AeoCSabu7LgNgkZp%2FkaQNelm2IDJy1nItXsI9OGh4%3D",
+  "理由": "组成字面重合 1/10"
+ },
+ {
+  "序号": 9,
+  "方名": "保元丸",
+  "出处": "《会约》卷二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.sogou.com/web?query=%E4%BF%9D%E5%85%83%E4%B8%B8%20%E7%BB%84%E6%88%90",
+  "理由": "组成字面重合 0/26"
+ },
+ {
+  "序号": 10,
+  "方名": "保元汤",
+  "出处": "《外科正宗》卷四。",
+  "判定": "部分命中",
+  "覆盖率": 0.5,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search?search=%E4%BF%9D%E5%85%83%E6%B1%A4%E7%9A%84%E5%8E%9F%E9%85%8D%E6%96%B9%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "理由": "组成字面重合 2/4"
+ },
+ {
+  "序号": 11,
+  "方名": "保元汤",
+  "出处": "《会约》卷十二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenda.so.com/q/1636156445215010?src=140&q=%E4%BF%9D%E5%85%83%E6%B1%A4+%E7%BB%84%E6%88%90",
+  "理由": "组成字面重合 0/9"
+ },
+ {
+  "序号": 12,
+  "方名": "八宝丹",
+  "出处": "《救伤秘旨》。",
+  "判定": "部分命中",
+  "覆盖率": 0.222,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.familydoctor.com.cn/q/14736289.html",
+  "理由": "组成字面重合 2/9"
+ },
+ {
+  "序号": 13,
+  "方名": "六味汤",
+  "出处": "《古今医彻》卷二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://baike.so.com/doc/4974659-5197421.html",
+  "理由": "组成字面重合 0/8"
+ },
+ {
+  "序号": 14,
+  "方名": "六神丸",
+  "出处": "《普济方》卷三九一引《保婴方》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=六神丸 组成&src=ob_zz_juhe360wenku",
+  "理由": "组成字面重合 0/6"
+ },
+ {
+  "序号": 15,
+  "方名": "养胃汤",
+  "出处": "《回春》卷三。",
+  "判定": "部分命中",
+  "覆盖率": 0.417,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.miaoshou.net/article/ZpNrlnOMLKM2DOd9.html",
+  "理由": "组成字面重合 5/12"
+ },
+ {
+  "序号": 16,
+  "方名": "凉膈散",
+  "出处": "《症因脉治》卷一。",
+  "判定": "命中",
+  "覆盖率": 0.714,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=wKQfpJ7fwzSNtQhamPgTPNUokWNwoItjkmt2we93HAKoC5HGKfNb3k9bcTZ2xPQ7CCJTyajwDnbgko2ZtZqUYxKFmgV%2FE3AZYviCKFC%2B8uYNlLi1uD3QEK3VmcogP317l33ZPQFRJuB2Z3oYIPOR%2B9Gc8%2B2dJ4im%2BVP44oUPhS5aJ7R6jfvF%2FQfrRhP5HJJbqdbHGOzADbkdrcItP5joUq%2BIb3t8%3D",
+  "理由": "凉膈散：源（医学百科）黄芩/黄连/栀仁/连翘/桔梗/甘草/薄荷与本条基本一致"
+ },
+ {
+  "序号": 17,
+  "方名": "加减地黄丸",
+  "出处": "《活人方》卷一。",
+  "判定": "部分命中",
+  "覆盖率": 0.176,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=eQkSKSSxOpfD1WGhsDNFT%2B6FXiPirp%2BeMq0s%2B5qfGG94ffuxqSbgN26yS%2BChzShJwOnh8EGDOCMfE53vZSTq9zEY9udNBf%2BxFRMUeZIhEeAo8ATmrX%2FF8lBrXRtCsbujH5M0bII2ar1BPlIz9VASV8RmyKrzO3tM%2BkNp1W5Wlkb%2FtgW2VpAyaU7v8iqWvH%2F32t8eOee4f9mdAmMd4CMvJMKKWgy5zMNVKR1gEtpRTxOxhXSROGYbsn6Ks7e3Mfdx7735GrNenjIr2PQ49ao9AaGWBBlA%3D",
+  "理由": "组成字面重合 3/17"
+ },
+ {
+  "序号": 18,
+  "方名": "加味四君子汤",
+  "出处": "《济阴纲目》卷十四。",
+  "判定": "部分命中",
+  "覆盖率": 0.714,
+  "自动建议": "命中",
+  "来源URL": "https://www.sogou.com/web?query=%E5%8A%A0%E5%91%B3%E5%9B%9B%E5%90%9B%E5%AD%90%E6%B1%A4%20%E7%BB%84%E6%88%90",
+  "理由": "加味四君子汤：同名方存在，但源是《直指》版（含白芍/白扁豆），本条含罂粟壳"
+ },
+ {
+  "序号": 19,
+  "方名": "加味枳术丸",
+  "出处": "《赤水玄珠》卷十三。",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/2776873-25768587.html",
+  "理由": "组成字面重合 2/8"
+ },
+ {
+  "序号": 20,
+  "方名": "加味香苏散",
+  "出处": "《奇效良方》卷三十九。",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/2278551-2410450.html",
+  "理由": "组成字面重合 1/4"
+ },
+ {
+  "序号": 21,
+  "方名": "化毒丹",
+  "出处": "《疡医大全》卷十八。",
+  "判定": "部分命中",
+  "覆盖率": 0.2,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=wXxWefsjwJXjicYtwHlAuTGeeQnsy3j9mHO9xWnCc1%2B6%2By9a4zYJhykk2bSGrADC9P4O29vzU3xaLgm52SESN3LCPuzVj6VRt4S4VZ7%2FeO1dTLvK4AJLeA0Ga81ceXx%2BVPtgnNuga0we30%2BnCwG%2BnHlQ%2BHa0tKzFCDWu2gP5xeYJhKcxTBNAhViVMMfKt5gc7",
+  "理由": "组成字面重合 1/5"
+ },
+ {
+  "序号": 22,
+  "方名": "化风丹",
+  "出处": "《幼科指掌》卷四。",
+  "判定": "部分命中",
+  "覆盖率": 0.182,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=byFTGjZf8x96%2BB%2B4SM7r17bji46mpVs9DHCKA5ANQdWr65HgRHQm9rWhUdo3ZdX33VN%2F%2FjqitmErxoJ5T4l4UqOsQFOvNRbXvGrGn%2BQYkGJAbxfq04%2FZi5FHeZNjzTJLfFiiHUjZQqpK4qPpR4M4m7mnyzukniB7FX4JfaadQNhJSrjCiqbPWRROeun0s%2BRZQ",
+  "理由": "组成字面重合 2/11"
+ },
+ {
+  "序号": 23,
+  "方名": "十灰散",
+  "出处": "《医级》卷八。",
+  "判定": "部分命中",
+  "覆盖率": 0.1,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bPP2ScY%2F%2BI%2BHZA%2BLOHIReHtrMNyGjKCQoMrP%2FPfFtgb65muGKvUAOGk6s4aQY6k849LT0J4P4k35m9aw%2B92J5J1G6LLFnRam1uuQD3pknuH2dCONTAg2PUV%2FftmZ00H0%2FxfI%2BXqSmPsz3ezp%2F94XWHw7RxAwTpRJq%2BlFht29B1sO5r0gLwNLdera4bYhWeJsm",
+  "理由": "组成字面重合 1/10"
+ },
+ {
+  "序号": 24,
+  "方名": "十灰散",
+  "出处": "方出《蒲辅周医疗经验》，名见《千家妙方》卷下。",
+  "判定": "部分命中",
+  "覆盖率": 0.143,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bSQl2NbEbrWtjQKuJJDYqnPZfGPIs87McXUvsXYaqqxAajSa4ePXJj%2FV4qTn66%2Bup63fErdrKDh%2BfcdBx0jWzkf0nnM%2BGX%2F9vXolkeoBOQsBp%2FWL3pD4foc%2F%2B890PvcDpM%2FYVE5KYkYN1UZqmZtMNFtIoCjSM9XC8uzmuQHTh0EBgRtCU2w4XE4Ue3mdRfbY4",
+  "理由": "组成字面重合 1/7"
+ },
+ {
+  "序号": 25,
+  "方名": "半夏泻心汤",
+  "出处": "《伤寒论》。",
+  "判定": "部分命中",
+  "覆盖率": 0.286,
+  "自动建议": "部分命中",
+  "来源URL": "https://wenku.so.com/s?q=半夏泻心汤组成&src=ob_zz_juhe360wenku",
+  "理由": "组成字面重合 2/7"
+ },
+ {
+  "序号": 26,
+  "方名": "华盖散",
+  "出处": "《外科大成》卷三。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=华盖散 组成&src=ob_zz_juhe360wenku",
+  "理由": "华盖散：只取到文库搜索页，无任何实质条目（本条库内组成仅'糯米'，无法互证）"
+ },
+ {
+  "序号": 27,
+  "方名": "右归饮",
+  "出处": "《景岳全书》卷五十一。",
+  "判定": "部分命中",
+  "覆盖率": 0.5,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search?search=%E5%8F%B3%E5%BD%92%E9%A5%AE%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "理由": "组成字面重合 4/8"
+ },
+ {
+  "序号": 28,
+  "方名": "四君子汤",
+  "出处": "方出《丹溪心法》卷一，名见《医方考》卷一。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=ew%2BbeFJh4IIRITuXdeH5EA7c7R3LWr7l2udD6XYLNW3VMQTd4GIlezTKTfcvBdjSmDT%2BMyxki%2FL1eUMt8pSx3bS99vUEi3%2BLngW%2BFcKskwetiopeP13Tvrm0JEScuyzK7C92%2B2ktC0Gth4jEyhLkLSE135vCq%2FyabTsQv98iVirRI7Pv%2F1k4pjmJqT1UgyMJ3F9DTRQSMd63VcPferAqguy2DN5M%3D",
+  "理由": "组成字面重合 4/6"
+ },
+ {
+  "序号": 29,
+  "方名": "四红丹",
+  "出处": "《全国中药成药处方集》（济南方）。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=四红丹 组成&src=ob_zz_juhe360wenku",
+  "理由": "四红丹：只取到文库搜索页，无实质条目"
+ },
+ {
+  "序号": 30,
+  "方名": "圣愈汤",
+  "出处": "《不知医必要》卷二。",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=uxgilwWNjAUTrVq1%2Bo3uRhqV52HVMm2nM12DPrl6abakR2AVFumddatoohupdCuwcVeQZM8avq34ghzTHCSX5EoUo8%2B95Y8NLMrDMY%2BP345gasMVlVqhtZ96sgtAzrucqluLv3uEDcH01lrlNNbEgQx6GUtMR7kUEEd2db5tacbaMhHQnE6%2FYt9GCGEonjpAhh4mZduS6GDJA4IaX",
+  "理由": "组成字面重合 2/8"
+ },
+ {
+  "序号": 31,
+  "方名": "定痛膏",
+  "出处": "《摄生众妙方》卷九。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=定痛膏 组成&src=ob_zz_juhe360wenku",
+  "理由": "定痛膏：只取到文库搜索页，无实质条目"
+ },
+ {
+  "序号": 32,
+  "方名": "小儿化毒散",
+  "出处": "《中国药典》（一部）。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://baike.so.com/doc/7562679-7836772.html",
+  "理由": "组成字面重合 0/12"
+ },
+ {
+  "序号": 33,
+  "方名": "小儿止泻片",
+  "出处": "《中医方剂临床手册》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=小儿止泻片 组成&src=ob_zz_juhe360wenku",
+  "理由": "小儿止泻片：只取到文库搜索页，无实质条目"
+ },
+ {
+  "序号": 34,
+  "方名": "延胡索散",
+  "出处": "《圣惠》卷七十一。",
+  "判定": "命中",
+  "覆盖率": 0.083,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/398610-422020.html",
+  "理由": "延胡索散：360百科条目组成与本条 8/12 一致（其余为炮制注记）"
+ },
+ {
+  "序号": 35,
+  "方名": "开胸顺气丸",
+  "出处": "《北京市中药成方选集》。",
+  "判定": "部分命中",
+  "覆盖率": 0.4,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bXMyiH2pLdOQ%2FN89XaUxMVnzrkoAuGeKLJJAJICNSamwQ0QvWTZx%2BD89F8FLurYjQJicK7O170XSxfD7bUEiR1CpPJW%2FBgVnPcdVsGL7KzILudB%2B3qDb32tv9F7ePhC%2BNGgunxH8%2FDYb29ISVs6MtJ9cm%2F7meDF8aIZbXCz%2FwkMFdqU%2F6aSE50rdUyn010WnWyJ084DDvcnLVS3a4yzv3ZPuex54%3D",
+  "理由": "组成字面重合 4/10"
+ },
+ {
+  "序号": 36,
+  "方名": "抑肝散",
+  "出处": "《医便》卷四。",
+  "判定": "部分命中",
+  "覆盖率": 0.231,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bE0jZlx%2FEJZl0HcV%2FwHFrQ33161gDwGaceeTkLCixoQCt92FfIAQdiKtfhZ3EqefQhXCH1mUBjWdCCDc9z8%2F5KPIpwhgttfcSy%2Fxu%2FwseSr123ByMmxPk%2FRGahup0e6Hzlb2k1yc7AkHX3klaKlnr3WuxueiuRquhEgcJK%2B8%2ByK73ZpcJ7GtDkA%3D%3D",
+  "理由": "组成字面重合 3/13"
+ },
+ {
+  "序号": 37,
+  "方名": "木香分气丸",
+  "出处": "《天津市固有成方统一配本》。",
+  "判定": "命中",
+  "覆盖率": 0.615,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=uholYT%2B3MA8yvfRDrq6kaVIg%2FfIdMPuUX9rHtPdXgp7dL5l3FCPGbQIFL4EZhS6uVxrV5%2B9V4u8zsc8ts2vzO5XUsZB7HUnrZ6BbSaG1g0tMpUmTifrwJpvHri794B%2FpFG8Xnq30fwTnbkoz5oFOORwU5SnWV1IlG8ZtlqHIvwyXlq4PktDxBWw3FaP4r%2BJxe%2Fembn0F7p2982cJluwr1rQ%3D%3D",
+  "理由": "木香分气丸：360百科条目组成与本条 10/13 一致"
+ },
+ {
+  "序号": 38,
+  "方名": "栀子豉汤",
+  "出处": "《伤寒论》。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://ai.so.com/search/sob9480b46939fcee0ff57c3d64c74d40c?search=%E6%A0%80%E5%AD%90%E8%B1%89%E6%B1%A4%E7%BB%84%E6%88%90&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "理由": "组成字面重合 2/3"
+ },
+ {
+  "序号": 39,
+  "方名": "桑白皮汤",
+  "出处": "《圣济总录》卷二十六。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://baike.so.com/doc/30513977-32356953.html",
+  "理由": "组成字面重合 0/9"
+ },
+ {
+  "序号": 40,
+  "方名": "桔梗流浸膏",
+  "出处": "《上海市药品标准》。",
+  "判定": "部分命中",
+  "覆盖率": 0.143,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/6095393-6308501.html",
+  "理由": "组成字面重合 1/7"
+ },
+ {
+  "序号": 41,
+  "方名": "槐角地榆丸",
+  "出处": "《外科大成》卷二。",
+  "判定": "命中",
+  "覆盖率": 0.857,
+  "自动建议": "命中",
+  "来源URL": "https://wenku.so.com/s?q=槐角地榆丸 组成&src=ob_zz_juhe360wenku",
+  "理由": "组成字面重合 6/7"
+ },
+ {
+  "序号": 42,
+  "方名": "橘皮竹茹汤",
+  "出处": "《金鉴》卷六十二。",
+  "判定": "部分命中",
+  "覆盖率": 0.5,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bGGfATLpDX%2BwMfpSCBOuTbB1XBsLT%2Bs06unTDADB5Uxu3QYTX8OKVqjdn6mxZg6dKMzgrgUM8zjqJAftSAPz7wOeVLmZV38muiRUIFvKvVfj%2Bkm41bKWTz2cCYGv0MnOMFVJjWuDO8VVq%2BZKo37b%2BPvlRXffMDSxrXti%2FeV587qOYciLT%2FU6kCxU96x7O%2BsnGRrw6MdFHYny6fgMvaaL8yLvLD0Oa8dmRFY83BKn0D7EvDpcXoQrjpTsLWaWCSlsoLMpPkS95I32c8lTHDhnD4CTCykM%3D",
+  "理由": "组成字面重合 3/6"
+ },
+ {
+  "序号": 43,
+  "方名": "沉香化气丸",
+  "出处": "《活人方》卷二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=沉香化气丸 组成&src=ob_zz_juhe360wenku",
+  "理由": "沉香化气丸：只取到文库搜索页，无实质条目"
+ },
+ {
+  "序号": 44,
+  "方名": "沉香化滞丸",
+  "出处": "《重订通俗伤寒论》。",
+  "判定": "部分命中",
+  "覆盖率": 0.154,
+  "自动建议": "部分命中",
+  "来源URL": "https://wenku.so.com/d/dc7338b8424c144c987aac3ccc5bac96",
+  "理由": "组成字面重合 2/13"
+ },
+ {
+  "序号": 45,
+  "方名": "泻白散",
+  "出处": "《玉案》卷三。",
+  "判定": "部分命中",
+  "覆盖率": 0.429,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search?search=%E6%B3%BB%E7%99%BD%E6%95%A3%E7%9A%84%E6%88%90%E5%88%86%E6%98%AF%E4%BB%80%E4%B9%88%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "理由": "组成字面重合 3/7"
+ },
+ {
+  "序号": 46,
+  "方名": "海蛤散",
+  "出处": "《圣济总录》卷一二一。",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bX%2FFpZgHdqim7t1QvY2F1cM%2BPWwy%2BiHJ1clTxiCjP8JkOyXSawIeWv1BqavT%2FJ4jF%2B5o6l6NWa2TLHBYB6uMGf9TuzrGmZhpDhN64Cl3GhXmyKHuHA3MZLOrpFYcE7vxZTMFvfwK0ku01Z8vAQwGdsRez%2FTZFHyeCKTdpi9GJa2C9wx0W4qzGHzYSk%2F6rFgFyB7CCj%2BK61J4UQuy9SpqLaoCrBMI%3D",
+  "理由": "组成字面重合 1/4"
+ },
+ {
+  "序号": 47,
+  "方名": "消积丸",
+  "出处": "《普济方》卷三九二。",
+  "判定": "部分命中",
+  "覆盖率": 0.125,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=eWRikDtM%2BJrlsptoACbfahLX7nS2jQZqMa0D2ZukrmWB9Nom19lgHeGu213Egsv53ZuOWAIQXgn3pP5XWGGFygpU1S6UgPmqVobyHAcVaosJSK1jnpeo6GOnf5Jz4n3WTDdGZtOfJPkt6idr5S0Sgr659BnhNt563wEgZpBnKt4v17MHjCzOPig%3D%3D",
+  "理由": "组成字面重合 2/16"
+ },
+ {
+  "序号": 48,
+  "方名": "消风散",
+  "出处": "《局方》卷一。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.cndzys.com/xshcore/quanwei_ztart/1es_3435087.html",
+  "理由": "组成字面重合 0/17"
+ },
+ {
+  "序号": 49,
+  "方名": "涤痰汤",
+  "出处": "《寒温条辩》卷五。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://ai.so.com/search/so694775764b0912ed7189226995a71465?search=%E6%B6%A4%E7%97%B0%E6%B1%A4%E7%9A%84%E7%BB%84%E6%88%90&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "理由": "组成字面重合 8/12"
+ },
+ {
+  "序号": 50,
+  "方名": "清心丸",
+  "出处": "《魏氏家藏方》卷九。",
+  "判定": "部分命中",
+  "覆盖率": 0.5,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bwKL9mTk47PefSZ6h69AHC0HRgWrrY%2Bm1UTdMGv2bpkvrSFoGi%2FYZ3%2Fm09Y73JV3xZizVBP2zFPMKb2whZOkVX8mf6MRadexNPMa8HxHZqR6%2FhMXO544yDWAsMeIJRKzfdDroZNJ7Ki6nv67PfabdjmirljsRqAIA6mqgU77NIcIFDzKFGrJBByMndHw4UjoW",
+  "理由": "组成字面重合 1/2"
+ },
+ {
+  "序号": 51,
+  "方名": "清暑汤",
+  "出处": "《伤寒大白》卷二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.youlai.cn/ask/E91F3DMgAta.html",
+  "理由": "清暑汤：只取到与方名无关的科普页，未找到该条组成"
+ },
+ {
+  "序号": 52,
+  "方名": "烂积丸",
+  "出处": "《全国中药成药处方集》（大同方）。",
+  "判定": "命中",
+  "覆盖率": 0.923,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=z%2BvA5bjQAL0gZh2l2X042MCmKxUTiONBp1KybKNjwyUpW0jZARa3DE%2Fon5QAe6SRu7MI4y0EprRz%2BpPujy%2FQ4Ye386rKw8dXcfev3q21aSjIwS%2BfNyXegTVV1BRS2i0s4E2jJSZ8uhZITInYZX31qHG5u5ypXx650%2FAfqxBnb8MChtGnQks82jQ%3D%3D",
+  "理由": "组成字面重合 12/13"
+ },
+ {
+  "序号": 53,
+  "方名": "犀角化毒丹",
+  "出处": "《喉科紫珍集》卷上。",
+  "判定": "命中",
+  "覆盖率": 0.364,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=zKAA%2F4lmS0FBS1vcPNRvsH2LNlnoOmctHVTzXEzdDbG1qUWLDpOqTXWa1knqoCangaxHnHdDyZV%2FPcJ2lbZk2UzM4q5u%2B%2FlOfitiEBdlwJDgEVsA4UVaAoa0vJ4UbjmWImOjz%2FtTk3yBAAqxm6ar6qKRKxJPzV%2FOK1xD%2BG0q%2B8AzPFRc2IvtQamu%2B%2FlyO8Na5sRvc1Gc69%2FptFiLdeCUaIJvBP4c%3D",
+  "理由": "犀角化毒丹：360百科条目组成 11/11 全中"
+ },
+ {
+  "序号": 54,
+  "方名": "玉液丸",
+  "出处": "《幼科指南》卷三。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "http://mp.weixin.qq.com/s?src=11&amp;timestamp=1792144927&amp;ver=7030&amp;signature=9Wu5a5xwjDCgCJoTtyz29x6YyDNk2LohLHbJz3PAyNUtaPLeNX3LHS0NTFTuiSiMchDesK1l*TBxyhyzkzGQEwN5yD0ivrxxqHjgXw8-4cuQOHc7*hAPjHPuoeuzmPFJ&amp;new=1",
+  "理由": "组成字面重合 0/7"
+ },
+ {
+  "序号": 55,
+  "方名": "珠黄散",
+  "出处": "《温证指归》卷三。",
+  "判定": "部分命中",
+  "覆盖率": 0.5,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=e6Us3ZNuY%2Fv4IeXHqm35hlCVDUBWVZNRxDIcGUu76AXT6BmDPs7yI23TBAvNegZyNLQbjqYNHqGRPWzIztNl5vA0onqbTFCoKfZ1vmnoXUKzwRQ7%2B4yRLQ9AfbQrrJmD3QNq3nBn1BBfJvx4PBzDo%2FMOkxOd4%2BAz5behyVpeT%2FnZnRsKSFB1k2F4MHHyglgeq",
+  "理由": "组成字面重合 2/4"
+ },
+ {
+  "序号": 56,
+  "方名": "理中丸",
+  "出处": "《直指》卷八。",
+  "判定": "命中",
+  "覆盖率": 0.75,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=we%2FSiV24qZCy22kbzE2X2oCH%2B3Sd6%2BPauW42JaYRzJx6lqf0jCCFC6Y%2FFzULkUOVJH17%2FhGpM%2FfSXOpuCEtL0m3%2Bx5nb6%2BCGSgs5PKFqg0Osvp3EK36NQfyl%2B6qNnSjVRc7tPoZyPqXViNrGsMFy07CQkDI8q3%2B3kM1g5wWYe2oXk60%2B%2BWZ3i%2BCw6d19uE%2BJgTc8Iv%2FsPQWTtN1RS",
+  "理由": "组成字面重合 3/4"
+ },
+ {
+  "序号": 57,
+  "方名": "理中丸",
+  "出处": "《千金翼》卷十八。",
+  "判定": "命中",
+  "覆盖率": 1.0,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=uvqaTHwbpHIOfiMZeIoyT00JYK2QcXJnXGPnusNMaKj%2Bwk4fjSZQuaTEGlSAqTALfKyXDs3TcwceBCf8n%2FTqxJgOJH9Z4d5jiLd0EaYpI8K4Ys4XJcC4kxSK5CmM9e%2FHMlTkGaOjQBm0hOkx7sHBsPZg7lOkLVNIN%2F9TxocnlPMSv44v1DBDo%2BMz%2BAssXcxZsKHBPemBT2cXRpW1G",
+  "理由": "理中丸：人参/白术/干姜/甘草 4/4 一致"
+ },
+ {
+  "序号": 58,
+  "方名": "生肌散",
+  "出处": "《中医皮肤病学简编》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://image.so.com/i?src=imageonebox&q=%E7%94%9F%E8%82%8C%E6%95%A3%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "理由": "生肌散：只取到图片搜索页，无实质条目"
+ },
+ {
+  "序号": 59,
+  "方名": "白术散",
+  "出处": "《圣惠》卷十一。",
+  "判定": "部分命中",
+  "覆盖率": 0.083,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search/so7948435c9de5d74739705453c2d97020?search=%E7%99%BD%E6%9C%AF%E6%95%A3%E7%9A%84%E7%BB%84%E6%88%90&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "理由": "组成字面重合 1/12"
+ },
+ {
+  "序号": 60,
+  "方名": "益母丸",
+  "出处": "《灵验良方汇编》卷上。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://wenku.so.com/s?q=益母丸 组成&src=ob_zz_juhe360wenku",
+  "理由": "组成字面重合 2/3"
+ },
+ {
+  "序号": 61,
+  "方名": "益母丸",
+  "出处": "《绛囊撮要》。",
+  "判定": "部分命中",
+  "覆盖率": 0.333,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=u0VzHP1jbGul8mB6CPKp0ol01UhtUbeuOc4ab1KCzuEBp57J3rzeaMwQwXJoi3o6%2FGfu1DnEYaVu6j6G5mpxZsd9l%2FCeOgrI12uPHXu5Zl4x3GBhO3tMWCJvYG27nRVrt7dSGxSpafSwxz%2BosyNi9NEEOQhWAQXqixPPJmMGueh%2FFt8Rb1uogiyBHBk2SXQjlVah1AA%3D%3D",
+  "理由": "组成字面重合 3/9"
+ },
+ {
+  "序号": 62,
+  "方名": "益阴汤",
+  "出处": "《类证治裁》卷二。",
+  "判定": "命中",
+  "覆盖率": 1.0,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=ef1vJ3j%2FIspRbyKKRwEPvJ30X6SDkQv660hLnztoyYcruDHlwLJA2SsiaXjK1QXS9HMngxNoxm3wglFSLA8MJw5YRHibRLE98zUW4TEUEgadlOOG6fUl6pAh0MZnHio5BqgconbkEWddTXfJCbg95bRNkB4tzB8RYmhgxdsWOhJI%3D",
+  "理由": "益阴汤：39药品通条目组成 11/11 逐字一致"
+ },
+ {
+  "序号": 63,
+  "方名": "石决明散",
+  "出处": "《金鉴》卷七十七。",
+  "判定": "部分命中",
+  "覆盖率": 0.111,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/2809159-2964954.html",
+  "理由": "组成字面重合 1/9"
+ },
+ {
+  "序号": 64,
+  "方名": "红灵散",
+  "出处": "《急救痧证全集》卷下。",
+  "判定": "命中",
+  "覆盖率": 0.6,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=zJseAuCUfAbs5JjfvIG66DRy1STuzippPEtHYe%2FesVV33eus16fYR0q5NdsmVNGn6W3fVzCtl5sO9%2FlYr9FJ%2Bhq5nOLdKg1RoUryLTZL1biFKp1MyCpkcuEXNjZrzhAx%2BVfDsqmq3XG6FVZe%2FlrQx6kaWHI6tzajkI%2Fz2mEcC5ycU4n1xFqQd1yI2up2ANT%2FhwQDdmg%3D%3D",
+  "理由": "组成字面重合 3/5"
+ },
+ {
+  "序号": 65,
+  "方名": "绿袍散",
+  "出处": "《喉科秘诀》卷下。",
+  "判定": "部分命中",
+  "覆盖率": 0.2,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bGAkdnj2Lhtf1zNjL0xdgZBR6x8ZxMNOSO3XGs127dlmN55oyt71d8JgKkcyJLW26WvuQzOZjGIB1nZciycSWgmGd2B5JOH4LKi%2FagYK53Wcb2w1ukm1D1%2Fuz7NxPXoB74upLH%2FEWwaKMQ1j49T961Vq63vIWZD8rzlYgwUkrWd%2FQW8yUlzJPxJDMc3w25CQgjOr0%2B2yxNXbUpgUVTEBoMYvEoY0%3D",
+  "理由": "组成字面重合 1/5"
+ },
+ {
+  "序号": 66,
+  "方名": "羚翘解毒丸",
+  "出处": "《全国中药成药处方集》（呼和浩特方）。",
+  "判定": "部分命中",
+  "覆盖率": 0.375,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=uLCYeunaMsBxlNa7%2BKYolba%2Bc5J3UM4D6f48GAue8vxygBFf4Tqep0Zws8FzaNFI9hOf%2F%2Fk3tvCL%2FgEvOcIqn%2FkIH93XLK54UprC%2FEyiZfBhwGxkkYFwsMnhrBf7zSBB2QpCJ21xsXyeMAph52pBwoIteQxVixwFRqX5siULXTIk5fEL639iRbv9IcdTEhFY6W%2F20rFSN5gjqtV5QG62TBu6auD8%3D",
+  "理由": "组成字面重合 6/16"
+ },
+ {
+  "序号": 67,
+  "方名": "肥儿丸",
+  "出处": "《广笔记》卷三。",
+  "判定": "部分命中",
+  "覆盖率": 0.125,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E8%82%A5%E5%84%BF%E4%B8%B8",
+  "理由": "组成字面重合 2/16"
+ },
+ {
+  "序号": 68,
+  "方名": "肥儿丸",
+  "出处": "《医林纂要》卷九。",
+  "判定": "命中",
+  "覆盖率": 0.889,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=uU4VtowYVZIFieGkE%2FI267oV7VyvwQI1Inr7JAVJAOf83bvonihfgY25XOIiBVMa0A%2FLLPw9fWCdQ77Ugp6X%2BAjM%2F2RRoNG98BdNEmE9eSfvxTj2E4ql679TE4uxdZQHbSREtIZUgkKcMQ09l4l2RER8ljalkjew4p%2BDkZSai803aPwgq1vgDFbEfVPYPziie",
+  "理由": "肥儿丸：源（健客）肉豆蔻/木香/神曲/麦芽/黄连/槟榔/使君子与本条 8/9 一致"
+ },
+ {
+  "序号": 69,
+  "方名": "茯神散",
+  "出处": "《圣惠》卷六十九。",
+  "判定": "部分命中",
+  "覆盖率": 0.083,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E8%8C%AF%E7%A5%9E%E6%95%A3",
+  "理由": "组成字面重合 1/12"
+ },
+ {
+  "序号": 70,
+  "方名": "菊花茶调散",
+  "出处": "《不居集》下集卷二。",
+  "判定": "命中",
+  "覆盖率": 1.0,
+  "自动建议": "命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E8%8F%8A%E8%8A%B1%E8%8C%B6%E8%B0%83%E6%95%A3",
+  "理由": "菊花茶调散：医学百科条目，组成（菊花/僵蚕）与本条一致"
+ },
+ {
+  "序号": 71,
+  "方名": "葛根芩连汤",
+  "出处": "《赵锡武医疗经验》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=葛根芩连汤组成&src=ob_zz_juhe360wenku",
+  "理由": "葛根芩连汤：本条为《赵锡武医疗经验》9 味加味方，只取到文库搜索页，无法核对"
+ },
+ {
+  "序号": 72,
+  "方名": "薏苡仁汤",
+  "出处": "《圣济总录》卷十二。",
+  "判定": "部分命中",
+  "覆盖率": 0.059,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.mfk.com/article/2324628.shtml",
+  "理由": "组成字面重合 1/17"
+ },
+ {
+  "序号": 73,
+  "方名": "藿香正气散",
+  "出处": "《医便》卷二。",
+  "判定": "部分命中",
+  "覆盖率": 0.545,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=w66062R1JZn6gjDkxDLF%2BiAuicmub4k6FDbqwGIvzC%2BxHGmeZ1hJo9vOMpPWuHIfnM4T18wnvZwnGlpEgoV0v3XHa1AIMnwBvp6uEZhVhVIsJVsnFMvvSBiLdexlaJ7eZCw%2B0zZFdkg3qlL%2FAJqJRoPtre8NhhgK7zddENjDSqzhIN4bzg8cWMKh%2FeWtSv%2BCrzAHB4HTDpS7qGa08CAWJP0RFs9XUHcLJkJFI9svQKNo%3D",
+  "理由": "组成字面重合 6/11"
+ },
+ {
+  "序号": 74,
+  "方名": "补中益气汤",
+  "出处": "《种痘新书》卷九。",
+  "判定": "部分命中",
+  "覆盖率": 0.571,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search/so190871965578097bd17bd6affd7005c3?search=%E8%A1%A5%E4%B8%AD%E7%9B%8A%E6%B0%94%E6%B1%A4%E7%BB%84%E6%88%90&src=so_result_natural_ask&srcg=so_result_natural_ask",
+  "理由": "组成字面重合 4/7"
+ },
+ {
+  "序号": 75,
+  "方名": "补肺丸",
+  "出处": "《本草图经》引《传信方》（见《证类本草》卷二十三）。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.so.com/s?q=%E8%A1%A5%E8%82%BA%E4%B8%B8%20%E7%BB%84%E6%88%90",
+  "理由": "组成字面重合 0/1"
+ },
+ {
+  "序号": 76,
+  "方名": "补肾明目丸",
+  "出处": "《银海精微》卷上。",
+  "判定": "部分命中",
+  "覆盖率": 0.273,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=ucVtfXU0Vou2TCiGCu3%2FEQiy0k6qDFhR%2FZjx1lYeSgm6e7ygQD6XL487zRC1YB%2FXRaYL%2BOMStBy9dNiG9MbFAC5%2FC4Nr181Kifedh2cGrhHIWYibokwRBFBNA26s70pEZt3b4U2M1wMpRV8GYEgpPz9YawVvLWcnOJkkzE9gJ2cCAgqFZShkxMNUDpPNvfpwNoDn8jEw03HhGWNA%2BEQ10RYOurEM%3D",
+  "理由": "组成字面重合 6/22"
+ },
+ {
+  "序号": 77,
+  "方名": "调经种子丸",
+  "出处": "《救产全书》。",
+  "判定": "部分命中",
+  "覆盖率": 0.077,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=em7KO2K07dJwdPjSLfiRvLg9KbDI7p0kKjtTZX%2Fh5EqJiAk4cQeUCWLPcJ0mAWn4fmxvOPX5Gwr9K2qC3Hp%2Fpr2XeY9TWSSazUBkuDKNAEcJz9VPT0aZlf9l7b6VZIS3Foc7yKvwobiPm%2FadmE90K5CVhHQIVq3AkFWgADU4%2Bxyx282wCThBBf3rnbizUIUNxYFWOl9lyp6KPcv6Mga9Q5BK2qEs%3D",
+  "理由": "组成字面重合 1/13"
+ },
+ {
+  "序号": 78,
+  "方名": "跌打丸",
+  "出处": "《中药制剂手册》。",
+  "判定": "部分命中",
+  "覆盖率": 0.304,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E8%B7%8C%E6%89%93%E4%B8%B8",
+  "理由": "组成字面重合 7/23"
+ },
+ {
+  "序号": 79,
+  "方名": "辛夷散",
+  "出处": "《名家方选》。",
+  "判定": "命中",
+  "覆盖率": 0.667,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=enL7e5%2BtcOcZX6%2FNcZJMb2WThvSVG5qMffSHGAnyDgLFK0rgQ%2FdHXlucQFQ4c8OMp2cbNBsE5sCCaUBMU4onyFUg0b4f1ucT8GUURhbifncPDR5%2B8hqZXcjvgLBucSyYKWpFIFBTrwQuTFfHcNTsjJhYV8nokN%2FDXo4xJuzfaeA%2BCNvvK4i1t0ao%2BGql9eMnjEstgsLk2qF81h7R0jKWPaow4ahs%3D",
+  "理由": "组成字面重合 4/6"
+ },
+ {
+  "序号": 80,
+  "方名": "追风丸",
+  "出处": "《北京市中药成方选集》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://baike.so.com/doc/1606631-1698412.html",
+  "理由": "组成字面重合 0/19"
+ },
+ {
+  "序号": 81,
+  "方名": "通塞脉片",
+  "出处": "南京中医学院制药厂。",
+  "判定": "命中",
+  "覆盖率": 0.75,
+  "自动建议": "命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E9%80%9A%E5%A1%9E%E8%84%89%E7%89%87",
+  "理由": "通塞脉片：医学百科条目存在，当归/玄参/牛膝/甘草 3/4（本条原文即写'等'）"
+ },
+ {
+  "序号": 82,
+  "方名": "通气散",
+  "出处": "《圣济总录》卷一一五。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=通气散 组成&src=ob_zz_juhe360wenku",
+  "理由": "通气散：只取到文库搜索页，无实质条目"
+ },
+ {
+  "序号": 83,
+  "方名": "防风通圣散",
+  "出处": "《疯门全书》。",
+  "判定": "部分命中",
+  "覆盖率": 0.208,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bOJ3AY1Txqfdy87CNjOOM%2FOjRokqURj3lhFqvNLMmBaMUIKLcUR63xXJRHziuYERTQGnbpC1DKHk7gRM7YYOKM53%2B20KB1ccCFREqygO4BtWJKKF2wOdNd%2BRmX72BUsNUfFguCtwQKzH7ZM2Z4bViQfwtcigB74doA2phtF%2F8879fWmtLxj6FUnIcyktVMgdRse59CJ2F7CqO7dLg",
+  "理由": "组成字面重合 5/24"
+ },
+ {
+  "序号": 84,
+  "方名": "附子理中汤",
+  "出处": "《镐京直指》。",
+  "判定": "部分命中",
+  "覆盖率": 0.286,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=bZOcz17xyGQ2qNqJXFH0e2BbhFuzCl3Gv0HxZsU2SNh%2FjcbjRsOzkxj%2FCYBUONheXn1SNPY4BdK3dGp1ByzC0acPhXeFzp4G8YmG72norBMnqHdtFWz%2FmAoNvDQBmpb7ybTLgZ%2FrynC7OFRpKSVhb%2FJkJ7Zx3fqRPBoFwW7h9edliB39sWqsy5WzYKltusCs05Y3Iqylozs5EqSN0",
+  "理由": "附子理中汤：源为经典 5 味版，本条是《镐京直指》加味版（含肉果/茯苓）"
+ },
+ {
+  "序号": 85,
+  "方名": "青麟丸",
+  "出处": "《中医内科学》引《邵氏经验良方》。",
+  "判定": "命中",
+  "覆盖率": 1.0,
+  "自动建议": "命中",
+  "来源URL": "https://baike.so.com/doc/542307-574163.html",
+  "理由": "组成字面重合 1/1"
+ },
+ {
+  "序号": 86,
+  "方名": "青黛散",
+  "出处": "《圣惠》卷九十三。",
+  "判定": "部分命中",
+  "覆盖率": 0.125,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=zcbXaB3P6KQwDBLuTxEzft4iZ48VbCv5rqMH%2FtXeobLmS%2FcMczaH3GnJKTANOcCOPRMfEJoEQGV9YjMNG342Mrz346xrON02QSwHSAMK60ld6lycy8%2Bi2S%2BloNvTPPl1qCfNLsO4ldkgY6vQrpFCZYuWUFwmEz1LkAGRa%2Bt43HUO0IvypLJhAZh1Q9fM11XYI",
+  "理由": "组成字面重合 1/8"
+ },
+ {
+  "序号": 87,
+  "方名": "香棱丸",
+  "出处": "《杏苑》卷四。",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://baike.so.com/doc/763854-808305.html",
+  "理由": "香棱丸：源（360百科）为《丹溪心法》版，与本条《杏苑》版组成不同"
+ },
+ {
+  "序号": 88,
+  "方名": "香砂六君子汤",
+  "出处": "《古今名医方论》卷一引柯韵伯方。",
+  "判定": "命中",
+  "覆盖率": 1.0,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=e2tcEi3Z8HEQYbYAlqqQT69YIqh3nsQY0TsM7PhT6HgAVvylqh3Mlhs7%2B1hsEqlxgfhHfwQoeQImp8WctbF7kn%2BHZpNLYcNArBrX%2FmHX6RDtfYEVGpSUp28%2BE6H5R%2FWMAO%2BA8zP5TrXO0DSkwhifV0JFqd5Uh%2BEJPWwhPTH6E1IVdf7QxN8CaeEoQ4LC9DMgFK0xBXQy5ISol3Mz5dK84JCd3cApnMB5eE9iXK%2BE0OvM%3D",
+  "理由": "香砂六君子汤：源组成 8/8 逐字一致"
+ },
+ {
+  "序号": 89,
+  "方名": "香砂枳术丸",
+  "出处": "《景岳全书》卷五十四。",
+  "判定": "命中",
+  "覆盖率": 0.8,
+  "自动建议": "命中",
+  "来源URL": "https://baike.so.com/doc/5677580-5890253.html",
+  "理由": "香砂枳术丸：360百科条目（木香/枳实/砂仁/白术）与本条 4/5 一致"
+ },
+ {
+  "序号": 90,
+  "方名": "香苏饮",
+  "出处": "《风痨臌膈》",
+  "判定": "部分命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=wJnhfVvyXlFs1wgrZ8cd3fsxPTRe42whoDZJsJBv2TBQeHhVqBV%2FtNYVDMADrC4gPxgE8MXmDgndwnwFzkvotLR7i78tWokRNZXDF8oLP0kdSQxkv3F7sP2WbHYWLNxZZMPaaQ79IyBJsbkMWTE4daPTfHnr7ToJ6PMre4z0R1b82YjzuNx%2F1Bw%3D%3D",
+  "理由": "组成字面重合 2/8"
+ },
+ {
+  "序号": 91,
+  "方名": "鲤鱼汤",
+  "出处": "《圣惠》卷九十七。",
+  "判定": "部分命中",
+  "覆盖率": 0.167,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=u2%2FQLREcyeJF537j1q0OtJoSEZJdMijz7%2F1u71tVyNIR9YA3p08yRYtZKJPvRuaMpHiXjLmKrHQ2Fwh8rhmmnmpdrZ4BGKJJG785voTb81zLka8EeVEzCwdv9DntvhpzEHetRvJV43t4Roj%2BThawl7j3g2cx5jHGFNMOHKqUJ6rk9E4X%2FPHB%2F9DWAXvEysW2nn0%2BVrYF%2BJvshTMzmAYD73QG%2BOPx1lTPozUID5JKy6LQ59KG2W5vH3XpJMRQqG2rt",
+  "理由": "组成字面重合 1/6"
+ },
+ {
+  "序号": 92,
+  "方名": "麻子仁丸",
+  "出处": "《伤寒论》。",
+  "判定": "命中",
+  "覆盖率": 0.222,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.so.com/link?m=e8KnJnidURd1qAGp6Oiwn2X55YdMaJgBVbeSzfkIl79OJA6tC0AOXmPUv%2FZZZgvciyixSMXHvWw7mF2lR7o3nGmodnXijt4WD5RxrsX4Q9Rm26iz2MLDji3nIi49rFBBU4sYOyhPTMEHkh7iMlRQGRfalH2MkzSFub9c%2FFbPKmuVMmNydk%2FUAJ9MM%2FU%2FYyqWbyVFZie0xCcE%3D",
+  "理由": "麻子仁丸：源（家庭医生）麻子仁/芍药/枳实/大黄/厚朴/杏仁 = 本条 6 味（覆盖率低是剂量字被拆坏所致）"
+ },
+ {
+  "序号": 93,
+  "方名": "麻杏石甘汤",
+  "出处": "《喉痧症治概要》。",
+  "判定": "部分命中",
+  "覆盖率": 0.167,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E9%BA%BB%E6%9D%8F%E7%9F%B3%E7%94%98%E6%B1%A4",
+  "理由": "麻杏石甘汤：源是经典 4 味版，本条是《喉痧症治概要》12 味加味方"
+ },
+ {
+  "序号": 94,
+  "方名": "麻黄汤",
+  "出处": "《外台》卷九引《古今录验》。",
+  "判定": "部分命中",
+  "覆盖率": 0.2,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search?search=%E9%BA%BB%E9%BB%84%E6%B1%A4%E7%9A%84%E7%BB%84%E6%88%90&src=so_result_natural&srcg=so_result_natural",
+  "理由": "组成字面重合 1/5"
+ },
+ {
+  "序号": 95,
+  "方名": "黄土汤",
+  "出处": "《普济方》卷一○八引《旅舍方》。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://wenku.so.com/s?q=黄土汤组成&src=ob_zz_juhe360wenku",
+  "理由": "黄土汤：取到的是验证码页，无法核对"
+ },
+ {
+  "序号": 96,
+  "方名": "黄精丸",
+  "出处": "《济阳纲卧》卷六十八。",
+  "判定": "部分命中",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://www.so.com/s?q=%E9%BB%84%E7%B2%BE%E4%B8%B8%20%E7%BB%84%E6%88%90",
+  "理由": "黄精丸：源（医学百科）主成分为黄精，本条为黄精/天门冬/白蜜，未逐字对上"
+ },
+ {
+  "序号": 97,
+  "方名": "黄芩汤",
+  "出处": "《圣济总录》卷二十五。",
+  "判定": "部分命中",
+  "覆盖率": 0.077,
+  "自动建议": "部分命中",
+  "来源URL": "https://ai.so.com/search?search=%E9%BB%84%E8%8A%A9%E6%B1%A4%E9%85%8D%E6%96%B9&src=so_result_natural&srcg=so_result_natural",
+  "理由": "组成字面重合 1/13"
+ },
+ {
+  "序号": 98,
+  "方名": "黄连上清丸",
+  "出处": "《饲鹤亭集方》。",
+  "判定": "命中",
+  "覆盖率": 0.6,
+  "自动建议": "命中",
+  "来源URL": "https://www.so.com/link?m=wauz6La7L%2BJcbPsVEhfYVAZbTBPPXN7vUPzj2GOkHc9KMNYFL7YfO8%2Bi21IrdFw%2F48TBV0d11l8ZbigNQEH9UvtGKkzdS5yIS8vwg3kXzowxOAEYpK2SNfXm8MkRz0eeY2xFE2iwga7YWysT70iUx0c1gTi5%2FKiizvFPsq7rkQeCXKva1E5ZsmLA9sd08HaARhKB7ng3%2FW75%2F6qeN%2BaKEkQUSRVA%3D",
+  "理由": "黄连上清丸：源（家庭医生）中成药组成与本条 9/15 一致（差异为版本/炮制）"
+ },
+ {
+  "序号": 99,
+  "方名": "黄龙汤",
+  "出处": "《活人书》卷十九。",
+  "判定": "命中",
+  "覆盖率": 0.25,
+  "自动建议": "部分命中",
+  "来源URL": "https://www.yixue.com/index.php?search=%E9%BB%84%E9%BE%99%E6%B1%A4",
+  "理由": "黄龙汤：医学百科《类证·活人书》卷十九 = 柴胡/黄芩/人参/甘草，与本条逐字一致"
+ },
+ {
+  "序号": 100,
+  "方名": "黑虎散",
+  "出处": "《普济方》卷三○二。",
+  "判定": "查无",
+  "覆盖率": 0.0,
+  "自动建议": "查无",
+  "来源URL": "https://image.so.com/i?src=imageonebox&q=%E9%BB%91%E8%99%8E%E6%95%A3%20%E7%BB%84%E6%88%90&obx_type=360pic_new_normal1",
+  "理由": "黑虎散：只取到图片搜索页，无实质条目"
+ }
+]

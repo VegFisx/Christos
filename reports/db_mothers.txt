@@ -1,0 +1,46 @@
+====================================================================================================
+数据库里可用的母体（按名字找，不手写 SMILES）
+====================================================================================================
+
+  【甘草酸】甘草 命中 7 个
+      Ammo-nium glycyrrhizinate                   C42H65NO16    重原子 59
+      Monoammonium glycyrrhizinate                C42H65NO16    重原子 59
+      Glycyrrhizic acid                           C42H62O16     重原子 58
+      Glycyrrhizin                                C42H62O16     重原子 58
+
+  【乌头碱】附子 命中 45 个
+      Lipoaconitine                               C50H75NO11    重原子 62
+      Lipodeoxyaconitine                          C50H75NO10    重原子 61
+      Liwaconitine                                C41H53NO11    重原子 53
+      10-hydroxy-methyllycaconitine               C37H50N2O11   重原子 50
+
+  【次乌头碱】附子 命中 2 个
+      Aldohypaconitine                            C33H43NO11    重原子 45
+      Hypaconitine                                C33H45NO10    重原子 44
+
+  【番泻苷】大黄 命中 7 个
+      Sennoside e                                 C44H38O23     重原子 67
+      Sennoside                                   C42H38O20     重原子 62
+      Sennoside a                                 C42H38O20     重原子 62
+      Sennoside b                                 C42H38O20     重原子 62
+
+  【甘草苷】甘草 命中 5 个
+      Liquiritin apioside                         C26H30O13     重原子 39
+      Isoliquiritin                               C21H22O9      重原子 30
+      Liquiritin                                  C21H22O9      重原子 30
+      Neoisoliquiritin                            C21H22O9      重原子 30
+
+  【芦丁类】甘草 命中 1 个
+      Rutin                                       C27H30O16     重原子 43
+
+  【大黄素】大黄 命中 20 个
+      Aloe-emodin dianthrone diglucoside          C42H42O18     重原子 60
+      Aloeemodin diglucoside                      C27H30O15     重原子 42
+      Sulfemodin-8-o-beta-d-glucoside             C21H20O13S    重原子 35
+      Aloeemodin bianthrone                       C30H22O8      重原子 38
+
+  【黄芩苷】黄芩 命中 4 个
+      Scutebaicalin                               C34H38O7      重原子 41
+      Dihydrobaicalin                             C21H20O11     重原子 32
+      Baicalin                                    C21H18O11     重原子 32
+      7-oxobaicaline                              C20H15NO6     重原子 27

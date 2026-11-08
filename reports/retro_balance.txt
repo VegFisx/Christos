@@ -1,0 +1,66 @@
+============================================================================================
+诊断②b：反转切断的配平情况（8 个目标，模板 9,770）
+============================================================================================
+
+方案总数 14,926
+   配平          0  (  0.0%)
+   不配平   14,926  (100.0%)
+
+不配平的差值分布（前 20）:
+     1,710  H+2+O+1
+     1,170  Br+1+H+1
+     1,170  H+1+I+1
+       720  Br+1+H+1+O+1
+       672  H+1+O+1
+       666  Cl+1+H+1
+       516  F+1+H+1
+       476  Br+1+Cl+1
+       392  B+1+H+2
+       378  Br+2
+       372  Br+1+C+1+H+1+O+2
+       372  C+1+H+1+I+1+O+2
+       372  C+1+H+2+O+3
+       372  C+3+H+8+O+4
+       344  *+1+H+1
+       336  Br+1
+       336  Cl+1
+       336  F+1
+       336  I+1
+       248  C+1+Cl+1+H+1+O+2
+
+不配平率最高的反应类型（方案数>=100）:
+   100.0%     2080/2080   ester_schotten_baumann
+   100.0%     1760/1760   negishi_insitu
+   100.0%     1404/1404   snar_alcohol
+   100.0%     1364/1364   C_C_decarboxylation
+   100.0%     1280/1280   amine_acetylation
+   100.0%     1040/1040   ester_sulfonic_schotten_baumann
+   100.0%      832/832    esterification
+   100.0%      768/768    amine_sulfonation
+   100.0%      560/560    cross_electrophile_coupling
+   100.0%      528/528    suzuki
+   100.0%      520/520    williamson
+   100.0%      512/512    amide_coupling
+   100.0%      480/480    deoxygenative_coupling
+   100.0%      448/448    chan_lam
+   100.0%      396/396    ullmann_phenol
+
+不配平例子（非水）:
+   [chan_lam] CCNC(C)=O
+      前体 ['CC[NH-]', 'BC(C)=O']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC([NH-])=O', 'BCC']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC[NH-]', 'BC(C)=O']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC([NH-])=O', 'BCC']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC[NH-]', 'BC(C)=O']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC([NH-])=O', 'BCC']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC[NH-]', 'BC(C)=O']  差值 B+1+H+2
+   [chan_lam] CCNC(C)=O
+      前体 ['CC([NH-])=O', 'BCC']  差值 B+1+H+2
+
+-> retro_balance.json  耗时 23s

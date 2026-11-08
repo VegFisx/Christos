@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-11-04 14:24:52",
+  "n_miss": 226,
+  "found": {
+    "gate": 0,
+    "extent": 0,
+    "cap": 0,
+    "dedup": 0,
+    "classify": 0,
+    "kept": 17
+  },
+  "rescued_total": 0,
+  "detail": [
+    {
+      "i": 4,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 12,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 16,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 19,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 28,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 29,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 31,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 37,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 75,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 88,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 93,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 111,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 119,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 130,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 166,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 189,
+      "eng": "uncapped",
+      "where": "kept"
+    },
+    {
+      "i": 212,
+      "eng": "uncapped",
+      "where": "kept"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "n_train": 40000,
+  "n_test": 120,
+  "n_template_instances": 0,
+  "n_buckets": 0,
+  "n_clustered": 0,
+  "n_compiled": 0,
+  "min_freq": 2,
+  "hit": 0,
+  "recall": 0.0,
+  "extract_stat": {
+    "抽取异常": 40000
+  },
+  "elapsed_sec": 2.5
+}

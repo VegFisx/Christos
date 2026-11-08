@@ -1,0 +1,148 @@
+{
+ "n_templates": 9770,
+ "parsed_ok": 9770,
+ "parsed_fail": 0,
+ "type_formed": {
+  "imidazole_Xketone_synthesis": {
+   "*1杂 - 唑N": 10
+  },
+  "chan_lam": {
+   "C1杂 - 胺N(N)": 259,
+   "*ar1杂 - 胺N(N)": 74
+  },
+  "sn2_nheterocycle": {
+   "C1杂 - 胺N(N)": 16
+  },
+  "amide_coupling": {
+   "*1杂 - 胺N(N)": 288
+  },
+  "amine_sulfonation": {
+   "*1杂 - 胺N(N)": 432
+  },
+  "snar_thiol": {
+   "*ar1杂 - S1杂": 468
+  },
+  "ester_schotten_baumann": {
+   "*1杂 - 羟基O": 260
+  },
+  "negishi_insitu": {
+   "*ar - C1杂": 176
+  },
+  "ART": {
+   "*ar - C1杂": 12
+  },
+  "cross_electrophile_coupling": {
+   "C - C": 4,
+   "*ar - C1杂": 48,
+   "*ar1杂 - *ar1杂": 144
+  },
+  "ullmann_phenol": {
+   "*ar1杂 - 羟基O": 132
+  },
+  "williamson": {
+   "C1杂 - 醚/酯O": 104
+  },
+  "deoxygenative_coupling": {
+   "*ar - C1杂": 120
+  },
+  "suzuki": {
+   "*ar - C1杂": 132,
+   "*ar1杂 - *ar1杂": 132
+  },
+  "amine_acetylation": {
+   "*1杂 - 胺N(N)": 720
+  },
+  "B-H": {
+   "*ar1杂 - 胺N(N)": 1584
+  },
+  "snar_alcohol": {
+   "*ar1杂 - 羟基O": 468
+  },
+  "snar_amine": {
+   "*ar1杂 - 胺N(N)": 864
+  },
+  "C_C_decarboxylation": {
+   "*1杂 - *ar1杂": 220
+  },
+  "negishi_batch": {
+   "*1杂 - *ar1杂": 44
+  },
+  "ullmann_X": {
+   "*ar1杂 - *ar1杂": 1936
+  }
+ },
+ "type_broken": {
+  "ullmann_X": {},
+  "B-H": {},
+  "snar_amine": {},
+  "amine_acetylation": {},
+  "snar_thiol": {},
+  "snar_alcohol": {},
+  "amine_sulfonation": {},
+  "chan_lam": {},
+  "amide_coupling": {},
+  "suzuki": {},
+  "ester_schotten_baumann": {},
+  "C_C_decarboxylation": {},
+  "cross_electrophile_coupling": {},
+  "negishi_insitu": {},
+  "ullmann_phenol": {},
+  "deoxygenative_coupling": {},
+  "williamson": {},
+  "negishi_batch": {},
+  "sn2_nheterocycle": {},
+  "ART": {},
+  "imidazole_Xketone_synthesis": {}
+ },
+ "reverse_index": {
+  "*1杂 - 唑N": {
+   "imidazole_Xketone_synthesis": 10
+  },
+  "C1杂 - 胺N(N)": {
+   "chan_lam": 259,
+   "sn2_nheterocycle": 16
+  },
+  "*ar1杂 - 胺N(N)": {
+   "chan_lam": 74,
+   "B-H": 1584,
+   "snar_amine": 864
+  },
+  "*1杂 - 胺N(N)": {
+   "amide_coupling": 288,
+   "amine_sulfonation": 432,
+   "amine_acetylation": 720
+  },
+  "*ar1杂 - S1杂": {
+   "snar_thiol": 468
+  },
+  "*1杂 - 羟基O": {
+   "ester_schotten_baumann": 260
+  },
+  "*ar - C1杂": {
+   "negishi_insitu": 176,
+   "ART": 12,
+   "cross_electrophile_coupling": 48,
+   "deoxygenative_coupling": 120,
+   "suzuki": 132
+  },
+  "C - C": {
+   "cross_electrophile_coupling": 4
+  },
+  "*ar1杂 - *ar1杂": {
+   "cross_electrophile_coupling": 144,
+   "suzuki": 132,
+   "ullmann_X": 1936
+  },
+  "*ar1杂 - 羟基O": {
+   "ullmann_phenol": 132,
+   "snar_alcohol": 468
+  },
+  "C1杂 - 醚/酯O": {
+   "williamson": 104
+  },
+  "*1杂 - *ar1杂": {
+   "C_C_decarboxylation": 220,
+   "negishi_batch": 44
+  }
+ }
+}

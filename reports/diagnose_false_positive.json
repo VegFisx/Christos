@@ -1,0 +1,896 @@
+{
+ "what": "负例假阳性（引擎在不该反应的底物对上仍声称能反应）的成因拆解",
+ "n_neg": 60,
+ "n_fp": 54,
+ "by_rule": {
+  "B-H": 54
+ },
+ "by_class37": {
+  "37类（走条件门控）": 54
+ },
+ "n_rules_for_target": {
+  "1": 54
+ },
+ "selfmined_activation": {},
+ "selfmined_support": {
+  "mined_extra": {
+   "n": 5670,
+   "min": 1,
+   "median": 1,
+   "max": 37
+  },
+  "mined_mono": {
+   "n": 3256,
+   "min": 1,
+   "median": 1,
+   "max": 566
+  }
+ },
+ "rows": [
+  {
+   "aryl": "C1=CC(=C(N=C1)Br)Cl",
+   "amine": "C1C[C@H](C(=O)NC1)N",
+   "target": "O=C1NCCC[C@H]1Nc1ncccc1Cl",
+   "source": "AZ ELN 2023",
+   "solvent": "Toluene",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 15
+  },
+  {
+   "aryl": "C1CNC(=O)C2=C1C=C(C=C2)Br",
+   "amine": "C1=CC=C(C=C1)CN",
+   "target": "O=C1NCCc2cc(NCc3ccccc3)ccc21",
+   "source": "AZ ELN 2023",
+   "solvent": "DMF",
+   "n_total_products": 11,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 19
+  },
+  {
+   "aryl": "CC(=O)Nc1cc(c(cn1)Br)C(=O)O",
+   "amine": "c1ccc(cc1)COC(=O)N2CC3CC2CN3",
+   "target": "CC(=O)Nc1cc(C(=O)O)c(N2CC3CC2CN3C(=O)OCc2ccccc2)cn1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 19,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 30
+  },
+  {
+   "aryl": "CC(C)(C)OC(=O)N1CCC(CC1)(c2ccc(cc2)Br)F",
+   "amine": "c1ccc(cc1)C2CCNCC2",
+   "target": "CC(C)(C)OC(=O)N1CCC(F)(c2ccc(N3CCC(c4ccccc4)CC3)cc2)CC1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 9,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 32
+  },
+  {
+   "aryl": "CC(C)(C)OC(=O)N1Cc2c(cccc2Br)C(C1)(F)F",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCN(c1ccc2c(c1)OCO2)c1cccc2c1CN(C(=O)OC(C)(C)C)CC2(F)F",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 14,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 31
+  },
+  {
+   "aryl": "CC(C)(C)OC(=O)n1cc(c2c1nccc2)Br",
+   "amine": "c1ccc(cc1)C2CCNCC2",
+   "target": "CC(C)(C)OC(=O)n1cc(N2CCC(c3ccccc3)CC2)c2cccnc21",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 5,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 28
+  },
+  {
+   "aryl": "CC1(C(=C(C(=O)O1)Oc2ccc(cn2)Br)c3ccc(cc3)S(=O)(=O)C)C",
+   "amine": "CC(C)(C)OC(=O)c1c(n(nn1)C2CCNCC2)Cc3ccccc3",
+   "target": "CC(C)(C)OC(=O)c1nnn(C2CCN(c3ccc(OC4=C(c5ccc(S(C)(=O)=O)cc5)C(C)(C)OC4=O)nc3)CC2)c1Cc1ccccc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 12,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 50
+  },
+  {
+   "aryl": "CC1(C(=C(C(=O)O1)Oc2ccc(cn2)Br)c3ccc(cc3)S(=O)(=O)C)C",
+   "amine": "CNCc1cccc2c1cccn2",
+   "target": "CN(Cc1cccc2ncccc12)c1ccc(OC2=C(c3ccc(S(C)(=O)=O)cc3)C(C)(C)OC2=O)nc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 38
+  },
+  {
+   "aryl": "CC1(C(=C(C(=O)O1)Oc2ccc(cn2)Br)c3ccc(cc3)S(=O)(=O)C)C",
+   "amine": "Cc1nc2c(c(n1)N3CCNCC3)CC(CC2)N(C)C(=O)C",
+   "target": "CC(=O)N(C)C1CCc2nc(C)nc(N3CCN(c4ccc(OC5=C(c6ccc(S(C)(=O)=O)cc6)C(C)(C)OC5=O)nc4)CC3)c2C1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 21,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 47
+  },
+  {
+   "aryl": "CC1(C(=C(C(=O)O1)Oc2ccc(cn2)Br)c3ccc(cc3)S(=O)(=O)C)C",
+   "amine": "c1ccc2c(c1)CCCC2NCc3cccnc3",
+   "target": "CC1(C)OC(=O)C(Oc2ccc(N(Cc3cccnc3)C3CCCc4ccccc43)cn2)=C1c1ccc(S(C)(=O)=O)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 17,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 43
+  },
+  {
+   "aryl": "CC12CC(c3n1c(c(c(=O)c3Br)OC)C(=O)N(C2)C)O",
+   "amine": "c1cnn(c1)CCC2CCNCC2",
+   "target": "COc1c2n3c(c(N4CCC(CCn5cccn5)CC4)c1=O)C(O)CC3(C)CN(C)C2=O",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 13,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 32
+  },
+  {
+   "aryl": "CCOC(=O)/C=C/Cc1ccc(c(c1)OC)Br",
+   "amine": "c1ccc(cc1)CCCC2CCNCC2",
+   "target": "CCOC(=O)/C=C/Cc1ccc(N2CCC(CCCc3ccccc3)CC2)c(OC)c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 19,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 31
+  },
+  {
+   "aryl": "CCOC(=O)c1c2n(cn1)-c3ccc(cc3C(=O)N(C2)C)Br",
+   "amine": "C1CSCC(N1)C(=O)N2CCOCC2",
+   "target": "CCOC(=O)c1ncn2c1CN(C)C(=O)c1cc(N3CCSCC3C(=O)N3CCOCC3)ccc1-2",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 15,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 35
+  },
+  {
+   "aryl": "CCOC(=O)c1c2n(cn1)-c3ccc(cc3C(=O)N(C2)C)Br",
+   "amine": "CCOC(=O)c1c2c(nn1C)CCNC2",
+   "target": "CCOC(=O)c1ncn2c1CN(C)C(=O)c1cc(N3CCc4nn(C)c(C(=O)OCC)c4C3)ccc1-2",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 36
+  },
+  {
+   "aryl": "CCOC(=O)c1c2n(cn1)-c3ccc(cc3C(=O)N(C2)C)Br",
+   "amine": "Cc1cccc2c1NCCC2",
+   "target": "CCOC(=O)c1ncn2c1CN(C)C(=O)c1cc(N3CCCc4cccc(C)c43)ccc1-2",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 14,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 32
+  },
+  {
+   "aryl": "CCOC(=O)c1c2n(cn1)-c3ccc(cc3C(=O)N(C2)C)Br",
+   "amine": "c1cnc2c(n1)CNC2",
+   "target": "CCOC(=O)c1ncn2c1CN(C)C(=O)c1cc(N3Cc4nccnc4C3)ccc1-2",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 8,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 30
+  },
+  {
+   "aryl": "CCc1ccc(c(c1)Br)Cl",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCc1ccc(Cl)c(N(CC)c2ccc3c(c2)OCO3)c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 15,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 21
+  },
+  {
+   "aryl": "CNC(=O)c1c2cc(c(cc2oc1C3CC3)N(C)S(=O)(=O)C)Br",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "CNC(=O)c1c(C2CC2)oc2cc(N(C)S(C)(=O)=O)c(N3CCCC3c3ccc(C(F)(F)F)cc3)cc12",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 13,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 37
+  },
+  {
+   "aryl": "COC(=O)C(c1ccc(cc1Br)F)C(=O)OC",
+   "amine": "CNCCC1OCCO1",
+   "target": "COC(=O)C(C(=O)OC)c1ccc(F)cc1N(C)CCC1OCCO1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  },
+  {
+   "aryl": "COC(=O)Cc1ccc(cn1)Br",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "COC(=O)Cc1ccc(N2CCCC2c2ccc(C(F)(F)F)cc2)cn1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 9,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 26
+  },
+  {
+   "aryl": "COC(=O)c1cc(cc(c1)Br)S(=O)(=O)C",
+   "amine": "c1cnn(c1)CCC2CCNCC2",
+   "target": "COC(=O)c1cc(N2CCC(CCn3cccn3)CC2)cc(S(C)(=O)=O)c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 4,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 27
+  },
+  {
+   "aryl": "COC(c1ccc(cc1)Br)OC",
+   "amine": "c1ccc(cc1)C2CCNCC2",
+   "target": "COC(OC)c1ccc(N2CCC(c3ccccc3)CC2)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 4,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 23
+  },
+  {
+   "aryl": "COc1cc(ccc1Br)N",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "COc1cc(N)ccc1N1CCCC1c1ccc(C(F)(F)F)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 9,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 24
+  },
+  {
+   "aryl": "CSc1ncc(c(n1)CO)Br",
+   "amine": "c1ccc(cc1)CCCC2CCNCC2",
+   "target": "CSc1ncc(N2CCC(CCCc3ccccc3)CC2)c(CO)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "CC(C)(C)OC(=O)N1CCNC2(C1)CCCC2",
+   "target": "CN1C(=O)C[C@@](C)(c2cc(N3CCN(C(=O)OC(C)(C)C)CC34CCCC4)cs2)N/C1=N/C(=O)OC(C)(C)C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 14,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 39
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "CCNc1ccc2ccccc2c1/N=N/c3ccc(cc3)/N=N/c4ccccc4",
+   "target": "CCN(c1csc([C@]2(C)CC(=O)N(C)/C(=N\\C(=O)OC(C)(C)C)N2)c1)c1ccc2ccccc2c1/N=N/c1ccc(/N=N/c2ccccc2)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 13,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 51
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "CNc1c(cc(cn1)C(F)(F)F)[N+](=O)[O-]",
+   "target": "CN1C(=O)C[C@@](C)(c2cc(N(C)c3ncc(C(F)(F)F)cc3[N+](=O)[O-])cs2)N/C1=N/C(=O)OC(C)(C)C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 37
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "C[C@H]1[C@@H](N(CCN1)S(=O)(=O)C)C",
+   "target": "C[C@H]1[C@H](C)N(S(C)(=O)=O)CCN1c1csc([C@]2(C)CC(=O)N(C)/C(=N\\C(=O)OC(C)(C)C)N2)c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 7,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 34
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "Cn1c2c(c(n1)C(F)(F)F)CNCC2",
+   "target": "CN1C(=O)C[C@@](C)(c2cc(N3CCc4c(c(C(F)(F)F)nn4C)C3)cs2)N/C1=N/C(=O)OC(C)(C)C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 8,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 36
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "c1ccc(cc1)Cn2c3c(cccn3)n(c2=O)C4CCNC4",
+   "target": "CN1C(=O)C[C@@](C)(c2cc(N3CCC(n4c(=O)n(Cc5ccccc5)c5ncccc54)C3)cs2)N/C1=N/C(=O)OC(C)(C)C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 8,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 44
+  },
+  {
+   "aryl": "C[C@]1(CC(=O)N(/C(=N\\C(=O)OC(C)(C)C)/N1)C)c2cc(cs2)Br",
+   "amine": "c1nncn1CC2CCNCC2",
+   "target": "CN1C(=O)C[C@@](C)(c2cc(N3CCC(Cn4cnnc4)CC3)cs2)N/C1=N/C(=O)OC(C)(C)C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 8,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 34
+  },
+  {
+   "aryl": "Cc1c(cc(c(c1Cl)N)Cl)Br",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCN(c1ccc2c(c1)OCO2)c1cc(Cl)c(N)c(Cl)c1C",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 11,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 22
+  },
+  {
+   "aryl": "Cc1cc(cc(c1)Br)Nc2nc(cc(n2)Cl)C(F)(F)F",
+   "amine": "Cc1cc(n(n1)c2cccc(c2)CNC)C",
+   "target": "Cc1cc(Nc2nc(Cl)cc(C(F)(F)F)n2)cc(N(C)Cc2cccc(-n3nc(C)cc3C)c2)c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 4,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 35
+  },
+  {
+   "aryl": "Cc1cc2nc(c(n2cc1F)Br)C(F)(F)F",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "Cc1cc2nc(C(F)(F)F)c(N3CCCC3c3ccc(C(F)(F)F)cc3)n2cc1F",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 30
+  },
+  {
+   "aryl": "Clc1nc2ccccc2nc1N1CCCCC1",
+   "amine": "c1ccc(-c2cn(C3CCNCC3)nn2)cc1",
+   "target": "c1ccc(-c2cn(C3CCN(c4nc5ccccc5nc4N4CCCCC4)CC3)nn2)cc1",
+   "source": "JNJ HTE 2024",
+   "solvent": "MeCN",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 33
+  },
+  {
+   "aryl": "FC(F)Oc1cnc(Br)cn1",
+   "amine": "c1ccc(-c2cn(C3CCNCC3)nn2)cc1",
+   "target": "FC(F)Oc1cnc(N2CCC(n3cc(-c4ccccc4)nn3)CC2)cn1",
+   "source": "JNJ HTE 2024",
+   "solvent": "DMSO",
+   "n_total_products": 5,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 27
+  },
+  {
+   "aryl": "c1(c(c(c(c(c1F)F)Br)F)F)C(=O)O",
+   "amine": "c1ccc(cc1)C2CCNCC2",
+   "target": "O=C(O)c1c(F)c(F)c(N2CCC(c3ccccc3)CC2)c(F)c1F",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  },
+  {
+   "aryl": "c1c(cc(c(c1Cl)Br)Cl)O",
+   "amine": "Cc1cc(n(n1)c2cccc(c2)CNC)C",
+   "target": "Cc1cc(C)n(-c2cccc(CN(C)c3c(Cl)cc(O)cc3Cl)c2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 4,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  },
+  {
+   "aryl": "c1c(cnc2c1CCc3cc(c(cc3C2=O)[N+](=O)[O-])Cl)Br",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "O=C1c2cc([N+](=O)[O-])c(Cl)cc2CCc2cc(N3CCCC3c3ccc(C(F)(F)F)cc3)cnc21",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 15,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 35
+  },
+  {
+   "aryl": "c1cc(c(c(c1)Br)F)C(=O)O",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCN(c1ccc2c(c1)OCO2)c1cccc(C(=O)O)c1F",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 15,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 22
+  },
+  {
+   "aryl": "c1cc(c(cc1Br)Cl)N",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "Nc1ccc(N2CCCC2c2ccc(C(F)(F)F)cc2)cc1Cl",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 7,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 23
+  },
+  {
+   "aryl": "c1cc(c(cc1F)Br)C=O",
+   "amine": "Cc1cc(n(n1)c2cccc(c2)CNC)C",
+   "target": "Cc1cc(C)n(-c2cccc(CN(C)c3cc(F)ccc3C=O)c2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 7,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  },
+  {
+   "aryl": "c1cc(c(nc1)N2CCC(=O)C2)Br",
+   "amine": "c1ccc(cc1)COC(=O)N2CC3CC2CN3",
+   "target": "O=C1CCN(c2ncccc2N2CC3CC2CN3C(=O)OCc2ccccc2)C1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 14,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 29
+  },
+  {
+   "aryl": "c1cc(cc(c1)Br)Nc2nccc(n2)Cl",
+   "amine": "c1cnn(c1)CCC2CCNCC2",
+   "target": "Clc1ccnc(Nc2cccc(N3CCC(CCn4cccn4)CC3)c2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 27
+  },
+  {
+   "aryl": "c1cc(ccc1C#N)c2ccc(s2)Br",
+   "amine": "Cc1cc(n(n1)c2cccc(c2)CNC)C",
+   "target": "Cc1cc(C)n(-c2cccc(CN(C)c3ccc(-c4ccc(C#N)cc4)s3)c2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 4,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 29
+  },
+  {
+   "aryl": "c1cc(ccc1c2ncon2)Br",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCN(c1ccc(-c2ncon2)cc1)c1ccc2c(c1)OCO2",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 10,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 23
+  },
+  {
+   "aryl": "c1cc2c(c([nH]n2)Br)nc1",
+   "amine": "c1ccc(cc1)COC(=O)N2CC3CC2CN3",
+   "target": "O=C(OCc1ccccc1)N1CC2CC1CN2c1[nH]nc2cccnc12",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 9,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 26
+  },
+  {
+   "aryl": "c1cc2c(c(c1)C(=O)N)n[nH]c2Br",
+   "amine": "Cc1cc(n(n1)c2cccc(c2)CNC)C",
+   "target": "Cc1cc(C)n(-c2cccc(CN(C)c3[nH]nc4c(C(N)=O)cccc34)c2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 28
+  },
+  {
+   "aryl": "c1cc2c(cc1Br)occ2CC#N",
+   "amine": "CCNc1ccc2c(c1)OCO2",
+   "target": "CCN(c1ccc2c(c1)OCO2)c1ccc2c(CC#N)coc2c1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 12,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 24
+  },
+  {
+   "aryl": "c1cc2cc(ccc2nc1)Br",
+   "amine": "CCCN(CC)Cc1cc(n2c(n1)ncn2)N3CCNCC3",
+   "target": "CCCN(CC)Cc1cc(N2CCN(c3ccc4ncccc4c3)CC2)n2ncnc2n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 5,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 32
+  },
+  {
+   "aryl": "c1cc2cc(ccc2nc1)Br",
+   "amine": "Cc1nc(cc(n1)N(C)C2CCN(C2)Cc3ccccc3)C4CCNCC4",
+   "target": "Cc1nc(C2CCN(c3ccc4ncccc4c3)CC2)cc(N(C)C2CCN(Cc3ccccc3)C2)n1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 37
+  },
+  {
+   "aryl": "c1cc2cn(nc2cc1Br)C3CCCC(=O)C3",
+   "amine": "c1ccc(cc1)CCCC2CCNCC2",
+   "target": "O=C1CCCC(n2cc3ccc(N4CCC(CCCc5ccccc5)CC4)cc3n2)C1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 18,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 31
+  },
+  {
+   "aryl": "c1ccc(c(c1)C(C(=O)O)O)Br",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "O=C(O)C(O)c1ccccc1N1CCCC1c1ccc(C(F)(F)F)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 14,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 26
+  },
+  {
+   "aryl": "c1ccn2c(c1)nc(c2Cl)Br",
+   "amine": "c1cc(ccc1C2CCCN2)C(F)(F)F",
+   "target": "FC(F)(F)c1ccc(C2CCCN2c2nc3ccccn3c2Cl)cc1",
+   "source": "Merck 2025",
+   "solvent": "DMSO",
+   "n_total_products": 6,
+   "n_rules_for_target": 1,
+   "rules": [
+    {
+     "rule": "B-H",
+     "activation": 0.6
+    }
+   ],
+   "target_heavy_atoms": 25
+  }
+ ],
+ "seconds": 2.1
+}

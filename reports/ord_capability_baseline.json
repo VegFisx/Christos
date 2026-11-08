@@ -1,0 +1,46 @@
+{
+ "scratch": "新口径（带真实共试剂）下的能力基线；口径经 tools/ord_conditions.py",
+ "n_cases": 1200,
+ "n_with_reagents": 886,
+ "skip": {
+  "贡献组分=1": 443,
+  "贡献组分=3": 94,
+  "贡献组分=4": 18,
+  "贡献组分=5": 1,
+  "贡献组分=6": 1
+ },
+ "rows": [
+  {
+   "config": "A 旧口径：无试剂 + 自抽关 + 单底物关",
+   "hit": 0.28583333333333333,
+   "active": 0.415,
+   "gated_zero": 17191,
+   "products_per_case": 0.6283333333333333,
+   "seconds": 19.5
+  },
+  {
+   "config": "B A + 真实共试剂",
+   "hit": 0.27,
+   "active": 0.3908333333333333,
+   "gated_zero": 39564,
+   "products_per_case": 0.58,
+   "seconds": 18.8
+  },
+  {
+   "config": "C B + ORD 自抽双底物模板(K1)",
+   "hit": 0.3566666666666667,
+   "active": 0.5791666666666667,
+   "gated_zero": 39564,
+   "products_per_case": 1.2491666666666668,
+   "seconds": 22.8
+  },
+  {
+   "config": "D C + ORD 自抽单底物模板(完整默认)",
+   "hit": 0.3591666666666667,
+   "active": 0.9908333333333333,
+   "gated_zero": 39564,
+   "products_per_case": 8.624166666666667,
+   "seconds": 39.9
+  }
+ ]
+}

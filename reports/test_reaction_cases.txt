@@ -1,0 +1,78 @@
+================================================================================================
+用例                            规则                                结果
+------------------------------------------------------------------------------------------------
+✓ hyd_ester_benzoate          hydrolysis_ester_001              产出 2 个，命中期望
+✓ hyd_ester_ethylacetate      hydrolysis_ester_001              产出 2 个，命中期望
+✓ hyd_glycoside_salicin       hydrolysis_glycoside_001          产出 2 个，命中期望
+✓ hyd_amide_acetamide         hydrolysis_amide_001              产出 2 个，命中期望
+✓ hyd_acetal_benzaldehyde     hydrolysis_acetal_001             产出 2 个，命中期望
+✓ hyd_sulfate                 hydrolysis_sulfate_001            产出 2 个，命中期望
+✓ hyd_lactam                  hydrolysis_lactam_001             产出 1 个，命中期望
+✓ ox_primary_alcohol          oxidation_primary_alcohol_001     产出 1 个，命中期望
+✓ ox_aldehyde                 oxidation_aldehyde_001            产出 1 个，命中期望
+✓ ox_hydroxyl_isopropanol     oxidation_hydroxyl_001            产出 1 个，命中期望
+✓ ox_phenol_quinone           oxidation_phenol_quinone_001      产出 1 个，命中期望
+✓ ox_sulfide_sulfoxide        oxidation_sulfide_001             产出 1 个，命中期望
+✓ ox_aromatic_hydroxyl        hydroxylation_aromatic_001        产出 1 个，命中期望
+✓ red_ketone                  reduction_ketone_001              产出 1 个，命中期望
+✓ red_aldehyde                reduction_aldehyde_001            产出 1 个，命中期望
+✓ red_double_bond             reduction_alkene_001              产出 1 个，命中期望
+✓ red_sulfoxide               reduction_sulfoxide_001           产出 1 个，命中期望
+✓ dec_aromatic                decarboxylation_aromatic_001      产出 2 个，命中期望
+✓ dec_beta_keto               decarboxylation_beta_keto_001     产出 2 个，命中期望
+✓ dec_malonic                 decarboxylation_malonic_001       产出 2 个，命中期望
+✓ dec_cinnamic                decarboxylation_cinnamic_001      产出 2 个，命中期望
+✓ cond_esterification         esterification_intermolecular_001 产出 2 个，命中期望
+✓ cond_transesterification    esterification_transesterification_001产出 2 个，命中期望
+✓ cond_schiff                 condensation_schiff_base_001      产出 2 个，命中期望
+✓ cond_amidation              amidation_intermolecular_001      产出 2 个，命中期望
+✓ cond_aminolysis             aminolysis_ester_001              产出 2 个，命中期望
+✓ add_michael_thiol           addition_michael_thiol_001        产出 1 个，命中期望
+✓ cyc_gamma_lactone           esterification_gamma_lactone_001  产出 2 个，命中期望
+✓ cyc_delta_lactone           cyclization_lactone_delta_001     产出 2 个，命中期望
+✓ cyc_hemiacetal              cyclization_hemiacetal_001        产出 1 个，命中期望
+✓ cyc_lactam                  cyclization_lactam_001            产出 2 个，命中期望
+✓ cyc_ether                   cyclization_ether_001             产出 2 个，命中期望
+✗ eli_dehydration             elimination_dehydration_001       
+    ★ 未产出期望产物。期望其一 ['CC=CC']；实际产出 2 个: ['C=CCC', 'O']
+      依据: 醇脱水成烯
+✓ eli_demethylation           demethylation_aromatic_001        产出 2 个，命中期望
+✓ rea_double_bond_isomer      isomerization_double_bond_001     产出 1 个，命中期望
+✓ rea_retro_aldol             rearrangement_retro_aldol_001     产出 1 个，命中期望
+✓ gate_oxidation_off_n2       无氧煎煮                              激活 31 条，门控符合预期
+✓ gate_oxidation_on_air       煎煮                                激活 43 条，门控符合预期
+✓ gate_reduction_only_h2      煎煮                                激活 43 条，门控符合预期
+✓ gate_reduction_on_h2        还原                                激活 6 条，门控符合预期
+✓ gate_hydrolysis_on_acid     酸水解                               激活 43 条，门控符合预期
+✓ hyd_phosphate               hydrolysis_phosphate_001          产出 2 个，命中期望
+✓ hyd_hemiacetal              hydrolysis_hemiacetal_001         产出 2 个，命中期望
+✓ hyd_epoxide                 hydrolysis_epoxide_001            产出 1 个，命中期望
+✓ hyd_imine                   hydrolysis_imine_001              产出 2 个，命中期望
+✓ hyd_alkene                  hydration_alkene_001              产出 1 个，命中期望
+✓ hyd_enone                   hydration_enone_001               产出 1 个，命中期望
+✓ ox_amine                    oxidation_amine_001               产出 2 个，命中期望
+✓ ox_epoxide                  oxidation_epoxide_001             产出 1 个，命中期望
+✓ ox_dehydro_enone            oxidation_dehydrogenation_enone_001产出 1 个，命中期望
+✓ ox_sulfoxide_sulfone        oxidation_sulfoxide_to_sulfone_001产出 1 个，命中期望
+✓ red_quinone                 reduction_quinone_001             产出 1 个，命中期望
+✓ eli_deamination             elimination_deamination_001       产出 2 个，命中期望
+✓ eli_amide_to_nitrile        elimination_amide_to_nitrile_001  产出 1 个，命中期望
+✓ rea_keto_enol               tautomerization_keto_enol_001     产出 1 个，命中期望
+✓ est_delta_lactone           esterification_delta_lactone_001  产出 2 个，命中期望
+✓ cond_maillard               maillard_simplified_001           产出 1 个，命中期望
+✓ bi_glycosylation            condensation_glycosylation_001    产出 2 个，命中期望
+✓ bi_hemiacetal               condensation_hemiacetal_001       产出 1 个，命中期望
+✓ bi_michael_amine            addition_michael_amine_001        产出 1 个，命中期望
+✓ bi_aldol                    condensation_aldol_001            产出 1 个，命中期望
+✓ bi_thiohemiacetal           addition_thiohemiacetal_001       产出 1 个，命中期望
+
+================================================================================================
+结果：61 通过 / 1 失败  （共 62 条）
+================================================================================================
+
+失败清单：
+  ✗ eli_dehydration
+      未产出期望产物。期望其一 ['CC=CC']；实际产出 2 个: ['C=CCC', 'O']
+
+按类型：{'rule': 57, 'gating': 5}
+覆盖规则 56 / 63 条

@@ -1,0 +1,61 @@
+{
+ "what": "条件信号探针（留组交叉）：同一底物对下条件能否区分成功/零产率",
+ "data": {
+  "csv": "BH_HTE_Curated_Dataset_v20260219.csv",
+  "n_groups_all": 5752,
+  "n_groups_used": 300,
+  "n_rows": 10345,
+  "min_cond": 8,
+  "pos_threshold": 0.5
+ },
+ "auc_leave_group_out": {
+  "solvent": {
+   "auc": 0.5078,
+   "wins": 38789,
+   "ties": 68483,
+   "losses": 36541,
+   "pairs": 143813
+  },
+  "catalyst": {
+   "auc": 0.5889,
+   "wins": 76932,
+   "ties": 15508,
+   "losses": 51373,
+   "pairs": 143813
+  },
+  "base": {
+   "auc": 0.5141,
+   "wins": 59301,
+   "ties": 29275,
+   "losses": 55237,
+   "pairs": 143813
+  },
+  "source": {
+   "auc": 0.5,
+   "wins": 0,
+   "ties": 143813,
+   "losses": 0,
+   "pairs": 143813
+  },
+  "additive": {
+   "auc": 0.4983,
+   "wins": 233,
+   "ties": 142871,
+   "losses": 709,
+   "pairs": 143813
+  },
+  "solvent+catalyst+base": {
+   "auc": 0.5668,
+   "wins": 72641,
+   "ties": 17737,
+   "losses": 53435,
+   "pairs": 143813
+  }
+ },
+ "condition_combo_mixed_outcome": {
+  "n_combos": 1238,
+  "n_mixed": 712,
+  "share": 0.5751
+ },
+ "seconds": 2.5
+}

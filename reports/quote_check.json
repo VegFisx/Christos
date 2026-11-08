@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-11-06T16:38:07",
+  "n_quotes": 25,
+  "counts": {
+    "abstract_verbatim": 6,
+    "verbatim": 14,
+    "minor_diff": 1,
+    "abstract_absent": 2,
+    "no_full_text": 2
+  },
+  "pmcid_map": {
+    "10.1016/j.fochx.2026.104644": "PMC13697283",
+    "10.1016/j.jgr.2015.02.003": "PMC4593791",
+    "10.1016/j.jgr.2017.02.003": "PMC6026370",
+    "10.1042/bj1030528": "PMC1270437",
+    "10.1155/2021/7243052": "PMC8560236",
+    "10.3389/fphar.2016.00367": "PMC5051147",
+    "10.3389/fphar.2018.00934": "PMC6121093",
+    "10.3389/fphar.2024.1442297": "PMC11335691",
+    "10.3390/foods14223932": "PMC12651911",
+    "10.3390/foods15203587": "PMC13703343",
+    "10.3390/molecules25194390": "PMC7582514",
+    "10.3390/molecules31203706": "PMC13707937",
+    "10.3831/kpi.2020.23.012": "PMC7338709"
+  },
+  "fetch_notes": {
+    "PMC13697283": "cache",
+    "PMC4593791": "cache",
+    "PMC6026370": "cache",
+    "PMC1270437": "no_xml",
+    "PMC8560236": "cache",
+    "PMC5051147": "cache",
+    "PMC6121093": "cache",
+    "PMC11335691": "cache",
+    "PMC12651911": "cache",
+    "PMC13703343": "cache",
+    "PMC7582514": "cache",
+    "PMC13707937": "cache",
+    "PMC7338709": "cache"
+  },
+  "method": "5-gram coverage of normalized quote against EuropePMC fullTextXML",
+  "note": "no_full_text 表示拿不到开放全文，不是引句有问题。"
+}

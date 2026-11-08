@@ -1,0 +1,71 @@
+{
+ "n_reactions": 50016,
+ "n_shards": 8,
+ "seed": 20261014,
+ "cond": "煎煮",
+ "rounds": 1,
+ "recall_1step": 0.9425,
+ "n_errors": 0,
+ "candidate_stats": {
+  "mean": 39.2,
+  "median": 34,
+  "p90": 70,
+  "zero_share": 0.0001
+ },
+ "by_class_recall": {
+  "1": {
+   "n": 15151,
+   "rate": 0.9488
+  },
+  "10": {
+   "n": 230,
+   "rate": 0.887
+  },
+  "2": {
+   "n": 11896,
+   "rate": 0.9648
+  },
+  "3": {
+   "n": 5662,
+   "rate": 0.8596
+  },
+  "4": {
+   "n": 909,
+   "rate": 0.6854
+  },
+  "5": {
+   "n": 672,
+   "rate": 0.9598
+  },
+  "6": {
+   "n": 8237,
+   "rate": 0.9802
+  },
+  "7": {
+   "n": 4614,
+   "rate": 0.9573
+  },
+  "8": {
+   "n": 811,
+   "rate": 0.9827
+  },
+  "9": {
+   "n": 1834,
+   "rate": 0.9051
+  }
+ },
+ "in_sources_subset": {
+  "n": 2480,
+  "recall": 0.9448
+ },
+ "merged_from": [
+  "forward_per_reaction__wide128m20k_s0.jsonl",
+  "forward_per_reaction__wide128m20k_s1.jsonl",
+  "forward_per_reaction__wide128m20k_s2.jsonl",
+  "forward_per_reaction__wide128m20k_s3.jsonl",
+  "forward_per_reaction__wide128m20k_s4.jsonl",
+  "forward_per_reaction__wide128m20k_s5.jsonl",
+  "forward_per_reaction__wide128m20k_s6.jsonl",
+  "forward_per_reaction__wide128m20k_s7.jsonl"
+ ]
+}

@@ -1,0 +1,8 @@
+﻿score,activation,reversible,rule_name,source_name,source_herb,formula,mw,heavy_atoms,smiles
+0.82,1.0,True,mined_mono,输入1,手输,C7H10O,110.156,8,OCC1=CCC=CC1
+0.82,1.0,True,mined_mono,输入2,手输,C8H7NO,133.15,10,N#CCc1ccc(O)cc1
+0.82,1.0,True,mined_mono,输入2,手输,C8H9NO,135.166,10,NC=Cc1ccc(O)cc1
+0.82,1.0,True,mined_mono,输入2,手输,C2H6BrN,123.981,4,NCCBr
+0.82,1.0,True,mined_mono,输入2,手输,C8H13NO,139.198,10,NCCC1=CCC(O)=CC1
+0.82,1.0,True,mined_mono,输入2,手输,C6H5BrO,173.009,8,Oc1ccc(Br)cc1
+0.79,1.0,True,mined_mono,输入1,手输,C7H6O,106.124,8,O=Cc1ccccc1

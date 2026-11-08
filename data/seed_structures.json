@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-11-07",
+  "source": "PubChem PUG REST (compound/name/<name>/property)",
+  "note": "tcm.db 的 smiles 列没有立体；这里存同一条目的 isomeric SMILES，公式须与库一致才收录。",
+  "seeds": {
+    "HBIN027729": {
+      "db_name": "Ginsenoside rb1",
+      "pubchem_name": "Ginsenoside Rb1",
+      "formula": "C54H92O23",
+      "formula_matches_db": true,
+      "smiles": "CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O)O)O)O)C",
+      "inchikey": "GZYPWOGIYAIIPV-JBDTYSNRSA-N",
+      "db_inchikey": "GZYPWOGIYAIIPV-JBDTYSNRSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    },
+    "HBIN016699": {
+      "db_name": "Arecoline",
+      "pubchem_name": "Arecoline",
+      "formula": "C8H13NO2",
+      "formula_matches_db": true,
+      "smiles": "CN1CCC=C(C1)C(=O)OC",
+      "inchikey": "HJJPJSXJAXAIPN-UHFFFAOYSA-N",
+      "db_inchikey": "HJJPJSXJAXAIPN-UHFFFAOYSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    },
+    "HBIN019719": {
+      "db_name": "Carboxyatractyloside",
+      "pubchem_name": "Carboxyatractyloside",
+      "formula": "C31H46O18S2",
+      "formula_matches_db": true,
+      "smiles": "CC(C)CC(=O)O[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@H]2C[C@]3([C@@H]4CC[C@@H]5C[C@@]4(CC[C@@H]3C(C2)(C(=O)O)C(=O)O)[C@H](C5=C)O)C)CO)OS(=O)(=O)O)OS(=O)(=O)O",
+      "inchikey": "AQFATIOBERWBDY-LNQSNDDKSA-N",
+      "db_inchikey": "AQFATIOBERWBDY-LNQSNDDKSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    },
+    "HBIN031562": {
+      "db_name": "Jolkinolide b",
+      "pubchem_name": "Jolkinolide B",
+      "formula": "C20H26O4",
+      "formula_matches_db": true,
+      "smiles": "CC1=C2[C@@H]3[C@]4(O3)CC[C@H]5[C@]([C@@H]4[C@@H]6[C@]2(O6)OC1=O)(CCCC5(C)C)C",
+      "inchikey": "SOVOCMGDFRGRKF-MCDHERAVSA-N",
+      "db_inchikey": "SOVOCMGDFRGRKF-MCDHERAVSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    },
+    "HBIN014582": {
+      "db_name": "Aconitine",
+      "pubchem_name": "Aconitine",
+      "formula": "C34H47NO11",
+      "formula_matches_db": true,
+      "smiles": "CCN1C[C@@]2([C@@H](C[C@@H]([C@@]34[C@@H]2[C@H]([C@@H](C31)[C@@]5([C@@H]6[C@H]4C[C@@]([C@@H]6OC(=O)C7=CC=CC=C7)([C@H]([C@@H]5O)OC)O)OC(=O)C)OC)OC)O)COC",
+      "inchikey": "XFSBVAOIAHNAPC-XTHSEXKGSA-N",
+      "db_inchikey": "XFSBVAOIAHNAPC-XTHSEXKGSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    },
+    "HBIN003908": {
+      "db_name": "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
+      "pubchem_name": "2,3,5,4'-tetrahydroxystilbene-2-O-beta-D-glucoside",
+      "formula": "C20H22O9",
+      "formula_matches_db": true,
+      "smiles": "C1=CC(=CC=C1/C=C/C2=C(C(=CC(=C2)O)O)O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)O",
+      "inchikey": "JAYVHSBYKLLDJC-DSNJPTTOSA-N",
+      "db_inchikey": "JAYVHSBYKLLDJC-DSNJPTTOSA-N",
+      "db_smiles_is_flat": true,
+      "fetched_at": "2026-11-07"
+    }
+  }
+}

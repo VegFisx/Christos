@@ -1,0 +1,6672 @@
+{
+ "丁公藤": {
+  "found": true,
+  "para": 3204,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 3219,
+  "in_pian_pos": 534
+ },
+ "丁香": {
+  "found": true,
+  "para": 3238,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 3254,
+  "in_pian_pos": 299
+ },
+ "八角茴香": {
+  "found": true,
+  "para": 3262,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "人工牛黄": {
+  "found": true,
+  "para": 3283,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "胆红素": {
+  "found": true,
+  "para": 3310,
+  "n_content": 4,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 112,
+  "in_pian_para": 3412,
+  "in_pian_pos": 608
+ },
+ "人参叶": {
+  "found": true,
+  "para": 3422,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "儿茶": {
+  "found": true,
+  "para": 3443,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 3458,
+  "in_pian_pos": 411
+ },
+ "九里香": {
+  "found": true,
+  "para": 3464,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 38,
+  "in_pian_para": 3474,
+  "in_pian_pos": -1
+ },
+ "刀豆": {
+  "found": true,
+  "para": 3502,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 51,
+  "in_pian_para": 3508,
+  "in_pian_pos": 499
+ },
+ "三白草": {
+  "found": true,
+  "para": 3553,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 3572,
+  "in_pian_pos": 356
+ },
+ "三棱": {
+  "found": true,
+  "para": 3580,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 27,
+  "in_pian_para": 3593,
+  "in_pian_pos": -1
+ },
+ "三颗针": {
+  "found": true,
+  "para": 3607,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 3623,
+  "in_pian_pos": 366
+ },
+ "干姜": {
+  "found": true,
+  "para": 3631,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 3650,
+  "in_pian_pos": 424
+ },
+ "炮姜": {
+  "found": true,
+  "para": 3665,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "干漆": {
+  "found": true,
+  "para": 3685,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 3696,
+  "in_pian_pos": -1
+ },
+ "土木香": {
+  "found": true,
+  "para": 3710,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 3727,
+  "in_pian_pos": 464
+ },
+ "土贝母": {
+  "found": true,
+  "para": 3735,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "上荆皮": {
+  "found": true,
+  "para": 3757,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 3775,
+  "in_pian_pos": 332
+ },
+ "主茯苓": {
+  "found": true,
+  "para": 3784,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": 3800,
+  "in_pian_pos": 342
+ },
+ "大叶紫珠": {
+  "found": true,
+  "para": 3831,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 3848,
+  "in_pian_pos": 350
+ },
+ "大血藤": {
+  "found": true,
+  "para": 3854,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 3877,
+  "in_pian_pos": 968
+ },
+ "大豆黄卷": {
+  "found": true,
+  "para": 3885,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "大皂角": {
+  "found": true,
+  "para": 3915,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": 3921,
+  "in_pian_pos": -1
+ },
+ "大青叶": {
+  "found": true,
+  "para": 3929,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 3944,
+  "in_pian_pos": 332
+ },
+ "大青盐": {
+  "found": true,
+  "para": 3953,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "大枣": {
+  "found": true,
+  "para": 3967,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 3978,
+  "in_pian_pos": -1
+ },
+ "大黄": {
+  "found": true,
+  "para": 3989,
+  "n_content": 5,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 59,
+  "in_pian_para": 4015,
+  "in_pian_pos": 1014
+ },
+ "大蒜": {
+  "found": true,
+  "para": 4048,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "大蓟": {
+  "found": true,
+  "para": 4067,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 4084,
+  "in_pian_pos": 338
+ },
+ "大蓟炭": {
+  "found": true,
+  "para": 4092,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 39,
+  "in_pian_para": 4119,
+  "in_pian_pos": -1
+ },
+ "大腹皮": {
+  "found": true,
+  "para": 4131,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 4,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "山麦冬": {
+  "found": true,
+  "para": 4135,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 84,
+  "in_pian_para": 4147,
+  "in_pian_pos": 522
+ },
+ "山药": {
+  "found": true,
+  "para": 4219,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 53,
+  "in_pian_para": 4232,
+  "in_pian_pos": -1
+ },
+ "山香圆叶": {
+  "found": true,
+  "para": 4272,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 4288,
+  "in_pian_pos": 489
+ },
+ "山银花": {
+  "found": true,
+  "para": 4297,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "山楂": {
+  "found": true,
+  "para": 4339,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 4352,
+  "in_pian_pos": 182
+ },
+ "山楂叶": {
+  "found": true,
+  "para": 4366,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "山慈菇": {
+  "found": true,
+  "para": 4391,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 4400,
+  "in_pian_pos": -1
+ },
+ "千年健": {
+  "found": true,
+  "para": 4406,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 4422,
+  "in_pian_pos": 427
+ },
+ "千里光": {
+  "found": true,
+  "para": 4431,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "千金子": {
+  "found": true,
+  "para": 4457,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 4472,
+  "in_pian_pos": 498
+ },
+ "千金子霜": {
+  "found": true,
+  "para": 4481,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "川木香": {
+  "found": true,
+  "para": 4495,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 4510,
+  "in_pian_pos": 382
+ },
+ "川木通": {
+  "found": true,
+  "para": 4532,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 41,
+  "in_pian_para": 4542,
+  "in_pian_pos": -1
+ },
+ "川牛膝": {
+  "found": true,
+  "para": 4573,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 49,
+  "in_pian_para": 4606,
+  "in_pian_pos": 410
+ },
+ "川乌": {
+  "found": true,
+  "para": 4622,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 38,
+  "in_pian_para": 4652,
+  "in_pian_pos": 801
+ },
+ "制川乌": {
+  "found": true,
+  "para": 4660,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 40,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "川": {
+  "found": true,
+  "para": 4700,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 4719,
+  "in_pian_pos": 349
+ },
+ "川射干": {
+  "found": true,
+  "para": 4727,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 4743,
+  "in_pian_pos": 404
+ },
+ "川楝子": {
+  "found": true,
+  "para": 4753,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 4769,
+  "in_pian_pos": 401
+ },
+ "广东紫珠": {
+  "found": true,
+  "para": 4782,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "广枣": {
+  "found": true,
+  "para": 4802,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "广金钱草": {
+  "found": true,
+  "para": 4824,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 4841,
+  "in_pian_pos": 395
+ },
+ "广霍香": {
+  "found": true,
+  "para": 4848,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 4866,
+  "in_pian_pos": 470
+ },
+ "女贞子": {
+  "found": true,
+  "para": 4874,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 4892,
+  "in_pian_pos": 330
+ },
+ "小叶莲": {
+  "found": true,
+  "para": 4909,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "小驳骨": {
+  "found": true,
+  "para": 4922,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 4932,
+  "in_pian_pos": -1
+ },
+ "小茴香": {
+  "found": true,
+  "para": 4939,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 4956,
+  "in_pian_pos": 382
+ },
+ "小通草": {
+  "found": true,
+  "para": 4970,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 4979,
+  "in_pian_pos": -1
+ },
+ "小蓟": {
+  "found": true,
+  "para": 4992,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 40,
+  "in_pian_para": 5009,
+  "in_pian_pos": 342
+ },
+ "飞扬草": {
+  "found": true,
+  "para": 5032,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 29,
+  "in_pian_para": 5051,
+  "in_pian_pos": -1
+ },
+ "马勃": {
+  "found": true,
+  "para": 5061,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 5080,
+  "in_pian_pos": -1
+ },
+ "马钱子": {
+  "found": true,
+  "para": 5089,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 5107,
+  "in_pian_pos": 579
+ },
+ "马钱子粉": {
+  "found": true,
+  "para": 69575,
+  "n_content": 9,
+  "n_identify": 7,
+  "has_content_section": true,
+  "body_paras": 272,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "马鞭草": {
+  "found": true,
+  "para": 5135,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 5152,
+  "in_pian_pos": 495
+ },
+ "王不留行": {
+  "found": true,
+  "para": 5160,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 5179,
+  "in_pian_pos": 466
+ },
+ "天山雪莲": {
+  "found": true,
+  "para": 5192,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "天仙子": {
+  "found": true,
+  "para": 5216,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "天冬": {
+  "found": true,
+  "para": 5239,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 5249,
+  "in_pian_pos": -1
+ },
+ "天花粉": {
+  "found": true,
+  "para": 5257,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 5267,
+  "in_pian_pos": -1
+ },
+ "天竺黄": {
+  "found": true,
+  "para": 5278,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "天南星": {
+  "found": true,
+  "para": 5292,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 5305,
+  "in_pian_pos": 434
+ },
+ "制天南星": {
+  "found": true,
+  "para": 5318,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "天麻": {
+  "found": true,
+  "para": 5339,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 57,
+  "in_pian_para": 5387,
+  "in_pian_pos": 483
+ },
+ "天葵子": {
+  "found": true,
+  "para": 5396,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 38,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "云芝": {
+  "found": true,
+  "para": 5434,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 55,
+  "in_pian_para": 5451,
+  "in_pian_pos": -1
+ },
+ "木芙蓉叶": {
+  "found": true,
+  "para": 5489,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 5505,
+  "in_pian_pos": 334
+ },
+ "木香": {
+  "found": true,
+  "para": 5512,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 5527,
+  "in_pian_pos": 385
+ },
+ "木贼": {
+  "found": true,
+  "para": 5542,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 5557,
+  "in_pian_pos": 397
+ },
+ "木通": {
+  "found": true,
+  "para": 5568,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 5583,
+  "in_pian_pos": 386
+ },
+ "木棉花": {
+  "found": true,
+  "para": 5591,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "木蝴蝶": {
+  "found": true,
+  "para": 5630,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 36,
+  "in_pian_para": 5650,
+  "in_pian_pos": -1
+ },
+ "五加皮": {
+  "found": true,
+  "para": 5666,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 5677,
+  "in_pian_pos": -1
+ },
+ "五味子": {
+  "found": true,
+  "para": 5686,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 5702,
+  "in_pian_pos": 328
+ },
+ "五倍子": {
+  "found": true,
+  "para": 5713,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 5730,
+  "in_pian_pos": 427
+ },
+ "太子参": {
+  "found": true,
+  "para": 5738,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "车前子": {
+  "found": true,
+  "para": 5752,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": 5784,
+  "in_pian_pos": 459
+ },
+ "车前草": {
+  "found": true,
+  "para": 5799,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 5818,
+  "in_pian_pos": 367
+ },
+ "瓦松": {
+  "found": true,
+  "para": 5826,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 5842,
+  "in_pian_pos": 400
+ },
+ "瓦楞子": {
+  "found": true,
+  "para": 5855,
+  "n_content": 3,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 49,
+  "in_pian_para": 5865,
+  "in_pian_pos": 209
+ },
+ "牛莠子": {
+  "found": true,
+  "para": 5904,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 5920,
+  "in_pian_pos": 312
+ },
+ "牛膝": {
+  "found": true,
+  "para": 5931,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 5948,
+  "in_pian_pos": 389
+ },
+ "毛诃子": {
+  "found": true,
+  "para": 5962,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "升麻": {
+  "found": true,
+  "para": 5976,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 5995,
+  "in_pian_pos": 353
+ },
+ "片姜黄": {
+  "found": true,
+  "para": 6006,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "化橘红": {
+  "found": true,
+  "para": 6020,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 6035,
+  "in_pian_pos": 356
+ },
+ "月季花": {
+  "found": true,
+  "para": 6049,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "丹参": {
+  "found": true,
+  "para": 6067,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 76,
+  "in_pian_para": 6127,
+  "in_pian_pos": 1149
+ },
+ "乌药": {
+  "found": true,
+  "para": 6143,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": 6177,
+  "in_pian_pos": 886
+ },
+ "乌梢蛇": {
+  "found": true,
+  "para": 6185,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 30,
+  "in_pian_para": 6192,
+  "in_pian_pos": -1
+ },
+ "乌梅": {
+  "found": true,
+  "para": 6215,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 6230,
+  "in_pian_pos": 325
+ },
+ "火麻仁": {
+  "found": true,
+  "para": 6243,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 6250,
+  "in_pian_pos": -1
+ },
+ "巴豆": {
+  "found": true,
+  "para": 6258,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 6275,
+  "in_pian_pos": 518
+ },
+ "巴豆霜": {
+  "found": true,
+  "para": 6290,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "巴戟天": {
+  "found": true,
+  "para": 6312,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 6328,
+  "in_pian_pos": 346
+ },
+ "水飞蓟": {
+  "found": true,
+  "para": 6347,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 6363,
+  "in_pian_pos": 354
+ },
+ "水牛角": {
+  "found": true,
+  "para": 6378,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": 6384,
+  "in_pian_pos": -1
+ },
+ "水红花子": {
+  "found": true,
+  "para": 6390,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "水蛭": {
+  "found": true,
+  "para": 6421,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": 6447,
+  "in_pian_pos": 490
+ },
+ "玉竹": {
+  "found": true,
+  "para": 6463,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 6476,
+  "in_pian_pos": 532
+ },
+ "功劳木": {
+  "found": true,
+  "para": 6484,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "甘松": {
+  "found": true,
+  "para": 6516,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 6532,
+  "in_pian_pos": 414
+ },
+ "甘草": {
+  "found": true,
+  "para": 6542,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 48,
+  "in_pian_para": 6578,
+  "in_pian_pos": 517
+ },
+ "炙甘草": {
+  "found": true,
+  "para": 6590,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "甘遂": {
+  "found": true,
+  "para": 6603,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 51,
+  "in_pian_para": 6619,
+  "in_pian_pos": 380
+ },
+ "艾叶": {
+  "found": true,
+  "para": 6654,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 6670,
+  "in_pian_pos": 616
+ },
+ "石韦": {
+  "found": true,
+  "para": 6681,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 6700,
+  "in_pian_pos": 357
+ },
+ "石吊兰": {
+  "found": true,
+  "para": 6707,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 6724,
+  "in_pian_pos": 338
+ },
+ "石决明": {
+  "found": true,
+  "para": 6731,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 6744,
+  "in_pian_pos": 208
+ },
+ "石菖蒲": {
+  "found": true,
+  "para": 6756,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 6769,
+  "in_pian_pos": 41
+ },
+ "石斛": {
+  "found": true,
+  "para": 6779,
+  "n_content": 0,
+  "n_identify": 4,
+  "has_content_section": false,
+  "body_paras": 89,
+  "in_pian_para": 6857,
+  "in_pian_pos": -1
+ },
+ "石榴皮": {
+  "found": true,
+  "para": 6868,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 6889,
+  "in_pian_pos": 423
+ },
+ "石膏": {
+  "found": true,
+  "para": 6900,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": 6912,
+  "in_pian_pos": 227
+ },
+ "般石膏": {
+  "found": true,
+  "para": 6918,
+  "n_content": 5,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 80,
+  "in_pian_para": 6988,
+  "in_pian_pos": 925
+ },
+ "龙眼肉": {
+  "found": true,
+  "para": 6998,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "龙腳叶": {
+  "found": true,
+  "para": 7012,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "平贝母": {
+  "found": true,
+  "para": 7041,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 7056,
+  "in_pian_pos": 694
+ },
+ "北刘寄奴": {
+  "found": true,
+  "para": 7064,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 7084,
+  "in_pian_pos": 503
+ },
+ "北豆根": {
+  "found": true,
+  "para": 7092,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 7111,
+  "in_pian_pos": 438
+ },
+ "北沙参": {
+  "found": true,
+  "para": 7121,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": 7127,
+  "in_pian_pos": -1
+ },
+ "四季青": {
+  "found": true,
+  "para": 7134,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "生姜": {
+  "found": true,
+  "para": 7169,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 68,
+  "in_pian_para": 7222,
+  "in_pian_pos": 795
+ },
+ "仙茅": {
+  "found": true,
+  "para": 7237,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 7255,
+  "in_pian_pos": 369
+ },
+ "仙鹤草": {
+  "found": true,
+  "para": 7264,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 7273,
+  "in_pian_pos": -1
+ },
+ "白及": {
+  "found": true,
+  "para": 7282,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 7298,
+  "in_pian_pos": 414
+ },
+ "白术": {
+  "found": true,
+  "para": 7308,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 26,
+  "in_pian_para": 7321,
+  "in_pian_pos": -1
+ },
+ "白头翁": {
+  "found": true,
+  "para": 7334,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 7351,
+  "in_pian_pos": 370
+ },
+ "白芍": {
+  "found": true,
+  "para": 7366,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": 7384,
+  "in_pian_pos": 323
+ },
+ "白芷": {
+  "found": true,
+  "para": 7405,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 7422,
+  "in_pian_pos": 329
+ },
+ "白附子": {
+  "found": true,
+  "para": 7431,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 27,
+  "in_pian_para": 7442,
+  "in_pian_pos": -1
+ },
+ "白矛根": {
+  "found": true,
+  "para": 7458,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 24,
+  "in_pian_para": 7469,
+  "in_pian_pos": -1
+ },
+ "白矶": {
+  "found": true,
+  "para": 7482,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 7495,
+  "in_pian_pos": -1
+ },
+ "白果": {
+  "found": true,
+  "para": 7504,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 7513,
+  "in_pian_pos": -1
+ },
+ "白屈菜": {
+  "found": true,
+  "para": 7532,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 7548,
+  "in_pian_pos": 437
+ },
+ "白前": {
+  "found": true,
+  "para": 7556,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 26,
+  "in_pian_para": 7564,
+  "in_pian_pos": -1
+ },
+ "白扁豆": {
+  "found": true,
+  "para": 7582,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 7589,
+  "in_pian_pos": -1
+ },
+ "白鼓": {
+  "found": true,
+  "para": 7597,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 7609,
+  "in_pian_pos": -1
+ },
+ "白鲜皮": {
+  "found": true,
+  "para": 7617,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 7632,
+  "in_pian_pos": 362
+ },
+ "白薇": {
+  "found": true,
+  "para": 7640,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 7653,
+  "in_pian_pos": -1
+ },
+ "瓜子金": {
+  "found": true,
+  "para": 7661,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 7677,
+  "in_pian_pos": 380
+ },
+ "瓜萎": {
+  "found": true,
+  "para": 7685,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 7695,
+  "in_pian_pos": -1
+ },
+ "瓜萎子": {
+  "found": true,
+  "para": 7704,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 7722,
+  "in_pian_pos": 394
+ },
+ "瓜萎皮": {
+  "found": true,
+  "para": 7738,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 41,
+  "in_pian_para": 7755,
+  "in_pian_pos": -1
+ },
+ "冬瓜皮": {
+  "found": true,
+  "para": 7779,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 114,
+  "in_pian_para": 7852,
+  "in_pian_pos": 751
+ },
+ "冬葵果": {
+  "found": true,
+  "para": 7893,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "玄明粉": {
+  "found": true,
+  "para": 7912,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "玄参": {
+  "found": true,
+  "para": 7928,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 63,
+  "in_pian_para": 7970,
+  "in_pian_pos": 538
+ },
+ "半边莲": {
+  "found": true,
+  "para": 7991,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": 8022,
+  "in_pian_pos": 750
+ },
+ "半夏": {
+  "found": true,
+  "para": 8030,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 8040,
+  "in_pian_pos": -1
+ },
+ "法半夏": {
+  "found": true,
+  "para": 8048,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "姜半夏": {
+  "found": true,
+  "para": 8064,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "清半夏": {
+  "found": true,
+  "para": 8086,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "母丁香": {
+  "found": true,
+  "para": 8106,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 8123,
+  "in_pian_pos": 368
+ },
+ "丝瓜络": {
+  "found": true,
+  "para": 8131,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 8139,
+  "in_pian_pos": -1
+ },
+ "老鹳草": {
+  "found": true,
+  "para": 8146,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 8159,
+  "in_pian_pos": -1
+ },
+ "地龙": {
+  "found": true,
+  "para": 8167,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 24,
+  "in_pian_para": 8184,
+  "in_pian_pos": -1
+ },
+ "地枫皮": {
+  "found": true,
+  "para": 8191,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 8199,
+  "in_pian_pos": -1
+ },
+ "地肤子": {
+  "found": true,
+  "para": 8206,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "地骨皮": {
+  "found": true,
+  "para": 8226,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 8236,
+  "in_pian_pos": -1
+ },
+ "地黄": {
+  "found": true,
+  "para": 8244,
+  "n_content": 3,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 51,
+  "in_pian_para": 8270,
+  "in_pian_pos": 795
+ },
+ "熟地黄": {
+  "found": true,
+  "para": 8295,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": 8328,
+  "in_pian_pos": 448
+ },
+ "地锦草": {
+  "found": true,
+  "para": 8342,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 8361,
+  "in_pian_pos": 407
+ },
+ "芒硝": {
+  "found": true,
+  "para": 8370,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "亚麻子": {
+  "found": true,
+  "para": 8402,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 8417,
+  "in_pian_pos": 706
+ },
+ "西瓜霜": {
+  "found": true,
+  "para": 8428,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "西红花": {
+  "found": true,
+  "para": 8443,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 40,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "西青果": {
+  "found": true,
+  "para": 8483,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 48,
+  "in_pian_para": 8493,
+  "in_pian_pos": -1
+ },
+ "西洋参": {
+  "found": true,
+  "para": 8531,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 49,
+  "in_pian_para": 8570,
+  "in_pian_pos": 614
+ },
+ "百合": {
+  "found": true,
+  "para": 8580,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 8594,
+  "in_pian_pos": 582
+ },
+ "百部": {
+  "found": true,
+  "para": 8610,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 8622,
+  "in_pian_pos": -1
+ },
+ "当归": {
+  "found": true,
+  "para": 8635,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 8658,
+  "in_pian_pos": 413
+ },
+ "当药": {
+  "found": true,
+  "para": 8670,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 8690,
+  "in_pian_pos": 693
+ },
+ "虫白蜡": {
+  "found": true,
+  "para": 8698,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 11,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "肉女蓉": {
+  "found": true,
+  "para": 8709,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": 8738,
+  "in_pian_pos": 552
+ },
+ "肉豆蔻": {
+  "found": true,
+  "para": 8751,
+  "n_content": 4,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 8769,
+  "in_pian_pos": 411
+ },
+ "肉桂": {
+  "found": true,
+  "para": 8781,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 8799,
+  "in_pian_pos": 418
+ },
+ "朱砂": {
+  "found": true,
+  "para": 8807,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 8823,
+  "in_pian_pos": 190
+ },
+ "朱砂根": {
+  "found": true,
+  "para": 8834,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 8853,
+  "in_pian_pos": 358
+ },
+ "竹节参": {
+  "found": true,
+  "para": 8863,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": 8899,
+  "in_pian_pos": 502
+ },
+ "竹茹": {
+  "found": true,
+  "para": 8905,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 50,
+  "in_pian_para": 8912,
+  "in_pian_pos": 433
+ },
+ "华山参": {
+  "found": true,
+  "para": 8955,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 8977,
+  "in_pian_pos": 809
+ },
+ "自然铜": {
+  "found": true,
+  "para": 8984,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": 8992,
+  "in_pian_pos": 395
+ },
+ "伊贝母": {
+  "found": true,
+  "para": 9004,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "血余炭": {
+  "found": true,
+  "para": 9029,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 10,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "血竭": {
+  "found": true,
+  "para": 9039,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 9056,
+  "in_pian_pos": 431
+ },
+ "全蝎": {
+  "found": true,
+  "para": 9062,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 9073,
+  "in_pian_pos": -1
+ },
+ "合欢皮": {
+  "found": true,
+  "para": 9081,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 9096,
+  "in_pian_pos": 460
+ },
+ "合欢花": {
+  "found": true,
+  "para": 9105,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "决明子": {
+  "found": true,
+  "para": 9128,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 73,
+  "in_pian_para": 9160,
+  "in_pian_pos": 595
+ },
+ "关黄柏": {
+  "found": true,
+  "para": 9201,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 50,
+  "in_pian_para": 9235,
+  "in_pian_pos": 508
+ },
+ "灯心草": {
+  "found": true,
+  "para": 9251,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 48,
+  "in_pian_para": 9262,
+  "in_pian_pos": -1
+ },
+ "安息香": {
+  "found": true,
+  "para": 9299,
+  "n_content": 3,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 73,
+  "in_pian_para": 9337,
+  "in_pian_pos": 839
+ },
+ "红大戟": {
+  "found": true,
+  "para": 9372,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 33,
+  "in_pian_para": 9397,
+  "in_pian_pos": 714
+ },
+ "红花": {
+  "found": true,
+  "para": 9405,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 33,
+  "in_pian_para": 9430,
+  "in_pian_pos": 801
+ },
+ "红花龙胆": {
+  "found": true,
+  "para": 9438,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 9454,
+  "in_pian_pos": 377
+ },
+ "红茂": {
+  "found": true,
+  "para": 9460,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 9471,
+  "in_pian_pos": -1
+ },
+ "炙红茂": {
+  "found": true,
+  "para": 9479,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "红豆蔻": {
+  "found": true,
+  "para": 9493,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 16,
+  "in_pian_para": 9502,
+  "in_pian_pos": 51
+ },
+ "红参": {
+  "found": true,
+  "para": 9509,
+  "n_content": 4,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 46,
+  "in_pian_para": 9545,
+  "in_pian_pos": 626
+ },
+ "红粉": {
+  "found": true,
+  "para": 9555,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "红景天": {
+  "found": true,
+  "para": 9570,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 9590,
+  "in_pian_pos": 326
+ },
+ "麦冬": {
+  "found": true,
+  "para": 9599,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 9613,
+  "in_pian_pos": 551
+ },
+ "麦芽": {
+  "found": true,
+  "para": 9621,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 29,
+  "in_pian_para": 9633,
+  "in_pian_pos": -1
+ },
+ "远志": {
+  "found": true,
+  "para": 9650,
+  "n_content": 6,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": 9676,
+  "in_pian_pos": 939
+ },
+ "赤石脂": {
+  "found": true,
+  "para": 9697,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 31,
+  "in_pian_para": 9711,
+  "in_pian_pos": -1
+ },
+ "赤芍": {
+  "found": true,
+  "para": 9728,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 9742,
+  "in_pian_pos": 351
+ },
+ "芫花": {
+  "found": true,
+  "para": 9752,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 9766,
+  "in_pian_pos": 326
+ },
+ "花椒": {
+  "found": true,
+  "para": 9775,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 9787,
+  "in_pian_pos": 41
+ },
+ "花蕊石": {
+  "found": true,
+  "para": 9796,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 9806,
+  "in_pian_pos": 216
+ },
+ "芥子": {
+  "found": true,
+  "para": 9825,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 9845,
+  "in_pian_pos": 398
+ },
+ "苍术": {
+  "found": true,
+  "para": 9857,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 9873,
+  "in_pian_pos": 347
+ },
+ "苍耳子": {
+  "found": true,
+  "para": 9889,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 9904,
+  "in_pian_pos": 391
+ },
+ "英实": {
+  "found": true,
+  "para": 9915,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 9925,
+  "in_pian_pos": -1
+ },
+ "芦荟": {
+  "found": true,
+  "para": 9936,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 9951,
+  "in_pian_pos": 334
+ },
+ "芦根": {
+  "found": true,
+  "para": 9963,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 9973,
+  "in_pian_pos": -1
+ },
+ "苏木": {
+  "found": true,
+  "para": 9984,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 9993,
+  "in_pian_pos": -1
+ },
+ "苏合香": {
+  "found": true,
+  "para": 10009,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 46,
+  "in_pian_para": 10041,
+  "in_pian_pos": 852
+ },
+ "杜仲叶": {
+  "found": true,
+  "para": 10055,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "杠板归": {
+  "found": true,
+  "para": 10074,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 10091,
+  "in_pian_pos": 348
+ },
+ "巫山淫羊蕾": {
+  "found": true,
+  "para": 10098,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 10124,
+  "in_pian_pos": 407
+ },
+ "豆蔻": {
+  "found": true,
+  "para": 10132,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 10150,
+  "in_pian_pos": 485
+ },
+ "两头尖": {
+  "found": true,
+  "para": 10157,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "两面针": {
+  "found": true,
+  "para": 10184,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "连钱草": {
+  "found": true,
+  "para": 10218,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 10230,
+  "in_pian_pos": -1
+ },
+ "连翘": {
+  "found": true,
+  "para": 10238,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 30,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "吴茱萸": {
+  "found": true,
+  "para": 10268,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 10285,
+  "in_pian_pos": 469
+ },
+ "牡丹皮": {
+  "found": true,
+  "para": 10296,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 41,
+  "in_pian_para": 10313,
+  "in_pian_pos": 358
+ },
+ "牡蛎": {
+  "found": true,
+  "para": 10337,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 10350,
+  "in_pian_pos": -1
+ },
+ "体外培育牛黄": {
+  "found": true,
+  "para": 10361,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "去氧胆酸": {
+  "found": true,
+  "para": 10386,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 67,
+  "in_pian_para": 10443,
+  "in_pian_pos": 1049
+ },
+ "制何首乌": {
+  "found": true,
+  "para": 10453,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "伸筋草": {
+  "found": true,
+  "para": 10478,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 10487,
+  "in_pian_pos": -1
+ },
+ "皂角刺": {
+  "found": true,
+  "para": 10495,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 10502,
+  "in_pian_pos": 210
+ },
+ "佛手": {
+  "found": true,
+  "para": 10526,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 10542,
+  "in_pian_pos": 327
+ },
+ "余甘子": {
+  "found": true,
+  "para": 10550,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "谷芽": {
+  "found": true,
+  "para": 10570,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 10581,
+  "in_pian_pos": -1
+ },
+ "谷精草": {
+  "found": true,
+  "para": 10595,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": 10602,
+  "in_pian_pos": -1
+ },
+ "龟甲": {
+  "found": true,
+  "para": 10609,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 10617,
+  "in_pian_pos": -1
+ },
+ "龟甲胶": {
+  "found": true,
+  "para": 10629,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 56,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "辛夷": {
+  "found": true,
+  "para": 10685,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "羌活": {
+  "found": true,
+  "para": 10716,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 69,
+  "in_pian_para": 10776,
+  "in_pian_pos": 439
+ },
+ "沙苑子": {
+  "found": true,
+  "para": 10785,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 10801,
+  "in_pian_pos": 339
+ },
+ "沙棘": {
+  "found": true,
+  "para": 10814,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "沉香": {
+  "found": true,
+  "para": 10841,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 90,
+  "in_pian_para": 10924,
+  "in_pian_pos": 472
+ },
+ "没药": {
+  "found": true,
+  "para": 10931,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 10945,
+  "in_pian_pos": 80
+ },
+ "诃子": {
+  "found": true,
+  "para": 10957,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 10969,
+  "in_pian_pos": -1
+ },
+ "补骨脂": {
+  "found": true,
+  "para": 10978,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 10995,
+  "in_pian_pos": 341
+ },
+ "灵芝": {
+  "found": true,
+  "para": 11007,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "阿胶": {
+  "found": true,
+  "para": 11034,
+  "n_content": 5,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 97,
+  "in_pian_para": 11118,
+  "in_pian_pos": 1968
+ },
+ "阿魏": {
+  "found": true,
+  "para": 11131,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "陈皮": {
+  "found": true,
+  "para": 11148,
+  "n_content": 6,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 48,
+  "in_pian_para": 11185,
+  "in_pian_pos": 883
+ },
+ "附子": {
+  "found": true,
+  "para": 11196,
+  "n_content": 1,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 59,
+  "in_pian_para": 11234,
+  "in_pian_pos": 693
+ },
+ "忍冬藤": {
+  "found": true,
+  "para": 11255,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 11277,
+  "in_pian_pos": 719
+ },
+ "鸡内金": {
+  "found": true,
+  "para": 11286,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 11294,
+  "in_pian_pos": -1
+ },
+ "鸡血藤": {
+  "found": true,
+  "para": 11304,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 27,
+  "in_pian_para": 11321,
+  "in_pian_pos": -1
+ },
+ "鸡骨草": {
+  "found": true,
+  "para": 11331,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 11348,
+  "in_pian_pos": -1
+ },
+ "青风藤": {
+  "found": true,
+  "para": 11359,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 11374,
+  "in_pian_pos": 412
+ },
+ "青叶胆": {
+  "found": true,
+  "para": 11383,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 11400,
+  "in_pian_pos": 387
+ },
+ "青皮": {
+  "found": true,
+  "para": 11409,
+  "n_content": 3,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 53,
+  "in_pian_para": 11427,
+  "in_pian_pos": 312
+ },
+ "青箱子": {
+  "found": true,
+  "para": 11462,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 11472,
+  "in_pian_pos": -1
+ },
+ "青蒿": {
+  "found": true,
+  "para": 11480,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": 11489,
+  "in_pian_pos": -1
+ },
+ "青曝石": {
+  "found": true,
+  "para": 11496,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": 11503,
+  "in_pian_pos": -1
+ },
+ "青黛": {
+  "found": true,
+  "para": 11512,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "玫瑰花": {
+  "found": true,
+  "para": 11538,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "苦木": {
+  "found": true,
+  "para": 11550,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": 11557,
+  "in_pian_pos": -1
+ },
+ "苦玄参": {
+  "found": true,
+  "para": 11563,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "苦地丁": {
+  "found": true,
+  "para": 11585,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 11601,
+  "in_pian_pos": 426
+ },
+ "苦杏仁": {
+  "found": true,
+  "para": 11609,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 33,
+  "in_pian_para": 11625,
+  "in_pian_pos": 388
+ },
+ "苦参": {
+  "found": true,
+  "para": 11642,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 43,
+  "in_pian_para": 11675,
+  "in_pian_pos": 612
+ },
+ "苦楝皮": {
+  "found": true,
+  "para": 11685,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 11701,
+  "in_pian_pos": 399
+ },
+ "荷麻子": {
+  "found": true,
+  "para": 11710,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "枇杷叶": {
+  "found": true,
+  "para": 11725,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 11741,
+  "in_pian_pos": 382
+ },
+ "板蓝根": {
+  "found": true,
+  "para": 11757,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 11775,
+  "in_pian_pos": 337
+ },
+ "松花粉": {
+  "found": true,
+  "para": 11786,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "枫香脂": {
+  "found": true,
+  "para": 11798,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "刺五加": {
+  "found": true,
+  "para": 11814,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 11835,
+  "in_pian_pos": 335
+ },
+ "郁李仁": {
+  "found": true,
+  "para": 11845,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 11863,
+  "in_pian_pos": 356
+ },
+ "郁金": {
+  "found": true,
+  "para": 11871,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 24,
+  "in_pian_para": 11886,
+  "in_pian_pos": -1
+ },
+ "虎杖": {
+  "found": true,
+  "para": 11895,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 11921,
+  "in_pian_pos": 778
+ },
+ "昆布": {
+  "found": true,
+  "para": 11929,
+  "n_content": 3,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 11948,
+  "in_pian_pos": 1114
+ },
+ "明党参": {
+  "found": true,
+  "para": 11955,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 11966,
+  "in_pian_pos": -1
+ },
+ "岩白菜": {
+  "found": true,
+  "para": 11974,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 11990,
+  "in_pian_pos": 333
+ },
+ "罗布麻叶": {
+  "found": true,
+  "para": 11996,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "罗汉果": {
+  "found": true,
+  "para": 12020,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "知母": {
+  "found": true,
+  "para": 12041,
+  "n_content": 6,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 12063,
+  "in_pian_pos": 742
+ },
+ "垂盆草": {
+  "found": true,
+  "para": 12078,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 12094,
+  "in_pian_pos": 423
+ },
+ "委陵菜": {
+  "found": true,
+  "para": 12102,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 12120,
+  "in_pian_pos": 349
+ },
+ "使君子": {
+  "found": true,
+  "para": 12130,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 41,
+  "in_pian_para": 12145,
+  "in_pian_pos": 345
+ },
+ "侧柏叶": {
+  "found": true,
+  "para": 12171,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 12189,
+  "in_pian_pos": 341
+ },
+ "佩兰": {
+  "found": true,
+  "para": 12200,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 12212,
+  "in_pian_pos": 45
+ },
+ "金龙胆草": {
+  "found": true,
+  "para": 12221,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 12237,
+  "in_pian_pos": 320
+ },
+ "全里褴": {
+  "found": true,
+  "para": 12243,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 12259,
+  "in_pian_pos": 366
+ },
+ "金沸草": {
+  "found": true,
+  "para": 12267,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 12278,
+  "in_pian_pos": -1
+ },
+ "金养麦": {
+  "found": true,
+  "para": 12288,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 12304,
+  "in_pian_pos": 608
+ },
+ "金钱白花蛇": {
+  "found": true,
+  "para": 12313,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "金钱草": {
+  "found": true,
+  "para": 12328,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 12349,
+  "in_pian_pos": 446
+ },
+ "金铁锁": {
+  "found": true,
+  "para": 12357,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "金银花": {
+  "found": true,
+  "para": 12373,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 72,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "金樱子": {
+  "found": true,
+  "para": 12445,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 12458,
+  "in_pian_pos": 586
+ },
+ "金碌石": {
+  "found": true,
+  "para": 12467,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 12473,
+  "in_pian_pos": -1
+ },
+ "乳香": {
+  "found": true,
+  "para": 12482,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": 12493,
+  "in_pian_pos": 85
+ },
+ "肿节风": {
+  "found": true,
+  "para": 12501,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 48,
+  "in_pian_para": 12520,
+  "in_pian_pos": 372
+ },
+ "狗脊": {
+  "found": true,
+  "para": 12549,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 12558,
+  "in_pian_pos": -1
+ },
+ "京大戟": {
+  "found": true,
+  "para": 12575,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 12591,
+  "in_pian_pos": 395
+ },
+ "闹羊花": {
+  "found": true,
+  "para": 12602,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "卷柏": {
+  "found": true,
+  "para": 12616,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 34,
+  "in_pian_para": 12639,
+  "in_pian_pos": -1
+ },
+ "炉甘石": {
+  "found": true,
+  "para": 12650,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": 12660,
+  "in_pian_pos": 300
+ },
+ "油松节": {
+  "found": true,
+  "para": 12669,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 12684,
+  "in_pian_pos": 517
+ },
+ "泽兰": {
+  "found": true,
+  "para": 12694,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 12704,
+  "in_pian_pos": -1
+ },
+ "泽泻": {
+  "found": true,
+  "para": 12712,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 59,
+  "in_pian_para": 12741,
+  "in_pian_pos": 520
+ },
+ "降香": {
+  "found": true,
+  "para": 12771,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 4,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "细辛": {
+  "found": true,
+  "para": 12775,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 73,
+  "in_pian_para": 12837,
+  "in_pian_pos": 464
+ },
+ "贯叶金丝桃": {
+  "found": true,
+  "para": 12848,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "珍珠": {
+  "found": true,
+  "para": 12867,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 12878,
+  "in_pian_pos": -1
+ },
+ "珍珠母": {
+  "found": true,
+  "para": 12885,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 12896,
+  "in_pian_pos": -1
+ },
+ "荆芥": {
+  "found": true,
+  "para": 12903,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 12921,
+  "in_pian_pos": -1
+ },
+ "荆芥炭": {
+  "found": true,
+  "para": 12930,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "荆芥穗": {
+  "found": true,
+  "para": 12942,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 12961,
+  "in_pian_pos": 420
+ },
+ "荆芥穗炭": {
+  "found": true,
+  "para": 12969,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "茜草": {
+  "found": true,
+  "para": 12989,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 13007,
+  "in_pian_pos": 526
+ },
+ "草芨": {
+  "found": true,
+  "para": 13021,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 13038,
+  "in_pian_pos": 368
+ },
+ "草澄茄": {
+  "found": true,
+  "para": 13045,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "草乌": {
+  "found": true,
+  "para": 13058,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 13087,
+  "in_pian_pos": 806
+ },
+ "制草乌": {
+  "found": true,
+  "para": 13095,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "草乌叶": {
+  "found": true,
+  "para": 13132,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "草豆蔻": {
+  "found": true,
+  "para": 13144,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 44,
+  "in_pian_para": 13181,
+  "in_pian_pos": 613
+ },
+ "草果": {
+  "found": true,
+  "para": 13188,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 13200,
+  "in_pian_pos": 44
+ },
+ "茵陈": {
+  "found": true,
+  "para": 13217,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 40,
+  "in_pian_para": 13240,
+  "in_pian_pos": 726
+ },
+ "茯苓": {
+  "found": true,
+  "para": 13257,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 13270,
+  "in_pian_pos": -1
+ },
+ "茯苓皮": {
+  "found": true,
+  "para": 13277,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "莞蔚子": {
+  "found": true,
+  "para": 13302,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 13318,
+  "in_pian_pos": 463
+ },
+ "胡芦巴": {
+  "found": true,
+  "para": 13327,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 13345,
+  "in_pian_pos": 375
+ },
+ "胡黄连": {
+  "found": true,
+  "para": 13357,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 13375,
+  "in_pian_pos": 410
+ },
+ "胡椒": {
+  "found": true,
+  "para": 13383,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "荔枝核": {
+  "found": true,
+  "para": 13404,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 13410,
+  "in_pian_pos": -1
+ },
+ "南五味子": {
+  "found": true,
+  "para": 13425,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 13441,
+  "in_pian_pos": 343
+ },
+ "南沙参": {
+  "found": true,
+  "para": 13451,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 13464,
+  "in_pian_pos": -1
+ },
+ "南板蓝根": {
+  "found": true,
+  "para": 13473,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 13484,
+  "in_pian_pos": -1
+ },
+ "南鹤虱": {
+  "found": true,
+  "para": 13492,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 11,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "枳壳": {
+  "found": true,
+  "para": 13503,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 13517,
+  "in_pian_pos": 399
+ },
+ "枳实": {
+  "found": true,
+  "para": 13531,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 13547,
+  "in_pian_pos": 458
+ },
+ "柏子仁": {
+  "found": true,
+  "para": 13561,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 13572,
+  "in_pian_pos": -1
+ },
+ "梔子": {
+  "found": true,
+  "para": 13583,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 13599,
+  "in_pian_pos": 343
+ },
+ "焦梔子": {
+  "found": true,
+  "para": 13611,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "枸杞子": {
+  "found": true,
+  "para": 13623,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "枸骨叶": {
+  "found": true,
+  "para": 13648,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "柿蒂": {
+  "found": true,
+  "para": 13661,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 13670,
+  "in_pian_pos": -1
+ },
+ "威灵仙": {
+  "found": true,
+  "para": 13683,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 13704,
+  "in_pian_pos": 511
+ },
+ "厚朴": {
+  "found": true,
+  "para": 13712,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 13731,
+  "in_pian_pos": 364
+ },
+ "厚朴花": {
+  "found": true,
+  "para": 13747,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "砂仁": {
+  "found": true,
+  "para": 13767,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 13785,
+  "in_pian_pos": 480
+ },
+ "牵牛子": {
+  "found": true,
+  "para": 13791,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 24,
+  "in_pian_para": 13802,
+  "in_pian_pos": -1
+ },
+ "轻粉": {
+  "found": true,
+  "para": 13815,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "鸦胆子": {
+  "found": true,
+  "para": 13832,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 13848,
+  "in_pian_pos": 687
+ },
+ "韭菜子": {
+  "found": true,
+  "para": 13854,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": 13860,
+  "in_pian_pos": -1
+ },
+ "哈蟆油": {
+  "found": true,
+  "para": 13867,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "骨碎补": {
+  "found": true,
+  "para": 13880,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 13898,
+  "in_pian_pos": 330
+ },
+ "钟乳石": {
+  "found": true,
+  "para": 13914,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 15,
+  "in_pian_para": 13922,
+  "in_pian_pos": 210
+ },
+ "钩藤": {
+  "found": true,
+  "para": 13929,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "香加皮": {
+  "found": true,
+  "para": 13946,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 13964,
+  "in_pian_pos": 485
+ },
+ "香附": {
+  "found": true,
+  "para": 13973,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 13985,
+  "in_pian_pos": 45
+ },
+ "香椽": {
+  "found": true,
+  "para": 13999,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 14012,
+  "in_pian_pos": 377
+ },
+ "香薫": {
+  "found": true,
+  "para": 14020,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 14039,
+  "in_pian_pos": 452
+ },
+ "重楼": {
+  "found": true,
+  "para": 14045,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 14065,
+  "in_pian_pos": 452
+ },
+ "禹州漏芦": {
+  "found": true,
+  "para": 14073,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 43,
+  "in_pian_para": 14084,
+  "in_pian_pos": -1
+ },
+ "胆南星": {
+  "found": true,
+  "para": 14116,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 11,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "胖大海": {
+  "found": true,
+  "para": 14127,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "独一味": {
+  "found": true,
+  "para": 14142,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 14163,
+  "in_pian_pos": 500
+ },
+ "独活": {
+  "found": true,
+  "para": 14170,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 14186,
+  "in_pian_pos": -1
+ },
+ "急性子": {
+  "found": true,
+  "para": 14195,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 69,
+  "in_pian_para": 14254,
+  "in_pian_pos": -1
+ },
+ "前胡": {
+  "found": true,
+  "para": 14264,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 14281,
+  "in_pian_pos": 430
+ },
+ "首乌藤": {
+  "found": true,
+  "para": 14295,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 14312,
+  "in_pian_pos": 413
+ },
+ "洪连": {
+  "found": true,
+  "para": 14320,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "洋金花": {
+  "found": true,
+  "para": 14345,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "穿山龙": {
+  "found": true,
+  "para": 14367,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 14384,
+  "in_pian_pos": 349
+ },
+ "穿心莲": {
+  "found": true,
+  "para": 14393,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 57,
+  "in_pian_para": 14440,
+  "in_pian_pos": 777
+ },
+ "络石藤": {
+  "found": true,
+  "para": 14450,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 14467,
+  "in_pian_pos": 344
+ },
+ "秦茏": {
+  "found": true,
+  "para": 14476,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 14495,
+  "in_pian_pos": 391
+ },
+ "秦皮": {
+  "found": true,
+  "para": 14504,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 14522,
+  "in_pian_pos": 373
+ },
+ "珠子参": {
+  "found": true,
+  "para": 14533,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 14548,
+  "in_pian_pos": 378
+ },
+ "莱殖子": {
+  "found": true,
+  "para": 14555,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 14572,
+  "in_pian_pos": 385
+ },
+ "莲子": {
+  "found": true,
+  "para": 14582,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 14595,
+  "in_pian_pos": -1
+ },
+ "莲子心": {
+  "found": true,
+  "para": 14604,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 14632,
+  "in_pian_pos": -1
+ },
+ "莲须": {
+  "found": true,
+  "para": 14638,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 11,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "莪术": {
+  "found": true,
+  "para": 14649,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 14666,
+  "in_pian_pos": 42
+ },
+ "荷叶": {
+  "found": true,
+  "para": 14680,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 14696,
+  "in_pian_pos": 364
+ },
+ "桂枝": {
+  "found": true,
+  "para": 14707,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 14725,
+  "in_pian_pos": 357
+ },
+ "桔梗": {
+  "found": true,
+  "para": 14734,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 14751,
+  "in_pian_pos": 555
+ },
+ "桃仁": {
+  "found": true,
+  "para": 14761,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 43,
+  "in_pian_para": 14783,
+  "in_pian_pos": 413
+ },
+ "桃枝": {
+  "found": true,
+  "para": 14804,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": 14814,
+  "in_pian_pos": -1
+ },
+ "核桃仁": {
+  "found": true,
+  "para": 14820,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "夏天无": {
+  "found": true,
+  "para": 14835,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "夏枯草": {
+  "found": true,
+  "para": 14858,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 90,
+  "in_pian_para": 14896,
+  "in_pian_pos": 845
+ },
+ "鸭跖草": {
+  "found": true,
+  "para": 14948,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 14957,
+  "in_pian_pos": -1
+ },
+ "铁皮石斛": {
+  "found": true,
+  "para": 14965,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "积雪草": {
+  "found": true,
+  "para": 14992,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 15010,
+  "in_pian_pos": 394
+ },
+ "臭灵丹草": {
+  "found": true,
+  "para": 15019,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "射干": {
+  "found": true,
+  "para": 15046,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 15063,
+  "in_pian_pos": 338
+ },
+ "徐长卿": {
+  "found": true,
+  "para": 15072,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 15091,
+  "in_pian_pos": 350
+ },
+ "狼毒": {
+  "found": true,
+  "para": 15099,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 78,
+  "in_pian_para": 15119,
+  "in_pian_pos": -1
+ },
+ "高良姜": {
+  "found": true,
+  "para": 15177,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 29,
+  "in_pian_para": 15192,
+  "in_pian_pos": -1
+ },
+ "拳参": {
+  "found": true,
+  "para": 15206,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 15235,
+  "in_pian_pos": 454
+ },
+ "粉草薜": {
+  "found": true,
+  "para": 15243,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "粉葛": {
+  "found": true,
+  "para": 15258,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 15275,
+  "in_pian_pos": 332
+ },
+ "益母草": {
+  "found": true,
+  "para": 15284,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 15307,
+  "in_pian_pos": 654
+ },
+ "益智": {
+  "found": true,
+  "para": 15319,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 15331,
+  "in_pian_pos": 50
+ },
+ "浙贝母": {
+  "found": true,
+  "para": 15347,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 15366,
+  "in_pian_pos": 497
+ },
+ "娑罗子": {
+  "found": true,
+  "para": 15375,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 15391,
+  "in_pian_pos": 480
+ },
+ "海马": {
+  "found": true,
+  "para": 15401,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 15416,
+  "in_pian_pos": -1
+ },
+ "海风藤": {
+  "found": true,
+  "para": 15422,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 15433,
+  "in_pian_pos": -1
+ },
+ "海龙": {
+  "found": true,
+  "para": 15441,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 27,
+  "in_pian_para": 15449,
+  "in_pian_pos": -1
+ },
+ "海蝶艄": {
+  "found": true,
+  "para": 15468,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": 15479,
+  "in_pian_pos": 214
+ },
+ "海藻": {
+  "found": true,
+  "para": 15487,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 15502,
+  "in_pian_pos": 669
+ },
+ "浮萍": {
+  "found": true,
+  "para": 15512,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "通关藤": {
+  "found": true,
+  "para": 15535,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "通草": {
+  "found": true,
+  "para": 15553,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 23,
+  "in_pian_para": 15561,
+  "in_pian_pos": -1
+ },
+ "预知子": {
+  "found": true,
+  "para": 15576,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 15591,
+  "in_pian_pos": 367
+ },
+ "桑叶": {
+  "found": true,
+  "para": 15598,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 40,
+  "in_pian_para": 15631,
+  "in_pian_pos": 443
+ },
+ "桑白皮": {
+  "found": true,
+  "para": 15638,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 21,
+  "in_pian_para": 15646,
+  "in_pian_pos": -1
+ },
+ "桑枝": {
+  "found": true,
+  "para": 15659,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 29,
+  "in_pian_para": 15668,
+  "in_pian_pos": -1
+ },
+ "桑寄生": {
+  "found": true,
+  "para": 15688,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 15697,
+  "in_pian_pos": -1
+ },
+ "桑根": {
+  "found": true,
+  "para": 15705,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "桑蝶靖": {
+  "found": true,
+  "para": 15717,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 15728,
+  "in_pian_pos": -1
+ },
+ "黄山药": {
+  "found": true,
+  "para": 15745,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黄苔": {
+  "found": true,
+  "para": 15776,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 15792,
+  "in_pian_pos": 377
+ },
+ "黄茂": {
+  "found": true,
+  "para": 15805,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": 15844,
+  "in_pian_pos": -1
+ },
+ "炙黄芷": {
+  "found": true,
+  "para": 15852,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黄连": {
+  "found": true,
+  "para": 15867,
+  "n_content": 7,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 59,
+  "in_pian_para": null,
+  "in_pian_pos": 835
+ },
+ "黄柏": {
+  "found": true,
+  "para": 15926,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 15948,
+  "in_pian_pos": 762
+ },
+ "黄蜀葵花": {
+  "found": true,
+  "para": 15961,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 15978,
+  "in_pian_pos": 336
+ },
+ "黄精": {
+  "found": true,
+  "para": 15986,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 16006,
+  "in_pian_pos": 612
+ },
+ "黄藤": {
+  "found": true,
+  "para": 16021,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 38,
+  "in_pian_para": 16053,
+  "in_pian_pos": -1
+ },
+ "菠英": {
+  "found": true,
+  "para": 16059,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 16071,
+  "in_pian_pos": -1
+ },
+ "菟丝子": {
+  "found": true,
+  "para": 16079,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 16096,
+  "in_pian_pos": 335
+ },
+ "策巨": {
+  "found": true,
+  "para": 16107,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": 16125,
+  "in_pian_pos": -1
+ },
+ "菊花": {
+  "found": true,
+  "para": 16132,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "梅花": {
+  "found": true,
+  "para": 16171,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "救必应": {
+  "found": true,
+  "para": 16202,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 36,
+  "in_pian_para": 16231,
+  "in_pian_pos": 481
+ },
+ "常山": {
+  "found": true,
+  "para": 16238,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 16248,
+  "in_pian_pos": -1
+ },
+ "野马追": {
+  "found": true,
+  "para": 16260,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 33,
+  "in_pian_para": 16278,
+  "in_pian_pos": 411
+ },
+ "野木瓜": {
+  "found": true,
+  "para": 16293,
+  "n_content": 3,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 76,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "蛇蜕": {
+  "found": true,
+  "para": 16369,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 16375,
+  "in_pian_pos": -1
+ },
+ "银杏叶": {
+  "found": true,
+  "para": 16387,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "银柴胡": {
+  "found": true,
+  "para": 16419,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 24,
+  "in_pian_para": 16430,
+  "in_pian_pos": -1
+ },
+ "甜瓜子": {
+  "found": true,
+  "para": 16443,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 33,
+  "in_pian_para": 16450,
+  "in_pian_pos": -1
+ },
+ "猪苓": {
+  "found": true,
+  "para": 16476,
+  "n_content": 3,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 55,
+  "in_pian_para": 16493,
+  "in_pian_pos": 326
+ },
+ "猫爪草": {
+  "found": true,
+  "para": 16531,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "麻黄": {
+  "found": true,
+  "para": 16546,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": 16568,
+  "in_pian_pos": 434
+ },
+ "麻黄根": {
+  "found": true,
+  "para": 16581,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 38,
+  "in_pian_para": 16592,
+  "in_pian_pos": -1
+ },
+ "鹿角胶": {
+  "found": true,
+  "para": 16619,
+  "n_content": 4,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 57,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "鹿角霜": {
+  "found": true,
+  "para": 16676,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": 16682,
+  "in_pian_pos": -1
+ },
+ "鹿茸": {
+  "found": true,
+  "para": 16688,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 16700,
+  "in_pian_pos": -1
+ },
+ "鹿衔草": {
+  "found": true,
+  "para": 16707,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 16723,
+  "in_pian_pos": 366
+ },
+ "商陆": {
+  "found": true,
+  "para": 16731,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 33,
+  "in_pian_para": 16750,
+  "in_pian_pos": 373
+ },
+ "旋覆花": {
+  "found": true,
+  "para": 16764,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 16771,
+  "in_pian_pos": -1
+ },
+ "羚羊角": {
+  "found": true,
+  "para": 16782,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 16788,
+  "in_pian_pos": -1
+ },
+ "断血流": {
+  "found": true,
+  "para": 16797,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 16807,
+  "in_pian_pos": -1
+ },
+ "淫羊蕾": {
+  "found": true,
+  "para": 16815,
+  "n_content": 6,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 78,
+  "in_pian_para": 16875,
+  "in_pian_pos": 995
+ },
+ "淡竹叶": {
+  "found": true,
+  "para": 16893,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 16901,
+  "in_pian_pos": -1
+ },
+ "淡豆豉": {
+  "found": true,
+  "para": 16910,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "密蒙花": {
+  "found": true,
+  "para": 16929,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "续断": {
+  "found": true,
+  "para": 16945,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 16965,
+  "in_pian_pos": 405
+ },
+ "绵马贯众": {
+  "found": true,
+  "para": 16982,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 16994,
+  "in_pian_pos": -1
+ },
+ "绵马贯众炭": {
+  "found": true,
+  "para": 17004,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 61,
+  "in_pian_para": 17051,
+  "in_pian_pos": 369
+ },
+ "款冬花": {
+  "found": true,
+  "para": 17065,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 17079,
+  "in_pian_pos": 337
+ },
+ "葛根": {
+  "found": true,
+  "para": 17097,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 17114,
+  "in_pian_pos": 327
+ },
+ "孝苗子": {
+  "found": true,
+  "para": 17124,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": 17146,
+  "in_pian_pos": 427
+ },
+ "篇蓄": {
+  "found": true,
+  "para": 17158,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 17176,
+  "in_pian_pos": 434
+ },
+ "楮实子": {
+  "found": true,
+  "para": 17185,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": 17195,
+  "in_pian_pos": -1
+ },
+ "棕梱": {
+  "found": true,
+  "para": 17203,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 17210,
+  "in_pian_pos": -1
+ },
+ "硫黄": {
+  "found": true,
+  "para": 17231,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": 17239,
+  "in_pian_pos": 268
+ },
+ "雄黄": {
+  "found": true,
+  "para": 17249,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 17264,
+  "in_pian_pos": 264
+ },
+ "紫石英": {
+  "found": true,
+  "para": 17273,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 17284,
+  "in_pian_pos": 236
+ },
+ "紫花地丁": {
+  "found": true,
+  "para": 17297,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 17313,
+  "in_pian_pos": 321
+ },
+ "紫花前胡": {
+  "found": true,
+  "para": 17319,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 17336,
+  "in_pian_pos": 372
+ },
+ "紫苏子": {
+  "found": true,
+  "para": 17342,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 17356,
+  "in_pian_pos": 338
+ },
+ "紫苏叶": {
+  "found": true,
+  "para": 17368,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 17380,
+  "in_pian_pos": 53
+ },
+ "紫苏梗": {
+  "found": true,
+  "para": 17389,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 17404,
+  "in_pian_pos": 367
+ },
+ "紫草": {
+  "found": true,
+  "para": 17412,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 17429,
+  "in_pian_pos": 672
+ },
+ "紫珠叶": {
+  "found": true,
+  "para": 17440,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 17455,
+  "in_pian_pos": 351
+ },
+ "紫箕贯众": {
+  "found": true,
+  "para": 17461,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": 17471,
+  "in_pian_pos": -1
+ },
+ "紫苑": {
+  "found": true,
+  "para": 17478,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": 17496,
+  "in_pian_pos": 358
+ },
+ "蛤壳": {
+  "found": true,
+  "para": 17517,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 17529,
+  "in_pian_pos": -1
+ },
+ "蛤的": {
+  "found": true,
+  "para": 17540,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 17548,
+  "in_pian_pos": -1
+ },
+ "黑之麻": {
+  "found": true,
+  "para": 17559,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": 17569,
+  "in_pian_pos": -1
+ },
+ "黑豆": {
+  "found": true,
+  "para": 17578,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黑种草子": {
+  "found": true,
+  "para": 17593,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "锁阳": {
+  "found": true,
+  "para": 17616,
+  "n_content": 2,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 112,
+  "in_pian_para": 17631,
+  "in_pian_pos": 351
+ },
+ "番泻叶": {
+  "found": true,
+  "para": 17728,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "湖北贝母": {
+  "found": true,
+  "para": 17752,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": 17768,
+  "in_pian_pos": 513
+ },
+ "滑石": {
+  "found": true,
+  "para": 17776,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 13,
+  "in_pian_para": 17783,
+  "in_pian_pos": -1
+ },
+ "滑石粉": {
+  "found": true,
+  "para": 17789,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "草": {
+  "found": true,
+  "para": 17824,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "蓝布正": {
+  "found": true,
+  "para": 17847,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 22,
+  "in_pian_para": 17863,
+  "in_pian_pos": -1
+ },
+ "蔥麻子": {
+  "found": true,
+  "para": 17869,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 26,
+  "in_pian_para": 17888,
+  "in_pian_pos": -1
+ },
+ "疾藜": {
+  "found": true,
+  "para": 17895,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 23,
+  "in_pian_para": 17908,
+  "in_pian_pos": -1
+ },
+ "蒲公英": {
+  "found": true,
+  "para": 17918,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 50,
+  "in_pian_para": 17957,
+  "in_pian_pos": 507
+ },
+ "蒲黄": {
+  "found": true,
+  "para": 17968,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 31,
+  "in_pian_para": 17987,
+  "in_pian_pos": -1
+ },
+ "椿皮": {
+  "found": true,
+  "para": 17999,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 28,
+  "in_pian_para": 18012,
+  "in_pian_pos": -1
+ },
+ "槐花": {
+  "found": true,
+  "para": 18027,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 18049,
+  "in_pian_pos": 995
+ },
+ "槐角": {
+  "found": true,
+  "para": 18058,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 18071,
+  "in_pian_pos": 380
+ },
+ "雷丸": {
+  "found": true,
+  "para": 18084,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": 18099,
+  "in_pian_pos": 508
+ },
+ "路路通": {
+  "found": true,
+  "para": 18106,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "螟蚣": {
+  "found": true,
+  "para": 18125,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": 18136,
+  "in_pian_pos": -1
+ },
+ "蜂房": {
+  "found": true,
+  "para": 18145,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 5,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "质酥脆或坚硬者不可供药用": {
+  "found": true,
+  "para": 18150,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 14,
+  "in_pian_para": 18157,
+  "in_pian_pos": -1
+ },
+ "蜂胶": {
+  "found": true,
+  "para": 18164,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 68,
+  "in_pian_para": 18195,
+  "in_pian_pos": 384
+ },
+ "蜂蜜": {
+  "found": true,
+  "para": 18232,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 110,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "矮地茶": {
+  "found": true,
+  "para": 18342,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 26,
+  "in_pian_para": 18359,
+  "in_pian_pos": 331
+ },
+ "满山红": {
+  "found": true,
+  "para": 18368,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "滇鸡血藤": {
+  "found": true,
+  "para": 18393,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "裸花紫珠": {
+  "found": true,
+  "para": 18412,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "蔓荆子": {
+  "found": true,
+  "para": 18444,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 39,
+  "in_pian_para": 18461,
+  "in_pian_pos": 329
+ },
+ "蓼大青叶": {
+  "found": true,
+  "para": 18483,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 25,
+  "in_pian_para": 18503,
+  "in_pian_pos": -1
+ },
+ "椅藤子": {
+  "found": true,
+  "para": 18508,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": 18524,
+  "in_pian_pos": 496
+ },
+ "槟榔": {
+  "found": true,
+  "para": 18531,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 27,
+  "in_pian_para": 18546,
+  "in_pian_pos": 537
+ },
+ "焦槟榔": {
+  "found": true,
+  "para": 18558,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "酸枣仁": {
+  "found": true,
+  "para": 18586,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 70,
+  "in_pian_para": 18644,
+  "in_pian_pos": 894
+ },
+ "磁石": {
+  "found": true,
+  "para": 18656,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": 18664,
+  "in_pian_pos": 356
+ },
+ "豬签草": {
+  "found": true,
+  "para": 18677,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 53,
+  "in_pian_para": 18703,
+  "in_pian_pos": 377
+ },
+ "蜘蛛香": {
+  "found": true,
+  "para": 18730,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 51,
+  "in_pian_para": 18743,
+  "in_pian_pos": -1
+ },
+ "辣椒": {
+  "found": true,
+  "para": 18781,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 24,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "漏芦": {
+  "found": true,
+  "para": 18805,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 18823,
+  "in_pian_pos": 345
+ },
+ "赭石": {
+  "found": true,
+  "para": 18834,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 18842,
+  "in_pian_pos": 58
+ },
+ "薪蛇": {
+  "found": true,
+  "para": 18871,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 31,
+  "in_pian_para": 18877,
+  "in_pian_pos": -1
+ },
+ "槻寄生": {
+  "found": true,
+  "para": 18902,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": 18922,
+  "in_pian_pos": 340
+ },
+ "暴马子皮": {
+  "found": true,
+  "para": 18931,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "墨旱莲": {
+  "found": true,
+  "para": 18951,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 18971,
+  "in_pian_pos": 403
+ },
+ "稻芽": {
+  "found": true,
+  "para": 18979,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 30,
+  "in_pian_para": 18987,
+  "in_pian_pos": -1
+ },
+ "僵蚕": {
+  "found": true,
+  "para": 19009,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "蕤白": {
+  "found": true,
+  "para": 19032,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "蓋政仁": {
+  "found": true,
+  "para": 19049,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 37,
+  "in_pian_para": 19072,
+  "in_pian_pos": 381
+ },
+ "薄荷": {
+  "found": true,
+  "para": 19086,
+  "n_content": 4,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 32,
+  "in_pian_para": 19106,
+  "in_pian_pos": 544
+ },
+ "颠茄草": {
+  "found": true,
+  "para": 19118,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "橘红": {
+  "found": true,
+  "para": 19132,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 30,
+  "in_pian_para": 19147,
+  "in_pian_pos": 326
+ },
+ "橘核": {
+  "found": true,
+  "para": 19162,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": 19168,
+  "in_pian_pos": -1
+ },
+ "藏菖蒲": {
+  "found": true,
+  "para": 19178,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": 19189,
+  "in_pian_pos": 42
+ },
+ "藁本": {
+  "found": true,
+  "para": 19196,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 28,
+  "in_pian_para": 19213,
+  "in_pian_pos": 353
+ },
+ "檀香": {
+  "found": true,
+  "para": 19224,
+  "n_content": 2,
+  "n_identify": 4,
+  "has_content_section": true,
+  "body_paras": 70,
+  "in_pian_para": 19235,
+  "in_pian_pos": 57
+ },
+ "覆盆子": {
+  "found": true,
+  "para": 19294,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": 19325,
+  "in_pian_pos": -1
+ },
+ "瞿麦": {
+  "found": true,
+  "para": 19336,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 27,
+  "in_pian_para": 19356,
+  "in_pian_pos": -1
+ },
+ "蟾酥": {
+  "found": true,
+  "para": 19363,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 56,
+  "in_pian_para": 19408,
+  "in_pian_pos": 629
+ },
+ "鳖甲": {
+  "found": true,
+  "para": 19419,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": 19426,
+  "in_pian_pos": -1
+ },
+ "麝香": {
+  "found": true,
+  "para": 19434,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": 19455,
+  "in_pian_pos": 293
+ },
+ "植物油脂和提取物": {
+  "found": true,
+  "para": 19465,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 1,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "丁香罗勒油": {
+  "found": true,
+  "para": 19466,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "八角茴香油": {
+  "found": true,
+  "para": 19483,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "人参茎叶总皂昔": {
+  "found": true,
+  "para": 19501,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 52,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "人参总皂昔": {
+  "found": true,
+  "para": 19553,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 79,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三七三醇皂替": {
+  "found": true,
+  "para": 19632,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 68,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三七总皂苜": {
+  "found": true,
+  "para": 19700,
+  "n_content": 5,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 59,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "大黄流浸膏": {
+  "found": true,
+  "para": 19759,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "大黄浸膏": {
+  "found": true,
+  "para": 19779,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "山楂叶提取物": {
+  "found": true,
+  "para": 19799,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "广薑香油": {
+  "found": true,
+  "para": 19841,
+  "n_content": 2,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 73,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "丹参酮提取物": {
+  "found": true,
+  "para": 19914,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 47,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "水牛角浓缩粉": {
+  "found": true,
+  "para": 19961,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "甘草流浸膏": {
+  "found": true,
+  "para": 19976,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "甘草浸膏": {
+  "found": true,
+  "para": 19994,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 36,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "北豆根提取物": {
+  "found": true,
+  "para": 20030,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "当归流浸膏": {
+  "found": true,
+  "para": 20048,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "肉桂油": {
+  "found": true,
+  "para": 20082,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "灯盏花素": {
+  "found": true,
+  "para": 20101,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 82,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "连翘提取物": {
+  "found": true,
+  "para": 20183,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 42,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "牡荆油": {
+  "found": true,
+  "para": 20225,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "环维黄杨星": {
+  "found": true,
+  "para": 20246,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "松节油": {
+  "found": true,
+  "para": 20264,
+  "n_content": 1,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 21,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "刺五加浸膏": {
+  "found": true,
+  "para": 20285,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": false,
+  "body_paras": 58,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "岩白菜素": {
+  "found": true,
+  "para": 20343,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "肿节风浸膏": {
+  "found": true,
+  "para": 20362,
+  "n_content": 2,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 63,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "茵陈提取物": {
+  "found": true,
+  "para": 49705,
+  "n_content": 3,
+  "n_identify": 8,
+  "has_content_section": true,
+  "body_paras": 187,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "茶油": {
+  "found": true,
+  "para": 20470,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 15,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "香果脂": {
+  "found": true,
+  "para": 20485,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 12,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "姜流浸膏": {
+  "found": true,
+  "para": 20497,
+  "n_content": 3,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 81,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "核油": {
+  "found": true,
+  "para": 20578,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 14,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "积雪草总苔": {
+  "found": true,
+  "para": 20592,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "益母草流浸膏": {
+  "found": true,
+  "para": 20621,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 13,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "浙贝流浸膏": {
+  "found": true,
+  "para": 20634,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黄苓提取物": {
+  "found": true,
+  "para": 20651,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 17,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黄藤素": {
+  "found": true,
+  "para": 20668,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "银杏叶提取物": {
+  "found": true,
+  "para": 20691,
+  "n_content": 2,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 132,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "麻油": {
+  "found": true,
+  "para": 20823,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "菌麻油": {
+  "found": true,
+  "para": 20841,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 19,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "满山红油": {
+  "found": true,
+  "para": 20860,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 29,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "薄荷素油": {
+  "found": true,
+  "para": 20889,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 60,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "颠茄流浸膏": {
+  "found": true,
+  "para": 20949,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 43,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "颠茄浸膏": {
+  "found": true,
+  "para": 20992,
+  "n_content": 4,
+  "n_identify": 15,
+  "has_content_section": true,
+  "body_paras": 320,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "二十五味松石丸": {
+  "found": true,
+  "para": 21312,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 103,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "二十五味珊瑚丸": {
+  "found": true,
+  "para": 21415,
+  "n_content": 6,
+  "n_identify": 8,
+  "has_content_section": true,
+  "body_paras": 260,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "十一味能消丸": {
+  "found": true,
+  "para": 21675,
+  "n_content": 0,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 34,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "十二味翼首散": {
+  "found": true,
+  "para": 21709,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 25,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "十三味榜嘎散": {
+  "found": true,
+  "para": 21734,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 35,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "十五味沉香丸": {
+  "found": true,
+  "para": 21769,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 30,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "十六味冬青丸": {
+  "found": true,
+  "para": 21799,
+  "n_content": 5,
+  "n_identify": 13,
+  "has_content_section": true,
+  "body_paras": 288,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三七叶总皂昔": {
+  "found": true,
+  "para": 22087,
+  "n_content": 0,
+  "n_identify": 4,
+  "has_content_section": false,
+  "body_paras": 97,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "七味铁屑丸": {
+  "found": true,
+  "para": 22184,
+  "n_content": 1,
+  "n_identify": 0,
+  "has_content_section": true,
+  "body_paras": 31,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "七味葡萄散": {
+  "found": true,
+  "para": 22215,
+  "n_content": 7,
+  "n_identify": 10,
+  "has_content_section": true,
+  "body_paras": 239,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "八味沉香散": {
+  "found": true,
+  "para": 22454,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 20,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "八味清心沉香散": {
+  "found": true,
+  "para": 22474,
+  "n_content": 0,
+  "n_identify": 0,
+  "has_content_section": false,
+  "body_paras": 16,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "八味檀香散": {
+  "found": true,
+  "para": 22490,
+  "n_content": 8,
+  "n_identify": 20,
+  "has_content_section": true,
+  "body_paras": 606,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "九味石灰华散": {
+  "found": true,
+  "para": 23096,
+  "n_content": 9,
+  "n_identify": 8,
+  "has_content_section": true,
+  "body_paras": 521,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三子散": {
+  "found": true,
+  "para": 23617,
+  "n_content": 3,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 78,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三味羨藜散": {
+  "found": true,
+  "para": 23695,
+  "n_content": 102,
+  "n_identify": 83,
+  "has_content_section": true,
+  "body_paras": 4684,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "五味沙棘散": {
+  "found": true,
+  "para": 28379,
+  "n_content": 1,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "五味清浊散": {
+  "found": true,
+  "para": 28402,
+  "n_content": 0,
+  "n_identify": 2,
+  "has_content_section": false,
+  "body_paras": 18,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "五味麝香丸": {
+  "found": true,
+  "para": 28420,
+  "n_content": 35,
+  "n_identify": 54,
+  "has_content_section": true,
+  "body_paras": 1966,
+  "in_pian_para": null,
+  "in_pian_pos": 18933
+ },
+ "仁青芒觉": {
+  "found": true,
+  "para": 30386,
+  "n_content": 0,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 22,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "仁青常覚": {
+  "found": true,
+  "para": 30408,
+  "n_content": 1,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 23,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "片仔攬": {
+  "found": true,
+  "para": 30431,
+  "n_content": 23,
+  "n_identify": 36,
+  "has_content_section": true,
+  "body_paras": 954,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "乌灵菌粉": {
+  "found": true,
+  "para": 43736,
+  "n_content": 41,
+  "n_identify": 39,
+  "has_content_section": true,
+  "body_paras": 1169,
+  "in_pian_para": null,
+  "in_pian_pos": 17641
+ },
+ "六味木香散": {
+  "found": true,
+  "para": 31707,
+  "n_content": 15,
+  "n_identify": 7,
+  "has_content_section": true,
+  "body_paras": 262,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "六味安消散": {
+  "found": true,
+  "para": 31969,
+  "n_content": 1,
+  "n_identify": 4,
+  "has_content_section": true,
+  "body_paras": 60,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "心元胶囊": {
+  "found": true,
+  "para": 32029,
+  "n_content": 9,
+  "n_identify": 4,
+  "has_content_section": true,
+  "body_paras": 127,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "葛根提取物": {
+  "found": true,
+  "para": 32156,
+  "n_content": 6,
+  "n_identify": 10,
+  "has_content_section": true,
+  "body_paras": 202,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "沙棘鲜浆": {
+  "found": true,
+  "para": 32358,
+  "n_content": 4,
+  "n_identify": 2,
+  "has_content_section": true,
+  "body_paras": 95,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "茶叶提取物": {
+  "found": true,
+  "para": 32453,
+  "n_content": 17,
+  "n_identify": 27,
+  "has_content_section": true,
+  "body_paras": 919,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "紫苏叶油": {
+  "found": true,
+  "para": 72159,
+  "n_content": 10,
+  "n_identify": 22,
+  "has_content_section": true,
+  "body_paras": 686,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "盐酸青藤碱": {
+  "found": true,
+  "para": 33553,
+  "n_content": 3,
+  "n_identify": 8,
+  "has_content_section": true,
+  "body_paras": 157,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "龙胆总昔": {
+  "found": true,
+  "para": 33710,
+  "n_content": 22,
+  "n_identify": 34,
+  "has_content_section": true,
+  "body_paras": 916,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "四味土木香散": {
+  "found": true,
+  "para": 34626,
+  "n_content": 37,
+  "n_identify": 45,
+  "has_content_section": true,
+  "body_paras": 1320,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "地奥心血康": {
+  "found": true,
+  "para": 35946,
+  "n_content": 12,
+  "n_identify": 21,
+  "has_content_section": true,
+  "body_paras": 531,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "百令胶囊": {
+  "found": true,
+  "para": 36477,
+  "n_content": 11,
+  "n_identify": 29,
+  "has_content_section": true,
+  "body_paras": 566,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "华佗再造丸": {
+  "found": true,
+  "para": 37043,
+  "n_content": 10,
+  "n_identify": 10,
+  "has_content_section": true,
+  "body_paras": 311,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "三七总皂昔": {
+  "found": true,
+  "para": 37354,
+  "n_content": 2,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 48,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "血脂康片": {
+  "found": true,
+  "para": 37402,
+  "n_content": 1,
+  "n_identify": 1,
+  "has_content_section": true,
+  "body_paras": 108,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "红曲": {
+  "found": true,
+  "para": 37510,
+  "n_content": 68,
+  "n_identify": 53,
+  "has_content_section": true,
+  "body_paras": 2380,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "远志酊": {
+  "found": true,
+  "para": 39890,
+  "n_content": 14,
+  "n_identify": 23,
+  "has_content_section": true,
+  "body_paras": 555,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "降香油": {
+  "found": true,
+  "para": 40445,
+  "n_content": 27,
+  "n_identify": 43,
+  "has_content_section": true,
+  "body_paras": 1274,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "广东紫珠干浸膏": {
+  "found": true,
+  "para": 41719,
+  "n_content": 27,
+  "n_identify": 37,
+  "has_content_section": true,
+  "body_paras": 1170,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "龟龄集": {
+  "found": true,
+  "para": 42889,
+  "n_content": 19,
+  "n_identify": 22,
+  "has_content_section": true,
+  "body_paras": 800,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "五味子流浸膏": {
+  "found": true,
+  "para": 44905,
+  "n_content": 24,
+  "n_identify": 27,
+  "has_content_section": true,
+  "body_paras": 1049,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "帕朱丸": {
+  "found": true,
+  "para": 45954,
+  "n_content": 11,
+  "n_identify": 14,
+  "has_content_section": true,
+  "body_paras": 248,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "季德胜蛇药片": {
+  "found": true,
+  "para": 46202,
+  "n_content": 45,
+  "n_identify": 46,
+  "has_content_section": true,
+  "body_paras": 1641,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "注射用灯盏花素": {
+  "found": true,
+  "para": 47843,
+  "n_content": 10,
+  "n_identify": 9,
+  "has_content_section": true,
+  "body_paras": 277,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "川贝母流浸膏": {
+  "found": true,
+  "para": 48120,
+  "n_content": 1,
+  "n_identify": 9,
+  "has_content_section": true,
+  "body_paras": 66,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "定坤丹": {
+  "found": true,
+  "para": 48186,
+  "n_content": 2,
+  "n_identify": 4,
+  "has_content_section": true,
+  "body_paras": 113,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "姜黄提取物": {
+  "found": true,
+  "para": 48299,
+  "n_content": 14,
+  "n_identify": 10,
+  "has_content_section": true,
+  "body_paras": 522,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "参松养心胶囊": {
+  "found": true,
+  "para": 48821,
+  "n_content": 8,
+  "n_identify": 15,
+  "has_content_section": true,
+  "body_paras": 331,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "黄苓浸膏粉": {
+  "found": true,
+  "para": 49152,
+  "n_content": 17,
+  "n_identify": 6,
+  "has_content_section": true,
+  "body_paras": 390,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "胡蜂酒": {
+  "found": true,
+  "para": 49892,
+  "n_content": 4,
+  "n_identify": 13,
+  "has_content_section": true,
+  "body_paras": 252,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "芸香浸膏": {
+  "found": true,
+  "para": 50144,
+  "n_content": 13,
+  "n_identify": 12,
+  "has_content_section": true,
+  "body_paras": 534,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "小叶榕干浸膏": {
+  "found": true,
+  "para": 50678,
+  "n_content": 69,
+  "n_identify": 72,
+  "has_content_section": true,
+  "body_paras": 3065,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "猪胆汁酸": {
+  "found": true,
+  "para": 53743,
+  "n_content": 29,
+  "n_identify": 34,
+  "has_content_section": true,
+  "body_paras": 982,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "洁白丸": {
+  "found": true,
+  "para": 54725,
+  "n_content": 58,
+  "n_identify": 58,
+  "has_content_section": true,
+  "body_paras": 2012,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "夏天无提取物": {
+  "found": true,
+  "para": 56737,
+  "n_content": 38,
+  "n_identify": 39,
+  "has_content_section": true,
+  "body_paras": 1412,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "柿叶提取物": {
+  "found": true,
+  "para": 58149,
+  "n_content": 42,
+  "n_identify": 26,
+  "has_content_section": true,
+  "body_paras": 1289,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "细辛油": {
+  "found": true,
+  "para": 59438,
+  "n_content": 20,
+  "n_identify": 27,
+  "has_content_section": true,
+  "body_paras": 725,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "消痛贴膏": {
+  "found": true,
+  "para": 60163,
+  "n_content": 6,
+  "n_identify": 15,
+  "has_content_section": true,
+  "body_paras": 422,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "调经丸": {
+  "found": true,
+  "para": 60585,
+  "n_content": 6,
+  "n_identify": 12,
+  "has_content_section": true,
+  "body_paras": 311,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "通心络胶囊": {
+  "found": true,
+  "para": 60896,
+  "n_content": 136,
+  "n_identify": 81,
+  "has_content_section": true,
+  "body_paras": 5425,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "雅叫哈顿散": {
+  "found": true,
+  "para": 66321,
+  "n_content": 21,
+  "n_identify": 29,
+  "has_content_section": true,
+  "body_paras": 1086,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "山楂核精": {
+  "found": true,
+  "para": 67407,
+  "n_content": 12,
+  "n_identify": 13,
+  "has_content_section": true,
+  "body_paras": 339,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "猴耳环浸膏": {
+  "found": true,
+  "para": 67746,
+  "n_content": 30,
+  "n_identify": 47,
+  "has_content_section": true,
+  "body_paras": 1443,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "催汤丸": {
+  "found": true,
+  "para": 69189,
+  "n_content": 9,
+  "n_identify": 10,
+  "has_content_section": true,
+  "body_paras": 386,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "裸花紫珠干浸膏": {
+  "found": true,
+  "para": 69847,
+  "n_content": 19,
+  "n_identify": 18,
+  "has_content_section": true,
+  "body_paras": 656,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "辛夷油": {
+  "found": true,
+  "para": 70503,
+  "n_content": 39,
+  "n_identify": 51,
+  "has_content_section": true,
+  "body_paras": 1656,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ },
+ "跌打风湿流浸膏": {
+  "found": true,
+  "para": 72845,
+  "n_content": 1,
+  "n_identify": 3,
+  "has_content_section": true,
+  "body_paras": 5829,
+  "in_pian_para": null,
+  "in_pian_pos": -1
+ }
+}

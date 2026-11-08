@@ -1,0 +1,13 @@
+  rdkit   : 2026.03.6  <- 必须 2026.03.6
+  torch   : 2.14.0+cpu
+  CUDA    : False
+  FAIL    rxnmapper       ModuleNotFoundError: No module named 'jaraco'
+  OK      transformers    4.57.6
+  OK      smartreact      2.0.1
+  OK      ord_schema      
+  OK      rxn.chemutils   
+  OK      duckdb          1.5.6
+  OK      polars          2.0.0
+
+=== 实跑 rxnmapper（首次会下载模型）===
+  ✗ ModuleNotFoundError: No module named 'jaraco'

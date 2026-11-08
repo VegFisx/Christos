@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-11-04 23:47:17",
+  "n": 226,
+  "min_support": 1,
+  "stat": {
+    "cand_templates": 82641,
+    "still_miss": 163,
+    "ok_pair": 61,
+    "ok_reagent": 2
+  },
+  "recovered": [
+    {
+      "want": "COc1ccc(Cn2nc(NC(=O)c3cc(NC(=O)c4cc([N+](=O)[O-])nn4Cc4ccc(OC)cc4)nn3Cc3ccc(OC)cc3)cc2C(=O)NN[C@@H](CCCC(N)C(=O)OC(C)(C)C)C(=O)O)cc1",
+      "reactants": [
+        "COC(=O)[C@H](CCCC(N)C(=O)OC(C)(C)C)NNC(=O)c1cc(NC(=O)c2cc(NC(=O)c3cc([N+](=O)[O-])nn3Cc3ccc(OC)cc3)nn2Cc2ccc(OC)cc2)nn1Cc1ccc(OC)cc1"
+      ]
+    },
+    {
+      "want": "CCCCC(F)(F)C(O)CC[C@@H]1[C@H]2CC(=O)O[C@H]2C[C@H]1OC1CCCCO1",
+      "reactants": [
+        "CCCCC(F)(F)C(=O)CC[C@@H]1[C@H]2CC(=O)O[C@H]2C[C@H]1OC1CCCCO1"
+      ]
+    }
+  ]
+}

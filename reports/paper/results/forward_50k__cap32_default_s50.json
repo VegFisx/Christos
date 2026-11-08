@@ -1,0 +1,63 @@
+{
+ "n_reactions": 500,
+ "n_per_class_cap": 50,
+ "seed": 20261014,
+ "workers": 4,
+ "cond": "煎煮",
+ "rounds": 1,
+ "recall_1step": 0.646,
+ "n_errors": 0,
+ "candidate_stats": {
+  "mean": 10.1,
+  "median": 9,
+  "p90": 18,
+  "zero_share": 0.01
+ },
+ "by_class_recall": {
+  "1": {
+   "n": 50,
+   "rate": 0.76
+  },
+  "10": {
+   "n": 50,
+   "rate": 0.72
+  },
+  "2": {
+   "n": 50,
+   "rate": 0.86
+  },
+  "3": {
+   "n": 50,
+   "rate": 0.68
+  },
+  "4": {
+   "n": 50,
+   "rate": 0.3
+  },
+  "5": {
+   "n": 50,
+   "rate": 0.38
+  },
+  "6": {
+   "n": 50,
+   "rate": 0.72
+  },
+  "7": {
+   "n": 50,
+   "rate": 0.72
+  },
+  "8": {
+   "n": 50,
+   "rate": 0.88
+  },
+  "9": {
+   "n": 50,
+   "rate": 0.44
+  }
+ },
+ "in_sources_subset": {
+  "n": 24,
+  "recall": 0.5833
+ },
+ "seconds": 21.3
+}

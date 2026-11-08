@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-11-06T13:08:22",
+  "source": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\paper\\data\\uspto50k_official\\raw_test.csv",
+  "n_reactions": 4993,
+  "n_scored": 4993,
+  "n_errors": 0,
+  "recall_1step": 0.9439,
+  "top1": 0.402,
+  "top3": 0.5245,
+  "top5": 0.5752,
+  "top10": 0.6653,
+  "mrr": 0.4934,
+  "candidate_stats": {
+    "mean": 47.55
+  },
+  "by_class_recall": {
+    "1": {
+      "n": 1520,
+      "rate": 0.9428
+    },
+    "10": {
+      "n": 25,
+      "rate": 0.96
+    },
+    "2": {
+      "n": 1226,
+      "rate": 0.9608
+    },
+    "3": {
+      "n": 562,
+      "rate": 0.8754
+    },
+    "4": {
+      "n": 86,
+      "rate": 0.686
+    },
+    "5": {
+      "n": 66,
+      "rate": 0.9242
+    },
+    "6": {
+      "n": 823,
+      "rate": 0.9793
+    },
+    "7": {
+      "n": 416,
+      "rate": 0.976
+    },
+    "8": {
+      "n": 93,
+      "rate": 0.9785
+    },
+    "9": {
+      "n": 176,
+      "rate": 0.9261
+    }
+  },
+  "seconds": 735.9,
+  "config_env": {
+    "CHEMCREACT_BENCH_EXTRA_LIMIT": "60000",
+    "CHEMCREACT_BENCH_EXTRA_MIN_SUPPORT": "1",
+    "CHEMCREACT_BENCH_MAXPROD": "128",
+    "CHEMCREACT_BENCH_MONO_CO_REAGENT": "1",
+    "CHEMCREACT_BENCH_MONO_LIMIT": "60000",
+    "CHEMCREACT_BENCH_TAG": "official_full_wide"
+  }
+}

@@ -34,7 +34,10 @@ import query_base as qb            # noqa: E402
 import reaction_paths as rp        # noqa: E402
 import validate_literature_conversions as V   # noqa: E402  （复用 CASES / fetch / canon）
 
-DB = "file:D:/TCMAI/tcm.db?mode=ro"
+import os
+
+_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
+DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 OUT_JSON = ROOT / "reports" / "literature_paths_20261104.json"
 
 

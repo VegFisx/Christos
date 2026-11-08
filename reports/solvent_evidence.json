@@ -1,0 +1,156 @@
+{
+ "what": "每类反应的溶剂证据：成功过哪些溶剂、各多少条、成功率多少",
+ "caveat": "带标签部分只来自 HTE（Buchwald-Hartwig 型偶联），其余反应类没有带标签的溶剂数据；`has_outcome=false` 的条目只表示'该类在 ORD 里用过'，不代表成败",
+ "n_rows": 27497,
+ "pos_threshold": 0.5,
+ "classes": {
+  "B-H": {
+   "source": "HTE(BH) 带产率标签",
+   "n_total": 27497,
+   "solvents": [
+    {
+     "name": "DMSO",
+     "n": 11596,
+     "success_rate": 0.6845,
+     "median_yield": 10.8298,
+     "has_outcome": true
+    },
+    {
+     "name": "1,4-Dioxane",
+     "n": 4820,
+     "success_rate": 0.5363,
+     "median_yield": 1.0,
+     "has_outcome": true
+    },
+    {
+     "name": "t-AmOH",
+     "n": 4146,
+     "success_rate": 0.6278,
+     "median_yield": 9.0,
+     "has_outcome": true
+    },
+    {
+     "name": "DMA",
+     "n": 2276,
+     "success_rate": 0.5896,
+     "median_yield": 5.0,
+     "has_outcome": true
+    },
+    {
+     "name": "Toluene",
+     "n": 1989,
+     "success_rate": 0.5485,
+     "median_yield": 2.0,
+     "has_outcome": true
+    },
+    {
+     "name": "2-Me-THF",
+     "n": 1153,
+     "success_rate": 0.3547,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "MeCN",
+     "n": 1001,
+     "success_rate": 0.3896,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "THF",
+     "n": 199,
+     "success_rate": 0.4673,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "Toluene/Dioxane-3:1",
+     "n": 165,
+     "success_rate": 0.3152,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "DME",
+     "n": 105,
+     "success_rate": 0.6381,
+     "median_yield": 8.0,
+     "has_outcome": true
+    },
+    {
+     "name": "tBuOH",
+     "n": 20,
+     "success_rate": 0.4,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "DMF",
+     "n": 10,
+     "success_rate": 0.4,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "Anisole",
+     "n": 8,
+     "success_rate": 0.5,
+     "median_yield": 24.8,
+     "has_outcome": true
+    },
+    {
+     "name": "para-Xylene",
+     "n": 3,
+     "success_rate": 0.6667,
+     "median_yield": 19.14,
+     "has_outcome": true
+    },
+    {
+     "name": "NMP",
+     "n": 2,
+     "success_rate": 0.5,
+     "median_yield": 8.91,
+     "has_outcome": true
+    },
+    {
+     "name": "Toluene Trifluoride",
+     "n": 2,
+     "success_rate": 0.0,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "BuOAc",
+     "n": 1,
+     "success_rate": 0.0,
+     "median_yield": 0.0,
+     "has_outcome": true
+    },
+    {
+     "name": "EtOH",
+     "n": 1,
+     "success_rate": 1.0,
+     "median_yield": 18.97,
+     "has_outcome": true
+    },
+    {
+     "name": "water",
+     "n": 0,
+     "success_rate": null,
+     "median_yield": null,
+     "has_outcome": false
+    },
+    {
+     "name": "EtOAc",
+     "n": 0,
+     "success_rate": null,
+     "median_yield": null,
+     "has_outcome": false
+    }
+   ]
+  }
+ },
+ "built_at": "2026-10-13 17:59:04",
+ "seconds": 1.1
+}

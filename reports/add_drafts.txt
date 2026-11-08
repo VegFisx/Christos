@@ -1,0 +1,25 @@
+新增 22 条草稿：
+   伯醇氧化成醛                 oxidation_primary_alcohol_001
+   硫醚氧化成亚砜                oxidation_sulfide_001
+   双键环氧化                  oxidation_epoxide_001
+   脱氢成α,β-不饱和羰基           oxidation_dehydrogenation_enone_001
+   硫醇偶联成二硫                oxidation_thiol_disulfide_001
+   醛还原成醇                  reduction_aldehyde_001
+   双键加氢                   reduction_alkene_001
+   硝基还原成胺                 reduction_nitro_001
+   环氧化物开环成二醇              hydrolysis_epoxide_001
+   内酰胺开环                  hydrolysis_lactam_001
+   亚胺水解                   hydrolysis_imine_001
+   分子内半缩醛化                cyclization_hemiacetal_001
+   分子内酰胺化                 cyclization_lactam_001
+   分子内脱水成醚                cyclization_ether_001
+   δ-羟基酸内酯化(备用)           cyclization_lactone_delta_001
+   分子内羟醛缩合                condensation_aldol_intra_001
+   双键位置异构                 isomerization_double_bond_001
+   差向异构化                  isomerization_epimerization_001
+   逆羟醛裂解                  rearrangement_retro_aldol_001
+   丙二酸型脱羧                 decarboxylation_malonic_001
+   氧化脱氨成羰基                elimination_deamination_001
+   酚酸脱羧成酚                 elimination_decarboxylation_phenol_001
+
+规则总数：46

@@ -1,0 +1,172 @@
+{
+ "scratch": "HTE (Buchwald-Hartwig) 反例集 + 引擎首次实测",
+ "data": {
+  "csv": "BH_HTE_Curated_Dataset_v20260219.csv",
+  "rows": 27497,
+  "yield_zero_rows": 10696,
+  "yield_zero_rate": 0.38898788958795505,
+  "pairs": 5752,
+  "pairs_all_zero": 1993,
+  "pairs_contrast": 459,
+  "sources": {
+   "JNJ HTE 2024": 11328,
+   "Dreher Doyle 2018": 4312,
+   "Merck 2025": 4204,
+   "Roche 2023": 3359,
+   "HiTEA 2024": 2632,
+   "Dreher 2014": 768,
+   "AZ ELN 2023": 750,
+   "Dreher 2016": 144
+  }
+ },
+ "negatives_jsonl_rows": 10696,
+ "A_template_library_unconditional": {
+  "neg_pairs_evaluated": 1993,
+  "neg_claims_target_product": 1891,
+  "neg_false_positive_rate": 0.948820873055695,
+  "neg_engine_active": 1981,
+  "pos_evaluated": 2500,
+  "pos_reproduced_target": 1599,
+  "pos_recall": 0.6396,
+  "pos_engine_active": 1599,
+  "target_class_hits": {
+   "B-H": 3431,
+   "snar_amine": 157
+  },
+  "any_class_hits": {
+   "B-H": 3521,
+   "snar_amine": 546,
+   "amide_coupling": 127,
+   "reductive_amination_ketone": 99,
+   "C_C_decarboxylation": 71,
+   "reductive_amination_aldehyde": 31,
+   "cross_electrophile_coupling": 8,
+   "negishi_insitu": 8,
+   "ullmann_X": 5,
+   "heck": 3
+  }
+ },
+ "B_condition_gate": {
+  "reaction_class_used": "B-H",
+  "assumed_temperature_C": 100.0,
+  "pairs_with_contrast": 459,
+  "comparisons": 353509,
+  "wins": 67844,
+  "ties": 238711,
+  "losses": 46954,
+  "auc": 0.5295466310617268,
+  "examples": [
+   {
+    "pair": [
+     "B1(OC(C(O1)(C)C)(C)C)C2=CC(=CC(=C2)Cl)C(",
+     "C1=CC=C(C=C1)N"
+    ],
+    "succ_scores": [
+     0.6
+    ],
+    "fail_scores": [
+     0.6
+    ],
+    "succ_solvents": [
+     "dme"
+    ],
+    "fail_solvents": [
+     "dme"
+    ]
+   },
+   {
+    "pair": [
+     "BrC1=CC(CN2C(N[C@H]3CCC[C@H]3O)=NC4=C2C(",
+     "C1CCNCC1"
+    ],
+    "succ_scores": [
+     0.5,
+     1.0
+    ],
+    "fail_scores": [
+     0.5,
+     0.6
+    ],
+    "succ_solvents": [
+     "dioxane",
+     "dmso",
+     "organic",
+     "toluene"
+    ],
+    "fail_solvents": [
+     "dme"
+    ]
+   },
+   {
+    "pair": [
+     "BrC1=CC=C(OC2=C(C3=CC=C(S(C)(=O)=O)C=C3)",
+     "C1CCNCC1"
+    ],
+    "succ_scores": [
+     0.5,
+     1.0
+    ],
+    "fail_scores": [
+     0.5,
+     0.6,
+     1.0
+    ],
+    "succ_solvents": [
+     "dioxane"
+    ],
+    "fail_solvents": [
+     "dme",
+     "dmso",
+     "organic",
+     "toluene"
+    ]
+   },
+   {
+    "pair": [
+     "BrC1=CSC([C@@](CC(N/2C)=O)(C)NC2=N\\C(OC(",
+     "C1CCNCC1"
+    ],
+    "succ_scores": [
+     0.5
+    ],
+    "fail_scores": [
+     0.5,
+     0.6,
+     1.0
+    ],
+    "succ_solvents": [
+     "dmso"
+    ],
+    "fail_solvents": [
+     "dioxane",
+     "dme",
+     "organic",
+     "toluene"
+    ]
+   },
+   {
+    "pair": [
+     "Brc1c(C(C)C)cc(C(C)C)cc1C(C)C",
+     "Nc1ncccc1"
+    ],
+    "succ_scores": [
+     0.5
+    ],
+    "fail_scores": [
+     0.5,
+     1.0
+    ],
+    "succ_solvents": [
+     "dioxane",
+     "toluene"
+    ],
+    "fail_solvents": [
+     "dioxane",
+     "organic",
+     "toluene"
+    ]
+   }
+  ]
+ },
+ "seconds": 101.7
+}

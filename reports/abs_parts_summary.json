@@ -1,0 +1,20 @@
+{
+ "parts_dir": "reports",
+ "n_parts": 1,
+ "rows": [
+  {
+   "part": "hte_absolute_model.json",
+   "n": 680,
+   "auc_raw_mean": 0.7799271464138839,
+   "auc_raw_std": 0.08985543961821806,
+   "auc_raw_min": 0.5272057978834696,
+   "auc_raw_max": 0.9443175412148529,
+   "auc_platt_mean": 0.7776573790601757,
+   "au_prc_mean": 0.7478106065249907,
+   "ece_raw_mean": 0.1551116403492769,
+   "ece_platt_mean": 0.13627865881397555,
+   "brier_mean": 0.21219820684295673
+  }
+ ],
+ "note": "Lead 侧独立汇总自子代理分片；rejection 见各行"
+}

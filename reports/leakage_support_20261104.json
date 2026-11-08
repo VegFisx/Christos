@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-11-04 12:32:10",
+  "n_sampled": 200,
+  "n_hits": 186,
+  "hit_share": 0.93,
+  "by_source": {
+    "base_templates.txt": 83,
+    "mined_ord": 103
+  },
+  "mined_support": {
+    "n": 103,
+    "median": 1341,
+    "p10": 56,
+    "share_le2": 0.0,
+    "share_le10": 0.0,
+    "share_ge100": 0.8641
+  },
+  "no_template_smarts": 0,
+  "seconds": 16.2
+}

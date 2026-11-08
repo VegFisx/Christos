@@ -1,0 +1,44 @@
+============================================================================================
+① 路线化学可用率 v2（depth=3 beam=4 max_routes=3）
+============================================================================================
+   [warn] rdchiral 模板库跳过 203 条无法编译/多目标的模板
+模板 3,025；终端 旧277,268 + 砌块32,146
+   20/100  有路线 16  路线 39  可用 20  (48s)
+
+============================================================================================
+结果
+============================================================================================
+  目标 100
+  ├ 找到路线（形式成功）        45  ( 45.0%)
+  ├ 至少一条可用路线            26  ( 26.0%)  <- ★ 可用率
+  └ 第一条路线就可用            26  ( 26.0%)  <- 用户看到的第一条
+  路线总数 120，可用 47 (39.2%)
+
+  规则命中（一条路线可触发多条）:
+     R1_残基路线          87
+     R2_前体更大          29
+
+  坏路线例子（前 5）:
+     目标 CC(=O)Nc1cc(N)ccc1OCCN1CCCC1
+        CC(=O)Nc1cc(N)ccc1OCCN1CCCC1                 <- ['BrCCN1CCCC1', 'CC(=O)Nc1cc(N)ccc1O']
+        CC(=O)Nc1cc(N)ccc1O                          <- ['CC(=O)Nc1ccccc1O', 'CON']
+        规则 ['R1_残基路线']
+     目标 CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C1
+        CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C <- ['CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)Cl)C1', 'CCO']
+        CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)Cl)C1 <- ['CC(C)(C)OC(=O)N1CCC(CN)C1', 'O=C(Cl)c1cnc(Cl)nc1Cl']
+        规则 ['R1_残基路线']
+     目标 CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C1
+        CCOC(=O)c1cnc(Cl)nc1NCC1CCN(C(=O)OC(C)(C)C)C <- ['CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)Cl)C1', 'CCO']
+        CC(C)(C)OC(=O)N1CCC(CNc2nc(Cl)ncc2C(=O)Cl)C1 <- ['CC(C)(C)OC(=O)Cl', 'O=C(Cl)c1cnc(Cl)nc1NCC1CCNC1']
+        O=C(Cl)c1cnc(Cl)nc1NCC1CCNC1                 <- ['NCC1CCNC1', 'O=C(Cl)c1cnc(Cl)nc1Cl']
+        规则 ['R1_残基路线']
+     目标 NC1(c2ccccc2)CC1
+        NC1(c2ccccc2)CC1                             <- ['NC1(c2ccc(F)cc2)CC1']
+        规则 ['R2_前体更大']
+     目标 CCOC(=O)c1cnc(SC)nc1NC1(c2ccccc2)CC1
+        CCOC(=O)c1cnc(SC)nc1NC1(c2ccccc2)CC1         <- ['CCOC(=O)c1cnc(SC)nc1Cl', 'NC1(c2ccccc2)CC1']
+        CCOC(=O)c1cnc(SC)nc1Cl                       <- ['CCO', 'CSc1ncc(C(=O)O)c(Cl)n1']
+        CSc1ncc(C(=O)O)c(Cl)n1                       <- ['CSc1nccc(Cl)n1', 'O=C=O']
+        规则 ['R1_残基路线']
+
+-> route_usability.json  302s

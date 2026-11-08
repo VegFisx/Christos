@@ -1,0 +1,94 @@
+========================================================================================================
+论文 TableS1 有 23 条规则
+========================================================================================================
+
+【与论文完全一致】11 条  ← 来源可靠，未改动
+    ✓ 硫酸酯水解
+    ✓ 磷酸酯水解
+    ✓ 半缩醛水解
+    ✓ 羟基氧化
+    ✓ 醛氧化
+    ✓ 酚氧化成醌
+    ✓ 酮还原
+    ✓ 芳香酸脱羧
+    ✓ 芳香环羟基化
+    ✓ 烯烃水合
+    ✓ 美拉德简化
+
+【我改过】11 条  ← 每条都该有理由和测试
+  规则                    状态        有注释说明       
+  ------------------------------------------------
+  酯水解                   active    有           
+  糖苷水解                  active    有           
+  酰胺水解                  active    有           
+  缩醛水解                  active    有           
+  胺氧化                   active    有           
+  醌还原                   active    有           
+  脱水                    active    有           
+  脱甲基                   active    有           
+  β-酮酸脱羧                active    有           
+  α,β-不饱和羰基水合           active    有           
+  酮-烯醇化                 active    有           
+
+【论文有、我库里没有】1 条
+    ✗ 酯化
+
+========================================================================================================
+我在论文之外新增的规则：41 条
+========================================================================================================
+  ★ 这些规则的 SMARTS 是我写的，数据库里没有 —— 必须靠测试守住 ★
+    [active  ] γ-内酯化                 esterification_gamma_lactone_001
+    [active  ] δ-内酯化                 esterification_delta_lactone_001
+    [active  ] 伯醇氧化成醛                oxidation_primary_alcohol_001
+    [active  ] 硫醚氧化成亚砜               oxidation_sulfide_001
+    [active  ] 双键环氧化                 oxidation_epoxide_001
+    [active  ] 脱氢成α,β-不饱和羰基          oxidation_dehydrogenation_enone_001
+    [active  ] 醛还原成醇                 reduction_aldehyde_001
+    [active  ] 双键加氢                  reduction_alkene_001
+    [active  ] 环氧化物开环成二醇             hydrolysis_epoxide_001
+    [active  ] 内酰胺开环                 hydrolysis_lactam_001
+    [active  ] 亚胺水解                  hydrolysis_imine_001
+    [active  ] 分子内半缩醛化               cyclization_hemiacetal_001
+    [active  ] 分子内酰胺化                cyclization_lactam_001
+    [active  ] 分子内脱水成醚               cyclization_ether_001
+    [active  ] δ-羟基酸内酯化(备用)          cyclization_lactone_delta_001
+    [active  ] 双键位置异构                isomerization_double_bond_001
+    [active  ] 逆羟醛裂解                 rearrangement_retro_aldol_001
+    [active  ] 丙二酸型脱羧                decarboxylation_malonic_001
+    [active  ] 氧化脱氨成羰基               elimination_deamination_001
+    [active  ] 酯交换                   esterification_transesterification_001
+    [active  ] 酯化(分子间)               esterification_intermolecular_001
+    [active  ] 席夫碱生成                 condensation_schiff_base_001
+    [active  ] 酰胺化(分子间)              amidation_intermolecular_001
+    [active  ] 酯的氨解                  aminolysis_ester_001
+    [active  ] 糖苷化                   condensation_glycosylation_001
+    [active  ] 半缩醛形成(分子间)            condensation_hemiacetal_001
+    [active  ] Michael加成(硫醇)         addition_michael_thiol_001
+    [active  ] Michael加成(胺)          addition_michael_amine_001
+    [active  ] 醇醛缩合(分子间)             condensation_aldol_001
+    [active  ] 硫代半缩醛形成               addition_thiohemiacetal_001
+    [active  ] 酰胺脱水成腈                elimination_amide_to_nitrile_001
+    [active  ] 亚砜氧化成砜                oxidation_sulfoxide_to_sulfone_001
+    [active  ] 亚砜还原成硫醚               reduction_sulfoxide_001
+    [active  ] 肉桂酸型脱羧                decarboxylation_cinnamic_001
+    [active  ] 对二酚氧化成醌               oxidation_diphenol_para_001
+    [active  ] 对醌还原成二酚               reduction_quinone_para_001
+    [disabled] 硫醇偶联成二硫               oxidation_thiol_disulfide_001
+    [disabled] 硝基还原成胺                reduction_nitro_001
+    [disabled] 分子内羟醛缩合               condensation_aldol_intra_001
+    [disabled] 差向异构化                 isomerization_epimerization_001
+    [disabled] 酚酸脱羧成酚                elimination_decarboxylation_phenol_001
+
+========================================================================================================
+结论
+========================================================================================================
+
+  · 论文 23 条：11 条原样保留 + 11 条修正 = 22 条
+  · 论文之外新增：41 条（SMARTS 无外部来源，只能靠测试）
+  · 合计 63 条 ✓
+
+  ★ 用户指出的问题在【另一处】★
+    规则 SMARTS 是化学知识，论文只给了 23 条，其余只能自己写 —— 这部分情有可原。
+    但【测试用例的底物分子】不该手写 —— 目标是「真实底物用例」，
+    应该从 tcm.db 取真实药材成分。
+

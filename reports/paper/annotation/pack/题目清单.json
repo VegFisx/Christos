@@ -1,0 +1,762 @@
+[
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "O=[N+]([O-])[O-]",
+   "Cc1ccccc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "O=[N+]([O-])[O-]",
+   "Cc1ccccc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Cc1ccc(N)cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+   "O=N[O-]"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Cc1ccc(N)cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+   "O=N[O-]"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Fc1ccc(Nc2ccc(Br)c(Cl)c2)c(Cl)c1",
+   "CCOCC",
+   "Cc1ccc([N+](=O)[O-])cc1C#N"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Fc1ccc(Nc2ccc(Br)c(Cl)c2)c(Cl)c1",
+   "CCOCC",
+   "Cc1ccc([N+](=O)[O-])cc1C#N"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Cc1ccc([N+](=O)[O-])cc1Br",
+   "CCOCC",
+   "N#Cc1ccc(Nc2ccc(F)cc2Cl)cc1Cl"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 18373,
+  "class": "1",
+  "target": "Cc1ccc([N+](=O)[O-])cc1C(=O)c1ccc(Nc2ccc(F)cc2Cl)cc1Cl",
+  "precursors": [
+   "Cc1ccc([N+](=O)[O-])cc1Br",
+   "CCOCC",
+   "N#Cc1ccc(Nc2ccc(F)cc2Cl)cc1Cl"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "CC(=O)O",
+   "CC(C)(C)OC(=O)N1CCCc2c(O)cccc21"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "C=C(C)C",
+   "CC(=O)Oc1cccc2c1CCCN2C(=O)O"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 12026,
+  "class": "5",
+  "target": "CC(=O)Oc1cccc2c1CCCN2C(=O)OC(C)(C)C",
+  "precursors": [
+   "CC(C)(C)OC(=O)N1CCCc2c(OC(=O)COS(C)(=O)=O)cccc21"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "BrP(Br)Br",
+   "O=S(=O)(Cl)c1ccc(CO)cc1"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(CBr)ccc1S(=O)(=O)Cl"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(CBr)ccc1S(=O)(=O)Cl"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(S(=O)(=O)Cl)ccc1CBr"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(CBr)ccc1S(=O)(=O)Cl"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(S(=O)(=O)Cl)ccc1CBr"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(S(=O)(=O)Cl)ccc1CBr"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 5489,
+  "class": "10",
+  "target": "O=S(=O)(Cl)c1ccc(CBr)cc1",
+  "precursors": [
+   "CC(C)c1cc(CBr)ccc1S(=O)(=O)Cl"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=S(=O)(Cl)c1ccc(F)cc1",
+   "NC1CCc2c(CCC=O)cccc2C1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=S(=O)(Cl)c1ccc(F)cc1",
+   "NC1CCc2c(CCC=O)cccc2C1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1c(F)ccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1cc(F)cc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1c(F)ccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1ccc(F)c2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1cc(F)cc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 24655,
+  "class": "8",
+  "target": "O=CCCc1cccc2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2",
+  "precursors": [
+   "O=CCCc1ccc(F)c2c1CCC(NS(=O)(=O)c1ccc(F)cc1)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(-c2c[nH]cn2)cc(C(F)(F)F)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(C(F)(F)F)cc(-c2c[nH]cn2)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(-c2c[nH]cn2)cc(C(F)(F)F)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(-c2c[nH]cn2)cc(C(F)(F)F)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(-c2c[nH]cn2)cc(C(F)(F)F)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "Oc1c(C(F)(F)F)cc(-c2c[nH]cn2)cc1C(F)(F)F"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "N#CC(F)(F)F",
+   "FC(F)(F)c1c[c]([Mg][Br])cc(-c2c[nH]cn2)c1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47,
+  "class": "3",
+  "target": "FC(F)(F)c1cc(-c2c[nH]cn2)cc(C(F)(F)F)c1",
+  "precursors": [
+   "N#CC(F)(F)F",
+   "FC(F)(F)c1c[c]([Mg][Br])cc(-c2c[nH]cn2)c1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1c(Br)c(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1c(Br)c(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)c(Br)c2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)c(Br)c2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)cc2c1NC(c1cc(N3CCOCC3)ccc1Br)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1Br)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)cc2c1NC(c1cc(Br)cc(N3CCOCC3)c1)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 35999,
+  "class": "1",
+  "target": "COC(=O)c1cc(Cl)cc2c1NC(c1cccc(N3CCOCC3)c1)C(C)(C)C2",
+  "precursors": [
+   "COC(=O)c1cc(Cl)cc2c1NC(c1cc(N3CCOCC3)ccc1Br)C(C)(C)C2"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CCCCOCCOc1ccc(I)cc1",
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(B(O)O)ccc21"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CCCCOCCOc1ccc(I)cc1",
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(B(O)O)ccc21"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(I)ccc21",
+   "CCCCOCCOc1ccc(B(O)O)cc1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(I)ccc21",
+   "CCCCOCCOc1ccc(B(O)O)cc1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(I)ccc21",
+   "CCCCOCCOc1ccc(B(O)O)cc1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(I)ccc21",
+   "CCCCOCCOc1ccc(B(O)O)cc1"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CCCCOCCOc1ccc(I)cc1",
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(B(O)O)ccc21"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 47941,
+  "class": "1",
+  "target": "CC#CCN1CCC(C(=O)OC)=Cc2cc(-c3ccc(OCCOCCCC)cc3)ccc21",
+  "precursors": [
+   "CCCCOCCOc1ccc(I)cc1",
+   "CC#CCN1CCC(C(=O)OC)=Cc2cc(B(O)O)ccc21"
+  ],
+  "usable": true,
+  "reason": "ok"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "COc1cccc(CCCCC(=O)O)c1"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "COc1cccc(CCCCC(=O)OC(C)(C)C)c1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "CO",
+   "O=C(O)CCCCc1cccc(O)c1"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "COc1cccc(CCCCC(=O)N2C(=O)OC[C@@H]2Cc2ccccc2)c1",
+   "O=S([O-])[O-]"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "O=C(O)CCCCc1cccc([N+](=O)[O-])c1",
+   "CO"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 42040,
+  "class": "6",
+  "target": "COc1cccc(CCCCC(=O)O)c1",
+  "precursors": [
+   "O=C(O)CCCCc1cccc([N+](=O)[O-])c1",
+   "CO"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 42067,
+  "class": "5",
+  "target": "COc1ccc(C2(CBr)OCCO2)cc1",
+  "precursors": [
+   "BrP(Br)Br",
+   "COc1ccc(C2(CO)OCCO2)cc1"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 42067,
+  "class": "5",
+  "target": "COc1ccc(C2(CBr)OCCO2)cc1",
+  "precursors": [
+   "COc1ccc(C2(CBr)OCCO2)cc1C(C)(C)C"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29966,
+  "class": "10",
+  "target": "CC(=O)OCC(Br)c1nc(-c2ccc(C(F)(F)F)cc2)c(Br)o1",
+  "precursors": [
+   "Cc1ccc(S(=O)(=O)OCC(Br)c2nc(-c3ccc(C(F)(F)F)cc3)c(Br)o2)cc1",
+   "CC(=O)O"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29966,
+  "class": "10",
+  "target": "CC(=O)OCC(Br)c1nc(-c2ccc(C(F)(F)F)cc2)c(Br)o1",
+  "precursors": [
+   "CS(=O)(=O)OCC(=O)OCC(Br)c1nc(-c2ccc(C(F)(F)F)cc2)c(Br)o1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(N(C(=O)c3ccccc3)C(=O)C(C)(C)N)c2c1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "[Li][CH2]CCC",
+   "CC(C)(N)C(=O)Nc1cc(N2CCS(=O)(=O)c3ccccc3C2)nc2ccccc12"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "[Li][CH2]CCC",
+   "CC(C)(N)C(=O)Nc1cc(N2CCS(=O)(=O)c3ccccc3C2)nc2ccccc12"
+  ],
+  "usable": false,
+  "reason": "R1_残基路线"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "Cc1cc2c(NC(=O)C(C)(C)N)cc(N3CCS(=O)(=O)c4ccccc4C3)nc2cc1C[P+](c1ccccc1)(c1ccccc1)c1ccccc1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1C[P+](c1ccccc1)(c1ccccc1)c1ccccc1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ },
+ {
+  "i": 29967,
+  "class": "9",
+  "target": "Cc1ccc2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1",
+  "precursors": [
+   "Cc1cc(C[P+](c2ccccc2)(c2ccccc2)c2ccccc2)c2nc(N3CCS(=O)(=O)c4ccccc4C3)cc(NC(=O)C(C)(C)N)c2c1"
+  ],
+  "usable": false,
+  "reason": "R2_前体大于目标"
+ }
+]

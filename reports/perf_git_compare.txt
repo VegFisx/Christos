@@ -1,0 +1,24 @@
+基线提交: 4209abc37998  ROUND25: dulwich version control + determinism fixes
+取到旧 engine.py: 17340 字节
+当前 engine.py  : 20139 字节
+  旧（优化前）: 457 个产物
+  新（优化后）: 454 个产物
+
+========================================================================================
+  共有     : 296
+  仅旧有   : 161
+  仅新有   : 0
+  完全相同 : False
+
+  ★ 有差异！★
+      仅旧有: CCN1CC2(COC)C(O)CC(OC)C34C5CC6=C(OC(=O)c7ccc(OC)cc7)C5C(OC(C)=O)(C(O)C6OC)
+      仅旧有: O=C(OC1OC2COC(=O)c3cc(O)c(O)c(O)c3-c3c(cc(O)c(O)c3O)C(=O)OC3C2OC(=O)C2C(O)
+      仅旧有: CCCCCCCCCCCCCCCC(=O)OCC1C(O)C2C(=O)C3(C=C(C)C(O)C3(O)C1O)C(C)CC1C2C1(C)C
+      仅旧有: CCN1CC2(COC(=O)c3cccc(O)c3NC(C)=O)CCC(OC)C34C2CC(O)(C13)C1(O)CC(OC)C2CC4(O
+      仅旧有: CCCCCCC=CC=CCCCCCCCC(=O)OC12C(O)C(OC)C3(O)CC(C1C3OC(=O)c1ccccc1)C13C(OC)CC
+      仅新有: CCN1CC2(COC(=O)c3ccccc3N3C(=O)C=C(C)C3=O)CCC(OC)C34C5CC6C(OC)CC(O)(C5C6OC)
+      仅新有: CCC(CCC(C)C1CCC2C3CCC4(O)CC(OC5OC(CO)C(O)C(O)C5O)CCC4(C)C3CCC12C)C(C)C
+      仅新有: O=C1C(CO)OC(C2=C(O)C(=C(O)C=Cc3ccc(O)cc3)C(=O)C(O)(C3OC(CO)C(O)C(O)C3O)C2=
+      仅新有: O=C(C=Cc1ccc(O)cc1)C1=C(O)c2cc(C3OCC=C3O)[nH]c2C(O)(C2OC(CO)C(O)C(O)C2O)C1
+      仅新有: CCN1CC2(COC)CCC(OC)C34C5CC6(O)C(OC)CC(OC(=O)c7ccc(OC)cc7)(C5C6OC(=O)c5ccc(
+========================================================================================

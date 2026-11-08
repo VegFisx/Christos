@@ -1,0 +1,32 @@
+D:\TCMAI 待检查文件（已跳过 venv/build/dist/archive/backups）: 527 个
+
+【现状 .gitignore】
+   会被提交: 526 个文件，共 822.7 MB
+   最大的几个：
+          281.7 MB  coconut.db
+          126.4 MB  Miniconda3-latest-Windows-x86_64.exe
+          122.9 MB  data\admet_cache.db
+           60.2 MB  tcm.db
+           56.3 MB  tools\xtb\xtb-6.7.1\bin\xtb.exe
+           51.9 MB  data\admet_cache.pkl
+
+【修正后 .gitignore】
+   会被提交: 190 个文件，共 56.5 MB
+   最大的几个：
+           21.5 MB  data\herb\HERB_ingredient_info_v2.txt
+           13.7 MB  docs\reports\admet_predictions.csv
+            8.8 MB  docs\reports\admet_products_all.csv
+            2.4 MB  data\herb\HERB_target_info_v2.txt
+            1.9 MB  data\ChineseDrugEthnonymsSynonymyTable.xlsx
+            1.8 MB  data\herb\HERB_herb_info_v2.txt
+
+==============================================================================
+修正 .gitignore 后，被提交的体积从 822.7 MB 降到 56.5 MB
+被排除掉的大件：
+   -    281.7 MB  coconut.db
+   -    126.4 MB  Miniconda3-latest-Windows-x86_64.exe
+   -    122.9 MB  data\admet_cache.db
+   -     60.2 MB  tcm.db
+   -     56.3 MB  tools\xtb\xtb-6.7.1\bin\xtb.exe
+   -     51.9 MB  data\admet_cache.pkl
+   -     36.8 MB  tools\xtb\xtb-6.7.1\lib\libxtb.a

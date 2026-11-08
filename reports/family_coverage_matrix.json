@@ -1,0 +1,1663 @@
+{
+ "sampled": 3000,
+ "stat": {
+  "可测": 2038,
+  "未命中": 1439,
+  "命中": 599
+ },
+ "label_cases": {
+  "C1杂 - 胺N(N)": 147,
+  "C1杂 - Cl": 8,
+  "Car - Car": 61,
+  "Car2杂 - 胺N(N)": 79,
+  "C1杂 - Car": 17,
+  "Si1杂 - 羟基O": 12,
+  "C=O3杂 - 酰胺N": 61,
+  "（多键：C环1杂 - 醚/酯O 等）": 10,
+  "（无成键）": 103,
+  "（多键：Car3杂 - 唑N 等）": 6,
+  "C1杂 - 酰胺N": 15,
+  "Car1杂 - 唑N": 10,
+  "C=O3杂 - 唑N": 4,
+  "C=O2杂 - 酰胺N": 260,
+  "Car2杂 - 醚/酯O": 14,
+  "C1杂 - 羟基O": 12,
+  "C - C=O1杂": 11,
+  "（多键：C环1杂 - 胺N(N) 等）": 8,
+  "（多键：Car1杂 - 唑N 等）": 26,
+  "B环2杂 - Car1杂": 1,
+  "（多键：C环=O2杂 - 酰胺N 等）": 15,
+  "C - C环1杂": 6,
+  "Car1杂 - 胺N(N)": 71,
+  "C1杂 - 醚/酯O": 125,
+  "（多键：Car=O2杂 - 唑N 等）": 6,
+  "C - Car": 33,
+  "C - C": 26,
+  "C=O2杂 - 羟基O": 19,
+  "Car1杂 - I": 7,
+  "C环2杂 - 醚/酯O": 4,
+  "C=O2杂 - Cl": 4,
+  "Br - C1杂": 31,
+  "Car3杂 - 胺N(N)": 25,
+  "Car2杂 - F": 2,
+  "B1杂 - C环1杂": 1,
+  "（多键：C环 - C环 等）": 10,
+  "C2杂 - P": 1,
+  "Car1杂 - F": 1,
+  "Car1杂 - Cl": 14,
+  "C环=O3杂 - 酰胺N": 3,
+  "S3杂 - 胺N(N)": 39,
+  "Car2杂 - Cl": 10,
+  "C=O1杂 - 酰胺N": 18,
+  "C - C1杂": 29,
+  "C环1杂 - P": 1,
+  "Car - C环=O1杂": 1,
+  "C环1杂 - 胺N(N)": 10,
+  "Car1杂 - Car1杂": 7,
+  "S3杂 - 羟基O": 20,
+  "Car1杂 - 羟基O": 4,
+  "C2杂 - 唑N": 3,
+  "C=O1杂 - Car": 31,
+  "C - Car1杂": 12,
+  "C1杂 - 唑N": 49,
+  "Car - Car1杂": 34,
+  "C1杂 - C1杂": 3,
+  "（多键：C=O3杂 - 酰胺N 等）": 2,
+  "Br - Car1杂": 10,
+  "（多键：C=O2杂 - 酰胺N 等）": 7,
+  "（多键：Car - Car 等）": 15,
+  "C=O2杂 - C环": 1,
+  "C=O2杂 - 醚/酯O": 27,
+  "Car2杂 - S": 4,
+  "Car1杂 - S": 6,
+  "C环=O1杂 - 酰胺N": 6,
+  "C环=O1杂 - S": 1,
+  "（多键：C环 - C环1杂 等）": 8,
+  "C环1杂 - 羟基O": 4,
+  "（多键：Car2杂 - 唑N 等）": 16,
+  "Car2杂 - Sn": 1,
+  "S环1杂 - 羟基O": 2,
+  "（多键：Car - Car1杂 等）": 6,
+  "（多键：Car3杂 - 胺N(N) 等）": 6,
+  "（多键：Car - Car=O2杂 等）": 1,
+  "C=O1杂 - C环": 2,
+  "C - C环": 15,
+  "（多键：Car - C环 等）": 4,
+  "Car1杂 - C环": 1,
+  "C1杂 - S": 20,
+  "Car2杂 - P3杂": 1,
+  "C=O3杂 - 醚/酯O": 12,
+  "Car1杂 - 醚/酯O": 21,
+  "C1杂 - I": 4,
+  "（多键：Car2杂 - Cl 等）": 1,
+  "S1杂 - 羟基O": 7,
+  "（多键：Car2杂 - Sar 等）": 2,
+  "（多键：唑N - 唑N 等）": 6,
+  "（多键：Car=O3杂 - 唑N 等）": 5,
+  "（多键：Car2杂 - 胺N(N) 等）": 3,
+  "（多键：Car1杂 - 酚O/芳醚O 等）": 3,
+  "C3杂 - 醚/酯O": 1,
+  "（多键：C环=O2杂 - 醚/酯O 等）": 1,
+  "C - C=O2杂": 1,
+  "Car - C环": 8,
+  "（多键：C环1杂 - S环2杂 等）": 1,
+  "C环1杂 - S": 2,
+  "C2杂 - Car": 1,
+  "（多键：Car1杂 - Sar 等）": 4,
+  "C2杂 - 胺N(N)": 2,
+  "C环2杂 - P": 1,
+  "Car2杂 - 唑N": 7,
+  "（多键：C - C环 等）": 1,
+  "C=O2杂 - Car2杂": 1,
+  "C环=O2杂 - 酰胺N": 4,
+  "（多键：Car=O3杂 - 酚O/芳醚O 等）": 2,
+  "C1杂 - F": 4,
+  "（多键：C环=O3杂 - 酰胺N 等）": 4,
+  "（多键：Car1杂 - Car1杂 等）": 2,
+  "（多键：C=O2杂 - 醚/酯O 等）": 3,
+  "C环1杂 - 唑N": 3,
+  "C1杂 - Car1杂": 1,
+  "Cl1杂 - P3杂": 1,
+  "Car3杂 - 唑N": 3,
+  "C=O2杂 - Car": 3,
+  "Car3杂 - 醚/酯O": 2,
+  "S3杂 - 唑N": 6,
+  "Car1杂 - Car2杂": 3,
+  "Br - Car2杂": 4,
+  "（多键：C1杂 - C1杂 等）": 2,
+  "（多键：Car2杂 - 酚O/芳醚O 等）": 3,
+  "（多键：C1杂 - 酰胺N 等）": 2,
+  "羟基O - 酰胺N": 2,
+  "Car1杂 - 酰胺N": 5,
+  "Car1杂 - S3杂": 1,
+  "Car - Car2杂": 5,
+  "Car=O2杂 - 羟基O": 2,
+  "C2杂 - 醚/酯O": 7,
+  "C环1杂 - 醚/酯O": 7,
+  "C2杂 - Si3杂": 1,
+  "（多键：C - 醚/酯O 等）": 2,
+  "Br - Car3杂": 2,
+  "（多键：C环1杂 - S环 等）": 3,
+  "C1杂 - P3杂": 1,
+  "Car - C环1杂": 6,
+  "（多键：C环1杂 - 酰胺N 等）": 5,
+  "（多键：C1杂 - 醚/酯O 等）": 3,
+  "Si3杂 - 羟基O": 1,
+  "（多键：C环1杂 - 羟基O 等）": 1,
+  "C环 - C环1杂": 1,
+  "（多键：Car=O2杂 - 酚O/芳醚O 等）": 1,
+  "胺N(N) - 胺N(N)": 2,
+  "C=O1杂 - C=O1杂": 1,
+  "（多键：Car - C环1杂 等）": 4,
+  "C=O2杂 - 唑N": 1,
+  "C=O1杂 - 羟基O": 5,
+  "Cl - C环2杂": 1,
+  "（多键：C1杂 - 胺N(N) 等）": 2,
+  "C=O3杂 - 羟基O": 1,
+  "（多键：C - C 等）": 1,
+  "胺N(N) - 酰胺N": 3,
+  "（多键：唑N - 酚O/芳醚O 等）": 4,
+  "C1杂 - C环": 4,
+  "（多键：B2杂 - Car1杂 等）": 1,
+  "（多键：C环1杂 - Si环2杂 等）": 1,
+  "唑N - 羟基O": 6,
+  "Cl1杂 - S3杂": 3,
+  "（多键：C环=O1杂 - 酰胺N 等）": 2,
+  "（多键：C1杂 - C3杂 等）": 1,
+  "Car3杂 - S": 2,
+  "Car2杂 - C环1杂": 1,
+  "Car3杂 - Cl": 2,
+  "C1杂 - C=O2杂": 2,
+  "（多键：C - C1杂 等）": 1,
+  "C=O2杂 - S": 6,
+  "（多键：Car2杂 - Sn 等）": 1,
+  "C环1杂 - F": 1,
+  "（多键：C - 胺N(N) 等）": 1,
+  "C3杂 - Car": 2,
+  "C=O2杂 - Car1杂": 1,
+  "Car1杂 - Li": 2,
+  "（多键：C环3杂 - 羟基O 等）": 1,
+  "C环=O1杂 - 羟基O": 2,
+  "C1杂 - P": 3,
+  "Car3杂 - Sn": 1,
+  "C3杂 - P3杂": 1,
+  "Car1杂 - P3杂": 1,
+  "Car1杂 - 酚O/芳醚O": 1,
+  "C1杂 - Sn": 2,
+  "C=O1杂 - Car1杂": 2,
+  "（多键：C3杂 - Car 等）": 1,
+  "C1杂 - Li": 1,
+  "C2杂 - C=O2杂": 1,
+  "（多键：C环1杂 - C环1杂 等）": 1,
+  "（多键：Car - 酰胺N 等）": 1,
+  "C1杂 - C环2杂": 1,
+  "C环3杂 - 胺N(N)": 1,
+  "（多键：C - Car 等）": 2,
+  "（多键：S3杂 - 羟基O 等）": 1,
+  "Si1杂 - 唑N": 1,
+  "Br - C环1杂": 3,
+  "Cl - C环1杂": 2,
+  "Car1杂 - Si": 1,
+  "Car1杂 - S2杂": 1,
+  "Cl1杂 - 胺N(N)": 1,
+  "C环1杂 - Se": 1,
+  "（多键：C环2杂 - 醚/酯O 等）": 3,
+  "C - Car2杂": 1,
+  "C1杂 - C3杂": 1,
+  "（多键：C环=O3杂 - 醚/酯O 等）": 1,
+  "C环2杂 - 胺N(N)": 1,
+  "C2杂 - 酰胺N": 1,
+  "（多键：C环=O2杂 - S环 等）": 1,
+  "（多键：Car1杂 - 羟基O 等）": 2,
+  "Car2杂 - I": 1,
+  "Car2杂 - 酰胺N": 1,
+  "B2杂 - Car1杂": 1,
+  "Br - C环2杂": 1,
+  "C环1杂 - 酰胺N": 1,
+  "（多键：C环2杂 - 羟基O 等）": 1,
+  "（多键：C环2杂 - S环2杂 等）": 1,
+  "C - C2杂": 1,
+  "C1杂 - S2杂": 1,
+  "Car=O2杂 - S": 1,
+  "P3杂 - 羟基O": 1,
+  "（多键：C环1杂 - S 等）": 1,
+  "Car2杂 - 羟基O": 1,
+  "Car1杂 - C环1杂": 1,
+  "S3杂 - 酰胺N": 1,
+  "Car2杂 - S3杂": 1,
+  "（多键：Car1杂 - C环1杂 等）": 1,
+  "S1杂 - 胺N(N)": 1,
+  "（多键：Car2杂 - S 等）": 1
+ },
+ "matrix": {
+  "C1杂 - 胺N(N)": {
+   "reductive_amination_aldehyde": [
+    31,
+    30
+   ],
+   "snar_amine": [
+    18,
+    0
+   ],
+   "reductive_amination_ketone": [
+    6,
+    0
+   ],
+   "sn2_nheterocycle": [
+    3,
+    0
+   ],
+   "williamson": [
+    9,
+    0
+   ],
+   "B-H": [
+    6,
+    0
+   ],
+   "chan_lam": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    2,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ]
+  },
+  "Car2杂 - 胺N(N)": {
+   "snar_amine": [
+    59,
+    51
+   ],
+   "B-H": [
+    65,
+    57
+   ],
+   "ullmann_X": [
+    3,
+    0
+   ],
+   "reductive_amination_ketone": [
+    2,
+    0
+   ],
+   "C_C_decarboxylation": [
+    3,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "amine_sulfonation": [
+    1,
+    0
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环1杂 - 醚/酯O 等）": {
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ],
+   "williamson": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - 酰胺N": {
+   "B-H": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ]
+  },
+  "Car - Car": {
+   "suzuki": [
+    49,
+    41
+   ],
+   "chan_lam": [
+    12,
+    0
+   ],
+   "esterification": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    3,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    2,
+    2
+   ],
+   "ullmann_X": [
+    4,
+    4
+   ],
+   "B-H": [
+    3,
+    0
+   ],
+   "snar_amine": [
+    6,
+    0
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    2,
+    0
+   ],
+   "reductive_amination_aldehyde": [
+    1,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "mitsunobu": [
+    1,
+    0
+   ]
+  },
+  "C=O2杂 - 酰胺N": {
+   "amide_coupling": [
+    130,
+    109
+   ],
+   "amine_acetylation": [
+    58,
+    50
+   ],
+   "esterification": [
+    12,
+    0
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "B-H": [
+    19,
+    0
+   ],
+   "snar_alcohol": [
+    2,
+    0
+   ],
+   "ester_schotten_baumann": [
+    5,
+    0
+   ],
+   "reductive_amination_ketone": [
+    6,
+    0
+   ],
+   "snar_amine": [
+    53,
+    0
+   ],
+   "C_C_decarboxylation": [
+    8,
+    0
+   ],
+   "heck": [
+    1,
+    0
+   ],
+   "imidazole_condensation_acid": [
+    1,
+    0
+   ]
+  },
+  "Car2杂 - 醚/酯O": {
+   "snar_alcohol": [
+    2,
+    2
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "ullmann_phenol": [
+    7,
+    6
+   ],
+   "reductive_amination_ketone": [
+    1,
+    0
+   ]
+  },
+  "C - C=O1杂": {
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环1杂 - 胺N(N) 等）": {
+   "reductive_amination_ketone": [
+    1,
+    0
+   ],
+   "ester_schotten_baumann": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "Car1杂 - 胺N(N)": {
+   "B-H": [
+    27,
+    23
+   ],
+   "snar_amine": [
+    32,
+    28
+   ],
+   "reductive_amination_ketone": [
+    6,
+    0
+   ],
+   "amide_coupling": [
+    6,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ],
+   "chan_lam": [
+    1,
+    1
+   ]
+  },
+  "C1杂 - 醚/酯O": {
+   "williamson": [
+    56,
+    46
+   ],
+   "sn2_nheterocycle": [
+    3,
+    0
+   ],
+   "negishi_insitu": [
+    5,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    5,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    2,
+    0
+   ],
+   "mitsunobu": [
+    10,
+    5
+   ],
+   "C_C_decarboxylation": [
+    3,
+    0
+   ],
+   "esterification": [
+    24,
+    24
+   ],
+   "deoxygenative_coupling": [
+    9,
+    0
+   ],
+   "snar_alcohol": [
+    9,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "ester_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car=O2杂 - 唑N 等）": {
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "C - Car": {
+   "sonogashira": [
+    11,
+    10
+   ],
+   "heck": [
+    4,
+    0
+   ],
+   "B-H": [
+    2,
+    0
+   ],
+   "sn2_nheterocycle": [
+    1,
+    0
+   ],
+   "deoxygenative_coupling": [
+    2,
+    0
+   ],
+   "snar_alcohol": [
+    4,
+    0
+   ],
+   "C_C_decarboxylation": [
+    2,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "negishi_batch": [
+    1,
+    0
+   ]
+  },
+  "C=O3杂 - 酰胺N": {
+   "snar_amine": [
+    9,
+    0
+   ],
+   "urea_formation": [
+    16,
+    12
+   ],
+   "reductive_amination_ketone": [
+    2,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "Car3杂 - 胺N(N)": {
+   "snar_amine": [
+    18,
+    16
+   ],
+   "B-H": [
+    18,
+    17
+   ],
+   "ullmann_phenol": [
+    2,
+    0
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ]
+  },
+  "C - C": {
+   "williamson": [
+    1,
+    0
+   ],
+   "horner_wadsworth_emmons": [
+    2,
+    0
+   ]
+  },
+  "S3杂 - 胺N(N)": {
+   "amine_sulfonation": [
+    36,
+    30
+   ],
+   "B-H": [
+    5,
+    0
+   ],
+   "snar_amine": [
+    7,
+    0
+   ],
+   "ester_sulfonic_schotten_baumann": [
+    1,
+    0
+   ],
+   "reductive_amination_ketone": [
+    1,
+    0
+   ]
+  },
+  "C环1杂 - 胺N(N)": {
+   "reductive_amination_ketone": [
+    7,
+    4
+   ],
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "Car1杂 - Car1杂": {
+   "chan_lam": [
+    1,
+    0
+   ],
+   "suzuki": [
+    2,
+    1
+   ]
+  },
+  "S3杂 - 羟基O": {
+   "ester_sulfonic_schotten_baumann": [
+    19,
+    18
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "esterification": [
+    1,
+    0
+   ]
+  },
+  "C2杂 - 唑N": {
+   "sn2_nheterocycle": [
+    2,
+    2
+   ],
+   "negishi_insitu": [
+    2,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ]
+  },
+  "C - Car1杂": {
+   "heck": [
+    2,
+    0
+   ],
+   "sonogashira": [
+    6,
+    6
+   ],
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - 唑N": {
+   "sn2_nheterocycle": [
+    21,
+    19
+   ],
+   "negishi_insitu": [
+    8,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    2,
+    0
+   ],
+   "williamson": [
+    2,
+    0
+   ],
+   "C_C_decarboxylation": [
+    2,
+    0
+   ],
+   "heck": [
+    1,
+    0
+   ]
+  },
+  "Car - Car1杂": {
+   "suzuki": [
+    31,
+    28
+   ],
+   "ullmann_X": [
+    1,
+    1
+   ],
+   "reductive_amination_aldehyde": [
+    1,
+    0
+   ],
+   "B-H": [
+    2,
+    0
+   ],
+   "snar_amine": [
+    5,
+    0
+   ],
+   "chan_lam": [
+    9,
+    0
+   ],
+   "heck": [
+    1,
+    0
+   ]
+  },
+  "C=O2杂 - 醚/酯O": {
+   "ester_schotten_baumann": [
+    12,
+    9
+   ],
+   "ester_sulfonic_schotten_baumann": [
+    1,
+    0
+   ],
+   "williamson": [
+    2,
+    0
+   ],
+   "amine_acetylation": [
+    2,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "esterification": [
+    2,
+    1
+   ]
+  },
+  "Car1杂 - 唑N": {
+   "chan_lam": [
+    1,
+    1
+   ]
+  },
+  "Car1杂 - Cl": {
+   "ester_schotten_baumann": [
+    1,
+    0
+   ],
+   "suzuki": [
+    1,
+    0
+   ]
+  },
+  "C=O1杂 - Car": {
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    2,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "heck": [
+    2,
+    0
+   ]
+  },
+  "（多键：Car3杂 - 胺N(N) 等）": {
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "B-H": [
+    6,
+    0
+   ],
+   "snar_amine": [
+    6,
+    0
+   ]
+  },
+  "Car1杂 - I": {
+   "negishi_insitu": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car1杂 - 唑N 等）": {
+   "reductive_amination_ketone": [
+    4,
+    0
+   ],
+   "snar_amine": [
+    2,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "reductive_amination_aldehyde": [
+    3,
+    0
+   ],
+   "chan_lam": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "imidazole_Xketone_synthesis": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环 - C环1杂 等）": {
+   "B-H": [
+    1,
+    0
+   ],
+   "ester_sulfonic_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car2杂 - Sar 等）": {
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car=O3杂 - 唑N 等）": {
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "urea_formation": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car2杂 - 胺N(N) 等）": {
+   "B-H": [
+    3,
+    0
+   ],
+   "snar_amine": [
+    3,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环=O2杂 - 醚/酯O 等）": {
+   "reductive_amination_ketone": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "imidazole_condensation_acid": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "（无成键）": {
+   "amide_coupling": [
+    3,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "amine_sulfonation": [
+    1,
+    0
+   ],
+   "mitsunobu": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - S": {
+   "mitsunobu": [
+    2,
+    1
+   ],
+   "williamson": [
+    1,
+    0
+   ],
+   "snar_thiol": [
+    2,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car2杂 - 唑N 等）": {
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "reductive_amination_aldehyde": [
+    2,
+    0
+   ],
+   "oxadiazole_condensation": [
+    1,
+    0
+   ],
+   "imidazole_condensation_amine": [
+    1,
+    1
+   ],
+   "tetrazole_synthesis": [
+    1,
+    0
+   ]
+  },
+  "C环=O2杂 - 酰胺N": {
+   "snar_amine": [
+    2,
+    0
+   ]
+  },
+  "（多键：C环=O3杂 - 酰胺N 等）": {
+   "B-H": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - Cl": {
+   "williamson": [
+    1,
+    0
+   ],
+   "ester_sulfonic_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "C环1杂 - 唑N": {
+   "sn2_nheterocycle": [
+    1,
+    1
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ]
+  },
+  "Br - C1杂": {
+   "williamson": [
+    4,
+    0
+   ]
+  },
+  "Car1杂 - Car2杂": {
+   "ullmann_X": [
+    1,
+    0
+   ]
+  },
+  "Car - Car2杂": {
+   "suzuki": [
+    4,
+    1
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ]
+  },
+  "Car1杂 - 醚/酯O": {
+   "mitsunobu": [
+    3,
+    2
+   ],
+   "ullmann_phenol": [
+    3,
+    1
+   ],
+   "snar_alcohol": [
+    4,
+    2
+   ],
+   "deoxygenative_coupling": [
+    2,
+    0
+   ]
+  },
+  "C环=O1杂 - 酰胺N": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C=O1杂 - 酰胺N": {
+   "reductive_amination_aldehyde": [
+    2,
+    0
+   ],
+   "snar_amine": [
+    2,
+    0
+   ],
+   "reductive_amination_ketone": [
+    1,
+    0
+   ]
+  },
+  "C2杂 - 醚/酯O": {
+   "williamson": [
+    4,
+    3
+   ]
+  },
+  "S环1杂 - 羟基O": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C - C环": {
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ],
+   "esterification": [
+    1,
+    0
+   ]
+  },
+  "C环1杂 - 醚/酯O": {
+   "esterification": [
+    2,
+    2
+   ],
+   "williamson": [
+    1,
+    1
+   ],
+   "mitsunobu": [
+    1,
+    0
+   ]
+  },
+  "（多键：C - 醚/酯O 等）": {
+   "suzuki": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "Br - Car3杂": {
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "C环=O3杂 - 酰胺N": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car - Car 等）": {
+   "suzuki": [
+    1,
+    1
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "sonogashira": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环1杂 - 酰胺N 等）": {
+   "B-H": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "williamson": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "Car2杂 - 唑N": {
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C环1杂 - 羟基O": {
+   "esterification": [
+    1,
+    0
+   ]
+  },
+  "S1杂 - 羟基O": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - C环": {
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ]
+  },
+  "C - C1杂": {
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "triazole_synthesis_2": [
+    1,
+    0
+   ],
+   "williamson": [
+    1,
+    0
+   ]
+  },
+  "（多键：C=O2杂 - 酰胺N 等）": {
+   "amine_acetylation": [
+    2,
+    0
+   ],
+   "amide_coupling": [
+    2,
+    0
+   ]
+  },
+  "（多键：C=O2杂 - 醚/酯O 等）": {
+   "esterification": [
+    1,
+    0
+   ],
+   "ester_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "Car - C环1杂": {
+   "ullmann_phenol": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ]
+  },
+  "Car3杂 - S": {
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环=O2杂 - 酰胺N 等）": {
+   "amine_acetylation": [
+    1,
+    0
+   ],
+   "amide_coupling": [
+    1,
+    0
+   ],
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "williamson": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ],
+   "reductive_amination_ketone": [
+    1,
+    0
+   ]
+  },
+  "C环1杂 - F": {
+   "williamson": [
+    1,
+    0
+   ]
+  },
+  "（多键：唑N - 酚O/芳醚O 等）": {
+   "oxadiazole_condensation": [
+    2,
+    0
+   ]
+  },
+  "（多键：Car2杂 - 酚O/芳醚O 等）": {
+   "mitsunobu": [
+    1,
+    0
+   ]
+  },
+  "Car1杂 - S": {
+   "snar_thiol": [
+    2,
+    2
+   ]
+  },
+  "唑N - 羟基O": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "（多键：C3杂 - Car 等）": {
+   "negishi_insitu": [
+    1,
+    0
+   ]
+  },
+  "C=O2杂 - 羟基O": {
+   "ester_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "C=O2杂 - Car": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "Car - C环": {
+   "cross_electrophile_coupling": [
+    1,
+    1
+   ],
+   "negishi_insitu": [
+    1,
+    1
+   ],
+   "negishi_batch": [
+    1,
+    1
+   ]
+  },
+  "C1杂 - C1杂": {
+   "reductive_amination_aldehyde": [
+    1,
+    0
+   ]
+  },
+  "C环3杂 - 胺N(N)": {
+   "sn2_nheterocycle": [
+    1,
+    0
+   ]
+  },
+  "（多键：S3杂 - 羟基O 等）": {
+   "ester_sulfonic_schotten_baumann": [
+    1,
+    0
+   ]
+  },
+  "C - Car2杂": {
+   "negishi_batch": [
+    1,
+    1
+   ]
+  },
+  "C1杂 - C3杂": {
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "C环2杂 - 胺N(N)": {
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "C3杂 - Car": {
+   "sonogashira": [
+    1,
+    0
+   ]
+  },
+  "（多键：C1杂 - 醚/酯O 等）": {
+   "williamson": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car1杂 - Sar 等）": {
+   "sn2_nheterocycle": [
+    1,
+    0
+   ]
+  },
+  "C=O3杂 - 醚/酯O": {
+   "williamson": [
+    2,
+    0
+   ]
+  },
+  "（多键：Car3杂 - 唑N 等）": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car - Car1杂 等）": {
+   "suzuki": [
+    1,
+    0
+   ]
+  },
+  "（多键：C环 - C环 等）": {
+   "amide_coupling": [
+    1,
+    0
+   ]
+  },
+  "（多键：C - Car 等）": {
+   "snar_amine": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - C=O2杂": {
+   "negishi_insitu": [
+    1,
+    0
+   ],
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "（多键：唑N - 唑N 等）": {
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car=O3杂 - 酚O/芳醚O 等）": {
+   "deoxygenative_coupling": [
+    1,
+    0
+   ],
+   "snar_alcohol": [
+    1,
+    0
+   ],
+   "mitsunobu": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car1杂 - C环1杂 等）": {
+   "cross_electrophile_coupling": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "ullmann_X": [
+    1,
+    0
+   ]
+  },
+  "（多键：Car2杂 - S 等）": {
+   "heck": [
+    1,
+    0
+   ],
+   "B-H": [
+    1,
+    0
+   ],
+   "C_C_decarboxylation": [
+    1,
+    0
+   ]
+  },
+  "C1杂 - Car": {}
+ }
+}

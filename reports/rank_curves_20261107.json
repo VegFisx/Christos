@@ -1,0 +1,29 @@
+{
+ "generated_at": "2026-11-07T19:57:45",
+ "data": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\cand_cache_3000.jsonl",
+ "n_reactions": 2997,
+ "in_candidate_recall": 0.9256,
+ "not_in_candidates": 223,
+ "topk_recall": {
+  "1": 0.4271,
+  "2": 0.5489,
+  "3": 0.6013,
+  "5": 0.6773,
+  "10": 0.8011,
+  "20": 0.9032,
+  "32": 0.9256,
+  "50": 0.9256,
+  "100": 0.9256
+ },
+ "candidate_count": {
+  "mean": 21.34,
+  "median": 19,
+  "p90": 37,
+  "max": 94
+ },
+ "hit_rank": {
+  "median": 2,
+  "p90": 12
+ },
+ "note": "候选为引擎默认档（cap 32）单轮输出，按发射序；in_candidate_recall 是候选上限，top-1 到 in_candidate_recall 之间的差距全部来自排序。"
+}

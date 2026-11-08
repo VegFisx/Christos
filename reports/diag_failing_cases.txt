@@ -1,0 +1,36 @@
+
+【糖苷水解】水杨苷
+  SMARTS: [C:1]1([O:2][C:3][C:4][C:5][C:6]1)[O:7][C:8]>>[C:1]1([O:2][C:3][C:4][C:5][C:6]1)[OH].[OH:7][C:8]
+  reversible=False  co={'H2O': 1}  by={}
+  子结构匹配: False
+  匹配位点数: 0
+
+【酰胺水解】乙酰胺
+  SMARTS: [C:1](=[O:2])[N:3][C:4]>>[C:1](=[O:2])[OH].[N:3][C:4]
+  reversible=False  co={'H2O': 1}  by={}
+  子结构匹配: False
+  匹配位点数: 0
+
+【酚氧化成醌】对苯二酚
+  SMARTS: [OH:1][c:2][c:3][OH:4]>>[O:1]=[C:2][C:3]=[O:4]
+  reversible=False  co={'O2': 0.5}  by={'H2O': 1}
+  子结构匹配: False
+  匹配位点数: 0
+
+【分子内脱水成醚】1,6-己二醇
+  SMARTS: [OX2H:1][CX4:2][CX4:3][CX4:4][CX4:5][OX2H:6]>>[O:1]1[CX4:2][CX4:3][CX4:4][CX4:5]1.[OH2:6]
+  reversible=False  co={}  by={}
+  子结构匹配: False
+  匹配位点数: 0
+
+【逆羟醛裂解】4-羟基-2-戊酮
+  SMARTS: [C:1]([OH:2])[CX4H:3][C:4](=[OX1:5])>>[CX3:1]=[OX1:2].[CX3:3][C:4](=[OX1:5])
+  reversible=False  co={}  by={}
+  子结构匹配: False
+  匹配位点数: 0
+
+【Michael加成(硫醇)】丙烯醛
+  SMARTS: [C:1]=[C:2][C:3]=[OX1:4].[SX2H:5]>>[CX4:1][CX4:2]([S:5])[C:3]=[OX1:4]
+  reversible=True  co={}  by={}
+  子结构匹配: False
+  匹配位点数: 0

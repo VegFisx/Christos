@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-10-31",
-  "note": "炮制模式允许的规则：只收录有炮制文献映射的规则。逐条来源与引句见本文件 sources；论文用汇总另见 reports/paper/paozhi_sources_20261031.json（2026-10-31 本轮未改）。",
+  "note": "炮制模式允许的规则：只收录有炮制文献映射的规则。逐条来源与引句见本文件 sources；论文用汇总另见 reports/paper/paozhi_sources_20261031.json（2026-10-31 本轮未改）。 无 DOI 的中文期刊来源标 evidence_level=secondary 并给印刷标识符；规则级 evidence_level 取所有来源里最强的。",
   "rules": [
     {
       "id": "hydrolysis_glycoside_001",
@@ -96,7 +96,8 @@
             "oa_url": "https://doi.org/10.3389/fphar.2024.1442297"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "hydrolysis_ester_001",
@@ -119,7 +120,8 @@
             "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2016.00367/pdf"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "elimination_dehydration_001",
@@ -159,7 +161,8 @@
             "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "maillard_simplified_001",
@@ -199,7 +202,8 @@
             "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2018.00934/pdf"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "hydrolysis_lactone_5ring_001",
@@ -221,7 +225,8 @@
             "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "hydrolysis_epoxide_001",
@@ -243,7 +248,8 @@
             "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "esterification_acid_alcohol_001",
@@ -265,7 +271,8 @@
             "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "oxidation_allylic_alcohol_001",
@@ -287,7 +294,8 @@
             "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "demethylation_n_001",
@@ -299,9 +307,14 @@
           "volume": "32(2)",
           "pages": "150-153",
           "quote": "槟榔碱在炮制过程中具有两种转化路径:一是槟榔碱的去甲基化和甲基化,二是槟榔碱的缩合反应。在美拉德反应存在时,前者的转化率明显下降。",
-          "note": "四川大学期刊社页面摘要全文；去甲基化产物为去甲槟榔碱。"
+          "note": "四川大学期刊社页面摘要全文；去甲基化产物为去甲槟榔碱。",
+          "doi": null,
+          "identifier": "华西药学杂志 2017, 32(2): 150-153",
+          "access": "publisher abstract page (四川大学期刊社)",
+          "evidence_level": "secondary"
         }
-      ]
+      ],
+      "evidence_level": "secondary"
     },
     {
       "id": "decarboxylation_001",
@@ -313,7 +326,11 @@
           "volume": "33(11)",
           "pages": "1910-1913",
           "quote": "",
-          "note": "清炒后羧基苍术苷（CATR）下降、苍术苷（ATR）升高；检索摘要。CATR 的 C4 有两个羧基，属丙二酸型脱羧。"
+          "note": "清炒后羧基苍术苷（CATR）下降、苍术苷（ATR）升高；检索摘要。CATR 的 C4 有两个羧基，属丙二酸型脱羧。",
+          "doi": null,
+          "identifier": "药物分析杂志 2013, 33(11): 1910-1913",
+          "access": "abstract via journal index",
+          "evidence_level": "secondary"
         },
         {
           "title": "Isolation of a new atractyloside type compound",
@@ -332,7 +349,8 @@
             "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1016/0014-5793%2873%2980062-6"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     },
     {
       "id": "cleavage_ether_acyclic_001",
@@ -354,7 +372,8 @@
             "note": "doi.org 解析 302（中文库 DOI，Crossref 无记录）。"
           }
         }
-      ]
+      ],
+      "evidence_level": "primary"
     }
   ]
 }

@@ -1,0 +1,86 @@
+====================================================================================================
+所有规则的 co_substrate_pool
+====================================================================================================
+  带 co_substrate_pool 的规则: 11 条
+
+  【酯交换】esterification_transesterification_001
+      CCO                   when=['alcohol', 'ethanol']                        （乙醇（醇提才有））
+      CO                    when=['alcohol', 'ethanol', 'methanol']            （甲醇（醇提才有））
+      O                     when=['water', 'aqueous']                          （水）
+
+  【酯化(分子间)】esterification_intermolecular_001
+      CCO                   when=['alcohol', 'ethanol']                        （乙醇（醇提才有））
+      CO                    when=['alcohol', 'ethanol', 'methanol']            （甲醇（醇提才有））
+
+  【席夫碱生成】condensation_schiff_base_001
+      N                     when=None                                          ★★ 不合理：氨（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      CN                    when=None                                          ★★ 不合理：甲胺（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      NCC(=O)O              when=None                                          （甘氨酸（药材游离氨基酸））   [when_solvent=None → 任何工艺都可用]
+
+  【酰胺化(分子间)】amidation_intermolecular_001
+      N                     when=None                                          ★★ 不合理：氨（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      CN                    when=None                                          ★★ 不合理：甲胺（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      NCC(=O)O              when=None                                          （甘氨酸（药材游离氨基酸））   [when_solvent=None → 任何工艺都可用]
+
+  【酯的氨解】aminolysis_ester_001
+      N                     when=None                                          ★★ 不合理：氨（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      CN                    when=None                                          ★★ 不合理：甲胺（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      NCC(=O)O              when=None                                          （甘氨酸（药材游离氨基酸））   [when_solvent=None → 任何工艺都可用]
+
+  【糖苷化】condensation_glycosylation_001
+      CCO                   when=['alcohol', 'ethanol']                        （乙醇（醇提才有））
+      CO                    when=['alcohol', 'ethanol', 'methanol']            （甲醇（醇提才有））
+      OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1Owhen=['water', 'aqueous', 'alcohol', 'ethanol']  
+
+  【半缩醛形成(分子间)】condensation_hemiacetal_001
+      CCO                   when=['alcohol', 'ethanol']                        （乙醇（醇提才有））
+      CO                    when=['alcohol', 'ethanol', 'methanol']            （甲醇（醇提才有））
+      OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1Owhen=['water', 'aqueous', 'alcohol', 'ethanol']  
+
+  【Michael加成(硫醇)】addition_michael_thiol_001
+      CS                    when=None                                           [when_solvent=None → 任何工艺都可用]
+      NC(CS)C(=O)O          when=None                                           [when_solvent=None → 任何工艺都可用]
+
+  【Michael加成(胺)】addition_michael_amine_001
+      N                     when=None                                          ★★ 不合理：氨（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      CN                    when=None                                          ★★ 不合理：甲胺（煎煮水里没有）   [when_solvent=None → 任何工艺都可用]
+      NCC(=O)O              when=None                                          （甘氨酸（药材游离氨基酸））   [when_solvent=None → 任何工艺都可用]
+
+  【醇醛缩合(分子间)】condensation_aldol_001
+      C=O                   when=None                                           [when_solvent=None → 任何工艺都可用]
+      CC=O                  when=None                                           [when_solvent=None → 任何工艺都可用]
+
+  【硫代半缩醛形成】addition_thiohemiacetal_001
+      CS                    when=None                                           [when_solvent=None → 任何工艺都可用]
+      NC(CS)C(=O)O          when=None                                           [when_solvent=None → 任何工艺都可用]
+
+====================================================================================================
+判定
+====================================================================================================
+  ★ 发现 8 处「不可能存在却永远可用」的陪跑试剂：
+      席夫碱生成                 N       氨（煎煮水里没有）
+      席夫碱生成                 CN      甲胺（煎煮水里没有）
+      酰胺化(分子间)              N       氨（煎煮水里没有）
+      酰胺化(分子间)              CN      甲胺（煎煮水里没有）
+      酯的氨解                  N       氨（煎煮水里没有）
+      酯的氨解                  CN      甲胺（煎煮水里没有）
+      Michael加成(胺)          N       氨（煎煮水里没有）
+      Michael加成(胺)          CN      甲胺（煎煮水里没有）
+
+  后果：这些反应会在【所有工艺】下发生，凭空造出产物。
+
+====================================================================================================
+顺带：哪些陪跑试剂【有】when_solvent 约束（正确的做法）
+====================================================================================================
+  有约束的 11 条：
+      酯交换                   CCO         ['alcohol', 'ethanol']
+      酯交换                   CO          ['alcohol', 'ethanol', 'methanol']
+      酯交换                   O           ['water', 'aqueous']
+      酯化(分子间)               CCO         ['alcohol', 'ethanol']
+      酯化(分子间)               CO          ['alcohol', 'ethanol', 'methanol']
+      糖苷化                   CCO         ['alcohol', 'ethanol']
+      糖苷化                   CO          ['alcohol', 'ethanol', 'methanol']
+      糖苷化                   OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O['water', 'aqueous', 'alcohol', 'ethanol']
+      半缩醛形成(分子间)            CCO         ['alcohol', 'ethanol']
+      半缩醛形成(分子间)            CO          ['alcohol', 'ethanol', 'methanol']
+      半缩醛形成(分子间)            OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O['water', 'aqueous', 'alcohol', 'ethanol']

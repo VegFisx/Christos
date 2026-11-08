@@ -1,0 +1,69 @@
+快照: TCMAI-src-20261010-191318
+副本: D:\ProgramData\DSHNS\chemreact-staging\strip-rehearsal
+
+src/ 下 14 个模块
+
+========================================================================================
+① 删除 3 个纯模块后，谁会断（模拟）
+========================================================================================
+  batch_pairs.py               依赖 ['admet_cache']
+  coconut_analyzer.py          依赖 ['toxic_keywords']
+  llm_agent.py                 依赖 ['admet_cache', 'dose_weights']
+
+========================================================================================
+② 缠结文件里，对已删符号的引用
+========================================================================================
+
+  【batch_pairs.py】4 处
+      15: from tcm_analyzer import check_toxicity, predict_reactions
+      16: from admet_cache import ADMETCache
+     246: toxic = [c for c in compounds if check_toxicity(c)]
+     261: cache = ADMETCache()
+
+  【coconut_analyzer.py】4 处
+      29: from toxic_keywords import check_toxicity as _check_tox
+      31: def check_toxicity(compound):
+     152: def check_toxicity(compound):
+     190: hits = check_toxicity(c)
+
+  【tcm_analyzer.py】2 处
+     259: def check_toxicity(compound: Union[dict, str, tuple]) -> List[str]:
+     377: tox = check_toxicity(c)
+
+  【visualize.py】0 处
+
+========================================================================================
+③ 「不在范围内」的代码在 src/ 里的总量
+========================================================================================
+    25 行  batch_pairs.py
+    20 行  llm_agent.py
+     9 行  coconut_analyzer.py
+     8 行  admet_cache.py ← 整体删除
+     7 行  tcm_analyzer.py
+     4 行  visualize.py
+     2 行  toxic_keywords.py ← 整体删除
+
+  合计 75 行（占 src/ 全部行数的比例见下）
+  src/ 总行数 3324，不在范围内占 2.3%
+
+========================================================================================
+④ 真删一次（只在副本上），验证语法是否还通
+========================================================================================
+  已删 admet_cache.py
+  已删 dose_weights.py
+  已删 toxic_keywords.py
+
+  语法检查：11 个通过 / 0 个失败
+  （注意：删模块【不会】造成语法错误，只会造成 import 失败——
+    所以要跑 import 扫描，见 ①）
+
+========================================================================================
+结论
+========================================================================================
+
+  需要人工改的文件：3 个（见 ①）
+  需要摘除的缠结引用：见 ②
+
+  ★ 副本保留在 D:\ProgramData\DSHNS\chemreact-staging\strip-rehearsal
+    只是预演，D:\TCMAI 一个字节都没动。
+

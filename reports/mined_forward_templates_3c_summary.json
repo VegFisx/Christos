@@ -1,0 +1,28 @@
+{
+ "n_sample": 200000,
+ "seed": 20261013,
+ "budget_s": 900.0,
+ "min_support": 1,
+ "n_records_3c": 13283,
+ "n_tried": 13283,
+ "n_extract_fail": 9631,
+ "n_arity_not_3": 869,
+ "n_unique_templates": 2443,
+ "n_kept": 2443,
+ "skip": {
+  "贡献组分=2": 137403,
+  "贡献组分=1": 43969,
+  "贡献组分=3": 14930,
+  "贡献组分=4": 2979,
+  "重复": 1647,
+  "贡献组分=5": 592,
+  "贡献组分=6": 90,
+  "贡献组分=7": 18,
+  "产物SMILES非法": 11,
+  "贡献组分=8": 6,
+  "贡献组分=9": 1,
+  "贡献组分=10": 1
+ },
+ "seconds": 341.3,
+ "out": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\mined_forward_templates_3c.jsonl"
+}

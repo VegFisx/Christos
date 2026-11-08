@@ -1,0 +1,732 @@
+{
+ "what": "ORD 文献侧方向证据：① 元素收支模式（按溶剂桶）② 元素差中位数 ③ 每类反应/家族在各溶剂桶下出现过多少次（模板归类，覆盖率有限）",
+ "caveat": "① 只证明『文献里有这个方向』，不证明『热力学可行』；② ORD 是成功实验集（实测脱水缩合 41.7% vs 水解形状 0.9%），所以水相水解在 ORD 里天然缺证据 —— 这不是反证，而是这套数据本身的发表偏倚",
+ "source": "reports/ord_condition_dataset/shard_0000..0003.parquet",
+ "n_records": 19140,
+ "n_element_ok": 19140,
+ "n_classified": 6749,
+ "n_unclassified_by_template": 12391,
+ "classification_coverage": 0.3526,
+ "n_split_failed": 0,
+ "n_no_contributing_substrate": 0,
+ "shards_used": 4,
+ "element_patterns_by_solvent_class": {
+  "nonwater": {
+   "n": 8479,
+   "mixed": 4611,
+   "H_down_O_down": 3192,
+   "unchanged": 615,
+   "H_up_O_up": 61
+  },
+  "unknown": {
+   "n": 8079,
+   "mixed": 3997,
+   "H_up_O_up": 77,
+   "unchanged": 430,
+   "H_down_O_down": 3575
+  },
+  "water_like": {
+   "n": 2582,
+   "H_down_O_down": 1072,
+   "mixed": 1374,
+   "unchanged": 116,
+   "H_up_O_up": 20
+  }
+ },
+ "element_delta_median_by_solvent_class": {
+  "nonwater": {
+   "dH": -2,
+   "dO": 0,
+   "n": 8479
+  },
+  "unknown": {
+   "dH": -2,
+   "dO": -1,
+   "n": 8079
+  },
+  "water_like": {
+   "dH": -2,
+   "dO": -1,
+   "n": 2582
+  }
+ },
+ "per_class": {
+  "esterification": {
+   "n": 336,
+   "by_solvent_class": {
+    "unknown": 190,
+    "nonwater": 110,
+    "water_like": 36
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 25.0
+  },
+  "amide_coupling": {
+   "n": 939,
+   "by_solvent_class": {
+    "unknown": 465,
+    "water_like": 105,
+    "nonwater": 369
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 25.0
+  },
+  "cross_electrophile_coupling": {
+   "n": 470,
+   "by_solvent_class": {
+    "unknown": 189,
+    "nonwater": 220,
+    "water_like": 61
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 50.0
+  },
+  "ullmann_X": {
+   "n": 567,
+   "by_solvent_class": {
+    "unknown": 250,
+    "nonwater": 244,
+    "water_like": 73
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 60.0
+  },
+  "reductive_amination_ketone": {
+   "n": 302,
+   "by_solvent_class": {
+    "nonwater": 115,
+    "unknown": 113,
+    "water_like": 74
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 60.0
+  },
+  "snar_amine": {
+   "n": 1647,
+   "by_solvent_class": {
+    "nonwater": 653,
+    "unknown": 806,
+    "water_like": 188
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 80.0
+  },
+  "reductive_amination_aldehyde": {
+   "n": 425,
+   "by_solvent_class": {
+    "nonwater": 236,
+    "unknown": 142,
+    "water_like": 47
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 45.0
+  },
+  "ester_sulfonic_schotten_baumann": {
+   "n": 203,
+   "by_solvent_class": {
+    "nonwater": 122,
+    "water_like": 14,
+    "unknown": 67
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 0.0
+  },
+  "B-H": {
+   "n": 937,
+   "by_solvent_class": {
+    "unknown": 445,
+    "water_like": 93,
+    "nonwater": 399
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 90.0
+  },
+  "amine_acetylation": {
+   "n": 556,
+   "by_solvent_class": {
+    "nonwater": 218,
+    "water_like": 38,
+    "unknown": 300
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 4.0
+  },
+  "williamson": {
+   "n": 658,
+   "by_solvent_class": {
+    "nonwater": 301,
+    "unknown": 249,
+    "water_like": 108
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 60.0
+  },
+  "snar_alcohol": {
+   "n": 243,
+   "by_solvent_class": {
+    "unknown": 137,
+    "water_like": 23,
+    "nonwater": 83
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 70.0
+  },
+  "deoxygenative_coupling": {
+   "n": 116,
+   "by_solvent_class": {
+    "unknown": 56,
+    "water_like": 15,
+    "nonwater": 45
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 70.0
+  },
+  "sonogashira": {
+   "n": 144,
+   "by_solvent_class": {
+    "water_like": 12,
+    "unknown": 79,
+    "nonwater": 53
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 70.0
+  },
+  "negishi_insitu": {
+   "n": 144,
+   "by_solvent_class": {
+    "nonwater": 81,
+    "unknown": 42,
+    "water_like": 21
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 60.0
+  },
+  "C_C_decarboxylation": {
+   "n": 310,
+   "by_solvent_class": {
+    "unknown": 111,
+    "nonwater": 157,
+    "water_like": 42
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 80.0
+  },
+  "horner_wadsworth_emmons": {
+   "n": 37,
+   "by_solvent_class": {
+    "unknown": 11,
+    "nonwater": 16,
+    "water_like": 10
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 0.0
+  },
+  "ester_schotten_baumann": {
+   "n": 124,
+   "by_solvent_class": {
+    "unknown": 78,
+    "nonwater": 28,
+    "water_like": 18
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 25.0
+  },
+  "suzuki": {
+   "n": 444,
+   "by_solvent_class": {
+    "nonwater": 129,
+    "unknown": 188,
+    "water_like": 127
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 85.0
+  },
+  "sn2_nheterocycle": {
+   "n": 226,
+   "by_solvent_class": {
+    "unknown": 87,
+    "nonwater": 88,
+    "water_like": 51
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 50.0
+  },
+  "urea_formation": {
+   "n": 124,
+   "by_solvent_class": {
+    "unknown": 39,
+    "nonwater": 83,
+    "water_like": 2
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 50.0
+  },
+  "mitsunobu": {
+   "n": 173,
+   "by_solvent_class": {
+    "unknown": 84,
+    "nonwater": 77,
+    "water_like": 12
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 0.0
+  },
+  "heck": {
+   "n": 101,
+   "by_solvent_class": {
+    "water_like": 14,
+    "nonwater": 41,
+    "unknown": 46
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 90.0
+  },
+  "tetrazole_synthesis": {
+   "n": 11,
+   "by_solvent_class": {
+    "nonwater": 6,
+    "unknown": 2,
+    "water_like": 3
+   },
+   "top_solvents": [
+    "nonwater",
+    "water_like",
+    "unknown"
+   ],
+   "median_temp_C": 110.0
+  },
+  "ullmann_phenol": {
+   "n": 148,
+   "by_solvent_class": {
+    "unknown": 91,
+    "nonwater": 49,
+    "water_like": 8
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 81.0
+  },
+  "amine_sulfonation": {
+   "n": 252,
+   "by_solvent_class": {
+    "water_like": 41,
+    "nonwater": 72,
+    "unknown": 139
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 20.0
+  },
+  "imidazole_condensation_amine": {
+   "n": 15,
+   "by_solvent_class": {
+    "nonwater": 11,
+    "unknown": 4
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown"
+   ],
+   "median_temp_C": 130.0
+  },
+  "imidazole_condensation_acid": {
+   "n": 12,
+   "by_solvent_class": {
+    "unknown": 8,
+    "nonwater": 3,
+    "water_like": 1
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 80.0
+  },
+  "imidazole_Xketone_synthesis": {
+   "n": 1,
+   "by_solvent_class": {
+    "unknown": 1
+   },
+   "top_solvents": [
+    "unknown"
+   ],
+   "median_temp_C": null
+  },
+  "oxadiazole_condensation": {
+   "n": 11,
+   "by_solvent_class": {
+    "nonwater": 4,
+    "unknown": 5,
+    "water_like": 2
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 100.0
+  },
+  "chan_lam": {
+   "n": 126,
+   "by_solvent_class": {
+    "unknown": 56,
+    "water_like": 37,
+    "nonwater": 33
+   },
+   "top_solvents": [
+    "unknown",
+    "water_like",
+    "nonwater"
+   ],
+   "median_temp_C": 90.0
+  },
+  "triazole_synthesis_2": {
+   "n": 2,
+   "by_solvent_class": {
+    "nonwater": 1,
+    "water_like": 1
+   },
+   "top_solvents": [
+    "nonwater",
+    "water_like"
+   ],
+   "median_temp_C": 0.0
+  },
+  "snar_thiol": {
+   "n": 6,
+   "by_solvent_class": {
+    "nonwater": 3,
+    "water_like": 1,
+    "unknown": 2
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ],
+   "median_temp_C": 160.0
+  },
+  "negishi_batch": {
+   "n": 9,
+   "by_solvent_class": {
+    "nonwater": 3,
+    "unknown": 6
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater"
+   ],
+   "median_temp_C": 90.0
+  },
+  "triazole_synthesis_1": {
+   "n": 1,
+   "by_solvent_class": {
+    "nonwater": 1
+   },
+   "top_solvents": [
+    "nonwater"
+   ],
+   "median_temp_C": 110.0
+  }
+ },
+ "per_family": {
+  "condensation_reversible": {
+   "n": 2572,
+   "by_solvent_class": {
+    "unknown": 1295,
+    "nonwater": 1020,
+    "water_like": 257
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ]
+  },
+  "irreversible_metal_coupling": {
+   "n": 2736,
+   "by_solvent_class": {
+    "unknown": 1259,
+    "nonwater": 1077,
+    "water_like": 400
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ]
+  },
+  "reagent_dependent": {
+   "n": 727,
+   "by_solvent_class": {
+    "nonwater": 351,
+    "unknown": 255,
+    "water_like": 121
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ]
+  },
+  "substitution_or_derivatization": {
+   "n": 2953,
+   "by_solvent_class": {
+    "nonwater": 1205,
+    "unknown": 1365,
+    "water_like": 383
+   },
+   "top_solvents": [
+    "unknown",
+    "nonwater",
+    "water_like"
+   ]
+  },
+  "irreversible_gas_release": {
+   "n": 310,
+   "by_solvent_class": {
+    "unknown": 111,
+    "nonwater": 157,
+    "water_like": 42
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ]
+  },
+  "specialized_condensation": {
+   "n": 38,
+   "by_solvent_class": {
+    "unknown": 12,
+    "nonwater": 16,
+    "water_like": 10
+   },
+   "top_solvents": [
+    "nonwater",
+    "unknown",
+    "water_like"
+   ]
+  },
+  "heterocycle_formation": {
+   "n": 14,
+   "by_solvent_class": {
+    "nonwater": 8,
+    "unknown": 2,
+    "water_like": 4
+   },
+   "top_solvents": [
+    "nonwater",
+    "water_like",
+    "unknown"
+   ]
+  }
+ },
+ "by_solvent_class": {
+  "unknown": {
+   "esterification": 190,
+   "amide_coupling": 465,
+   "cross_electrophile_coupling": 189,
+   "ullmann_X": 250,
+   "B-H": 445,
+   "snar_amine": 806,
+   "snar_alcohol": 137,
+   "deoxygenative_coupling": 56,
+   "amine_acetylation": 300,
+   "reductive_amination_ketone": 113,
+   "C_C_decarboxylation": 111,
+   "horner_wadsworth_emmons": 11,
+   "williamson": 249,
+   "ester_schotten_baumann": 78,
+   "negishi_insitu": 42,
+   "suzuki": 188,
+   "sn2_nheterocycle": 87,
+   "urea_formation": 39,
+   "mitsunobu": 84,
+   "sonogashira": 79,
+   "reductive_amination_aldehyde": 142,
+   "tetrazole_synthesis": 2,
+   "ullmann_phenol": 91,
+   "amine_sulfonation": 139,
+   "ester_sulfonic_schotten_baumann": 67,
+   "imidazole_condensation_acid": 8,
+   "imidazole_Xketone_synthesis": 1,
+   "oxadiazole_condensation": 5,
+   "heck": 46,
+   "chan_lam": 56,
+   "imidazole_condensation_amine": 4,
+   "negishi_batch": 6,
+   "snar_thiol": 2
+  },
+  "nonwater": {
+   "reductive_amination_ketone": 115,
+   "snar_amine": 653,
+   "reductive_amination_aldehyde": 236,
+   "ester_sulfonic_schotten_baumann": 122,
+   "amine_acetylation": 218,
+   "williamson": 301,
+   "amide_coupling": 369,
+   "cross_electrophile_coupling": 220,
+   "ullmann_X": 244,
+   "negishi_insitu": 81,
+   "suzuki": 129,
+   "ester_schotten_baumann": 28,
+   "esterification": 110,
+   "B-H": 399,
+   "C_C_decarboxylation": 157,
+   "sn2_nheterocycle": 88,
+   "tetrazole_synthesis": 6,
+   "mitsunobu": 77,
+   "snar_alcohol": 83,
+   "deoxygenative_coupling": 45,
+   "amine_sulfonation": 72,
+   "ullmann_phenol": 49,
+   "urea_formation": 83,
+   "sonogashira": 53,
+   "imidazole_condensation_amine": 11,
+   "horner_wadsworth_emmons": 16,
+   "heck": 41,
+   "oxadiazole_condensation": 4,
+   "chan_lam": 33,
+   "triazole_synthesis_2": 1,
+   "snar_thiol": 3,
+   "imidazole_condensation_acid": 3,
+   "negishi_batch": 3,
+   "triazole_synthesis_1": 1
+  },
+  "water_like": {
+   "amide_coupling": 105,
+   "amine_acetylation": 38,
+   "deoxygenative_coupling": 15,
+   "snar_alcohol": 23,
+   "sonogashira": 12,
+   "ester_sulfonic_schotten_baumann": 14,
+   "snar_amine": 188,
+   "B-H": 93,
+   "ullmann_X": 73,
+   "cross_electrophile_coupling": 61,
+   "esterification": 36,
+   "williamson": 108,
+   "reductive_amination_ketone": 74,
+   "C_C_decarboxylation": 42,
+   "heck": 14,
+   "amine_sulfonation": 41,
+   "negishi_insitu": 21,
+   "ester_schotten_baumann": 18,
+   "suzuki": 127,
+   "mitsunobu": 12,
+   "sn2_nheterocycle": 51,
+   "urea_formation": 2,
+   "ullmann_phenol": 8,
+   "chan_lam": 37,
+   "horner_wadsworth_emmons": 10,
+   "tetrazole_synthesis": 3,
+   "reductive_amination_aldehyde": 47,
+   "snar_thiol": 1,
+   "oxadiazole_condensation": 2,
+   "imidazole_condensation_acid": 1,
+   "triazole_synthesis_2": 1
+  }
+ },
+ "built_at": "2026-10-13 12:07:31",
+ "seconds": 293.9
+}

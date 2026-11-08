@@ -1,0 +1,247 @@
+{
+  "schema": "chemreact-kinetics-calibration/1",
+  "current_params": {
+    "q10": {
+      "value": 2.0,
+      "range": [
+        1.8,
+        3.0
+      ],
+      "meaning": "温度每升高 10 °C，速率常数大致翻倍的倍数（有机反应 0–100 °C 的经验值）。",
+      "source": "教科书级经验规律（Q10 ≈ 2，常见范围 1.8–3）。不是本项目的实测值。"
+    },
+    "validation": {
+      "status": "unvalidated_model_choice",
+      "gate_enabled": false,
+      "why": "用户 2026-11-04 口径：涉及底层反应逻辑的参数必须有参考文献。本文件全部参数没有实测标定，因此只允许『标注』（写进 extent / extent_band 供人看），不允许参与门控或过滤。",
+      "how_to_enable": "必须先在文献里标定 q10 与 extent_min（建议 3~5 条带时间-转化率曲线的数据集），把 gate_enabled 改成 true 并写明文献 DOI；在此之前 extent.gating_allowed() 恒为 False。",
+      "user_requirement": "禁止 AI 自己猜测底层反应逻辑；起码要有参考文献。"
+    }
+  },
+  "datasets": [
+    {
+      "id": "rb1_105c_2020",
+      "reaction": "hydrolysis_glycoside_rb1",
+      "temp_C": 105,
+      "n_points": 4,
+      "k_per_min": 0.0011893405997775858,
+      "r2": 0.8387172022095156,
+      "half_life_min": 582.7995619501834,
+      "source": {
+        "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+        "journal": "J Pharmacopuncture",
+        "year": 2020,
+        "doi": "10.3831/KPI.2020.23.012",
+        "figure_or_table": "Table 2 (105 °C), Rb1 column",
+        "quote": "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours.",
+        "raw": "Rb1 mg/g: 1.775(0h) 4.189(3h) 3.942(6) 2.39(12) 1.516(16) 0.547(24) N/D(30)"
+      },
+      "origin": "fitted_time_course",
+      "note": ""
+    },
+    {
+      "id": "rb1_94c_2020",
+      "reaction": "hydrolysis_glycoside_rb1",
+      "temp_C": 94,
+      "n_points": 3,
+      "k_per_min": 0.0007484413228946785,
+      "r2": 0.5896115823105033,
+      "half_life_min": 926.1209387519157,
+      "source": {
+        "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+        "journal": "J Pharmacopuncture",
+        "year": 2020,
+        "doi": "10.3831/KPI.2020.23.012",
+        "figure_or_table": "Table 5 (94 °C), Rb1 column",
+        "quote": "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours.",
+        "raw": "Rb1 mg/g: 3.94(0h) 7.76(3h) 8.8(6) 8.14(12) 6.23(24) 0.92(36) N/D(48)"
+      },
+      "origin": "fitted_time_course",
+      "note": ""
+    },
+    {
+      "id": "rb1_80c_2020",
+      "reaction": "hydrolysis_glycoside_rb1",
+      "temp_C": 80,
+      "n_points": 4,
+      "k_per_min": 0.00012134996199315005,
+      "r2": 0.7315107548797106,
+      "half_life_min": 5711.96866628662,
+      "source": {
+        "title": "Conversion of Ginsenosides by High Temperature and Pressure Processing",
+        "journal": "J Pharmacopuncture",
+        "year": 2020,
+        "doi": "10.3831/KPI.2020.23.012",
+        "figure_or_table": "Table 6 (80 °C), Rb1 column",
+        "quote": "However, their concentrations diminished after three hours and the Rb1, Rb2, and Rd became undetectable after 30 hours, while Rc was not detected after 27 hours.",
+        "raw": "Rb1 mg/g: 3.465(0h) 8.734(48h) 6.517(96) 3.808(144) 2.853(192) 0.908(240) N/D(288)"
+      },
+      "origin": "fitted_time_course",
+      "note": ""
+    },
+    {
+      "id": "rb1_lit2015_80c",
+      "reaction": "hydrolysis_glycoside_rb1_lit2015",
+      "temp_C": 80,
+      "n_points": null,
+      "k_per_min": 0.00021666666666666666,
+      "k_per_h_reported": 0.013,
+      "r2": null,
+      "half_life_min": 3199.1408333535937,
+      "source": {
+        "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+        "journal": "J Ginseng Res",
+        "year": 2015,
+        "doi": "10.1016/j.jgr.2015.02.003",
+        "figure_or_table": "Table 1 (reported k)",
+        "quote": "The rate constants were 0.013 h−1 and 0.073 h−1 for the degradation of ginsenosides Rb1 and Rg3 at 80°C, respectively. The corresponding rate constants at 100°C were 0.045 h−1 and 0.155 h−1. The estimated activation energies ... were 69.2 kJ/mol and 40.9 kJ/mol."
+      },
+      "origin": "reported_rate_constant",
+      "note": "文献直接报告的 k，未经本脚本拟合"
+    },
+    {
+      "id": "rb1_lit2015_100c",
+      "reaction": "hydrolysis_glycoside_rb1_lit2015",
+      "temp_C": 100,
+      "n_points": null,
+      "k_per_min": 0.00075,
+      "k_per_h_reported": 0.045,
+      "r2": null,
+      "half_life_min": 924.1962407465937,
+      "source": {
+        "title": "Kinetic study for the optimization of ginsenoside Rg3 production by heat treatment of ginsenoside Rb1",
+        "journal": "J Ginseng Res",
+        "year": 2015,
+        "doi": "10.1016/j.jgr.2015.02.003",
+        "figure_or_table": "Table 1 (reported k)",
+        "quote": "The rate constants were 0.013 h−1 and 0.073 h−1 for the degradation of ginsenosides Rb1 and Rg3 at 80°C, respectively. The corresponding rate constants at 100°C were 0.045 h−1 and 0.155 h−1. The estimated activation energies ... were 69.2 kJ/mol and 40.9 kJ/mol."
+      },
+      "origin": "reported_rate_constant",
+      "note": "文献直接报告的 k，未经本脚本拟合"
+    },
+    {
+      "id": "aconitine_dry_140c_2021",
+      "reaction": "pyrolysis_diterpene_alkaloid",
+      "temp_C": 140,
+      "n_points": 8,
+      "k_per_min": 0.05185985030153428,
+      "r2": 0.7591853323214656,
+      "half_life_min": 13.365776733440327,
+      "source": {
+        "title": "Variations in the Aconitine Content of Aconiti Lateralis Radix Praeparata by Stir-Frying with Sand",
+        "journal": "Evid Based Complement Alternat Med",
+        "year": 2021,
+        "doi": "10.1155/2021/7243052",
+        "figure_or_table": "Table 2 (140 °C row), initial 160.00 µg/mL",
+        "quote": "The content of aconitine was 160.00 μg/mL before processing, decreased to 19.36 μg/mL after processing at 140°C for 30 min, and dropped to 0 μg/mL after continuous heating for 5 min.",
+        "raw": "140 °C µg/mL: 147.12(1min) 112.96(3) 105.68(5) 104.13(10) 78.04(15) 74.35(20) 67.58(25) 19.36(30) 0(35)"
+      },
+      "origin": "fitted_time_course",
+      "note": ""
+    },
+    {
+      "id": "aconitine_dry_160c_2021",
+      "reaction": "pyrolysis_diterpene_alkaloid",
+      "temp_C": 160,
+      "n_points": 2,
+      "k_per_min": 0.9414924488202221,
+      "r2": 0.9344945126632789,
+      "half_life_min": 0.7362217099335459,
+      "source": {
+        "title": "Variations in the Aconitine Content of Aconiti Lateralis Radix Praeparata by Stir-Frying with Sand",
+        "journal": "Evid Based Complement Alternat Med",
+        "year": 2021,
+        "doi": "10.1155/2021/7243052",
+        "figure_or_table": "Table 2 (160 °C row), initial 160.00 µg/mL",
+        "quote": "The content of aconitine was 160.00 μg/mL before processing, decreased to 19.36 μg/mL after processing at 140°C for 30 min, and dropped to 0 μg/mL after continuous heating for 5 min.",
+        "raw": "160 °C µg/mL: 94.92(1min) 8.26(3) 0(5)"
+      },
+      "origin": "fitted_time_course",
+      "note": ""
+    }
+  ],
+  "by_reaction": {
+    "hydrolysis_glycoside_rb1": {
+      "temperatures_C": [
+        80,
+        94,
+        105
+      ],
+      "k_per_min": [
+        0.00012134996199315005,
+        0.0007484413228946785,
+        0.0011893405997775858
+      ],
+      "q10_pairs": [
+        {
+          "from_C": 80,
+          "to_C": 94,
+          "q10": 3.667499647498783
+        },
+        {
+          "from_C": 94,
+          "to_C": 105,
+          "q10": 1.5235694668723607
+        }
+      ],
+      "q10_mean": 2.5955345571855717,
+      "q10_current": 2.0,
+      "q10_delta": 0.5955345571855717,
+      "arrhenius": {
+        "ea_kJ_per_mol": 103.64169582807263,
+        "ln_A": 26.42120476212746,
+        "n_points": 3
+      }
+    },
+    "hydrolysis_glycoside_rb1_lit2015": {
+      "temperatures_C": [
+        80,
+        100
+      ],
+      "k_per_min": [
+        0.00021666666666666666,
+        0.00075
+      ],
+      "q10_pairs": [
+        {
+          "from_C": 80,
+          "to_C": 100,
+          "q10": 1.860521018838127
+        }
+      ],
+      "q10_mean": 1.860521018838127,
+      "q10_current": 2.0,
+      "q10_delta": -0.13947898116187307,
+      "arrhenius": {
+        "ea_kJ_per_mol": 68.02493260210888,
+        "ln_A": 14.730112282303418,
+        "n_points": 2
+      }
+    },
+    "pyrolysis_diterpene_alkaloid": {
+      "temperatures_C": [
+        140,
+        160
+      ],
+      "k_per_min": [
+        0.05185985030153428,
+        0.9414924488202221
+      ],
+      "q10_pairs": [
+        {
+          "from_C": 140,
+          "to_C": 160,
+          "q10": 4.260816110158612
+        }
+      ],
+      "q10_mean": 4.260816110158612,
+      "q10_current": 2.0,
+      "q10_delta": 2.260816110158612,
+      "arrhenius": {
+        "ea_kJ_per_mol": 215.66849643636863,
+        "ln_A": 59.82418057521291,
+        "n_points": 2
+      }
+    }
+  }
+}

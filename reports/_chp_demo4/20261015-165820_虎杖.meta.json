@@ -1,0 +1,174 @@
+{
+ "built_at": "2026-10-15 16:58:18",
+ "cond_name": "煎煮",
+ "rounds": 1,
+ "max_pairs": 4000,
+ "max_products_per_pair": 8,
+ "seeds": [
+  {
+   "name": "emodin",
+   "smiles": "CC1=CC2=C(C(=C1)O)C(=O)C3=C(C2=O)C=C(C=C3O)O",
+   "source": "tcm.db:虎杖"
+  },
+  {
+   "name": "Quercetin-3-rhamnoside-7-glucoside",
+   "smiles": "C[C@H]1[C@@H]([C@H]([C@@H]([C@@H](O1)OC2=C(OC3=CC(=CC(=C3C2=O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)C5=CC(=C(C=C5)O)O)O)O)O",
+   "source": "tcm.db:虎杖"
+  },
+  {
+   "name": "Fangchinoline",
+   "smiles": "CN1CCC2=CC(=C3C=C2[C@@H]1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)C[C@H]6C7=C(O3)C(=C(C=C7CCN6C)OC)O)OC)OC",
+   "source": "tcm.db:虎杖"
+  }
+ ],
+ "stats": {
+  "n_products": 18,
+  "n_paths_kept": 18,
+  "seconds": 2.02,
+  "ik_ok": 18,
+  "ik_fail": 0,
+  "per_round_new": [
+   {
+    "round": 1,
+    "new": 18,
+    "kept_raw": 18,
+    "seconds": 0.34
+   }
+  ],
+  "n_self_products": 0,
+  "truncated": false
+ },
+ "notes": {
+  "unparsable_seeds": 0,
+  "pairs_truncated": false,
+  "direction_summary": {
+   "方向未定": 18
+  },
+  "direction_enabled": true
+ },
+ "engine_notes": [
+  "extra: 启用：加载 600 条（支持>=1），编译通过 590，编译失败 0，★元数≠2 丢弃 10 条（arity 分布 {2: 590, 3: 10}）",
+  "mono: 启用：加载 3256 条 -> arity=1 共 2793 条，保留 903（需共试剂的不含，按需共试剂剔除 1890）；隐含环境：不需氧化还原 99、需还原 337、需氧化 467，编译失败 0；★元数≥2 丢弃 463 条（arity 分布 {1: 2793, 2: 415, 3: 36, 4: 10, 5: 1, 6: 1}）"
+ ],
+ "selection": {
+  "虎杖": {
+   "n_available": 88,
+   "n_kept": 3,
+   "limit": 3,
+   "kept_names": [
+    "emodin（药典：大黄素 ≥ 0.6%）",
+    "Quercetin-3-rhamnoside-7-glucoside",
+    "Fangchinoline"
+   ],
+   "skipped_n": 85,
+   "skipped_names_preview": [
+    "Physciondiglucoside",
+    "Rhein diglucoside",
+    "Sitogluside",
+    "Chrysophanol-8-o-beta-d-(6'-o-galloyl)-glucopyranoside",
+    "Nomilin",
+    "Polygalacic acid",
+    "Laminarin",
+    "Quillaic acid",
+    "Torachrysone-8-o-beta-d-(6'-oxayl)-glucoside",
+    "Obacunoic acid",
+    "obaculactone",
+    "Hirsutrin",
+    "quercetin-3-L-arabinon-7-D-glucoside",
+    "Hyperin",
+    "Physcion-8-O-beta-D-glucopyranoside",
+    "Luteolin-7-beta-d-glucuronide",
+    "Luteolin 7-o-glucuronide",
+    "Oleanolic acid",
+    "(+)-catechin-5-o-glucoside",
+    "cinaroside",
+    "Luteolin-7-o-glucoside",
+    "Quercitrin",
+    "Anthraglycoside a",
+    "(?)-isolariciresinol-2a-sulfate",
+    "Guaijaverin",
+    "Quercetin-3-beta-d-xylopyranoside",
+    "Reynoutrin",
+    "Polygonin",
+    "Anthraglycoside b",
+    "Emodin-6-glucoside",
+    "Glucofrangulin",
+    "Beta-sitosterol",
+    "Torachrysone-8-o-beta-d-glucoside",
+    "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
+    "3,4,3',5'-tetrahydroxystilbene-3-glucoside",
+    "Nobiletin",
+    "Piceid",
+    "Alginic acid",
+    "Picralinal",
+    "Mlt",
+    "1-(3-o-beta-d-glucopyranosyl-4,5-dihydroxy-phenyl)-ethanone",
+    "Protocatechuic acid-3-glucoside",
+    "(-)-3-hydroxy-4-methoxy-8-9-methylenedioxy pterocarpan",
+    "(2s,3r,4s,5s,6r)-2-(4-hydroxy-3-methoxyphenoxy)-6-(hydroxymethyl)oxane-3,4,5-triol",
+    "Isotachioside",
+    "Quercetin",
+    "Fallacinol",
+    "Questinol",
+    "(+)-catechin",
+    "Citreorosein",
+    "Luteolin",
+    "Physcion",
+    "Questin",
+    "Rhein",
+    "3,4-dihydroxy-5-methoxybenzoicacid methyl ester-4-sulfate",
+    "Apigenin",
+    "Physovenine",
+    "1-(3',5'-dihydroxyphenyl)-2-(4''-hydroxy-phenyl)-ethane-1,2-diol",
+    "6,8-dihydroxy-7-methoxyxanthone",
+    "Emodinanthrone",
+    "Chrysophanol",
+    "Ambrettolid",
+    "Torachrysone",
+    "5-[(z)-2-(3,4-dihydroxyphenyl)vinyl]resorcinol",
+    "Cis-resveratrol",
+    "Trans-resveratrol",
+    "resveratrol",
+    "Morkit",
+    "7-hydroxy-4-methoxy-5-methylcoumarin",
+    "Tryptophan",
+    "Citric acid",
+    "7-hydroxy-2,5-dimethyl-chromone",
+    "Laminine",
+    "3,5-dimethyl-p-anisic acid",
+    "Gallic acid",
+    "3,4-dihydroxybenzoicacid",
+    "Gre",
+    "Vananote",
+    "Tar",
+    "Coumarin",
+    "2-mohydrop",
+    "Histamine",
+    "Oxl",
+    "1,3-dihydroxy-2-methoxy xanthone",
+    "nonacasyl alcohol-10"
+   ],
+   "order_rule": "药典判据优先（Tier-0 含量测定在前、同层按限量值降序）＋marker 优先；其次分子量降序；按结构去重"
+  }
+ },
+ "switches": {
+  "limit": 3,
+  "rounds": 1,
+  "cond": "煎煮",
+  "triples": false,
+  "fair_pairs": false,
+  "chp_priority": true,
+  "max_pairs": 4000,
+  "direction": true,
+  "score": true,
+  "reagents": []
+ },
+ "pair_coverage": {
+  "pairs_total": 3,
+  "pairs_used": 3,
+  "mode": "sequential",
+  "min_partners": 2,
+  "max_partners": 2,
+  "fair": false
+ }
+}

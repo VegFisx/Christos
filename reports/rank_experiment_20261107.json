@@ -1,0 +1,55 @@
+{
+ "generated_at": "2026-11-07T20:41:27",
+ "data": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\rank_dataset_20261107.jsonl",
+ "n_rows": 257444,
+ "n_train_rows": 128108,
+ "n_test_rows": 129336,
+ "n_test_reactions": 6062,
+ "top_rules": [
+  "mined_mono",
+  "mined_extra",
+  "amide_coupling",
+  "snar_amine",
+  "B-H",
+  "suzuki",
+  "williamson",
+  "amine_acetylation",
+  "reductive_amination_aldehyde",
+  "reductive_amination_ketone",
+  "amine_sulfonation",
+  "esterification",
+  "sn2_nheterocycle",
+  "C_C_decarboxylation",
+  "chan_lam",
+  "mitsunobu",
+  "urea_formation",
+  "ullmann_phenol",
+  "snar_alcohol",
+  "negishi_insitu"
+ ],
+ "baseline_emission_order": {
+  "n_reactions": 6062,
+  "n_with_hit": 5584,
+  "recall_any": 0.9211,
+  "top1": 0.4254,
+  "top5": 0.6793,
+  "mrr": 0.546,
+  "hit_rank_median": 2
+ },
+ "learned_rerank": {
+  "n_reactions": 6062,
+  "n_with_hit": 5584,
+  "recall_any": 0.9211,
+  "top1": 0.6693,
+  "top5": 0.8959,
+  "mrr": 0.7678,
+  "hit_rank_median": 1
+ },
+ "delta": {
+  "top1": 0.2439,
+  "top5": 0.2166,
+  "mrr": 0.2218
+ },
+ "model": "HistGradientBoostingClassifier(max_iter=120)",
+ "caveat": "训练与测试按反应哈希对半切分；特征只来自候选与模板，不含真产物；同一 50k 数据集内部切分，属同分布评估。"
+}

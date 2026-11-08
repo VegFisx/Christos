@@ -1,0 +1,6 @@
+当前 SMARTS: [O:1]=[C;r6:2]~[#6;R:5]~[#6;R:6]~[C;r6:3]=[O:4]>>[OH:1][c:2][c:5][c:6][c:3][OH:4]
+匹配 65 配平 65 不平衡 1
+不平衡例: [{'substrate': '22-dihydrostigmast-4-en-3,6-dione', 'kind': '漏写产物片段', 'diff_right_minus_left': {'H': -2.0}}]
+
+底物: 22-dihydrostigmast-4-en-3,6-dione
+SMILES: CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@@H]2CC(=O)C4[C@]3(CCC(=O)C4)C)C)C(C)C

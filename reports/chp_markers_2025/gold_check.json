@@ -1,0 +1,96 @@
+{
+ "n_sample": 400,
+ "n_uniq_total": 5883,
+ "codes": {
+  "supported": 374,
+  "artifact_section_label": 21,
+  "name_missing": 5
+ },
+ "supported_rate": 0.935,
+ "examples": [
+  {
+   "why": "name_missing",
+   "herb": "乳康丸",
+   "name": "〔规格〕",
+   "value": "1.2mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=948b9475a0cda3565f9c1948dd3b6f2c"
+  },
+  {
+   "why": "name_missing",
+   "herb": "肾康宁胶囊",
+   "name": "〔规格〕",
+   "value": "1.8mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=97be07fb0b833ec8a4ce9bf21a28ec36"
+  },
+  {
+   "why": "name_missing",
+   "herb": "瓜蒌子",
+   "name": "3.29-二苯甲酰基栝楼仁三醇",
+   "value": "0.08%",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=4eff0edfe6538eb3947c34383db75cc5"
+  },
+  {
+   "why": "name_missing",
+   "herb": "妇科止带胶囊",
+   "name": "〔规格〕",
+   "value": "0.36mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=9d295dc72e03af8fbc577f380184eb85"
+  },
+  {
+   "why": "name_missing",
+   "herb": "银杏叶胶囊",
+   "name": "〔规格〕",
+   "value": "2.4mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=aeab4d0757e09bb46b264d9646604a8d"
+  },
+  {
+   "why": "name_missing",
+   "herb": "半边莲",
+   "name": "地奥司明和蒙花苷的总量",
+   "value": "0.25%",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=a03a72d381a49eb82dfa87a5f09e48d6"
+  },
+  {
+   "why": "name_missing",
+   "herb": "小儿七星茶颗粒",
+   "name": "〔规格〕",
+   "value": "0.5mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=441d67f2f4c8b8031dcad9ad7fec5e66"
+  },
+  {
+   "why": "name_missing",
+   "herb": "双黄连颗粒",
+   "name": "〔规格〕",
+   "value": "200.0mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=f929b5117f9bf90a532ff8f849b760e4"
+  },
+  {
+   "why": "name_missing",
+   "herb": "复方益肝灵胶囊",
+   "name": "〔规格〕",
+   "value": "2.8mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=1d8b578732e4a7f56041f9e34f6f326f"
+  },
+  {
+   "why": "name_missing",
+   "herb": "金果饮咽喉片",
+   "name": "〔规格〕",
+   "value": "0.18mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=94e673121cf16a5afe6d300612cdd2b4"
+  },
+  {
+   "why": "name_missing",
+   "herb": "清热灵颗粒",
+   "name": "〔规格〕",
+   "value": "10.0mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=d9044f85b0806ede5609a02c3d5e8958"
+  },
+  {
+   "why": "name_missing",
+   "herb": "金水宝胶囊",
+   "name": "尿苷、鸟苷和腺苷的总量",
+   "value": "1.6mg",
+   "url": "https://db2.ouryao.com/yd2025/view.php?id=a06f63b8b05a376200de3da245433c86"
+  }
+ ]
+}

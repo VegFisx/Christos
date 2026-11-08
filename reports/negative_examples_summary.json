@@ -1,0 +1,30 @@
+{
+  "scratch": "反例候选抽取（路线 A：notes 严格短语；路线 B：真实 PERCENTYIELD==0；B-v2：0% 必须挂在有结构标识符的产物上）",
+  "n_scanned": 1771032,
+  "n_notes_empty": 0,
+  "A_text_candidates": 449,
+  "B_yield_zero_candidates": 404,
+  "B_v2_zero_on_structured_product": 25,
+  "B_artifact_zero_on_unstructured_product": 379,
+  "A_and_B_overlap": 0,
+  "n_dup_id_skipped": 0,
+  "pattern_hits": {
+    "unreacted_remaining": 64,
+    "no_conversion": 33,
+    "failed_to_react_or_give": 57,
+    "no_reaction": 72,
+    "no_product_formed": 47,
+    "reaction_did_not_proceed": 67,
+    "sm_recovered": 83,
+    "not_consumed": 15,
+    "did_not_react": 13
+  },
+  "yield_percentage_zero_real": 404,
+  "yield_percentage_zero_calculated": 405,
+  "seconds": 235.9,
+  "outputs": [
+    "negative_examples.jsonl",
+    "negative_yield_zero.jsonl",
+    "negative_yield_zero_v2.jsonl"
+  ]
+}

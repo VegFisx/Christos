@@ -1,0 +1,33 @@
+{
+ "what": "条件可行性模型（HTE 27,497 行；按底物对分组交叉验证）",
+ "caveat": [
+  "① 只在 Buchwald-Hartwig 型偶联上训练/评估，不能直接外推到别的反应类",
+  "② 温度列缺失，未作为特征使用（HTE 的 CSV 无逐行温度）",
+  "③ 交叉验证按 (aryl,amine) 分组，避免同底物泄漏",
+  "④ 目标是『这套条件下会不会有产物』，不是产率回归，也不是产物排序"
+ ],
+ "data": {
+  "csv": "BH_HTE_Curated_Dataset_v20260219.csv",
+  "n_rows": 27497,
+  "n_groups": 5752,
+  "pos_rate": 0.6033
+ },
+ "auc": {
+  "rule_layer_baseline": 0.514,
+  "chance": 0.5,
+  "gbm_seen_pair_new_condition": 0.7824,
+  "gbm_unseen_pair": 0.7488,
+  "logreg_seen_pair_new_condition": 0.733
+ },
+ "features": {
+  "n_dims": 4305,
+  "use_fingerprint": true,
+  "category_sizes": {
+   "solvent": 18,
+   "catalyst": 109,
+   "base": 66,
+   "source": 8
+  }
+ },
+ "seconds": 519.3
+}

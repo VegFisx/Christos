@@ -1,0 +1,43 @@
+{
+  "herb": "甘草",
+  "method": "醋炙",
+  "n_base": 1797,
+  "n_with_adj": 1999,
+  "n_only_adjuvant": 202,
+  "rules": {
+    "esterification": 38,
+    "mined_extra": 150,
+    "condensation_aldol_001": 11,
+    "amidation_intermolecular_001": 1,
+    "condensation_glycosylation_001": 1,
+    "tautomerization_keto_enol_001": 1
+  },
+  "examples": [
+    {
+      "formula": "C50H74O20",
+      "rule": "esterification",
+      "source": "乙酸"
+    },
+    {
+      "formula": "C50H74O20",
+      "rule": "esterification",
+      "source": "乙酸"
+    },
+    {
+      "formula": "C50H74O20",
+      "rule": "esterification",
+      "source": "乙酸"
+    },
+    {
+      "formula": "C50H74O20",
+      "rule": "esterification",
+      "source": "乙酸"
+    },
+    {
+      "formula": "C50H74O20",
+      "rule": "esterification",
+      "source": "乙酸"
+    }
+  ],
+  "seconds": 562.8
+}

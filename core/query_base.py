@@ -49,7 +49,9 @@ for _p in (_STAGE / "core", _STAGE / "conditions", _STAGE / "rules",
         sys.path.insert(0, str(_p))
 
 REPORTS = _STAGE / "reports"
-TCM_DB = Path(r"D:\TCMAI\tcm.db")
+import os
+
+TCM_DB = Path(os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
 COCONUT_DB = Path(r"D:\TCMAI\coconut.db")
 COCONUT_IK = REPORTS / "coconut_inchikey_index.jsonl"
 
@@ -140,6 +142,9 @@ class RunSpec:
     #   打开后：extent < conditions/kinetics.json 的 gates.extent_min 的反应整条不产出，
     #   其余产物带 extent / extent_band。依据与参数见 conditions/extent.py、kinetics.json。
     condition_extent: bool = False
+    # ★ 第 128 轮：学习型重排序（默认关）。打开后只用离线模型改候选顺序，
+    #   候选集合与 recall_any 完全不变；模型缺失/损坏时自动退回发射序。
+    rerank: bool = False
     # ★ 用户自定义条件：在预设条件档案之上逐项覆盖。
     #   键名与 Conditions 的字段一致（solvent/temperature/time_min/pH/
     #   catalyst/atmosphere）。空字典 = 完全使用预设。
@@ -517,6 +522,12 @@ def build_inventory(spec: RunSpec,
     st = inv.stats
     st.n_seeds = len(spec.seeds)
 
+    # ★ 第 128 轮：重排序模型路径（可由 CHEMREACT_RERANK_MODEL 覆盖，便于复现实验）
+    def _rerank_model():
+        import os as _os
+        return (_os.environ.get("CHEMREACT_RERANK_MODEL")
+                or str(_HERE.parent / "reports" / "rank_model_20261107.pkl"))
+
     eng = SmartReactEngine(max_pairs=spec.max_pairs,
                            max_products_per_pair=spec.max_products_per_pair,
                            use_triple_templates=bool(getattr(spec, "triples", False)),
@@ -540,7 +551,10 @@ def build_inventory(spec: RunSpec,
                            # mono redox gate switched off, so tie them together.
                            mono_redox_gate=bool(
                                getattr(spec, "strict_redox_gate", False)),
-                           pair_offset=int(getattr(spec, "pair_offset", 0)))
+                           pair_offset=int(getattr(spec, "pair_offset", 0)),
+                           # ★ 第 128 轮：学习型重排序（默认关；只改顺序，候选不变）
+                           rerank_model=(_rerank_model()
+                                         if bool(getattr(spec, "rerank", False)) else None))
     st.engine_notes = [f"base: {eng.base_template_note}",
                        f"extra: {eng.extra_template_note}",
                        f"mono: {eng.mono_template_note}",
