@@ -1,0 +1,15 @@
+{
+ "generated_at": "2026-11-10T14:41:28",
+ "n_per_stratum": 120,
+ "criterion": "rare >= 25/120 to keep the idea; frequent must not drop by more than 5",
+ "result": {
+  "rawmid": {
+   "rare": {
+    "hits": 27,
+    "n": 120,
+    "median_candidates": 86
+   }
+  }
+ },
+ "elapsed_s": 120
+}

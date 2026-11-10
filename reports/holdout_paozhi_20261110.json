@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-11-10 15:32:53",
+  "holdout_file": "data/holdout_paozhi.json",
+  "frozen_git_rev": "fc595c7",
+  "n_cases": 6,
+  "n_prediction_hits": 5,
+  "actual_status_counts": {
+    "consistent": 3,
+    "miss": 3
+  },
+  "cases": [
+    {
+      "tag": "zhizi_geniposide",
+      "seed_id": "HBIN027450",
+      "condition": "炮制·炒黄",
+      "seed_name": "Geniposide",
+      "seed_formula": "C17H24O10",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.9,
+      "n_round1": 22,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C11H14O5",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "genipin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "栀子",
+      "process_cn": "炒黄",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "京尼平苷 → 京尼平是糖苷键水解，差一个葡萄糖（C6H10O5）；与甘草/人参用同一条通用规则，未针对本案调整"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "xingren_amygdalin",
+      "seed_id": "HBIN015934",
+      "condition": "炮制·蒸制",
+      "seed_name": "Amygdalin",
+      "seed_formula": "C20H27NO11",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.9,
+      "n_round1": 28,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C14H17NO6",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "prunasin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "苦杏仁",
+      "process_cn": "燀制（沸水）",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "苦杏仁苷（二糖苷）先脱一个葡萄糖得野樱苷；若规则一次剥两个糖，产物会是苯甲醛/扁桃腈，则记为 miss。条件档没有'燀'，用蒸制近似"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "tianma_gastrodin",
+      "seed_id": "HBIN027384",
+      "condition": "炮制·蒸制",
+      "seed_name": "Gastrodin",
+      "seed_formula": "C13H18O7",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 15,
+      "targets": [
+        {
+          "target": "4-hydroxybenzaldehyde",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "天麻",
+      "process_cn": "蒸制",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "天麻素去葡萄糖得对羟基苯甲醛（C13H18O7 - C6H12O6 = C7H6O2）；比对键取自 PubChem CID 126，因为 tcm.db 该条目 inchi_key 为空"
+      },
+      "actual_status": "miss",
+      "prediction_hit": false
+    },
+    {
+      "tag": "zhuyu_loganin",
+      "seed_id": "HBIN033476",
+      "condition": "炮制·酒炙",
+      "seed_name": "Loganin",
+      "seed_formula": "C17H26O10",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 23,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C11H16O5",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "loganetin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "山茱萸",
+      "process_cn": "酒制",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "马钱苷去葡萄糖得马钱苷元（保留甲酯），C17H26O10 - C6H10O5 = C11H16O5"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "maqianzi_strychnine",
+      "seed_id": "HBIN045003",
+      "condition": "炮制·炒黄",
+      "seed_name": "Strychnine",
+      "seed_formula": "C21H22N2O2",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.3,
+      "n_round1": 0,
+      "targets": [
+        {
+          "target": "isostrychnine",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "马钱子",
+      "process_cn": "砂烫",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "士的宁 → 异士的宁是分子内重排（同分子式），我们没有重排规则；预期的失败点，用来证明不是任何文献案例都能蹭到"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    },
+    {
+      "tag": "dahuang_sennoside",
+      "seed_id": "HBIN043755",
+      "condition": "炮制·酒炙",
+      "seed_name": "Sennoside a",
+      "seed_formula": "C42H38O20",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 16,
+      "targets": [
+        {
+          "target": "sennidin a",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "大黄",
+      "process_cn": "酒蒸",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "番泻苷 A 需连续剥两个葡萄糖才到番泻苷元，单轮一步只能到单糖苷中间体；若规则一次剥两个则可能命中"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    }
+  ]
+}

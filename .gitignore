@@ -29,3 +29,6 @@ tools/_download_*.zip
 
 # 53.8 MB ??????? tools/check_mit_overlap.py ?????????
 reports/paper/data/uspto_mit/USPTO_MIT.csv
+
+# 发布闸门的中间产物（每次跑都会变，只留汇总记录）
+reports/benchmarks/gate_*_tmp/

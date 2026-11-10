@@ -1,0 +1,213 @@
+{
+  "created_at": "2026-11-10",
+  "frozen_git_rev": "fc595c7",
+  "purpose": "预注册留出集：这些案例写进文件、先写死预期，再一次跑完；不得因为结果而修改预期，也不得为这些案例补规则。",
+  "protocol": [
+    "1. 本文件在任何一次运行之前提交（commit），此后 expected 字段冻结；",
+    "2. 运行只允许用现有规则（rules/rules.json，71 条）与现有条件档，不改代码；",
+    "3. 若某个案例失败，只能记录，不能为它新增规则/模板/特殊分支；",
+    "4. 每次发布前重跑本文件，写入 reports/holdout_paozhi_<date>.json 并与此预期对照。"
+  ],
+  "selection_note": "案例来源：文献记载了该炮制方法下某个标记性成分的结构转化，且底物与产物在 tcm.db 里都有结构。选它们的原因不是'我们能做'——其中两条预期是失败。",
+  "holdout_strength": "strong=该化学未被用于设计任何规则；weak=所用规则族的证据文献里出现过同一味药（但未指名这一对底物/产物）。",
+  "cases": [
+    {
+      "id": "zhizi_geniposide",
+      "herb_cn": "栀子",
+      "herb_en": "Gardenia fruit",
+      "process_cn": "炒黄",
+      "process_en": "stir-frying",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN027450",
+        "name": "Geniposide",
+        "formula": "C17H24O10"
+      },
+      "targets": [
+        {
+          "label": "genipin",
+          "kind": "key",
+          "value": "HBIN027445",
+          "formula": "C11H14O5",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "京尼平苷 → 京尼平是糖苷键水解，差一个葡萄糖（C6H10O5）；与甘草/人参用同一条通用规则，未针对本案调整"
+      },
+      "literature_note": "栀子炮制中京尼平苷水解为京尼平（苷元），是栀子炒制/焦制的主要化学变化之一"
+    },
+    {
+      "id": "xingren_amygdalin",
+      "herb_cn": "苦杏仁",
+      "herb_en": "Bitter apricot seed",
+      "process_cn": "燀制（沸水）",
+      "process_en": "blanching",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN015934",
+        "name": "Amygdalin",
+        "formula": "C20H27NO11"
+      },
+      "targets": [
+        {
+          "label": "prunasin",
+          "kind": "key",
+          "value": "HBIN040963",
+          "formula": "C14H17NO6",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "苦杏仁苷（二糖苷）先脱一个葡萄糖得野樱苷；若规则一次剥两个糖，产物会是苯甲醛/扁桃腈，则记为 miss。条件档没有'燀'，用蒸制近似"
+      },
+      "literature_note": "燀制使苦杏仁苷部分水解为野樱苷，是减毒机制的第一步"
+    },
+    {
+      "id": "tianma_gastrodin",
+      "herb_cn": "天麻",
+      "herb_en": "Gastrodia rhizome",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN027384",
+        "name": "Gastrodin",
+        "formula": "C13H18O7"
+      },
+      "targets": [
+        {
+          "label": "4-hydroxybenzaldehyde",
+          "kind": "pubchem",
+          "value": "4_hydroxybenzaldehyde",
+          "formula": "C7H6O2",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "天麻素去葡萄糖得对羟基苯甲醛（C13H18O7 - C6H12O6 = C7H6O2）；比对键取自 PubChem CID 126，因为 tcm.db 该条目 inchi_key 为空"
+      },
+      "literature_note": "天麻蒸制/干燥过程中天麻素水解生成对羟基苯甲醛"
+    },
+    {
+      "id": "zhuyu_loganin",
+      "herb_cn": "山茱萸",
+      "herb_en": "Cornus fruit",
+      "process_cn": "酒制",
+      "process_en": "wine processing",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN033476",
+        "name": "Loganin",
+        "formula": "C17H26O10"
+      },
+      "targets": [
+        {
+          "label": "loganetin",
+          "kind": "key",
+          "value": "HBIN034900",
+          "formula": "C11H16O5",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "马钱苷去葡萄糖得马钱苷元（保留甲酯），C17H26O10 - C6H10O5 = C11H16O5"
+      },
+      "literature_note": "山茱萸酒制/蒸制过程中环烯醚萜苷水解为相应苷元"
+    },
+    {
+      "id": "maqianzi_strychnine",
+      "herb_cn": "马钱子",
+      "herb_en": "Nux vomica",
+      "process_cn": "砂烫",
+      "process_en": "sand heating",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN045003",
+        "name": "Strychnine",
+        "formula": "C21H22N2O2"
+      },
+      "targets": [
+        {
+          "label": "isostrychnine",
+          "kind": "key",
+          "value": "HBIN031270",
+          "formula": "C21H22N2O2",
+          "family": [
+            "rearrangement"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "士的宁 → 异士的宁是分子内重排（同分子式），我们没有重排规则；预期的失败点，用来证明不是任何文献案例都能蹭到"
+      },
+      "literature_note": "马钱子砂烫后士的宁部分转化为异士的宁（降低毒性）"
+    },
+    {
+      "id": "dahuang_sennoside",
+      "herb_cn": "大黄",
+      "herb_en": "Rhubarb",
+      "process_cn": "酒蒸",
+      "process_en": "wine steaming",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN043755",
+        "name": "Sennoside a",
+        "formula": "C42H38O20"
+      },
+      "targets": [
+        {
+          "label": "sennidin a",
+          "kind": "key",
+          "value": "HBIN043749",
+          "formula": "C30H18O10",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "番泻苷 A 需连续剥两个葡萄糖才到番泻苷元，单轮一步只能到单糖苷中间体；若规则一次剥两个则可能命中"
+      },
+      "literature_note": "大黄酒制/酒蒸过程中番泻苷水解为番泻苷元（致泻作用减弱）；注意 hydrolysis_glycoside_001 的一条证据文献是大黄综述，故只算弱留出"
+    }
+  ]
+}

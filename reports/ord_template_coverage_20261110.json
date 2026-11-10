@@ -1,0 +1,1213 @@
+{
+ "generated_at": "2026-11-10T13:55:04",
+ "n_records": 60200,
+ "n_rare": 5195,
+ "n_sample": 120,
+ "templates_extracted": 105,
+ "present_in_full_pool": 100,
+ "absent_from_full_pool": 5,
+ "no_template": 15,
+ "shards": 286,
+ "rows": [
+  {
+   "reaction_id": "ord-481e3b87cacc44ddbbcc93050697583b",
+   "sig": [
+    "1",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('Sn', 0, 4, False, False, 0))"
+   ],
+   "template": "[#16;a:1]:[c;H0;D3;+0:2](-[Sn;H0;D4;+0:6](-[C:5])(-[C:7])-[C:8]):[c:3]:[#7;a:4]>>[#16;a:1]:[cH;D2;+0:2]:[c:3]:[#7;a:4].[C:5]-[Sn;H0;D4;+0:6](-[C:7])(-[C:8])-[Cl]",
+   "hits": 26
+  },
+  {
+   "reaction_id": "ord-19fa6db1948d4cb8ada372cbc92b2e4e",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 2, False, False, 0), ('C', 0, 3, False, False, 1), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[CH;D3;+0:8](-[#7:9]-[C:10](-[#8:11])=[O;D1;H0:12])-[CH2;D2;+0:6]-[CH2;D2;+0:7]-[C;H0;D2;+0:4]#[N;H0;D1;+0:5]>>C-C(-C)(-C)-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=O)-[#7:3].C-[CH2;D2;+0:4]-[N;H0;D3;+0:5](-C(-C)-C)-C(-C)-C.C-[CH;D3;+0:6](-[C;H0;D2;+0:7]#N)-[CH;D3;+0:8](-[#7:9]-[C:10](-[#8:11])=[O;D1;H0:12])-C(-O)=O",
+   "hits": 5
+  },
+  {
+   "reaction_id": "ord-19bb569dc6ac418a8462ee091a9bdf5b",
+   "sig": [
+    "5",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('O', 0, 1, False, False, 0), ('O', 0, 2, False, True, 0))"
+   ],
+   "template": "[#8:10]-[CH;D3;+0:11](-[O;H0;D2;+0:2]-[CH2;D2;+0:1]-[c;H0;D3;+0:8]1:[c:9]:[cH;D2;+0:3]:[c:4]:[c;H0;D3;+0:5]2:[c:6]:1-[C;H0;D3;+0:7](=[O;H0;D1;+0:14])-[CH2;D2;+0:17]-[CH2;D2;+0:16]-[CH2;D2;+0:15]-2)-[CH2;D2;+0:12]-[C:13]>>C-[C;H0;D3;+0:1](-[O-])=[O;H0;D1;+0:2].O=S(=O)(-[O-])-[c;H0;D3;+0:3]1:[c:4]:[cH;D2;+0:5]:[c:6](-[CH3;D1;+0:7]):[cH;D2;+0:8]:[c:9]:1.[#8:10]-[CH;D2;+0:11]=[CH;D2;+0:12]-[C:13].[Cl]-[Cr](-[O-])(=[O;H0;D1;+0:14])=[O].[cH;D2;+0:15]1:[cH;D2;+0:16]:[cH;D2;+0:17]:c:c:[nH+]:1",
+   "hits": 8
+  },
+  {
+   "reaction_id": "ord-3ab94d0531bc44d6b19c245d1d42155a",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 2, True, True, 1), ('N', 0, 3, True, True, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7;a:7]:[c;H0;D3;+0:6](:[c:8]):[cH;D2;+0:1]:[cH;D2;+0:2]:[c:3]-[CH2;D2;+0:4]-[CH;D2;+0:5]=[O;H0;D1;+0:9]>>C=[CH;D2;+0:1]-[CH2;D2;+0:2]-[c:3]:[cH;D2;+0:4]:[cH;D2;+0:5]:[c;H0;D3;+0:6](:[#7;a:7]):[c:8].[O-;H0;D1:9]-[I+3](-[O-])(-[O-])-[O-]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-38ce6f22a7a04c438e2657ca31bb8022",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[OH;D1;+0:2]-[CH2;D2;+0:1]-[c;H0;D3;+0:4](:[c:3]):[c:5]>>O=[CH2;D1;+0:1].[OH-;D0:2].[c:3]:[cH;D2;+0:4]:[c:5]",
+   "hits": 29
+  },
+  {
+   "reaction_id": "ord-fabcc99b723a4f5498f80406b065329f",
+   "sig": [
+    "1",
+    "0",
+    "(('C', 0, 4, False, True, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[#7;a:1]:[c:2]:[c:3](:[c:4]:[#7;a:5])-[C;H0;D4;+0:6](-[OH;D1;+0:9])(-[c:7])-[c:8]>>[#7;a:1]:[c:2]:[c:3](:[c:4]:[#7;a:5])-[CH;D3;+0:6](-[c:7])-[c:8].[O-]-[Mn](=[O;H0;D1;+0:9])(=[O])=[O]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-f19a693c76404b0d9266dbd4e2a1c7a7",
+   "sig": [
+    "1",
+    "1",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 1, False, False, 3), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[BrH;D0;+0:1].[C;D1;H3:5]-[NH;D2;+0:6]-[CH2;D2;+0:2]-[C:3]=[O;D1;H0:4]>>[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[C:3]=[O;D1;H0:4].[C;D1;H3:5]-[NH2;D1;+0:6]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-020301db948b4fa68fa146015877e888",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[#8:4]-[C:5](=[O;D1;H0:6])-[c:7]1:[c:8]:[n;H0;D3;+0:9]2:[c:10](:[c:11]-[NH;D2;+0:12]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[CH2;D2;+0:3]-2):[c:13]:[c;H0;D3;+0:14]:1=[O;H0;D1;+0:15]>>Br-C-C(=O)-O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[CH2;D2;+0:3]-Br.[#8:4]-[C:5](=[O;D1;H0:6])-[c:7]1:[c:8]:[n;H0;D2;+0:9]:[c:10](:[c:11]-[NH2;D1;+0:12]):[c:13]:[c;H0;D3;+0:14]:1-[OH;D1;+0:15]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-2e7ae7c65abf4c30a8fc6bca94749a1d",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 2, False, False, 0), ('C', 0, 3, False, False, 0))"
+   ],
+   "template": "[#8:3]-[C;H0;D3;+0:2](=[O;D1;H0:4])-[C;H0;D2;+0:1]#[C;H0;D2;+0:5]-[C:6]>>C-C-C-C-C-[CH3;D1;+0:1].Cl-[C;H0;D3;+0:2](-[#8:3])=[O;D1;H0:4].O=[CH;D2;+0:5]-[C:6]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-f8faaf12eb0b4f6f8a1ad2294792e703",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 4, False, False, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[C;D1;H2:4]=[C:5]-[C:6](=[O;D1;H0:7])-[OH;D1;+0:8].[C;D1;H3:10]-[C;H0;D4;+0:9](-[C;D1;H3:11])(-[C;D1;H3:12])-[c;H0;D3;+0:1](:[c:2]):[c:3]>>Br-[c;H0;D3;+0:1](:[c:2]):[c:3].[C;D1;H2:4]=[C:5]-[C:6](=[O;D1;H0:7])-[O;H0;D2;+0:8]-[C;H0;D4;+0:9](-[C;D1;H3:10])(-[C;D1;H3:11])-[C;D1;H3:12]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-c1de9d09bcbb4352aa0f48bea62739a6",
+   "sig": [
+    "5",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": "[#8;a:12]:[c;H0;D3;+0:11](-[c;H0;D3;+0:6]1:[cH;D2;+0:8]:[c;H0;D3;+0:9]2:[nH;D2;+0:18]:[c:16](-[CH;D3;+0:17]3-[CH2;D2;+0:3]-[C:2]-[NH;D2;+0:1]-[C:4]-[CH2;D2;+0:5]-3):[#7;a:15]:[cH;D2;+0:14]:[c;H0;D3;+0:10]-2:[n;H0;D2;+0:7]:1):[c:13]>>C-C(-C)-[N;H0;D3;+0:1](-[C:2]-[CH3;D1;+0:3])-[C:4]-[CH3;D1;+0:5].C=[C;H0;D3;+0:6](-[N;H0;D3;+0:7]1-C-[CH2;D2;+0:8]-[CH2;D2;+0:9]-[CH2;D2;+0:10]-1)-[c;H0;D3;+0:11](:[#8;a:12]):[c:13].Cl-[c;H0;D3;+0:14]1:[#7;a:15]:[c:16](-[CH3;D1;+0:17]):[n;H0;D2;+0:18]:c(-Cl):c:1-[N+](=O)-[O-]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-7012a792d1d44d4a9d86aaa7bc5c10f1",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-97368b5ee82c4b7781413f9a71d2c9fd",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, True, 0))"
+   ],
+   "template": "[C;D1;H3:1]-[C;H0;D4;+0:2](-[C;D1;H3:3])(-[C:4]-[OH;D1;+0:5])-[S;H0;D2;+0:6]-[c:7]>>[C;D1;H3:1]-[C;H0;D4;+0:2]1(-[C;D1;H3:3])-[C:4]-[O;H0;D2;+0:5]-1.[SH;D1;+0:6]-[c:7]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-7a9a7c49b62948488e3e3a30820ded4f",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C:6]-[CH2;D2;+0:5]-[NH;D2;+0:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:1])-[c:4]>>Cl-C(-Cl)(-Cl)-C(-O)=[O;H0;D1;+0:1].O-[N;H0;D2;+0:2]=[C;H0;D3;+0:3](-[c:4])-[CH2;D2;+0:5]-[C:6]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-8e16a6ba4f0e432b85141c508ead455b",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": "[O;H0;D1;+0:2]=[c;H0;D3;+0:1]1:[c:7]:[c:6]:[c;H0;D3;+0:3](-[CH2;D2;+0:4]-[c:5]):[n;H0;D2;+0:8]:[nH;D2;+0:9]:1>>O=[C;H0;D3;+0:1]1-[O;H0;D2;+0:2]/[C;H0;D3;+0:3](=[CH;D2;+0:4]\\[c:5])-[c:6]:[c:7]-1.[NH2;D1;+0:8]-[NH2;D1;+0:9]",
+   "hits": 0
+  },
+  {
+   "reaction_id": "ord-c5d19bf1a64a48dca797660e1d22a0c1",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[#8:7]-[CH2;D2;+0:5]-[CH2;D2;+0:6]-[CH2;D2;+0:3]-[C:4].[C:2]-[CH3;D1;+0:1].[C:9]-[OH;D1;+0:8]>>Br-[CH2;D2;+0:1]-[C:2].C-C-[CH2;D2;+0:3]-[C:4].C-[C;H0;D4;+0:5](-[CH3;D1;+0:6])(-[#8:7])-[O;H0;D2;+0:8]-[C:9]",
+   "hits": 15
+  },
+  {
+   "reaction_id": "ord-d437da1d70b94beeb9f83879ff83397a",
+   "sig": [
+    "5",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0), ('S', 0, 2, True, True, 0))"
+   ],
+   "template": "[Cl;H0;D1;+0:10]-[c;H0;D3;+0:3]1:[#7;a:2]:[c;H0;D3;+0:1]2:[cH;D2;+0:5]:[cH;D2;+0:4]:[cH;D2;+0:8]:[n;H0;D2;+0:6]:[c;H0;D3;+0:7]:2:[s;H0;D2;+0:9]:1>>Br-[c;H0;D3;+0:1]1:[#7;a:2]:[cH;D2;+0:3]:c:[cH;D2;+0:4]:[c;H0;D3;+0:5]:1-N.C-[N;H0;D3;+0:6](-[CH3;D1;+0:7])-[CH;D2;+0:8]=O.Cl-[S;H0;D4;+0:9](-Cl)(=O)=O.[ClH;D0;+0:10]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-d4cc32dd4c7246f0ae20a670a4b8552b",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('N', 0, 3, False, True, 0), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": "[C:9]-[N;H0;D3;+0:10](-[C:11])-[C;H0;D3;+0:1](=[O;D1;H0:2])-[#7;a:3]:[c;H0;D3;+0:4](-[CH3;D1;+0:12]):[c:5].[O;D1;H0:8]=[C:7]-[OH;D1;+0:6]>>C-C(-C)(-C)-O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[#7;a:3]:[cH;D2;+0:4]:[c:5].C-[O;H0;D2;+0:6]-[C:7]=[O;D1;H0:8].[C:9]-[NH;D2;+0:10]-[C:11].C1-C-[CH2;D2;+0:12]-C-O-1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-f541f7ce4d1c4ee2a50737b3840bf645",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 1, False, False, 2), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[C:2]-[C;H0;D3;+0:1](=[CH2;D1;+0:9])-[c;H0;D3;+0:3]1:[cH;D2;+0:6]:[c:5]:[cH;D2;+0:4]:[c:8]:[cH;D2;+0:7]:1>>Br-[C;H0;D3;+0:1](-[C:2])=[CH2;D1;+0:3].O-B(-O)-[c;H0;D3;+0:4]1:[c:5]:[cH;D2;+0:6]:c:[cH;D2;+0:7]:[c:8]:1.O=[C;H0;D3;+0:9](-[O-])-[O-]",
+   "hits": 8
+  },
+  {
+   "reaction_id": "ord-c328611ae7a14464bb2ed054959c38d3",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, False, 0), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-01e845578df9464fa024ad94bb4674af",
+   "sig": [
+    "1",
+    "0",
+    "(('C', 0, 3, False, False, 1), ('S', 0, 1, False, False, 1))"
+   ],
+   "template": "[C:4]-[CH;D3;+0:3](-[SH;D1;+0:5])-[CH2;D2;+0:2]-[OH;D1;+0:1]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=O)-[CH;D3;+0:3](-[C:4])-O-C(-C)=S.O=[S;H0;D4;+0:5](=O)(-[O-])-[O-]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-bf3b36021a974881a4224bc34dfa9af1",
+   "sig": [
+    "4",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, False, True, 1), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[#16;a:6]:[c:7](:[c:8]:[#7;a:9])-[C;H0;D3;+0:10](=[O;D1;H0:11])-[NH;D2;+0:5]-[CH2;D2;+0:12]-[C:13].[#7:14]-[c;H0;D3;+0:15]1:[cH;D2;+0:2]:[c;H0;D3;+0:1](-[OH;D1;+0:4]):[cH;D2;+0:3]:[cH;D2;+0:16]:[c:17]:1-[#8:18]>>C-[C;H0;D4;+0:1](-[CH3;D1;+0:2])(-[CH3;D1;+0:3])-[O-;H0;D1:4].O-c1:c:c:c2:c(:c:1)-[NH;D2;+0:5]-C-C-O-2.[#16;a:6]:[c:7](:[c:8]:[#7;a:9])-[C;H0;D3;+0:10](=[O;D1;H0:11])-[CH2;D2;+0:12]-[C:13].[#7:14]-[c;H0;D3;+0:15]1:c:c(-c2:c:c:c:c:c:2):c:[cH;D2;+0:16]:[c:17]:1-[#8:18]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-cd7eb1589a9c465cb6f14ab156a878b4",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[O;D1;H0:6]=[C:5]-[OH;D1;+0:4].[O;H0;D1;+0:1]=[C;H0;D3;+0:2]1-[CH2;D2;+0:3]-[S;H0;D2;+0:11]-[c;H0;D3;+0:7](:[c:8]):[c:9]-[NH;D2;+0:10]-1>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=O)-[c;H0;D3;+0:3]1:c(-F):c:c(-F):c:c:1-F.C-C-[O;H0;D2;+0:4]-[C:5]=[O;D1;H0:6].F-[c;H0;D3;+0:7](:[c:8]):[c:9]-[N+;H0;D3:10](=O)-[O-].O-[S;H0;D4;+0:11](-O)(=O)=O",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-6c521c6f5c344130a83eca71c48f87dd",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[#7:3]-[C;H0;D4;+0:2](-[C;D1;H3:4])(-[CH3;D1;+0:1])-[C;H0;D3;+0:7](=[O;D1;H0:8])-[NH;D2;+0:5]-[c:6]>>C-C-O-C(=O)-[CH2;D2;+0:1]-[CH;D3;+0:2](-[#7:3])-[C;D1;H3:4].O=[N+;H0;D3:5](-[O-])-[c:6].C-C-O-[C;H0;D3;+0:7](-C)=[O;D1;H0:8]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-642f1bf43dfa4cbc9dbefaaeb23d6818",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 2, False, False, 1), ('C', 0, 3, False, False, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[CH3;D1;+0:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:1])-[CH;D2;+0:4]=[CH;D2;+0:5]-[c:6]>>C-C(-O)=[O;H0;D1;+0:1].C1-C-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[CH2;D2;+0:4]-N-1.O=[CH;D2;+0:5]-[c:6]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-ec42555b67f34b5e82c0293fffbf1762",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 1), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-73c18991f1494bf7bb87bfbaf35db393",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 2, False, False, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[#7;a:5]:[c:6](/[CH;D2;+0:7]=[CH;D2;+0:4]/[#7:3]-[CH3;D1;+0:2]):[c:8]1:[c:12](:[#7;a:17]):[n;H0;D3;+0:13](-[c;H0;D3;+0:14](:[c:15]):[c:16]):[cH;D2;+0:1]:[n;H0;D2;+0:10]:[c;H0;D3;+0:9]:1=[O;D1;H0:11]>>N-[C;H0;D3;+0:1](=O)-c1:c:c:c:c:c:1.O=[CH;D2;+0:2]-[#7:3]-[CH3;D1;+0:4].[#7;a:5]:[c:6](-[CH3;D1;+0:7]):[c:8](-[C;H0;D3;+0:9](-[NH2;D1;+0:10])=[O;D1;H0:11]):[c:12](-[NH;D2;+0:13]-[c;H0;D3;+0:14](:[c:15]):[c:16]):[#7;a:17]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-51bc6af46e1f4958ba57d64290d7b9d8",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-8f4f3029647446aba0cb98950f52314b",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, False, False, 1), ('O', 0, 1, False, False, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[#16;a:6]:[c:5]-[C;H0;D4;+0:4](-[NH;D2;+0:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[O;H0;D2;+0:9]-[CH2;D2;+0:10]-[CH3;D1;+0:11])(-[C:7])-[C:8]>>C-C-[N;H0;D3;+0:1](-C-C)-[CH2;D2;+0:2]-C.C-C-[OH;D1;+0:3].O-C(=O)-[C;H0;D4;+0:4](-[c:5]:[#16;a:6])(-[C:7])-[C:8].O=P(-N=[N+]=[N-])(-O-c1:c:c:c:c:c:1)-[O;H0;D2;+0:9]-[c;H0;D3;+0:10]1:[cH;D2;+0:11]:c:c:c:c:1",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-2c73a06bbf214c0db660abab624bdc04",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0), ('N', 0, 3, True, True, 0))"
+   ],
+   "template": "[F;D1;H0:8]-[C:7](-[F;D1;H0:9])(-[F;D1;H0:10])-[c;H0;D3;+0:3]1:[cH;D2;+0:4]:[n;H0;D3;+0:5](-[c;H0;D3;+0:6](:[cH;D2;+0:11]:[c:12]):[cH;D2;+0:13]:[c:14]):[n;H0;D2;+0:1]:[cH;D2;+0:2]:1>>C-[N+;H0;D3:1](-C)=[CH;D2;+0:2]/[C;H0;D3;+0:3](=[CH;D2;+0:4]/[N;H0;D3;+0:5](-C)-[CH3;D1;+0:6])-[C:7](-[F;D1;H0:8])(-[F;D1;H0:9])-[F;D1;H0:10].N-N-c(:[cH;D2;+0:11]:[c:12]):[cH;D2;+0:13]:[c:14]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-c757cfd613114a6dba637692df4b1a13",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, True, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[C:6]-[C;H0;D4;+0:5]1(-[CH2;D2;+0:15]-[CH2;D2;+0:17]-[CH3;D1;+0:16])-[C:4]-[C:3]-[SiH;D3;+0:1](-[c:2])-[C:8]-[C:7]-1.[O;D1;H0:9]=[C:10]-[O;H0;D2;+0:11]-[c;H0;D3;+0:12](:[c:13]):[c:14]>>C-C-C-[Si;H0;D4;+0:1]1(-[c:2])-[C:3]-[C:4]-[CH;D3;+0:5](-[C:6])-[C:7]-[C:8]-1.[O;D1;H0:9]=[C:10]-[OH;D1;+0:11].O-[c;H0;D3;+0:12](:[c:13]):[c:14].[cH;D2;+0:15]1:c:c:c:[cH;D2;+0:16]:[c;H0;D3;+0:17]:1-P(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-d717b19d595a415b9f7fe2547f614abf",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 2, False, True, 2), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[C:4]-[C;H0;D4;+0:3](-[C;H0;D2;+0:1]#[N;D1;H0:2])(-[NH;D2;+0:6]-[c:7])-[C:5]>>C-[Si](-C)(-C)-[C;H0;D2;+0:1]#[N;D1;H0:2].O=[C;H0;D3;+0:3](-[C:4])-[C:5].[NH2;D1;+0:6]-[c:7]",
+   "hits": 77
+  },
+  {
+   "reaction_id": "ord-be93220be45842fbbcea0b2b34ecbb70",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0), ('O', 0, 2, False, False, 0), ('S', 0, 4, False, False, 0))"
+   ],
+   "template": "[CH3;D1;+0:6]-[O;H0;D2;+0:10]-[C:8](=[O;D1;H0:9])-[CH2;D2;+0:7]-[S;H0;D4;+0:11](=[O;D1;H0:13])(=[O;H0;D1;+0:12])-[c;H0;D3;+0:4](:[c:5]):[c:3]:[cH;D2;+0:1]:[c:2]>>C-O-C(=O)-C-S-[c;H0;D3;+0:1](:[c:2]):[c:3]:[cH;D2;+0:4]:[c:5].C-[CH;D3;+0:6](-Cl)-Cl.Cl-c1:c:c:c:[c;H0;D3;+0:7](-[C:8](=[O;D1;H0:9])-[O;H0;D2;+0:10]-O):c:1.S=[S;H0;D4;+0:11](-[O-;H0;D1:12])(-[O-])=[O;D1;H0:13]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-68403768e3f248f985caea92a95dc838",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-2753166d734d4535a2c00f9ac5c64fae",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, True, 1), ('N', 0, 2, False, True, 1), ('O', 0, 2, False, True, 0))"
+   ],
+   "template": "[C:3]1-[C:4]-[O;H0;D2;+0:5]-[CH2;D2;+0:1]-[NH;D2;+0:2]-1>>C-C-O-[C;H0;D3;+0:1](=O)-O-C-C.[NH2;D1;+0:2]-[C:3]-[C:4]-[OH;D1;+0:5]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-babcfa2d8c4842a28189c18b90da056c",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 1, False, False, 1))"
+   ],
+   "template": "[NH;D1;+0:10]=[C;H0;D3;+0:9]1-[c:8]:[c;H0;D3;+0:6](:[c:7])-[c;H0;D3;+0:5](:[c:4]-[C:2](=[O;D1;H0:1])-[O;D1;H1:3]):[n;H0;D3;+0:11]-1:[c:12]>>[O;D1;H0:1]=[C:2](-[O;D1;H1:3])-[c:4]:[c;H0;D3;+0:5]1:[c;H0;D3;+0:6](:[c:7]):[c:8]:[cH;D2;+0:9]:[n;H0;D2;+0:10]:[n;H0;D3;+0:11]:1:[c:12]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-474d08dc4e194ae180015b55645ddd75",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[C:9]-[O;H0;D2;+0:8]-[P;H0;D4;+0:1]1(=[O;D1;H0:2])-[C:3]-[c;H0;D3;+0:4](:[c:5]):[c;H0;D3;+0:11](:[cH;D2;+0:6]:[c:7])-[C;H0;D3;+0:10](=[O;H0;D1;+0:13])-[CH2;D2;+0:12]-1>>C-C-O-C-[PH;D3;+0:1](=[O;D1;H0:2])-[C:3]-[c;H0;D3;+0:4](:[c:5]):c(-C(-O)=O):[cH;D2;+0:6]:[c:7].C-C-[O;H0;D2;+0:8]-[C:9].C-[C;H0;D4;+0:10](-[CH3;D1;+0:11])(-[CH3;D1;+0:12])-[O-;H0;D1:13]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-3d7936a332594c0cb8997a93893a7f8a",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, False, False, 1), ('N', 0, 3, False, False, 0))"
+   ],
+   "template": "[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[N;H0;D3;+0:7](-[CH3;D1;+0:4])-[C:6]#[N;D1;H0:5]>>Br-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].O-[C;H0;D3;+0:4](=O)-[O-].[N;D1;H0:5]#[C:6]-[NH2;D1;+0:7]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-15b7c92ff1bc4c7992a7cf35ddd2ee7d",
+   "sig": [
+    "5",
+    "1",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1), ('O', 0, 1, False, False, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C:11]-[CH2;D2;+0:10]-[CH2;D2;+0:17]-[C;H0;D3;+0:16](=[O;H0;D1;+0:18])-[#8:15]-[CH3;D1;+0:14].[C:9]-[CH2;D2;+0:8]-[C:5]1-[C;H0;D3;+0:6](=[O;H0;D1;+0:19])-[CH2;D2;+0:7]-[C@@H;D3;+0:12](-[OH;D1;+0:13])-[C@@H;D3;+0:1]-1/[C:2]=[C:3]/[C:4]>>C-C-[C@H;D3;+0:1](/[C:2]=[C:3]/[C:4])-[C:5](-[CH2;D2;+0:6]-[CH2;D2;+0:7]-C(-O)=O)-[C@;H0;D4;+0:8](-O)(-[C:9])-[C;H0;D3;+0:10](=O)-[C:11].C-N(-N=O)-[C;H0;D3;+0:12](-N)=[O;H0;D1;+0:13].C-[CH2;D2;+0:14]-[#8:15]-[CH2;D2;+0:16]-[CH3;D1;+0:17].[OH-;D0:18].[OH2;D0;+0:19]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-4635939cc6604ae892b6a3881575751e",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[C:8]-[NH;D2;+0:9]-[C;H0;D3;+0:6](=[O;H0;D1;+0:7])-[c;H0;D3;+0:1]1:[c:2]:[c:3]:[#16;a:4]:[c:5]:1>>Br-[c;H0;D3;+0:1]1:[c:2]:[c:3]:[#16;a:4]:[c:5]:1.C1-C-[CH2;D2;+0:6]-[O;H0;D2;+0:7]-C-1.[C:8]-[NH2;D1;+0:9]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-b15d7ecfd8af41b291fc77d076d55eef",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-d76dbcdab69f424fb89328da91def576",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, True, True, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[CH3;D1;+0:4]-[O;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]>>F-[c;H0;D3;+0:1](:[c:2]):[c:3].O-[CH3;D1;+0:4].[OH-;D0:5]",
+   "hits": 14
+  },
+  {
+   "reaction_id": "ord-56ed26ffea8d4a919013078f3d2c4823",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('O', 0, 2, False, True, 0), ('O', 0, 2, False, True, 0), ('Si', 0, 4, False, True, 0))"
+   ],
+   "template": "[C:6]-[Si;H0;D4;+0:5](-[C:7])(-[#8:4]-[Si;H0;D4;+0:1](-[C:2])(-[C:3])-[O;H0;D2;+0:9]-[C:8])-[O;H0;D2;+0:11]-[C:10]>>Cl-[Si;H0;D4;+0:1](-[C:2])(-[C:3])-[#8:4]-[Si;H0;D4;+0:5](-Cl)(-[C:6])-[C:7].[C:8]-[OH;D1;+0:9].[C:10]-[OH;D1;+0:11]",
+   "hits": 8
+  },
+  {
+   "reaction_id": "ord-d396aef2abfa4c8381dfd234d0712e67",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('Cl', 0, 1, False, False, 0))"
+   ],
+   "template": "[Cl;H0;D1;+0:1]-[CH2;D2;+0:6]-[C:7]=[O;D1;H0:8].[Cl;H0;D1;+0:2]-[CH2;D2;+0:3]-[C:4]=[O;D1;H0:5]>>[Cl-;H0;D0:1].[ClH;D0;+0:2].[N-]=[N+]=[CH;D2;+0:3]-[C:4]=[O;D1;H0:5].[N-]=[N+]=[CH;D2;+0:6]-[C:7]=[O;D1;H0:8]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-51d97fbf6d94487aa97d0a0654cb31dc",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, True, True, 0), ('N', 0, 2, False, True, 1), ('N', 0, 2, False, True, 1), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-a9d4ad6753aa4fba9ae239735904992f",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('N', 1, 3, True, True, 0))"
+   ],
+   "template": "[CH3;D1;+0:1]-[c;H0;D3;+0:2]1:[cH;D2;+0:3]:[cH;D2;+0:11]:[c:10]2:[#8;a:9]:[#7;a:8]:[c:7]:[c:6]:2:[n+;H0;D3:4]:1-[O;-;D1;H0:5]>>C1-C-[CH2;D2;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-N-1.O=[N+;H0;D3:4](-[O;-;D1;H0:5])-[c:6]1:[c:7]:[#7;a:8]:[#8;a:9]:[c:10]:1-[CH3;D1;+0:11]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-c99c7185df5a4a24ad81fd0aff434707",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('N', 0, 3, True, True, 0), ('S', 0, 2, False, True, 0), ('S', 0, 2, False, True, 0))"
+   ],
+   "template": "[#7;a:4]:[c:5]1:[n;H0;D3;+0:7](:[c:8])-[CH2;D2;+0:3]-[C:2]-[CH2;D2;+0:1]-[S;H0;D2;+0:6]-1>>Br-[CH2;D2;+0:1]-[C:2]-[CH2;D2;+0:3]-Br.[#7;a:4]:[c:5](-[SH;D1;+0:6]):[nH;D2;+0:7]:[c:8]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-730a19d25a93450f841382faa824c939",
+   "sig": [
+    "1",
+    "0",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 2, False, False, 1))"
+   ],
+   "template": "[Br;H0;D1;+0:1]-[CH2;D2;+0:4]-[C:3]=[C:2]>>O=C1-C-C-C(=O)-N-1-[Br;H0;D1;+0:1].[C:2]=[C:3]-[CH3;D1;+0:4]",
+   "hits": 46
+  },
+  {
+   "reaction_id": "ord-b82745c0cfca440aaa240c10344dad7a",
+   "sig": [
+    "2",
+    "1",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 2, False, False, 1), ('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[Br-;H0;D0:3].[c:2]-[CH;D2;+0:1]=[CH;D2;+0:6]-[c:7]:[n+;H0;D3:8](-[CH2;D2;+0:4]-[c:5]):[c:9]>>O=[CH;D2;+0:1]-[c:2].[Br;H0;D1;+0:3]-[CH2;D2;+0:4]-[c:5].[CH3;D1;+0:6]-[c:7]:[n;H0;D2;+0:8]:[c:9]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-1048f2a749d74a92aa57603f733934dd",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 3, False, True, 1), ('C', 0, 3, True, True, 0), ('N', 0, 3, False, False, 0))"
+   ],
+   "template": "[#16;a:7]:[c:6]1:[#7;a:5]:[#7;a:4]:[c:3]:[c:2]:1-[N;H0;D3;+0:1](-[CH2;D2;+0:12]-[C:13])-[CH;D3;+0:14](-[C:15])-[C:16].[C;D1;H3:11]-[CH2;D2;+0:10]-[O;H0;D2;+0:8]-[c:9]>>C-C(-C)(-C)-O-C(=O)-[NH;D2;+0:1]-[c:2]1:[c:3]:[#7;a:4]:[#7;a:5]:[c:6]:1:[#16;a:7].[OH;D1;+0:8]-[c:9].I-[CH2;D2;+0:10]-[C;D1;H3:11].I-[CH2;D2;+0:12]-[C:13].O=[C;H0;D3;+0:14](-[C:15])-[C:16]",
+   "hits": 0
+  },
+  {
+   "reaction_id": "ord-11f193efbdec478ab8122e9d66a1bfe1",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('Cl', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7:7]-[CH;D2;+0:6]=[C;H0;D3;+0:5](-[CH;D2;+0:1]=[O;D1;H0:2])-[CH;D3;+0:3](-[Cl;H0;D1;+0:8])-[C:4]>>C-N(-C)-[CH;D2;+0:1]=[O;D1;H0:2].O=[C;H0;D3;+0:3](-[C:4])-[CH2;D2;+0:5]-[CH2;D2;+0:6]-[#7:7].[ClH;D0;+0:8]",
+   "hits": 17
+  },
+  {
+   "reaction_id": "ord-f9e5a53804024ebba9f88da7abbedb67",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 4, False, True, 0), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": "[O;D1;H0:7]=[C;H0;D3;+0:8]1-[NH;D2;+0:4]-[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[N;H0;D3;+0:5]-1-[c:6]>>C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=O)-[C:3]-[NH2;D1;+0:4].[NH2;D1;+0:5]-[c:6].[O;D1;H0:7]=[C;H0;D3;+0:8](-n1:c:c:n:c:1)-n1:c:c:n:c:1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-28f6b5bd9d70469ea7327f55248b2a1e",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 2, False, True, 2), ('N', 0, 2, False, False, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C:4]-[C;H0;D4;+0:3](-[N;H0;D2;+0:1]=[C;H0;D2;+0:2]=[O;H0;D1;+0:7])(-[C:5])-[C:6]>>C-C-[N;H0;D3;+0:1](-C-C)-[CH2;D2;+0:2]-C.O-C(=O)-[C;H0;D4;+0:3](-[C:4])(-[C:5])-[C:6].[N-]=[N+]=N-P(=[O;H0;D1;+0:7])(-c1:c:c:c:c:c:1)-c1:c:c:c:c:c:1",
+   "hits": 7
+  },
+  {
+   "reaction_id": "ord-a99ad750d5e247dfb53f1faf539f9d8d",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 3, False, False, 1), ('N', 1, 3, False, False, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C;D1;H3:4]-[CH;D3;+0:3](-[c:5])-[C;H0;D2;+0:1]#[N;H0;D1;+0:2].[O;-;D1;H0:7]-[N+;H0;D3:6](=[O;H0;D1;+0:9])-[c:8]>>C-c1:c:c:c(-S(=O)(=O)-[CH2;D2;+0:1]-[N+;H0;D2:2]#[C-]):c:c:1.O=[C;H0;D3;+0:3](-[C;D1;H3:4])-[c:5].O=[N+;H0;D3:6](-[O;-;D1;H0:7])-[c:8].[OH2;D0;+0:9]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-bb7d4381a4534f7d82255682c12012b9",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 4, False, False, 0), ('N', 0, 3, False, True, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[C:3]-[N;H0;D3;+0:4](-[CH2;D2;+0:7]-[C:6]-[OH;D1;+0:8])-[C:5].[NH2;D1;+0:1]-[c:2]>>O=[N+;H0;D3:1](-[O-])-[c:2].[C:3]-[NH;D2;+0:4]-[C:5].[C:6]1-[CH2;D2;+0:7]-[O;H0;D2;+0:8]-1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-941e7b52dc8d4097a1759eceed356e29",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 3, True, True, 0))"
+   ],
+   "template": "[C:6]-[n;H0;D3;+0:7](:[cH;D2;+0:4]:[c:5]):[c;H0;D3;+0:1](=[O;H0;D1;+0:3]):[c:2]>>O=[c;H0;D3;+0:1](:[c:2]):[o;H0;D2;+0:3]:[cH;D2;+0:4]:[c:5].[C:6]-[NH2;D1;+0:7]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-a11df652eb3e4a478d95a89c341d7bb0",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('I', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7:8]-[C:7](=[O;D1;H0:9])-[c;H0;D3;+0:6]1:[cH;D2;+0:5]:[cH;D2;+0:4]:[cH;D2;+0:3]:[cH;D2;+0:2]:[c;H0;D3;+0:1]:1-[I;H0;D1;+0:10]>>C-C-C-C-C-C-C-[CH2;D2;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[CH2;D2;+0:4]-[CH2;D2;+0:5]-[CH2;D2;+0:6]-[C:7](-[#7:8])=[O;D1;H0:9].Cl-C(=O)-c1:c:c:c:c:c:1-[I;H0;D1;+0:10]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-2f55f401c1704340b59dfccb3a44bde0",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, False, 1), ('C', 0, 3, False, False, 1), ('C', 0, 3, False, True, 1))"
+   ],
+   "template": "[#7;a:3]-[CH;D3;+0:4](-[C:5](=[O;D1;H0:7])-[CH;D3;+0:6]1-[CH2;D2;+0:1]-[CH2;D2;+0:2]-1)-[CH;D3;+0:9](-[C:8])-[OH;D1;+0:10]>>O=[C;H0;D3;+0:1](-[CH3;D1;+0:2])-[O-].[#7;a:3]-[C;H0;D4;+0:4]1(-[C:5](-[CH3;D1;+0:6])=[O;D1;H0:7])-C-C-1.[C:8]-[CH;D2;+0:9]=[O;H0;D1;+0:10]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-c78adf32e0604afb83868227f0351532",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1), ('N', 0, 1, False, False, 2))"
+   ],
+   "template": "[#8:7]-[C@@;H0;D4;+0:6](-[NH2;D1;+0:9])(-[#8:8])-[C@H;D3;+0:4](-[C;H0;D3;+0:1](-[#8:2])=[O;D1;H0:3])-[C:5]>>Cl-[C;H0;D3;+0:1](-[#8:2])=[O;D1;H0:3].N-[C@H;D3;+0:4](-[C:5])-[C@@H;D3;+0:6](-[#8:7])-[#8:8].[n;H0;D2;+0:9]1:c:c:c:c:c:1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-ac1ce5389bf24b5997593b1eb71a328f",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 1, False, False, 2), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": "[#16;a:3]:[c:4]1:[c:6]:[c;H0;D3;+0:7](-[NH2;D1;+0:9]):[n;H0;D2;+0:8]:[c;H0;D3;+0:2](-[CH3;D1;+0:1]):[n;H0;D2;+0:5]:1>>O-[C;H0;D3;+0:1](=O)-[CH3;D1;+0:2].[#16;a:3]:[c:4](-[NH2;D1;+0:5]):[c:6]-[C;H0;D2;+0:7]#[N;H0;D1;+0:8].[NH3;D0;+0:9]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-9df1a84991f6429abf9be5e3d99e9b6a",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('C', 0, 4, False, True, 0))"
+   ],
+   "template": "[C;D1;H3:1]-[C;H0;D4;+0:2]1(-[C;D1;H3:3])-[CH;D3;+0:9]2-[C:7](=[O;D1;H0:8])-[#8:6]-[C:5]-[CH;D3;+0:4]-2-1>>[C;D1;H3:1]-[C;H0;D3;+0:2](-[C;D1;H3:3])=[CH;D2;+0:4]-[C:5]-[#8:6]-[C:7](=[O;D1;H0:8])-[CH;D2;+0:9]=[N+]=[N-]",
+   "hits": 12
+  },
+  {
+   "reaction_id": "ord-d4b63939bfd34e6783d4fcac215637f2",
+   "sig": [
+    "1",
+    "0",
+    "(('S', 0, 3, False, True, 1), ('S', 0, 3, False, True, 1))"
+   ],
+   "template": "[C:3]-[SH;D3;+0:4](-[CH2;D2;+0:1]-[C:2])-[C:5]>>C-c1:c:c:c(-S(=O)(=O)-O-[CH2;D2;+0:1]-[C:2]):c:c:1.[C:3]-[S;H0;D2;+0:4]-[C:5]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-e5f8887fe7814dccb5a906b056582338",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[CH3;D1;+0:6]-[NH;D2;+0:7]-[C:8]=[N;H0;D2;+0:9]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3]:[nH;D2;+0:4]:[c:5]>>C-C-O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3]:[n;H0;D3;+0:4](-C):[c:5].[CH3;D1;+0:6]-[O-].[NH2;D1;+0:7]-[C:8]=[NH;D1;+0:9]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-a24e7d2a8a8a43428cf2937506094bb4",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('N', 0, 1, False, False, 2), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C:1]-[O;H0;D2;+0:2]-[C;H0;D3;+0:7](=[O;H0;D1;+0:6])-[c:3]:[c:4]-[NH2;D1;+0:5]>>[C:1]-[OH;D1;+0:2].[c:3]1:[c:4]:[n;H0;D2;+0:5]:[o;H0;D2;+0:6]:[cH;D2;+0:7]:1",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-5685acae4bf74a8e996b55dda6621556",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-1c6ef99a8feb4ef09c120ab3c19ecc1c",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('N', 0, 3, False, False, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-d2ff283c5c1c43e78ce0f5db3de6640d",
+   "sig": [
+    "2",
+    "1",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[N;H0;D3;+0:5](-[C:6])-[C;H0;D3;+0:10](-[NH2;D1;+0:11])=[N;H0;D2;+0:7]-[c:8].[BrH;D0;+0:9]>>[#8:1]-[C:2](=[O;D1;H0:3])-[C:4]-[NH;D2;+0:5]-[C:6].[NH2;D1;+0:7]-[c:8].[Br;H0;D1;+0:9]-[C;H0;D2;+0:10]#[N;H0;D1;+0:11]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-4aee266f4e2b4b1b893f45a18add3a1a",
+   "sig": [
+    "1",
+    "0",
+    "(('N', 0, 3, False, True, 0), ('O', 0, 2, False, True, 0))"
+   ],
+   "template": "[#8:3]-[N;H0;D3;+0:4](-[CH2;D2;+0:1]-[C:2])-[C:5]=[O;D1;H0:6]>>Cl-[CH2;D2;+0:1]-[C:2].[#8:3]-[NH;D2;+0:4]-[C:5]=[O;D1;H0:6]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-a48b1c9fba624640a6b0eb74c3bf8fb4",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-68a2456efdd7495481edde455fe75749",
+   "sig": [
+    "5",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": "[F;D1;H0:4]-[C:3](-[F;D1;H0:5])(-[F;D1;H0:6])-[c;H0;D3;+0:2]1:[cH;D2;+0:1]:[nH;D2;+0:12]:[c;H0;D3;+0:7](-[c;H0;D3;+0:8]2:[c:9]:[c:10]:[cH;D2;+0:11]:[cH;D2;+0:13]:[cH;D2;+0:14]:2):[n;H0;D2;+0:15]:1>>Br-[CH;D3;+0:1](-Br)-[C;H0;D3;+0:2](=O)-[C:3](-[F;D1;H0:4])(-[F;D1;H0:5])-[F;D1;H0:6].O=C-[c;H0;D3;+0:7]1:[cH;D2;+0:8]:[c:9]:[c:10]:[cH;D2;+0:11]:[n;H0;D2;+0:12]:1.O=[C;H0;D3;+0:13](-[CH3;D1;+0:14])-[O-].[NH4+;D0:15]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-efec49226a914a189e49ad15fd572f94",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[O;H0;D1;+0:8]=[C;H0;D3;+0:7](-[OH;D1;+0:9])-[c;H0;D3;+0:6]1:[cH;D2;+0:1]:[c:2]:[#7;a:3]:[c:4]:[cH;D2;+0:5]:1>>N#C-c1:[cH;D2;+0:1]:[c:2]:[#7;a:3]:[c:4]:[cH;D2;+0:5]:1.[CH3;D1;+0:6]-[CH2;D2;+0:7]-[OH;D1;+0:8].[OH-;D0:9]",
+   "hits": 8
+  },
+  {
+   "reaction_id": "ord-b051f867de704a409cd989996cfbbc0d",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0))"
+   ],
+   "template": "[#8;a:7]:[c:6]:[c:5]-[C;H0;D3;+0:1]1=[N;H0;D2;+0:8]-[C:9]-[C:10]-[S;H0;D2;+0:11]-[CH;D3;+0:3](-[c:4])-[CH2;D2;+0:2]-1>>O=[C;H0;D3;+0:1](-[CH;D2;+0:2]=[CH;D2;+0:3]-[c:4])-[c:5]:[c:6]:[#8;a:7].[NH2;D1;+0:8]-[C:9]-[C:10]-[SH;D1;+0:11]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-52ea946abe76443ebf232eeeb8283775",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('I', 0, 1, False, False, 0))"
+   ],
+   "template": "[I;H0;D1;+0:6]-[c;H0;D3;+0:9](:[c:10]):[c:8]-[O;H0;D2;+0:7]-[CH2;D2;+0:4]-[c:5].[c:2]:[cH;D2;+0:1]:[c:3]>>Cl-[N-]-S(=O)(=O)-[c;H0;D3;+0:1](:[c:2]):[c:3].[CH3;D1;+0:4]-[c:5].[I-;H0;D0:6].[OH;D1;+0:7]-[c:8]:[cH;D2;+0:9]:[c:10]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-41ade019f79e49509addeb7918d5d1ee",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('N', 0, 1, False, False, 2), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[#8:3]-[C:2](=[O;D1;H0:4])-[NH;D2;+0:1]-[C;H0;D3;+0:7](=[O;H0;D1;+0:6])-[C@@H;D3;+0:8](-[NH2;D1;+0:5])-[CH2;D2;+0:9]-[C:10]>>C-C(-C)-C-[C@H](-[NH;D2;+0:1]-[C:2](-[#8:3])=[O;D1;H0:4])-C(-O)=O.C-[N;H0;D3;+0:5]1-C-C-[O;H0;D2;+0:6]-[CH2;D2;+0:7]-[CH2;D2;+0:8]-1.Cl-C(=O)-O-[CH2;D2;+0:9]-[C:10]",
+   "hits": 7
+  },
+  {
+   "reaction_id": "ord-57330204374a45c9a659e73a357b3a1b",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 1))"
+   ],
+   "template": "[C:3]-[O;H0;D2;+0:4]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[NH;D2;+0:5]-[c:6]>>Cl-[C;H0;D3;+0:1](-Cl)=[O;D1;H0:2].[C:3]-[OH;D1;+0:4].[NH2;D1;+0:5]-[c:6]",
+   "hits": 43
+  },
+  {
+   "reaction_id": "ord-e09145e95582489a842ab3d05043dfe5",
+   "sig": [
+    "1",
+    "0",
+    "(('N', 1, 3, False, False, 0), ('N', 1, 3, False, False, 0))"
+   ],
+   "template": "[C:1]-[O;H0;D2;+0:2]-[N+;H0;D3:4](-[O-;H0;D1:5])=[O;D1;H0:3]>>[C:1]-[OH;D1;+0:2].[O;D1;H0:3]=[N+;H0;D2:4]=[O;H0;D1;+0:5]",
+   "hits": 11
+  },
+  {
+   "reaction_id": "ord-37bc00dd629e4c6b81702d5d2904773f",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('S', 0, 2, False, True, 0))"
+   ],
+   "template": "[C:5]-[NH;D2;+0:6]-[C;H0;D3;+0:7](=[O;D1;H0:8])/[N;H0;D2;+0:9]=[C;H0;D3;+0:10]1\\[S;H0;D2;+0:11]-[CH2;D2;+0:4]-[CH2;D2;+0:3]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[N;H0;D3;+0:12]-1-[c:13]>>Cl-[C;H0;D3;+0:1](=[O;D1;H0:2])-[CH;D2;+0:3]=[CH2;D1;+0:4].[C:5]-[N;H0;D2;+0:6]=[C;H0;D2;+0:7]=[O;D1;H0:8].[NH2;D1;+0:9]-[C;H0;D3;+0:10](=[S;H0;D1;+0:11])-[NH;D2;+0:12]-[c:13]",
+   "hits": 0
+  },
+  {
+   "reaction_id": "ord-8925bd503a8e4c209a12c8bb9fb832aa",
+   "sig": [
+    "0",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[C;D1;H2:10]=[C:9]-[c;H0;D3;+0:8]1:[c;H0;D3;+0:1](-[OH;D1;+0:2]):[cH;D2;+0:3]:[cH;D2;+0:4]:[cH;D2;+0:5]:[c;H0;D3;+0:6]:1-[Cl;D1;H0:7]>>Cl-[C;H0;D4;+0:1]12-[O;H0;D2;+0:2]-[CH;D3;+0:3]-1-[CH2;D2;+0:4]-[CH2;D2;+0:5]-[C;H0;D4;+0:6](-Cl)(-[Cl;D1;H0:7])-[CH;D3;+0:8]-2-[C:9]=[C;D1;H2:10]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-d0d120ebab764e0b8ab4b9bcdc1024f3",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('Cl', 0, 1, False, False, 0), ('S', 0, 4, False, False, 0))"
+   ],
+   "template": "[#7;a:5]:[c;H0;D3;+0:4](-[S;H0;D4;+0:1](-[Cl;H0;D1;+0:7])(=[O;D1;H0:2])=[O;H0;D1;+0:3]):[c:6]>>O-[S;H0;D4;+0:1](=O)(=[O;D1;H0:2])-[OH;D1;+0:3].S-[c;H0;D3;+0:4](:[#7;a:5]):[c:6].[Cl;H0;D1;+0:7]-[O-]",
+   "hits": 9
+  },
+  {
+   "reaction_id": "ord-a9feead895f943e08dea8241895071cb",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, True, 2), ('C', 0, 4, False, False, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, True, True, 0), ('O', 0, 2, False, True, 0))"
+   ],
+   "template": "[C:6]-[C;H0;D4;+0:5](-[F;D1;H0:7])(-[F;D1;H0:8])-[C;H0;D4;+0:2]1(-[CH2;D2;+0:4]-[n;H0;D3;+0:13]2:[#7;a:9]:[c:10]:[#7;a:11]:[c:12]:2)-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-1>>Cl-[CH2;D2;+0:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[CH2;D2;+0:4]-Cl.I-[C;H0;D4;+0:5](-[C:6])(-[F;D1;H0:7])-[F;D1;H0:8].[#7;a:9]1:[c:10]:[#7;a:11]:[c:12]:[nH;D2;+0:13]:1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-dbfb4fd4cd904b2e9a3d50393cb6a743",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 4, False, False, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7;a:2]:[c:3]-[C;H0;D3;+0:4](=[O;H0;D1;+0:1])-[NH;D2;+0:5]-[C;H0;D4;+0:7](-[C;D1;H3:6])(-[CH3;D1;+0:8])-[CH3;D1;+0:9]>>O-S(=O)(=O)-[OH;D1;+0:1].[#7;a:2]:[c:3]-[C;H0;D2;+0:4]#[N;H0;D1;+0:5].[C;D1;H3:6]-[c;H0;D3;+0:7]1:[cH;D2;+0:8]:c:c:c:[cH;D2;+0:9]:1",
+   "hits": 22
+  },
+  {
+   "reaction_id": "ord-78e3ca50bf3f48fdbd459d35baf96100",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": "[#7;a:7]:[c:8](-[NH;D2;+0:9]-[c;H0;D3;+0:4]1:[#7;a:3]:[#7;a:2]:[c;H0;D3;+0:1](-[N;H0;D3;+0:12](-[C:11])-[C:13]=[O;D1;H0:14]):[c:6]:[c:5]:1):[#7;a:10]>>Br-[c;H0;D3;+0:1]1:[#7;a:2]:[#7;a:3]:[c;H0;D3;+0:4](-Br):[c:5]:[c:6]:1.[#7;a:7]:[c:8](-[NH2;D1;+0:9]):[#7;a:10].[C:11]-[NH;D2;+0:12]-[C:13]=[O;D1;H0:14]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-56398be1b0c841ada01583b51a1c2493",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('Cl', 0, 1, False, False, 0), ('Cl', 0, 1, False, False, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": "[Cl;H0;D1;+0:5]-[c;H0;D3;+0:4]1:[cH;D2;+0:3]:[c;H0;D3;+0:2](-[Cl;H0;D1;+0:1]):[c;H0;D3;+0:8](:[c:9]):[c:7]:[n;H0;D2;+0:6]:1>>Cl-O-[Cl;H0;D1;+0:1].O-[C;H0;D3;+0:2](=O)-[CH2;D2;+0:3]-[C;H0;D3;+0:4](-O)=O.[ClH;D0;+0:5].[NH2;D1;+0:6]-[c:7]:[cH;D2;+0:8]:[c:9]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-46f5cd56efa74303a6f1f1429b2404b5",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, False, False, 0), ('C', 0, 4, False, True, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[C:6]-[N;H0;D3;+0:7](-[C;H0;D3;+0:3](=[O;D1;H0:4])-[C:5]-[C;H0;D4;+0:2]1(-[CH3;D1;+0:1])-[NH;D2;+0:9]-[CH;D3;+0:10](-[C:13](=[O;D1;H0:14])-[O;D1;H1:15])-[C:11]-[S;H0;D2;+0:12]-1)-[C:8]>>[CH2;D1;+0:1]=[C;H0;D3;+0:2]1-O-[C;H0;D3;+0:3](=[O;D1;H0:4])-[C:5]-1.[C:6]-[NH;D2;+0:7]-[C:8].[NH2;D1;+0:9]-[C@H;D3;+0:10](-[C:11]-[SH;D1;+0:12])-[C:13](=[O;D1;H0:14])-[O;D1;H1:15]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-309ce9c582da41a7834ffe28853bec56",
+   "sig": [
+    "1",
+    "0",
+    "(('C', 0, 4, False, False, 0), ('Si', 0, 4, False, False, 0))"
+   ],
+   "template": "[C:6]-[Si;H0;D4;+0:5](-[C:7])(-[C:8])-[C;H0;D4;+0:1](-[F;D1;H0:2])(-[F;D1;H0:3])-[F;D1;H0:4]>>Br-[C;H0;D4;+0:1](-[F;D1;H0:2])(-[F;D1;H0:3])-[F;D1;H0:4].Cl-[Si;H0;D4;+0:5](-[C:6])(-[C:7])-[C:8]",
+   "hits": 14
+  },
+  {
+   "reaction_id": "ord-789dcef173534802b2750736439a0d4d",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, False, False, 1), ('C', 0, 2, False, False, 1), ('C', 0, 2, False, False, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-c82f6f947eb645f782be1162586ab62b",
+   "sig": [
+    "1",
+    "0",
+    "(('C', 0, 3, False, True, 1), ('Cl', 0, 1, False, False, 0))"
+   ],
+   "template": "[#7;a:4]-[C:3]-[CH2;D2;+0:2]-[Cl;H0;D1;+0:1]>>Cl-S(=O)-[Cl;H0;D1;+0:1].O-[CH2;D2;+0:2]-[C:3]-[#7;a:4]",
+   "hits": 5
+  },
+  {
+   "reaction_id": "ord-eba05cae420d4eb5ae930194eb321a31",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1))"
+   ],
+   "template": "[#8:1]-[C:2](=[O;D1;H0:3])-[CH;D3;+0:4]1-[CH2;D2;+0:9]-[CH;D2;+0:10]=[C;H0;D3;+0:11](-[CH3;D1;+0:12])-[CH2;D2;+0:13]-[CH;D3;+0:5]-1-[C:6](-[#8:7])=[O;D1;H0:8]>>[#8:1]-[C:2](=[O;D1;H0:3])/[CH;D2;+0:4]=[CH;D2;+0:5]\\[C:6](-[#8:7])=[O;D1;H0:8].[CH2;D1;+0:9]=[CH;D2;+0:10]-[C;H0;D3;+0:11](=[CH2;D1;+0:12])-[CH3;D1;+0:13]",
+   "hits": 0
+  },
+  {
+   "reaction_id": "ord-9028290e8c7c47088f6658b7ceb1b743",
+   "sig": [
+    "4",
+    "1",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, False, False, 1), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[#7;a:10]:[c;H0;D3;+0:9](-[O;H0;D2;+0:15]-[c:16]):[c:11]:[#7;a:12].[#7:7]-[CH2;D2;+0:6]-[c;H0;D3;+0:8]1:[cH;D2;+0:2]:[c:3]:[c:4]:[c;H0;D3;+0:5](-[O;H0;D2;+0:14]-[CH3;D1;+0:13]):[cH;D2;+0:1]:1>>C-N(-[CH3;D1;+0:1])-C=O.C-O-[c;H0;D3;+0:2]1:[c:3]:[c:4]:[cH;D2;+0:5]:[c;H0;D3;+0:6](-[#7:7]):[cH;D2;+0:8]:1.Cl-[c;H0;D3;+0:9](:[#7;a:10]):[c:11]:[#7;a:12].O=[C;H0;D3;+0:13](-[O-;H0;D1:14])-[O-].[OH;D1;+0:15]-[c:16]",
+   "hits": 0
+  },
+  {
+   "reaction_id": "ord-aedc9be75024440c93c78c505a4e6cfc",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('C', 0, 4, False, True, 0))"
+   ],
+   "template": "[#8:5]-[C:4]-[CH2;D2;+0:3]-[CH2;D2;+0:6]-[C;H0;D3;+0:7](=[O;H0;D1;+0:9])-[O;H0;D2;+0:8]-[CH2;D2;+0:2]-[CH3;D1;+0:1]>>C-C(-C)-[N-]-[CH;D3;+0:1](-C)-[CH3;D1;+0:2].O=[CH;D2;+0:3]-[C:4]-[#8:5].[CH3;D1;+0:6]-[C;H0;D3;+0:7](=[O;H0;D1;+0:8])-[OH;D1;+0:9]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-cd59ac85729f44f2ae9a16ef38584918",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 1), ('N', 0, 2, False, False, 1))"
+   ],
+   "template": "[O;H0;D1;+0:8]=[C;H0;D3;+0:7](-[c:9])-[NH;D2;+0:1]-[O;H0;D2;+0:2]-[CH2;D2;+0:3]-[CH;D3;+0:4]1-[CH2;D2;+0:6]-[CH2;D2;+0:5]-1>>C-[N;H0;D3;+0:1](-[OH;D1;+0:2])-C1-C-C-1.C1-C-C-N(-[P+](-O-n2:n:n:c3:c:[cH;D2;+0:3]:[cH;D2;+0:4]:[cH;D2;+0:5]:[c;H0;D3;+0:6]:3:2)(-N2-C-C-C-C-2)-N2-C-C-C-C-2)-C-1.O=[C;H0;D3;+0:7](-[OH;D1;+0:8])-[c:9]",
+   "hits": 20
+  },
+  {
+   "reaction_id": "ord-19d9e97ed3b644cb9835c91ac0861b7e",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": "[C:7]-[N;H0;D3;+0:8]1-[C;H0;D3;+0:4](=[O;D1;H0:5])-[C:3]-[C:2]-[C;H0;D3;+0:1]-1=[O;H0;D1;+0:6]>>O=[C;H0;D3;+0:1]1-[C:2]-[C:3]-[C;H0;D3;+0:4](=[O;D1;H0:5])-[O;H0;D2;+0:6]-1.[C:7]-[NH2;D1;+0:8]",
+   "hits": 162
+  },
+  {
+   "reaction_id": "ord-a9ab9b2eefb84851af3d856c6938fe74",
+   "sig": [
+    "5",
+    "0",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, False, True, 1), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[C:4]-[C;H0;D4;+0:3]1(-[c:5])-[NH;D2;+0:7]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[NH;D2;+0:6]-[C;H0;D3;+0:8]-1=[O;D1;H0:9]>>C-[CH2;D2;+0:1]-[OH;D1;+0:2].O=[C;H0;D3;+0:3](-[C:4])-[c:5].[NH4+;D0:6].[NH4+;D0:7].[O-]-[C;H0;D3;+0:8](-[O-])=[O;D1;H0:9]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-ae6a1e6c9c51464195b060c76e063643",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, False, False, 1), ('C', 0, 3, False, False, 1))"
+   ],
+   "template": "[#8:5]-[C:6](=[O;D1;H0:7])-[CH2;D2;+0:8]-[CH;D3;+0:9](-[C:10])-[S;H0;D2;+0:4]-[C;H0;D3;+0:2](-[CH3;D1;+0:3])=[O;H0;D1;+0:1]>>C1-C-[O;H0;D2;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-1.O-C(=O)-C-c1:[s;H0;D2;+0:4]:c:c:c:1.[#8:5]-[C:6](=[O;D1;H0:7])/[CH;D2;+0:8]=[CH;D2;+0:9]/[C:10]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-b456a65a718c4ffea822d08d3e083a9a",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 2, True, True, 1), ('S', 0, 2, False, False, 0))"
+   ],
+   "template": "[NH2;D1;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[c:4]:[c:5]-[S;H0;D2;+0:6]-[c;H0;D3;+0:9]1:[c:8]:[#7;a:7]:[c:11]:[c:10]:1>>C-C-[N;H0;D3;+0:1](-C-C)-[CH2;D2;+0:2]-C.C-N1-[CH2;D2;+0:3]-[c:4]:[c:5]-[S;H0;D2;+0:6]-1.[#7;a:7]1:[c:8]:[cH;D2;+0:9]:[c:10]:[c:11]:1",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-0cc757fde8a24228a1fc98fb32861b81",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('O', 0, 2, True, True, 0))"
+   ],
+   "template": "[O;D1;H0:8]=[c;H0;D3;+0:7]1:[cH;D2;+0:6]:[c;H0;D3;+0:5](-[c;H0;D3;+0:12](:[c:13]):[c:14]):[c;H0;D3;+0:11]2:[cH;D2;+0:1]:[c:2]:[c:3]:[cH;D2;+0:4]:[c;H0;D3;+0:10]:2:[o;H0;D2;+0:9]:1>>O-[c;H0;D3;+0:1]1:[c:2]:[c:3]:[cH;D2;+0:4]:c:c:1.O=[C;H0;D3;+0:5](-[CH2;D2;+0:6]-[C;H0;D3;+0:7](=[O;D1;H0:8])-[O;H0;D2;+0:9]-[CH2;D2;+0:10]-[CH3;D1;+0:11])-[c;H0;D3;+0:12](:[c:13]):[c:14]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-5941f025454d417f8869ed2a545f380e",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": "[#7:11]-[C:10](=[O;D1;H0:12])-[C;H0;D3;+0:9]1=[CH;D2;+0:8]-[CH;D2;+0:7]=[C;H0;D3;+0:6](-[c;H0;D3;+0:1]2:[c:2]:[cH;D2;+0:3]:[c;H0;D3;+0:15](-[OH;D1;+0:16]):[cH;D2;+0:4]:[c:5]:2)-[NH;D2;+0:14]-[CH2;D2;+0:13]-1>>C-[c;H0;D3;+0:1]1:[c:2]:[cH;D2;+0:3]:c:[cH;D2;+0:4]:[c:5]:1.Cl-[c;H0;D3;+0:6]1:[cH;D2;+0:7]:[cH;D2;+0:8]:[c;H0;D3;+0:9](-[C:10](-[#7:11])=[O;D1;H0:12]):[cH;D2;+0:13]:[n;H0;D2;+0:14]:1.[O-]-[C;H0;D3;+0:15](-[O-])=[O;H0;D1;+0:16]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-4e5705c7eaa84bd1a1c01543d8456bec",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('O', 0, 1, False, False, 0), ('S', 0, 3, False, False, 0))"
+   ],
+   "template": "[C:2]-[CH;D3;+0:3](-[CH2;D2;+0:4]-[S;H0;D3;+0:12](-[C:11])=[O;H0;D1;+0:1])-[C:5](=[O;D1;H0:6])-[OH;D1;+0:7].[O;D1;H0:8]=[C:9]-[OH;D1;+0:10]>>C-C(-C)=[O;H0;D1;+0:1].[C:2]-[C;H0;D3;+0:3](=[CH2;D1;+0:4])-[C:5](=[O;D1;H0:6])-[O;H0;D2;+0:7]-C-c1:c:c:c:c:c:1.[O;D1;H0:8]=[C:9]-[O;H0;D2;+0:10]-C-c1:c:c:c:c:c:1.[C:11]-[SH;D1;+0:12]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-a1c7bee2f1ca417b8d63d80f588de4ab",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[C:3]-[C;H0;D3;+0:2](=[N;H0;D2;+0:1]-[OH;D1;+0:5])-[C:4]>>O-[NH2;D1;+0:1].O=[C;H0;D3;+0:2](-[C:3])-[C:4].[OH2;D0;+0:5]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-0f74feac840e4890ab527f36cd025e46",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0), ('N', 0, 1, False, False, 2), ('N', 0, 2, True, True, 1), ('N', 0, 3, True, True, 0))"
+   ],
+   "template": "[#7;a:4]:[c:3](-[C;H0;D3;+0:1](-[NH2;D1;+0:15])=[O;D1;H0:2]):[c:5]1:[nH;D2;+0:6]:[c;H0;D3;+0:13](=[O;D1;H0:14]):[n;H0;D3;+0:8](-[c;H0;D3;+0:9](:[c:10]):[c:11]):[c:7]:1:[#7;a:12]>>C-C-O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3](:[#7;a:4]):[c:5](-[N+;H0;D3:6](=O)-[O-]):[c:7](-[NH;D2;+0:8]-[c;H0;D3;+0:9](:[c:10]):[c:11]):[#7;a:12].C-C-O-[C;H0;D3;+0:13](=[O;D1;H0:14])-c1:n:c(-Cl):n:c(-N-c2:c:c:c:c:c:2-O-C):c:1-[N+](=O)-[O-].O-C-c1:c:c:c:c:c:1-[NH2;D1;+0:15]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-59a6d8eb66e54e59ba1c3b8ccac2114e",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('N', 0, 3, False, False, 0), ('N', 0, 3, False, False, 0))"
+   ],
+   "template": "[C:8]-[N;H0;D3;+0:9](-[c:10])-[C;H0;D3;+0:3](=[O;D1;H0:4])-[C;H0;D3;+0:1](=[O;D1;H0:2])-[N;H0;D3;+0:6](-[C:5])-[C;D1;H3:7]>>Cl-[C;H0;D3;+0:1](=[O;D1;H0:2])-[C;H0;D3;+0:3](-Cl)=[O;D1;H0:4].[C:5]-[NH;D2;+0:6]-[C;D1;H3:7].[C:8]-[NH;D2;+0:9]-[c:10]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-e5cd3e3d94be4323b23c8c3e9774d2c5",
+   "sig": [
+    "1",
+    "0",
+    "(('Cl', 0, 1, False, False, 0), ('Si', 0, 4, False, False, 0))"
+   ],
+   "template": "[C:3]-[Si;H0;D4;+0:2](-[C;D1;H3:4])(-[C;D1;H3:5])-[Cl;H0;D1;+0:1]>>Cl-C(=O)-[Cl;H0;D1;+0:1].O-[Si;H0;D4;+0:2](-[C:3])(-[C;D1;H3:4])-[C;D1;H3:5]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-13710298dea34dabae9ec5d0ce5578ff",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[C:8]-[C;H0;D3;+0:7](=[O;H0;D1;+0:1])-[CH;D3;+0:5](-[c:6])-[C;H0;D3;+0:3](=[O;H0;D1;+0:2])-[C:4]>>C-C(-O)=[O;H0;D1;+0:1].C-C-[O;H0;D2;+0:2]-[C;H0;D3;+0:3](=O)-[C:4].N#C-[CH;D3;+0:5](-[c:6])-[CH2;D2;+0:7]-[C:8]",
+   "hits": 6
+  },
+  {
+   "reaction_id": "ord-5c3bc1307dcc4099a140c5cfebfc5409",
+   "sig": [
+    "3",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-1dc442039f214e2bb7f9e5914e2fc7f8",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 0), ('N', 0, 3, False, False, 0))"
+   ],
+   "template": "[C;D1;H3:2]-[N;H0;D3;+0:3](-[CH3;D1;+0:1])-[C:4]/[CH;D2;+0:5]=[CH;D2;+0:6]/[C;H0;D3;+0:7](=[O;D1;H0:8])-[NH;D2;+0:9]-[c:10]>>O-[C;H0;D3;+0:1](=O)-[O-].[C;D1;H3:2]-[N;H0;D3;+0:3]1-[C:4]-[CH2;D2;+0:5]-[CH2;D2;+0:6]-[C;H0;D3;+0:7]-1=[O;D1;H0:8].[NH2;D1;+0:9]-[c:10]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-6c35fa3a22c446a7b47136ad00e329d4",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0))"
+   ],
+   "template": "[C:5]=[C:6]-[C:7](=[O;D1;H0:8])-[N;H0;D3;+0:9](-[CH2;D2;+0:1]-[N;H0;D3;+0:3](-[C:2])-[C:4])-[c:10]>>O=[CH2;D1;+0:1].[C:2]-[NH;D2;+0:3]-[C:4].[C:5]=[C:6]-[C:7](=[O;D1;H0:8])-[NH;D2;+0:9]-[c:10]",
+   "hits": 15
+  },
+  {
+   "reaction_id": "ord-dcbb31ce2b30413ea053a445025cd1f9",
+   "sig": [
+    "4",
+    "1",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[C;D1;H2:1]=[C:2](-[C:3]-[C;H0;D3;+0:4](=[O;D1;H0:5])-[c;H0;D3;+0:11]1:[cH;D2;+0:10]:[cH;D2;+0:9]:[c;H0;D3;+0:14](-[Cl;H0;D1;+0:15]):[c;H0;D3;+0:13](-[Cl;H0;D1;+0:16]):[cH;D2;+0:12]:1)-[C:7](=[O;D1;H0:8])-[OH;D1;+0:6]>>[C;D1;H2:1]=[C:2]1-[C:3]-[C;H0;D3;+0:4](=[O;D1;H0:5])-[O;H0;D2;+0:6]-[C:7]-1=[O;D1;H0:8].[CH3;D1;+0:9]-[CH2;D2;+0:10]-[CH2;D2;+0:11]-[CH2;D2;+0:12]-[CH2;D2;+0:13]-[CH3;D1;+0:14].[Cl-;H0;D0:15].[Cl-;H0;D0:16]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-f60548f332b04c4e95c794f5c522112b",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 1, False, False, 2), ('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('O', 0, 2, False, False, 0))"
+   ],
+   "template": "[C:3]-[CH2;D2;+0:2]-[O;H0;D2;+0:9]-[C:7](=[O;D1;H0:8])-[C;H0;D3;+0:6](=[CH2;D1;+0:1])-[C:5]#[N;D1;H0:4]>>C-[c;H0;D3;+0:1]1:c:c:c:c:c:1.O-[CH2;D2;+0:2]-[C:3].[N;D1;H0:4]#[C:5]-[CH2;D2;+0:6]-[C:7](=[O;D1;H0:8])-[OH;D1;+0:9]",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-e86cbd5fb293440f83debff91037b9c9",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1), ('N', 0, 3, False, True, 0))"
+   ],
+   "template": "[#7;a:1]:[c:2](-[N;H0;D3;+0:3]1-[CH;D3;+0:6](-[O;D1;H1:5])-[C:7]-[#8:8]-[C:9]-[CH;D3;+0:10]-1-[O;D1;H1:11]):[#7;a:4]>>[#7;a:1]:[c:2](-[NH2;D1;+0:3]):[#7;a:4].[O;D1;H1:5]-[C@@H;D3;+0:6]1-[C:7]-[#8:8]-[C:9]-[C@@H;D3;+0:10]-1-[O;D1;H1:11]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-8da95c51f6d14a649087b76930bb9880",
+   "sig": [
+    "6",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 1), ('C', 0, 3, False, True, 1), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-960cfe0fb97b4150a247be93c06bf644",
+   "sig": [
+    "4",
+    "0",
+    "(('C', 0, 2, True, True, 1), ('C', 0, 2, True, True, 1), ('C', 0, 3, False, False, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('N', 0, 2, True, True, 0))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-5807c4c9cc34484db11ca01c6d66fa1d",
+   "sig": [
+    "5",
+    "1",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 1, False, False, 3), ('C', 0, 2, False, True, 2), ('C', 0, 2, False, True, 2), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, True, 0), ('C', 0, 4, False, True, 0), ('O', 0, 2, False, True, 0))"
+   ],
+   "template": "[C;D1;H3:18]-[C;H0;D4;+0:19]1(-[C;D1;H3:20])-[CH2;D2;+0:9]-[C:10](=[O;D1;H0:11])-[c:12]2:[c:13]:[c;H0;D3;+0:14]3:[c;H0;D3;+0:15](:[c:16]:[c;H0;D3;+0:17]:2-[O;H0;D2;+0:21]-1)-[C;H0;D4;+0:2](-[CH3;D1;+0:1])(-[CH3;D1;+0:8])-[CH2;D2;+0:3]-[CH2;D2;+0:4]-[C;H0;D4;+0:5]-3(-[C;D1;H3:6])-[CH3;D1;+0:7]>>C1-C-N-[CH2;D2;+0:1]-C-1.O-S(=O)(=O)-[c;H0;D3;+0:2]1:[cH;D2;+0:3]:[cH;D2;+0:4]:[c;H0;D3;+0:5](-[C;D1;H3:6]):[cH;D2;+0:7]:[cH;D2;+0:8]:1.O-[CH2;D2;+0:9]-[C:10](=[O;D1;H0:11])-[c:12]1:[c:13]:[cH;D2;+0:14]:[cH;D2;+0:15]:[c:16]:[cH;D2;+0:17]:1.[C;D1;H3:18]-[C;H0;D3;+0:19](-[C;D1;H3:20])=[O;H0;D1;+0:21]",
+   "hits": 3
+  },
+  {
+   "reaction_id": "ord-6d3d2ac61f334cb58521a34cb0c6da8e",
+   "sig": [
+    "1",
+    "1",
+    "(('C', 0, 2, False, False, 2), ('C', 0, 3, False, False, 0), ('O', 0, 1, False, False, 1))"
+   ],
+   "template": "[#8:1]-[C:2](=[O;D1;H0:3])-[CH;D3;+0:4](-[C:5])-[CH2;D2;+0:8]-[C:7]-[C:6]-[OH;D1;+0:9]>>[#8:1]-[C:2](=[O;D1;H0:3])-[CH2;D2;+0:4]-[C:5].[C:6]1-[C:7]-[CH2;D2;+0:8]-[O;H0;D2;+0:9]-1",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-92963bf4af4f465c8bcc955593fa24d6",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 2, False, False, 0), ('C', 0, 2, False, True, 2), ('N', 0, 1, False, False, 2))"
+   ],
+   "template": "[C:2]-[C;H0;D4;+0:1](-[NH2;D1;+0:6])(-[C;H0;D2;+0:4]#[N;D1;H0:5])-[C:3]>>O=[C;H0;D3;+0:1](-[C:2])-[C:3].[C-;H0;D1:4]#[N;D1;H0:5].[NH4+;D0:6]",
+   "hits": 53
+  },
+  {
+   "reaction_id": "ord-9e17dd8dda7242739943bc0fa6ce68eb",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, False, False, 0), ('C', 0, 3, False, True, 0), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[#8:4]-[c;H0;D3;+0:3]1:[c;H0;D3;+0:5](:[c;H0;D3;+0:6](-[C:7](-[C;D1;H3:8])=[O;D1;H0:9]):[c;H0;D3;+0:10](-[C;D1;H3:11]):[c;H0;D3;+0:12](-[#7:13]2-[C:14]=[C:15]-[C:16]-[C;H0;D3;+0:17](-[C;H0;D3;+0:2](=[O;H0;D1;+0:22])-[OH;D1;+0:1])=[C:18]-2):[c;H0;D3;+0:19]:1-[C:20])-[#8:21]>>C1-C-[O;H0;D2;+0:1]-[CH2;D2;+0:2]-C-O-1.N#C-C-C-O-C(=O)-[C;H0;D4;+0:3]1(-[#8:4])-[C;H0;D3;+0:5](=[C;H0;D3;+0:6](-[C:7](-[C;D1;H3:8])=[O;D1;H0:9])-[C;H0;D3;+0:10](-[C;D1;H3:11])=[C;H0;D3;+0:12](-[#7:13]2-[C:14]=[C:15]-[C:16]-[CH;D2;+0:17]=[C:18]-2)-[CH;D3;+0:19]-1-[C:20])-[#8:21].[OH-;D0:22]",
+   "hits": 4
+  },
+  {
+   "reaction_id": "ord-a0336c1f486c45e5aeef96d1fdab0ce7",
+   "sig": [
+    "2",
+    "1",
+    "(('C', 0, 2, False, True, 2), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 1), ('O', 0, 1, False, False, 0))"
+   ],
+   "template": "[O;H0;D1;+0:6]=[C;H0;D3;+0:2]1-[C:3]-[C:4]-[CH2;D2;+0:5]-[S;H0;D2;+0:1]-1>>C-C(-[O-])=[S;H0;D1;+0:1].O=[C;H0;D3;+0:2]1-[C:3]-[C:4]-[CH2;D2;+0:5]-[O;H0;D2;+0:6]-1",
+   "hits": 2
+  },
+  {
+   "reaction_id": "ord-5740b399b27c43c28b875ce39ad8c4ae",
+   "sig": [
+    "1",
+    "1",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 3, False, False, 0), ('C', 0, 3, False, False, 1))"
+   ],
+   "template": "[Br-;H0;D0:1].[C:3]-[CH;D3;+0:2](-[S;H0;D2;+0:10]-[C;H0;D3;+0:8](-[N;D1;H2:7])=[NH2+;D1:9])-[C:4](=[O;D1;H0:5])-[O;D1;H1:6]>>[Br;H0;D1;+0:1]-[CH;D3;+0:2](-[C:3])-[C:4](=[O;D1;H0:5])-[O;D1;H1:6].[N;D1;H2:7]-[C;H0;D3;+0:8](-[NH2;D1;+0:9])=[S;H0;D1;+0:10]",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-0449178264dd4156835583e30d11d1b4",
+   "sig": [
+    "2",
+    "0",
+    "(('Br', 0, 1, False, False, 0), ('C', 0, 3, False, False, 1), ('C', 0, 3, False, False, 1))"
+   ],
+   "template": null,
+   "hits": -1
+  },
+  {
+   "reaction_id": "ord-b84d78024085419ba4dd82cb99e1ad27",
+   "sig": [
+    "5",
+    "1",
+    "(('C', 0, 1, False, False, 3), ('C', 0, 1, False, False, 3), ('C', 0, 3, False, False, 1), ('C', 0, 3, False, True, 0), ('C', 0, 3, False, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, False, 0))"
+   ],
+   "template": "[C;D1;H3:20]-[SiH;D3;+0:19](-[C;D1;H3:21])-[#8:18]-[CH;D3;+0:17](-[C:14]1-[C:15]-[NH;D2;+0:16]-[C;H0;D3;+0:4](=[O;D1;H0:5])-[c:6]2:[cH;D2;+0:7]:[c;H0;D3;+0:11](:[c:12]):[c:10](:[cH;D2;+0:8]:[c:9]):[#7;a:13]:2-1)-[C;H0;D4;+0:23](-[CH3;D1;+0:24])(-[CH3;D1;+0:22])-[CH;D3;+0:2](-[CH3;D1;+0:3])-[CH3;D1;+0:1]>>C-C-C-[CH2;D2;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[Si](-C)(-C)-Cl.C-C-O-[C;H0;D3;+0:4](=[O;D1;H0:5])-[c:6]1:[cH;D2;+0:7]:[c;H0;D3;+0:8](:[c:9]):[c:10](:[cH;D2;+0:11]:[c:12]):[#7;a:13]:1-[C:14](-[C:15]-[NH;D2;+0:16]-C(=O)-O-C(-C)(-C)-C)-[CH2;D2;+0:17]-[#8:18]-[Si;H0;D4;+0:19](-[C;D1;H3:20])(-[C;D1;H3:21])-C(-C)(-C)-C(-C)-C.C-N(-[CH3;D1;+0:22])-C=O.[cH;D2;+0:23]1:[cH;D2;+0:24]:[nH]:c:n:1",
+   "hits": 1
+  },
+  {
+   "reaction_id": "ord-34d282bd727d45d7bb7205cb97055b8a",
+   "sig": [
+    "2",
+    "0",
+    "(('C', 0, 3, True, True, 0), ('C', 0, 3, True, True, 0), ('C', 0, 4, False, True, 0), ('N', 0, 2, False, True, 1))"
+   ],
+   "template": "[F;D1;H0:7]-[C:6](-[F;D1;H0:8])(-[F;D1;H0:9])-[C;H0;D4;+0:4]1(-[OH;D1;+0:5])-[C:3]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[NH;D2;+0:10]-[c:11]:[c;H0;D3;+0:12]-1:[c:13]>>C-C-O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[C:3]-[C;H0;D3;+0:4](=[O;H0;D1;+0:5])-[C:6](-[F;D1;H0:7])(-[F;D1;H0:8])-[F;D1;H0:9].[NH2;D1;+0:10]-[c:11]:[cH;D2;+0:12]:[c:13]",
+   "hits": 1
+  }
+ ]
+}

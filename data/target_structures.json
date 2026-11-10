@@ -46,6 +46,16 @@
       "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2255",
       "fetched_at": "2026-11-07",
       "why": "同一骨架、无立体信息的条目"
+    },
+    "4_hydroxybenzaldehyde": {
+      "cid": 126,
+      "title": "4-Hydroxybenzaldehyde",
+      "formula": "C7H6O2",
+      "inchikey": "RGHHSNMVTDWUBI-UHFFFAOYSA-N",
+      "smiles": "O=Cc1ccc(O)cc1",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4-hydroxybenzaldehyde/property/MolecularFormula,InChIKey,IsomericSMILES,Title/JSON",
+      "fetched_at": "2026-11-10",
+      "note": "天麻素（gastrodin，C13H18O7）去葡萄糖后的苷元；tcm.db 有 4-hydroxybenzaldehyde 条目（HBIN010505）但 inchi_key 为空，故用 PubChem 键比对"
     }
   },
   "unavailable": [

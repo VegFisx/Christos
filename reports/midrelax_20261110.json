@@ -1,0 +1,76 @@
+{
+ "generated_at": "2026-11-10T14:54:28",
+ "n_per_stratum": 120,
+ "criterion": "rare >= 25/120 to keep the idea; frequent must not drop by more than 5",
+ "result": {
+  "raw": {
+   "frequent": {
+    "hits": 109,
+    "n": 120,
+    "median_candidates": 46
+   },
+   "mid": {
+    "hits": 71,
+    "n": 120,
+    "median_candidates": 46
+   },
+   "rare": {
+    "hits": 26,
+    "n": 120,
+    "median_candidates": 44
+   }
+  },
+  "mid": {
+   "frequent": {
+    "hits": 107,
+    "n": 120,
+    "median_candidates": 85
+   },
+   "mid": {
+    "hits": 68,
+    "n": 120,
+    "median_candidates": 76
+   },
+   "rare": {
+    "hits": 24,
+    "n": 120,
+    "median_candidates": 81
+   }
+  },
+  "loose": {
+   "frequent": {
+    "hits": 107,
+    "n": 120,
+    "median_candidates": 86
+   },
+   "mid": {
+    "hits": 68,
+    "n": 120,
+    "median_candidates": 77
+   },
+   "rare": {
+    "hits": 24,
+    "n": 120,
+    "median_candidates": 81
+   }
+  },
+  "rawmid": {
+   "frequent": {
+    "hits": 112,
+    "n": 120,
+    "median_candidates": 89
+   },
+   "mid": {
+    "hits": 75,
+    "n": 120,
+    "median_candidates": 82
+   },
+   "rare": {
+    "hits": 27,
+    "n": 120,
+    "median_candidates": 86
+   }
+  }
+ },
+ "elapsed_s": 744
+}

@@ -1,0 +1,22 @@
+{
+ "generated_at": "2026-11-10T14:06:19",
+ "shards": 28,
+ "unique_templates": 97471,
+ "arity": {
+  "1": 54395,
+  "2": 37025,
+  "3": 4889
+ },
+ "bad": 0,
+ "n_picked": 120,
+ "skipped": 0,
+ "hits": 21,
+ "recall": 0.175,
+ "median_candidates": 491,
+ "elapsed_s": 171,
+ "baseline_41k": {
+  "hits": 15,
+  "n": 120,
+  "median_candidates": 35
+ }
+}

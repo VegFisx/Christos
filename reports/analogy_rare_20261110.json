@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-11-10T13:51:39",
+  "n_rare_sampled": 120,
+  "results": {
+    "raw": {
+      "hit": 15,
+      "n": 120,
+      "median_candidates": 35
+    },
+    "relaxed": {
+      "hit": 15,
+      "n": 120,
+      "median_candidates": 60
+    },
+    "control": {
+      "hit": 3,
+      "n": 120,
+      "median_candidates": 29
+    }
+  }
+}

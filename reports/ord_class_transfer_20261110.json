@@ -1,0 +1,2137 @@
+{
+ "generated_at": "2026-11-10T13:55:59",
+ "n_records": 60200,
+ "n_rare_groups": 938,
+ "n_tested": 265,
+ "hits": 0,
+ "recall": 0.0,
+ "hits_relaxed": 0,
+ "recall_relaxed": 0.0,
+ "group_sizes": {
+  "2": 190,
+  "3": 75
+ },
+ "hits_by_size": {},
+ "rows": [
+  {
+   "reaction_id": "ord-35b91844763f4392a35bcb622cc9cc8f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-32615f90c4c841c4812ca01281b1e612",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-00de919081644ab5a0b3412e0df89b4d",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c35730d6175f415182ab9fe957aec0f7",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e00d44dc56264cfe8db09906761aa7fd",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-85a3c31cb5ef4609a4d22328a9312de5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-dca3c4564568456ca7d71d7383bc3b25",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a6a1db00c0a14959b5893317cc088c13",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4449effd8ebb40348511d6d12553f227",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7f7e227ef147490d89c4a9bc1333d193",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7e331da8788e46678e390a85581c3e47",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-31aa38c7c1994a8a9269c5d5ac9a8908",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8d56df3b4a1f4948976b811b2cf4f659",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-dbdd5f2141a54a34b412b4a524d1409d",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ac5a3386b606437b9357d197b8b9f49f",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a48b1c9fba624640a6b0eb74c3bf8fb4",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-2e57eb3a25614bbda3d7913ac36578a0",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-bb9eb400e6c44ab8b5ba3f4e918ce7d9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e7a3527caf3f4200b2923961e6ac9db8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8985b32e071243ee837e942505faea33",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-86d364adae794560beeb9f6c2ccba792",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-24ede272932c465fbc3e1869daf58931",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6325869d95af4f0db3071062b0d0ca34",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-607537da0802470d98b40792dcddf487",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4e26e5919d2b42cf8a9cf0d7caae231b",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-65dff62d1c984259a876017f3cdcbf41",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-af274af25cc14b2caef46eeeb327f64a",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-95dfea35738942958d2976191fe6e469",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0d2962abcce44b2da5bede513929f417",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5194945f50a849d981f4a7b062dc0452",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4ac3de84c5a9464a8fb216246b539cf8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-11f193efbdec478ab8122e9d66a1bfe1",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9b23043a175a428bb82a37df6dddf49b",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ecd59313a7d644319b0ebdc10253fd88",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9d21ace8bebc47ce938dac6aa3c0460c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-88fad6527501490f9877dfd12f02efae",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-388f2917a1714a408fa9f687b5a0c6aa",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3b6f4b69d1804138b7ca8c20ab5bc88c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c5af7bb968f040639c89c8cc960f3aa9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c1de9d09bcbb4352aa0f48bea62739a6",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-654199d297154bf9a5a9d3a02ef332e6",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ed9da5885af74da5980ffd397073998d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0a2f35b819454d6297fd9ff6419889b3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e59607cf097247069396314258eb99ac",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ecc3c624db6a4d6dbb7559dbd80c9c89",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ab8f73b6a3b4446ca5bcf06f9f2ed75b",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-1530c88b49d249608f4c768f6c850877",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c3ccb22d359a41cdb2da4db6ac1b720f",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-258c082de91b464ba0230efdebd317cf",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cab0b453f93d4fa6b907c2707aba699f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9fabd20dca15452ca2b24cce30b47431",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-06153f2da5214d7b8be9d84112334e5a",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d6d1ad98c2dc4060a057b4e3d87c0662",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e0da936273f9471982e27b5874bc5979",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6c35fa3a22c446a7b47136ad00e329d4",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-49d57511993d4538a36b4d6ba6c28f34",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9c153cf251474587bbf779aec045c62b",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5d5a9964617249ab90e294e713446b26",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b7323edc52714161a112813d18b22f56",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-38881d3a0e184f08880302b62ca757f5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-74d5a1a691e2485fba3139270b87a8e5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-bf16b9ff48eb43e8beca7494c4422d05",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b61b263d3b6f49a48f1d1b9532d39e54",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-bf039def811f4c779f07b95604c91527",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-afc09778cc5b49738061449d456b27fd",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9439ca6079cd496d9b3ff9cdc1c3c89e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-1a28d332a5bd44348cb9000d6453cb41",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d3cf56e0b98a4df3bed2c810e7fcaa88",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c356229837c24ff8909ba5dc81a93bfd",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9d9a032718404aba8162633935d8dc94",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-691d6cd2f55643ceb32e8e8de1776c59",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-97461f8689944c7c89642f52c565b724",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8759b309fed040d49e9b803d98e3d794",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-f180e8860b72475486e67a6f9812ce24",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d3ccabecb10e495982dabfc4f2bda28e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-56a581268cc74cc0bbcb7db6ccf58902",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-edb6f8678ee745eeaad9715630d41271",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cd0c6956a1194751859415a76523431e",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cd5103c0efe746858140b008cd2e25d7",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-855efd086c324e4189391e3f005dbaac",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-23c0119b14e548a1ae7161d8808512ae",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ba444cb41e524fc3acdc1ace584827e4",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8b1bb8cd1b9048ad85af22b9306f8e86",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3e5ab5ecab5b4460a8f33f2399b4e8d1",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ec7283ac75e541359806dab1e0d372e0",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a252d20c895748b4bbfb7a4690a24ec7",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4e7cbfbccc824b5bb2c281cd05873906",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8336d8604b2f40ef9996e218375cc372",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-82923a0d97c34c16b489e38a8a6f826b",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9a937cba3dd54323ad71aafaac414fa4",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0f79c0bcd8af4570af7da2063f1229b7",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-da4dba42322849da8517c13a91d63739",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-25d3a397f76a447a9d8512c162a17396",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ee28ce58343b4c7e93f3b3b7f6b436fe",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3527265e3d4c458398f0c83d2e264e73",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d3e03ff8f8ed413a8cc89a801345663d",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-13f02a3d3ad741af94c28f49f1a5ccb1",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-01e845578df9464fa024ad94bb4674af",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0c4182de80b84d36b8af14a4a12f79d3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-928c77ed5fed4d95976e9a36e07934fd",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ebd7978b4250446aa745faac08b5ab28",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-79daae1565ed4931828e536a5f052b7c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5c7dfc7aeba0402e81e4f71cf1218bed",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9fa4ad4aa6534337a1a6c02f673125bf",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-512ae5eea7f244e3ad051116bde39548",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9d8cfe996d064397901a9eb59d1a9224",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b7724137658b4bd7a5c225d662056a38",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e811abdec18e474cb8af7e43b57acb20",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5632cce1604a4fe18138cf7116c26994",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-54a912d398ba4b3483c50715f0451481",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-738b498cf9a84bc89a565bd2423aa57a",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7ff4d9eb5e664bd1995236c85e936b6b",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3f5b38b17e854ce389fb9ea050bc662c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4fa5f00951e746c1a1d3770831999eb8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6036eab1ce1c4f7fbc91fa94d0e11b7e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0a7e305da0914c118f2e93d43a9b3d2c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9ba8e214db9f4757a8f5a4d3f899cbf3",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ef91630c3186427586802be853997ccc",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b9b2a756660a4dd5a4e901307436eac6",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ecc814fa8fb64c70ab7bc8399037f5de",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e13039714b054d848e3e263088ad3c99",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4a63ecdf7488425e96ba5e72240b0c99",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-07e70192acc94662ad3c70490be4a22d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-48734fb3283c49df801aa710f0bc8ac9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4318ea334fc344b18de9a8df07c57100",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ab14c53f88354679b5cdf49ecf6727f6",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-79fd2906d9eb4002a0171c82a134f06d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-501eb7285f5f42fb82259a151faada74",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4faacf44633047b4ade76eefc09a49e6",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ba931a30673943648ab0687be86d9ccf",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-91076b71dccd4f6dbf4a69abac8e2103",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-033b1854d94e4e8db4cd66af5a04eab6",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3904210fddd44fb082f2cbc4762be9f6",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-f11a0c29de224f189ee98f2fd98d7cb9",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3c8afc35c77b4108b6915c84136cd3c3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8fcaecc793d94a60abd145079f17f86a",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-79812f4e52b0402bb7b356d16cb11448",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-615e7395788241ee90c6153cbf37301e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-980a07723755405a8843db84202ab62d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ae5e2dea50574d0ebbee8bf22ff330ad",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-decb640239aa4376b1862265efda17e3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c30fb23b710d419db3c3c9a8e44b7466",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-de02f5b7f4f9441383bb33967f59cfaf",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-378b7c5cc9b34b0f8e1fa903d1495c07",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-17eeeee61bca404e878fd01ba3d0f8b8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-f2ae17afbcd74cb5b424daa8c36b43af",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a063c3bba0ce4218bf0360ec6a6a8742",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-bbfc1cabddef4f45a2cb242571eb4839",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7b3667eafbd842b18f609f673d048241",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-507734103cd248f48ad0fc7d9b505ee2",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-da097ef5a2bc4a56a8b1a1523f235358",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-fa7d94b58410434fba39a91e301876d8",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-16d9e7cb65df49848e00d1b3217a09f8",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d0ec33ef2cbc4efaae4b1820c8cee636",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-28bceb37479c43b4acdf20f02d346a4e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-52a3a2351bd64419a647a95f6ff79490",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ad27f84f7d304c498ac1d1b7a22297f9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-78756920ade84c9f9652a87795358fcd",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a1bb28e564824ec5b6b6185bb27b156f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a3e60996352944dd8b0c6554ee584f79",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a6c299e723994ef894f968b9484ca6b4",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5a3e8c547d1d4369b85f2faeee58546c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a69a70c7355a40a8ab227246a85d8f4e",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6e38610a068c406181689ecfda0b98dd",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5c00760549874dd8a3b26f79ca1a2e13",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cc50b867b84b4d16ac9899ebb351c2c3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-42c1bcf76c544651a422c1274a989376",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4e1c03fd2c6f454490ca464d71c987bf",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-bd7e1f85b7db457596b4032b57e62026",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-dbf0e9e62bca473cbcf9f323922587d8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e8243c901c6c4ca9b6e237bd8574e93c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-eae35b823caf4a1f9ca690f4cb388aa2",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c55e161a12464967bf1197117ded590f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c3fa1d267e3c49918c0604b06e3de9a5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-de4f1c2245dd4ede9e26db7f9b192f8a",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-83866d106abc4138af7ddc6b75fcbb5d",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ab0c223790b743809a0ab558d745deb1",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ec99373a8018471e9750ebb64e3747d5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 0,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9691945656004b47b09e7e5e6b1421dc",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3b16c01633f34d35aa0a5c6692c1f568",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0a00063d0ddf44068289a33d91f00f21",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-45042ba6a986406e833ca9955054b5e6",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-51624ec3ae164dddb4035433328026f9",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-838279cbca694aa3ba4591a7753c8b01",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d76dbcdab69f424fb89328da91def576",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-050290103952440cbf9c0516dc933934",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9ed803171a2b4fce9a58a4a389428f70",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9006e5bdd1a5497ca8e591aa2237dcd7",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5a0a7c0613de4ef38ac47c8b2ba83b21",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-1c809e565e3f4a5c882898fbdc4387ad",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7e56298b1736424da50bc65c5de52ba1",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c03858224ddf4e1dbd68079510db102a",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8039c3d45c014fe5ad038156d3e2c148",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-acbf8165ed484cdeb527728504d76f9d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4deca5fba76847d99c067e762b2e0a36",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8deeeb89dda443bc86cf0dc19ec0e570",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d8f7cfbdbdab4f02a0f062657043fad9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-104634446aeb42d7ba0c56844f5c4ea7",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-267030da8da04028bc9669f8f921456c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cbf20b4ad840419bae50d52755edb15b",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-9f4c159d296c43a6b2fba00efd9675d9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-d4b66ce51b9c4364b3bcc0e61489b067",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-05e461e1ec004d70bdeaae4b91b7ee36",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-583bdc3ea7af4e40b26f595390fa2334",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-1eae74196bfa497893d9048ee912e679",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-673237710d67495cb9a112a19cc43c59",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-389c3916604348d4a7883e4a21a3270a",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7d2ff46cd79946df860da8fae1925e12",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c77334c2ea434cfda2c7e18b9f787a1f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-8ab24af58f65470b85e5b1416be78e51",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-605c87dbb48f48b79511bcb4086ebb7c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4738c71cd58a40a588ca5b9523aabde9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0faa82dda33a48ca8adcfaf4b06ca5e0",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-042807c666514f069b1a1fd5a6d17c91",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a41d5cb959cc4bfdb6da9ad5d3ec8bae",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a0ed4a77f81b48e58b1523a4d64344de",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-18a3ea360f5544b98ef633197ddcccf4",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-78b19ff4fe3a4104ba2c78aae625bb05",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-46439e7b777a4a1982d7e73c7e87eec0",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-0a9e2c9ee0f54b9ea2ebd00a4e40fb77",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a9b28bdf1deb4673ba4437399af012e6",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-174673c116e94b3a9708355e70f39a08",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ebdb3843bb1c42d4a14311a2b523a48c",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6df95fb68b7c47248a73d1d03ad07ace",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-47c101303809482f99f7618352ef75b7",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ad9bd5e90cba49aaa3852dd719d841fc",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5c7d70f5b34143aabb1d7681bfd4a73c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cceb7666ffbc4730a5fe823fd357f1fe",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3938de777cf04300872fb24ce941631c",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-f8b80ddd4c064fcfb5bd5a6a404d285e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7acf08c544c745649273d04865bc8db7",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-a2c8e5bcc010474993cf02d9405a6e82",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5327525875884187a5c8062a1f07fdf5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e7d6cd053275489784c0167d768b1bd3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ad5faf22866f4777a03cc36c27708a72",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7b9370f360b34f05a8598e669856c193",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b1920ac10ae9429f9475920b6891e4a2",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4955e48d50034fce96cd5a9c8683bc0e",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e03734aef48e46cc8d69ab7106545b67",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-21fc0155849645789f22fe95d9a69295",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4255e01eeb2e422288e3ecce99447d08",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cfcef51d76e14bb9b49ffe780ca6a967",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ba32caefae8f4ace802b27d9f8200b10",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-b7f91f4dc22d48b2aacfb0ab725b5964",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-50214e0d1314489a87788e57e9f899e3",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-3ca1702807ff435986be7ae01c6c7a80",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-2f02980a2e2e4923a88b1054c1a814e9",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4db3b4f51a0143e7987a2571c2824bf5",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-cda855d08b4f4bcd916aa51ba311e87d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-50c79cf20e60422c8fb006e2a4e5760f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-ee324be6274f4edaa8faeee3e26acfe8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-088eeea86a9c451f99322650bb49c96f",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-027793a9ec3c43b59678431b079a2a69",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-e773384fbbc44ca39257eae04f47bb2d",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-4e3ef60a8e184445b7789b10ae164850",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-6d40056bbf634a478bd50c617b8092f8",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-96f88002459748749e63f3b258678fdf",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-dd5440652a4b446793aaaa4186025b3b",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-7ae9b31cdbc147aa95cadb7d1820ee09",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-405b41b90d06434a8078099440384802",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-afd72b173c094ac7b2696170c9b69474",
+   "group_size": 3,
+   "donours": 2,
+   "templates_tried": 2,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-63f8967a64d54186bd9aa541d5af5511",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-c00591aeb7c74ed3a773a0aa73a2a8ff",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-5d729e4a8bd14896a660e10360e1f980",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  },
+  {
+   "reaction_id": "ord-44a7f0fe946242548895639bf730ac23",
+   "group_size": 2,
+   "donours": 1,
+   "templates_tried": 1,
+   "hit": false,
+   "hit_relaxed": false
+  }
+ ]
+}
