@@ -166,6 +166,10 @@ def main() -> int:
                     "src_ha": src_ha_c,
                     "keep": round(pha / src_ha_c, 4) if src_ha_c else 0.0,
                     "byp": 1 if getattr(p, "is_byproduct", False) else 0,
+                    # v2：把产物侧与底物侧原样留下，训练时可以现算产物级特征
+                    "sub": (getattr(p, "source_smiles", "") or "")
+                           + (("." + getattr(p, "partner_smiles", "")) if getattr(p, "partner_smiles", "") else ""),
+                    "tpl": tpl,
                 }
                 fo.write(json.dumps(rec, ensure_ascii=False) + "\n")
                 n_cand += 1

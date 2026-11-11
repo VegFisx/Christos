@@ -36,6 +36,30 @@ DEFAULT_DB = (os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
 # ★ 最近一次解析命中信息（给桥接打印用）：{"query":…, "matched":…, "how":…}
 LAST_RESOLVE: Dict[str, str] = {}
 
+# ★ 第 141 轮（审查 A3/A4）：最近一次取成分的**覆盖率账本**。
+#   `n_edges` 是该药材在 herb_compound 里的全部关联数；下面两个是「有边但拿不到结构」的拆分。
+#   为什么要它：内连接 + `LENGTH(smiles)>3` 曾经静默丢掉 14.9% 的边和全部小分子（乙醇 CCO），
+#   而对外只显示「取到 N 个成分」，看不出少了什么。
+LAST_COVERAGE: Dict[str, str] = {}
+
+# 明确不是结构的占位值（A4）
+_JUNK_SMILES = frozenset({
+    "Not", "not", "None", "none", "N/A", "NA", "nan", "NaN", "NULL", "null",
+    "Not Available", "not available", "?", "-",
+})
+
+
+def _looks_like_smiles(s: str) -> bool:
+    """粗判一段文本是不是 SMILES：至少一个元素字母，且不是纯数字/纯标点。
+
+    为什么不看长度：`CCO`（乙醇）、`C=O`（甲醛）、`CSC`（二甲硫醚）、`[B]` 都是真结构，
+    旧代码 `LENGTH(smiles) > 3` 把它们整类删掉（审查 A4）。
+    """
+    t = (s or "").strip()
+    if not t or t in _JUNK_SMILES:
+        return False
+    return any(ch.isalpha() for ch in t)
+
 # ★ 第三档立体补录（默认关，见下方取数处的说明）：``compounds`` 表里
 #   ``isomeric_smiles`` 为空的 261 个成分中，162 个已按「公式 + 去立体后规范
 #   SMILES」核验补到 isomeric SMILES（tools/fill_missing_stereo.py）。
@@ -207,13 +231,9 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
             SELECT c.ingredient_id, c.name_en, c.smiles, c.isomeric_smiles, c.mol_weight,
                    h.name_cn, hc.match_level, c.ob_score, c.drug_likeness
             FROM herb_compound hc
-            JOIN compounds c ON hc.ingredient_id = c.ingredient_id
+            LEFT JOIN compounds c ON hc.ingredient_id = c.ingredient_id
             JOIN herbs h ON hc.herb_id = h.herb_id
             WHERE hc.herb_id IN ({ph})
-              AND c.smiles IS NOT NULL AND c.smiles != ''
-              AND LENGTH(c.smiles) > 3
-              AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN',
-                                   'Not Available','not available','NULL','null')
             ORDER BY c.mol_weight DESC
             """,
             ids,
@@ -224,16 +244,26 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
 
     out: List[Compound] = []
     seen = set()
+    # ★ 第 141 轮（审查 A3/A4）：这两类丢弃**必须计数**，不能再静默。
+    #   A3：herb_compound 里的边在 compounds 表里没有对应行（内连接会整条消失）；
+    #   A4：smiles 是 "Not Available" 之类的垃圾值，或短到被 LENGTH>3 误杀（乙醇 CCO、甲醛 C=O）。
+    n_edges = len(rows)
+    n_no_compound = 0
+    n_bad_smiles = 0
     for ing_id, name_en, smiles, iso_smiles, mw, herb_cn, _lvl, _ob, _dl in rows:
         # ★ 优先用 isomeric_smiles ★
         # 实测：compounds 表 31646 行里有 19043 行（60%）的 isomeric_smiles
         # 含手性标记 @，21376 行的两列不同。只读 smiles 等于把手性信息扔掉。
         # 而中药成分（糖苷、萜类、生物碱）恰恰是手性重灾区。
         # 拿不到异构 SMILES 时才退回普通 SMILES。
+        if smiles is None and iso_smiles is None:
+            n_no_compound += 1            # 边存在、compounds 里没这条 → 无结构，不是没收录
+            continue
         use = (iso_smiles or "").strip()
-        if not use or use in ("Not", "not", "None", "none", "N/A", "NA"):
+        if not use or use in _JUNK_SMILES:
             use = (smiles or "").strip()
-        if not use:
+        if not use or use in _JUNK_SMILES or not _looks_like_smiles(use):
+            n_bad_smiles += 1             # 有行但结构无效（"Not Available" 等）
             continue
         # 第三档（默认关）：库里两列都没有立体、但确有手性中心的 261 个成分，
         # 用 data/tcm_stereo_fill.json 里核验过的 isomeric SMILES（公式 + 去立体
@@ -264,6 +294,16 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
         c.tcmsp = bool(c.ob is not None and c.ob >= 30
                        and c.dl is not None and c.dl >= 0.18)
         out.append(c)
+
+    # ★ 第 141 轮：把「少了什么」记下来（A3/A4），供桥接层打印与 meta 落账。
+    LAST_COVERAGE.clear()
+    LAST_COVERAGE.update({
+        "herb": str(herb_name),
+        "n_edges": str(n_edges),
+        "n_kept": str(len(out)),
+        "n_no_compound": str(n_no_compound),     # 关联存在、compounds 无此行
+        "n_bad_smiles": str(n_bad_smiles),       # 有行但结构无效/是占位值
+    })
 
     # 默认按特异性排序：出现在越少药材里的成分越靠前，通用成分垫底。
     # 这取代了此前"手写 marker 优先"的做法，后者按关键词 LIKE 生成，
@@ -339,7 +379,7 @@ def list_named_herbs(keyword: str, db_path: str = DEFAULT_DB,
             LEFT JOIN herb_compound hc ON hc.herb_id = h.herb_id
             LEFT JOIN compounds c
                    ON c.ingredient_id = hc.ingredient_id
-                  AND c.smiles IS NOT NULL AND LENGTH(c.smiles) > 3
+                  AND c.smiles IS NOT NULL AND TRIM(c.smiles) != '' AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN','Not Available','not available','NULL','null','?','-')
             WHERE h.name_cn LIKE ?
             GROUP BY h.herb_id, h.name_cn
             ORDER BY CASE WHEN h.name_cn = ? THEN 0 ELSE 1 END,
@@ -378,7 +418,9 @@ def list_latin_herbs(text: str, db_path: str = DEFAULT_DB,
                        THEN c.smiles ELSE c.isomeric_smiles END)
             FROM herb_compound hc
             JOIN compounds c ON c.ingredient_id = hc.ingredient_id
-            WHERE c.smiles IS NOT NULL AND LENGTH(c.smiles) > 3
+            WHERE c.smiles IS NOT NULL AND TRIM(c.smiles) != ''
+              AND c.smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN',
+                                   'Not Available','not available','NULL','null','?','-')
             GROUP BY hc.herb_id
             """)
         for hid, n in cur.fetchall():

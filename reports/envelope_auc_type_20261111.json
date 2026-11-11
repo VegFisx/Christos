@@ -1,0 +1,9 @@
+{
+ "rows": 300,
+ "candidates": 5029,
+ "positives": 99,
+ "auc": 0.5022906550289918,
+ "median_fit_pos": 1.0,
+ "median_fit_neg": 1.0,
+ "coverage_candidates": 726
+}

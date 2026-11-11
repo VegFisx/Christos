@@ -160,6 +160,11 @@ def _init() -> None:
     if _os.environ.get("CHEMCREACT_BENCH_RERANK"):
         kw["rerank_model"] = (_os.environ.get("CHEMCREACT_RERANK_MODEL")
                               or str(_HERE.parent / "reports" / "rank_model_20261107.pkl"))
+    # ★ 第147轮：中心模型排序（同样只改顺序；用于和离线重排序对比）
+    if _os.environ.get("CHEMCREACT_BENCH_RERANK_CENTER"):
+        kw["center_rank"] = True
+        if _os.environ.get("CHEMCREACT_CENTER_MODEL"):
+            kw["center_rank_model"] = _os.environ["CHEMCREACT_CENTER_MODEL"]
     _G["eng"] = SmartReactEngine(**kw)
     _G["cond"] = T.get_template("煎煮")
     _G["Compound"] = Compound

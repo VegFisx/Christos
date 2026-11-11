@@ -13,8 +13,8 @@ authors:
     given-names: Xinchang
     email: vegfish@qq.com
     affiliation: "Beijing University of Chinese Medicine, School of Chinese Materia Medica, Beijing, China"
-version: 1.0.0
-date-released: 2026-11-10
+version: 1.0.1
+date-released: 2026-11-11
 license: MIT
 repository-code: "https://github.com/VegFisx/Christos"
 keywords:

@@ -1,0 +1,156 @@
+{
+  "generated_at": "2026-11-11 12:57:16",
+  "profile": "quick",
+  "git_rev": "176cab9",
+  "git_dirty_files": 0,
+  "python": "3.12.10",
+  "tcm_db": "D:/TCMAI/tcm.db",
+  "profile_params": {
+    "forward_n": 600,
+    "official_n": 300,
+    "ms_n": 50,
+    "ms_depth": 2,
+    "smoke": true,
+    "holdout": true
+  },
+  "thresholds": {
+    "forward_recall_drop": 0.003,
+    "official_recall_drop": 0.003,
+    "official_top1_drop": 0.005,
+    "official_rerank_top1_drop": 0.05,
+    "holdout_consistent_drop": 0,
+    "multistep_rate_drop": 0.05
+  },
+  "baseline": "reports\\benchmarks\\release-61f728e-20261111-1245.json",
+  "verdict": "pass",
+  "hard_failures": [],
+  "soft_regressions": [],
+  "results": {
+    "safety": {
+      "step": "safety",
+      "rc": 0,
+      "seconds": 0.3,
+      "errors": 0,
+      "warnings": 13,
+      "tail": [
+        "============================================================================================",
+        "   退出码 0   自检结果：通过 8，失败 0",
+        "",
+        "============================================================================================",
+        "结论：ERROR 0 处，WARN 涉及 13 个文件，mapped_chem 自检 通过",
+        "============================================================================================"
+      ]
+    },
+    "holdout": {
+      "step": "holdout",
+      "rc": 0,
+      "seconds": 13.1,
+      "n_cases": 6,
+      "n_consistent": 3,
+      "n_prediction_hits": 5,
+      "source": "holdout_paozhi_20261111.json",
+      "tail": [
+        "   [warn] 条件包络未生效：No module named 'conditions'",
+        "OK   zhuyu_loganin            expect consistent     got consistent     rule hydrolysis_glycoside_001",
+        "OK   maqianzi_strychnine      expect miss           got miss           rule -",
+        "   [warn] 条件包络未生效：No module named 'conditions'",
+        "OK   dahuang_sennoside        expect miss           got miss           rule -",
+        "",
+        "cases 6 | prediction hits 5/6 | status counts {'consistent': 3, 'miss': 3}",
+        "written D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\holdout_paozhi_20261111.json"
+      ]
+    },
+    "smoke": {
+      "step": "smoke",
+      "rc": 0,
+      "seconds": 55.6,
+      "counts": {
+        "A_yanyan": 43,
+        "A_jiangyan": 43,
+        "C_miyan_adj": 46,
+        "C_miyan_noadj": 43,
+        "C_cuyan_adj": 81,
+        "C_cuyan_noadj": 43,
+        "C_cuyan_envoff": 43,
+        "guard_jiandao": 824
+      },
+      "tail": [
+        "    co-substrates: 乙酸(C2H4O2)",
+        "    meta: 20261111-124649_甘草.meta.json",
+        "C_cuyan_noadj, 炮制·醋炙, 43, 43, 6, 0, 0, 0.86 (engine 0.43)",
+        "    meta: 20261111-124650_甘草.meta.json",
+        "C_cuyan_envoff, 炮制·醋炙, 43, 43, 6, 0, 0, 0.91 (engine 0.45)",
+        "    meta: 20261111-124651_甘草.meta.json",
+        "guard_jiandao, 煎煮, 824, 824, 6, 0, 0, 48.94 (engine 47.98)",
+        "    meta: 20261111-124740_甘草.meta.json"
+      ]
+    },
+    "forward": {
+      "step": "forward",
+      "rc": 0,
+      "seconds": 340.3,
+      "n": 5630,
+      "recall": 0.8659,
+      "n_errors": 0,
+      "tail": [
+        "   class 5 :  83.0%（n=600）",
+        "   class 6 :  96.5%（n=600）",
+        "   class 7 :  92.7%（n=600）",
+        "   class 8 :  97.8%（n=600）",
+        "   class 9 :  83.7%（n=600）",
+        "  耗时 340s"
+      ]
+    },
+    "official": {
+      "step": "official",
+      "rc": 0,
+      "seconds": 27.2,
+      "n": 300,
+      "recall": 0.91,
+      "top1": 0.4167,
+      "mrr": 0.5327,
+      "n_errors": 0,
+      "tail": [
+        "官方 test split：300 条（workers=2）",
+        "  ...64/300  12 s",
+        "命中 273/300 = 91.00%  top1 41.67%  top5 66.67%  MRR 0.5327  平均候选 22.3  错误 0",
+        "写出 D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\benchmarks\\gate_official_tmp\\forward_official_test__gate.json",
+        "耗时 27 s"
+      ]
+    },
+    "official_rerank": {
+      "step": "official_rerank",
+      "rc": 0,
+      "seconds": 38.2,
+      "n": 300,
+      "recall": 0.92,
+      "top1": 0.6667,
+      "top5": 0.8967,
+      "mrr": 0.7641,
+      "n_errors": 0,
+      "tail": [
+        "官方 test split：300 条（workers=2）",
+        "  ...64/300  17 s",
+        "命中 276/300 = 92.00%  top1 66.67%  top5 89.67%  MRR 0.7641  平均候选 34.4  错误 0",
+        "写出 D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\benchmarks\\gate_official_rerank_tmp\\forward_official_test__gate_rerank.json",
+        "耗时 38 s"
+      ]
+    },
+    "multistep": {
+      "step": "multistep",
+      "rc": 0,
+      "seconds": 170.0,
+      "n": 50,
+      "rate": 0.56,
+      "templates": 16891,
+      "tail": [
+        "",
+        "============================================================================================",
+        "★ 端到端成功率（深度<=2, beam=4）= 28/50 = 56.0%",
+        "   路线步数分布: {1: 14, 2: 14}",
+        "============================================================================================",
+        "-> bench_multistep__gate.json  169s"
+      ]
+    }
+  }
+}

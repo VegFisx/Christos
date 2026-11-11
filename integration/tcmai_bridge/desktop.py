@@ -34,7 +34,7 @@ for _s in (sys.stdout, sys.stderr):
 
 FROZEN = bool(getattr(sys, "frozen", False))
 BASE = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 # ★ 数据根目录：**便携式**，放在 exe 旁边（`runtime\`）。
 #   为什么不放 %APPDATA%：冻结后的 exe 在那里建子目录会莫名 WinError 5（ACL 明明允许），

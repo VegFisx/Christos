@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T23:35:20",
+  "generated_at": "2026-11-11T13:01:18",
   "validation_type": "retrospective literature comparison: product + path (two-step)",
   "condition": "煎煮 (100 C / 60 min / pH 6.5)",
   "protocol": "种子单轮枚举 + 从文献中间体单独起跑一轮；不用全量多轮枚举（成本爆炸）",
@@ -9,7 +9,7 @@
       "key": "glycyrrhizic_acid",
       "label_zh": "甘草酸 → 甘草次酸",
       "literature_path": "Hydrothermal hydrolysis produces glycyrrhetinic acid and glycyrrhetinic acid 3-O-mono-beta-D-glucuronide through consecutive and parallel reactions.",
-      "seconds_round1": 2.8,
+      "seconds_round1": 3.1,
       "n_round1_products": 76,
       "route": "seed_to_target_in_round1",
       "intermediates": [
@@ -31,7 +31,7 @@
       "key": "ginsenoside_rb1_rg3",
       "label_zh": "人参皂苷 Rb1 → Rg3",
       "literature_path": "Enzymatic conversion proceeds from Rb1 through ginsenoside Rd to Rg3; thermal processing also forms Rg3 through glycoside hydrolysis and elimination.",
-      "seconds_round1": 3.7,
+      "seconds_round1": 3.6,
       "n_round1_products": 102,
       "route": "seed_to_intermediate_to_target",
       "intermediates": [
@@ -42,7 +42,7 @@
           "in_round1": true,
           "intermediate_to_target": true,
           "onward_rule": "hydrolysis_glycoside_001",
-          "seconds_round2": 3.1
+          "seconds_round2": 2.9
         }
       ],
       "product_hit": true,
@@ -73,7 +73,7 @@
       "key": "benzoylaconine_aconine",
       "label_zh": "苯甲酰乌头原碱 → 乌头原碱",
       "literature_path": "Further hydrolysis removes the C14 benzoylester and gives aconine.",
-      "seconds_round1": 2.5,
+      "seconds_round1": 2.3,
       "n_round1_products": 29,
       "route": "seed_to_target_in_round1",
       "intermediates": [],
@@ -89,7 +89,7 @@
       "key": "rutin_quercetin",
       "label_zh": "芦丁 → 槲皮素",
       "literature_path": "Acid or subcritical-water treatment cleaves the rutinoside glycosidic bond; isoquercetin is also observed as a product.",
-      "seconds_round1": 2.7,
+      "seconds_round1": 2.6,
       "n_round1_products": 61,
       "route": "seed_to_intermediate_to_target",
       "intermediates": [
@@ -100,17 +100,25 @@
           "in_round1": true,
           "intermediate_to_target": true,
           "onward_rule": "hydrolysis_glycoside_001",
-          "seconds_round2": 2.5
+          "seconds_round2": 2.4
         },
         {
           "name": "Isoquercitin",
-          "status": "not_in_local_db",
-          "required": false
+          "required": false,
+          "status": "chain_ok",
+          "in_round1": true,
+          "intermediate_to_target": true,
+          "onward_rule": "hydrolysis_glycoside_001",
+          "seconds_round2": 2.4
         },
         {
           "name": "Isoquercetrin",
-          "status": "not_in_local_db",
-          "required": false
+          "required": false,
+          "status": "absent",
+          "in_round1": false,
+          "intermediate_to_target": false,
+          "onward_rule": "",
+          "seconds_round2": 2.4
         }
       ],
       "product_hit": true,

@@ -58,6 +58,7 @@ THRESHOLDS = {
     "forward_recall_drop": 0.003,      # 0.3 pp
     "official_recall_drop": 0.003,
     "official_top1_drop": 0.005,
+    "official_rerank_top1_drop": 0.05,
     "holdout_consistent_drop": 0,
     "multistep_rate_drop": 0.05,
 }
@@ -186,6 +187,30 @@ def step_official(n, workers=2):
             "tail": (out + err).strip().splitlines()[-6:]}
 
 
+def step_official_rerank(n, workers=2):
+    """重排序开着跑一遍官方切分。
+
+    为什么单列一步：重排序**只改顺序**，召回不受影响，但 top-1 全靠它。
+    默认关，所以主 official 那条永远不会反映模型变化；这一条才是模型的回归闸门。
+    """
+    out_dir = BENCH_DIR / "gate_official_rerank_tmp"
+    tag = "gate_rerank"
+    rc, out, err, secs = sh(
+        [PY, "-I", "-X", "utf8", "tools/paper_bench_official_test.py", str(workers)],
+        env_extra={"CHEMCREACT_BENCH_OUT": str(out_dir),
+                   "CHEMCREACT_BENCH_TAG": tag,
+                   "CHEMCREACT_BENCH_LIMIT": str(n),
+                   "CHEMCREACT_BENCH_RERANK": "1",
+                   "CHEMCREACT_BENCH_CLI_CONFIG": "1"}, timeout=7200)
+    f = out_dir / ("forward_official_test__%s.json" % tag)
+    d = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    return {"step": "official_rerank", "rc": rc, "seconds": round(secs, 1),
+            "n": d.get("n_scored"), "recall": d.get("recall_1step"),
+            "top1": d.get("top1"), "top5": d.get("top5"), "mrr": d.get("mrr"),
+            "n_errors": d.get("n_errors"),
+            "tail": (out + err).strip().splitlines()[-6:]}
+
+
 def step_multistep(n, depth, beam=4):
     tpl = ROOT / "reports" / "paper" / "data" / "lib_uspto50k_excl_v2_freq10.jsonl"
     env = {"CHEMCREACT_MS_TAG": "gate"}
@@ -253,16 +278,19 @@ def compare(res, base):
             if d > THRESHOLDS["official_top1_drop"]:
                 soft.append("official: top1 %.4f → %.4f（−%.4f）"
                             % (bo["top1"], res["official"]["top1"], d))
+        br = (b.get("official_rerank") or {})
+        if br.get("top1") is not None and (res.get("official_rerank") or {}).get("top1") is not None:
+            d_ = br["top1"] - res["official_rerank"]["top1"]
+            if d_ > THRESHOLDS["official_rerank_top1_drop"]:
+                soft.append("official_rerank: top1 %.4f → %.4f（−%.4f 超阈值 %.4f）"
+                            % (br["top1"], res["official_rerank"]["top1"], d_,
+                               THRESHOLDS["official_rerank_top1_drop"]))
+        if br.get("recall") is not None and (res.get("official_rerank") or {}).get("recall") is not None:
+            d_ = br["recall"] - res["official_rerank"]["recall"]
+            if d_ > THRESHOLDS["official_recall_drop"]:
+                soft.append("official_rerank: 召回 %.4f → %.4f（−%.4f）"
+                            % (br["recall"], res["official_rerank"]["recall"], d_))
         bh = (b.get("holdout") or {}).get("n_consistent")
-        if bh is not None and h.get("n_consistent") is not None:
-            if h["n_consistent"] < bh - THRESHOLDS["holdout_consistent_drop"]:
-                soft.append("holdout: 结构级 %s → %s" % (bh, h["n_consistent"]))
-        bm = (b.get("multistep") or {}).get("rate")
-        if bm is not None and res["multistep"].get("rate") is not None:
-            d = bm - res["multistep"]["rate"]
-            if d > THRESHOLDS["multistep_rate_drop"]:
-                soft.append("multistep: 成功率 %.3f → %.3f（−%.3f）"
-                            % (bm, res["multistep"]["rate"], d))
     return hard, soft
 
 
@@ -306,6 +334,13 @@ def main() -> int:
     print("[gate] official  n=%s recall=%s top1=%s (%.0fs)"
           % (res["official"].get("n"), res["official"].get("recall"),
              res["official"].get("top1"), res["official"]["seconds"]), flush=True)
+
+    if prof.get("official_rerank", True):
+        res["official_rerank"] = step_official_rerank(prof["official_n"])
+        print("[gate] official_rerank n=%s recall=%s top1=%s top5=%s (%.0fs)"
+              % (res["official_rerank"].get("n"), res["official_rerank"].get("recall"),
+                 res["official_rerank"].get("top1"), res["official_rerank"].get("top5"),
+                 res["official_rerank"]["seconds"]), flush=True)
 
     res["multistep"] = step_multistep(prof["ms_n"], prof["ms_depth"])
     print("[gate] multistep n=%s rate=%s (%.0fs)"

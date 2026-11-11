@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T22:29:08",
+  "generated_at": "2026-11-11T13:04:08",
   "validation_type": "retrospective paozhi literature comparison: product + path + rule family",
   "protocol": "种子单轮（炮制档）+ 文献中间体单独再跑一轮；结构全部只读取自 tcm.db",
   "criteria": {
@@ -16,10 +16,10 @@
       "seed_name": "Ginsenoside rb1",
       "seed_formula": "C54H92O23",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.7,
+      "seconds_round1": 3.5,
       "n_round1": 51,
       "bridge_name": "20(r)-ginsenoside rg3",
-      "seconds_round2": 3.5,
+      "seconds_round2": 2.3,
       "targets": [
         {
           "rule": "hydrolysis_glycoside_001",
@@ -74,7 +74,7 @@
       "seed_name": "Arecoline",
       "seed_formula": "C8H13NO2",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.2,
+      "seconds_round1": 2.1,
       "n_round1": 7,
       "targets": [
         {
@@ -102,7 +102,7 @@
       "seed_name": "Carboxyatractyloside",
       "seed_formula": "C31H46O18S2",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.4,
+      "seconds_round1": 2.1,
       "n_round1": 18,
       "targets": [
         {
@@ -131,7 +131,7 @@
       "seed_name": "Jolkinolide b",
       "seed_formula": "C20H26O4",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.5,
+      "seconds_round1": 2.2,
       "n_round1": 9,
       "targets": [
         {
@@ -160,7 +160,7 @@
       "seed_name": "Aconitine",
       "seed_formula": "C34H47NO11",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.4,
+      "seconds_round1": 2.1,
       "n_round1": 19,
       "targets": [
         {
@@ -188,7 +188,7 @@
       "seed_name": "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
       "seed_formula": "C20H22O9",
       "seed_smiles_source": "pubchem:isomeric",
-      "seconds_round1": 3.4,
+      "seconds_round1": 2.2,
       "n_round1": 17,
       "targets": [
         {

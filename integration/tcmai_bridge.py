@@ -45,7 +45,23 @@ from model import Conditions, solvent_class          # noqa: E402
 from smartreact_engine import SmartReactEngine       # noqa: E402
 
 # 煎煮默认条件（与 TCMAI 的「煎煮」模板一致：水 / 100 °C / 60 min / pH 6.5）
-DEFAULT_CONDITIONS = Conditions(solvent="water", temperature=100.0, time_min=60.0, pH=6.5)
+# 第 144 轮修 C8：不再手写一份，改为从 conditions/templates.py 的「煎煮」档取，
+# 避免两处常量各自漂移（导出给外部调用方时必须与引擎里的那一档同源）。
+def _default_conditions() -> Conditions:
+    try:
+        import templates as _tpl                      # conditions/ 在 sys.path 上
+        spec = (_tpl.TEMPLATES or {}).get("煎煮") or {}
+        return Conditions(solvent=str(spec.get("solvent") or "water"),
+                          temperature=float(spec.get("temperature") or 100.0),
+                          time_min=float(spec.get("time_min") or 60.0),
+                          pH=float(spec.get("pH") if spec.get("pH") is not None else 6.5))
+    except Exception as _ex:                          # noqa: BLE001 —— 取不到就退回历史值并说明
+        print(f"   [warn] 读到「煎煮」条件档失败（{type(_ex).__name__}: {_ex}），"
+              f"退回内置值 water/100/60/6.5", file=sys.stderr)
+        return Conditions(solvent="water", temperature=100.0, time_min=60.0, pH=6.5)
+
+
+DEFAULT_CONDITIONS = _default_conditions()
 
 # ★ 级联用：哪些反应类型算"不可逆"（会驱动体系继续反应）★
 #   这是【我的判断/建模选择】，不是 ORD 实测值；TCMAI 的 cascade_reactions 需要这个标记。

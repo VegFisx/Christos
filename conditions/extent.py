@@ -153,6 +153,18 @@ def _ph_curve(ph: float, preference: Any, params: Dict[str, Any]) -> float:
     return 1.0
 
 
+def _ph_ceiling(params: Dict[str, Any]) -> float:
+    """比值上限由曲线下限决定：cur ≥ floor、ref ≥ floor，故上界是 1/floor。
+
+    第 144 轮修 C7：原代码硬编码 50.0，而 floor 默认 0.15 时实际饱和在 6.67，
+    50 这个数永远取不到 —— 写一个到不了的阈值等于没写，还误导读者。
+    """
+    floor = float((params.get("ph") or {}).get("floor", 0.15))
+    if floor <= 0:
+        return float("inf")
+    return 1.0 / floor
+
+
 def _ph_factor(ph: float, preference: Any, ref_ph: Any = None,
                params: Dict[str, Any] = None) -> Tuple[float, str]:
     """pH 相对**参照点**的速率倍数（比值，不是绝对值）。
@@ -169,7 +181,7 @@ def _ph_factor(ph: float, preference: Any, ref_ph: Any = None,
                      f"pH {ph:g} 不利（偏好 {preference}），折减 {cur:.2f}")
     ref = _ph_curve(float(ref_ph), preference, params)
     mult = cur / ref if ref > 0 else 1.0
-    mult = max(0.0, min(50.0, mult))
+    mult = max(0.0, min(_ph_ceiling(params), mult))
     if abs(mult - 1.0) < 0.02:
         return 1.0, ""
     word = "加快" if mult > 1 else "折减"
@@ -253,14 +265,41 @@ def temperature_factor(T: float, T_ref: float,
     return max(1e-6, min(1e6, f))
 
 
+def _concentration_factor(run, params: Dict[str, Any]) -> Tuple[float, str]:
+    """浓度对表观速率的影响（二级动力学、伙伴过量的伪一级近似）。
+
+    k_obs ∝ c / c_ref，所以 e 里的 k 乘 (c/c_ref)^order。
+    为什么 linear（order=1）：绝大多数规则是「底物 + 试剂」二级反应，
+    试剂过量时速率对底物是一级、对试剂浓度线性；这是教科书结论
+    （Atkins' Physical Chemistry, 11th ed., ch.17），不是拟合出来的数。
+    默认 ref_M = 0.1 M，超出 0.001~100 倍截断，避免荒谬输入放大结果。
+    """
+    blk = params.get("concentration") or {}
+    if not blk.get("enabled", False):
+        return 1.0, ""
+    try:
+        ref = float(blk.get("ref_M", 0.1))
+        order = float(blk.get("order", 1.0))
+        c = float(getattr(run, "concentration_M", ref) or ref)
+    except (TypeError, ValueError):
+        return 1.0, ""
+    if ref <= 0 or c <= 0:
+        return 1.0, ""
+    ratio = max(1e-3, min(1e3, c / ref))
+    f = ratio ** order
+    return f, (f"浓度 {c:g} M / 参照 {ref:g} M → 速率 ×{f:.3g}"
+               f"（二级动力学、过量伙伴近似）" if abs(f - 1.0) > 1e-9 else "")
+
+
 def _extent_core(t_min: float, t_ref_min: float, T: float, T_ref: float,
                  cat_mult: float, ph_mult: float,
                  params: Dict[str, Any],
-                 profile: Optional[str] = None) -> float:
-    """e = 1 - exp(- (t / t_ref) * k(T)/k(T_ref) * cat * ph)。"""
+                 profile: Optional[str] = None,
+                 conc_mult: float = 1.0) -> float:
+    """e = 1 - exp(- (t / t_ref) * k(T)/k(T_ref) * cat * ph * conc)。"""
     if t_ref_min <= 0:
         return 1.0
-    k = temperature_factor(T, T_ref, params, profile) * cat_mult * ph_mult
+    k = temperature_factor(T, T_ref, params, profile) * cat_mult * ph_mult * conc_mult
     e = 1.0 - math.exp(-(float(t_min) / float(t_ref_min)) * k)
     return max(0.0, min(1.0, e))
 
@@ -293,6 +332,19 @@ def calibrated_range(params: Optional[Dict[str, Any]] = None,
     return (lo, hi) if hi >= lo else (hi, lo)
 
 
+def _pressure_effective(run, params: Dict[str, Any]) -> Tuple[float, str]:
+    """压力 P2：溶液浴里 T_eff = min(T, T_sat(p))。其余浴型原样返回。"""
+    T = float(getattr(run, "temperature", 100.0))
+    try:
+        from conditions import pressure as _P
+    except Exception:
+        return T, ""
+    try:
+        return _P.effective_temperature(run, params)
+    except Exception:
+        return T, ""
+
+
 def extent_from_profile(resolved: Optional[Dict[str, Any]], run,
                         params: Optional[Dict[str, Any]] = None,
                         catalyst_allowed: Any = "auto",
@@ -322,14 +374,17 @@ def extent_from_profile(resolved: Optional[Dict[str, Any]], run,
                                  _window_default(resolved.get("pH")),
                                  params)
 
+    T_eff, p_why = _pressure_effective(run, params)
+    conc_mult, c_why = _concentration_factor(run, params)
+
     e = _extent_core(t_min=float(getattr(run, "time_min", t_ref)),
                      t_ref_min=t_ref,
-                     T=float(getattr(run, "temperature", T_ref)),
+                     T=T_eff,
                      T_ref=T_ref,
                      cat_mult=cat_mult, ph_mult=ph_mult, params=params,
-                     profile=profile)
+                     profile=profile, conc_mult=conc_mult)
     parts = [f"参照 {T_ref:g}°C/{t_ref:g}min → 当前 "
-             f"{float(getattr(run, 'temperature', T_ref)):g}°C/"
+             f"{T_eff:g}°C/"
              f"{float(getattr(run, 'time_min', t_ref)):g}min"]
     _ea = _arrhenius_ea(params, profile)
     if _ea is not None:
@@ -344,7 +399,7 @@ def extent_from_profile(resolved: Optional[Dict[str, Any]], run,
             parts.append(
                 f"温度 {_T:g}°C 在标定区间 {_rng[0]:g}~{_rng[1]:g}°C 之外，"
                 f"属外推（第一百二十三轮：三点拟合的 Ea 外推误差 0.6~3.3 倍）")
-    for w in (cat_why, ph_why):
+    for w in (p_why, c_why, cat_why, ph_why):
         if w:
             parts.append(w)
     return e, "；".join(parts)
@@ -375,18 +430,20 @@ def extent_from_table(entry: Optional[Dict[str, Any]], run,
                                  entry.get("ph_preference"),
                                  _window_default(entry.get("ph")),
                                  params)
+    T_eff, p_why = _pressure_effective(run, params)
+    conc_mult, c_why = _concentration_factor(run, params)
     e = _extent_core(t_min=float(getattr(run, "time_min", t_ref)),
                      t_ref_min=t_ref,
-                     T=float(getattr(run, "temperature", T_ref)),
+                     T=T_eff,
                      T_ref=T_ref,
                      cat_mult=cat_mult, ph_mult=ph_mult, params=params,
-                     profile=profile)
+                     profile=profile, conc_mult=conc_mult)
     parts = [f"ORD 中位 {T_ref:g}°C/{t_ref:g}min"]
     _ea = _arrhenius_ea(params, profile)
     if _ea is not None:
         _pfx = f"，profile={profile}" if profile else ""
         parts.append(f"温度按 Arrhenius（Ea={_ea:g} kJ/mol{_pfx}）")
-    for w in (cat_why, ph_why):
+    for w in (p_why, c_why, cat_why, ph_why):
         if w:
             parts.append(w)
     return e, "；".join(parts)

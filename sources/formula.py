@@ -19,6 +19,7 @@ r"""chemreact 数据源：**方剂**（``D:\TCMAI\data\formula_db.json``，**只
 """
 from __future__ import annotations
 
+import difflib
 import json
 import re
 import sqlite3
@@ -170,16 +171,51 @@ def _ro_conn(db_path: str = TCM_DEFAULT):
         conn.close()
 
 
+ALIAS_COLLISIONS: Dict[str, List[str]] = {}
+
+
 def alias_map(db_path: str = TCM_DEFAULT) -> Dict[str, str]:
-    """别名 → 正名。**从 herbs.alias 列读**，不手写。"""
+    """别名 → 正名。**从 herbs.alias 列读**，不手写。
+
+    ★ 第 141 轮（审查 B3）：旧实现是 first-wins（`if a not in out`），成果完全
+    取决于 `SELECT` 的行序，实测 970/12,286 条别名同时挂在多味药上 —— 于是
+    「龙胆草」被解析成耳草、「山姜」被解析成白术、「大红袍」被解析成臭牡丹。
+    现在：先收全部候选，再**确定地**挑一个（正名最短者，其次字典序），并把
+    撞车的别名记进 `ALIAS_COLLISIONS`，由调用方决定要不要提示。
+    """
     with _ro_conn(db_path) as conn:
-        out: Dict[str, str] = {}
+        cand: Dict[str, set] = {}
         for name_cn, alias in conn.execute(
                 "SELECT name_cn, COALESCE(alias,'') FROM herbs"):
             for a in re.split(r"[;；、,，/]", alias):
                 a = a.strip()
-                if a and a != name_cn and a not in out:
-                    out[a] = name_cn
+                # 数据噪声：别名列里混进了构建脚本的痕迹（含冒号/括号/chemreact 字样）
+                if (not a or a == name_cn or "chemreact" in a.lower()
+                        or ":" in a or "(" in a or ")" in a):
+                    continue
+                cand.setdefault(a, set()).add(name_cn)
+
+        def _overlap(a: str, nm: str) -> int:
+            m = difflib.SequenceMatcher(None, a, nm).find_longest_match(
+                0, len(a), 0, len(nm))
+            return m.size
+
+        out: Dict[str, str] = {}
+        ALIAS_COLLISIONS.clear()
+        for a, names in cand.items():
+            if not names:
+                continue
+            # 与别名重合字数最多的正名优先，其次名字最短，再次字典序（全部确定性）
+            best = sorted(names, key=lambda s: (-_overlap(a, s), len(s), s))[0]
+            out[a] = best
+            if len(names) > 1:
+                ALIAS_COLLISIONS[a] = sorted(names)
+        if ALIAS_COLLISIONS:
+            print("   [note] 别名表有 %d 条别名同时指向多味药（按「与别名重合字数最多」"
+                  "取值，要精确请写正名）：例 %s"
+                  % (len(ALIAS_COLLISIONS),
+                     ", ".join("%s→%s" % (k, out[k])
+                               for k in sorted(ALIAS_COLLISIONS)[:3])))
         return out
 
 

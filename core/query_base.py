@@ -91,6 +91,13 @@ PATH_FIELDS = ["product_smiles", "product_inchikey", "formula", "mw", "heavy_ato
                "element_delta",
                # ★ D5：3 组分模板的 support（只打标记；空 = 非三组分）
                "template_support",
+               # ★ 第142轮（压力 P1）：本次运行的体系压力（atm）——只记录，不参与判活/速率
+               "pressure_atm",
+               # ★ 第143轮（压力 P2 / 浓度）：参与 extent 的实际温度上限与实际浓度
+               "t_eff_C", "concentration_M",
+               # ★ 第145轮曾加过「条件包络」两列（condition_fit / condition_fit_why），
+               #   第148轮删除：模板级 AUC 0.488、类型级 0.502，无区分度。
+               #   见 reports/第一百四十八轮-包络判死-20261111.md
                # ★ 第84轮：反应进程 extent（空 = 开关未启用，旧台账保持原样）
                "extent", "extent_band",
                # ★ 第89轮：mined 模板命中的 SMARTS（空 = 非 mined 模板产物）
@@ -142,9 +149,23 @@ class RunSpec:
     #   打开后：extent < conditions/kinetics.json 的 gates.extent_min 的反应整条不产出，
     #   其余产物带 extent / extent_band。依据与参数见 conditions/extent.py、kinetics.json。
     condition_extent: bool = False
+    # ★ 第 141 轮（2026-11-10）：extent 是否**真的参与筛选**。
+    #   默认 False —— 未标定参数只标注（AGENTS §12）；`--condition-gate` 显式打开后，
+    #   才按 extent < extent_min 判不产出。打开前会打印提示。
+    condition_gate: bool = False
+    # ★ 第 142 轮（2026-11-11，压力 P1）：体系压力（atm）。
+    #   只写进条件、台账与运行记录，**不参与判活、不参与速率**——
+    #   现有动力学只在 1 atm 数据上标定，没有 ΔV‡ 数据（见 reports/第一百四十二轮）。
+    pressure_atm: float = 1.0
+    # ★ 第143轮（浓度）：进 extent 的浓度因子（二级动力学、伙伴过量近似）。
+    #   默认 0.1 M 与 kinetics.json 的 concentration.ref_M 相同 -> 因子 = 1，旧行为不变。
+    concentration_M: float = 0.1
     # ★ 第 128 轮：学习型重排序（默认关）。打开后只用离线模型改候选顺序，
     #   候选集合与 recall_any 完全不变；模型缺失/损坏时自动退回发射序。
     rerank: bool = False
+    # ★ 第 147 轮：中心模型排序（默认关）。给每个候选算「从底物走到它要改哪几处键、
+    #   每处多可能」，按几何平均重排；只改顺序，候选集合不变；模型缺失自动退回。
+    rerank_center: bool = False
     # ★ 用户自定义条件：在预设条件档案之上逐项覆盖。
     #   键名与 Conditions 的字段一致（solvent/temperature/time_min/pH/
     #   catalyst/atmosphere）。空字典 = 完全使用预设。
@@ -167,6 +188,28 @@ class RunSpec:
             #   第一次真正能触发的前提（第二十六轮实测：带真实试剂时判零 2.94×，误杀 3.6%）。
             from dataclasses import replace as _replace
             c = _replace(c, reagents=tuple(str(x) for x in self.reagents if str(x).strip()))
+        # ★ 第142轮：压力最后覆盖（显式写的优先于预设）。非 1.0 才 replace，
+        #   保证默认路径的 Conditions 对象逐字不变（旧行为不动）。
+        try:
+            _pa = float(self.pressure_atm or 1.0)
+        except (TypeError, ValueError):
+            _pa = 1.0
+        if _pa != 1.0:
+            from dataclasses import replace as _replace
+            c = _replace(c, pressure_atm=_pa)
+        # ★ 第143轮（浓度）：非 0.1 M 才 replace，保证默认路径对象逐字不变。
+        try:
+            _cm = float(self.concentration_M or 0.1)
+        except (TypeError, ValueError):
+            _cm = 0.1
+        if _cm != 0.1:
+            from dataclasses import replace as _replace
+            c = _replace(c, concentration_M=_cm)
+        # ★ 第143轮（压力 P2）：把模板名带进条件，供沸点上限判断浴类型。
+        #   只影响 conditions/pressure.py::bath_of，不参与其他化学计算。
+        if not getattr(c, "template", ""):
+            from dataclasses import replace as _replace
+            c = _replace(c, template=str(self.cond_name or ""))
         return c
 
     def describe(self) -> str:
@@ -290,6 +333,23 @@ def _as_int(v: Any) -> int:
         return int(float(v))
     except (TypeError, ValueError):
         return 0
+
+
+def _t_eff_of(cond) -> float:
+    """压力 P2：这条产物实际用的液温（被沸点截断后），落进台账便于复核。
+
+    非溶液浴（干热/辅料润湿）原样返回设定温度；查不到溶剂沸点也原样返回。
+    """
+    try:
+        from conditions import pressure as _P
+        t, _why = _P.effective_temperature(cond)
+        return round(float(t), 2)
+    except Exception:
+        try:
+            return round(float(getattr(cond, "temperature", 100.0)), 2)
+        except (TypeError, ValueError):
+            return 0.0
+
 
 
 def _cond_model_note(rule_name: str, cond, rec: Dict[str, Any], src_rec: Dict[str, Any]) -> str:
@@ -522,11 +582,26 @@ def build_inventory(spec: RunSpec,
     st = inv.stats
     st.n_seeds = len(spec.seeds)
 
-    # ★ 第 128 轮：重排序模型路径（可由 CHEMREACT_RERANK_MODEL 覆盖，便于复现实验）
+    # ★ 第 141 轮：extent 开关必须在构造引擎**之前**算出来 —— 之前它算在 40 行之后，
+    #   导致 `condition_extent` 从来没传进引擎（extent 列恒 1.0、时间/pH 完全不参与）。
+    _extent_on = bool(getattr(spec, "condition_extent", False))
+    _extent_gate_on = bool(getattr(spec, "condition_gate", False))
+
+    # ★ 第 128 轮：重排序模型路径（可由 CHEMCREACT_RERANK_MODEL 覆盖，便于复现实验）
+    # 第 144 轮修 B4：旧代码把变量名写成 CHEMREACT_RERANK_MODEL（少一个 C），
+    # 与文档/基准脚本的 CHEMREACT_RERANK_MODEL 不一致，导致自定义模型静默失效。
+    # 现在两个名字都认，但拼错的那个只在正确名未设时生效并打印提醒。
     def _rerank_model():
         import os as _os
-        return (_os.environ.get("CHEMREACT_RERANK_MODEL")
-                or str(_HERE.parent / "reports" / "rank_model_20261107.pkl"))
+        right = _os.environ.get("CHEMCREACT_RERANK_MODEL")
+        wrong = _os.environ.get("CHEMREACT_RERANK_MODEL")
+        if right:
+            return right
+        if wrong:
+            print("   [warn] 环境变量 CHEMREACT_RERANK_MODEL 拼写少了 C，"
+                  "已按 CHEMCREACT_RERANK_MODEL 处理", file=sys.stderr)
+            return wrong
+        return str(_HERE.parent / "reports" / "rank_model_20261107.pkl")
 
     eng = SmartReactEngine(max_pairs=spec.max_pairs,
                            max_products_per_pair=spec.max_products_per_pair,
@@ -554,7 +629,13 @@ def build_inventory(spec: RunSpec,
                            pair_offset=int(getattr(spec, "pair_offset", 0)),
                            # ★ 第 128 轮：学习型重排序（默认关；只改顺序，候选不变）
                            rerank_model=(_rerank_model()
-                                         if bool(getattr(spec, "rerank", False)) else None))
+                                         if bool(getattr(spec, "rerank", False)) else None),
+                           # ★ 第 147 轮：中心模型排序（默认关；只改顺序，候选不变）
+                           center_rank=bool(getattr(spec, "rerank_center", False)),
+                           center_rank_model=os.environ.get("CHEMCREACT_CENTER_MODEL") or None,
+                           # ★ 第 141 轮：extent 真正接进引擎（此前从未传入 → 恒 1.0）
+                           condition_extent=_extent_on,
+                           condition_gate=_extent_gate_on)
     st.engine_notes = [f"base: {eng.base_template_note}",
                        f"extra: {eng.extra_template_note}",
                        f"mono: {eng.mono_template_note}",
@@ -573,7 +654,7 @@ def build_inventory(spec: RunSpec,
 
     cond = spec.cond()
     # ★ 第84轮：反应进程开关（关着 = 台账里 extent 列为空，旧形状不变）
-    _extent_on = bool(getattr(spec, "condition_extent", False))
+    #   第 141 轮：`_extent_on` 已在构造引擎前定义（否则传不进引擎），这里不再重复赋值。
     # ★ 方向层（缺口②）：默认开。判据表在 `rules/direction_table.json`，
     #   文献侧证据在 `reports/direction_evidence.json`（没有就只报规则侧）。
     judge = None
@@ -754,9 +835,14 @@ def build_inventory(spec: RunSpec,
                     # ★ 第84轮：反应进程（按出处记；开关关着 -> 空列）
                     "extent": ent.get("extent", ""),
                     "extent_band": ent.get("extent_band", ""),
-                    # ★ 第89轮：mined 模板 SMARTS（judge_stereo_hops 用它算作用范围）
+                    # ★ 第 89 轮：mined 模板 SMARTS（judge_stereo_hops 用它算作用范围）
                     "template_smarts": ent.get("template_smarts", ""),
                     "partner_smiles": ent.get("partner_smiles", ""),
+                    # ★ 第142轮（压力 P1）：本次运行的体系压力（atm），只记录
+                    "pressure_atm": float(getattr(cond, "pressure_atm", 1.0) or 1.0),
+                    # ★ 第143轮：extent 用的是「被沸点截断后」的温度；浓度也记下来
+                    "t_eff_C": _t_eff_of(cond),
+                    "concentration_M": float(getattr(cond, "concentration_M", 0.1) or 0.1),
                     # ★ 第91轮：同一结构还能由哪些规则给出（归因用）
                     "also_rules": ent.get("also_rules", ""),
                     # ★ 第96轮：引擎发射序（同轮越小越先枚举）
@@ -1069,13 +1155,60 @@ def resolve_molecule(ref: str, limit: int = 5) -> Dict[str, Any]:
             "candidates": []}
 
 
+_FORMULA_ELEMENTS_CACHE: Optional[set] = None
+
+
+def _formula_elements() -> set:
+    """元素符号集合（来自 RDKit 周期表，不手写）。"""
+    global _FORMULA_ELEMENTS_CACHE
+    if _FORMULA_ELEMENTS_CACHE is None:
+        try:
+            from rdkit import Chem
+            _FORMULA_ELEMENTS_CACHE = {
+                Chem.GetPeriodicTable().GetElementSymbol(i) for i in range(1, 119)
+            }
+        except Exception:                     # noqa: BLE001 —— 退回常见元素，仍好过不查
+            _FORMULA_ELEMENTS_CACHE = {
+                "H", "C", "N", "O", "S", "P", "F", "Cl", "Br", "I", "B", "Si", "Se"}
+    return _FORMULA_ELEMENTS_CACHE
+
+
 def _looks_like_formula(s: str) -> bool:
+    """是不是分子式。
+
+    ★ 第 141 轮（审查 A5）：旧实现只看形状（`(?:[A-Z][a-z]?\\d*)+`），于是
+    **全大写 SMILES**（`CCO` 乙醇、`CC` 乙烷、`CO` 甲醇、`CN` 甲胺、`C1CC1`
+    环丙烷）全被当成分子式，`resolve_molecule("CCO")` 返回 kind=分子式、乙醇查不到。
+
+    现在三条同时成立才算分子式：
+    1. 形状像（元素符号 + 可选个数，无空格无连字符）；
+    2. 每个元素符号都真实存在（查 RDKit 周期表）；
+    3. **不能被 RDKit 当 SMILES 解析**（能被解析的优先按 SMILES，`CO` 取甲醇）。
+    """
     import re
     if not s or " " in s or "-" in s:
         return False
     if not re.fullmatch(r"(?:[A-Z][a-z]?\d*)+", s):
         return False
-    return any(ch.isupper() for ch in s)
+    if not any(ch.isupper() for ch in s):
+        return False
+    elems = _formula_elements()
+    syms = re.findall(r"[A-Z][a-z]?", s)
+    if not syms or any(sym not in elems for sym in syms):
+        return False
+    try:
+        from rdkit import Chem as _Chem
+        from rdkit import RDLogger as _RL
+        _RL.DisableLog("rdApp.*")        # 分子式会被 RDKit 报解析错，这里不是错误
+        try:
+            m = _Chem.MolFromSmiles(s)   # 能当 SMILES 解析就别当分子式
+        finally:
+            _RL.EnableLog("rdApp.*")
+        if m is not None and m.GetNumHeavyAtoms() >= 2:
+            return False
+    except Exception:                     # noqa: BLE001 —— 解析失败＝不是 SMILES
+        pass
+    return True
 
 
 _NAME_SEARCH_MEM: Dict[str, List[Dict[str, str]]] = {}
@@ -1096,8 +1229,16 @@ def search_db_by_name(keyword: str, limit: int = 5) -> List[Dict[str, str]]:
                 "       COALESCE(formula,''), COALESCE(tcmsp_id,'') "
                 "FROM compounds "
                 "WHERE (name_en LIKE ? OR alias LIKE ?) "
-                "  AND smiles IS NOT NULL AND LENGTH(smiles) > 3 LIMIT ?",
-                (f"%{keyword}%", f"%{keyword}%", limit)).fetchall()
+                "  AND smiles IS NOT NULL AND TRIM(smiles) != '' AND smiles NOT IN ('Not','not','None','none','N/A','NA','nan','NaN','Not Available','not available','NULL','null','?','-') "
+                # ★ 第 141 轮（审查 B1）：原来没有 ORDER BY，SQLite 按行序返回，
+                #    「ethanol」会先给 5 个不相干成分。现在精确名 > 前缀名 > 别名 > 其他。
+                "ORDER BY CASE "
+                "  WHEN LOWER(COALESCE(name_en,'')) = LOWER(?) THEN 0 "
+                "  WHEN LOWER(COALESCE(name_en,'')) LIKE LOWER(?) THEN 1 "
+                "  WHEN LOWER(COALESCE(alias,''))   = LOWER(?) THEN 2 "
+                "  ELSE 3 END, LENGTH(COALESCE(name_en,'')) LIMIT ?",
+                (f"%{keyword}%", f"%{keyword}%", keyword, f"{keyword}%", keyword,
+                 limit)).fetchall()
             con.close()
             for nm, smi, form, tid in rows:
                 out.append({"db": "tcm.db", "name": nm, "smiles": smi or "",
@@ -1664,7 +1805,7 @@ def aggregate_by_rule(inv: Inventory, limit: int = 40) -> Dict[str, Any]:
                                           "gate": {}})
                 r["paths"] += 1
                 r["sources"].add(s["source_smiles"])
-                cat = classify_activation(p.get("activation_why") or "")
+                cat = classify_activation(p.get("activation_why") or "", p.get("activation"))
                 r["gate"][cat] = r["gate"].get(cat, 0) + 1
                 if r["min_round"] is None or p["round"] < r["min_round"]:
                     r["min_round"] = p["round"]
@@ -1779,14 +1920,38 @@ GATE_UNRECORDED = "依据未记录"
 
 
 def classify_activation(why: str, act=None) -> str:
-    """条件依据 -> 四类之一。"""
+    """条件依据 -> 四类之一。
+
+    ★ 第 141 轮（审查 A2）：**先看数值，再看文字**。
+    旧实现用子串判断（`"降权" in w`），把「ORD 条件窗口内，无降权」「按高温加速
+    处理，不降权」这些**否定句**全判成降权（实测 14 条里误判 12 条，而 activation
+    全为 1.0）。现在约定：
+
+    - 有 activation 数值时以数值为准：`<=0` 或 `<0.999` 都算降权（判死也是 0）；
+    - 没有数值时才退回文字，且文字判断要求「标记词前面没有否定词」。
+
+    调用方应尽量把 `activation` 传进来。
+    """
     w = str(why or "").strip()
+    a = None
+    if act not in (None, ""):
+        try:
+            a = float(act)
+        except (TypeError, ValueError):
+            a = None
+    if a is not None:
+        if a <= 0.0:
+            return GATE_PENALTY            # 判死：条件上不可能发生
+        if a < 0.999:
+            return GATE_PENALTY            # 数值降权（打折但没死）
     if not w:
         return GATE_UNRECORDED
     if "无 ORD 条件数据" in w or "无数据" in w or "放行" in w or "按中性处理" in w:
         return GATE_PASS_NO_DATA
-    if ("降权" in w) or ("不在" in w) or ("超出" in w):
-        return GATE_PENALTY
+    # 文字兜底：标记词命中且**不是**「无X / 不X」这类否定写法
+    for mark in ("降权", "折减", "不在窗口", "超出窗口", "判不产出"):
+        if mark in w and ("无" + mark) not in w and ("不" + mark) not in w:
+            return GATE_PENALTY
     return GATE_WINDOW_OK
 
 
@@ -1810,7 +1975,7 @@ def gate_summary(inv: Inventory) -> Dict[str, Any]:
     by_why = collections.Counter()
     for r in inv.paths:
         why = str(r.get("activation_why", "") or "")
-        by_cat[classify_activation(why)] += 1
+        by_cat[classify_activation(why, r.get("activation"))] += 1
         by_why[activation_reason_short(why) or "(依据未记录)"] += 1
     n = max(1, len(inv.paths))
     return {"n_paths": len(inv.paths),

@@ -1,0 +1,325 @@
+{
+ "built_at": "2026-11-11 09:15:10",
+ "cond_name": "煎煮",
+ "rounds": 1,
+ "max_pairs": 4000,
+ "max_products_per_pair": 8,
+ "seeds": [
+  {
+   "name": "Licorice-saponin f3",
+   "smiles": "CC1C(C(C(C(O1)OC2C(C(C(OC2OC3C(C(C(OC3OC4CCC5(C(C4(C)C)CCC6(C5CC=C7C6(CCC8(C7CC9(CC8OC9=O)C)C)C)C)C)C(=O)O)O)O)C(=O)O)O)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Ammo-nium glycyrrhizinate",
+   "smiles": "C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O.N",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice-saponin c2",
+   "smiles": "C[C@]12CC[C@](CC1=C3C=C[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice glycoside a",
+   "smiles": "COC1=C(C=CC(=C1)/C=C/C(=O)OC[C@]2(CO[C@H]([C@@H]2O)O[C@@H]3[C@H]([C@@H]([C@H](O[C@H]3OC4=CC=C(C=C4)/C=C/C(=O)C5=C(C=C(C=C5)O)O)CO)O)O)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Licorice glycoside e",
+   "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O)C3=CC=C(C=C3)O[C@H]4C([C@H]([C@@H](C(O4)CO)O)O)O[C@H]5[C@H](C(CO5)(COC(=O)C6=CNC7=CC=CC=C76)O)O",
+   "source": "tcm.db:甘草"
+  },
+  {
+   "name": "Liquiritin apioside",
+   "smiles": "C1[C@H](OC2=C(C1=O)C=CC(=C2)O)C3=CC=C(C=C3)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O[C@H]5[C@@H]([C@](CO5)(CO)O)O",
+   "source": "tcm.db:甘草"
+  }
+ ],
+ "stats": {
+  "n_products": 824,
+  "n_paths_kept": 824,
+  "seconds": 49.53,
+  "ik_ok": 824,
+  "ik_fail": 0,
+  "per_round_new": [
+   {
+    "round": 1,
+    "new": 824,
+    "kept_raw": 824,
+    "seconds": 47.28
+   }
+  ],
+  "n_self_products": 0,
+  "truncated": false
+ },
+ "notes": {
+  "unparsable_seeds": 0,
+  "pairs_truncated": false,
+  "direction_summary": {
+   "方向可疑": 228,
+   "方向明确": 142,
+   "方向未定": 454
+  },
+  "direction_enabled": true,
+  "extent": {
+   "dropped": 0,
+   "by_type": {}
+  }
+ },
+ "engine_notes": [
+  "base: 启用",
+  "extra: 启用：加载 18554 条（支持>=10），编译通过 14140，编译失败 0，★元数≠2 丢弃 4414 条（arity 分布 {1: 2821, 2: 14140, 3: 1348, 4: 212, 5: 26, 6: 6, 7: 1}）",
+  "mono: 启用：加载 6000 条 -> arity=1 共 1045 条，保留 1045（需共试剂的不含，按需共试剂剔除 0）；隐含环境：不需氧化还原 55、需还原 837、需氧化 153，编译失败 0；★元数≥2 丢弃 4955 条（arity 分布 {1: 1045, 2: 4697, 3: 225, 4: 33}）",
+  "curated: curated: 双底物 11 / 单底物 48 / 失败 0",
+  "mined_top: top mined: 100 条（limit 100）"
+ ],
+ "selection": {
+  "甘草": {
+   "n_available": 341,
+   "n_kept": 6,
+   "limit": 6,
+   "limit_effective": 6,
+   "n_doses": 1,
+   "dose_source": "",
+   "evidence": {},
+   "kept_names": [
+    "Licorice-saponin f3",
+    "Ammo-nium glycyrrhizinate",
+    "Licorice-saponin c2",
+    "Licorice glycoside a",
+    "Licorice glycoside e",
+    "Liquiritin apioside"
+   ],
+   "skipped_n": 335,
+   "skipped_names_preview": [
+    "Licuraside",
+    "Liquiritigenin-7-o-beta-d-apiofuranosyl-4'-o-beta-d-gluoco-pyranoside",
+    "3,22-dihydroxy-11-oxo-delta(12)-oleanene-27-alpha-methoxycarbonyl-29-oic acid",
+    "Apioglycyrrhizin_qt",
+    "Licoriisoflavan a",
+    "Artonin e",
+    "(-)-medicocarpin",
+    "Kanzonol h",
+    "(2r)-2-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-5,7-dihydroxy-8-(3-methylbut-2-enyl)chroman-4-one",
+    "1-methoxyficifolinol",
+    "Kanzonol f",
+    "Gancaonin h",
+    "(2r)-1-[2,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-2-hydroxy-3-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]propan-1-one",
+    "Glyinflanin a",
+    "Gancaonin q",
+    "Gancaonin t",
+    "(e)-1-[2,4-dihydroxy-3-(3-methylbut-2-enyl)phenyl]-3-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]prop-2-en-1-one",
+    "7-hydroxy-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-6-(3-methylbut-2-enyl)chromone",
+    "(2s)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one",
+    "Kanzonol e",
+    "Xambioona",
+    "(2s)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one",
+    "Gancaonin r",
+    "Gancaonin s",
+    "Gancaonin u",
+    "Glycyrrhiza flavonol a",
+    "3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin",
+    "3-[4,6-dihydroxy-2-methoxy-3-(3-methylbut-2-enyl)phenyl]-7-hydroxy-chromone",
+    "5,7-dihydroxy-3-(2-hydroxy-4-methoxy-phenyl)-6-(3-methylbut-2-enyl)chromone",
+    "Liconeolignan",
+    "1-methoxyphaseollidin",
+    "3'-hydroxy-4'-o-methylglabridin",
+    "Licochalcone g",
+    "2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone",
+    "3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone",
+    "Licoflavonol",
+    "5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone",
+    "Gancaonin g",
+    "Licoisoflavone b",
+    "Licoagrocarpin",
+    "Yinyanghuo d",
+    "Kanzonols w",
+    "1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone",
+    "Phaseolinisoflavan",
+    "(2r)-7-hydroxy-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]chroman-4-one",
+    "(2s)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one",
+    "(e)-1-(2,4-dihydroxyphenyl)-3-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]prop-2-en-1-one",
+    "1-(5-hydroxy-2,2-dimethylchromen-6-yl)-3-(4-hydroxyphenyl)prop-2-en-1-one",
+    "(e)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one",
+    "Shinpterocarpin",
+    "Gancaonin v",
+    "Gadelaidic acid",
+    "Icos-5-enoic acid",
+    "8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol",
+    "3,4,3',4'-tetrahydroxy-2-methoxychalcone",
+    "7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin",
+    "1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone",
+    "4,2',4',alpha-tetrahydroxydihydrochalcone",
+    "3-(2-hydroxy-4-methoxyphenyl)-2h-chromen-7-ol",
+    "7-hydroxy-2-methyl-3-phenyl-chromone",
+    "(z)-1-(2,4-dihydroxyphenyl)-3-phenylprop-2-en-1-one",
+    "Karenzu dk2",
+    "2-tetradecanone",
+    "(e)-1-butoxyhex-2-ene",
+    "2,2-dimethylpentane",
+    "(3s)-2,3-dimethylpentane",
+    "Cyclobutanol,1-ethyl-",
+    "(1s,2s)-1,2-dimethylcyclopentane",
+    "3-methylpentane",
+    "Licoricesaponine d3",
+    "Licoricesaponin d3",
+    "Licoricesaponine a3",
+    "Licoricesaponine f3",
+    "Ethyl-n-buthy-uralsaponin a esters",
+    "Methyl-n-butyl-uralsaponin a esters",
+    "Licoricesaponine g2",
+    "Licoricesaponine j2",
+    "Licoricesaponin j2",
+    "Licoricesaponine k2",
+    "Licoricesaponin k2",
+    "Licoricesaponin e2",
+    "Licoricesaponin b2",
+    "Licoricesaponin c2",
+    "Licoricesaponine c2",
+    "Araboglycyrrhizin",
+    "Apioglycyrrhizin",
+    "3,4-dicaffeoyl-5-(3-hydroxy-3-methyl) glutaroyl quinic acid",
+    "Liquiritigenin-7,4'-diglucoside",
+    "Licobichalcone",
+    "Ganoderic acid a",
+    "Methyl-24-hydroxyglycyrrhetate",
+    "Kanzonol l",
+    "18alpha-hydroxyglycyrrhetic acid",
+    "Methylglycyrrhetate",
+    "Isoglabrolide",
+    "24-hydroxy-11-deoxyglycyrrhetic acid",
+    "Glycyrrhetol",
+    "Alpha-trihydroxy coprostanic acid",
+    "Kanzonol k",
+    "4h-1-benzopyran-4-one,2-(4-(beta-d-glucopyranosyloxy)phenyl)-2,3-dihydro-5,7-dihydroxy-,(2s)-",
+    "Gancaonin e",
+    "Glyasperin a",
+    "Glycyphyllin",
+    "Neoisoliquiritigenin",
+    "Neoisoliquiritin",
+    "Euchrenone",
+    "8-prenylwighteone",
+    "Kanzonol z",
+    "Gancaonin d",
+    "Gancaonin p-3'-methylether",
+    "Glyasperin e",
+    "Licofuranocoumarin",
+    "Licopyranocoumarin",
+    "Uralenol-3-methylether",
+    "Uralstilbene",
+    "Glycyrin",
+    "Licoricone",
+    "Licoleafol",
+    "Glyasperin b",
+    "Gancaonin p"
+   ],
+   "source": "herb",
+   "source_how": "",
+   "source_matched": "",
+   "order_rule": "marker 优先；其次分子量降序；按结构(SMILES)去重"
+  }
+ },
+ "switches": {
+  "limit": 6,
+  "rounds": 1,
+  "cond": "煎煮",
+  "triples": false,
+  "fair_pairs": false,
+  "chp_priority": false,
+  "herb_source": "auto",
+  "coconut_order": "lib",
+  "dose_budget": false,
+  "doses": {
+   "甘草": 1
+  },
+  "herb_order": "marker",
+  "max_pairs": 4000,
+  "direction": true,
+  "score": true,
+  "reagents": [],
+  "paozhi_adjuvant": true,
+  "paozhi_base_templates": false,
+  "condition_extent": true,
+  "condition_gate": false,
+  "rerank": false,
+  "pressure_atm": 1.0,
+  "concentration_M": 0.1,
+  "pressure_source": "默认 1.0 atm"
+ },
+ "pair_coverage": {
+  "pairs_total": 15,
+  "pairs_used": 15,
+  "mode": "sequential",
+  "min_partners": 5,
+  "max_partners": 5,
+  "fair": false
+ },
+ "formulas": {},
+ "condition_details": {
+  "solvent": {
+   "category": "water",
+   "detail": "water"
+  },
+  "catalyst": {
+   "category": "none",
+   "detail": "无"
+  },
+  "atmosphere": {
+   "category": "air",
+   "detail": "air"
+  },
+  "temperature": {
+   "value": 150.0,
+   "unit": "°C"
+  },
+  "time_min": {
+   "value": 60.0,
+   "unit": "min"
+  },
+  "pH": {
+   "value": 6.5,
+   "unit": ""
+  },
+  "pressure_atm": {
+   "value": 1.0,
+   "unit": "atm",
+   "note": "记录；P2 起通过沸点上限约束液相温度（只对溶液浴）",
+   "source": "默认 1.0 atm"
+  },
+  "effective_temperature": {
+   "value": 150.0,
+   "unit": "°C",
+   "note": "未截断（温度低于该压力沸点，或不是溶液浴）",
+   "source": "conditions/pressure.py（Clausius-Clapeyron，Tb/ΔHvap 取 CRC 97th）"
+  },
+  "concentration_M": {
+   "value": 0.1,
+   "unit": "M",
+   "note": "进 extent 的浓度因子（二级动力学、伙伴过量近似），默认 0.1 M 时因子为 1"
+  },
+  "bath": "unknown"
+ },
+ "processing": {
+  "mode": "",
+  "method": "",
+  "strict": false,
+  "base_templates": true,
+  "rule_scope": "",
+  "n_rules": 0,
+  "rules": [],
+  "rule_evidence": [],
+  "notes": [],
+  "adjuvant_enabled": false,
+  "n_co_substrates": 0,
+  "co_substrates": [],
+  "n_input_compounds": 6,
+  "n_products": 824,
+  "n_new_products": 824,
+  "n_products_from_adjuvant": 0,
+  "n_products_without_adjuvant": 824
+ },
+ "condition_extent": true,
+ "extent_dropped": 0,
+ "extent_gate_by_type": {}
+}

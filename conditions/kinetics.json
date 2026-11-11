@@ -115,8 +115,14 @@
     "extent_min": 0.0,
     "extent_major": 0.5,
     "trace_below": 0.05,
-    "meaning": "extent 只作标注。extent_min 已改为 0.0（原 0.10 无文献出处，且会删掉整批真实煎煮产物）；trace_below 以下标为痕量（band=none），不删除。",
-    "source": "第一百一十六轮：删掉无出处的 0.10，痕量阈值 0.05 由已发表动力学数据的最小可观测转化率 0.059 向下取整得到。"
+    "gate_min": 0.05,
+    "gate_min_source": "第一百四十一轮：`--condition-gate` 专用阈值。取已发表动力学数据的最小可观测转化率 0.059 向下取整（与 trace_below 同源，第一百一十六轮）。只在显式打开筛选时生效；默认 extent_min=0.0 表示不筛。",
+    "meaning": "extent 默认只作标注。extent_min 已改为 0.0（原 0.10 无文献出处，且会删掉整批真实煎煮产物）；trace_below 以下标为痕量（band=none），不删除。显式 `--condition-gate` 时按 gate_min 判不产出。",
+    "source": "第一百一十六轮：删掉无出处的 0.10，痕量阈值 0.05 由已发表动力学数据的最小可观测转化率 0.059 向下取整得到。",
+    "envelope_min": 0.15,
+    "envelope_min_source": "第一百四十五轮：条件包络专用阈值。取值 0.15 = exp(-1.9)，相当于温度超出该模板观测区间约 76 °C、或时长差约 4.7 倍。来源是对 ord_condition_dataset 的经验分布，不是热力学标定；只在显式 --condition-gate 时生效。（已停用，见 envelope_disabled）",
+    "envelope_meaning": "condition_fit 是「这个转化在文献里是不是在这个温时窗口做过」的经验拟合度；缺观测（n<5）时为 1.0，不罚。默认只标注，不筛。",
+    "envelope_disabled": "第一百四十八轮：判死。模板级 AUC 0.488、类型级 0.502（reports/envelope_auc_type_20261111.json），无区分度，引擎不再调用，台账不再出这两列。保留代码与数据仅为可复现。"
   },
   "no_data_policy": {
     "extent": 1.0,
@@ -258,5 +264,35 @@
       "status": "unvalidated_model_choice",
       "effect": "只影响 extent_band 标注（minor/major）。"
     }
+  },
+  "pressure_ceiling": {
+    "enabled": true,
+    "equation": "Clausius-Clapeyron: ln(p/p_b) = -(dHvap/R) * (1/T - 1/Tb)",
+    "rule": "T_eff = min(T, T_sat(p))，只对溶液浴（solution / steam）生效",
+    "baths": {
+      "solution": "受约束：泡在液体里，液温不能超过该压力下的沸点",
+      "steam": "受约束：蒸汽温度同样由沸点定",
+      "wetting": "不受约束：酒炙/盐炙/姜炙靠辅料润湿，温度是锅温不是液温",
+      "dry": "不受约束：无溶剂干热（炒黄/炒焦/炒炭/蜜炙）"
+    },
+    "data_source": {
+      "citation": "CRC Handbook of Chemistry and Physics, 97th ed., Physical Constants of Organic Compounds (Tb, dHvap)",
+      "note": "只登记生产条件会用到的 18 个溶剂；未登记的返回 None，不猜",
+      "validation": "1 atm 处 T(p_b)=Tb 严格成立；水 2 atm 算 120.8 °C，Antoine/实测 120.5 °C（误差 0.3 °C）"
+    },
+    "not_covered": [
+      "dV‡（压力直接改变速率/选择性）：ORD 数据集无压力列，做不了",
+      "超临界/近临界：C-C 方程在临界点附近失效",
+      "混合溶剂：不按摩尔分数修正活度"
+    ]
+  },
+  "concentration": {
+    "enabled": true,
+    "ref_M": 0.1,
+    "order": 1.0,
+    "rule": "k_obs 乘 (c / c_ref)^order，再进 e = 1 - exp(-(t/t_ref) * k)",
+    "basis": "二级动力学、伙伴过量时的伪一级近似：速率对底物一级、对试剂浓度线性。Atkins' Physical Chemistry, 11th ed., ch.17（不是拟合参数）",
+    "clamp": "c/c_ref 截断在 [1e-3, 1e3]",
+    "note": "默认 0.1 M 即生产默认浓度，故默认路径 e 不变；改浓度才动标注"
   }
 }

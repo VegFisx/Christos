@@ -143,6 +143,13 @@ class Product:
     #   因此会误判成「产物对、反应族错」。这一列把其它能给出它的规则留下来。
     also_rules: str = ""
 
+    # ★ 2026-11-11（第 145 轮）：条件包络拟合度 0~1（1 = 该模板在观测过的温时窗口内）。
+    #   与 extent 的区别：extent 是「这条反应在当前条件下跑到几成」（热力学/动力学外推，
+    #   参数未标定）；condition_fit 只是「这个转化在文献里是不是在这个温度/时长下被做过」，
+    #   是经验事实，不外推。缺观测时 = 1.0（未知不罚）。见 conditions/envelope.py。
+    condition_fit: float = 1.0
+    condition_fit_why: str = ""
+
     # ★ 2026-11-04（第 96 轮）：引擎内部发射序（同轮内第几个被枚举出来）。
     #   为什么记：实测 3,000 条测试反应，**按发射序排序**的 top-1 = 42.71%，
     #   而按 `scorer.score_product` 排序只有 32.50%（MRR 0.547 vs 0.442）。
@@ -287,6 +294,9 @@ class Engine:
         self._reactants_cache: Dict[str, Any] = {}
         # ★ 性能：按规则 id 缓存反应物模板，供便宜预筛用
         self._template_cache: Dict[str, Any] = {}
+        # 第 144 轮修 C1 的计数（共底物试了几个、有几个真出了产物）：
+        # 旧代码 `if got: break` 时 tried 恒为 1，现在应当 >1。
+        self.c1_stat: Dict[str, int] = {"tried": 0, "fired": 0}
 
     # -------------------------------------------------- rdchiral 编译缓存
 
@@ -444,6 +454,7 @@ class Engine:
             co_mol = get_mol(item["smiles"])
             if co_mol is None:
                 continue
+            self.c1_stat["tried"] = int(self.c1_stat.get("tried", 0)) + 1
             try:
                 res = rxn.RunReactants((sub_mol, co_mol))
             except Exception:
@@ -463,12 +474,18 @@ class Engine:
                     outcomes.append(".".join(frags))
             if not outcomes:
                 continue
-            out = self._collect(rule, sub, activation, round_no, outcomes,
+            got = self._collect(rule, sub, activation, round_no, outcomes,
                                 co_substrate=item, limit=limit,
                                 seen_local=seen_local)
-            if out:
-                break       # 池子里第一个能反应的分子就够了
-        return out
+            if got:
+                # 第 144 轮修 C1：旧代码这里是 `break` —— 共底物池里「第一个能反应的
+                # 分子就够了」，于是同一条双分子规则对同一底物只会给出**一种**共底物
+                # 的产物（例如酯化只试到池子第一个醇）。改为累加，上限按总量算。
+                out.extend(got)
+                self.c1_stat["fired"] = int(self.c1_stat.get("fired", 0)) + 1
+                if len(out) >= limit:
+                    break
+        return out[:limit]
 
     # -------------------------------------------------- 产物整理
 
@@ -607,6 +624,11 @@ class Engine:
                     activation=activation,
                     co_products=group,
                     seq=_seq,
+                    # 第 144 轮修 C3：旧引擎路径不填来源字段，台账里 partner 与模板
+                    # 都是空的，导致「辅料归因 / 模板反查」在这条路径上失效。
+                    partner_smiles=(str(co_substrate.get("smiles") or "")
+                                    if co_substrate else ""),
+                    template_smarts=str(rule.get("smarts") or ""),
                 ))
         if n_unbalanced:
             self.balance_dropped = getattr(self, "balance_dropped", 0) + n_unbalanced
@@ -623,8 +645,8 @@ class Engine:
 
         ★ 第 84 轮（2026-11-04）新增 `extent_gate` ★
         activation 回答「这条反应会不会发生」，extent 回答「跑到什么程度」。
-        打开后：extent < kinetics.json 的 `gates.extent_min`（默认 0.10）的规则
-        整条跳过；其余规则跑出来的产物带 `extent` / `extent_band`。
+        打开后：extent < kinetics.json 的 `gates.gate_min`（第 144 轮起；旧键 `extent_min`
+        已按 §十二 改为 0.0）的规则整条跳过；其余规则跑出来的产物带 `extent` / `extent_band`。
         默认 False = 旧行为逐位不变（extent 一律 1.0、不门控）。
         """
         exclude_smiles = exclude_smiles or set()
@@ -634,14 +656,17 @@ class Engine:
 
         # 每条规则的 extent 只算一次（按规则，不按底物）
         extent_of: Dict[str, Tuple[float, str]] = {}
-        extent_min = 0.10
+        extent_min = 0.0
         if extent_gate and not _extent.gating_allowed():
             print("   [note] extent 参数未经文献标定（kinetics.json: validation.gate_enabled=false），"
                   "本次只写标注、不按 extent 过滤产物")
             extent_gate = False
         if extent_gate:
             params = _extent.load_params()
-            extent_min = float((params.get("gates") or {}).get("extent_min", 0.10))
+            _gates = params.get("gates") or {}
+            # 第 144 轮修 C9：默认值与 kinetics.json 保持一致（gate_min，旧 extent_min 已是 0.0），
+            # 旧代码在这里硬编码 0.10，与数据文件相反。
+            extent_min = float(_gates.get("gate_min", _gates.get("extent_min", 0.0)))
             for rule, _act, _reasons in active:
                 try:
                     resolved, _ = resolve_conditions(rule, self.profiles)
@@ -657,6 +682,9 @@ class Engine:
 
         results: List[Product] = []
         seen: set = set()
+        # 第 144 轮修 C2：结构去重会把「后到的规则」丢掉，但化学上它是可达的。
+        # 旧引擎只丢不记，于是按反应族对照时会误判「产物对、规则族错」。
+        by_smiles: Dict[str, Product] = {}
 
         for sub in sorted(compounds, key=lambda c: c.smiles):
             # ★ 必须排序 ★
@@ -675,6 +703,14 @@ class Engine:
                 for p in self.apply_rule(rule, sub, act, round_no=round_no,
                                          cond=cond):
                     if p.smiles in exclude_smiles or p.smiles in seen:
+                        # 第 144 轮修 C2：去重时补记「这条结构也由哪条规则产出」
+                        _prev = by_smiles.get(p.smiles)
+                        if (_prev is not None and p.rule_id
+                                and p.rule_id != _prev.rule_id):
+                            _alt = [x for x in (_prev.also_rules or "").split(",") if x]
+                            if p.rule_id not in _alt:
+                                _alt.append(p.rule_id)
+                                _prev.also_rules = ",".join(_alt)
                         continue
                     if p.smiles == sub.smiles:
                         continue          # 自身不算产物
@@ -682,6 +718,7 @@ class Engine:
                         p.extent = round(per[0], 4)
                         p.extent_band = _extent.band_of(per[0])
                     seen.add(p.smiles)
+                    by_smiles[p.smiles] = p
                     results.append(p)
         return results
 

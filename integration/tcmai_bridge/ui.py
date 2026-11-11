@@ -147,6 +147,26 @@ def _start_run(form: dict) -> dict:
     _adj = str(form.get("paozhi_adjuvant_kind", "") or "").strip().lower()
     if _adj in ("none", "honey", "wine", "vinegar", "salt", "ginger"):
         argv += ["--paozhi-adjuvant-kind", _adj]
+    # ★ 第142轮（压力 P1）：压力只记录，不判活。界面填了才传，留空走引擎默认 1.0 atm。
+    _p = str(form.get("pressure_atm", "") or "").strip()
+    if _p:
+        try:
+            _pf = float(_p)
+        except ValueError:
+            return {"error": "体系压力要填数字（atm）"}
+        if not (0.001 <= _pf <= 350):
+            return {"error": "体系压力要在 0.001–350 atm 之间"}
+        argv += ["--pressure-atm", ("%g" % _pf)]
+    # ★ 第143轮（浓度）：进 extent 的浓度因子；留空 = 0.1 M（因子 1，旧结果不变）。
+    _c = str(form.get("concentration", "") or "").strip()
+    if _c:
+        try:
+            _cf = float(_c)
+        except ValueError:
+            return {"error": "浓度要填数字（M）"}
+        if not (0.001 <= _cf <= 100):
+            return {"error": "浓度要在 0.001–100 M 之间"}
+        argv += ["--concentration", ("%g" % _cf)]
     # 下拉标签保持引擎需要的粗类别；另把用户看到的实际物质名写入留证。
     for _key, _flag in (("solvent_detail", "--solvent-detail"),
                         ("catalyst_detail", "--catalyst-detail"),
@@ -168,6 +188,9 @@ def _start_run(form: dict) -> dict:
         argv.append("--chp-priority")
     if str(form.get("condition_extent")) in ("1", "true", "on"):
         argv.append("--condition-extent")
+    # ★ 第147轮：候选重排序（只改顺序，不改候选集合）。默认关，界面勾了才传。
+    if str(form.get("rerank")) in ("1", "true", "on"):
+        argv.append("--rerank")
     _inc = str(form.get("include") or "").strip()
     if _inc:
         # 强制纳入指定成分（第 119 轮接 UI）：默认取样是「marker 优先 → 分子量降序」，

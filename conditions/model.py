@@ -168,7 +168,17 @@ class Conditions:
     #   tools/extract_aux_reagent_coverage.py 的覆盖率统计）。
     reagents: Tuple[str, ...] = ()    # 本批处理里加入的辅助试剂（SMILES 或名字）
     atmosphere: str = "air"           # 气氛：决定氧化/还原反应能不能发生
+    # ★ 第142轮（2026-11-11，压力 P1）：压力只**记录与标注**，不参与判活、不参与速率。
+    #   理由见 reports/第一百四十二轮-压力表示层-20261111.md：
+    #   现有动力学只在 1 atm 常压数据上标定（kinetics.json），没有任何 ΔV‡ 或压力序列数据，
+    #   拿压力算速率属于编参数（AGENTS §12）。所以这里只保证「条件里有压力、台账里有压力、
+    #   记录里有压力」，把用户的意图如实传下去，不假装它影响化学。
     pressure_atm: float = 1.0
+    # ★ 第143轮（2026-11-11，压力 P2）：条件模板名，只用于判断「浴类型」——
+    #   泡在液体里（溶液浴/蒸汽）才受沸点上限约束；炒黄炒焦是锅温、酒炙盐炙姜炙
+    #   是辅料润湿，都不受约束。空串 = 不知道模板（退回按溶剂判断）。
+    #   这个字段不参与任何化学计算，只影响 `conditions/pressure.py::bath_of`。
+    template: str = ""
     concentration_M: float = 0.1
 
     # ------------------------------------------------------------ 校验
@@ -191,6 +201,11 @@ class Conditions:
             p.append(f"时间必须为正，收到 {self.time_min}")
         if self.pressure_atm <= 0:
             p.append(f"压力必须为正，收到 {self.pressure_atm}")
+        elif not (0.001 <= self.pressure_atm <= 350):
+            # 0.001 atm ≈ 0.76 mmHg（高真空）；350 atm 覆盖常见高压釜上限之外的上沿。
+            # 只做「数值是否离谱」的拦截，不做化学判据 —— 压力在 P1 阶段不参与判活。
+            p.append(f"压力 {self.pressure_atm} atm 超出可记录范围 [0.001, 350]")
+
         if self.concentration_M <= 0:
             p.append(f"浓度必须为正，收到 {self.concentration_M}")
         return p

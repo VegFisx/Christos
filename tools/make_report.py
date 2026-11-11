@@ -77,16 +77,33 @@ def load_meta(csv_path: Path):
     return None
 
 
-def _classify_gate(why) -> str:
-    """条件依据 -> 四类。口径与引擎 core/query_base.classify_activation 完全一致
-    （本脚本是纯展示层、只依赖标准库，所以在这里复刻同一套字符串规则）。"""
+def _num(v):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _classify_gate(why, act=None) -> str:
+    """条件依据 -> 四类。口径与引擎 core/query_base.classify_activation 完全一致。
+
+    ★ 第 141 轮（审查 A2）：与引擎同步改成**先看数值再看文字**。旧版用子串判断
+    （`"降权" in w`），把「无降权」「不降权」这类否定句全判成降权。
+    （本脚本是纯展示层、只依赖标准库，所以在这里复刻同一套规则，但规则本身已经
+    和引擎一致：数值优先、文字兜底且否定句不算。）
+    """
     w = str(why or "").strip()
+    a = _num(act)
+    if a is not None:
+        if a <= 0.0 or a < 0.999:
+            return "降权"
     if not w:
         return "依据未记录"
     if "无 ORD 条件数据" in w or "无数据" in w or "放行" in w or "按中性处理" in w:
         return "无数据放行"
-    if ("降权" in w) or ("不在" in w) or ("超出" in w):
-        return "降权"
+    for mark in ("降权", "折减", "不在窗口", "超出窗口", "判不产出"):
+        if mark in w and ("无" + mark) not in w and ("不" + mark) not in w:
+            return "降权"
     return "窗口命中"
 
 
@@ -221,7 +238,7 @@ def build_report(csv_path, out_path=None, lang="zh"):
 
     # ---- 聚合：产物表 ----
     # 逐行条件依据类别（"只看有条件证据"的展示层开关用；不改数据、不排序）
-    row_gate = [_classify_gate(r.get("activation_why")) for r in rows]
+    row_gate = [_classify_gate(r.get("activation_why"), r.get("activation")) for r in rows]
     HAS_EV = ("窗口命中", "降权")
     prod = OrderedDict()
     for r, gt in zip(rows, row_gate):
@@ -299,7 +316,9 @@ def build_report(csv_path, out_path=None, lang="zh"):
                 ("atmosphere", "气氛", "atmosphere"),
                 ("temperature", "温度", "temperature"),
                 ("time_min", "时长", "time"),
-                ("pH", "pH", "pH")):
+                ("pH", "pH", "pH"),
+                # ★ 第142轮（压力 P1）：只记录，不参与判活/速率
+                ("pressure_atm", "压力", "pressure")):
             item = cond_details.get(key) or {}
             if "value" in item:
                 value = item.get("value")

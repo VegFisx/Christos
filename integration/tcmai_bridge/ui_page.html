@@ -144,11 +144,12 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
     <div class='navLabel'>工作台</div>
     <button class='navBtn active' data-view='predict'><span class='ico'>◎</span><span class='txt'>单味 / 物种</span></button>
     <button class='navBtn' data-view='formula'><span class='ico'>▤</span><span class='txt'>方剂（复方）</span></button>
+    <button class='navBtn' data-view='paozhi'><span class='ico'>✷</span><span class='txt'>炮制</span></button>
     <div class='navLabel'>记录</div>
     <button class='navBtn' data-view='history'><span class='ico'>◷</span><span class='txt'>历史记录</span></button>
     <button class='navBtn' data-view='settings'><span class='ico'>⚙</span><span class='txt'>设置</span></button>
   </nav>
-  <div class='sideFoot'>只读本机 · 不删产物<br>Christos（炼膏师）v0.9.0 beta</div>
+  <div class='sideFoot'>只读本机 · 不删产物<br>Christos（炼膏师）v1.0.0</div>
 </aside>
 <main class='main'>
 <header class='topbar'>
@@ -188,7 +189,7 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
   <div class='card'>
     <div class='cardHead'><h2>条件与轮数</h2><span class='hint'>轮数 = 反应迭代次数（上一轮产物继续当下一轮底物），不是反复煎煮</span></div>
     <div class='grid3'>
-      <label class='field' title='预设为工程代表值，不是药典标准：温度取自沸点或体温，时长与 pH 为经验取值'>基准预设（示例值）<select id='cond'><option value='煎煮'>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='炮制·炒黄'>炮制·炒黄</option><option value='炮制·炒焦'>炮制·炒焦</option><option value='炮制·炒炭'>炮制·炒炭</option><option value='炮制·蜜炙'>炮制·蜜炙</option><option value='炮制·蒸制'>炮制·蒸制</option><option value='炮制·酒炙'>炮制·酒炙</option><option value='炮制·醋炙'>炮制·醋炙</option><option value='炮制·盐炙'>炮制·盐炙</option><option value='炮制·姜炙'>炮制·姜炙</option><option value='炮制·自定义'>炮制·自定义（自己填）</option><option value='自定义'>自定义…</option></select></label>
+      <label class='field' title='预设为工程代表值，不是药典标准：温度取自沸点或体温，时长与 pH 为经验取值'>基准预设（示例值）<select id='cond'><option value='煎煮'>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='自定义' selected>自定义（自己填温度/时长）</option></select></label>
       <label class='field' title='上一轮产物继续作为下一轮底物；与煎煮次数无关'>反应轮数<select id='rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
       <label class='field' title='底物两两配对的上限；4000 约等于 90 个成分的全部配对，超出部分会被截断'>对子预算<input id='max_pairs' value='4000'></label>
     </div>
@@ -199,10 +200,10 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <label class='field'>pH<input id='c_ph' placeholder='如 6.5'></label>
       <label class='field'>催化剂<select id='c_catalyst'><option value='none' selected>无</option><optgroup label='酸'><option value='acid'>盐酸（HCl）</option><option value='acid'>硫酸（H₂SO₄）</option><option value='acid'>乙酸（AcOH）</option></optgroup><optgroup label='碱'><option value='base'>氢氧化钠（NaOH）</option><option value='base'>氢氧化钾（KOH）</option><option value='base'>三乙胺（Et₃N）</option><option value='base'>吡啶（Pyridine）</option><option value='base'>碳酸钾（K₂CO₃）</option><option value='base'>碳酸铯（Cs₂CO₃）</option></optgroup><optgroup label='金属催化剂'><option value='metal'>钯碳（Pd/C）</option><option value='metal'>雷尼镍（Raney Ni）</option><option value='metal'>氯化铁（FeCl₃）</option></optgroup><optgroup label='酶'><option value='enzyme'>脂肪酶（Lipase）</option><option value='enzyme'>纤维素酶（Cellulase）</option><option value='enzyme'>β-葡萄糖苷酶（β-Glucosidase）</option></optgroup><optgroup label='光'><option value='light'>紫外光（UV）</option><option value='light'>可见光（Vis）</option></optgroup><option disabled>（敬请期待）</option></select></label>
       <label class='field'>气氛<select id='c_atmosphere'><option value='none' selected>无</option><option value='air'>空气</option><option value='O2'>氧气</option><option value='N2'>氮气</option><option value='H2'>氢气</option><option value='He'>氦气（He）</option><option value='Ne'>氖气（Ne）</option><option value='Ar'>氩气（Ar）</option><option value='vacuum'>真空</option><option value='CO2'>二氧化碳</option><option disabled>（敬请期待）</option></select></label>
-      <label class='field' title='炮制辅料：蜂蜜/黄酒/米醋/盐水/姜汁的共底物，结构取自 tcm.db'>辅料<select id='c_adjuvant'><option value='auto' selected>自动（按工艺）</option><option value='none'>不加辅料</option><option value='honey'>蜂蜜（葡萄糖/果糖）</option><option value='wine'>黄酒（乙醇）</option><option value='vinegar'>米醋（乙酸）</option><option value='salt'>食盐（盐水）</option><option value='ginger'>生姜汁</option></select></label>
+      <label class='field'>压力 atm<input id='c_pressure' type='number' step='0.01' min='0.001' max='350' placeholder='1（常压）' title='体系压力：溶液浴的液温被该压力下的沸点截断（T_eff=min(T,T_sat)）；干热与辅料润湿不受约束；选真空且留空时按 0.05 atm 记'></label><label class='field'>浓度 M<input id='c_conc' type='number' step='0.01' min='0.001' max='100' placeholder='0.1（默认）' title='底物浓度：进 extent 的浓度因子 (c/0.1)^1（二级动力学、伙伴过量近似）；默认 0.1 M 时因子为 1'></label>
     </div>
     <div class='row' style='font-size:12px;color:var(--muted)'>
-      <span class='hint'>直接填参数；选预设会自动填入示例值，可逐项覆盖。预设是工程代表值，不是药典标准：煎煮 100°C 与醇提 78°C 取自沸点，酶催化 37°C 取自体温，时长与 pH 为经验取值。其中“还原”一档需要氢气与金属催化剂，煎煮条件下不会发生，仅供对照。“炮制·炒黄/炒焦/炒炭/蜜炙/酒炙/醋炙/盐炙/姜炙/蒸制”九档：条件取自文献（炒黄 160–170°C、炒焦 190–200°C、炒炭 220–300°C/35–40 min、蜜炙 120°C/13.5 min、酒炙 135–145°C/5 min、醋炙 84°C/35 min、盐炙 2% 食盐 150°C/10 min、姜炙 10% 生姜 150°C/40 min、蒸制 95–100°C/2–3 h）；只跑证据表 rules/paozhi_evidence.json 里的规则（糖苷/酯/内酯/环氧水解、脱水、美拉德、乙酸酯化、烯丙醇氧化、N-脱甲基、脱羧、醚断裂；SmartReact 基础模板默认关闭）；碳化与蒸汽未完全建模；蜜炙/酒炙/醋炙的辅料以葡萄糖/果糖、乙醇、乙酸作共底物加入（P2 原型），食盐离子与姜汁多成分未逐个建模。</span>
+      <span class='hint'>直接填参数；选预设会自动填入示例值，可逐项覆盖。预设是工程代表值，不是药典标准：煎煮 100°C 与醇提 78°C 取自沸点，酶催化 37°C 取自体温，时长与 pH 为经验取值。「还原」一档需要氢气与金属催化剂，煎煮条件下不会发生，仅供对照。九种炮制工艺与它们的条件值在左侧「炮制」页。</span>
     </div>
     <div class='row' style='font-size:12px;color:var(--muted)'>
       <span class='hint'>每味成分排序规则：按「该成分出现在几个药材里」升序——只属于本药材的排最前，常见的通用成分（如 Beta-sitosterol，出现在 534 个药材）垫底。实测（甘草 342 个去重后成分）：24 个约 19 秒，64 个约 2.8 分钟，128 个约 7.1 分钟；全部 342 个（58,311 对）切片执行约 33 分钟，得到 35.9 万条产物（切片内去重、跨片未去重，属上界）。</span>
@@ -227,7 +228,8 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       </div>
     </details>
   </div>
-  <div class='card'><div class='row' style='margin:0'><button id='go' class='primary'>开始预测</button><span class='hint'>只生成 + 标注 + 留证；每次运行都写运行记录。</span></div></div>
+  <div class='card'><div class='row' style='margin-top:6px'><label title='重排序：用学到的模型把候选重排一遍，<b>只改顺序、不删任何一个候选</b>。默认关。'><input type='checkbox' id='c_rerank'> 候选重排序（只改顺序）</label></div>
+  <div class='row' style='margin:0'><button id='go' class='primary'>开始预测</button><span class='hint'>只生成 + 标注 + 留证；每次运行都写运行记录。</span></div></div>
 </section>
 
 <section id='view-formula' class='view' hidden>
@@ -262,7 +264,7 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
   <div id='fxRunCard' class='card' hidden>
     <div class='cardHead'><h2>运行设置</h2><span class='hint'>与命令行参数一致</span></div>
     <div class='grid3'>
-      <label class='field' title='预设为工程代表值，不是药典标准'>基准预设（示例值）<select id='f_cond'><option value='煎煮'>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='炮制·炒黄'>炮制·炒黄</option><option value='炮制·炒焦'>炮制·炒焦</option><option value='炮制·炒炭'>炮制·炒炭</option><option value='炮制·蜜炙'>炮制·蜜炙</option><option value='炮制·蒸制'>炮制·蒸制</option><option value='炮制·酒炙'>炮制·酒炙</option><option value='炮制·醋炙'>炮制·醋炙</option><option value='炮制·盐炙'>炮制·盐炙</option><option value='炮制·姜炙'>炮制·姜炙</option><option value='炮制·自定义'>炮制·自定义（自己填）</option><option value='自定义'>自定义…</option></select></label>
+      <label class='field' title='预设为工程代表值，不是药典标准'>基准预设（示例值）<select id='f_cond'><option value='煎煮'>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='自定义' selected>自定义（自己填温度/时长）</option></select></label>
       <label class='field'>每味成分<select id='f_limit'><option>24</option><option>64</option><option>128</option><option value='all' selected>全部（较慢）</option></select></label>
       <label class='field' title='上一轮产物继续作为下一轮底物；与煎煮次数无关'>反应轮数<select id='f_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
       <label class='field'>对子预算<input id='f_max_pairs' value='4000'></label>
@@ -274,10 +276,10 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <label class='field'>pH<input id='fc_ph' placeholder='如 6.5'></label>
       <label class='field'>催化剂<select id='fc_catalyst'><option value='none' selected>无</option><optgroup label='酸'><option value='acid'>盐酸（HCl）</option><option value='acid'>硫酸（H₂SO₄）</option><option value='acid'>乙酸（AcOH）</option></optgroup><optgroup label='碱'><option value='base'>氢氧化钠（NaOH）</option><option value='base'>氢氧化钾（KOH）</option><option value='base'>三乙胺（Et₃N）</option><option value='base'>吡啶（Pyridine）</option><option value='base'>碳酸钾（K₂CO₃）</option><option value='base'>碳酸铯（Cs₂CO₃）</option></optgroup><optgroup label='金属催化剂'><option value='metal'>钯碳（Pd/C）</option><option value='metal'>雷尼镍（Raney Ni）</option><option value='metal'>氯化铁（FeCl₃）</option></optgroup><optgroup label='酶'><option value='enzyme'>脂肪酶（Lipase）</option><option value='enzyme'>纤维素酶（Cellulase）</option><option value='enzyme'>β-葡萄糖苷酶（β-Glucosidase）</option></optgroup><optgroup label='光'><option value='light'>紫外光（UV）</option><option value='light'>可见光（Vis）</option></optgroup><option disabled>（敬请期待）</option></select></label>
       <label class='field'>气氛<select id='fc_atmosphere'><option value='none' selected>无</option><option value='air'>空气</option><option value='O2'>氧气</option><option value='N2'>氮气</option><option value='H2'>氢气</option><option value='He'>氦气（He）</option><option value='Ne'>氖气（Ne）</option><option value='Ar'>氩气（Ar）</option><option value='vacuum'>真空</option><option value='CO2'>二氧化碳</option><option disabled>（敬请期待）</option></select></label>
-      <label class='field' title='炮制辅料：蜂蜜/黄酒/米醋/盐水/姜汁的共底物，结构取自 tcm.db'>辅料<select id='fc_adjuvant'><option value='auto' selected>自动（按工艺）</option><option value='none'>不加辅料</option><option value='honey'>蜂蜜（葡萄糖/果糖）</option><option value='wine'>黄酒（乙醇）</option><option value='vinegar'>米醋（乙酸）</option><option value='salt'>食盐（盐水）</option><option value='ginger'>生姜汁</option></select></label>
+      <label class='field'>压力 atm<input id='fc_pressure' type='number' step='0.01' min='0.001' max='350' placeholder='1（常压）' title='体系压力：溶液浴的液温被该压力下的沸点截断（T_eff=min(T,T_sat)）；干热与辅料润湿不受约束；选真空且留空时按 0.05 atm 记'></label><label class='field'>浓度 M<input id='fc_conc' type='number' step='0.01' min='0.001' max='100' placeholder='0.1（默认）' title='底物浓度：进 extent 的浓度因子 (c/0.1)^1（二级动力学、伙伴过量近似）；默认 0.1 M 时因子为 1'></label>
     </div>
     <div class='row' style='font-size:12px;color:var(--muted)'>
-      <span class='hint'>选预设会自动填入示例值，可逐项覆盖；留空的项用预设值。预设是工程代表值，不是药典标准。</span>
+      <span class='hint'>选预设会自动填入示例值，可逐项覆盖；留空的项用预设值。预设是工程代表值，不是药典标准。炮制请到左侧「炮制」页。</span>
     </div>
     <div class='grid3' style='margin-top:6px'><label class='field' style='display:none'>辅助试剂<input id='f_reagents' placeholder='可留空'></label>
       <label class='field'>输出目录<input id='f_outdir' placeholder='默认可留空（out\\）'></label>
@@ -293,7 +295,47 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <label title='按条件给出反应进程的趋势提示：只写进报告与台账的标注列，不筛选产物、不删任何结果。'><input type='checkbox' id='f_condition_extent'> 反应进程标注</label>
     </div>
     <div class='row'><span class='hint'>方剂组合默认每味 2 个成分（先快速筛）；方越多、每味成分越多，枚举越慢。确认方向后再调大。</span></div>
-    <div class='row'><button id='fxRun' class='primary'>运行本次方剂</button><span class='hint'>已填且查到方剂的行都会参与；空行会忽略。</span></div>
+    <div class='row' style='margin-top:6px'><label title='重排序：用学到的模型把候选重排一遍，只改顺序、不删任何一个候选。默认关。'><input type='checkbox' id='fc_rerank'> 候选重排序（只改顺序）</label></div>
+  <div class='row'><button id='fxRun' class='primary'>运行本次方剂</button><span class='hint'>已填且查到方剂的行都会参与；空行会忽略。</span></div>
+  </div>
+</section>
+
+<section id='view-paozhi' class='view' hidden>
+  <div class='card'>
+    <div class='cardHead'><h2>药材</h2><span class='hint'>一味一行，也可用逗号分隔</span></div>
+    <div class='row'><label class='field' style='flex:1 1 420px'>炮制对象
+      <textarea id='pz_herb' rows='3' style='width:100%;font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--input);color:var(--text)' placeholder='例：甘草、槟榔'></textarea></label></div>
+    <div class='grid3'>
+      <label class='field' title='按「只出现在本药材的成分优先」升序取样'>每味取几个成分<select id='pz_limit'><option>24</option><option>64</option><option>128</option><option value='all' selected>全部（较慢）</option></select></label>
+      <label class='field'>成分排序<select id='pz_order'><option value='marker' selected>marker（默认）</option><option value='ob'>OB 降序（TCMSP）</option></select></label>
+      <label class='field' title='上一轮产物继续作为下一轮底物；与炮制次数无关'>反应轮数<select id='pz_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+    </div>
+    <div class='row'><label class='field' style='flex:1 1 420px'>强制纳入成分（英文名，逗号分隔）
+      <input id='pz_include' placeholder='留空 = 不强制；例：Ginsenoside rb1, Arecoline'></label></div>
+    <div class='row'><button type='button' id='pzFind' class='ghost'>查找相似</button><span class='hint'>用「炮制对象」最后填的那个名字去查；勾选后填回来。</span></div>
+    <div id='pzFindBox' class='findBox' style='display:none'></div>
+  </div>
+  <div class='card'>
+    <div class='cardHead'><h2>炮制工艺</h2><span class='hint'>默认自定义：温度与时长由你填</span></div>
+    <div class='grid3'>
+      <label class='field'>炮制方法<select id='pz_method'><option value='自定义' selected>自定义（自己填温度/时长）</option><option value='炒黄'>炒黄</option><option value='炒焦'>炒焦</option><option value='炒炭'>炒炭</option><option value='蜜炙'>蜜炙</option><option value='酒炙'>酒炙</option><option value='醋炙'>醋炙</option><option value='盐炙'>盐炙</option><option value='姜炙'>姜炙</option><option value='蒸制'>蒸制</option></select></label>
+      <label class='field' title='辅料 = 蜂蜜/黄酒/米醋/盐水/姜汁的共底物，结构取自 tcm.db'>辅料<select id='pz_adjuvant'><option value='auto' selected>自动（按工艺）</option><option value='none'>不加辅料</option><option value='honey'>蜂蜜（葡萄糖/果糖）</option><option value='wine'>黄酒（乙醇）</option><option value='vinegar'>米醋（乙酸）</option><option value='salt'>食盐（盐水）</option><option value='ginger'>生姜汁</option></select></label>
+      <label class='field'>气氛<select id='pz_atmosphere'><option value='air' selected>空气</option><option value='none'>无</option><option value='N2'>氮气</option><option value='CO2'>二氧化碳</option><option value='vacuum'>真空</option></select></label>
+      <label class='field'>压力 atm<input id='pz_pressure' type='number' step='0.01' min='0.001' max='350' placeholder='1（常压）' title='体系压力：溶液浴的液温被该压力下的沸点截断（T_eff=min(T,T_sat)）；干热与辅料润湿不受约束；选真空且留空时按 0.05 atm 记'></label><label class='field'>浓度 M<input id='pz_conc' type='number' step='0.01' min='0.001' max='100' placeholder='0.1（默认）' title='底物浓度：进 extent 的浓度因子 (c/0.1)^1（二级动力学、伙伴过量近似）；默认 0.1 M 时因子为 1'></label>
+      <label class='field'>温度 °C<input id='pz_temperature' placeholder='如 160'></label>
+      <label class='field'>时长 min<input id='pz_time_min' placeholder='如 15'></label>
+      <label class='field'>溶剂<select id='pz_solvent'><option value='none' selected>无（干炒/干蒸）</option><option value='water'>水（H₂O）</option><option value='ethanol'>乙醇（EtOH）</option><option value='vinegar'>米醋（乙酸）</option><option value='wine'>黄酒（乙醇/水）</option></select></label>
+      <label class='field'>pH<input id='pz_ph' placeholder='可留空'></label>
+      <label class='field' title='底物两两配对的上限；控制耗时，不影响精度'>对子预算<input id='pz_pairs' value='4000'></label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <label title='按条件给出「反应进程」的趋势提示：只写进报告与台账的标注列，不筛选产物、不删任何结果。'><input type='checkbox' id='pz_extent' checked> 反应进程标注（只标注，不筛选）</label>
+    </div>
+    <div class='row' style='font-size:12px;color:var(--muted)'>
+      <span class='hint'>九档工艺的条件值取自文献：炒黄 160–170 °C、炒焦 190–200 °C、炒炭 220–300 °C/35–40 min、蜜炙 120 °C/13.5 min、酒炙 135–145 °C/5 min、醋炙 84 °C/35 min、盐炙 2% 食盐 150 °C/10 min、姜炙 10% 生姜 150 °C/40 min、蒸制 95–100 °C/2–3 h。只跑证据表 rules/paozhi_evidence.json 里的规则；碳化与蒸汽未完全建模。</span>
+    </div>
+    <div class='row' style='margin-top:6px'><label title='重排序：用学到的模型把候选重排一遍，只改顺序、不删任何一个候选。默认关。'><input type='checkbox' id='pz_rerank'> 候选重排序（只改顺序）</label></div>
+  <div class='row'><button id='pzGo' class='primary'>开始炮制预测</button><span class='hint'>数字都是工程代表值；改自定义档可逐项覆盖。</span></div>
   </div>
 </section>
 
@@ -311,7 +353,7 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
     <div class='grid3'>
       <label class='field'>语言<select id='set_lang'><option value='zh' selected>中文</option><option value='en'>English</option></select></label>
       <label class='field'>配色<select id='set_theme'><option value='default' selected>默认（淡蓝-淡白-淡灰）</option><option value='night'>夜间模式</option></select></label>
-      <label class='field'>默认条件<select id='set_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option><option value='炮制·炒黄'>炮制·炒黄</option><option value='炮制·炒焦'>炮制·炒焦</option><option value='炮制·炒炭'>炮制·炒炭</option><option value='炮制·蜜炙'>炮制·蜜炙</option><option value='炮制·蒸制'>炮制·蒸制</option><option value='炮制·酒炙'>炮制·酒炙</option><option value='炮制·醋炙'>炮制·醋炙</option><option value='炮制·盐炙'>炮制·盐炙</option><option value='炮制·姜炙'>炮制·姜炙</option><option value='炮制·自定义'>炮制·自定义（自己填）</option></select></label>
+      <label class='field'>默认条件<select id='set_cond'><option value='煎煮' selected>煎煮</option><option value='室温浸泡'>室温浸泡</option><option value='水提'>水提</option><option value='醇提'>醇提</option><option value='酸水解'>酸水解</option><option value='碱水解'>碱水解</option><option value='酶催化'>酶催化</option><option value='还原'>还原</option><option value='氧化'>氧化</option><option value='无氧煎煮'>无氧煎煮</option></select></label>
       <label class='field'>默认反应轮数<select id='set_rounds'><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
       <label class='field'>每味成分<select id='set_limit'><option>24</option><option>64</option><option>128</option><option value='all' selected>全部</option></select></label>
       <label class='field'>对子预算<input id='set_max_pairs' value='4000'></label>
@@ -345,10 +387,10 @@ details.adv summary{cursor:pointer;color:var(--muted);font-size:12px;margin:8px 
       <p><b>再看两列，判断「有没有依据」</b></p>
       <ul>
         <li><code>activation_why</code> —— 条件依据。写「无 ORD 条件数据，放行」表示条件层没查到匹配记录，不是「已证实能发生」</li>
-        <li><code>template_support</code> —— 这条模板在来源数据库里出现过的次数。0 表示没有先例</li>
+        <li><code>template_support</code> —— 这条模板在来源数据库里出现过的次数。<b>0 表示「未统计」</b>（单底物与自抽模板路径不填这一列），不是「没有先例」</li>
       </ul>
       <p><b>方向标记</b>：<code>direction</code> 为 <code>suspect</code> 表示该产物与当前介质的方向相反（例如水相里出现缩合），只是提醒，候选仍保留。</p>
-      <p><b>可以忽略的列</b>：<code>product_inchikey</code>（机器标识）、<code>score</code>（系统不打分，恒为 0）、<code>co_products</code>（配平用的伴生产物）。</p>
+      <p><b>可以忽略的列</b>：<code>product_inchikey</code>（机器标识）、<code>co_products</code>（配平用的伴生产物）。<code>score</code> 是一致性打分（0–1），<b>默认不参与排序</b>（排序按发射序）；它缺 partner 时偏高，只看趋势不看绝对值，<code>--no-score</code> 时为空串。</p>
       <p style='color:var(--muted)'>台账是枚举结果，不是结论。查不到不等于不存在，查到也不等于已被实验证实。</p>
     </div>
   </details>
@@ -467,7 +509,35 @@ const EN={
 "目标分子 → 逆合成路线":"Target molecule → Retrosynthetic routes",
 "本机 out\\runs.jsonl":"Local out\\runs.jsonl","新任务的默认值":"Defaults for new tasks",
 "同名按版本；切版本 = 换组成":"Same name: versions are separate; switching version changes composition",
-"Christos（炼膏师）· 化学反应预测与药典判据溯源":"Christos · Chemical Reaction Prediction & Pharmacopoeia Provenance"
+"Christos（炼膏师）· 化学反应预测与药典判据溯源":"Christos · Chemical Reaction Prediction & Pharmacopoeia Provenance",
+"炮制":"Processing","一味一行，也可用逗号分隔":"One herb per line, or comma-separated","炮制对象":"Herbs to process",
+"反应轮数":"Reaction rounds","强制纳入成分（英文名，逗号分隔）":"Force-include compounds (English names, comma-separated)",
+"用「炮制对象」最后填的那个名字去查；勾选后填回来。":"Looks up the last name typed above; tick the matches and add them back.",
+"炮制工艺":"Processing method","默认自定义：温度与时长由你填":"Custom by default: you set temperature and time",
+"炮制方法":"Method","自定义（自己填温度/时长）":"Custom (you set temperature and time)",
+"炒黄":"Stir-fry to yellow","炒焦":"Stir-fry to brown","炒炭":"Stir-fry to charcoal",
+"蜜炙":"Honey-fried","酒炙":"Wine-fried","醋炙":"Vinegar-fried","盐炙":"Salt-fried","姜炙":"Ginger-fried","蒸制":"Steamed",
+"辅料":"Adjuvant","自动（按工艺）":"Automatic (by method)","不加辅料":"No adjuvant",
+"蜂蜜（葡萄糖/果糖）":"Honey (glucose/fructose)","黄酒（乙醇）":"Yellow rice wine (ethanol)",
+"米醋（乙酸）":"Rice vinegar (acetic acid)","食盐（盐水）":"Salt (brine)","生姜汁":"Ginger juice",
+"气氛":"Atmosphere","压力 atm":"Pressure atm","浓度 M":"Concentration M","0.1（默认）":"0.1 (default)","1（常压）":"1 (ambient)","空气":"Air","无":"None","氮气":"Nitrogen","二氧化碳":"Carbon dioxide","真空":"Vacuum",
+"温度 °C":"Temperature °C","时长 min":"Time min","溶剂":"Solvent",
+"无（干炒/干蒸）":"None (dry / steam)","水（H₂O）":"Water (H₂O)","乙醇（EtOH）":"Ethanol (EtOH)",
+"黄酒（乙醇/水）":"Yellow rice wine (ethanol/water)",
+"候选重排序（只改顺序）":"Re-rank candidates (order only)","反应进程标注（只标注，不筛选）":"Annotate reaction progress (annotation only, no filtering)",
+"九档工艺的条件值取自文献：炒黄 160–170 °C、炒焦 190–200 °C、炒炭 220–300 °C/35–40 min、蜜炙 120 °C/13.5 min、酒炙 135–145 °C/5 min、醋炙 84 °C/35 min、盐炙 2% 食盐 150 °C/10 min、姜炙 10% 生姜 150 °C/40 min、蒸制 95–100 °C/2–3 h。只跑证据表 rules/paozhi_evidence.json 里的规则；碳化与蒸汽未完全建模。":"Condition values for the nine methods come from the literature: stir-fry to yellow 160–170 °C, to brown 190–200 °C, to charcoal 220–300 °C for 35–40 min; honey-fried 120 °C/13.5 min; wine-fried 135–145 °C for 5 min; vinegar-fried 84 °C/35 min; salt-fried with 2% salt 150 °C/10 min; ginger-fried with 10% ginger 150 °C/40 min; steamed 95–100 °C for 2–3 h. Only rules listed in rules/paozhi_evidence.json are applied; charring and steam are not fully modelled.",
+"开始炮制预测":"Run processing prediction",
+"数字都是工程代表值；改自定义档可逐项覆盖。":"Numbers are engineering placeholders; the custom method lets you override each field.",
+"炮制 · 工艺条件":"Processing · Method and conditions","方法与工艺参数 → 炮制产物与来路":"Method and parameters → processed products and their routes",
+"例：甘草、槟榔":"e.g. Licorice, Areca","留空 = 不强制；例：Ginsenoside rb1, Arecoline":"Leave blank to force nothing; e.g. Ginsenoside rb1, Arecoline",
+"基准预设（示例值）":"Preset (example values)","催化剂":"Catalyst",
+"轮数 = 反应迭代次数（上一轮产物继续当下一轮底物），不是反复煎煮":"Rounds = reaction cycles (each round's products become the next round's substrates), not repeated decoction",
+"预设为工程代表值，不是药典标准：温度取自沸点或体温，时长与 pH 为经验取值":"Presets are engineering placeholders, not pharmacopoeial standards: temperature follows boiling point or body temperature, time and pH are empirical",
+"预设为工程代表值，不是药典标准":"Presets are engineering placeholders, not pharmacopoeial standards",
+"一味一行；份数按剂量折算（默认 1，重复输入同名等价）。输入时边打边出候选，「查找相似」用于多选。":"One herb per line; doses scale the quota (default 1; repeating a name is equivalent). Suggestions appear as you type; use Find similar for multiple picks.",
+"直接填参数；选预设会自动填入示例值，可逐项覆盖。预设是工程代表值，不是药典标准：煎煮 100°C 与醇提 78°C 取自沸点，酶催化 37°C 取自体温，时长与 pH 为经验取值。「还原」一档需要氢气与金属催化剂，煎煮条件下不会发生，仅供对照。九种炮制工艺与它们的条件值在左侧「炮制」页。":"Fill the parameters directly; choosing a preset fills example values that you can override. Presets are engineering placeholders, not pharmacopoeial standards: decoction 100 C and ethanol extraction 78 C follow boiling points, enzymatic 37 C follows body temperature, and time and pH are empirical. The reduction preset needs hydrogen with a metal catalyst and does not occur under decoction conditions; it is kept for comparison only. The nine processing methods and their condition values live on the Processing page.",
+"每味成分排序规则：按「该成分出现在几个药材里」升序——只属于本药材的排最前，常见的通用成分（如 Beta-sitosterol，出现在 534 个药材）垫底。实测（甘草 342 个去重后成分）：24 个约 19 秒，64 个约 2.8 分钟，128 个约 7.1 分钟；全部 342 个（58,311 对）切片执行约 33 分钟，得到 35.9 万条产物（切片内去重、跨片未去重，属上界）。":"Compound ordering runs ascending by how many herbs a compound appears in, so compounds unique to this herb come first and ubiquitous ones (e.g. beta-sitosterol, present in 534 herbs) come last. Measured on licorice (342 unique compounds): 24 compounds take about 19 s, 64 about 2.8 min, 128 about 7.1 min; all 342 (58,311 pairs) take about 33 min when sharded and yield about 359k product rows, deduplicated within a shard but not across shards, so that count is an upper bound.",
+"对子预算 = 底物两两配对的上限，控制的是耗时不是精度。N 个成分有 N×(N−1)/2 对；实测 4000 对约 4 分钟、5.4 万条产物，8000 对约 10 分钟、12 万条，两者是线性关系，没有收益递减的拐点。超出会按顺序截断，可在高级选项里改成公平截断。":"The pair budget caps how many substrate pairs are enumerated; it controls runtime, not accuracy. N compounds give N x (N-1) / 2 pairs; measured, 4,000 pairs take about 4 min and yield 54k products, 8,000 pairs take about 10 min and yield 120k, and the relation is linear with no point of diminishing returns. Pairs beyond the cap are truncated in order; advanced options offer fair truncation instead."
 };
 const EN_PATTERNS=[
 [/^查询「(.+)」…$/, 'Looking up “$1”…'],
@@ -676,7 +746,7 @@ function setView(v){
   document.querySelectorAll('.view').forEach(function(x){x.hidden=(x.id!=='view-'+v);});
   document.querySelectorAll('.navBtn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-view')===v);});
   q('results').hidden=true;q('logWrap').hidden=true;
-  const titles={predict:['单味 / 物种 · 预测产物','底物 → 产物'],formula:['方剂（复方）','同名按版本；切版本 = 换组成'],history:['历史记录','本机 out\\runs.jsonl'],settings:['设置','新任务的默认值']};
+  const titles={predict:['单味 / 物种 · 预测产物','底物 → 产物'],formula:['方剂（复方）','同名按版本；切版本 = 换组成'],paozhi:['炮制 · 工艺条件','方法与工艺参数 → 炮制产物与来路'],history:['历史记录','本机 out\\runs.jsonl'],settings:['设置','新任务的默认值']};
   const t=titles[v]||titles.predict;q('viewTitle').textContent=trText(t[0]);q('viewSub').textContent=trText(t[1]);
   if(v==='history') loadHistory();
   if(v==='settings') loadSettingsUI();
@@ -730,7 +800,7 @@ function attachAC(input,box,onPick,filter){
       }
     });
     box.innerHTML=h;box.hidden=false;active=-1;
-    translateDOM(box);
+    
     box.querySelectorAll('.acItem').forEach(function(el){
       el.onclick=function(){const c=flat[+el.getAttribute('data-i')];if(c){onPick(c);close();}};
     });
@@ -877,11 +947,11 @@ function closeRunWindow(){
 function submitBody(body){
   if(body&&typeof body.set==='function')body.set('lang',LANG);
   prepareRunWindow();
-  ['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=true;});
+  ['go','fxRun','pzGo'].forEach(function(id){const el=q(id);if(el)el.disabled=true;});
   q('results').hidden=true;q('logWrap').hidden=false;q('logWrap').open=true;q('log').textContent=trText('（已提交，等待输出…）');
   setStatus('running','运行中 0 秒');
   fetch('/run',{method:'POST',body:body}).then(function(r){return r.json();}).then(function(j){
-    if(j.error){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent=trText(j.error);setStatus('error','未启动');['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});return;}
+    if(j.error){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent=trText(j.error);setStatus('error','未启动');['go','fxRun','pzGo'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});return;}
     rid=j.id;t0=Date.now();
     const sb=q('stopBtn');if(sb){sb.disabled=false;sb.style.display='';}
     const link=q('runWinLink');
@@ -889,11 +959,11 @@ function submitBody(body){
     if(runWin&&!runWin.closed){runWin.location.href='/?run='+encodeURIComponent(j.id);runWin=null;}
     else{window.open('/?run='+encodeURIComponent(j.id),'_blank','width=1080,height=820');}
     poll();
-  }).catch(function(e){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent='提交失败：'+e;setStatus('error','提交失败');['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});});
+  }).catch(function(e){closeRunWindow();const sb=q('stopBtn');if(sb)sb.style.display='none';q('log').textContent='提交失败：'+e;setStatus('error','提交失败');['go','fxRun','pzGo'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});});
 }
 function submitRun(herb,smi){
   const _cx=function(id){const el=q(id);return el?el.value:'';};
-  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,solvent:_cx('c_solvent'),solvent_detail:selectedLabel('c_solvent'),temperature:_cx('c_temperature'),time_min:_cx('c_time_min'),ph:_cx('c_ph'),catalyst:_cx('c_catalyst'),catalyst_detail:selectedLabel('c_catalyst'),atmosphere:_cx('c_atmosphere'),atmosphere_detail:selectedLabel('c_atmosphere'),paozhi_adjuvant_kind:q('c_adjuvant').value,triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,condition_extent:q('condition_extent').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value,include:q('include').value});
+  const body=new URLSearchParams({herb:herb,smiles:smi,limit:q('limit').value,cond:q('cond').value,rounds:q('rounds').value,max_pairs:q('max_pairs').value,reagents:q('reagents').value,solvent:_cx('c_solvent'),solvent_detail:selectedLabel('c_solvent'),temperature:_cx('c_temperature'),time_min:_cx('c_time_min'),ph:_cx('c_ph'),catalyst:_cx('c_catalyst'),catalyst_detail:selectedLabel('c_catalyst'),atmosphere:_cx('c_atmosphere'),atmosphere_detail:selectedLabel('c_atmosphere'),pressure_atm:q('c_pressure').value,concentration:q('c_conc').value,paozhi_adjuvant_kind:'none',triples:q('triples').checked?1:0,fair_pairs:q('fair_pairs').checked?1:0,chp_priority:q('chp_priority').checked?1:0,condition_extent:q('condition_extent').checked?1:0,rerank:q('c_rerank').checked?1:0,outdir:q('outdir').value,dose_budget:q('dose_budget').checked?1:0,herb_order:q('herb_order').value,include:q('include').value});
   lastFormulas=[];submitBody(body);
 }
 function startRun(){
@@ -933,7 +1003,7 @@ function poll(){
     const sb=q('stopBtn');
     if(j.state==='running'){if(sb)sb.style.display='';setTimeout(poll,1500);return;}
     if(sb)sb.style.display='none';
-    ['go','fxRun'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});
+    ['go','fxRun','pzGo'].forEach(function(id){const el=q(id);if(el)el.disabled=false;});
     if(j.state==='cancelled'){
       setStatus('error',L('已终止','Stopped'));q('logWrap').open=true;
       if(j.report||j.csv||j.tsv)renderResult(j);
@@ -1639,7 +1709,7 @@ function runFormula(){
   if(pj.length>20000){alert('方剂出处信息太长（>20000 字符），请减少一次组合的方剂数量。');return;}
   lastFormulas=prov;
   const _fx=function(id){const el=q(id);return el?el.value:'';};
-  const body=new URLSearchParams({kind:'predict',herb:names.join(','),smiles:'',limit:q('f_limit').value,cond:q('f_cond').value,solvent:_fx('fc_solvent'),solvent_detail:selectedLabel('fc_solvent'),temperature:_fx('fc_temperature'),time_min:_fx('fc_time_min'),ph:_fx('fc_ph'),catalyst:_fx('fc_catalyst'),catalyst_detail:selectedLabel('fc_catalyst'),atmosphere:_fx('fc_atmosphere'),atmosphere_detail:selectedLabel('fc_atmosphere'),paozhi_adjuvant_kind:q('fc_adjuvant').value,rounds:q('f_rounds').value,max_pairs:q('f_max_pairs').value,reagents:q('f_reagents').value,triples:q('f_triples').checked?1:0,fair_pairs:q('f_fair_pairs').checked?1:0,chp_priority:q('f_chp_priority').checked?1:0,condition_extent:q('f_condition_extent').checked?1:0,outdir:q('f_outdir').value,dose_budget:q('f_dose_budget').checked?1:0,herb_order:'marker',include:q('f_include').value,formula_provenance:pj});
+  const body=new URLSearchParams({kind:'predict',herb:names.join(','),smiles:'',limit:q('f_limit').value,cond:q('f_cond').value,solvent:_fx('fc_solvent'),solvent_detail:selectedLabel('fc_solvent'),temperature:_fx('fc_temperature'),time_min:_fx('fc_time_min'),ph:_fx('fc_ph'),catalyst:_fx('fc_catalyst'),catalyst_detail:selectedLabel('fc_catalyst'),atmosphere:_fx('fc_atmosphere'),atmosphere_detail:selectedLabel('fc_atmosphere'),pressure_atm:q('fc_pressure').value,concentration:q('fc_conc').value,paozhi_adjuvant_kind:'none',rounds:q('f_rounds').value,max_pairs:q('f_max_pairs').value,reagents:q('f_reagents').value,triples:q('f_triples').checked?1:0,fair_pairs:q('f_fair_pairs').checked?1:0,chp_priority:q('f_chp_priority').checked?1:0,condition_extent:q('f_condition_extent').checked?1:0,rerank:q('fc_rerank').checked?1:0,outdir:q('f_outdir').value,dose_budget:q('f_dose_budget').checked?1:0,herb_order:'marker',include:q('f_include').value,formula_provenance:pj});
   submitBody(body);
 }
 
@@ -1724,7 +1794,74 @@ function loadSettingsUI(){
 
 document.querySelectorAll('.navBtn').forEach(function(b){b.onclick=function(){setView(b.getAttribute('data-view'));};});
 q('addRow').onclick=function(){addRow('');};
-q('go').onclick=startRun;q('fxRun').onclick=runFormula;
+function pzv(id){const el=q(id);return el?el.value:'';}function pzc(id){const el=q(id);return el&&el.checked?1:0;}
+function pzFindQuery(){
+  const parts=q('pz_herb').value.split(/[\n,，;；、]+/).map(function(s){return s.trim();}).filter(Boolean);
+  return parts.length?parts[parts.length-1]:'';
+}
+function doPzFind(){
+  const box=q('pzFindBox'),v=pzFindQuery();
+  box.style.display='block';
+  if(!v){box.innerHTML='<span class="warn">先在「炮制对象」里填个名字</span>';return;}
+  box.innerHTML='查找中…（第一次查要建物种索引，约 2 秒）';
+  fetch('/lookup?q='+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
+    if(j.error){box.innerHTML='<span class="warn">出错：'+esc4(j.error)+'</span>';return;}
+    if(j.kind==='missing'){box.innerHTML='（未收录） <button type="button" class="closeBtn ghost">收起</button>';
+      box.querySelector('.closeBtn').onclick=function(){box.style.display='none';};return;}
+    if(j.kind==='egg'){box.innerHTML='🥚 <b style="color:var(--amber)">'+esc4(j.message||'根本没有这样的中药')+'</b> <button type="button" class="closeBtn ghost">收起</button>';
+      box.querySelector('.closeBtn').onclick=function(){box.style.display='none';};return;}
+    if(!j.choices||!j.choices.length){box.innerHTML='<span class="hint">「'+esc4(j.query)+'」没有找到相似条目（可能它本身就是唯一一条）</span>';return;}
+    let h='<b>「'+esc4(j.query)+'」找到 '+j.choices.length+' 个</b> <span class="hint">'+(j.kind==='genus'?'同属物种（COCONUT）':(j.kind==='alias'?'别名候选（可能有多个正名）':'同字段药材条目 + 对应基元植物'))+'</span><br>';
+    j.choices.forEach(function(c,i){
+      h+='<label style="display:inline-block;min-width:330px;margin:3px 0"><input type="checkbox" class="pzbox" data-i="'+i+'"'
+        +((c.group==='未收录')?' disabled':'')+'> '+esc4(c.name)
+        +' <span class="hint">['+esc4(c.group||'')+']</span>'
+        +(c.note?' <span class="hint">'+esc4(c.note)+'</span>':'')
+        +((c.group==='未收录')?'':' <span class="hint">（'+c.n_compounds+((c.group||'').indexOf('方剂')===0?' 味':' 个成分')+'）</span>')+'</label>';
+    });
+    h+='<br><button type="button" class="pzFill primary" style="padding:5px 12px">用勾选的填回「炮制对象」</button> <button type="button" class="closeBtn ghost">收起</button>';
+    box.innerHTML=h;
+    
+    box.querySelector('.closeBtn').onclick=function(){box.style.display='none';};
+    box.querySelector('.pzFill').onclick=function(){
+      const picked=Array.prototype.map.call(box.querySelectorAll('.pzbox:checked'),function(x){return j.choices[+x.getAttribute('data-i')];});
+      if(!picked.length)return;
+      const ta=q('pz_herb');
+      let lines=ta.value.split('\n').map(function(s){return s.trim();}).filter(Boolean);
+      if(!lines.length)lines=[];
+      else if(lines[lines.length-1]===v)lines.pop();
+      picked.forEach(function(c){if(lines.indexOf(c.name)<0)lines.push(c.name);});
+      ta.value=lines.join('\n');
+      box.style.display='none';
+    };
+  }).catch(function(e){box.innerHTML='<span class="warn">查找失败：'+esc4(e)+'</span>';});
+}
+function runPaozhi(){
+  const names=pzv('pz_herb').split(/[\n,，;；、]+/).map(function(s){return s.trim();}).filter(Boolean);
+  if(!names.length){alert(L('请先填炮制对象（药材名或 SMILES）','Enter at least one herb or SMILES first'));return;}
+  const m=pzv('pz_method')||'自定义';
+  const body=new URLSearchParams({kind:'predict',herb:names.join(','),smiles:'',limit:pzv('pz_limit'),cond:'炮制·'+m,rounds:pzv('pz_rounds'),max_pairs:pzv('pz_pairs'),reagents:'',solvent:pzv('pz_solvent'),solvent_detail:selectedLabel('pz_solvent'),temperature:pzv('pz_temperature'),time_min:pzv('pz_time_min'),ph:pzv('pz_ph'),catalyst:'none',catalyst_detail:'',atmosphere:pzv('pz_atmosphere'),atmosphere_detail:selectedLabel('pz_atmosphere'),pressure_atm:pzv('pz_pressure'),concentration:pzv('pz_conc'),paozhi_adjuvant_kind:pzv('pz_adjuvant'),triples:0,fair_pairs:0,chp_priority:0,condition_extent:pzc('pz_extent'),rerank:pzc('pz_rerank'),outdir:'',dose_budget:0,herb_order:pzv('pz_order'),include:pzv('pz_include')});
+  lastFormulas=[];submitBody(body);
+}
+q('go').onclick=startRun;q('fxRun').onclick=runFormula;q('pzGo').onclick=runPaozhi;q('pzFind').onclick=doPzFind;
+const PZ_MAP={
+  '自定义':['none','150','30','air'],
+  '炒黄':['none','165','10','air'],
+  '炒焦':['none','195','10','air'],
+  '炒炭':['none','260','35','air'],
+  '蜜炙':['none','120','13.5','air'],
+  '酒炙':['ethanol','140','5','air'],
+  '醋炙':['vinegar','84','35','air'],
+  '盐炙':['water','150','10','air'],
+  '姜炙':['water','150','40','air'],
+  '蒸制':['water','100','120','air']
+};
+function pzSync(){
+  const v=PZ_MAP[pzv('pz_method')]||PZ_MAP['自定义'];
+  const set=function(id,val){const el=q(id);if(el)el.value=val;};
+  set('pz_solvent',v[0]);set('pz_temperature',v[1]);set('pz_time_min',v[2]);set('pz_atmosphere',v[3]);
+}
+if(q('pz_method')){q('pz_method').addEventListener('change',pzSync);pzSync();}
 q('stopBtn').onclick=stopRun;
 q('fxAddRow').onclick=function(){const r=addFormulaRow();r.el.querySelector('.fxInputRow').focus();};
 q('fxAddHerbBtn').onclick=addHerbToCurrent;
@@ -1754,7 +1891,7 @@ if(_runParam){
   rid=_runParam;t0=Date.now();poll();
 }else{
   addRow('');addFormulaRow();
-  setView(['predict','formula','history','settings'].indexOf(_hash)>=0?_hash:'predict');
+  setView(['predict','formula','paozhi','history','settings'].indexOf(_hash)>=0?_hash:'predict');
   if(_hash==='formula'&&_hashParts[1]){
     const _nm=decodeURIComponent(_hashParts.slice(1).join('='));
     pickFormula(fxRows[0],_nm);

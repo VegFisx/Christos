@@ -536,7 +536,7 @@ def cmd_predict(a) -> int:
                      ("；减 " + "、".join(_rm)) if _rm else "",
                      ("；加 " + "、".join(_ad)) if _ad else ""))
     if a.herb:
-        from herb import compounds_of_herb, LAST_RESOLVE, list_named_herbs
+        from herb import compounds_of_herb, LAST_RESOLVE, LAST_COVERAGE, list_named_herbs
         import coconut as CC          # 物种级来源（只读 coconut.db）
         src_mode = str(getattr(a, "source", "auto") or "auto")
         cc_order = str(getattr(a, "coconut_order", "lib") or "lib")
@@ -643,6 +643,19 @@ def cmd_predict(a) -> int:
                 route = "herb"
                 all_cs = compounds_of_herb(h, limit=1_000_000, chp_first=chp_on,
                                            order_tcmsp=(herb_order == "ob"))   # 先全部取出（只读），再按开关截取
+                # ★ 第 141 轮（审查 A3/A4）：成分覆盖率必须显示 —— 取到 N 个不等于库里有 N 个。
+                try:
+                    _cov = dict(LAST_COVERAGE)
+                    _miss = int(_cov.get("n_no_compound", "0") or 0) + \
+                        int(_cov.get("n_bad_smiles", "0") or 0)
+                    if _miss:
+                        print("   药材 %s：关联 %s 条，取到结构 %s 个；"
+                              "%s 条在 compounds 表里没有可解析结构"
+                              "（无此行 %s / 结构无效 %s）"
+                              % (h, _cov.get("n_edges"), _cov.get("n_kept"), _miss,
+                                 _cov.get("n_no_compound"), _cov.get("n_bad_smiles")))
+                except Exception as ex:                  # noqa: BLE001 —— 打印，不静默
+                    print("   [warn] 覆盖率统计失败（%s: %s）" % (type(ex).__name__, ex))
                 src_tag = "tcm.db:%s" % h
                 order_txt = ("药典判据优先（Tier-0 含量测定在前、同层按限量值降序）＋"
                              "marker 优先；其次分子量降序；按结构去重" if chp_on else
@@ -887,9 +900,24 @@ def cmd_predict(a) -> int:
         "paozhi_base_templates": bool(getattr(a, "paozhi_base_templates", False)),
         # ★ 第84轮：反应进程层（time/pH/催化剂 参与产物生成）；默认关
         "condition_extent": bool(getattr(a, "condition_extent", False)),
+        # ★ 第 141 轮：extent 是否真的筛选产物（默认 False = 只标注）
+        "condition_gate": bool(getattr(a, "condition_gate", False)),
         # ★ 第128轮：学习型重排序
         "rerank": bool(getattr(a, "rerank", False)),
+        "rerank_center": bool(getattr(a, "rerank_center", False)),
     }
+    # ★ 第142轮（压力 P1）：把压力写进 switches 与 condition_details —— 只记录。
+    _pressure_in = getattr(a, "pressure_atm", None)
+    _pressure_src = "命令行 --pressure-atm"
+    if _pressure_in is None and str(a.atmosphere or "").strip().lower() in ("vacuum", "真空"):
+        _pressure_in = 0.05
+        _pressure_src = "气氛 vacuum 推得 0.05 atm（P1 约定，不是测出来的）"
+    _pressure = float(_pressure_in) if _pressure_in is not None else 1.0
+    switches["pressure_atm"] = _pressure
+    _conc_in = getattr(a, "concentration_M", None)
+    _conc = float(_conc_in) if _conc_in is not None else 0.1
+    switches["concentration_M"] = _conc
+    switches["pressure_source"] = _pressure_src if _pressure != 1.0 else "默认 1.0 atm"
     # ★ 出处分档（第七十五轮 H1）：tier 随方剂进 meta 顶层的 formulas 与台账；
     #   versions 列出**全部**版本（含 AI 现查），供网页「按出处单独筛看」用 ——
     #   只是多显示信息，不改选版逻辑、不隐藏任何版本。
@@ -1079,11 +1107,29 @@ def cmd_predict(a) -> int:
                       use_mined_top_conditions=True,
                       strict_redox_gate=True,
                       condition_extent=bool(getattr(a, "condition_extent", False)),
+                      condition_gate=bool(getattr(a, "condition_gate", False)),
                       rerank=bool(getattr(a, "rerank", False)),
+                      rerank_center=bool(getattr(a, "rerank_center", False)),
+                      pressure_atm=_pressure,
+                      concentration_M=_conc,
                       cond_override=_cond_override,
                       meta_extra={"selection": selection, "switches": switches,
                                   "pair_coverage": cov, "formulas": formulas_meta})
     _resolved_cond = spec.cond()
+    # ★ 第143轮（压力 P2）：液相温度上限 + 浴类型。失败不阻断运行，但会写进记录。
+    try:
+        from conditions import pressure as _pmod
+        _p2_bath = _pmod.bath_of(_resolved_cond)
+        _p2_t, _p2_note = _pmod.effective_temperature(_resolved_cond)
+    except Exception as _e:                      # noqa: BLE001 - 只降级，不吞错
+        _p2_bath, _p2_t, _p2_note = "unknown", float(_resolved_cond.temperature), ""
+        print("[warn] 压力 P2 未生效：%s" % _e)
+    _p2_t_eff = {
+        "value": round(float(_p2_t), 2),
+        "unit": "°C",
+        "note": _p2_note or "未截断（温度低于该压力沸点，或不是溶液浴）",
+        "source": "conditions/pressure.py（Clausius-Clapeyron，Tb/ΔHvap 取 CRC 97th）",
+    }
     condition_details = {
         "solvent": {
             "category": str(_resolved_cond.solvent),
@@ -1110,9 +1156,30 @@ def cmd_predict(a) -> int:
             "value": float(_resolved_cond.pH),
             "unit": "",
         },
+        # ★ 第142轮（压力 P1）：只记录。判活与速率都不读它（见报告）。
+        # ★ 第143轮（压力 P2）：温度那一栏补「有效温度」，因为液相被沸点截断后
+        #   extent 用的是截断值，不是输入值。
+        "pressure_atm": {
+            "value": float(getattr(_resolved_cond, "pressure_atm", 1.0) or 1.0),
+            "unit": "atm",
+            "note": "记录；P2 起通过沸点上限约束液相温度（只对溶液浴）",
+            "source": switches.get("pressure_source", "默认 1.0 atm"),
+        },
+        "effective_temperature": _p2_t_eff,
+        "concentration_M": {
+            "value": float(getattr(_resolved_cond, "concentration_M", 0.1) or 0.1),
+            "unit": "M",
+            "note": "进 extent 的浓度因子（二级动力学、伙伴过量近似），默认 0.1 M 时因子为 1",
+        },
+        "bath": _p2_bath,
     }
     spec.meta_extra["condition_details"] = condition_details
     print("=" * 96)
+    if _pressure != 1.0:
+        print("[note] 体系压力 %.3g atm（%s）：只写进条件、台账与运行记录，"
+              "不参与判活、不参与速率 —— 现有动力学只在 1 atm 数据上标定，"
+              "没有可靠的压力依赖参数。"
+              % (_pressure, _pressure_src))
     print(T("★ 一次枚举 ★  %s（底物 %d 个 · 轮数 %d · 条件「%s」）",
             "★ Single enumeration ★  %s (%d substrates · %d rounds · condition “%s”)")
           % (time.strftime("%Y-%m-%d %H:%M"), len(seeds), a.rounds, _cond_label(a.cond)))
@@ -1456,6 +1523,16 @@ def main() -> int:
                     help="自定义气氛（air/O2/H2/N2/He/Ne/Ar 等）；留空则用条件档案的值")
     pp.add_argument("--atmosphere-detail", default=None, dest="atmosphere_detail",
                     help="用户在界面选择的实际气氛名称（仅留证，不参与门控）")
+    # ★ 第142轮（压力 P1）：压力只记录与标注，不参与判活/速率（理由见报告）。
+    pp.add_argument("--pressure-atm", type=float, default=None, dest="pressure_atm",
+                       help="体系压力（atm，正数；默认 1.0）。P2 起只对「溶液浴」"
+                         "生效：液温被该压力下的沸点截断（T_eff = min(T, T_sat(p))）。"
+                         "干热与辅料润湿（炒黄/盐炙/酒炙…）不受约束。"
+                         "气氛选 vacuum 且没显式给压力时按 0.05 atm 记")
+    pp.add_argument("--concentration", type=float, default=None, dest="concentration_M",
+                    help="底物浓度（M；默认 0.1）。进 extent 的浓度因子 "
+                         "(c/0.1)^1（二级动力学、伙伴过量近似）；默认值下因子为 1，"
+                         "旧结果不变。判活不读它。")
     pp.add_argument("--max-pairs", type=int, default=4000, dest="max_pairs")
     pp.add_argument("--fair-pairs", action="store_true", dest="fair_pairs",
                     help="对子超预算时公平截断：每个成分摊到大致相同的伙伴数（默认关=旧行为）")
@@ -1477,12 +1554,20 @@ def main() -> int:
     pp.add_argument("--triples-min-support", type=int, default=2, dest="triples_min_support")
     # ★ 第84轮：反应进程层（time_min / pH / 催化剂）。第123/124轮验证后定为「只标注、不筛选」。
     pp.add_argument("--condition-extent", action="store_true", dest="condition_extent",
-                    help="按时间/温度/pH/催化剂估算反应进程，只写进台账与报告的标注列"
-                         "（不筛选、不删产物；参数未标定，见 AGENTS 第12节）")
+                    help="按时间/温度/pH/催化剂估算反应进程，写进台账与报告的标注列"
+                         "（默认不筛选；要看它是否真的筛产物请加 --condition-gate）")
+    # ★ 第 141 轮：把「算 extent」与「按 extent 筛」分成两个开关。
+    pp.add_argument("--condition-gate", action="store_true", dest="condition_gate",
+                    help="★实验开关★ 按反应进程 extent 真的筛掉判定跑不出来的产物"
+                         "（参数未标定，见 AGENTS 第12节；不要用于对外数字）")
     # ★ 第128轮：学习型重排序（默认关；只改顺序，候选集合与召回不变）
     pp.add_argument("--rerank", action="store_true", dest="rerank",
                     help="用离线训练的重排序模型调整候选顺序（默认关；只改顺序，"
                          "候选集合不变；模型缺失时自动退回发射序）")
+    pp.add_argument("--rerank-center", action="store_true", dest="rerank_center",
+                    help="用学习型反应中心模型给候选排序（第 147 轮）：按「从底物走到"
+                         "该候选要改哪几处键、每处多可能」重排。只改顺序，候选集合不变；"
+                         "缺模型时保持发射序")
     pp.add_argument("--no-direction", action="store_true", dest="no_direction")
     pp.add_argument("--no-score", action="store_true", dest="no_score")
     pp.add_argument("--no-ik-cache", action="store_true", dest="no_ik_cache")

@@ -271,10 +271,31 @@ def _triple_worker(triples):
         try:
             got = lib.apply_triple_support(compiled, get_mol(sa), get_mol(sb), get_mol(sc))
         except Exception:
+            # 第 144 轮修 C10：三类模板套用原先静默 continue，失败既不计也不报；
+            # 相邻的 arity=2 分支是有计数的，这里补齐（§六「批量任务禁止静默失败」）。
+            _TRIPLE_W["fail"] = int(_TRIPLE_W.get("fail", 0)) + 1
             continue
         if got:
             out.append((sa, sb, sc, got))
     return out
+
+
+def _cap_by_support(got: dict, cap: int) -> list:
+    """按 support 从高到低截断，同 support 按 SMILES 排序（保证跨进程可复现）。
+
+    第 144 轮修 C5：原先一律 sorted(got)[:cap]，即按 SMILES 字母序截断 ——
+    截掉的是化学上更常见的产物，留下的是字典序靠前的。cap 默认 32，
+    模板频繁触发时这条差别会实际生效。
+    """
+    items = sorted(got.items(), key=lambda kv: (-int(kv[1] or 0), str(kv[0])))
+    return [k for k, _v in items[:max(1, int(cap))]]
+
+
+def _cap_products(got, cap: int) -> list:
+    """兼容 set / dict 两种入参的截断入口（set 无 support，退化为字母序）。"""
+    if isinstance(got, dict):
+        return _cap_by_support(got, cap)
+    return sorted(str(x) for x in got)[:max(1, int(cap))]
 
 
 _AROM2ELEM = {"c": "C", "n": "N", "o": "O", "s": "S", "p": "P", "b": "B"}
@@ -363,6 +384,7 @@ class SmartReactEngine:
                  verbose: bool = False,
                  gate_conditions: bool = True,
                  condition_extent: bool = False,
+                 condition_gate: bool = False,
                  gate_tol_C: float = 30.0,
                  strict_redox_gate: bool = False,
                  pair_offset: int = 0,
@@ -395,7 +417,9 @@ class SmartReactEngine:
                  triple_min_support: int = 2,
                  triple_workers: int = 4,
                  # ★ 第 128 轮：学习型重排序模型路径（None = 关闭，保持发射序）
-                 rerank_model=None):
+                 rerank_model=None,
+        center_rank: bool = False,
+        center_rank_model=None):
         from smartreact import ReactionEnumerator
 
         self.default_max_products = default_max_products
@@ -430,13 +454,29 @@ class SmartReactEngine:
         #   打开：CHEMCREACT_CONDITION_EXTENT=1 或 condition_extent=True。
         import os as _os
         _ce_env = _os.environ.get("CHEMCREACT_CONDITION_EXTENT")
-        self.condition_extent = (bool(condition_extent) if _ce_env is None
-                                 else _ce_env.strip() not in ("0", "false", "False", ""))
+        if _ce_env is None:
+            self.condition_extent = bool(condition_extent)
+        else:
+            # ★ 第 141 轮：环境变量覆盖命令行必须**说出来**，否则用户以为开关生效了。
+            _env_on = _ce_env.strip() not in ("0", "false", "False", "")
+            if _env_on != bool(condition_extent):
+                print(f"   [note] CHEMCREACT_CONDITION_EXTENT={_ce_env} 覆盖命令行设置"
+                      f"（命令行 {'开' if condition_extent else '关'}"
+                      f" → 环境变量 {'开' if _env_on else '关'}）")
+            self.condition_extent = _env_on
         self._cond_fit_cache: Dict[Tuple[Any, ...], Tuple[float, str]] = {}
+        # ★ 第 141 轮：extent 是否**真的筛选产物**。默认只标注（参数未标定，AGENTS §12）；
+        #   `condition_gate=True` 或 CHEMCREACT_CONDITION_GATE=1 才按 extent_min 判不产出。
+        _cg_env = _os.environ.get("CHEMCREACT_CONDITION_GATE")
+        self.condition_gate = (bool(condition_gate) if _cg_env is None
+                               else _cg_env.strip() not in ("0", "false", "False", ""))
         # ★ 第 101 轮（用户 2026-11-04 口径）★
         #   extent 的参数全是未标定的建模选择 → 只允许标注，不允许门控。
         #   只有 kinetics.json 的 validation.gate_enabled=true（=补了文献标定）才放行。
-        self._extent_gate_ok = bool(_extent.gating_allowed())
+        self._extent_gate_ok = bool(_extent.gating_allowed()) or bool(self.condition_gate)
+        if self.condition_gate and not _extent.gating_allowed():
+            print("   [warn] condition_gate：按 extent 筛选产物（参数未标定，"
+                  "只用于验证条件层是否真的起作用，不要用于对外数字）")
         # ★ 第 128 轮：学习型重排序（可选，默认关）。只改顺序，不改候选集合。
         #   模型缺失/损坏/特征不符 → core/rerank.py 自己退回发射序，这里不需要 try。
         self._reranker = None
@@ -447,6 +487,16 @@ class SmartReactEngine:
             except Exception as ex:                  # noqa: BLE001
                 print(f"   [warn] 重排序器加载失败，保持发射序：{ex}")
         self.gate_tol_C = gate_tol_C
+        # ★ 第 147 轮：中心模型排序（可选，默认关）。模型缺失时自己失效，不影响产物集合。
+        self._center_ranker = None
+        if center_rank:
+            try:
+                import center_rank as _cr
+                self._center_ranker = _cr.load(center_rank_model if isinstance(center_rank_model, str) else None)
+                if self._center_ranker is None:
+                    print("   [warn] 中心模型排序：模型未加载，保持发射序")
+            except Exception as ex:                  # noqa: BLE001
+                print(f"   [warn] 中心模型排序加载失败，保持发射序：{ex}")
         # Strict redox gate: honour an explicitly stated atmosphere even when
         # no auxiliary reagents were supplied.  Off by default so benchmark
         # behaviour is unchanged.
@@ -1019,7 +1069,7 @@ class SmartReactEngine:
                             self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sb, reaction_name=name,
-                            products=sorted(got)[:max(1, self.max_products_per_pair)]))
+                            products=_cap_products(got, self.max_products_per_pair)))
         if self.mono_top_templates:
             uniq_t = (sorted({k for pair in chunk for k in pair}) if chunk
                       else list(range(len(subs))))
@@ -1038,7 +1088,7 @@ class SmartReactEngine:
                             self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sa, reaction_name=name,
-                            products=sorted(got)[:max(1, self.max_products_per_pair)]))
+                            products=_cap_products(got, self.max_products_per_pair)))
         # ---- ★ B 试点：6 条 curated 规则（带 reaction_name）----
         if self.curated_pair_templates:
             for i, j in chunk:
@@ -1057,7 +1107,7 @@ class SmartReactEngine:
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sb,
                             reaction_name=name,
-                            products=sorted(got)[:max(1, self.max_products_per_pair)]))
+                            products=_cap_products(got, self.max_products_per_pair)))
             # 单输入 + 条件允许的 co_substrate_pool（乙醇/硫醇/葡萄糖等）
             for k in range(len(subs)):
                 sa = subs[k][1]
@@ -1080,7 +1130,7 @@ class SmartReactEngine:
                                 out.append(ReactionResult(
                                     reactant_a=x, reactant_b=y,
                                     reaction_name=name,
-                                    products=sorted(got)[:max(1, self.max_products_per_pair)]))
+                                    products=_cap_products(got, self.max_products_per_pair)))
         if self.curated_mono_templates:
             uniq_c = (sorted({k for pair in chunk for k in pair}) if chunk
                       else list(range(len(subs))))
@@ -1118,7 +1168,7 @@ class SmartReactEngine:
                     if got:
                         for _cs, _s2 in _trcm.items():
                             self._mined_smarts[(name, sa, _cs)] = _s2
-                        _prods = sorted(got)[:max(1, self.max_products_per_pair)]
+                        _prods = _cap_products(got, self.max_products_per_pair)
                         _collected.append((name, _prods))
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sa,
@@ -1568,7 +1618,10 @@ class SmartReactEngine:
                 try:
                     _prm = _extent.load_params()
                     _e_val, _e_why = _extent.extent_from_table(_cur or e, cond, _prm)
-                    _ext_min = float((_prm.get("gates") or {}).get("extent_min", 0.10))
+                    # 第 141 轮：与 step 的筛选阈值统一用 gate_min（有出处 0.05），
+                    # 不再读无出处的 extent_min（已是 0.0）。
+                    _g = _prm.get("gates") or {}
+                    _ext_min = float(_g.get("gate_min", _g.get("extent_min", 0.0)))
                 except Exception as ex:          # noqa: BLE001 —— 打印，不静默
                     print(f"   [warn] extent 并入 activation 失败"
                           f"（{type(ex).__name__}: {ex}），本类不按进程门控")
@@ -1662,6 +1715,10 @@ class SmartReactEngine:
         默认 False = 旧行为逐位不变。
         """
         exclude_smiles = exclude_smiles or set()
+        # 第 144 轮修 C4：gate_stats 是**实例级累加器**，跨 step 不清零；
+        # 而 stats["gated_zero_total"] 直接 sum 它，于是同一个 step 连跑两遍数字会翻倍
+        # （实测 15 → 30）。这里取一份起点快照，只报本步增量。
+        _gate_before = dict(self.gate_stats)
         subs = []
         for c in compounds:
             m = get_mol(c.smiles)
@@ -1710,20 +1767,27 @@ class SmartReactEngine:
 
         # ★ 第 84 轮：反应进程门。按反应类型缓存，一种类型只算一次。
         # ★ 第 101 轮（用户口径）：extent 参数未标定 → 只标注、不门控。
+        # ★ 第 141 轮：把「算」与「筛」拆开 —— 之前 extent_gate 被 gating_allowed()
+        #   直接置 False，连 per 都不算，于是 extent 列恒 1.0、时间/pH 在标注层面也无效。
+        #   现在：只要请求了 extent（引擎开关或 extent_gate）就**算并标注**；
+        #   只有 `condition_gate` / gate_enabled=true 时才**按 extent_min 筛**。
         ext_cache: Dict[str, Tuple[float, str]] = {}
-        ext_min = 0.10
+        ext_min = 0.0
         _ext_params: Dict[str, Any] = {}
-        if extent_gate and not _extent.gating_allowed():
+        _extent_on = bool(self.condition_extent or extent_gate)
+        _extent_filter = bool(_extent_on and self._extent_gate_ok)
+        if _extent_on and not _extent_filter:
             print("   [note] extent 参数未经文献标定（kinetics.json: validation.gate_enabled=false），"
                   "本次只写标注、不按 extent 过滤产物")
-            extent_gate = False
-        if extent_gate:
+        if _extent_on:
             try:
                 _ext_params = _extent.load_params()
-                ext_min = float((_ext_params.get("gates") or {}).get("extent_min", 0.10))
+                _gates = _ext_params.get("gates") or {}
+                # 第 141 轮：筛选阈值与标注阈值分开 —— gate_min 有出处（0.05），
+                # extent_min 仍是 0.0（默认不筛）。
+                ext_min = float(_gates.get("gate_min", _gates.get("extent_min", 0.0)))
             except Exception as ex:                  # noqa: BLE001
-                print(f"   [warn] kinetics.json 读取失败，extent 门退化为不门控：{ex}")
-                extent_gate = False
+                print(f"   [warn] kinetics.json 读取失败，extent 只做标注：{ex}")
 
         BATCH = 400
         # ★ 第二十二轮：单底物模板不需要"对" —— 没有对时也要跑一轮（chunk 为空，只跑单底物）
@@ -1773,7 +1837,7 @@ class SmartReactEngine:
                 #   过去完全不参与。这里问第二问：「在给定时间/温度/pH/催化剂下
                 #   跑到什么程度」，跑不到可检出程度（e < extent_min）就不产出。
                 per: Optional[Tuple[float, str]] = None
-                if extent_gate:
+                if _extent_on:
                     per = ext_cache.get(r.reaction_name)
                     if per is None:
                         entry = (self.cond_table.get(r.reaction_name)
@@ -1784,7 +1848,7 @@ class SmartReactEngine:
                         except Exception as ex:      # noqa: BLE001 —— 打印，不静默
                             per = (1.0, f"extent 计算失败（{type(ex).__name__}），放行")
                         ext_cache[r.reaction_name] = per
-                    if per[0] < ext_min:
+                    if _extent_filter and per[0] < ext_min:
                         if self.debug_drops is not None:
                             for _ps in list(getattr(r, "products", ()) or ()):
                                 self.debug_drops.append({"reason": "extent", "smiles": _ps,
@@ -1932,6 +1996,24 @@ class SmartReactEngine:
                     seen.add(cs)
                     n_take += 1
 
+        # ★ 第 145 轮做过「条件包络」（这个转化在文献里是不是在这个温时窗口做过的），
+        #   第 148 轮按判据删掉：模板级 AUC 0.488、类型级 AUC 0.502，都等于抛硬币。
+        #   留着它只会给台账加两列看起来有信息、其实没有意义的数，还会让
+        #   `condition_gate` 按噪声删候选。代码与数据留在 conditions/envelope.py 与
+        #   reports/envelope_types.json（可复现），但引擎不再调用。
+
+        # 本步相对快照的增量。注意 gate_stats 的键语义不统一
+        # （多数是「拦下多少条」，少数是「并行进程数 / 是否发生」），
+        # 所以下面单独给出 by_type，供报告按类阅读。
+        _gated_step: Dict[str, int] = {}
+        for _k0, _v0 in self.gate_stats.items():
+            try:
+                _d0 = int(_v0) - int(_gate_before.get(_k0, 0))
+            except (TypeError, ValueError):
+                continue
+            if _d0 > 0:
+                _gated_step[_k0] = _d0
+
         self.stats = {
             "compounds": len(subs),
             "pairs_total": len([1 for i in range(len(subs)) for j in range(i + 1, len(subs))]),
@@ -1947,8 +2029,9 @@ class SmartReactEngine:
             "seconds": round(time.time() - t0, 2),
             "round": round_no,
             # ★ 条件门控统计：哪些反应类型被当前条件判零、各拦了多少条
-            "gated_zero_total": sum(self.gate_stats.values()),
-            "gated_zero_by_type": dict(sorted(self.gate_stats.items(),
+            #   第 144 轮修 C4：只统计**本步**增量（_gated_step），不再 sum 跨轮累加器。
+            "gated_zero_total": sum(_gated_step.values()),
+            "gated_zero_by_type": dict(sorted(_gated_step.items(),
                                               key=lambda x: -x[1])[:10]),
         }
         # ★ 第 128 轮：学习型重排序（默认关闭；只改顺序，不改候选集合）
@@ -1963,6 +2046,23 @@ class SmartReactEngine:
                         _p.seq = _i          # 重排后 seq 跟着新顺序走，展示层无需改变
                     except Exception:
                         pass
+        # ★ 第 147 轮：中心模型排序（默认关闭）。给每个候选算「从底物走到它要改哪几处键、
+        #   每处多可能」，按几何平均排序。契约同 rerank：只改顺序，不改候选集合。
+        if self._center_ranker is not None and len(out) > 1:
+            try:
+                _mols = [get_mol(getattr(c, "smiles", "") or "") for c in compounds]
+                _before = [getattr(p, "smiles", "") for p in out]
+                out = self._center_ranker.reorder(out, _mols)
+                _after = [getattr(p, "smiles", "") for p in out]
+                if _after != _before:
+                    self.stats["center_ranked"] = 1
+                    for _i, _p in enumerate(out):
+                        try:
+                            _p.seq = _i
+                        except Exception:
+                            pass
+            except Exception as exc:                    # noqa: BLE001
+                self.stats["center_rank_error"] = str(exc)[:80]
         if self.verbose:
             print(f"   [step r{round_no}] 底物 {len(subs)} 对 {len(pairs)} "
                   f"原始产物 {n_raw} 保留 {len(out)} ({self.stats['seconds']}s)")
