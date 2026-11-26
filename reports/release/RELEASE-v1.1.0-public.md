@@ -48,4 +48,4 @@ python tools\validate_input_dataset.py <你的数据文件>
 
 ## 五、引用
 
-见 `CITATION.cff`（1.1.0，2026-11-26）。Zenodo DOI 在 GitHub Release 建立后回填。
+见 `CITATION.cff`（1.1.0，2026-11-26）。本版 DOI：`10.5281/zenodo.24564325`；所有版本：`10.5281/zenodo.23499423`。GitHub Release：https://github.com/VegFisx/Christos/releases/tag/v1.1.0。
