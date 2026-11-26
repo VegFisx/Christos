@@ -2,7 +2,7 @@
 """外部 baseline（B 档）：在 USPTO-50k 官方 test split 上跑我们的正向模型。
 
 为什么单独写：
-- 论文里的 92.01% / 94.25% 都跑在 reports/paper/data/uspto50k_canon.jsonl
+- 论文里的 92.01% / 94.25% 都跑在 data/benchmark/uspto50k_canon.jsonl
   （= 50,016 条全集，我们自己从 USPTO_50K 整理）。
 - 文献里常报的 top-1 一般在官方 5,001 条 test split 上（RetroXpert / GLAD 那一套切分）。
 - 两个分母不能混，所以这里直接吃官方 raw_test.csv。
@@ -17,7 +17,7 @@ workers 实测（2026-11-13，4,993 条，CLI 配置，16 GB 机器）：
   2 → 587 s / 峰值约 1.6 GB；4 → 约 230 s；6 → 93 s / 6.8 GB；8 → 86 s / 8.1 GB。
   6 是拐点；8 只快 7 s 但多占 1.3 GB。
 
-输入：reports/paper/data/uspto50k_official/raw_test.csv
+输入：data/benchmark/uspto50k_official/raw_test.csv
       列 = id,class,reactants>reagents>productions（带原子映射）
 输出：<OUT>/forward_official_test__<TAG>.json
 """
@@ -40,7 +40,7 @@ for _p in (_ROOT / "core", _ROOT / "conditions", _ROOT / "rules", _HERE):
     if _p.is_dir() and str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-SRC = _ROOT / "reports" / "paper" / "data" / "uspto50k_official" / "raw_test.csv"
+SRC = _ROOT / "data" / "benchmark" / "uspto50k_official" / "raw_test.csv"
 MIT_SRC = _ROOT / "reports" / "paper" / "data" / "uspto_mit" / "USPTO_MIT.csv"
 SRC_KIND = (_os.environ.get("CHEMCREACT_BENCH_SRC") or "official").strip().lower()
 MIT_SAMPLE_PCT = float(_os.environ.get("CHEMCREACT_BENCH_SAMPLE_PCT") or 8.36)

@@ -12,13 +12,15 @@ r"""tcm_ro.py —— 对 TCMAI 数据库的**只读**访问（`db_utils.open_db`
 """
 from __future__ import annotations
 
+import os
 import sqlite3
 import sys
 from contextlib import contextmanager
 from pathlib import Path
 
-TCM_DB = Path(r"D:\TCMAI\tcm.db")
-COCONUT_DB = Path(r"D:\TCMAI\coconut.db")
+# 2026-11-27：允许评审/复现时指向随仓库发布的脱敏子集（data/tcm_subset.db）。
+TCM_DB = Path(os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
+COCONUT_DB = Path(os.environ.get("CHEMCREACT_COCONUT_DB") or r"D:\TCMAI\coconut.db")
 
 
 @contextmanager

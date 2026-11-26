@@ -12,6 +12,7 @@ r"""决定性诊断：只把【模板库】换成新的 3,228 条，端到端一
 用法: python bench_new_templates.py [目标数]
 """
 import json
+import os
 import sys
 import time
 from collections import Counter
@@ -23,7 +24,8 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-STAGE = Path(r"D:\ProgramData\DSHNS\chemreact-staging")
+STAGE = Path(os.environ.get("CHEMCREACT_ROOT")
+             or Path(__file__).resolve().parent.parent)
 for _p in (STAGE / "tools", STAGE / "libs", Path(r"D:\TCMAI\src")):
     sys.path.insert(0, str(_p))
 

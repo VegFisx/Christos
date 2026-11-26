@@ -2,7 +2,7 @@
 r"""论文基准（第三块）：USPTO-50k 上「正向单步预测」的召回（第一个数字）。
 
 口径（写死）：
-  * 目标：reports/paper/data/uspto50k_canon.jsonl（记录反应物 -> 记录产物）
+  * 目标：data/benchmark/uspto50k_canon.jsonl（记录反应物 -> 记录产物）
   * 分层抽样（按反应类别，每类 ≤ N_PER_CLASS，种子 20261014）
   * 输入 = 该反应的**记录反应物**（1~3 个，去映射号规范化）当底物；正向引擎跑 **1 轮**（round_no=1）
   * 命中 = 记录产物出现在 1 轮候选集合里（集合成员，**不排序**）
@@ -36,7 +36,8 @@ for _p in (STAGE / "core", STAGE / "rules", STAGE / "libs", STAGE / "tools",
     if _p.is_dir() and str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-TARGETS = STAGE / "reports" / "paper" / "data" / "uspto50k_canon.jsonl"
+TARGETS = Path(_os_root.environ.get("CHEMCREACT_BENCH_TARGETS")
+               or (STAGE / "data" / "benchmark" / "uspto50k_canon.jsonl"))
 OUT_DIR = Path(_os_root.environ.get("CHEMCREACT_BENCH_OUT")
                or (STAGE / "reports" / "paper" / "results"))
 SEED = 20261014

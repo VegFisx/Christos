@@ -2,8 +2,8 @@
 r"""论文基准（第二块·第一遍）：USPTO-50k 全量「覆盖率 / 频次序 top-k」评估。
 
 口径（写死）：
-  * 目标：reports/paper/data/uspto50k_canon.jsonl（50,016 条，product/reactants 已标准化）
-  * 库  ：reports/paper/data/lib_uspto50k_excl.jsonl（3,065 条；= 剔除"产物命中 50k"的
+  * 目标：data/benchmark/uspto50k_canon.jsonl（50,016 条，product/reactants 已标准化）
+  * 库  ：data/benchmark/lib_uspto50k_excl.jsonl（3,065 条；= 剔除"产物命中 50k"的
           一切抽取记录后重聚类 —— 复现校验通过：不剔除时与现库 3,228 条完全相同）
   * 每个产物：套用全部模板 -> 收集切断（前体集合，canonical）
       - any-hit：记录的反应物集合 == 某个切断的前体集合（严格集合相等）
@@ -38,8 +38,8 @@ for _p in (STAGE / "libs", STAGE / "tools", STAGE / "core"):
         sys.path.insert(0, str(_p))
 
 LIB = Path(_os_root.environ.get("CHEMCREACT_LIB")
-           or (STAGE / "reports" / "paper" / "data" / "lib_uspto50k_excl.jsonl"))
-TARGETS = STAGE / "reports" / "paper" / "data" / "uspto50k_canon.jsonl"
+           or (STAGE / "data" / "benchmark" / "lib_uspto50k_excl.jsonl"))
+TARGETS = STAGE / "data" / "benchmark" / "uspto50k_canon.jsonl"
 BLACKLIST = STAGE / "reports" / "retro_template_blacklist.json"
 SHARDS_GLOB = "_shard_[0-9].jsonl"
 OUT_DIR = Path(_os_root.environ.get("CHEMCREACT_BENCH_OUT")

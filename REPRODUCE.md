@@ -16,11 +16,11 @@ python -I tools/paper_bench_official_test.py 1
 # measured: recall 88.67%, top-1 48.67%, mean 21.9 candidates, 0 errors, 16 s
 
 # 2. reverse coverage, every 500th target (101 targets)
-python -I tools/paper_bench_50k_coverage.py 1 reports/paper/data/lib_uspto50k_excl_v2.jsonl 500
+python -I tools/paper_bench_50k_coverage.py 1 data/benchmark/lib_uspto50k_excl_v2.jsonl 500
 # measured: any-hit 95/101 = 94.06%, 152 s
 
 # 3. multi-step, 20 targets, depth 2, beam 4
-$env:CHEMCREACT_MS_TPL='reports/paper/data/lib_uspto50k_excl_v2_freq10.jsonl'
+$env:CHEMCREACT_MS_TPL='data/benchmark/lib_uspto50k_excl_v2_freq10.jsonl'
 $env:CHEMCREACT_MS_TAG='repro_d2'
 python -I tools/bench_multistep.py 20 2 4 --use-lib
 # measured: 10/20 = 50.0% (paper: 47.67% on 300 targets), 45 s
@@ -34,19 +34,26 @@ the official split smoke test uses 3% of the rows and the multi-step test uses
 
 | Command | Paper value | Wall clock on this machine |
 |---|---|---|
-| `python -I tools/paper_bench_50k_forward.py 100000 2` | 92.01% (current default) | ~1,800 s |
-| `python -I tools/paper_bench_official_test.py 2` | 91.71% / top-1 43.28% | 354 s |
-| `python -I tools/paper_bench_50k_coverage.py 4 reports/paper/data/lib_uspto50k_excl_v2.jsonl 10` | 94.74% | 2,428 s |
-| `python -I tools/paper_bench_50k_coverage.py 4 reports/paper/data/lib_uspto50k_excl.jsonl 1` | 79.81% | 2,311 s |
-| `CHEMCREACT_MS_TPL=reports/paper/data/lib_uspto50k_excl_v2_freq10.jsonl python -I tools/bench_multistep.py 300 2 4 --use-lib` | 47.67% | 906 s |
-| same with `300 3 4` | 72.33% | 1,446 s |
+| `python -I tools/paper_bench_50k_forward.py 100000 4` | 92.01% (current default; 2026-11-27 rerun) | 1,973 s |
+| `CHEMCREACT_STEREO_CANON=0 python -I tools/paper_bench_50k_forward.py 100000 4` | 82.77% (stereo off) | 1,956 s |
+| `CHEMCREACT_BENCH_LEGACY=1 CHEMCREACT_BENCH_NO_EXTRA=1 python -I tools/paper_bench_50k_forward.py 100000 4` | 55.53% (legacy baseline) | 853 s |
+| `python -I tools/paper_bench_official_test.py 2` | 91.71% / top-1 43.28% | 216 s |
+| `python -I tools/paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl_v2.jsonl 10` | 94.74% (2026-11-27 rerun) | 2,696 s |
+| `python -I tools/paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl.jsonl 1` | 79.81% (2026-11-27 rerun) | 2,413 s |
+| `CHEMCREACT_MS_TPL=data/benchmark/lib_uspto50k_excl_v2_freq10.jsonl python -I tools/bench_multistep.py 300 2 4 --use-lib` | 47.67% (2026-11-27 rerun) | 928 s |
+| same with `300 3 4` | 72.33% (2026-11-27 rerun) | 1,460 s |
 
 The multi-step benchmark **requires** `--use-lib` and the `_freq10` library
 (16,891 compiled templates). Without them it falls back to the 3,025-template
 clustered library and reports roughly 21 points lower.
 
+The multi-step values are route-recovery rates: a target counts as recovered if
+at least one route is found, whether or not every step passes `step_usability`.
+Counting only targets with at least one fully usable route gives 47.33% at
+depth ≤2 (142/300) and 69.00% at depth ≤3 (207/300).
+
 The official-split row is the bench default and does not include the production coverage tier.
-See "Production coverage tier" below for the 96.25% configuration.
+See "Production coverage tier" below for the 96.70% configuration.
 
 ## Re-ranking: models, candidate table, and the overlap caveat
 
@@ -70,8 +77,9 @@ python -I tools/test_rerank_v4.py                # 0 failures expected
 | `reports/rank_model_v4.pkl` (default) | 73.72% | 90.31% | v2 + hit-rate blend, McNemar p = 0.0002 |
 
 These rows use the pre-coverage candidate set (33.5 candidates). The production default now adds
-a coverage tier and bounded stereo enumeration; its pool has 44.25 candidates, recall 96.25%, and
-v4 top-1 73.18%. See "Production coverage tier" below.
+a coverage tier and bounded stereo enumeration; its pool has 44.3 candidates, recall 96.70%
+(2026-11-27 rerun; 96.25% in the 2026-11-21 run), and v4 top-1 73.30%. See
+"Production coverage tier" below.
 
 Reproduce either row:
 
@@ -108,7 +116,8 @@ Measured on the full official split (4,993 evaluable reactions, v4 re-ranker):
 |---|---|---|---|---|
 | no coverage (`--no-rescue --no-stereo-enum`) | 92.19% | **73.72%** | 90.31% | 33.48 |
 | coverage, no stereo | 94.99% | 73.70% | 91.51% | 35.07 |
-| production default (coverage + stereo) | **96.25%** | 73.18% | **90.83%** | **44.25** |
+| production default (coverage + stereo), 2026-11-21 | 96.25% | 73.18% | 90.83% | 44.25 |
+| production default, 2026-11-27 rerun | **96.70%** | **73.30%** | **91.39%** | **44.3** |
 
 The stereo layer removes stereochemistry from a coverage product, enumerates at most eight
 stereoisomers for products with at most four stereocentres, and also adds the flat structure.
@@ -129,7 +138,7 @@ $env:CHEMCREACT_BENCH_RESCUE_MAX_SUPPORT='1000000000'
 $env:CHEMCREACT_BENCH_STEREO_ENUM='8'
 $env:CHEMCREACT_BENCH_STEREO_MAX_CENTERS='4'
 $env:CHEMCREACT_BENCH_TAG='production_default'
-python -I tools/paper_bench_official_test.py 2      # 4,993 rows, about 1,050 s
+python -I tools/paper_bench_official_test.py 2      # 4,993 rows, 1,031 s (2026-11-27)
 ```
 
 The no-coverage row is the bench default and needs none of these variables. On the command line,
@@ -193,7 +202,7 @@ Pre-patch baseline: evidence r1/r3 give 0 consistent and 3 misses; production r1
 Post-patch result: all four configurations give 3 consistent and 0 misses; the 5-HMF case closes
 with the glucose dehydration/cyclization template. `tools/validate_new_rules.py` passes the two
 written rules on positive and negative panels, `tools/validate_derived_rules.py` passes the five
-derived rules (14/14), and `tools/test_reaction_cases.py` passes 119/119 with 109/109 active-rule
+derived rules (14/14), and `tools/test_reaction_cases.py` passes 121/121 with 111/111 active-rule
 coverage.
 
 Release gate quick after the five derived rules changes only the honey-fried smoke count. Against
@@ -414,6 +423,30 @@ parenthetical annotation fragments; this is an herb-resolution lower bound, not
 a chemistry validation. Machine-readable rows:
 `reports/formula_db_coverage_20261124.json`.
 
+The current recommended coverage uses the sourced synonym table and leaves
+ambiguous aliases unresolved:
+
+```powershell
+python -I tools\audit_formula_db_coverage3.py --no-alias-map
+```
+
+- 117,585 ingredient mentions; 85.64% resolve to `tcm.db` herbs;
+- 44.29% of formulas resolve every ingredient;
+- 2,541 mentions are ambiguous and are not counted.
+Output: `reports/formula_db_coverage3_sourced_20261124.json`.
+
+### TCM decoction example (current default)
+
+```powershell
+python -I integration\tcmai_bridge\chemreact.py predict --herb 甘草 --limit 12 --rounds 1 --cond 煎煮 --out runs\gc12
+```
+
+Current result: 2,176 candidate products and 2,176 provenance paths. Structural
+field completeness is 100% for all nine field groups; the condition rationale
+splits into 41.5% ORD condition windows, 30.8% temperature-policy notes, and
+27.8% "no ORD condition data, admitted". The old 573-path / 1.2% figure came
+from the 2026-10 build and is not reproducible with the current default.
+
 ### Candidate burden (round 208)
 
 `tools/report_candidate_burden.py` reports candidate counts, not precision.
@@ -423,9 +456,11 @@ candidates. On blind exploratory: mean 14.77, median 14, P90 25, 111/300 above
 
 ### Unvalidated rule backlog
 
-`reports/rules_unvalidated_backlog_20261124.md` lists the 59 active
-`unvalidated` rules by category. They remain exploratory; promotion requires
-independent literature or reaction data, not a number on 295.
+`reports/evidence_backlog_20261124.md` and
+`reports/rules_unvalidated_backlog_20261124.md` list the active `unvalidated`
+rules by category (32 after the ORD-evidence promotion; 41 rules with ORD
+execution evidence are `secondary`). They remain exploratory; promotion
+requires independent literature or reaction data, not a number on 295.
 
 ### Drug input source (ChEMBL)
 

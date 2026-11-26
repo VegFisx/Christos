@@ -26,7 +26,8 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-STAGE = Path(r"D:\ProgramData\DSHNS\chemreact-staging")
+STAGE = Path(os.environ.get("CHEMCREACT_ROOT")
+             or Path(__file__).resolve().parent.parent)
 for _p in (STAGE / "tools", STAGE / "libs", Path(r"D:\TCMAI\src")):
     sys.path.insert(0, str(_p))
 
