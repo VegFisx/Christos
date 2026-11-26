@@ -31,6 +31,7 @@ chemreact 核心：反应引擎（单步）
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from dataclasses import asdict, dataclass, field
@@ -171,18 +172,24 @@ class Product:
 # ---------------------------------------------------------------- 分子缓存
 
 _MOL_CACHE: Dict[str, Optional[Chem.Mol]] = {}
+# ★ 2026-11-14：原来无界。5 万条反应的产物分子全留在内存里，构建到 6,000 条
+#   就涨到 4 GB（实测）。超过上限整体清空——只是重算，结果不变。
+_MOL_CACHE_MAX = 200000
 
 
 def get_mol(smiles: str) -> Optional[Chem.Mol]:
-    if smiles not in _MOL_CACHE:
-        m = Chem.MolFromSmiles(smiles)
-        if m is not None:
-            try:
-                Chem.SanitizeMol(m)
-            except Exception:
-                m = None
-        _MOL_CACHE[smiles] = m
-    return _MOL_CACHE[smiles]
+    if smiles in _MOL_CACHE:
+        return _MOL_CACHE[smiles]
+    m = Chem.MolFromSmiles(smiles)
+    if m is not None:
+        try:
+            Chem.SanitizeMol(m)
+        except Exception:
+            m = None
+    if len(_MOL_CACHE) >= _MOL_CACHE_MAX:
+        _MOL_CACHE.clear()
+    _MOL_CACHE[smiles] = m
+    return m
 
 
 def classify_product(mol: Chem.Mol) -> Tuple[bool, bool]:
@@ -282,10 +289,13 @@ class Engine:
 
     def __init__(self, rules: Sequence[Dict[str, Any]],
                  profiles: Dict[str, Any],
-                 default_max_products: int = 3):
+                 default_max_products: int = 3,
+                 include_validation_pools: bool = False):
         self.rules = list(rules)
         self.profiles = dict(profiles)
         self.default_max_products = default_max_products
+        # 验收/标准例共底物默认不进入生产枚举；测试显式打开。
+        self.include_validation_pools = bool(include_validation_pools)
         self._rxn_cache: Dict[str, Any] = {}
         self._nreact_cache: Dict[str, int] = {}
         self._rdkit_rxn_cache: Dict[str, Any] = {}
@@ -346,8 +356,18 @@ class Engine:
         for item in (rule.get("co_substrate_pool") or []):
             if not isinstance(item, dict) or not item.get("smiles"):
                 continue
+            if item.get("validation_only") and not self.include_validation_pools:
+                continue
             when = item.get("when_solvent")
             if when and cond is not None and cond.solvent not in when:
+                continue
+            # ★ 第 163 轮：辅料型共底物（醋炙的乙酸等）按【条件模板名】门控。
+            #   溶剂门不够用：醋炙的溶剂也是 water，但普通水煎里没有乙酸。
+            #   模板名由 query_base 填进 cond.template（产品流程）；空串 = 不知道模板，
+            #   带模板门的池项在不知道模板时不出现（宁可少反应，不凭空加辅料）。
+            when_t = item.get("when_template")
+            if when_t and (cond is None
+                          or getattr(cond, "template", "") not in when_t):
                 continue
             out.append(item)
         return out
@@ -358,6 +378,23 @@ class Engine:
                    activation: float, round_no: int,
                    cond: Optional[Conditions] = None) -> List[Product]:
         n = self.n_reactants(rule)
+        if n == 2 and bool(rule.get("intramolecular")):
+            # One molecule carries both reactants; use the smartreact
+            # intramolecular helper (cut/open/run/rejoin).  Imported lazily to
+            # avoid the module-level engine <-> smartreact_engine cycle.
+            try:
+                from smartreact_engine import _apply_intra_pair
+                from rdkit.Chem import rdChemReactions
+                rx = rdChemReactions.ReactionFromSmarts(str(rule.get("smarts") or ""))
+                got = _apply_intra_pair(
+                    rx, get_mol(sub.smiles),
+                    min_path=int(rule.get("intra_min_path") or 8),
+                    max_products=int(rule.get("max_products_per_molecule") or 12))
+            except Exception:
+                return []
+            return self._collect(rule, sub, activation, round_no, sorted(got),
+                                 co_substrate=None,
+                                 limit=int(rule.get("max_products_per_molecule") or 12))
         if n == 2:
             return self._apply_bireactant(rule, sub, activation, round_no, cond)
         return self._apply_rdchiral(rule, sub, activation, round_no)
@@ -728,4 +765,5 @@ class Engine:
 def load_engine(rules_path: Optional[str] = None) -> Tuple[Engine, List[Dict], Dict]:
     p = Path(rules_path) if rules_path else (_STAGE / "rules" / "rules.json")
     profiles, rules = load_rules(p)
-    return Engine(rules, profiles), rules, profiles
+    include_validation = os.environ.get("CHEMCREACT_VALIDATION_POOLS") == "1"
+    return Engine(rules, profiles, include_validation_pools=include_validation), rules, profiles

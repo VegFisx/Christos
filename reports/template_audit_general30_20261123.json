@@ -1,0 +1,529 @@
+{
+  "generated_at": "2026-11-23 14:16:15",
+  "n_cases": 30,
+  "n_hits": 30,
+  "n_errors": 0,
+  "base": {
+    "n_examples": 9770,
+    "exact_overlap_cases": 0,
+    "same_substrates_cases": 0
+  },
+  "mined": {
+    "n_templates": 41619,
+    "src": {
+      "ord_shards_full": 41619
+    },
+    "support_min": 11,
+    "support_p10": 25,
+    "support_median": 322,
+    "support_max": 23829,
+    "n_hits_with_mined": 28,
+    "share_support_le10": 0.0
+  },
+  "cases_with_source": {
+    "base_smarts": 8,
+    "mined_ord": 22
+  },
+  "rows": [
+    {
+      "id": "uspto50k_test_US06992103B2",
+      "class": "1",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20130289029A1",
+      "class": "1",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        322
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20140024650A1",
+      "class": "1",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US06924276B2",
+      "class": "2",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US08501746B2",
+      "class": "2",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20090197859A1",
+      "class": "2",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US05059708",
+      "class": "3",
+      "hit": true,
+      "n_hit_products": 2,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        28,
+        35
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20070111988A1",
+      "class": "3",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "suzuki"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20130109652A1",
+      "class": "3",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "suzuki"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US07645781B2",
+      "class": "4",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        63
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20050234081A1",
+      "class": "4",
+      "hit": true,
+      "n_hit_products": 2,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        25,
+        25
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20110201815A1",
+      "class": "4",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        26
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US08153544B2",
+      "class": "5",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "williamson"
+      ],
+      "hit_sources": [
+        "base_smarts"
+      ],
+      "mined_supports": [],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20060035933A1",
+      "class": "5",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        163
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20130035310A1",
+      "class": "5",
+      "hit": true,
+      "n_hit_products": 2,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        11,
+        1877
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20110118480A1",
+      "class": "6",
+      "hit": true,
+      "n_hit_products": 2,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        387,
+        15817
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20120226037A1",
+      "class": "6",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        36
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20140249104A1",
+      "class": "6",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        284
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US07704994B2",
+      "class": "7",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        23829
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20090209562A1",
+      "class": "7",
+      "hit": true,
+      "n_hit_products": 3,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        261,
+        261,
+        758
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20090221555A1",
+      "class": "7",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        23829
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US04721718",
+      "class": "8",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        364
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20110059951A1",
+      "class": "8",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        2799
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20110201650A1",
+      "class": "8",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        2799
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US04588732",
+      "class": "9",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        75
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US04988705",
+      "class": "9",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        227
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20080207708A1",
+      "class": "9",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        359
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US04760163",
+      "class": "10",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        2313
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US06265349B1",
+      "class": "10",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        2313
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    },
+    {
+      "id": "uspto50k_test_US20100034827A1",
+      "class": "10",
+      "hit": true,
+      "n_hit_products": 1,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "hit_sources": [
+        "mined_ord"
+      ],
+      "mined_supports": [
+        2313
+      ],
+      "base_exact_overlap": false,
+      "base_substrate_overlap": false
+    }
+  ]
+}

@@ -34,7 +34,7 @@ for _s in (sys.stdout, sys.stderr):
 
 FROZEN = bool(getattr(sys, "frozen", False))
 BASE = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
-VERSION = "1.0.1"
+VERSION = "1.1.0"
 
 # ★ 数据根目录：**便携式**，放在 exe 旁边（`runtime\`）。
 #   为什么不放 %APPDATA%：冻结后的 exe 在那里建子目录会莫名 WinError 5（ACL 明明允许），
@@ -69,6 +69,21 @@ if sys.stdout is None or sys.stderr is None:
         if sys.stderr is None:
             sys.stderr = _fh
 
+# ★ 2026-11-20 审计修复：日志实际打开在哪，LOGDIR 就跟到哪。
+#   DATAROOT 只读时 _open_log 会退到 %LOCALAPPDATA% / temp，产物目录必须跟着退，
+#   否则 mkdir 抛异常、exe 直接起不来。
+if LOG:
+    LOGDIR = Path(LOG).parent
+
+OUT_ROOT = LOGDIR / "out"
+try:
+    OUT_ROOT.mkdir(parents=True, exist_ok=True)
+except Exception as _ex:                                 # noqa: BLE001
+    OUT_ROOT = Path(tempfile.gettempdir()) / "chemreact" / "out"
+    OUT_ROOT.mkdir(parents=True, exist_ok=True)
+    print("[warn] 产物目录不可写（%s），退回 %s" % (_ex, OUT_ROOT))
+os.environ.setdefault("CHEMCREACT_UI_OUT", str(OUT_ROOT))
+
 # ★ 引擎解释器：打包后必须指向用户 venv，否则 sys.executable 会是 exe 自身
 VENV_PY = r"D:\TCMAI\venv\Scripts\python.exe"
 if FROZEN:
@@ -93,9 +108,8 @@ def main() -> int:
     sys.path.insert(0, str(BASE))
     import ui
 
-    # 产物目录：不要写进程序自身目录（打包后可能只读）——放到 %LOCALAPPDATA%\chemreact\out
-    out_dir = DATAROOT / "out"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # 产物目录：不要写进程序自身目录（打包后可能只读）——OUT_ROOT 已带回退
+    out_dir = OUT_ROOT
     ui.OUT_DIR = out_dir
     ui.STATE_FILE = out_dir / "run_state.json"
 
@@ -124,7 +138,12 @@ def main() -> int:
             r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
         ]
         prof = LOGDIR / "edge-profile"
-        prof.mkdir(parents=True, exist_ok=True)
+        try:
+            prof.mkdir(parents=True, exist_ok=True)
+        except Exception as ex:                          # noqa: BLE001
+            prof = Path(tempfile.gettempdir()) / "chemreact-edge-profile"
+            prof.mkdir(parents=True, exist_ok=True)
+            print("[warn] Edge profile 目录不可用（%s），改用 %s" % (ex, prof))
         for e in edge:
             if Path(e).exists():
                 try:

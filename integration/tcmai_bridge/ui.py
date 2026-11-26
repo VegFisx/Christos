@@ -11,6 +11,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import sys
 import threading
 import time
@@ -26,8 +27,15 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 HERE = Path(__file__).resolve().parent
-OUT_DIR = HERE / "out"
-OUT_DIR.mkdir(parents=True, exist_ok=True)
+# ★ 2026-11-20 审计修复：OUT_DIR 可用 CHEMREACT_UI_OUT 覆盖（桌面版指到可写目录）；
+#   目录不可写时退回系统 temp —— 否则装到只读目录（如 Program Files）时 import 就崩。
+OUT_DIR = Path(os.environ.get("CHEMCREACT_UI_OUT") or (HERE / "out"))
+try:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+except Exception as _ex:                                # noqa: BLE001
+    OUT_DIR = Path(tempfile.gettempdir()) / "chemreact-out"
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    print("[warn] 产物目录不可写（%s），退回 %s" % (_ex, OUT_DIR))
 PAGE = HERE / "ui_page.html"
 # ★ 第七十五轮（桌面化）：引擎用哪个解释器可配置。
 #   平时 = 当前解释器；打包成 Windows 桌面程序时，由 desktop.py 把 CHEMREACT_PY
@@ -50,8 +58,33 @@ def _now() -> str:
 
 
 def _safe_name(name: str) -> str:
-    """只允许 中文/字母/数字/点/横线/下划线（防目录穿越）。"""
-    return name if re.fullmatch(r"[\w\u4e00-\u9fff.\-]+", name or "") else ""
+    """文件名清洗：允许空格、加号、全角字符（报告名里常见），只挡目录穿越。
+
+    ★ 2026-11-20 审计修复：旧版用白名单正则，空格/加号/全角标点一律返回空，
+      带「+」或空格的报告（如「甘草 煎煮」「A+B」）链接全部 404。
+      现在只拒绝路径分隔符、控制字符与 ".."；父目录归属由调用方再做一次解析校验。
+    """
+    s = (name or "").strip()
+    if not s or len(s) > 200:
+        return ""
+    if s in (".", "..") or s.startswith(".."):
+        return ""
+    if any(c in s for c in ("/", "\\", "\x00")):
+        return ""
+    if any(ord(c) < 32 for c in s):
+        return ""
+    return s
+
+
+def _engine_env() -> dict:
+    """引擎子进程环境：把运行台账指到界面读的目录。
+
+    桌面版里 OUT_DIR = exe 旁 runtime/out，而引擎默认写 HERE/out（程序目录，
+    打包后可能只读）——不传这个变量，界面侧边栏历史会永远为空。
+    """
+    env = dict(os.environ)
+    env["CHEMCREACT_RUNS_DIR"] = str(OUT_DIR)
+    return env
 
 
 def _out_dir(form, key: str):
@@ -104,7 +137,12 @@ def _start_run(form: dict) -> dict:
             if busy:
                 return {"error": "已有一个任务在跑（%s）；等它完成再试。" % busy[0]["rid"]}
             f = open(log_path, "w", encoding="utf-8")
-            proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT, cwd=str(HERE))
+            try:                                    # ★ 解释器不存在等 -> 报错，不崩服务
+                proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT,
+                                        cwd=str(HERE), env=_engine_env())
+            except Exception as ex:                 # noqa: BLE001
+                f.close()
+                return {"error": "启动引擎失败：%s: %s" % (type(ex).__name__, ex)}
             RUNS[rid] = {"proc": proc, "log": log_path, "f": f, "out_dir": od,
                          "start": time.time(), "result": None,
                          "kind": "routes", "lang": lang,
@@ -221,8 +259,12 @@ def _start_run(form: dict) -> dict:
         if busy:
             return {"error": "已有一个任务在跑（%s）；等它完成再试。" % busy[0]["rid"]}
         f = open(log_path, "w", encoding="utf-8")
-        proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT,
-                                cwd=str(HERE))
+        try:                                        # ★ 解释器不存在等 -> 报错，不崩服务
+            proc = subprocess.Popen(argv, stdout=f, stderr=subprocess.STDOUT,
+                                    cwd=str(HERE), env=_engine_env())
+        except Exception as ex:                     # noqa: BLE001
+            f.close()
+            return {"error": "启动引擎失败：%s: %s" % (type(ex).__name__, ex)}
         RUNS[rid] = {"proc": proc, "log": log_path, "f": f, "out_dir": od,
                      "start": time.time(), "result": None,
                      "kind": "predict", "lang": lang,
@@ -775,7 +817,11 @@ class Handler(BaseHTTPRequestHandler):
                             base = d
                             break
             fp = base / name
-            if not name or not fp.is_file():
+            try:                                    # ★ 目录穿越的最后一道：解析后必须仍在 base 下
+                inside = fp.resolve().parent == Path(base).resolve()
+            except OSError:
+                inside = False
+            if not name or not inside or not fp.is_file():
                 return self._send(404, b"not found", "text/plain; charset=utf-8")
             ctype = {".html": "text/html; charset=utf-8", ".csv": "text/csv; charset=utf-8",
                      ".tsv": "text/tab-separated-values; charset=utf-8",

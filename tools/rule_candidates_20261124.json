@@ -1,0 +1,170 @@
+{
+  "note": "Candidate probes only; passing entries are not auto-added to rules.json.",
+  "candidates": [
+    {
+      "id": "control_hcl_alkene",
+      "smarts": "[#6:1]=[#6:2].[Cl:3]>>[#6:1]-[#6:2]-[Cl:3]",
+      "bidirectional": true,
+      "standard": [
+        {
+          "name": "propene+HCl",
+          "reactants": [
+            "CC=C",
+            "Cl"
+          ],
+          "product": "CC(Cl)C"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US07223769B2"
+      ]
+    },
+    {
+      "id": "control_deoxygenation",
+      "smarts": "[C;H0;D4;+0:1]-[O;H1;D1;+0:2]>>[C;H1;D4;+0:1]",
+      "co_reagents": {
+        "H2": 1
+      },
+      "byproducts": {
+        "H2O": 1
+      },
+      "standard": [
+        {
+          "name": "tert-butanol",
+          "reactants": [
+            "CC(C)(C)O"
+          ],
+          "product": "CC(C)C"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US07473703B2"
+      ]
+    },
+    {
+      "id": "quat_intramolecular",
+      "smarts": "[Cl;H0;D1;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[C:4]-[N;H0;D3;+0:5]1-[C:6]-[CH2;D2;+0:7]-[CH2;D2;+0:8]-[C:9]-1>>[C:4]1-[CH2;D2;+0:3]-[CH2;D2;+0:7]-[C:6]-[N+;H0;D4:5]-12-[C:9]-[CH2;D2;+0:8]-[CH2;D2;+0:2]-2.[Cl-;H0;D0:1]",
+      "byproducts": {
+        "Cl": 1
+      },
+      "standard": [
+        {
+          "name": "chloropropylpyrrolidine",
+          "reactants": [
+            "ClCCCN1CCCC1"
+          ],
+          "product": "C1CC[N+]2(C1)CCC2"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US20110257395A1"
+      ]
+    },
+    {
+      "id": "fischer_aza_benzyl",
+      "smarts": "[#7;a:1]:[c;H0;D3;+0:2](-[NH;D2;+0:3]-[NH2;D1;+0:4]):[cH;D2;+0:5]:[c:6].[#6:7]-[C;H0;D3;+0:8](=[O;D1;H0:9])-[#6:10]>>[#7;a:1]:[c;H0;D3;+0:2]1:[c,n;+0:7]:[c;H0;D3;+0:8](-[#6:10]):[nH;D2;+0:3]:[c,n;H0;D3;+0:5]:1:[c,n:6].[NH3:4].[OH2:9]",
+      "byproducts": {
+        "NH3": 1,
+        "H2O": 1
+      },
+      "standard": [
+        {
+          "name": "2-hydrazinylpyridine+benzyl phenyl ketone",
+          "reactants": [
+            "NNc1ccccn1",
+            "O=C(Cc1ccccc1)c1ccccc1"
+          ],
+          "product": "c1ccc(Cc2cc3cccnc3[nH]2)cc1"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US20050261331A1"
+      ]
+    },
+    {
+      "id": "fischer_phenyl",
+      "smarts": "[#6:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[c;H0;D3;+0:4](:[c:5]):[c:6].[NH2;D1;+0:7]-[NH;D2;+0:8]-[c,n:9]:[c,n;D2;+0:10]:[c,n:11]>>[NH3;D0;+0:7].[OH2;D0;+0:3].[c,n:11]:[c,n;H0;D3;+0:10]1:[c,n:9]:[nH;D2;+0:8]:[c;H0;D3;+0:2](-[c;H0;D3;+0:4](:[c:5]):[c:6]):[c;+0:1]:1",
+      "byproducts": {
+        "NH3": 1,
+        "H2O": 1
+      },
+      "standard": [
+        {
+          "name": "phenylhydrazine+acetophenone",
+          "reactants": [
+            "CC(=O)c1ccccc1",
+            "NNc1ccccc1"
+          ],
+          "product": "c1ccc(-c2cc3ccccc3[nH]2)cc1"
+        }
+      ],
+      "external": []
+    },
+    {
+      "id": "conrad_limpach",
+      "smarts": "[C;D1;H3:6]-[c;H0;D3;+0:5]1:[cH;D2;+0:4]:[c;H0;D3;+0:2](=[O;D1;H0:3]):[c;H0;D3;+0:10](:[c:11]):[c:9]:[nH;D2;+0:8]:1.[OH2;D0;+0:7].[OH2;D0;+0:1]>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=[O;D1;H0:3])-[CH2;D2;+0:4]-[C;H0;D3;+0:5](-[C;D1;H3:6])=[O;H0;D1;+0:7].[NH2;D1;+0:8]-[c:9]:[cH;D2;+0:10]:[c:11]",
+      "byproducts": {
+        "C2H6O": 1,
+        "H2O": 1
+      },
+      "standard": [
+        {
+          "name": "aniline+ethyl acetoacetate",
+          "reactants": [
+            "Nc1ccccc1",
+            "CCOC(=O)CC(C)=O"
+          ],
+          "product": "Cc1[nH]c2ccccc2c(=O)c1"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US09018229B2"
+      ]
+    },
+    {
+      "id": "hantzsch_thiazole",
+      "smarts": "[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[c;H0;D3;+0:5](:[c:6]):[c:7].[N;D1;H2:8]-[#7:9]-[C;H0;D3;+0:10](-[NH2;D1;+0:11])=[S;H0;D1;+0:12]>>[BrH;D0;+0:1].[N;D1;H2:8]-[#7:9]-[c;H0;D3;+0:10]1:[n;H0;D2;+0:11]:[c;H0;D3;+0:3](-[c;H0;D3;+0:5](:[c:6]):[c:7]):[cH;D2;+0:2]:[s;H0;D2;+0:12]:1.[OH2;D0;+0:4]",
+      "byproducts": {
+        "HBr": 1,
+        "H2O": 1
+      },
+      "standard": [
+        {
+          "name": "phenacyl bromide+thiosemicarbazide",
+          "reactants": [
+            "O=C(CBr)c1ccccc1",
+            "NNC(N)=S"
+          ],
+          "product": "NNc1nc(-c2ccccc2)cs1"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US20090247567A1"
+      ]
+    },
+    {
+      "id": "reductive_amination",
+      "smarts": "[#6:1]-[NH3+;D1;+0:2]-[#6:3].[CH;D2;+0:4](=[O;D1:5])-[#6:6]>>[#6:1]-[NH;H1;D2;+0:2]-[CH2;D2;+0:4]-[#6:6]",
+      "co_reagents": {
+        "H2": 1,
+        "OH-": 1
+      },
+      "byproducts": {
+        "H2O": 2
+      },
+      "standard": [
+        {
+          "name": "benzaldehyde+isopropylammonium",
+          "reactants": [
+            "CC(C)[NH3+]",
+            "O=Cc1ccccc1"
+          ],
+          "product": "CC(C)NCc1ccccc1"
+        }
+      ],
+      "external": [
+        "uspto50k_test_US04599198"
+      ]
+    }
+  ]
+}

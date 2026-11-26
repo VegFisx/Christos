@@ -165,7 +165,14 @@ def effective_temperature(cond: Any,
     bath = bath_of(cond)
     if bath in ("dry", "wetting"):
         return T, ""
-    p = float(getattr(cond, "pressure_atm", 1.0) or 1.0)
+    # ★ 2026-11-20 审计修复：旧写法 `or 1.0` 把 0 静默当 1 atm，负值/nan 会
+    #   让截断悄悄失效。这里显式拒绝无效压力：不截断，并让入口层负责报错。
+    try:
+        p = float(getattr(cond, "pressure_atm", 1.0))
+    except (TypeError, ValueError):
+        return T, ""
+    if not math.isfinite(p) or p <= 0.0:
+        return T, ""
     tsat = t_sat_C(str(getattr(cond, "solvent", "") or ""), p)
     if tsat is None:
         return T, ""

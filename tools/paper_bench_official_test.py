@@ -13,6 +13,10 @@
   CHEMCREACT_BENCH_LIMIT=N   只跑前 N 条（调试）。
   CHEMCREACT_BENCH_SHARD=i/n 分片。
 
+workers 实测（2026-11-13，4,993 条，CLI 配置，16 GB 机器）：
+  2 → 587 s / 峰值约 1.6 GB；4 → 约 230 s；6 → 93 s / 6.8 GB；8 → 86 s / 8.1 GB。
+  6 是拐点；8 只快 7 s 但多占 1.3 GB。
+
 输入：reports/paper/data/uspto50k_official/raw_test.csv
       列 = id,class,reactants>reagents>productions（带原子映射）
 输出：<OUT>/forward_official_test__<TAG>.json
@@ -131,6 +135,18 @@ def _load_mit() -> list[dict]:
     return recs
 
 
+def _default_rerank_model() -> str:
+    """读 core/rerank.py 的 DEFAULT_MODEL，保证 bench 默认 = 生产默认。"""
+    try:
+        txt = (_HERE.parent / "core" / "rerank.py").read_text(encoding="utf-8")
+        m = re.search(r'DEFAULT_MODEL\s*=\s*ROOT\s*/\s*"reports"\s*/\s*"([^"]+)"', txt)
+        if m:
+            return str(_HERE.parent / "reports" / m.group(1))
+    except Exception:                                  # noqa: BLE001
+        pass
+    return str(_HERE.parent / "reports" / "rank_model_v4.pkl")
+
+
 _G: dict = {}
 
 
@@ -147,19 +163,35 @@ def _init() -> None:
         ("CHEMCREACT_BENCH_EXTRA_MIN_SUPPORT", "extra_template_min_support", int),
         ("CHEMCREACT_BENCH_MONO_LIMIT", "mono_template_limit", int),
         ("CHEMCREACT_BENCH_MAXPROD", "max_products_per_pair", int),
+        ("CHEMCREACT_BENCH_RESCUE_MIN", "rescue_min_candidates", int),
+        ("CHEMCREACT_BENCH_RESCUE_MIN_SUPPORT", "rescue_min_support", int),
+        ("CHEMCREACT_BENCH_RESCUE_MAX_SUPPORT", "rescue_max_support", int),
+        ("CHEMCREACT_BENCH_STEREO_ENUM", "stereo_enum_cap", int),
+        ("CHEMCREACT_BENCH_STEREO_MAX_CENTERS", "stereo_enum_max_centers", int),
     ):
         if _os.environ.get(env):
             kw[key] = conv(_os.environ[env])
     if _os.environ.get("CHEMCREACT_BENCH_MONO_CO_REAGENT"):
         kw["mono_include_co_reagent"] = True
+    # ★ 第 156 轮：抢救层（低支持度模板），默认关
+    if _os.environ.get("CHEMCREACT_BENCH_RESCUE"):
+        kw["rescue"] = True
+    # ★ 第 162 轮：可换模板池（训练半区挖的通用模板做覆盖层探针）
+    if _os.environ.get("CHEMCREACT_BENCH_RESCUE_PATH"):
+        kw["rescue_path"] = _os.environ["CHEMCREACT_BENCH_RESCUE_PATH"]
     # ★ 第129轮：跑「CLI 同配置」（curated 模板 + 严格氧化还原门），用于和命令行口径对齐
     if _os.environ.get("CHEMCREACT_BENCH_CLI_CONFIG"):
         kw["use_curated_templates"] = True
         kw["strict_redox_gate"] = True
+        # ★ 2026-11-22：CLI-config 基准是历史探索口径（全部 active curated），
+        #   显式允许 unvalidated，避免 provenance 闸门改变已发布基准。
+        kw["allow_unvalidated"] = True
     # ★ 第128轮：重排序（只改顺序；候选集合不变）
     if _os.environ.get("CHEMCREACT_BENCH_RERANK"):
+        # ★ 2026-11-14：默认模型必须跟生产走（core/rerank.py 的 DEFAULT_MODEL）。
+        #   这里以前写死 rank_model_20261107.pkl（v1），不设环境变量就会静默测 v1。
         kw["rerank_model"] = (_os.environ.get("CHEMCREACT_RERANK_MODEL")
-                              or str(_HERE.parent / "reports" / "rank_model_20261107.pkl"))
+                              or _default_rerank_model())
     # ★ 第147轮：中心模型排序（同样只改顺序；用于和离线重排序对比）
     if _os.environ.get("CHEMCREACT_BENCH_RERANK_CENTER"):
         kw["center_rank"] = True

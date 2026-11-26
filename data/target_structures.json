@@ -56,6 +56,17 @@
       "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4-hydroxybenzaldehyde/property/MolecularFormula,InChIKey,IsomericSMILES,Title/JSON",
       "fetched_at": "2026-11-10",
       "note": "天麻素（gastrodin，C13H18O7）去葡萄糖后的苷元；tcm.db 有 4-hydroxybenzaldehyde 条目（HBIN010505）但 inchi_key 为空，故用 PubChem 键比对"
+    },
+    "berberrubine": {
+      "cid": 72704,
+      "title": "Berberrubine",
+      "formula": "C19H16NO4+",
+      "smiles": "COC1=C(C2=C[N+]3=C(C=C2C=C1)C4=CC5=C(C=C4CC3)OCO5)O",
+      "inchikey": "GLYPKDKODVRYGP-UHFFFAOYSA-O",
+      "skeleton_prefix": "GLYPKDKODVRYGP",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/72704",
+      "fetched_at": "2026-11-22",
+      "why": "黄连酒炙：小檗碱 O-去甲基产物；独立于黄柏巴马汀案例"
     }
   },
   "unavailable": [

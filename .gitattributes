@@ -1,0 +1,2 @@
+# ChEMBL JSONL is hashed byte-for-byte in chembl_*_meta.json; keep LF on checkout.
+data/drugs/*.jsonl text eol=lf

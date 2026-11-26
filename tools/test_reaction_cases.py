@@ -10,9 +10,14 @@ r"""跑反应级验收测试集。
   用例写错和引擎错，两种都要查清楚是哪一种。
 """
 import json
+import os
 import sys
 from collections import Counter
 from pathlib import Path
+
+# 2026-11-24：验收用例里的标准例共底物池标记为 validation_only，
+# 生产枚举默认不加载；测试必须在 load_engine() 之前打开。
+os.environ.setdefault("CHEMCREACT_VALIDATION_POOLS", "1")
 
 STAGE = Path(r"D:\ProgramData\DSHNS\chemreact-staging")
 for d in ("core", "conditions", "rules", "libs", "sources"):
@@ -74,6 +79,11 @@ def run_rule_case(c: dict):
         return False, f"底物 SMILES 解析失败: {smi}"
 
     cond = T.get_template(c.get("conditions") or "煎煮")
+    # ★ 第 163 轮：与产品流程对齐（query_base 会把模板名填进 cond.template）。
+    #   带模板门的共底物池（醋炙的乙酸）依赖这个字段；测试不填就永远测不到。
+    if not getattr(cond, "template", ""):
+        from dataclasses import replace as _dc_replace
+        cond = _dc_replace(cond, template=str(c.get("conditions") or "煎煮"))
     act = {rr["id"]: s for rr, s, _ in active_rules(rules, profiles, cond)}
     score = act.get(c["rule"])
     if score is None:

@@ -1,0 +1,941 @@
+{
+ "summary": {
+  "rules": 41,
+  "with_water": 40,
+  "with_water_and_le100": 33,
+  "with_water_le100_ge3": 24,
+  "with_water_le100_ge10": 11,
+  "with_le100_nometal": 37,
+  "with_water_only": 35,
+  "with_water_only_le100": 23,
+  "with_water_only_le100_nometal": 23,
+  "scanned": 120000,
+  "elapsed_sec": 2355.5,
+  "index": "D:\\ProgramData\\DSHNS\\chemreact-staging\\data\\ord_reaction_index.jsonl"
+ },
+ "rows": [
+  {
+   "id": "hydrolysis_amide_001",
+   "match": 3362,
+   "with_condition": 2934,
+   "temp_le_100": 432,
+   "water": 236,
+   "water_temp_le_100": 68,
+   "water_no_temp": 159,
+   "le100_nometal": 428,
+   "water_only": 98,
+   "water_only_le100": 24,
+   "water_only_le100_nometal": 24,
+   "top_water_temps": {
+    "0 1": 16,
+    "80 1": 8,
+    "50 1": 7,
+    "90 1": 5,
+    "60 1": 5,
+    "70 1": 4,
+    "20 1": 3,
+    "40 1": 3
+   },
+   "top_water_solvents": {
+    "water": 204,
+    "H2O": 22,
+    "Water": 12
+   }
+  },
+  {
+   "id": "amidation_intermolecular_001",
+   "match": 6006,
+   "with_condition": 3894,
+   "temp_le_100": 648,
+   "water": 591,
+   "water_temp_le_100": 120,
+   "water_no_temp": 471,
+   "le100_nometal": 648,
+   "water_only": 46,
+   "water_only_le100": 16,
+   "water_only_le100_nometal": 16,
+   "top_water_temps": {
+    "0 1": 31,
+    "60 1": 13,
+    "50 1": 11,
+    "40 1": 10,
+    "80 1": 10,
+    "25 1": 10,
+    "-10 1": 6,
+    "10 1": 5
+   },
+   "top_water_solvents": {
+    "water": 453,
+    "Water": 102,
+    "H2O": 39
+   }
+  },
+  {
+   "id": "coupling_suzuki_biaryl_001",
+   "match": 920,
+   "with_condition": 611,
+   "temp_le_100": 264,
+   "water": 227,
+   "water_temp_le_100": 105,
+   "water_no_temp": 98,
+   "le100_nometal": 200,
+   "water_only": 46,
+   "water_only_le100": 19,
+   "water_only_le100_nometal": 15,
+   "top_water_temps": {
+    "80 1": 32,
+    "100 1": 24,
+    "90 1": 17,
+    "85 1": 10,
+    "110 1": 7,
+    "70 1": 6,
+    "150 1": 6,
+    "120 1": 5
+   },
+   "top_water_solvents": {
+    "water": 193,
+    "H2O": 25,
+    "Water": 15
+   }
+  },
+  {
+   "id": "hydrolysis_lactam_001",
+   "match": 2750,
+   "with_condition": 2392,
+   "temp_le_100": 324,
+   "water": 152,
+   "water_temp_le_100": 42,
+   "water_no_temp": 105,
+   "le100_nometal": 320,
+   "water_only": 59,
+   "water_only_le100": 13,
+   "water_only_le100_nometal": 13,
+   "top_water_temps": {
+    "0 1": 15,
+    "80 1": 6,
+    "90 1": 4,
+    "50 1": 4,
+    "20 1": 3,
+    "40 1": 2,
+    "170 1": 2,
+    "35 1": 1
+   },
+   "top_water_solvents": {
+    "water": 128,
+    "H2O": 17,
+    "Water": 8
+   }
+  },
+  {
+   "id": "esterification_intermolecular_001",
+   "match": 998,
+   "with_condition": 604,
+   "temp_le_100": 182,
+   "water": 66,
+   "water_temp_le_100": 19,
+   "water_no_temp": 45,
+   "le100_nometal": 182,
+   "water_only": 43,
+   "water_only_le100": 13,
+   "water_only_le100_nometal": 13,
+   "top_water_temps": {
+    "80 1": 5,
+    "40 1": 3,
+    "5 1": 2,
+    "0 1": 2,
+    "95 1": 1,
+    "280 1": 1,
+    "15 1": 1,
+    "75 1": 1
+   },
+   "top_water_solvents": {
+    "water": 59,
+    "H2O": 7,
+    "Water": 4
+   }
+  },
+  {
+   "id": "aminolysis_ester_001",
+   "match": 1249,
+   "with_condition": 891,
+   "temp_le_100": 236,
+   "water": 120,
+   "water_temp_le_100": 40,
+   "water_no_temp": 76,
+   "le100_nometal": 236,
+   "water_only": 45,
+   "water_only_le100": 10,
+   "water_only_le100_nometal": 10,
+   "top_water_temps": {
+    "30 1": 11,
+    "80 1": 7,
+    "60 1": 5,
+    "20 1": 4,
+    "90 1": 3,
+    "50 1": 3,
+    "150 1": 3,
+    "0 1": 2
+   },
+   "top_water_solvents": {
+    "water": 102,
+    "H2O": 14,
+    "Water": 6,
+    "WATER": 1
+   }
+  },
+  {
+   "id": "reduction_ketone_001",
+   "match": 955,
+   "with_condition": 886,
+   "temp_le_100": 203,
+   "water": 76,
+   "water_temp_le_100": 14,
+   "water_no_temp": 61,
+   "le100_nometal": 199,
+   "water_only": 30,
+   "water_only_le100": 7,
+   "water_only_le100_nometal": 7,
+   "top_water_temps": {
+    "0 1": 8,
+    "70 1": 1,
+    "40 1": 1,
+    "50 1": 1,
+    "27 1": 1,
+    "-20 1": 1,
+    "105 1": 1,
+    "60 1": 1
+   },
+   "top_water_solvents": {
+    "water": 64,
+    "H2O": 8,
+    "Water": 6
+   }
+  },
+  {
+   "id": "oxidation_sulfide_001",
+   "match": 336,
+   "with_condition": 307,
+   "temp_le_100": 78,
+   "water": 61,
+   "water_temp_le_100": 11,
+   "water_no_temp": 50,
+   "le100_nometal": 78,
+   "water_only": 20,
+   "water_only_le100": 6,
+   "water_only_le100_nometal": 6,
+   "top_water_temps": {
+    "0 1": 4,
+    "80 1": 3,
+    "23 1": 1,
+    "25 1": 1,
+    "5 1": 1,
+    "20 1": 1
+   },
+   "top_water_solvents": {
+    "water": 57,
+    "H2O": 3,
+    "Water": 3
+   }
+  },
+  {
+   "id": "hydrolysis_acetal_001",
+   "match": 213,
+   "with_condition": 197,
+   "temp_le_100": 40,
+   "water": 36,
+   "water_temp_le_100": 8,
+   "water_no_temp": 28,
+   "le100_nometal": 40,
+   "water_only": 21,
+   "water_only_le100": 6,
+   "water_only_le100_nometal": 6,
+   "top_water_temps": {
+    "60 1": 1,
+    "25 1": 1,
+    "90 1": 1,
+    "40 1": 1,
+    "65 1": 1,
+    "0 1": 1,
+    "100 1": 1,
+    "50 1": 1
+   },
+   "top_water_solvents": {
+    "water": 34,
+    "Water": 2
+   }
+  },
+  {
+   "id": "oxidation_hydroxyl_001",
+   "match": 346,
+   "with_condition": 319,
+   "temp_le_100": 68,
+   "water": 41,
+   "water_temp_le_100": 14,
+   "water_no_temp": 27,
+   "le100_nometal": 68,
+   "water_only": 9,
+   "water_only_le100": 3,
+   "water_only_le100_nometal": 3,
+   "top_water_temps": {
+    "-78 1": 7,
+    "5 1": 3,
+    "-60 1": 2,
+    "0 1": 1,
+    "85 1": 1
+   },
+   "top_water_solvents": {
+    "water": 34,
+    "Water": 4,
+    "H2O": 3
+   }
+  },
+  {
+   "id": "reduction_aldehyde_001",
+   "match": 313,
+   "with_condition": 299,
+   "temp_le_100": 62,
+   "water": 24,
+   "water_temp_le_100": 6,
+   "water_no_temp": 18,
+   "le100_nometal": 61,
+   "water_only": 10,
+   "water_only_le100": 3,
+   "water_only_le100_nometal": 3,
+   "top_water_temps": {
+    "0 1": 5,
+    "40 1": 1
+   },
+   "top_water_solvents": {
+    "water": 21,
+    "Water": 3,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "esterification_transesterification_001",
+   "match": 321,
+   "with_condition": 247,
+   "temp_le_100": 43,
+   "water": 28,
+   "water_temp_le_100": 4,
+   "water_no_temp": 24,
+   "le100_nometal": 43,
+   "water_only": 14,
+   "water_only_le100": 3,
+   "water_only_le100_nometal": 3,
+   "top_water_temps": {
+    "100 1": 3,
+    "-10 1": 1
+   },
+   "top_water_solvents": {
+    "water": 24,
+    "H2O": 4,
+    "Water": 1
+   }
+  },
+  {
+   "id": "coupling_sonogashira_aryl_alkyne_001",
+   "match": 287,
+   "with_condition": 182,
+   "temp_le_100": 102,
+   "water": 10,
+   "water_temp_le_100": 8,
+   "water_no_temp": 2,
+   "le100_nometal": 85,
+   "water_only": 3,
+   "water_only_le100": 2,
+   "water_only_le100_nometal": 2,
+   "top_water_temps": {
+    "80 1": 3,
+    "70 1": 3,
+    "55 1": 1,
+    "90 1": 1
+   },
+   "top_water_solvents": {
+    "water": 9,
+    "Water": 1
+   }
+  },
+  {
+   "id": "reduction_alkene_001",
+   "match": 747,
+   "with_condition": 678,
+   "temp_le_100": 60,
+   "water": 35,
+   "water_temp_le_100": 7,
+   "water_no_temp": 28,
+   "le100_nometal": 49,
+   "water_only": 19,
+   "water_only_le100": 2,
+   "water_only_le100_nometal": 2,
+   "top_water_temps": {
+    "0 1": 3,
+    "70 1": 2,
+    "-6.5 1": 1,
+    "50 1": 1
+   },
+   "top_water_solvents": {
+    "water": 27,
+    "Water": 8
+   }
+  },
+  {
+   "id": "condensation_schiff_base_001",
+   "match": 142,
+   "with_condition": 119,
+   "temp_le_100": 13,
+   "water": 8,
+   "water_temp_le_100": 3,
+   "water_no_temp": 5,
+   "le100_nometal": 13,
+   "water_only": 6,
+   "water_only_le100": 2,
+   "water_only_le100_nometal": 2,
+   "top_water_temps": {
+    "80 1": 1,
+    "25 1": 1,
+    "0 1": 1
+   },
+   "top_water_solvents": {
+    "water": 7,
+    "Water": 1
+   }
+  },
+  {
+   "id": "demethylation_aromatic_001",
+   "match": 686,
+   "with_condition": 576,
+   "temp_le_100": 141,
+   "water": 49,
+   "water_temp_le_100": 3,
+   "water_no_temp": 31,
+   "le100_nometal": 140,
+   "water_only": 35,
+   "water_only_le100": 2,
+   "water_only_le100_nometal": 2,
+   "top_water_temps": {
+    "140 1": 4,
+    "110 1": 2,
+    "160 1": 2,
+    "190 1": 2,
+    "165 1": 1,
+    "178 1": 1,
+    "125 1": 1,
+    "80 1": 1
+   },
+   "top_water_solvents": {
+    "water": 44,
+    "Water": 4,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "oxidation_sulfoxide_to_sulfone_001",
+   "match": 26,
+   "with_condition": 22,
+   "temp_le_100": 7,
+   "water": 6,
+   "water_temp_le_100": 3,
+   "water_no_temp": 3,
+   "le100_nometal": 7,
+   "water_only": 3,
+   "water_only_le100": 2,
+   "water_only_le100_nometal": 2,
+   "top_water_temps": {
+    "80 1": 2,
+    "0 1": 1
+   },
+   "top_water_solvents": {
+    "water": 6
+   }
+  },
+  {
+   "id": "oxidation_aldehyde_001",
+   "match": 126,
+   "with_condition": 112,
+   "temp_le_100": 29,
+   "water": 56,
+   "water_temp_le_100": 19,
+   "water_no_temp": 37,
+   "le100_nometal": 29,
+   "water_only": 6,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "0 1": 10,
+    "12 1": 2,
+    "25 1": 1,
+    "70 1": 1,
+    "5 1": 1,
+    "35 1": 1,
+    "10 1": 1,
+    "40 1": 1
+   },
+   "top_water_solvents": {
+    "water": 49,
+    "H2O": 6,
+    "Water": 2
+   }
+  },
+  {
+   "id": "condensation_aldol_001",
+   "match": 75,
+   "with_condition": 65,
+   "temp_le_100": 31,
+   "water": 17,
+   "water_temp_le_100": 9,
+   "water_no_temp": 8,
+   "le100_nometal": 31,
+   "water_only": 1,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "0 1": 2,
+    "-78 1": 2,
+    "45 1": 1,
+    "-70 1": 1,
+    "80 1": 1,
+    "60 1": 1,
+    "-10 1": 1
+   },
+   "top_water_solvents": {
+    "water": 13,
+    "Water": 3,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "elimination_amide_to_nitrile_001",
+   "match": 122,
+   "with_condition": 107,
+   "temp_le_100": 25,
+   "water": 12,
+   "water_temp_le_100": 3,
+   "water_no_temp": 9,
+   "le100_nometal": 25,
+   "water_only": 6,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "0 1": 2,
+    "95 1": 1
+   },
+   "top_water_solvents": {
+    "water": 10,
+    "Water": 1,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "hydroxylation_aromatic_001",
+   "match": 35,
+   "with_condition": 22,
+   "temp_le_100": 6,
+   "water": 12,
+   "water_temp_le_100": 3,
+   "water_no_temp": 8,
+   "le100_nometal": 6,
+   "water_only": 4,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "0 1": 1,
+    "-20 1": 1,
+    "65 1": 1,
+    "190 1": 1
+   },
+   "top_water_solvents": {
+    "water": 8,
+    "Water": 4
+   }
+  },
+  {
+   "id": "acylation_alcohol_anhydride_001",
+   "match": 145,
+   "with_condition": 124,
+   "temp_le_100": 24,
+   "water": 11,
+   "water_temp_le_100": 2,
+   "water_no_temp": 9,
+   "le100_nometal": 24,
+   "water_only": 6,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "-10 1": 1,
+    "100 1": 1
+   },
+   "top_water_solvents": {
+    "water": 10,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "substitution_alcohol_thionyl_family_001",
+   "match": 307,
+   "with_condition": 239,
+   "temp_le_100": 52,
+   "water": 6,
+   "water_temp_le_100": 2,
+   "water_no_temp": 4,
+   "le100_nometal": 52,
+   "water_only": 3,
+   "water_only_le100": 1,
+   "water_only_le100_nometal": 1,
+   "top_water_temps": {
+    "0 1": 1,
+    "55 1": 1
+   },
+   "top_water_solvents": {
+    "water": 5,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "oxidation_primary_alcohol_001",
+   "match": 524,
+   "with_condition": 505,
+   "temp_le_100": 105,
+   "water": 38,
+   "water_temp_le_100": 16,
+   "water_no_temp": 22,
+   "le100_nometal": 105,
+   "water_only": 5,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "0 1": 5,
+    "-78 1": 4,
+    "5 1": 3,
+    "-60 1": 3,
+    "-70 1": 1
+   },
+   "top_water_solvents": {
+    "water": 32,
+    "Water": 4,
+    "H2O": 2
+   }
+  },
+  {
+   "id": "coupling_n_alkylation_benzyl_001",
+   "match": 63,
+   "with_condition": 48,
+   "temp_le_100": 7,
+   "water": 12,
+   "water_temp_le_100": 5,
+   "water_no_temp": 7,
+   "le100_nometal": 7,
+   "water_only": 7,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "23 1": 1,
+    "90 1": 1,
+    "50 1": 1,
+    "80 1": 1,
+    "70 1": 1
+   },
+   "top_water_solvents": {
+    "water": 11,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "hydration_alkene_001",
+   "match": 70,
+   "with_condition": 57,
+   "temp_le_100": 17,
+   "water": 19,
+   "water_temp_le_100": 4,
+   "water_no_temp": 15,
+   "le100_nometal": 15,
+   "water_only": 1,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "0 1": 2,
+    "-10 1": 2
+   },
+   "top_water_solvents": {
+    "water": 16,
+    "Water": 2,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "coupling_n_arylation_amine_001",
+   "match": 149,
+   "with_condition": 94,
+   "temp_le_100": 42,
+   "water": 5,
+   "water_temp_le_100": 2,
+   "water_no_temp": 2,
+   "le100_nometal": 19,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "90 1": 1,
+    "100 1": 1,
+    "105 1": 1
+   },
+   "top_water_solvents": {
+    "water": 5
+   }
+  },
+  {
+   "id": "acylation_alcohol_cyclic_succinic_001",
+   "match": 18,
+   "with_condition": 17,
+   "temp_le_100": 4,
+   "water": 2,
+   "water_temp_le_100": 1,
+   "water_no_temp": 1,
+   "le100_nometal": 4,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "30 1": 1
+   },
+   "top_water_solvents": {
+    "water": 1,
+    "H2O": 1
+   }
+  },
+  {
+   "id": "decarboxylation_aromatic_001",
+   "match": 58,
+   "with_condition": 51,
+   "temp_le_100": 3,
+   "water": 8,
+   "water_temp_le_100": 1,
+   "water_no_temp": 5,
+   "le100_nometal": 3,
+   "water_only": 5,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "155 1": 1,
+    "80 1": 1,
+    "180 1": 1
+   },
+   "top_water_solvents": {
+    "water": 7,
+    "Water": 1
+   }
+  },
+  {
+   "id": "elimination_deamination_001",
+   "match": 13,
+   "with_condition": 12,
+   "temp_le_100": 3,
+   "water": 2,
+   "water_temp_le_100": 1,
+   "water_no_temp": 1,
+   "le100_nometal": 3,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "100 1": 1
+   },
+   "top_water_solvents": {
+    "water": 2
+   }
+  },
+  {
+   "id": "oxidation_amine_001",
+   "match": 13,
+   "with_condition": 12,
+   "temp_le_100": 3,
+   "water": 2,
+   "water_temp_le_100": 1,
+   "water_no_temp": 1,
+   "le100_nometal": 3,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "100 1": 1
+   },
+   "top_water_solvents": {
+    "water": 2
+   }
+  },
+  {
+   "id": "oxidation_dehydrogenation_enone_001",
+   "match": 41,
+   "with_condition": 35,
+   "temp_le_100": 8,
+   "water": 4,
+   "water_temp_le_100": 1,
+   "water_no_temp": 3,
+   "le100_nometal": 8,
+   "water_only": 3,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "77 1": 1
+   },
+   "top_water_solvents": {
+    "water": 4
+   }
+  },
+  {
+   "id": "oxidation_epoxide_001",
+   "match": 103,
+   "with_condition": 94,
+   "temp_le_100": 22,
+   "water": 10,
+   "water_temp_le_100": 1,
+   "water_no_temp": 9,
+   "le100_nometal": 22,
+   "water_only": 3,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "-78 1": 1
+   },
+   "top_water_solvents": {
+    "water": 10
+   }
+  },
+  {
+   "id": "addition_michael_amine_001",
+   "match": 76,
+   "with_condition": 63,
+   "temp_le_100": 15,
+   "water": 6,
+   "water_temp_le_100": 0,
+   "water_no_temp": 6,
+   "le100_nometal": 15,
+   "water_only": 6,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 6
+   }
+  },
+  {
+   "id": "addition_michael_thiol_001",
+   "match": 28,
+   "with_condition": 25,
+   "temp_le_100": 2,
+   "water": 2,
+   "water_temp_le_100": 0,
+   "water_no_temp": 2,
+   "le100_nometal": 2,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 2
+   }
+  },
+  {
+   "id": "cyclization_macro_lactam_001",
+   "match": 14,
+   "with_condition": 12,
+   "temp_le_100": 0,
+   "water": 0,
+   "water_temp_le_100": 0,
+   "water_no_temp": 0,
+   "le100_nometal": 0,
+   "water_only": 0,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {}
+  },
+  {
+   "id": "decarboxylation_beta_keto_001",
+   "match": 13,
+   "with_condition": 7,
+   "temp_le_100": 0,
+   "water": 1,
+   "water_temp_le_100": 0,
+   "water_no_temp": 1,
+   "le100_nometal": 0,
+   "water_only": 1,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 1
+   }
+  },
+  {
+   "id": "decarboxylation_malonic_001",
+   "match": 13,
+   "with_condition": 7,
+   "temp_le_100": 0,
+   "water": 1,
+   "water_temp_le_100": 0,
+   "water_no_temp": 1,
+   "le100_nometal": 0,
+   "water_only": 1,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 1
+   }
+  },
+  {
+   "id": "hydrolysis_imine_001",
+   "match": 21,
+   "with_condition": 16,
+   "temp_le_100": 4,
+   "water": 4,
+   "water_temp_le_100": 0,
+   "water_no_temp": 4,
+   "le100_nometal": 4,
+   "water_only": 1,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 4
+   }
+  },
+  {
+   "id": "isomerization_double_bond_001",
+   "match": 22,
+   "with_condition": 15,
+   "temp_le_100": 2,
+   "water": 6,
+   "water_temp_le_100": 0,
+   "water_no_temp": 5,
+   "le100_nometal": 2,
+   "water_only": 5,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {
+    "150 1": 1
+   },
+   "top_water_solvents": {
+    "water": 6
+   }
+  },
+  {
+   "id": "rearrangement_retro_aldol_001",
+   "match": 15,
+   "with_condition": 7,
+   "temp_le_100": 0,
+   "water": 1,
+   "water_temp_le_100": 0,
+   "water_no_temp": 1,
+   "le100_nometal": 0,
+   "water_only": 1,
+   "water_only_le100": 0,
+   "water_only_le100_nometal": 0,
+   "top_water_temps": {},
+   "top_water_solvents": {
+    "water": 1
+   }
+  }
+ ]
+}

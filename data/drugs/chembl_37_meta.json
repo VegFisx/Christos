@@ -1,0 +1,50 @@
+{
+  "snapshot_version": "ChEMBL_37",
+  "release_date": "2026-05-01",
+  "downloaded_at": "2026-11-23T07:53:45+00:00",
+  "api_base": "https://www.ebi.ac.uk/chembl/api/data",
+  "query": {
+    "max_phase": 4.0,
+    "molecule_type": "Small molecule"
+  },
+  "api_total": 4225,
+  "n_records": 3311,
+  "n_skipped_no_structure": 808,
+  "n_skipped_not_small_molecule": 106,
+  "data_file": "chembl_37_drugs.jsonl",
+  "data_sha256": "49672706a528bd9e24cb032757669bf711ffd966e2025c546bf9c2086378e9fc",
+  "fields": [
+    "chembl_id",
+    "name",
+    "smiles",
+    "inchi",
+    "inchi_key",
+    "formula",
+    "mw",
+    "heavy_atoms",
+    "max_phase",
+    "first_approval",
+    "molecule_type",
+    "structure_type",
+    "parent_chembl_id",
+    "active_chembl_id",
+    "synonyms",
+    "natural_product",
+    "oral",
+    "parenteral",
+    "topical",
+    "black_box_warning",
+    "withdrawn",
+    "availability_type",
+    "source"
+  ],
+  "license": {
+    "name": "CC BY-SA 3.0 Unported",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "ChEMBL, European Bioinformatics Institute (EMBL-EBI)",
+    "verified_from": "https://www.ebi.ac.uk/chembl/",
+    "verified_at": "2026-11-23",
+    "attribution": "ChEMBL data are made available under CC BY-SA 3.0; attribute ChEMBL/EMBL-EBI and share adaptations alike."
+  },
+  "note": "Snapshot for local reaction enumeration. No structures were hand-written. max_phase=4 represents approved drugs in ChEMBL; phase is not a guarantee of current marketing status."
+}

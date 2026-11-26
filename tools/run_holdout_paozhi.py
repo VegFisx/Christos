@@ -13,6 +13,7 @@
     python tools\\run_holdout_paozhi.py
 """
 
+import argparse
 import json
 import os
 import sqlite3
@@ -38,14 +39,15 @@ _DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
 DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 
 
-def run_one(cur, case):
+def run_one(cur, case, mode="evidence", rounds=1):
     """把 JSON 里的一条案例交给第 88 轮的同一套协议跑。"""
     targets = [
         (t["label"], t["kind"], t["value"], tuple(t.get("family") or ()))
         for t in case["targets"]
     ]
     row = V.run_case(cur, case["id"], case["seed"]["iid"], case["condition"],
-                     targets, case.get("bridge") or "")
+                     targets, case.get("bridge") or "",
+                     mode=mode, rounds=rounds)
     row["herb_cn"] = case["herb_cn"]
     row["process_cn"] = case["process_cn"]
     row["holdout_strength"] = case["holdout_strength"]
@@ -58,13 +60,23 @@ def run_one(cur, case):
 
 
 def main() -> int:
-    hold = json.loads(HOLDOUT.read_text(encoding="utf-8"))
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--mode", choices=("evidence", "production"), default="evidence",
+                    help="evidence=11条证据规则；production=11条+coverage+立体")
+    ap.add_argument("--rounds", type=int, default=1, help="枚举轮数（默认1）")
+    ap.add_argument("--holdout", default=str(HOLDOUT),
+                    help="留出集 JSON（默认 data/holdout_paozhi.json）")
+    a = ap.parse_args()
+    mode, rounds = a.mode, max(1, int(a.rounds))
+    hold_path = Path(a.holdout).resolve()
+
+    hold = json.loads(hold_path.read_text(encoding="utf-8"))
     con = sqlite3.connect(DB, uri=True)
     cur = con.cursor()
 
     rows = []
     for case in hold["cases"]:
-        r = run_one(cur, case)
+        r = run_one(cur, case, mode=mode, rounds=rounds)
         rows.append(r)
         exp = case["expected"]["status"]
         act = r["actual_status"]
@@ -79,20 +91,31 @@ def main() -> int:
     for r in rows:
         statuses[str(r["actual_status"])] = statuses.get(str(r["actual_status"]), 0) + 1
 
+    try:
+        hold_rel = str(hold_path.relative_to(ROOT)).replace("\\", "/")
+    except ValueError:
+        hold_rel = str(hold_path)
     out = {
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "holdout_file": str(HOLDOUT.relative_to(ROOT)).replace("\\", "/"),
+        "holdout_file": hold_rel,
         "frozen_git_rev": hold.get("frozen_git_rev"),
+        "mode": mode,
+        "rounds": rounds,
         "n_cases": n,
         "n_prediction_hits": hits,
         "actual_status_counts": statuses,
         "cases": rows,
     }
-    dst = ROOT / "reports" / ("holdout_paozhi_%s.json" % datetime.now().strftime("%Y%m%d"))
+    _stem = hold_path.stem
+    _extra = "" if _stem == "holdout_paozhi" else "_" + _stem.replace("holdout_paozhi_", "")
+    suffix = "" if (mode == "evidence" and rounds == 1) else "_%s_r%d" % (mode, rounds)
+    dst = ROOT / "reports" / ("holdout_paozhi_%s%s%s.json"
+                              % (datetime.now().strftime("%Y%m%d"), _extra, suffix))
     dst.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print()
-    print("cases %d | prediction hits %d/%d | status counts %s" % (n, hits, n, statuses))
+    print("mode %s | rounds %d | cases %d | prediction hits %d/%d | status counts %s"
+          % (mode, rounds, n, hits, n, statuses))
     print("written", dst)
     con.close()
     return 0

@@ -1,0 +1,684 @@
+{
+ "generated_at": "2026-11-24",
+ "dev_file": "general_organic_full_lf_dev_cyclic_20261124.json",
+ "blind6_file": "general_organic_full_lf_blind6_20261124.json",
+ "active_unvalidated": 73,
+ "by_category": {
+  "oxidation": 10,
+  "substitution": 2,
+  "acylation": 4,
+  "condensation": 6,
+  "coupling": 5,
+  "hydration": 2,
+  "hydrolysis": 7,
+  "addition": 4,
+  "cyclization": 10,
+  "decarboxylation": 4,
+  "demethylation": 1,
+  "deprotection": 2,
+  "elimination": 2,
+  "esterification": 4,
+  "hydroxylation": 1,
+  "rearrangement": 3,
+  "reduction": 6
+ },
+ "rows": [
+  {
+   "id": "oxidation_sulfide_001",
+   "category": "oxidation",
+   "dev_hits": 2,
+   "blind6_hits": 4,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "大蒜素等含硫成分的氧化。"
+  },
+  {
+   "id": "substitution_alcohol_thionyl_family_001",
+   "category": "substitution",
+   "dev_hits": 2,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "伯/仲/苄醇 + 亚硫酰氯 -> 氯代烷 + SO2 + HCl。模板由乙醇/苄醇/环己醇三个标准例共同泛化，未用 295/blind 案例拟合；不声称具体碱/溶剂。co_substrate_pool 仅验收/探索用，并限定醇类溶剂（亚硫酰氯不入水煎）。文献：thionyl chloride 氯代（常规 alcohol chlorination）。"
+  },
+  {
+   "id": "acylation_alcohol_anhydride_001",
+   "category": "acylation",
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "酸酐 + 醇 -> 酯 + 羧酸。模板由乙酸酐 + 乙醇标准例派生，未用 295/blind 案例拟合；不声称碱/酰化催化剂。co_substrate_pool 仅验收/探索用。文献：醇的 O-酰化（Greene's Protective Groups, acylation）。"
+  },
+  {
+   "id": "acylation_alcohol_cyclic_phthalic_001",
+   "category": "acylation",
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "邻苯二甲酸酐 + 醇 -> 邻苯二甲酸单酯。模板由标准例（甲醇/乙醇/苄醇）映射后整环生成；醇侧泛化。在 dev_0062（次醇 + 邻苯二甲酸酐）命中。"
+  },
+  {
+   "id": "acylation_alcohol_cyclic_succinic_001",
+   "category": "acylation",
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "丁二酸酐 + 醇 -> 丁二酸单酯。模板由标准例（乙醇/甲醇/苄醇）经 RXNMapper 映射后整环生成（RDChiral 会截断环路径，故不用它）；醇侧泛化为 [OX2H1]-[#6]；环上原有取代基不受限。在 dev_0121（苯酚 + 丁二酸酐）命中。"
+  },
+  {
+   "id": "aminolysis_ester_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "酯 + 胺 → 酰胺 + 醇。生物碱与氨基酸共存时可能发生。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solv"
+  },
+  {
+   "id": "coupling_n_alkylation_benzyl_001",
+   "category": "coupling",
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "苄基/杂芳甲基氯 + 伯胺 -> N-苄基/N-杂芳甲基胺 + HCl。模板由苄基氯 + 甲胺标准例派生，胺侧泛化为任意碳取代，未用 295/blind 案例拟合；不声称碱/相转移。co_substrate_pool 仅验收/探索用。文献：胺的烷基化（常规 benzyl/heteroaryl-methyl alkylation）。"
+  },
+  {
+   "id": "hydration_alkene_001",
+   "category": "hydration",
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测配平，但 SMARTS 无区域选择性，任意双键都加水，产物质量差。建议重写（马氏规则）。"
+  },
+  {
+   "id": "hydrolysis_imine_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "生成的醛需不编号的 [O]。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】"
+  },
+  {
+   "id": "oxidation_aldehyde_001",
+   "category": "oxidation",
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 O1，补 0.5 O2。"
+  },
+  {
+   "id": "oxidation_amine_001",
+   "category": "oxidation",
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 O1。氧化脱氨。★已修两类映射缺陷：①原写法反应物 [N:2] 与产物 [O:2] 共用编号 2，rdkit 会把氮原子当氧改（数值凑巧还能配平，极具迷惑性）；②新增原子必须【不编号】（写 [O] 而非 [O:5]）。底物稀少（只 5 个匹配），权重应压低。"
+  },
+  {
+   "id": "oxidation_epoxide_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "无区域选择性，仅限流 1 个。萜类双键易被氧化。"
+  },
+  {
+   "id": "addition_isocyanate_amine_urea_001",
+   "category": "addition",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "异氰酸酯 + 伯胺 -> 脲；模板由异氰酸苯酯 + 甲胺标准例派生，未用 295/blind 案例拟合。co_substrate_pool 仅验收/探索用。文献：异氰酸酯与胺的加成（urethane/urea 常规化学）。"
+  },
+  {
+   "id": "addition_michael_amine_001",
+   "category": "addition",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★已修★ 与 Michael加成(硫醇) 同源的区域选择性错误：氮必须加在【β碳】(C1) 上，原来错加在 α碳(C2) 上。 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_so"
+  },
+  {
+   "id": "addition_michael_thiol_001",
+   "category": "addition",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★已修★ 硫必须加在【β碳】(C1) 上，原来错加在 α碳(C2) 上。实证：丙烯醛+甲硫醇 → CSCCC=O（3-甲硫基丙醛，正确），原写法给 CSC(C)C=O（α-加成，错误）。两个产物分子式相同，原子守恒校验发现不了，是反应级测试集抓出来的。"
+  },
+  {
+   "id": "addition_thiohemiacetal_001",
+   "category": "addition",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "醛 + 硫醇 → 硫代半缩醛。含硫成分（大蒜素类）与醛的结合。 ★B文献条件：硫醇+醛；酶或Re2O7催化（Biochemistry 1977/1986；Beilstein 2013）。"
+  },
+  {
+   "id": "amidation_intermolecular_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "有机酸 + 胺 → 酰胺 + 水。中性水中很慢，条件层应压制。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【覆盖修复】原 [NX3H2:..] 要求氮上恰好 2 个氢 = 只认【伯胺】，把仲胺（中药生物碱里很常见）排除了。已改为 [NX3;H1,H2:..]，覆盖伯胺与仲胺。这是「氢数写死」的第 5 次：逆羟醛裂解、醇醛缩合、酮-烯醇化、脱水、胺类三条。 【修复】原池子含【氨(N)/甲胺(CN)】且 when_sol"
+  },
+  {
+   "id": "condensation_aldol_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "碳碳成键。含 α-H 的羰基进攻另一个羰基，生成 β-羟基羰基。糖降解产生的小醛之间可能发生。 【覆盖修复】原 [CX4H2:3] 要求烯醇碳恰好 2 个氢，导致乙醛（α碳为 CH3）这个最经典的醛缩合底物匹配不上。去掉氢数限制后可覆盖 CH3/CH2/CH 三种。"
+  },
+  {
+   "id": "condensation_glycosylation_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "糖的端基羟基（半缩醛碳 [CX4H1](O)(OR)）与另一个醇成苷，脱一分子水。★要求第一个反应物本身就是半缩醛（糖环），所以不会把普通醇也配上去。这是水解的逆反应，与「糖苷水解」成对。"
+  },
+  {
+   "id": "condensation_hemiacetal_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "醛 + 醇 → 半缩醛。缩醛/糖苷形成的第一步，不加不减原子。 ★B文献条件：醛+醇、酸催化、可逆（Analyst 2023；ACS Earth 2024）。"
+  },
+  {
+   "id": "condensation_schiff_base_001",
+   "category": "condensation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "醛 + 伯胺 → 亚胺 + 水。美拉德反应的前期步骤之一。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】 【修复】原池子含【氨(N)/甲胺(CN)】且 when_solvent=None，导致六种工艺下都能凭空生成 N-甲基酰胺/亚胺类产物（煎煮水里既无氨也无甲胺）。已移除，保留药材真实存在的甘氨酸/半胱氨酸。审计见 tools/audit_cosubstrates.py"
+  },
+  {
+   "id": "coupling_n_alkylation_amine_001",
+   "category": "coupling",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "卤代烷 + 伯胺 -> 仲胺 + HBr（N-烷基化）。模板由溴甲烷 + 甲胺标准例派生，未用 295/blind 案例拟合；不声称碱/相转移。co_substrate_pool 仅验收/探索用。文献：胺的烷基化（Greene's Protective Groups / 常规 amine alkylation）。"
+  },
+  {
+   "id": "coupling_n_arylation_amine_001",
+   "category": "coupling",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "J. Am. Chem. Soc 1994",
+   "doi_in_notes": "10.1021/ja00096a059",
+   "notes": "芳基溴 + 伯胺 -> 二芳胺 + HBr。模板由溴苯 + 苯胺标准例派生，未用 295/blind 案例拟合；不声称 Pd/配体/碱。co_substrate_pool 仅验收/探索用。文献：Buchwald–Hartwig amination（Guram & Buchwald, J. Am. Chem. Soc. 1994, DOI 10.1021/ja00096a059）。"
+  },
+  {
+   "id": "coupling_sonogashira_aryl_alkyne_001",
+   "category": "coupling",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "Tetrahedron 1975",
+   "doi_in_notes": "10.1016/S0040-4039(00)91094-3",
+   "notes": "芳基溴 + 端炔 -> 芳基炔 + HBr。模板由溴苯 + 苯乙炔标准例派生，未用 295/blind 案例拟合；不声称 Pd/Cu/胺。co_substrate_pool 仅验收/探索用。文献：Sonogashira coupling（Sonogashira et al., Tetrahedron Lett. 1975, DOI 10.1016/S0040-4039(00)91094-3）。"
+  },
+  {
+   "id": "coupling_suzuki_biaryl_001",
+   "category": "coupling",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "Chem. Rev 1995",
+   "doi_in_notes": "10.1021/cr00039a007",
+   "notes": "芳基溴 + 芳基硼酸 -> 联苯 + B(OH)2Br。模板由溴苯 + 苯硼酸标准例派生，未用 295/blind 案例拟合；不声称 Pd/碱/配体。co_substrate_pool 仅验收/探索用。文献：Suzuki coupling（Miyaura & Suzuki, Chem. Rev. 1995, DOI 10.1021/cr00039a007）。"
+  },
+  {
+   "id": "cyclization_conrad_limpach_alpha_aryl_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "10.1007/978-3-030-50865-4",
+   "notes": "苯胺 + α-芳基 β-酮酸酯 -> 3-芳基-2-甲基喹啉-4(1H)-酮 + 乙醇 + 水。模板由苯胺 + 2-苯基乙酰乙酸乙酯标准例派生，未用 295 案例拟合；α-H 版本仍是缺口。co_substrate_pool 只为标准例验收/探索，不代表环境里总有苯胺。文献：Conrad–Limpach 反应，Name Reactions (Jie Jack Li), 6th ed., DOI 10.1007/978-3-030-508"
+  },
+  {
+   "id": "cyclization_ether_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★已修★ 原产物会形成 O-O 键（1,2-二氧戊环），化学错误；它之所以通过原子守恒校验，是因为推导器给它编了个 byproducts=H2。新写法只让【一个】氧进环，水作为副产物，现已原生配平（183 底物 100%）。"
+  },
+  {
+   "id": "cyclization_fischer_aza_indole_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "10.1007/978-3-030-50865-4",
+   "notes": "2-肼基吡啶 + α-芳基/杂芳基酮 -> 3-芳基-2-杂芳基-1H-吡咯并[2,3-b]吡啶 + NH3 + H2O。模板由 2-肼基吡啶 + 2-(苯乙酰基)噁唑标准例派生，未用 295 案例拟合；held-out 的 Br 代吡啶案例命中。co_substrate_pool 仅验收/探索用。文献：Fischer indole synthesis（Name Reactions, Jie Jack Li, 6th ed., DOI "
+  },
+  {
+   "id": "cyclization_hantzsch_thiazole_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "10.1007/978-3-030-50865-4",
+   "notes": "环状 α-溴酮 + 硫代氨基脲 -> 2-肼基稠合噻唑 + HBr + H2O。模板由 2-溴色满酮 + 硫代氨基脲标准例派生，未用 295 案例拟合；held-out 的溴代色满酮案例命中。co_substrate_pool 仅验收/探索用。文献：Hantzsch thiazole synthesis（Name Reactions, Jie Jack Li, 6th ed., DOI 10.1007/978-3-030-50865-4"
+  },
+  {
+   "id": "cyclization_hemiacetal_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★已修★ SMARTS 链写错了：原来写成 C1=O2-C3-...，意思是碳氧双键后氧【再连】C3；正确应是 O2 作为 C1 的【分支】，即 [CX3H1:1](=[OX1:2])[CX4:3]...。实证：4-羟基丁醛 O=CCCCO → 2-羟基四氢呋喃。 【修复】priority 曾被压到 0.1（标 verify 时一并降级），但 status 恢复 active 时忘了同步恢复，导致永远卡在激活阈值 0.15 之下。现恢复"
+  },
+  {
+   "id": "cyclization_indazole_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "10.1007/978-3-030-50865-4",
+   "notes": "邻氟二苯甲酮 + 芳基肼缩合环化 -> 1,2-二芳基吲唑 + HF + H2O。模板由 2-氟二苯甲酮 + 苯肼标准例派生，未用 295 案例拟合；卤素泛化为 F，其他卤素需另验。co_substrate_pool 只为标准例验收/探索，不代表环境里总有苯肼。文献：Borsche–Drechsel 吲唑合成；Name Reactions (Jie Jack Li), 6th ed., DOI 10.1007/978-3-030-508"
+  },
+  {
+   "id": "cyclization_lactam_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★已修★ 两处问题：① 反应物里漏了羧基的 OH，配平账目不清；② 产物把氮写成 [NX3H2]，但成环后氮有 2 个重原子邻居 + 2 个 H = 4 价，中性氮只能 3 价，所以 RDKit 报「价态非法」；内酰胺的氮应该是 [NX3H1]。实证：4-氨基丁酸 → γ-丁内酰胺 + 水。 【已用人工底物验证：4-氨基丁酸 → γ-丁内酰胺 + 水，产物正确。校验器报「无底物匹配」只是因为样本里没有 γ-氨基丁酸类分子。】 【修复】p"
+  },
+  {
+   "id": "cyclization_lactone_delta_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "与已有 δ-内酯化 编号方式不同，用于交叉验证写法是否稳健。"
+  },
+  {
+   "id": "cyclization_larock_indole_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "J. Am. Chem. Soc 1991",
+   "doi_in_notes": "10.1021/ja00017a059",
+   "notes": "2-碘苯胺 + 端基 TMS 炔 -> 2-TMS-3-取代吲哚 + HI。模板由 2-碘苯胺 + TMS-环己基乙炔标准例派生，未用 295 案例拟合；held-out 的酯基碘苯胺案例在反向投料顺序命中。co_substrate_pool 仅验收/探索用。文献：Larock indole synthesis, J. Am. Chem. Soc. 1991, DOI 10.1021/ja00017a059。"
+  },
+  {
+   "id": "cyclization_macro_lactam_001",
+   "category": "cyclization",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "同一分子内的羧酸 + 质子化伯胺（铵盐）缩合成大环内酰胺 + 水 + H+；只对分子内两端最短路径 >= 8 键的底物启用（intra_min_path），避免和已有的短链 cyclization_lactam_001 重叠。用 [NH3+;D1] 而不是普通 [NX3H1,H2]，是为了只认末端铵盐、避开肽键/酰胺 N。这是引擎的分子内双端模式：切一条环外单键、跑双底物反应、再把切键接回去；不是从 295 案例反推的模板。proven"
+  },
+  {
+   "id": "decarboxylation_aromatic_001",
+   "category": "decarboxylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "原生配平（33/33）。CO2 已显式写入产物，是正确写法的范例。"
+  },
+  {
+   "id": "decarboxylation_beta_keto_001",
+   "category": "decarboxylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★原 SMARTS 有真错误：产物漏写 CO2（实测差值 C-1 O-2）。已补 [C](=[O])=[O]。对照：同文件的「芳香酸脱羧」写法正确，CO2 显式写入产物——两种写法并存说明是笔误。"
+  },
+  {
+   "id": "decarboxylation_cinnamic_001",
+   "category": "decarboxylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "肉桂酸 / 咖啡酸 / 阿魏酸型脱羧，生成对应的乙烯基酚（如 4-乙烯基苯酚）。★与「芳香酸脱羧」不同：那个断的是芳环上的羧基，这个断的是侧链烯酸，产物是苯乙烯型而不是苯型——两者产物完全不同，不是重复规则。 【自动校验：rdchiral 产不出产物，标记待复核】 【已用人工底物验证：肉桂酸→苯乙烯+CO2、咖啡酸、阿魏酸 全部正确。校验器报「无底物匹配」只是因为样本里恰好没有这类分子——「样本里没有」≠「规则是错的」。】 【修复】pr"
+  },
+  {
+   "id": "decarboxylation_malonic_001",
+   "category": "decarboxylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "与 β-酮酸脱羧同型，用于交叉验证。"
+  },
+  {
+   "id": "demethylation_aromatic_001",
+   "category": "demethylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★★已修★★ 【芳香甲醚脱甲基】阿魏酸→咖啡酸、愈创木酚型脱甲基，是中药里真实相关的反应。原 SMARTS [O:1][CH3:2] 过宽，会命中一切 O-CH3——乙酸甲酯/苯甲酸甲酯/甲基葡萄糖苷都被它「脱甲基」，但那些其实是【酯水解】【糖苷水解】该干的事。同一转化被两条规则重复计算，产物溯源会指错规则。已加芳香性约束 [c:3][O:1][CH3:2]。★注意：本条备注里早就写着「过宽，应加芳香性约束」——写了警告却一直没修，是这"
+  },
+  {
+   "id": "deprotection_boc_amine_001",
+   "category": "deprotection",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "N-Boc 胺热解/酸解 -> 游离胺 + 异丁烯 + CO2。模板由 N-Boc 甲胺标准例派生，未用 295/blind 案例拟合；产物侧保留异丁烯/CO2，由引擎按副产物处理。文献：Greene's Protective Groups in Organic Synthesis, 5th ed., Boc 章节；酸解/热解条件不声称具体酸。"
+  },
+  {
+   "id": "deprotection_cbz_amine_001",
+   "category": "deprotection",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "N-Cbz 胺氢解 -> 游离胺 + 甲苯 + CO2；消耗 1 H2。模板由 Cbz 甲胺标准例派生，未用 295/blind 案例拟合；H2 是氢解配平占位，不声称具体催化剂。文献：Greene's Protective Groups in Organic Synthesis, 5th ed., Cbz 章节。"
+  },
+  {
+   "id": "elimination_amide_to_nitrile_001",
+   "category": "elimination",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "高温脱水。乙酰胺 → 乙腈 + 水。中药煎煮温度下较慢，权重压低。 【手工配平】酰胺 → 腈 + 水。差值 {H:-2, O:-1} 正是脱去一个水分子。"
+  },
+  {
+   "id": "elimination_deamination_001",
+   "category": "elimination",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "与已有「胺氧化」同型，用于交叉验证。"
+  },
+  {
+   "id": "esterification_delta_lactone_001",
+   "category": "esterification",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "δ-羟基酸分子内酯化成六元环内酯（+1 水）。实证：5-羟基戊酸→δ-戊内酯 配平；正确拒绝 4-羟基丁酸（γ）。与 γ-内酯化互不重叠，各自只匹配自己的链长。"
+  },
+  {
+   "id": "esterification_gamma_lactone_001",
+   "category": "esterification",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "γ-羟基酸分子内酯化成五元环内酯（+1 水）。★替代了原来的坏规则 esterification_intramolecular_001：那条的产物模板把酸羟基的氧也写进环里、还丢掉了链上的碳，导致 19 个底物匹配、0 个产物。实证：4-羟基丁酸→γ-丁内酯 配平；正确拒绝 β-羟基酸（3-羟基丁酸）与 δ-羟基酸（5-羟基戊酸）；葡糖酸给出正确的五元环内酯。★α-内酯（三元环）刻意不建规则——极不稳定，不是可分离产物。"
+  },
+  {
+   "id": "esterification_intermolecular_001",
+   "category": "esterification",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "有机酸 + 醇 → 酯 + 水。与已有的分子内酯化（内酯化）互补。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】"
+  },
+  {
+   "id": "esterification_transesterification_001",
+   "category": "esterification",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★醇提的关键反应★ 乙醇与药材中的酯生成新酯。原来的单反应物引擎无法表达，这是本轮加双反应物支持的主要动机。!@ 约束断开的 C-O 键必须是非环键（环内酯另由单反应物规则处理）。 【已校验：双反应物走 rdkit 原生引擎 + !@ 约束】"
+  },
+  {
+   "id": "hydration_enone_001",
+   "category": "hydration",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "JACS 1973",
+   "doi_in_notes": "",
+   "notes": "实测配平，但无立体/区域选择性。建议重写。 ★★加成方向修复★★ 羟基因在了 α碳(C2) 上，而 α,β-不饱和羰基水合是 Michael 型加成，水应加到【β碳】(C1)。原写法给 CC(O)C=O（乳醛），正确应为 O=CCCO（3-羟基丙醛）。两个产物分子式相同，四道闸门全会放行。这是第 3 个「加基因接错原子」的 bug。 ★B文献条件：水+酸/碱或催化（JACS 1973；Nature Chem 2010）。"
+  },
+  {
+   "id": "hydrolysis_acetal_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★原 SMARTS 有真错误：产物只写了 [#6:5]，把 [#6:3] 整个片段丢了（丢一个烷氧基）。已补第三个产物片段 [OH][#6:3]。修复后 400/400 配平。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】"
+  },
+  {
+   "id": "hydrolysis_amide_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 O1H2。★已修两类映射缺陷：①原写法反应物 [N:3] 与产物 [O:3] 共用编号 3，rdkit 会把氮原子当氧改；②新增原子必须【不编号】（写 [OH] 而非 [O:5]），否则 RDChiral 抛 KeyError。中性水中酰胺水解实际很慢，条件层应压制其分数。 【修复】取代基碳原写成 [C:]（只匹配脂肪碳），导致【酚酯/芳基酰胺】等芳香取代底物匹配不上。已改为 [#6:]（任意碳）。同类问题见糖苷水解。 【覆盖"
+  },
+  {
+   "id": "hydrolysis_hemiacetal_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "简单底物（COC(O)c1ccccc1）配平正确且不耗水。环状半缩醛（如葡萄糖）由 RDChiral 正确开环。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】 ★B文献条件：水/酸或碱催化（JOC 1985；Perkin Tr"
+  },
+  {
+   "id": "hydrolysis_lactam_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "环内断键，靠 rdchiral。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】"
+  },
+  {
+   "id": "hydrolysis_phosphate_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 O1H2。磷脂、磷酸糖。环磷酸酯由 RDChiral 通用处理，无需单独规则。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】"
+  },
+  {
+   "id": "hydrolysis_sulfate_001",
+   "category": "hydrolysis",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 O1H2。常见于硫酸多糖。底物稀少（4000 个真实分子里只 4 个匹配），统计置信度低。 【气相 xTB 的 ΔG 对本规则【符号系统性错误】（水解由溶剂化熵驱动，气相算不出），已在 scorer.assign_thermo 里跳过 —— 不让已知错误的信号影响排序。实测见 tools/refine_hydrolysis_boundary.py】"
+  },
+  {
+   "id": "hydroxylation_aromatic_001",
+   "category": "hydroxylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测 1895/1895 配平，但传播过广（400 个底物出 1895 个产物），且方向不明确。建议加位置/取代约束后降权重用。"
+  },
+  {
+   "id": "isomerization_double_bond_001",
+   "category": "rearrangement",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "双键沿链迁移，趋向共轭。"
+  },
+  {
+   "id": "oxidation_dehydrogenation_enone_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "形成共轭烯酮，热力学有利。"
+  },
+  {
+   "id": "oxidation_diphenol_para_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★新增★ 补上论文里承诺却从未实现的【对位】醌/二酚这一类。论文「醌还原」的说明写着「丹参酮、大黄蒽醌等」，但原 SMARTS 只认两个官能团【直接相连】的邻位——蒽醌的两个 C=O 在 9、10 位、相距 3 个键，从来匹配不上。本规则处理对位（1,4-）：对苯二酚→对苯醌、1,4-萘二酚→1,4-萘醌、蒽氢醌→9,10-蒽醌、大黄素。实测不误匹配邻苯二酚（那是「酚氧化成醌」的活）。 【一致性修正】副产物原写成 H2（脱氢式），但库内"
+  },
+  {
+   "id": "oxidation_hydroxyl_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 H-2，补 0.5 O2 并产 1 水即配平。"
+  },
+  {
+   "id": "oxidation_phenol_quinone_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "JACS 1966",
+   "doi_in_notes": "",
+   "notes": "实测差值 H-2。多酚聚合起始步。 ★B文献条件：高碘酸盐氧化或酪氨酸酶+O2（JACS 1966；IJMS 2020）。"
+  },
+  {
+   "id": "oxidation_primary_alcohol_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "与「羟基氧化」(仲醇→酮) 互补：这个是伯醇→醛。"
+  },
+  {
+   "id": "oxidation_sulfoxide_to_sulfone_001",
+   "category": "oxidation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "含硫成分深度氧化（大蒜素类）。与「硫醚氧化成亚砜」接力。"
+  },
+  {
+   "id": "rearrangement_retro_aldol_001",
+   "category": "rearrangement",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "碳碳键断裂，生成两个片段。 【覆盖修复】原 [CX4H:3] 要求中间碳恰好 1 个氢，把最典型的 β-羟基羰基（中间为 CH2，如醛缩合产物）全部排除。已放宽为 [CX4:3]。"
+  },
+  {
+   "id": "reduction_aldehyde_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "新规则草稿，陪跑试剂待自动推导"
+  },
+  {
+   "id": "reduction_alkene_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "过宽，仅限流 1 个；实际只在强还原条件下发生。"
+  },
+  {
+   "id": "reduction_ketone_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 H2。煎煮条件下一般无氢源，条件层应靠 atmosphere 把它关掉。"
+  },
+  {
+   "id": "reduction_quinone_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测差值 H4（双位点），补 2 分子氢。丹参酮、大黄蒽醌。 ★★产物修复★★ 原来产物写成 [OH:1][C:2][C:3][OH:4]，碳氧双键变单键后 C2/C3 各补 1 个氢，产物成了环己二烯二醇 C6H8O2（非芳香）。而邻苯醌还原应得到【芳香】的邻苯二酚 C6H6O2。更糟的是：规则靠把 co_reagents 从 H2:1 灌到 H2:2 让等式成立——这是「靠调试剂把原子数凑平」，校验器只能看到账平、看不到账假。已把产"
+  },
+  {
+   "id": "reduction_quinone_para_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "★新增★ 与「对二酚氧化成醌」配对，补上对位（1,4-）醌这一类。★★键类型陷阱★★ SMARTS 里不写键符号时默认是【单键或芳香键】。对苯醌的环是 单-双-单 交替，所以 [C:2][#6:5][#6:6][C:3] 里的中间键匹配不上 → 对苯醌一条都产不出。改成 ~（任意键）才能匹配。但产物侧【不能】写 ~：写了 RDKit 不敢判定芳香性、会给碳补氢，产物分子式多 2 个氢。实测「反应物 ~ + 产物默认键」命中 6/6。 【"
+  },
+  {
+   "id": "reduction_sulfoxide_001",
+   "category": "reduction",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "DMSO → DMS 型还原，只在通氢条件下发生（条件层靠 atmosphere 关掉）。 【手工配平】亚砜 + H2 → 硫醚 + 水。差值 {O:-1}，两边补氢与水即配平。"
+  },
+  {
+   "id": "substitution_alcohol_thionyl_001",
+   "category": "substitution",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "醇 + 亚硫酰氯 -> 氯代烷 + SO2 + HCl。模板由乙醇 + 亚硫酰氯标准例派生，未用 295/blind 案例拟合；不声称具体碱/溶剂。co_substrate_pool 仅验收/探索用。文献：thionyl chloride 氯代（常规 alcohol chlorination）。"
+  },
+  {
+   "id": "sulfonylation_amine_001",
+   "category": "acylation",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "磺酰氯 + 伯胺 -> 磺酰胺 + HCl；模板由甲磺酰氯 + 甲胺标准例派生，未用 295/blind 案例拟合。co_substrate_pool 仅验收/探索用，不代表环境里总有甲磺酰氯。文献：磺酰胺的常规制备（Greene's Protective Groups, sulfonamide 章节）。"
+  },
+  {
+   "id": "tautomerization_keto_enol_001",
+   "category": "rearrangement",
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "literature_hint": "",
+   "doi_in_notes": "",
+   "notes": "实测 509/509 配平。属互变异构，不产生新分子，级联中应默认跳过。 【覆盖修复】原 [CX4H2:3] 要求 α碳恰好 2 个氢，丙酮（α碳为 CH3）这个最典型的底物匹配不上。已去掉氢数限制。"
+  }
+ ]
+}

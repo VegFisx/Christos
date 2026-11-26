@@ -1,0 +1,4272 @@
+{
+  "generated_at": "2026-11-24 13:24:50",
+  "config": "curated(all)+extra/mono=full_lf+base; no rescue/stereo; gate_conditions=False",
+  "n": 300,
+  "hits": 195,
+  "exact": 195,
+  "errors": 0,
+  "cases_with_source": {
+    "base": 118,
+    "mined_lf": 75,
+    "curated": 4
+  },
+  "mined_support": {
+    "n": 90,
+    "min": 10,
+    "p10": 16,
+    "median": 94,
+    "max": 10316
+  },
+  "rows": [
+    {
+      "id": "dev_0001",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0002",
+      "class": "dev",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0003",
+      "class": "dev",
+      "hit": false,
+      "n_products": 58,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0004",
+      "class": "dev",
+      "hit": false,
+      "n_products": 73,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0005",
+      "class": "dev",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0006",
+      "class": "dev",
+      "hit": true,
+      "n_products": 16,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0007",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0008",
+      "class": "dev",
+      "hit": true,
+      "n_products": 67,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0009",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        10
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0010",
+      "class": "dev",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0011",
+      "class": "dev",
+      "hit": false,
+      "n_products": 33,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0012",
+      "class": "dev",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        526
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0013",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0014",
+      "class": "dev",
+      "hit": true,
+      "n_products": 75,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.34
+    },
+    {
+      "id": "dev_0015",
+      "class": "dev",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0016",
+      "class": "dev",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0017",
+      "class": "dev",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.23
+    },
+    {
+      "id": "dev_0018",
+      "class": "dev",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0019",
+      "class": "dev",
+      "hit": false,
+      "n_products": 27,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0020",
+      "class": "dev",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        144
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0021",
+      "class": "dev",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0022",
+      "class": "dev",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0023",
+      "class": "dev",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "dev_0024",
+      "class": "dev",
+      "hit": false,
+      "n_products": 42,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0025",
+      "class": "dev",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0026",
+      "class": "dev",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0027",
+      "class": "dev",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0028",
+      "class": "dev",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0029",
+      "class": "dev",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0030",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0031",
+      "class": "dev",
+      "hit": false,
+      "n_products": 56,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0032",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        18
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0033",
+      "class": "dev",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        71
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0034",
+      "class": "dev",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0035",
+      "class": "dev",
+      "hit": false,
+      "n_products": 14,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0036",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0037",
+      "class": "dev",
+      "hit": false,
+      "n_products": 45,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0038",
+      "class": "dev",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0039",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0040",
+      "class": "dev",
+      "hit": false,
+      "n_products": 45,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0041",
+      "class": "dev",
+      "hit": true,
+      "n_products": 49,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        391
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0042",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0043",
+      "class": "dev",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0044",
+      "class": "dev",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0045",
+      "class": "dev",
+      "hit": true,
+      "n_products": 76,
+      "exact": true,
+      "sources": [
+        "base",
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra",
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [
+        46,
+        46
+      ],
+      "seconds": 0.18
+    },
+    {
+      "id": "dev_0046",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0047",
+      "class": "dev",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        424
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0048",
+      "class": "dev",
+      "hit": false,
+      "n_products": 48,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0049",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0050",
+      "class": "dev",
+      "hit": true,
+      "n_products": 70,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0051",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0052",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        35
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0053",
+      "class": "dev",
+      "hit": true,
+      "n_products": 54,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.2
+    },
+    {
+      "id": "dev_0054",
+      "class": "dev",
+      "hit": true,
+      "n_products": 46,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0055",
+      "class": "dev",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0056",
+      "class": "dev",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0057",
+      "class": "dev",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        178
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0058",
+      "class": "dev",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        31,
+        254,
+        277
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0059",
+      "class": "dev",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0060",
+      "class": "dev",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0061",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0062",
+      "class": "dev",
+      "hit": false,
+      "n_products": 44,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0063",
+      "class": "dev",
+      "hit": false,
+      "n_products": 41,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0064",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0065",
+      "class": "dev",
+      "hit": false,
+      "n_products": 31,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0066",
+      "class": "dev",
+      "hit": false,
+      "n_products": 55,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0067",
+      "class": "dev",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_thiol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0068",
+      "class": "dev",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0069",
+      "class": "dev",
+      "hit": true,
+      "n_products": 81,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.41
+    },
+    {
+      "id": "dev_0070",
+      "class": "dev",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0071",
+      "class": "dev",
+      "hit": true,
+      "n_products": 9,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0072",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0073",
+      "class": "dev",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0074",
+      "class": "dev",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0075",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra",
+        "mined_mono"
+      ],
+      "mined_supports": [
+        46,
+        10316
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0076",
+      "class": "dev",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0077",
+      "class": "dev",
+      "hit": true,
+      "n_products": 16,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0078",
+      "class": "dev",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0079",
+      "class": "dev",
+      "hit": true,
+      "n_products": 73,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0080",
+      "class": "dev",
+      "hit": false,
+      "n_products": 33,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0081",
+      "class": "dev",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0082",
+      "class": "dev",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0083",
+      "class": "dev",
+      "hit": true,
+      "n_products": 56,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0084",
+      "class": "dev",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0085",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0086",
+      "class": "dev",
+      "hit": true,
+      "n_products": 68,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0087",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0088",
+      "class": "dev",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        1141
+      ],
+      "seconds": 0.03
+    },
+    {
+      "id": "dev_0089",
+      "class": "dev",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0090",
+      "class": "dev",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0091",
+      "class": "dev",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0092",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0093",
+      "class": "dev",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0094",
+      "class": "dev",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        54
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0095",
+      "class": "dev",
+      "hit": false,
+      "n_products": 9,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "dev_0096",
+      "class": "dev",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0097",
+      "class": "dev",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "curated"
+      ],
+      "hit_rules": [
+        "oxidation_sulfide_001"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0098",
+      "class": "dev",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0099",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        202
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0100",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0101",
+      "class": "dev",
+      "hit": false,
+      "n_products": 14,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0102",
+      "class": "dev",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0103",
+      "class": "dev",
+      "hit": true,
+      "n_products": 9,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        35
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0104",
+      "class": "dev",
+      "hit": true,
+      "n_products": 53,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.18
+    },
+    {
+      "id": "dev_0105",
+      "class": "dev",
+      "hit": true,
+      "n_products": 67,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0106",
+      "class": "dev",
+      "hit": false,
+      "n_products": 53,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0107",
+      "class": "dev",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0108",
+      "class": "dev",
+      "hit": false,
+      "n_products": 12,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0109",
+      "class": "dev",
+      "hit": true,
+      "n_products": 80,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.32
+    },
+    {
+      "id": "dev_0110",
+      "class": "dev",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0111",
+      "class": "dev",
+      "hit": false,
+      "n_products": 30,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0112",
+      "class": "dev",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0113",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        31,
+        254,
+        277
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0114",
+      "class": "dev",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0115",
+      "class": "dev",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        262
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0116",
+      "class": "dev",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0117",
+      "class": "dev",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0118",
+      "class": "dev",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        72,
+        334
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0119",
+      "class": "dev",
+      "hit": false,
+      "n_products": 22,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0120",
+      "class": "dev",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        31,
+        105
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0121",
+      "class": "dev",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0122",
+      "class": "dev",
+      "hit": false,
+      "n_products": 17,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0123",
+      "class": "dev",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0124",
+      "class": "dev",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "curated"
+      ],
+      "hit_rules": [
+        "oxidation_sulfide_001"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0125",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0126",
+      "class": "dev",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0127",
+      "class": "dev",
+      "hit": false,
+      "n_products": 43,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0128",
+      "class": "dev",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0129",
+      "class": "dev",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        52
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0130",
+      "class": "dev",
+      "hit": true,
+      "n_products": 17,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        108,
+        334
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0131",
+      "class": "dev",
+      "hit": false,
+      "n_products": 13,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0132",
+      "class": "dev",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0133",
+      "class": "dev",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        264
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0134",
+      "class": "dev",
+      "hit": true,
+      "n_products": 57,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3039
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0135",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0136",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        903
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0137",
+      "class": "dev",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0138",
+      "class": "dev",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        27
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0139",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0140",
+      "class": "dev",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0141",
+      "class": "dev",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0142",
+      "class": "dev",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0143",
+      "class": "dev",
+      "hit": true,
+      "n_products": 49,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "dev_0144",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0145",
+      "class": "dev",
+      "hit": false,
+      "n_products": 35,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0146",
+      "class": "dev",
+      "hit": false,
+      "n_products": 43,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0147",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0148",
+      "class": "dev",
+      "hit": false,
+      "n_products": 17,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0149",
+      "class": "dev",
+      "hit": false,
+      "n_products": 48,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0150",
+      "class": "dev",
+      "hit": false,
+      "n_products": 74,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0151",
+      "class": "dev",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        20
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0152",
+      "class": "dev",
+      "hit": false,
+      "n_products": 10,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0153",
+      "class": "dev",
+      "hit": false,
+      "n_products": 28,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0154",
+      "class": "dev",
+      "hit": false,
+      "n_products": 39,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0155",
+      "class": "dev",
+      "hit": false,
+      "n_products": 31,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0156",
+      "class": "dev",
+      "hit": false,
+      "n_products": 42,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0157",
+      "class": "dev",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0158",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0159",
+      "class": "dev",
+      "hit": false,
+      "n_products": 12,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0160",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0161",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0162",
+      "class": "dev",
+      "hit": true,
+      "n_products": 69,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.2
+    },
+    {
+      "id": "dev_0163",
+      "class": "dev",
+      "hit": true,
+      "n_products": 1,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        29
+      ],
+      "seconds": 0.03
+    },
+    {
+      "id": "dev_0164",
+      "class": "dev",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0165",
+      "class": "dev",
+      "hit": false,
+      "n_products": 29,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0166",
+      "class": "dev",
+      "hit": false,
+      "n_products": 28,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0167",
+      "class": "dev",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0168",
+      "class": "dev",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0169",
+      "class": "dev",
+      "hit": false,
+      "n_products": 22,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0170",
+      "class": "dev",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        94
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0171",
+      "class": "dev",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0172",
+      "class": "dev",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0173",
+      "class": "dev",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0174",
+      "class": "dev",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.25
+    },
+    {
+      "id": "dev_0175",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        19
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0176",
+      "class": "dev",
+      "hit": false,
+      "n_products": 5,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0177",
+      "class": "dev",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        692
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0178",
+      "class": "dev",
+      "hit": true,
+      "n_products": 16,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0179",
+      "class": "dev",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0180",
+      "class": "dev",
+      "hit": false,
+      "n_products": 33,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0181",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0182",
+      "class": "dev",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        1567
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0183",
+      "class": "dev",
+      "hit": true,
+      "n_products": 52,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        14,
+        1550
+      ],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0184",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0185",
+      "class": "dev",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        82
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0186",
+      "class": "dev",
+      "hit": false,
+      "n_products": 55,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0187",
+      "class": "dev",
+      "hit": true,
+      "n_products": 60,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.18
+    },
+    {
+      "id": "dev_0188",
+      "class": "dev",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "dev_0189",
+      "class": "dev",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0190",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0191",
+      "class": "dev",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        91
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0192",
+      "class": "dev",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0193",
+      "class": "dev",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0194",
+      "class": "dev",
+      "hit": false,
+      "n_products": 32,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0195",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0196",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0197",
+      "class": "dev",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0198",
+      "class": "dev",
+      "hit": false,
+      "n_products": 14,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0199",
+      "class": "dev",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0200",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0201",
+      "class": "dev",
+      "hit": false,
+      "n_products": 37,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0202",
+      "class": "dev",
+      "hit": true,
+      "n_products": 61,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11,
+        1742
+      ],
+      "seconds": 0.28
+    },
+    {
+      "id": "dev_0203",
+      "class": "dev",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0204",
+      "class": "dev",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        33
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0205",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        330
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0206",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "curated"
+      ],
+      "hit_rules": [
+        "oxidation_amine_001"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0207",
+      "class": "dev",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0208",
+      "class": "dev",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0209",
+      "class": "dev",
+      "hit": false,
+      "n_products": 2,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0210",
+      "class": "dev",
+      "hit": true,
+      "n_products": 16,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        12
+      ],
+      "seconds": 0.04
+    },
+    {
+      "id": "dev_0211",
+      "class": "dev",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0212",
+      "class": "dev",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        35
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0213",
+      "class": "dev",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0214",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        344
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0215",
+      "class": "dev",
+      "hit": true,
+      "n_products": 8,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0216",
+      "class": "dev",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0217",
+      "class": "dev",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0218",
+      "class": "dev",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        77
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0219",
+      "class": "dev",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0220",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base",
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "amine_acetylation",
+        "mined_extra"
+      ],
+      "mined_supports": [
+        10
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0221",
+      "class": "dev",
+      "hit": false,
+      "n_products": 58,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.22
+    },
+    {
+      "id": "dev_0222",
+      "class": "dev",
+      "hit": false,
+      "n_products": 7,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "dev_0223",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        22,
+        37,
+        419
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0224",
+      "class": "dev",
+      "hit": false,
+      "n_products": 6,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0225",
+      "class": "dev",
+      "hit": false,
+      "n_products": 34,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0226",
+      "class": "dev",
+      "hit": false,
+      "n_products": 41,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0227",
+      "class": "dev",
+      "hit": true,
+      "n_products": 12,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        1032
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0228",
+      "class": "dev",
+      "hit": false,
+      "n_products": 38,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0229",
+      "class": "dev",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        864
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0230",
+      "class": "dev",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0231",
+      "class": "dev",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0232",
+      "class": "dev",
+      "hit": false,
+      "n_products": 39,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0233",
+      "class": "dev",
+      "hit": false,
+      "n_products": 80,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "dev_0234",
+      "class": "dev",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0235",
+      "class": "dev",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        187
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0236",
+      "class": "dev",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.2
+    },
+    {
+      "id": "dev_0237",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        10
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0238",
+      "class": "dev",
+      "hit": false,
+      "n_products": 13,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0239",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "curated"
+      ],
+      "hit_rules": [
+        "oxidation_aldehyde_001"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0240",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0241",
+      "class": "dev",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_thiol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0242",
+      "class": "dev",
+      "hit": false,
+      "n_products": 21,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0243",
+      "class": "dev",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0244",
+      "class": "dev",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0245",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        31,
+        254,
+        277
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0246",
+      "class": "dev",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0247",
+      "class": "dev",
+      "hit": false,
+      "n_products": 46,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0248",
+      "class": "dev",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0249",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        280
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0250",
+      "class": "dev",
+      "hit": false,
+      "n_products": 10,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0251",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        52
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0252",
+      "class": "dev",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        207
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0253",
+      "class": "dev",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0254",
+      "class": "dev",
+      "hit": true,
+      "n_products": 46,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        179
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0255",
+      "class": "dev",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        21
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0256",
+      "class": "dev",
+      "hit": true,
+      "n_products": 46,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        385
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0257",
+      "class": "dev",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        903
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0258",
+      "class": "dev",
+      "hit": false,
+      "n_products": 33,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0259",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0260",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0261",
+      "class": "dev",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.24
+    },
+    {
+      "id": "dev_0262",
+      "class": "dev",
+      "hit": false,
+      "n_products": 12,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0263",
+      "class": "dev",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0264",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0265",
+      "class": "dev",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        63
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0266",
+      "class": "dev",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0267",
+      "class": "dev",
+      "hit": true,
+      "n_products": 17,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "dev_0268",
+      "class": "dev",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        83
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0269",
+      "class": "dev",
+      "hit": true,
+      "n_products": 64,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0270",
+      "class": "dev",
+      "hit": false,
+      "n_products": 43,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0271",
+      "class": "dev",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0272",
+      "class": "dev",
+      "hit": false,
+      "n_products": 34,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0273",
+      "class": "dev",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3192
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "dev_0274",
+      "class": "dev",
+      "hit": false,
+      "n_products": 32,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0275",
+      "class": "dev",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0276",
+      "class": "dev",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.16
+    },
+    {
+      "id": "dev_0277",
+      "class": "dev",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0278",
+      "class": "dev",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        1060
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0279",
+      "class": "dev",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        42
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0280",
+      "class": "dev",
+      "hit": true,
+      "n_products": 57,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0281",
+      "class": "dev",
+      "hit": false,
+      "n_products": 14,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0282",
+      "class": "dev",
+      "hit": false,
+      "n_products": 39,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0283",
+      "class": "dev",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0284",
+      "class": "dev",
+      "hit": true,
+      "n_products": 75,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "dev_0285",
+      "class": "dev",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0286",
+      "class": "dev",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "dev_0287",
+      "class": "dev",
+      "hit": true,
+      "n_products": 14,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "dev_0288",
+      "class": "dev",
+      "hit": false,
+      "n_products": 31,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0289",
+      "class": "dev",
+      "hit": true,
+      "n_products": 59,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0290",
+      "class": "dev",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0291",
+      "class": "dev",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        29
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "dev_0292",
+      "class": "dev",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "dev_0293",
+      "class": "dev",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "dev_0294",
+      "class": "dev",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        390
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "dev_0295",
+      "class": "dev",
+      "hit": false,
+      "n_products": 83,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.2
+    },
+    {
+      "id": "dev_0296",
+      "class": "dev",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0297",
+      "class": "dev",
+      "hit": false,
+      "n_products": 53,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "dev_0298",
+      "class": "dev",
+      "hit": false,
+      "n_products": 57,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "dev_0299",
+      "class": "dev",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "dev_0300",
+      "class": "dev",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    }
+  ]
+}

@@ -1,0 +1,829 @@
+{
+  "generated_at": "2026-11-22 09:24:48",
+  "holdout_file": "data/holdout_paozhi.json",
+  "frozen_git_rev": "fc595c7",
+  "n_cases": 22,
+  "n_prediction_hits": 21,
+  "actual_status_counts": {
+    "consistent": 15,
+    "miss": 5,
+    "formula_only": 2
+  },
+  "cases": [
+    {
+      "tag": "zhizi_geniposide",
+      "seed_id": "HBIN027450",
+      "condition": "炮制·炒黄",
+      "seed_name": "Geniposide",
+      "seed_formula": "C17H24O10",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.7,
+      "n_round1": 109,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C11H14O5",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "genipin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "栀子",
+      "process_cn": "炒黄",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "京尼平苷 → 京尼平是糖苷键水解，差一个葡萄糖（C6H10O5）；与甘草/人参用同一条通用规则，未针对本案调整"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "xingren_amygdalin",
+      "seed_id": "HBIN015934",
+      "condition": "炮制·蒸制",
+      "seed_name": "Amygdalin",
+      "seed_formula": "C20H27NO11",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.7,
+      "n_round1": 108,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C14H17NO6",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "prunasin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "苦杏仁",
+      "process_cn": "燀制（沸水）",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "苦杏仁苷（二糖苷）先脱一个葡萄糖得野樱苷；若规则一次剥两个糖，产物会是苯甲醛/扁桃腈，则记为 miss。条件档没有'燀'，用蒸制近似"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "tianma_gastrodin",
+      "seed_id": "HBIN027384",
+      "condition": "炮制·蒸制",
+      "seed_name": "Gastrodin",
+      "seed_formula": "C13H18O7",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.5,
+      "n_round1": 120,
+      "targets": [
+        {
+          "target": "4-hydroxybenzaldehyde",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "天麻",
+      "process_cn": "蒸制",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "天麻素去葡萄糖得对羟基苯甲醛（C13H18O7 - C6H12O6 = C7H6O2）；比对键取自 PubChem CID 126，因为 tcm.db 该条目 inchi_key 为空"
+      },
+      "actual_status": "miss",
+      "prediction_hit": false
+    },
+    {
+      "tag": "zhuyu_loganin",
+      "seed_id": "HBIN033476",
+      "condition": "炮制·酒炙",
+      "seed_name": "Loganin",
+      "seed_formula": "C17H26O10",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 112,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C11H16O5",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "loganetin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "山茱萸",
+      "process_cn": "酒制",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "马钱苷去葡萄糖得马钱苷元（保留甲酯），C17H26O10 - C6H10O5 = C11H16O5"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "maqianzi_strychnine",
+      "seed_id": "HBIN045003",
+      "condition": "炮制·炒黄",
+      "seed_name": "Strychnine",
+      "seed_formula": "C21H22N2O2",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.5,
+      "n_round1": 24,
+      "targets": [
+        {
+          "target": "isostrychnine",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "马钱子",
+      "process_cn": "砂烫",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "士的宁 → 异士的宁是分子内重排（同分子式），我们没有重排规则；预期的失败点，用来证明不是任何文献案例都能蹭到"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    },
+    {
+      "tag": "dahuang_sennoside",
+      "seed_id": "HBIN043755",
+      "condition": "炮制·酒炙",
+      "seed_name": "Sennoside a",
+      "seed_formula": "C42H38O20",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.8,
+      "n_round1": 66,
+      "targets": [
+        {
+          "target": "sennidin a",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "大黄",
+      "process_cn": "酒蒸",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "番泻苷 A 需连续剥两个葡萄糖才到番泻苷元，单轮一步只能到单糖苷中间体；若规则一次剥两个则可能命中"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    },
+    {
+      "tag": "miyan_licorice_glycyrrhizin",
+      "seed_id": "HBIN028191",
+      "condition": "炮制·蜜炙",
+      "seed_name": "Glycyrrhizin",
+      "seed_formula": "C42H62O16",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 3.0,
+      "n_round1": 126,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C30H46O4",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "glycyrrhetinic acid",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "甘草",
+      "process_cn": "蜜炙",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "甘草酸（二葡萄糖醛酸苷）水解到甘草次酸；lit_cond 已实测命中同一规则"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhengzhi_ginseng_rb1_rg3",
+      "seed_id": "HBIN027729",
+      "condition": "炮制·蒸制",
+      "seed_name": "Ginsenoside rb1",
+      "seed_formula": "C54H92O23",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 3.9,
+      "n_round1": 170,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C42H72O13",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "ginsenoside rg3",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "人参",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "Rb1 去糖得 Rg3；lit_cond 已实测命中"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhengzhi_ginseng_rg1_rh1",
+      "seed_id": "HBIN027746",
+      "condition": "炮制·蒸制",
+      "seed_name": "Ginsenoside rg1",
+      "seed_formula": "C42H72O14",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 3.0,
+      "n_round1": 104,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C36H62O9",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "ginsenoside rh1",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "人参",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "Rg1 去一个葡萄糖得 Rh1（C42H72O14 - C6H10O5）；与 Rb1 同族"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhengzhi_ginseng_rg3_rg5",
+      "seed_id": "HBIN027751",
+      "condition": "炮制·蒸制",
+      "seed_name": "Ginsenoside rg3",
+      "seed_formula": "C42H72O13",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.9,
+      "n_round1": 108,
+      "targets": [
+        {
+          "rule": "elimination_dehydration_001",
+          "rules_all": [
+            "elimination_dehydration_001"
+          ],
+          "product_formula": "C42H70O12",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "ginsenoside rg5",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "人参",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "elimination_dehydration_001",
+        "confidence": "medium",
+        "reason": "Rg3 脱水得 Rg5（C42H72O13 - H2O）；若规则只给 Rk1 或不给脱水产物，则记为 miss"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhengzhi_ginseng_rg3_rk1",
+      "seed_id": "HBIN027751",
+      "condition": "炮制·蒸制",
+      "seed_name": "Ginsenoside rg3",
+      "seed_formula": "C42H72O13",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.8,
+      "n_round1": 108,
+      "targets": [
+        {
+          "rule": "elimination_dehydration_001",
+          "rules_all": [
+            "elimination_dehydration_001"
+          ],
+          "product_formula": "C42H70O12",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "ginsenoside rk1",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "人参",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "elimination_dehydration_001",
+        "confidence": "medium",
+        "reason": "Rg3 脱水得 Rk1（与 Rg5 同分子式、双键位置不同）；规则若只给一种异构体，则记为 miss"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "fuzi_aconitine_benzoylaconine",
+      "seed_id": "HBIN014582",
+      "condition": "炮制·蒸制",
+      "seed_name": "Aconitine",
+      "seed_formula": "C34H47NO11",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 50,
+      "targets": [
+        {
+          "rule": "hydrolysis_ester_001",
+          "rules_all": [
+            "hydrolysis_ester_001"
+          ],
+          "product_formula": "C32H45NO10",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "benzoylaconine",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "附子",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "乌头碱 C8 乙酰酯水解得苯甲酰乌头原碱（C34H47NO11 - C2H2O）"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "fuzi_mesaconitine_benzoylmesaconine",
+      "seed_id": "HBIN034775",
+      "condition": "炮制·蒸制",
+      "seed_name": "Mesaconitine",
+      "seed_formula": "C33H45NO11",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.5,
+      "n_round1": 53,
+      "targets": [
+        {
+          "rule": "hydrolysis_ester_001",
+          "rules_all": [
+            "hydrolysis_ester_001"
+          ],
+          "product_formula": "C31H43NO10",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "benzoylmesaconine",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "附子",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "中乌头碱乙酰酯水解得苯甲酰中乌头原碱（C33H45NO11 - C2H2O）"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "fuzi_hypaconitine_benzoylhypaconine",
+      "seed_id": "HBIN029816",
+      "condition": "炮制·蒸制",
+      "seed_name": "Hypaconitine",
+      "seed_formula": "C33H45NO10",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.5,
+      "n_round1": 48,
+      "targets": [
+        {
+          "rule": "hydrolysis_ester_001",
+          "rules_all": [
+            "hydrolysis_ester_001"
+          ],
+          "product_formula": "C31H43NO9",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "benzoylhypaconine",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "附子",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "次乌头碱乙酰酯水解得苯甲酰次乌头原碱（C33H45NO10 - C2H2O）"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "binglang_arecoline_guvacoline",
+      "seed_id": "HBIN016699",
+      "condition": "炮制·炒焦",
+      "seed_name": "Arecoline",
+      "seed_formula": "C8H13NO2",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 2.4,
+      "n_round1": 15,
+      "targets": [
+        {
+          "rule": "demethylation_n_001",
+          "rules_all": [
+            "demethylation_n_001"
+          ],
+          "product_formula": "C7H11NO2",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "guvacoline",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "槟榔",
+      "process_cn": "炒焦",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "demethylation_n_001",
+        "confidence": "high",
+        "reason": "槟榔碱 N-脱甲基得去甲槟榔碱（guvacoline，C8H13NO2 - CH2）；lit_cond 已实测命中"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "cangerzi_catr_atr",
+      "seed_id": "HBIN019719",
+      "condition": "炮制·炒黄",
+      "seed_name": "Carboxyatractyloside",
+      "seed_formula": "C31H46O18S2",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 78,
+      "targets": [
+        {
+          "rule": "decarboxylation_001",
+          "rules_all": [
+            "decarboxylation_001"
+          ],
+          "product_formula": "C30H46O16S2",
+          "co_product": true,
+          "match_level": "formula",
+          "rule_family_ok": true,
+          "status": "formula_only",
+          "why": "只有分子式命中（同分异构未区分）",
+          "target": "atractyloside skeleton",
+          "round": 1
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 1,
+      "status": "partial",
+      "herb_cn": "苍耳子",
+      "process_cn": "炒黄",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "formula_only",
+        "rule": "decarboxylation_001",
+        "confidence": "high",
+        "reason": "CATR 加热脱羧得 ATR 骨架（C31H46O18S2 - CO2）；ATR 在 tcm.db 无结构，只能判分子式"
+      },
+      "actual_status": "formula_only",
+      "prediction_hit": true
+    },
+    {
+      "tag": "heshouwu_thsg_aglycone",
+      "seed_id": "HBIN003908",
+      "condition": "炮制·蒸制",
+      "seed_name": "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
+      "seed_formula": "C20H22O9",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 2.7,
+      "n_round1": 135,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C14H12O4",
+          "co_product": true,
+          "match_level": "formula",
+          "rule_family_ok": true,
+          "status": "formula_only",
+          "why": "只有分子式命中（同分异构未区分）",
+          "target": "THSG aglycone",
+          "round": 1
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 1,
+      "status": "partial",
+      "herb_cn": "何首乌",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "formula_only",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "THSG 去葡萄糖得二苯乙烯苷元（C20H22O9 - C6H10O5 = C14H12O4）；苷元在 tcm.db 无结构，只能判分子式"
+      },
+      "actual_status": "formula_only",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhiqiao_hesperidin_hesperetin",
+      "seed_id": "HBIN029196",
+      "condition": "炮制·炒黄",
+      "seed_name": "Hesperidin",
+      "seed_formula": "C28H34O15",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.8,
+      "n_round1": 125,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C16H14O6",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "hesperetin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "枳壳",
+      "process_cn": "麸炒",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "橙皮苷（芦丁糖苷）水解得橙皮素；麸炒后橙皮苷 6.34→4.23 μg/mL、橙皮素 0.50→0.93 μg/mL（文献定量）。条件档用炒黄近似麸炒。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "zhiqiao_naringin_naringenin",
+      "seed_id": "HBIN036380",
+      "condition": "炮制·炒黄",
+      "seed_name": "Naringin",
+      "seed_formula": "C27H32O14",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.8,
+      "n_round1": 110,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C15H12O5",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "naringenin",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "枳壳",
+      "process_cn": "麸炒",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "柚皮苷水解得柚皮素；麸炒后柚皮苷 4.55→3.41 μg/mL、柚皮素 1.46→2.59 μg/mL（文献定量）。条件档用炒黄近似麸炒。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "huangqin_baicalin_baicalein",
+      "seed_id": "HBIN017516",
+      "condition": "炮制·酒炙",
+      "seed_name": "Baicalin",
+      "seed_formula": "C21H18O11",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.6,
+      "n_round1": 130,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C15H10O5",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "baicalein",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "黄芩",
+      "process_cn": "酒炙",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "黄芩苷（葡萄糖醛酸苷）水解得黄芩素；酒炙后黄芩苷/汉黄芩苷下降、黄芩素/汉黄芩素上升（文献多成分定量）。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "nvzhenzi_ligustroside_hydroxytyrosol",
+      "seed_id": "HBIN033207",
+      "condition": "炮制·酒炙",
+      "seed_name": "Ligustroside",
+      "seed_formula": "C25H32O12",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 2.7,
+      "n_round1": 124,
+      "targets": [
+        {
+          "target": "hydroxytyrosol",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "女贞子",
+      "process_cn": "酒蒸",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "文献报道酒蒸使女贞子苷（ligustroside）水解为羟基酪醇。现有糖苷规则只脱葡萄糖到苷元；羟基酪醇还需断裂裂环烯醚萜酯，预计 miss。条件档用酒炙近似酒蒸。"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    },
+    {
+      "tag": "huangqi_acetylastragaloside_astragaloside_iv",
+      "seed_id": "HBIN014450",
+      "condition": "炮制·蜜炙",
+      "seed_name": "Acetylastragaloside i",
+      "seed_formula": "C47H74O17",
+      "seed_smiles_source": "tcm.db:flat",
+      "seconds_round1": 2.8,
+      "n_round1": 107,
+      "targets": [
+        {
+          "target": "astragaloside IV",
+          "status": "miss"
+        }
+      ],
+      "n_consistent": 0,
+      "n_products_ok": 0,
+      "status": "miss",
+      "herb_cn": "黄芪",
+      "process_cn": "蜜炙",
+      "holdout_strength": "strong",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "文献报道加热使乙酰黄芪苷脱乙酰生成黄芪甲苷 IV。单轮酯水解只脱一个乙酰，预计到不了黄芪甲苷 IV。"
+      },
+      "actual_status": "miss",
+      "prediction_hit": true
+    }
+  ]
+}

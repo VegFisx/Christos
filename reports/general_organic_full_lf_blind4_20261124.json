@@ -1,0 +1,4318 @@
+{
+  "generated_at": "2026-11-24 15:13:19",
+  "config": "curated(all)+extra/mono=full_lf+base; no rescue/stereo; gate_conditions=False",
+  "n": 300,
+  "hits": 205,
+  "exact": 205,
+  "errors": 0,
+  "cases_with_source": {
+    "base": 127,
+    "mined_lf": 81
+  },
+  "mined_support": {
+    "n": 89,
+    "min": 10,
+    "p10": 14,
+    "median": 114,
+    "max": 6158
+  },
+  "rows": [
+    {
+      "id": "blind4_0001",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 39,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "blind4_0002",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0003",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0004",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0005",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0006",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0007",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 17,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        264
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0008",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0009",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0010",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 54,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.21
+    },
+    {
+      "id": "blind4_0011",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 36,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0012",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0013",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3039
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0014",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        19
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0015",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0016",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 44,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0017",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 14,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0018",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0019",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        114
+      ],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0020",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        26
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0021",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0022",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0023",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0024",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0025",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra",
+        "mined_mono"
+      ],
+      "mined_supports": [
+        16,
+        5381
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0026",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "cross_electrophile_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0027",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 50,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.18
+    },
+    {
+      "id": "blind4_0028",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        385
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0029",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0030",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0031",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 35,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0032",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0033",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0034",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 56,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        15
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0035",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        20
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0036",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0037",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0038",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0039",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0040",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 46,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0041",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 80,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.25
+    },
+    {
+      "id": "blind4_0042",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 47,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0043",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0044",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0045",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0046",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        695
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0047",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0048",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0049",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 36,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0050",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        429
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0051",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 46,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        189
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0052",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0053",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 12,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0054",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0055",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0056",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0057",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0058",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0059",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0060",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 64,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0061",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0062",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        1067
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0063",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        840
+      ],
+      "seconds": 0.16
+    },
+    {
+      "id": "blind4_0064",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0065",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0066",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0067",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 36,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0068",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0069",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0070",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 28,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0071",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        23
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0072",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0073",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0074",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 72,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.22
+    },
+    {
+      "id": "blind4_0075",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 7,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        112
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0076",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0077",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0078",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        903
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0079",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 6,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0080",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        6158
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0081",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0082",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0083",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0084",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        110
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0085",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0086",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0087",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0088",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0089",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0090",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 81,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0091",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3039
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0092",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        106
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0093",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        119
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0094",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 6,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0095",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        202
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0096",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0097",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0098",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0099",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 18,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_thiol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0100",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0101",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0102",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 14,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0103",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0104",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 12,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_X"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0105",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 38,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0106",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_alcohol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0107",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0108",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 49,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        57
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0109",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_sulfonic_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0110",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base",
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "amide_coupling",
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0111",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        49
+      ],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0112",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 97,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "blind4_0113",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0114",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 33,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0115",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 74,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        17
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0116",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0117",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 51,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0118",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 58,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "blind4_0119",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0120",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0121",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0122",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 49,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0123",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0124",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0125",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0126",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 9,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0127",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 34,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0128",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 54,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0129",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        28
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0130",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0131",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0132",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0133",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0134",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        56
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0135",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 69,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0136",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 56,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0137",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        1363
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0138",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 11,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0139",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        782
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0140",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0141",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 10,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0142",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 6,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0143",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        61,
+        73,
+        143
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0144",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 38,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0145",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0146",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0147",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0148",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 3,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0149",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0150",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 62,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0151",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        102
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0152",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        864
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0153",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 11,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        738
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0154",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0155",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 28,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0156",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0157",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0158",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0159",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 27,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0160",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        42
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0161",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0162",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0163",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base",
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra",
+        "reductive_amination_ketone"
+      ],
+      "mined_supports": [
+        11
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0164",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0165",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        190
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0166",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 54,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3481
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0167",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 70,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0168",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 36,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0169",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 38,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0170",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 19,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0171",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 60,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.25
+    },
+    {
+      "id": "blind4_0172",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 37,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0173",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        125
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0174",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0175",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        177
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0176",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0177",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        35
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0178",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        16
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0179",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 58,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0180",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        10
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0181",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 65,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0182",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 6,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0183",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        55
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0184",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3192
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0185",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 75,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0186",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 17,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0187",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 62,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "blind4_0188",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 77,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        73,
+        193,
+        1340
+      ],
+      "seconds": 0.16
+    },
+    {
+      "id": "blind4_0189",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 51,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0190",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0191",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 35,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0192",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 12,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0193",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        668
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0194",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ullmann_phenol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0195",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0196",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 18,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0197",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0198",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 29,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0199",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0200",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 71,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0201",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        182
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0202",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 62,
+      "exact": true,
+      "sources": [
+        "base",
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "amide_coupling",
+        "mined_extra"
+      ],
+      "mined_supports": [
+        14,
+        14
+      ],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0203",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0204",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 13,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0205",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 78,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        29
+      ],
+      "seconds": 0.18
+    },
+    {
+      "id": "blind4_0206",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0207",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 86,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        65
+      ],
+      "seconds": 0.24
+    },
+    {
+      "id": "blind4_0208",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_amine"
+      ],
+      "mined_supports": [],
+      "seconds": 0.18
+    },
+    {
+      "id": "blind4_0209",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        369
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0210",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        104
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0211",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0212",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        782
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0213",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 34,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0214",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 42,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        301
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0215",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        12
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0216",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0217",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 48,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0218",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "snar_alcohol"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0219",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0220",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        329
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0221",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 55,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        332
+      ],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0222",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        12
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0223",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 70,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0224",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        93
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0225",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 26,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        782
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0226",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        2281
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0227",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 24,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0228",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 65,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0229",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 38,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        10
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0230",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0231",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        280
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0232",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 27,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0233",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        45,
+        280
+      ],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0234",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0235",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 17,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0236",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 9,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        58
+      ],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0237",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0238",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 76,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0239",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11,
+        1742
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0240",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 36,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0241",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 17,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0242",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 25,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        161
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0243",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0244",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0245",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        54
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0246",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 40,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0247",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0248",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "esterification"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0249",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 60,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0250",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0251",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 13,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        1032
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0252",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sonogashira"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0253",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 44,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        115
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0254",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 50,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0255",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 43,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0256",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 82,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.2
+    },
+    {
+      "id": "blind4_0257",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0258",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 69,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        390
+      ],
+      "seconds": 0.18
+    },
+    {
+      "id": "blind4_0259",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sn2_nheterocycle"
+      ],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0260",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 20,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0261",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 27,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0262",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 12,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.04
+    },
+    {
+      "id": "blind4_0263",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 39,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0264",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.12
+    },
+    {
+      "id": "blind4_0265",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 10,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "blind4_0266",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 32,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0267",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "reductive_amination_aldehyde"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0268",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 62,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "ester_schotten_baumann"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0269",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 45,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        42
+      ],
+      "seconds": 0.15
+    },
+    {
+      "id": "blind4_0270",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 41,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sonogashira"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0271",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 68,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0272",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0273",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0274",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 32,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0275",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        3039
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0276",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0277",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 57,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "blind4_0278",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0279",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 35,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0280",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 63,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "heck"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0281",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "urea_formation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.16
+    },
+    {
+      "id": "blind4_0282",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 21,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0283",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "sonogashira"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0284",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 43,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "blind4_0285",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 49,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0286",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "blind4_0287",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 14,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0288",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 15,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0289",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 35,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0290",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 35,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.11
+    },
+    {
+      "id": "blind4_0291",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 34,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_sulfonation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0292",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 25,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.07
+    },
+    {
+      "id": "blind4_0293",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 16,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.08
+    },
+    {
+      "id": "blind4_0294",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0295",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 26,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "blind4_0296",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 63,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.19
+    },
+    {
+      "id": "blind4_0297",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 53,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.17
+    },
+    {
+      "id": "blind4_0298",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 23,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.06
+    },
+    {
+      "id": "blind4_0299",
+      "class": "blind4",
+      "hit": false,
+      "n_products": 59,
+      "exact": false,
+      "sources": [],
+      "hit_rules": [],
+      "mined_supports": [],
+      "seconds": 0.13
+    },
+    {
+      "id": "blind4_0300",
+      "class": "blind4",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "B-H"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    }
+  ]
+}

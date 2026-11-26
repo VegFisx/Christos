@@ -1,0 +1,1235 @@
+{
+  "generated_at": "2026-11-23 07:43:04",
+  "source": "data\\holdout_general_organic_20261123.json",
+  "configs": {
+    "strict": false,
+    "exploratory": true
+  },
+  "summary": {
+    "strict": {
+      "n": 30,
+      "skeleton": 1,
+      "exact": 1,
+      "errors": 0,
+      "by_class": {
+        "1": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "2": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "3": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "4": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "5": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "6": {
+          "n": 3,
+          "skeleton": 1,
+          "exact": 1
+        },
+        "7": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "8": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "9": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "10": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        }
+      }
+    },
+    "exploratory": {
+      "n": 30,
+      "skeleton": 10,
+      "exact": 9,
+      "errors": 0,
+      "by_class": {
+        "1": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "2": {
+          "n": 3,
+          "skeleton": 2,
+          "exact": 2
+        },
+        "3": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "4": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        },
+        "5": {
+          "n": 3,
+          "skeleton": 1,
+          "exact": 1
+        },
+        "6": {
+          "n": 3,
+          "skeleton": 2,
+          "exact": 1
+        },
+        "7": {
+          "n": 3,
+          "skeleton": 1,
+          "exact": 1
+        },
+        "8": {
+          "n": 3,
+          "skeleton": 3,
+          "exact": 3
+        },
+        "9": {
+          "n": 3,
+          "skeleton": 1,
+          "exact": 1
+        },
+        "10": {
+          "n": 3,
+          "skeleton": 0,
+          "exact": 0
+        }
+      }
+    }
+  },
+  "nonmonotonic": [],
+  "results": {
+    "strict": [
+      {
+        "id": "uspto50k_test_US06992103B2",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 6,
+        "n_products": 4,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.95,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130289029A1",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20140024650A1",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 4,
+        "n_products": 3,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.16,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US06924276B2",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.16,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US08501746B2",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090197859A1",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US05059708",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.03,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20070111988A1",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.2,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130109652A1",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.22,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US07645781B2",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.03,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20050234081A1",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.15,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110201815A1",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US08153544B2",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.03,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20060035933A1",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 6,
+        "n_products": 4,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130035310A1",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 2,
+        "n_products": 1,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.14,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110118480A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "hydrolysis_ester_001"
+        ],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20120226037A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20140249104A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US07704994B2",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090209562A1",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090221555A1",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.15,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04721718",
+        "class": "8",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110059951A1",
+        "class": "8",
+        "n_reactants": 1,
+        "n_hops": 6,
+        "n_products": 4,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110201650A1",
+        "class": "8",
+        "n_reactants": 1,
+        "n_hops": 1,
+        "n_products": 1,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.14,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04588732",
+        "class": "9",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.03,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04988705",
+        "class": "9",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20080207708A1",
+        "class": "9",
+        "n_reactants": 1,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04760163",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 3,
+        "n_products": 2,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.15,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US06265349B1",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20100034827A1",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 0,
+        "n_products": 0,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.02,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 0 / 单底物 13 / 失败 0 / 跳过 unvalidated 53 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      }
+    ],
+    "exploratory": [
+      {
+        "id": "uspto50k_test_US06992103B2",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 31,
+        "n_products": 21,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130289029A1",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 13,
+        "n_products": 8,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20140024650A1",
+        "class": "1",
+        "n_reactants": 2,
+        "n_hops": 22,
+        "n_products": 14,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US06924276B2",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 27,
+        "n_products": 19,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US08501746B2",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 28,
+        "n_products": 19,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "amidation_intermolecular_001"
+        ],
+        "seconds": 0.2,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090197859A1",
+        "class": "2",
+        "n_reactants": 2,
+        "n_hops": 24,
+        "n_products": 16,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "amidation_intermolecular_001"
+        ],
+        "seconds": 0.2,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US05059708",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 36,
+        "n_products": 25,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.22,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20070111988A1",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 27,
+        "n_products": 17,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130109652A1",
+        "class": "3",
+        "n_reactants": 2,
+        "n_hops": 18,
+        "n_products": 11,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US07645781B2",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 19,
+        "n_products": 13,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20050234081A1",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 44,
+        "n_products": 30,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.21,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110201815A1",
+        "class": "4",
+        "n_reactants": 2,
+        "n_hops": 32,
+        "n_products": 20,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US08153544B2",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 8,
+        "n_products": 5,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.16,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20060035933A1",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 30,
+        "n_products": 20,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.2,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20130035310A1",
+        "class": "5",
+        "n_reactants": 2,
+        "n_hops": 16,
+        "n_products": 11,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "aminolysis_ester_001"
+        ],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110118480A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 10,
+        "n_products": 8,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "hydrolysis_ester_001"
+        ],
+        "seconds": 0.16,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20120226037A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 15,
+        "n_products": 10,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20140249104A1",
+        "class": "6",
+        "n_reactants": 1,
+        "n_hops": 30,
+        "n_products": 19,
+        "exact": false,
+        "skeleton": true,
+        "hit_rules": [
+          "hydrolysis_amide_001"
+        ],
+        "seconds": 0.22,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US07704994B2",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 10,
+        "n_products": 6,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090209562A1",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 14,
+        "n_products": 10,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "reduction_ketone_001"
+        ],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20090221555A1",
+        "class": "7",
+        "n_reactants": 1,
+        "n_hops": 16,
+        "n_products": 12,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04721718",
+        "class": "8",
+        "n_reactants": 2,
+        "n_hops": 23,
+        "n_products": 16,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "oxidation_sulfide_001"
+        ],
+        "seconds": 0.19,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110059951A1",
+        "class": "8",
+        "n_reactants": 1,
+        "n_hops": 14,
+        "n_products": 9,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "oxidation_primary_alcohol_001"
+        ],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20110201650A1",
+        "class": "8",
+        "n_reactants": 1,
+        "n_hops": 9,
+        "n_products": 6,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "oxidation_primary_alcohol_001"
+        ],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04588732",
+        "class": "9",
+        "n_reactants": 2,
+        "n_hops": 9,
+        "n_products": 5,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.16,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04988705",
+        "class": "9",
+        "n_reactants": 1,
+        "n_hops": 15,
+        "n_products": 10,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20080207708A1",
+        "class": "9",
+        "n_reactants": 1,
+        "n_hops": 16,
+        "n_products": 11,
+        "exact": true,
+        "skeleton": true,
+        "hit_rules": [
+          "elimination_amide_to_nitrile_001"
+        ],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US04760163",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 21,
+        "n_products": 16,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US06265349B1",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 15,
+        "n_products": 11,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.18,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      },
+      {
+        "id": "uspto50k_test_US20100034827A1",
+        "class": "10",
+        "n_reactants": 2,
+        "n_hops": 11,
+        "n_products": 9,
+        "exact": false,
+        "skeleton": false,
+        "hit_rules": [],
+        "seconds": 0.17,
+        "engine_notes": [
+          "base: 未启用（炮制严格模式）",
+          "extra: 未启用（显式关闭）",
+          "mono: 未启用",
+          "curated: curated: 双底物 11 / 单底物 55 / 失败 0 / 跳过 unvalidated 0 / 显式 unvalidated 0",
+          "mined_top: 未启用"
+        ]
+      }
+    ]
+  }
+}

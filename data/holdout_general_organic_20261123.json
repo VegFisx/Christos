@@ -1,0 +1,568 @@
+{
+  "created_at": "2026-11-23",
+  "frozen_git_rev": "pre-registered before first run (2026-11-23)",
+  "purpose": "TCM 之外的独立泛化覆盖探针；不是 pass/fail holdout，不用于调规则。",
+  "source": "reports\\paper\\data\\uspto50k_official\\raw_test.csv",
+  "selection": {
+    "seed": 20261123,
+    "per_class": 3,
+    "classes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "filters": [
+      "reactants 1-2",
+      "main product by heavy atom count",
+      "product heavy atoms 8-50",
+      "all SMILES parse",
+      "deduplicate by canonical reactants>>product",
+      "3 per reaction class, class-internal RNG(seed:class)"
+    ]
+  },
+  "protocol": [
+    "本文件在首次运行前提交；运行只读它，不回头改抽样。",
+    "配置：strict curated（validated only）与 exploratory curated（all active curated）；extra/mono/base/coverage/stereo 全关，条件门控关。",
+    "命中：任一主产物/伴生产物的 InChIKey 前 14 位等于目标；exact canonical 作为次要指标。",
+    "不新增/启用任何规则；结果只作覆盖测量，不作规则设计依据。"
+  ],
+  "cases": [
+    {
+      "id": "uspto50k_test_US06992103B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "1",
+      "reactants": [
+        "COCCCCO",
+        "COC(=O)c1cc(O)cc(N2CCCC2=O)c1"
+      ],
+      "product": "COCCCCOc1cc(C(=O)OC)cc(N2CCCC2=O)c1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1469,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20130289029A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "1",
+      "reactants": [
+        "C=O",
+        "CC(C)(C)OC(=O)N[C@H]1CCNC1"
+      ],
+      "product": "CN1CC[C@H](NC(=O)OC(C)(C)C)C1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1688,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20140024650A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "1",
+      "reactants": [
+        "CC(C)(C)OC(=O)N[C@@H]1CCOC[C@H]1CO",
+        "Cc1cnn(-c2ccc(O)cc2)c1"
+      ],
+      "product": "Cc1cnn(-c2ccc(OC[C@@H]3COCC[C@H]3NC(=O)OC(C)(C)C)cc2)c1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 170,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US06924276B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "2",
+      "reactants": [
+        "O=C(Cl)Cc1ccccc1",
+        "Cc1sc(C(=O)OCc2ccccc2)cc1N"
+      ],
+      "product": "Cc1sc(C(=O)OCc2ccccc2)cc1NC(=O)Cc1ccccc1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3110,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US08501746B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "2",
+      "reactants": [
+        "Cc1nc(-n2ccc(OCc3ccccc3)cc2=O)sc1C(=O)O",
+        "Cc1cnc(CN)cn1"
+      ],
+      "product": "Cc1cnc(CNC(=O)c2sc(-n3ccc(OCc4ccccc4)cc3=O)nc2C)cn1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 711,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20090197859A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "2",
+      "reactants": [
+        "CN1CCC(c2cccc(C(=O)O)n2)CC1",
+        "Cc1ccccc1OC1CCNCC1"
+      ],
+      "product": "Cc1ccccc1OC1CCN(C(=O)c2cccc(C3CCN(C)CC3)n2)CC1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3290,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US05059708",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "3",
+      "reactants": [
+        "CCOP(=O)(Cc1ccc2ccc3cccc4ccc1c2c34)OCC",
+        "O=Cc1ccc(Cl)cc1"
+      ],
+      "product": "Clc1ccc(C=Cc2ccc3ccc4cccc5ccc2c3c45)cc1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3895,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20070111988A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "3",
+      "reactants": [
+        "COc1ccc2c(Oc3ccc(OCCN4CCCCC4)cc3)c(Br)sc2c1",
+        "CC1(C)OB(c2ccc3c(c2)CNC3=O)OC1(C)C"
+      ],
+      "product": "COc1ccc2c(Oc3ccc(OCCN4CCCCC4)cc3)c(-c3ccc4c(c3)CNC4=O)sc2c1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 4018,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20130109652A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "3",
+      "reactants": [
+        "O=c1ccc(Br)cn1Cc1ccc(Cl)cc1F",
+        "COc1ccc(B(O)O)cn1"
+      ],
+      "product": "COc1ccc(-c2ccc(=O)n(Cc3ccc(Cl)cc3F)c2)cn1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3954,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US07645781B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "4",
+      "reactants": [
+        "CC(=O)CCC(C)=O",
+        "C[C@@H]1Cc2cc(N)ccc2N1"
+      ],
+      "product": "Cc1ccc(C)n1-c1ccc2c(c1)C[C@@H](C)N2",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1371,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20050234081A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "4",
+      "reactants": [
+        "O=CO",
+        "COC(=O)c1cc(S(=O)(=O)c2cc(N)c(N)c(Br)c2)c(SC)s1"
+      ],
+      "product": "COC(=O)c1cc(S(=O)(=O)c2cc(Br)c3nc[nH]c3c2)c(SC)s1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3952,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20110201815A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "4",
+      "reactants": [
+        "CCOC(=O)C(Cl)C(C)=O",
+        "NC(=S)c1cc(O)c2sccc2c1"
+      ],
+      "product": "CCOC(=O)c1sc(-c2cc(O)c3sccc3c2)nc1C",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 4035,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US08153544B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "5",
+      "reactants": [
+        "COCCl",
+        "CC(C)(C)c1ccc(O)c(C(C)(C)C)c1"
+      ],
+      "product": "COCOc1ccc(C(C)(C)C)cc1C(C)(C)C",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 2104,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20060035933A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "5",
+      "reactants": [
+        "OCCO",
+        "COc1cc([N+](=O)[O-])ccc1C=O"
+      ],
+      "product": "COc1cc([N+](=O)[O-])ccc1C1OCCO1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1218,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20130035310A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "5",
+      "reactants": [
+        "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+        "Cc1ccccc1N"
+      ],
+      "product": "Cc1ccccc1NC(=O)C(F)(F)F",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 3502,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20110118480A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "6",
+      "reactants": [
+        "COCCOCCOCCOCCC(=O)OC(C)(C)C"
+      ],
+      "product": "COCCOCCOCCOCCC(=O)O",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 3669,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20120226037A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "6",
+      "reactants": [
+        "Cc1cc(C)c(Oc2nc(Nc3ccc(C#N)cc3)nc3c2ccn3Cc2ccccc2)c(C)c1"
+      ],
+      "product": "Cc1cc(C)c(Oc2nc(Nc3ccc(C#N)cc3)nc3[nH]ccc23)c(C)c1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 1822,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20140249104A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "6",
+      "reactants": [
+        "Cc1cc(Cl)cnc1C(=O)Nc1ccc(F)c([C@]2(C)C[C@@H](C(F)(F)F)OC(NC(=O)c3ccccc3)=N2)c1"
+      ],
+      "product": "Cc1cc(Cl)cnc1C(=O)Nc1ccc(F)c(C2(C)CC(C(F)(F)F)OC(N)=N2)c1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 3808,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US07704994B2",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "7",
+      "reactants": [
+        "O=[N+]([O-])c1ccc(Oc2ccc3c(c2)CCN(C2CCC2)CC3)nc1"
+      ],
+      "product": "Nc1ccc(Oc2ccc3c(c2)CCN(C2CCC2)CC3)nc1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 2562,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20090209562A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "7",
+      "reactants": [
+        "O=C1CCN(Cc2ccccc2)C1"
+      ],
+      "product": "OC1CCN(Cc2ccccc2)C1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 1727,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20090221555A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "7",
+      "reactants": [
+        "COc1cc2c(cc1[N+](=O)[O-])CCN(CCNC(C)=O)CC2"
+      ],
+      "product": "COc1cc2c(cc1N)CCN(CCNC(C)=O)CC2",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 1171,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US04721718",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "8",
+      "reactants": [
+        "O=C(OO)c1cccc(Cl)c1",
+        "c1ccc2[nH]c(SCc3cnc4ccccn34)nc2c1"
+      ],
+      "product": "O=S(Cc1cnc2ccccn12)c1nc2ccccc2[nH]1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 804,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20110059951A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "8",
+      "reactants": [
+        "C[C@@H]1CN(C(=O)OC(C)(C)C)CCN1CCO"
+      ],
+      "product": "C[C@@H]1CN(C(=O)OC(C)(C)C)CCN1CC=O",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 2281,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20110201650A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "8",
+      "reactants": [
+        "OCC1(COCc2ccccc2)CCC2(CC1)OCCO2"
+      ],
+      "product": "O=CC1(COCc2ccccc2)CCC2(CC1)OCCO2",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 3006,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US04588732",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "9",
+      "reactants": [
+        "Cc1nc(CCl)ccc1OCc1ccccc1",
+        "[N-]=[N+]=[N-]"
+      ],
+      "product": "Cc1nc(CN=[N+]=[N-])ccc1OCc1ccccc1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 4345,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US04988705",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "9",
+      "reactants": [
+        "O=C(O)c1cccnc1Cl"
+      ],
+      "product": "O=C(O)c1cccnc1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 3747,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20080207708A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "9",
+      "reactants": [
+        "CC(C)COc1ccc(Cl)cc1Cc1nc(C(N)=O)cs1"
+      ],
+      "product": "CC(C)COc1ccc(Cl)cc1Cc1nc(C#N)cs1",
+      "n_reactants": 1,
+      "n_products_total": 1,
+      "source_row": 4000,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US04760163",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "10",
+      "reactants": [
+        "O=C1CCC(=O)N1Br",
+        "Cc1cn(C)c(=O)n(-c2cc(C(=O)OC(C)C)c(Cl)cc2F)c1=O"
+      ],
+      "product": "CC(C)OC(=O)c1cc(-n2c(=O)c(CBr)cn(C)c2=O)c(F)cc1Cl",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1379,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US06265349B1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "10",
+      "reactants": [
+        "O=C1CCC(=O)N1Br",
+        "Cc1cc2c(-c3ccc(C(F)(F)F)n(C)c3=O)c(F)cc(Cl)c2o1"
+      ],
+      "product": "Cn1c(C(F)(F)F)ccc(-c2c(F)cc(Cl)c3oc(CBr)cc23)c1=O",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 2402,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    },
+    {
+      "id": "uspto50k_test_US20100034827A1",
+      "kind": "general_organic_coverage",
+      "source": "USPTO-50K official test split",
+      "class": "10",
+      "reactants": [
+        "O=C1CCC(=O)N1Br",
+        "Cc1cc(C)cc(Oc2nc(Cl)nc(Cl)c2C(C)C)c1"
+      ],
+      "product": "Cc1cc(CBr)cc(Oc2nc(Cl)nc(Cl)c2C(C)C)c1",
+      "n_reactants": 2,
+      "n_products_total": 1,
+      "source_row": 1035,
+      "expected": {
+        "status": "unknown",
+        "reason": "外部覆盖探针：不预注册单例 expected；只预注册抽样、配置与判定口径。"
+      }
+    }
+  ]
+}

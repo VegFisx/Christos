@@ -1,0 +1,3010 @@
+{
+ "schema": "blind_general_organic_holdout_v1",
+ "generated_at": "2026-11-24",
+ "source": "MIT USPTO (fresh split 6)",
+ "seed": 20261206,
+ "note": "Frozen after round-215 (no rule changes since the round-213 family rules); disjoint from 295/blind1-5/dev by exact reactant-set and product match.",
+ "n": 300,
+ "cases": [
+  {
+   "id": "blind6_0001",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN1CCNCC1",
+    "O=Cc1ccccc1F"
+   ],
+   "product": "CN1CCN(c2ccccc2C=O)CC1"
+  },
+  {
+   "id": "blind6_0002",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CNCCCNCCNC1",
+    "COC(OC)N(C)C"
+   ],
+   "product": "C1CN2CCCN3CCN(C1)C23"
+  },
+  {
+   "id": "blind6_0003",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN(C)CCN",
+    "O=C(O)c1ccc2c([N+](=O)[O-])cc3c(c2c1)C(CCl)CN3"
+   ],
+   "product": "CN(C)CCNC(=O)c1ccc2c([N+](=O)[O-])cc3c(c2c1)C(CCl)CN3"
+  },
+  {
+   "id": "blind6_0004",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)COc1nc(N2CCNCC2)nc(N2CCSCC2)c1[N+](=O)[O-]",
+    "OO"
+   ],
+   "product": "CC(C)(C)COc1nc(N2CCNCC2)nc(N2CCS(=O)CC2)c1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0005",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CI",
+    "COc1cccc(NCC(O)Cn2c3ccc(Br)cc3c3cc(Br)ccc32)c1"
+   ],
+   "product": "COc1cccc(NCC(Cn2c3ccc(Br)cc3c3cc(Br)ccc32)OC)c1"
+  },
+  {
+   "id": "blind6_0006",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC1(c2ccccc2)CCN(c2nccc(Cl)n2)C(=O)O1",
+    "OB(O)c1ccc(F)cc1F"
+   ],
+   "product": "CC1(c2ccccc2)CCN(c2nccc(-c3ccc(F)cc3F)n2)C(=O)O1"
+  },
+  {
+   "id": "blind6_0007",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(=O)c1ccccc1N",
+    "O=C([O-])CC(=O)OCc1ccccc1"
+   ],
+   "product": "CCC(=O)c1ccccc1NC(=O)CC(=O)OCc1ccccc1"
+  },
+  {
+   "id": "blind6_0008",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)c1nc2cc(C)ccc2[nH]c1=O",
+    "O=[N+]([O-])O"
+   ],
+   "product": "CCOC(=O)c1nc2cc(C)c([N+](=O)[O-])cc2[nH]c1=O"
+  },
+  {
+   "id": "blind6_0009",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)I",
+    "COc1cc2c(cc1OC)CCN(C(=O)CCN(CC1Cc3cc(O)ccc31)C(=O)OC(C)(C)C)CC2"
+   ],
+   "product": "COc1cc2c(cc1OC)CCN(C(=O)CCN(CC1Cc3cc(OC(C)C)ccc31)C(=O)OC(C)(C)C)CC2"
+  },
+  {
+   "id": "blind6_0010",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C[S+](C)C",
+    "O=Cc1ccccc1Br"
+   ],
+   "product": "Brc1ccccc1C1CO1"
+  },
+  {
+   "id": "blind6_0011",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCO1",
+    "OC1=CCCSc2ccc(Cl)cc21"
+   ],
+   "product": "O=S1CCC=C(O)c2cc(Cl)ccc21"
+  },
+  {
+   "id": "blind6_0012",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)C1(Cc2ccccc2)CCNCC1",
+    "O=N[O-]"
+   ],
+   "product": "CCOC(=O)C1(Cc2ccccc2)CCN(N=O)CC1"
+  },
+  {
+   "id": "blind6_0013",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ncc(CO)c(C)c1OCc1ccc(C#N)cc1",
+    "N#Cc1ccc(O)cc1"
+   ],
+   "product": "Cc1ncc(COc2ccc(C#N)cc2)c(C)c1OCc1ccc(C#N)cc1"
+  },
+  {
+   "id": "blind6_0014",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)C(=O)Nc1cccc(C2CCN(Cc3cccc4[nH]ccc34)CC2)c1",
+    "Clc1ccc(I)cc1"
+   ],
+   "product": "CC(C)C(=O)Nc1cccc(C2CCN(Cc3cccc4c3ccn4-c3ccc(Cl)cc3)CC2)c1"
+  },
+  {
+   "id": "blind6_0015",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Fc1ccc(S)cc1",
+    "O=C1CCO1"
+   ],
+   "product": "O=C(O)CCSc1ccc(F)cc1"
+  },
+  {
+   "id": "blind6_0016",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)NC(C)c1ccc(N2CC(Oc3ccnc(F)c3)C2)cc1",
+    "OCC1CC1"
+   ],
+   "product": "CC(=O)NC(C)c1ccc(N2CC(Oc3ccnc(OCC4CC4)c3)C2)cc1"
+  },
+  {
+   "id": "blind6_0017",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CNCCO",
+    "O=C(Cl)c1ccco1"
+   ],
+   "product": "CN(CCO)C(=O)c1ccco1"
+  },
+  {
+   "id": "blind6_0018",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Brc1cccnc1",
+    "C=Cc1nn(C(c2ccccc2)(c2ccccc2)c2ccccc2)c2c(F)cc(C#N)cc12"
+   ],
+   "product": "N#Cc1cc(F)c2c(c1)c(C=Cc1cccnc1)nn2C(c1ccccc1)(c1ccccc1)c1ccccc1"
+  },
+  {
+   "id": "blind6_0019",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1cc(F)ccc1[N+](=O)[O-]",
+    "OC1CCNC1"
+   ],
+   "product": "COc1cc(N2CCC(O)C2)ccc1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0020",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Fc1cccc(-c2nc3c(Cl)cccc3nc2CBr)c1",
+    "[O-][I+3]([O-])([O-])[O-]"
+   ],
+   "product": "O=Cc1nc2cccc(Cl)c2nc1-c1cccc(F)c1"
+  },
+  {
+   "id": "blind6_0021",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCc2cc(B3OC(C)(C)C(C)(C)O3)ccc21",
+    "Nc1nccc2scc(Br)c12"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCc2cc(-c3csc4ccnc(N)c34)ccc21"
+  },
+  {
+   "id": "blind6_0022",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)NCCCc1c(F)ccc2c1CCO2",
+    "Cl"
+   ],
+   "product": "NCCCc1c(F)ccc2c1CCO2"
+  },
+  {
+   "id": "blind6_0023",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1c(F)cc(C(N)=O)cc1B1OC(C)(C)C(C)(C)O1",
+    "Cn1c(=O)c(Br)cc2cnn(-c3ccccc3Cl)c21"
+   ],
+   "product": "Cc1c(F)cc(C(N)=O)cc1-c1cc2cnn(-c3ccccc3Cl)c2n(C)c1=O"
+  },
+  {
+   "id": "blind6_0024",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CCOC(=O)N1CC(S)CC1COCCF",
+    "CC(O[Si](C)(C)C(C)(C)C)C1C(=O)NC1C(C)C(=O)N1CCSC1=S"
+   ],
+   "product": "C=CCOC(=O)N1CC(SC(=O)C(C)C2NC(=O)C2C(C)O[Si](C)(C)C(C)(C)C)CC1COCCF"
+  },
+  {
+   "id": "blind6_0025",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N(CCc1ccc(B(O)O)cc1)Cc1ccccc1",
+    "COC(=O)c1ccc(Br)cc1NC(C)C"
+   ],
+   "product": "COC(=O)c1ccc(-c2ccc(CCN(Cc3ccccc3)C(=O)OC(C)(C)C)cc2)cc1NC(C)C"
+  },
+  {
+   "id": "blind6_0026",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCCCCCP(=O)(Cl)Cl",
+    "c1ccc(CNc2ccccc2)cc1"
+   ],
+   "product": "CCCCCCCCP1(=O)c2ccccc2CN1c1ccccc1"
+  },
+  {
+   "id": "blind6_0027",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(CO)Oc1ccccc1",
+    "NS(=O)(=O)O"
+   ],
+   "product": "CC(C)(COS(N)(=O)=O)Oc1ccccc1"
+  },
+  {
+   "id": "blind6_0028",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(Cl)c1ccccc1",
+    "O=c1cc(-c2ccccc2)n(COCCO)c(=S)[nH]1"
+   ],
+   "product": "O=C(OCCOCn1c(-c2ccccc2)cc(=O)[nH]c1=S)c1ccccc1"
+  },
+  {
+   "id": "blind6_0029",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CSc1c(CC(=O)OC(C)(C)C)cc(C)c2c1[nH]c1ccccc12",
+    "Fc1cccc(CBr)c1"
+   ],
+   "product": "CSc1c(CC(=O)OC(C)(C)C)cc(C)c2c3ccccc3n(Cc3cccc(F)c3)c12"
+  },
+  {
+   "id": "blind6_0030",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCOc2c(cccc2-c2ccccc2OC(F)(F)F)C1",
+    "Cl"
+   ],
+   "product": "FC(F)(F)Oc1ccccc1-c1cccc2c1OCCNC2"
+  },
+  {
+   "id": "blind6_0031",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)c1ccc(N(Cc2cn[nH]c2)C(=O)C2CCCc3c(OCc4ccccc4)cccc32)cn1",
+    "CCOc1ccc(CCl)cn1"
+   ],
+   "product": "CCOc1ccc(Cn2cc(CN(C(=O)C3CCCc4c(OCc5ccccc5)cccc43)c3ccc(C(C)C)nc3)cn2)cn1"
+  },
+  {
+   "id": "blind6_0032",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCCCCCCCCCN",
+    "CCOC(=O)c1cc(-c2cccc(C(F)(F)F)c2)c(OCCO)c(-c2cccc(C(F)(F)F)c2)c1"
+   ],
+   "product": "CCCCCCCCCCCCNC(=O)c1cc(-c2cccc(C(F)(F)F)c2)c(OCCO)c(-c2cccc(C(F)(F)F)c2)c1"
+  },
+  {
+   "id": "blind6_0033",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CSc1ncc(Cc2ccc(Cl)cc2)c(=O)[nH]1",
+    "NCCCNc1ccccn1"
+   ],
+   "product": "O=c1[nH]c(NCCCNc2ccccn2)ncc1Cc1ccc(Cl)cc1"
+  },
+  {
+   "id": "blind6_0034",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)C1CCC2C3CCC4CC5OC5CC4(C)C3C(=O)CC12C",
+    "OCCBr"
+   ],
+   "product": "CC(=O)C1CCC2C3CCC4CC(O)C(Br)CC4(C)C3C(=O)CC12C"
+  },
+  {
+   "id": "blind6_0035",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCC(NS(=O)(=O)c2ccc(F)c3ccccc23)CC1",
+    "N#C[Na]"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC(NS(=O)(=O)c2ccc(C#N)c3ccccc23)CC1"
+  },
+  {
+   "id": "blind6_0036",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CON=C1CCc2cc(C=CC(=O)C3CCN(C(=O)OCc4ccccc4)CC3)ccc21",
+    "O=Cc1ccncc1"
+   ],
+   "product": "CON=C1CCc2cc(C(CC(=O)C3CCN(C(=O)OCc4ccccc4)CC3)C(=O)c3ccncc3)ccc21"
+  },
+  {
+   "id": "blind6_0037",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)Oc1cc(CO)c(F)cc1Cl",
+    "O=S(Cl)Cl"
+   ],
+   "product": "CC(C)Oc1cc(CCl)c(F)cc1Cl"
+  },
+  {
+   "id": "blind6_0038",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CNC1",
+    "O=Cc1ccc(-c2nc3ccc(C4(c5ccccc5)CC4)nc3s2)c(F)c1"
+   ],
+   "product": "Fc1cc(CN2CCC2)ccc1-c1nc2ccc(C3(c4ccccc4)CC3)nc2s1"
+  },
+  {
+   "id": "blind6_0039",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NCCN1CCCC1",
+    "O=S(=O)(Nc1cccc(-c2nc(C3CCOCC3)sc2-c2ccnc(Cl)n2)c1F)c1ccoc1"
+   ],
+   "product": "O=S(=O)(Nc1cccc(-c2nc(C3CCOCC3)sc2-c2ccnc(NCCN3CCCC3)n2)c1F)c1ccoc1"
+  },
+  {
+   "id": "blind6_0040",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)c1ccccc1",
+    "NNc1ccc(I)cc1"
+   ],
+   "product": "CC(=NNc1ccc(I)cc1)c1ccccc1"
+  },
+  {
+   "id": "blind6_0041",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NC1Cc2ccccc2C1",
+    "O=C(O)c1ccc(-c2cnc3c(c2)N(Cc2cc(Cl)ccc2C(F)(F)F)CCN3)cc1"
+   ],
+   "product": "O=C(NC1Cc2ccccc2C1)c1ccc(-c2cnc3c(c2)N(Cc2cc(Cl)ccc2C(F)(F)F)CCN3)cc1"
+  },
+  {
+   "id": "blind6_0042",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(=O)Cl",
+    "c1cn2cncc2s1"
+   ],
+   "product": "CCC(=O)c1ncn2ccsc12"
+  },
+  {
+   "id": "blind6_0043",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "FC(F)(F)c1ccc2ccccc2n1",
+    "O=[N+]([O-])[O-]"
+   ],
+   "product": "O=[N+]([O-])c1cccc2nc(C(F)(F)F)ccc12"
+  },
+  {
+   "id": "blind6_0044",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCN(CC)c1ccc(C(=O)c2c(Cl)c(Cl)c(Cl)c(Cl)c2C(=O)O)c(C)c1",
+    "CN(C)c1cccc(N(C)C)c1"
+   ],
+   "product": "CCN(CC)c1ccc(C2(c3ccc(N(C)C)cc3N(C)C)OC(=O)c3c(Cl)c(Cl)c(Cl)c(Cl)c32)c(C)c1"
+  },
+  {
+   "id": "blind6_0045",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCC(C#N)Oc1ccccc1COc1ccc2oc(-c3nc(C(C)(C)C)cs3)cc2c1",
+    "NO"
+   ],
+   "product": "CCCC(Oc1ccccc1COc1ccc2oc(-c3nc(C(C)(C)C)cs3)cc2c1)C(N)=NO"
+  },
+  {
+   "id": "blind6_0046",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCOc1c(OCCBr)cc(C2CCC(c3cc(OC)c(OC)c(OC)c3)O2)cc1S(=O)(=O)CC(C)O",
+    "Sc1ncc[nH]1"
+   ],
+   "product": "CCCOc1c(OCCSc2ncc[nH]2)cc(C2CCC(c3cc(OC)c(OC)c(OC)c3)O2)cc1S(=O)(=O)CC(C)O"
+  },
+  {
+   "id": "blind6_0047",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CCNC1",
+    "OCC1CSC(c2cc3cccc(NC4CCCC4)c3[nH]2)=N1"
+   ],
+   "product": "c1cc(NC2CCCC2)c2[nH]c(C3=NC(CN4CCCC4)CS3)cc2c1"
+  },
+  {
+   "id": "blind6_0048",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc(C=O)c([N+](=O)[O-])c1OC",
+    "O"
+   ],
+   "product": "COc1ccc(C(=O)O)c([N+](=O)[O-])c1OC"
+  },
+  {
+   "id": "blind6_0049",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C1CCC(=O)N1I",
+    "c1ccc(-c2cn3ccccc3n2)cc1"
+   ],
+   "product": "Ic1c(-c2ccccc2)nc2ccccn12"
+  },
+  {
+   "id": "blind6_0050",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)c1cccc2nc(N3CC(N)C3)sc12",
+    "CCc1[nH]c(C(=O)O)nc1Cl"
+   ],
+   "product": "CCOC(=O)c1cccc2nc(N3CC(NC(=O)c4nc(Cl)c(CC)[nH]4)C3)sc12"
+  },
+  {
+   "id": "blind6_0051",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1cc2nc(NC(=O)c3ccc(C(C)(C)O)cc3)cc(Cl)n2n1",
+    "FC1CCNC1"
+   ],
+   "product": "Cc1cc2nc(NC(=O)c3ccc(C(C)(C)O)cc3)cc(N3CCC(F)C3)n2n1"
+  },
+  {
+   "id": "blind6_0052",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CCOC1",
+    "Oc1cccnc1"
+   ],
+   "product": "c1cncc(OCC2CO2)c1"
+  },
+  {
+   "id": "blind6_0053",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCI",
+    "COC(=O)Cc1ccc(B2OC(C)(C)C(C)(C)O2)c(Cl)c1"
+   ],
+   "product": "CCC(C(=O)OC)c1ccc(B2OC(C)(C)C(C)(C)O2)c(Cl)c1"
+  },
+  {
+   "id": "blind6_0054",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CC(O)c1[nH]c(=O)c2c(ccc3nc(Nc4ccc(F)cc4C)n(C)c32)c1C",
+    "CC(=O)OC(C)=O"
+   ],
+   "product": "C=CC(OC(C)=O)c1[nH]c(=O)c2c(ccc3nc(Nc4ccc(F)cc4C)n(C)c32)c1C"
+  },
+  {
+   "id": "blind6_0055",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "ClCCCCCI",
+    "O=C1CCCCCC1"
+   ],
+   "product": "O=C1CCCCCC12CCCCC2"
+  },
+  {
+   "id": "blind6_0056",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(NCCc1ccc(Cl)cc1)c1ccc(O)cc1",
+    "O=Cc1ccc(F)c(C(F)(F)F)c1"
+   ],
+   "product": "O=Cc1ccc(Oc2ccc(C(=O)NCCc3ccc(Cl)cc3)cc2)c(C(F)(F)F)c1"
+  },
+  {
+   "id": "blind6_0057",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)CP(=O)(OCC)OCC",
+    "O=Cc1ccccn1"
+   ],
+   "product": "CCOC(=O)C=Cc1ccccn1"
+  },
+  {
+   "id": "blind6_0058",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CNCCN1",
+    "CC(NC(=O)OC(C)(C)C)C(=O)O"
+   ],
+   "product": "CC(NC(=O)OC(C)(C)C)C(=O)N1CCNCC1"
+  },
+  {
+   "id": "blind6_0059",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CC(C)(C)O",
+    "CCCOCCCl"
+   ],
+   "product": "C#CC(C)(C)OCCOCCC"
+  },
+  {
+   "id": "blind6_0060",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Clc1cncc(Cl)c1Cl",
+    "O=S(=O)(c1ccc(Cl)cc1)C1CCNCC1"
+   ],
+   "product": "O=S(=O)(c1ccc(Cl)cc1)C1CCN(c2c(Cl)cncc2Cl)CC1"
+  },
+  {
+   "id": "blind6_0061",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C[N+](=O)[O-]",
+    "O=Cc1c[nH]c2cc(Cl)c(C(F)(F)F)cc12"
+   ],
+   "product": "O=[N+]([O-])C=Cc1c[nH]c2cc(Cl)c(C(F)(F)F)cc12"
+  },
+  {
+   "id": "blind6_0062",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC1=C(C(=O)O)C(c2ccc(C(F)(F)F)cc2)CC(=O)N1C",
+    "Nc1cc2cn[nH]c2cc1F"
+   ],
+   "product": "CC1=C(C(=O)Nc2cc3cn[nH]c3cc2F)C(c2ccc(C(F)(F)F)cc2)CC(=O)N1C"
+  },
+  {
+   "id": "blind6_0063",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC1(COS(C)(=O)=O)COC1",
+    "OCCCCCO"
+   ],
+   "product": "CCC1(COCCCCCO)COC1"
+  },
+  {
+   "id": "blind6_0064",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)C(=O)Nc1cccc(C2CCNCC2)c1",
+    "ClCCCCCSc1ccccc1"
+   ],
+   "product": "CC(C)C(=O)Nc1cccc(C2CCN(CCCCCSc3ccccc3)CC2)c1"
+  },
+  {
+   "id": "blind6_0065",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CCNCC1",
+    "NC(=O)c1ccc(Oc2ccc(CCO)cc2)nc1"
+   ],
+   "product": "NC(=O)c1ccc(Oc2ccc(CCN3CCCCC3)cc2)nc1"
+  },
+  {
+   "id": "blind6_0066",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrBr",
+    "CCc1csc(N)n1"
+   ],
+   "product": "CCc1nc(N)sc1Br"
+  },
+  {
+   "id": "blind6_0067",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc2cc(C(C)=O)cc(N)c2c1",
+    "ClCCNCCCl"
+   ],
+   "product": "COc1ccc2cc(C(C)=O)cc(N3CCNCC3)c2c1"
+  },
+  {
+   "id": "blind6_0068",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)NCC=C(F)CBr",
+    "O=C(NC1CCCCC1)c1ccc(O)cc1"
+   ],
+   "product": "CC(C)(C)OC(=O)NCC=C(F)COc1ccc(C(=O)NC2CCCCC2)cc1"
+  },
+  {
+   "id": "blind6_0069",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Nc1ccc(O)cc1[N+](=O)[O-]",
+    "O=Cc1ccc(F)cc1"
+   ],
+   "product": "Nc1ccc(Oc2ccc(C=O)cc2)cc1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0070",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)C(N)Cc1c[nH]c2ccccc12",
+    "Cc1cc(C)cc(C(=O)N(C)C(Cc2ccc(O)cc2)C(=O)NC(Cc2c[nH]c3ccccc23)C(=O)O)c1"
+   ],
+   "product": "COc1ccc(CC(C(=O)NC(Cc2c[nH]c3ccccc23)C(=O)O)N(C)C(=O)c2cc(C)cc(C)c2)cc1"
+  },
+  {
+   "id": "blind6_0071",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc2c3c(c(=O)[nH]c2c1)C(=O)c1ccncc1-3",
+    "O=P(Cl)(Cl)Cl"
+   ],
+   "product": "COc1ccc2c3c(c(Cl)nc2c1)C(=O)c1ccncc1-3"
+  },
+  {
+   "id": "blind6_0072",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1sc2nc(Cl)nc(Cl)c2c1C",
+    "Nc1ccccc1"
+   ],
+   "product": "Cc1sc2nc(Cl)ncc2c1C"
+  },
+  {
+   "id": "blind6_0073",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCNCC",
+    "Cn1ncc(C(=O)O)c1C(=O)Nc1ccn2nc(N3CCOCC3)nc2c1"
+   ],
+   "product": "CCN(CC)C(=O)c1cnn(C)c1C(=O)Nc1ccn2nc(N3CCOCC3)nc2c1"
+  },
+  {
+   "id": "blind6_0074",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(Cl)C(=O)Cl",
+    "O=C(O)Cc1ccc(Cl)cc1"
+   ],
+   "product": "O=C(Cl)Cc1ccc(Cl)cc1"
+  },
+  {
+   "id": "blind6_0075",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC1CN(C(=O)OC(C)(C)C)CCC1c1cccc(C)c1",
+    "Cl"
+   ],
+   "product": "COC1CNCCC1c1cccc(C)c1"
+  },
+  {
+   "id": "blind6_0076",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1cc(Cl)ccc1CCBr",
+    "Oc1ccc(Cl)cc1"
+   ],
+   "product": "COC(=O)c1cc(Cl)ccc1COc1ccc(Cl)cc1"
+  },
+  {
+   "id": "blind6_0077",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(CN1CC(c2ccc(F)cc2)CC1=O)ON1C(=O)CCC1=O",
+    "O=C1CNCCN1"
+   ],
+   "product": "O=C1CN(C(=O)CN2CC(c3ccc(F)cc3)CC2=O)CCN1"
+  },
+  {
+   "id": "blind6_0078",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN1CCc2cccc(N)c2C1",
+    "COc1cc(NC(C)=O)c(Cl)cc1C(=O)Cl"
+   ],
+   "product": "COc1cc(NC(C)=O)c(Cl)cc1C(=O)Nc1cccc2c1CN(C)CC2"
+  },
+  {
+   "id": "blind6_0079",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)CC(C)=O",
+    "N#Cc1cncc(CCl)c1"
+   ],
+   "product": "COC(=O)C(Cc1cncc(C#N)c1)C(C)=O"
+  },
+  {
+   "id": "blind6_0080",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N#Cc1cccc(NC(=O)Nc2ccc(S(=O)(=O)NCc3ccc(S(N)(=O)=O)cc3)cc2)c1",
+    "O=C1CCNCC1"
+   ],
+   "product": "N=C(c1cccc(NC(=O)Nc2ccc(S(=O)(=O)NCc3ccc(S(N)(=O)=O)cc3)cc2)c1)N1CCC(=O)CC1"
+  },
+  {
+   "id": "blind6_0081",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)C=CC1C(C(=O)O)C1(C)C",
+    "N#CC(O)c1cccc(Oc2ccccc2)c1"
+   ],
+   "product": "COC(=O)C=CC1C(C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2)C1(C)C"
+  },
+  {
+   "id": "blind6_0082",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(OCC)c1cc(-c2ccc(C(=O)OC)cc2)no1",
+    "NN"
+   ],
+   "product": "CCOC(OCC)c1cc(-c2ccc(C(=O)NN)cc2)no1"
+  },
+  {
+   "id": "blind6_0083",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)Nc1cnccc1S",
+    "Cl"
+   ],
+   "product": "Nc1cnccc1S"
+  },
+  {
+   "id": "blind6_0084",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCNCC1",
+    "Cc1cc([N+](=O)[O-])ccc1F"
+   ],
+   "product": "Cc1cc([N+](=O)[O-])ccc1N1CCN(C(=O)OC(C)(C)C)CC1"
+  },
+  {
+   "id": "blind6_0085",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)CC(=O)c1cccc(-c2cccnc2)c1",
+    "CC(C)(C)OC(=O)Nc1cc(N2CCOCC2)c(C(F)(F)F)cc1N"
+   ],
+   "product": "CC(C)(C)OC(=O)Nc1cc(N2CCOCC2)c(C(F)(F)F)cc1NC(=O)CC(=O)c1cccc(-c2cccnc2)c1"
+  },
+  {
+   "id": "blind6_0086",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)NCC12OC1c1cc([N+](=O)[O-])ccc1OC2(C)C",
+    "O=C1CCCN1"
+   ],
+   "product": "CC(=O)NCC1=C(N2CCCC2=O)c2cc([N+](=O)[O-])ccc2OC1(C)C"
+  },
+  {
+   "id": "blind6_0087",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc(OCCCN2CCOCC2)c(C=O)c1",
+    "NCCc1ccccc1"
+   ],
+   "product": "COc1ccc(OCCCN2CCOCC2)c(C=NCCc2ccccc2)c1"
+  },
+  {
+   "id": "blind6_0088",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(=O)CC(=O)c1ccccc1",
+    "Cc1oc(-c2ccccc2)nc1CCOc1ccc(CC(N)C(=O)O)cc1"
+   ],
+   "product": "CCC(=CC(=O)c1ccccc1)NC(Cc1ccc(OCCc2nc(-c3ccccc3)oc2C)cc1)C(=O)O"
+  },
+  {
+   "id": "blind6_0089",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OO",
+    "CCN1CCN(C(=O)NC(C(=O)NC2(SC)C(=O)NC2C)c2ccccc2)C(=O)C1=O"
+   ],
+   "product": "CCN1CCN(C(=O)NC(C(=O)NC2(S(C)=O)C(=O)NC2C)c2ccccc2)C(=O)C1=O"
+  },
+  {
+   "id": "blind6_0090",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)Nc1cscc1N",
+    "COC(=O)c1ccc(C(=O)O)nc1"
+   ],
+   "product": "COC(=O)c1ccc(C(=O)Nc2cscc2NC(=O)OC(C)(C)C)nc1"
+  },
+  {
+   "id": "blind6_0091",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=CC(Cl)(Cl)Cl",
+    "c1ccsc1"
+   ],
+   "product": "OC(c1cccs1)C(Cl)(Cl)Cl"
+  },
+  {
+   "id": "blind6_0092",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(SC(CO)CO)C(O)(Cn1cncn1)c1ccc(F)cc1F",
+    "N#Cc1ccc(CNC(=O)c2ccc(C=O)cc2)cc1"
+   ],
+   "product": "CC(SC1COC(c2ccc(C(=O)NCc3ccc(C#N)cc3)cc2)OC1)C(O)(Cn1cncn1)c1ccc(F)cc1F"
+  },
+  {
+   "id": "blind6_0093",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)NC1Cc2ccc(C(=O)O)cc2C1",
+    "NCc1ccccc1"
+   ],
+   "product": "CC(C)(C)OC(=O)NC1Cc2ccc(C(=O)NCc3ccccc3)cc2C1"
+  },
+  {
+   "id": "blind6_0094",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N#Cc1ccc(F)cc1",
+    "O=C(O)c1ccc(O)cc1"
+   ],
+   "product": "N#Cc1ccc(Oc2ccc(C(=O)O)cc2)cc1"
+  },
+  {
+   "id": "blind6_0095",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CS(=O)(=O)OCc1ccc(F)cn1",
+    "[N-]=[N+]=[N-]"
+   ],
+   "product": "NCc1ccc(F)cn1"
+  },
+  {
+   "id": "blind6_0096",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NCc1ccccn1",
+    "O=C(Cl)CCl"
+   ],
+   "product": "O=C(CCl)NCc1ccccn1"
+  },
+  {
+   "id": "blind6_0097",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCON=O",
+    "COc1ccc2c(c1)CCCC2=O"
+   ],
+   "product": "COc1ccc2c(c1)CCCC2=NO"
+  },
+  {
+   "id": "blind6_0098",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)c1cc(O)cc2c1C(=O)N(CBr)S2(=O)=O",
+    "Oc1cc(C(F)(F)F)nn1-c1ccccc1"
+   ],
+   "product": "CC(C)c1cc(O)cc2c1C(=O)N(COc1cc(C(F)(F)F)nn1-c1ccccc1)S2(=O)=O"
+  },
+  {
+   "id": "blind6_0099",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)c1cccc(S)c1",
+    "O=[N+]([O-])c1ccc(F)cc1"
+   ],
+   "product": "CC(=O)c1cccc(Sc2ccc([N+](=O)[O-])cc2)c1"
+  },
+  {
+   "id": "blind6_0100",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1C(c2ccc(OCc3ccccc3)cc2)CCC1(C)C(=O)O",
+    "CCN(C(C)C)C(C)C"
+   ],
+   "product": "CC(C)(C)OC(=O)N1C(c2ccc(OCc3ccccc3)cc2)CCC1(C)C(N)=O"
+  },
+  {
+   "id": "blind6_0101",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC1(C=CCl)C(C(=O)OC(c2ccccc2)c2ccccc2)N2C(=O)CC2S1(=O)=O",
+    "[Na+]"
+   ],
+   "product": "CC1(C=CCl)C(C(=O)[O-])N2C(=O)CC2S1(=O)=O"
+  },
+  {
+   "id": "blind6_0102",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCN1",
+    "CCN1CC(CCCl)N(C)c2ccccc2C1=O"
+   ],
+   "product": "CCN1CC(CCN2CCOCC2)N(C)c2ccccc2C1=O"
+  },
+  {
+   "id": "blind6_0103",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccccc1NC(=O)C(F)(F)F",
+    "O=P(Cl)(Oc1ccccc1)Oc1ccccc1"
+   ],
+   "product": "COc1ccccc1N=C(Cl)C(F)(F)F"
+  },
+  {
+   "id": "blind6_0104",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1cc(Br)ccc1C1=NC(C)(C)CO1",
+    "O=C1CCCCC1"
+   ],
+   "product": "Cc1cc(C2(O)CCCCC2)ccc1C1=NC(C)(C)CO1"
+  },
+  {
+   "id": "blind6_0105",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCCCN=C=O",
+    "S=C1NC2(CCCCC2)NC12CCCCC2"
+   ],
+   "product": "CCCCCCNC(=O)N1C(=S)C2(CCCCC2)NC12CCCCC2"
+  },
+  {
+   "id": "blind6_0106",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)C1c2nc[nH]c2CCN1C(=O)OCC(Cl)(Cl)Cl",
+    "OCc1ccccn1"
+   ],
+   "product": "CC(C)C1c2nc[nH]c2CCN1C(=O)OCc1ccccn1"
+  },
+  {
+   "id": "blind6_0107",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)NC(CCCCNC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)O",
+    "O=[N+]([O-])c1ccc(S(=O)(=O)Cl)cc1"
+   ],
+   "product": "O=C(NCCCCC(NS(=O)(=O)c1ccc([N+](=O)[O-])cc1)C(=O)O)OCC1c2ccccc2-c2ccccc21"
+  },
+  {
+   "id": "blind6_0108",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)N1c2ccc(C3=NC(C)(C)CO3)cc2C=CC1P(=O)(OC)OC",
+    "ICc1ccc(-c2ccccc2)cc1"
+   ],
+   "product": "CCOC(=O)N1c2ccc(C3=NC(C)(C)CO3)cc2C(Cc2ccc(-c3ccccc3)cc2)=CC1P(=O)(OC)OC"
+  },
+  {
+   "id": "blind6_0109",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COCCN",
+    "O=C(O)c1ccc(O)cc1C(=O)O"
+   ],
+   "product": "COCCN1C(=O)c2ccc(O)cc2C1=O"
+  },
+  {
+   "id": "blind6_0110",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CNOC",
+    "COC(C(=O)O)c1ccc(N2CCOCC2)cc1"
+   ],
+   "product": "COC(C(=O)N(C)OC)c1ccc(N2CCOCC2)cc1"
+  },
+  {
+   "id": "blind6_0111",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCn1ncc2c1ncc1c(Cl)nc3c(C(=O)O)cnn3c12",
+    "CN1CCNCC1"
+   ],
+   "product": "CCn1ncc2c1ncc1c(N3CCN(C)CC3)nc3c(C(=O)O)cnn3c12"
+  },
+  {
+   "id": "blind6_0112",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)I",
+    "Clc1ccc(C2NSCCC2c2cccc(Cl)c2)cc1"
+   ],
+   "product": "CC(C)N1SCCC(c2cccc(Cl)c2)C1c1ccc(Cl)cc1"
+  },
+  {
+   "id": "blind6_0113",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(O)C1CN2CCC1CC2",
+    "OC(c1ccc(Cl)cc1)c1ccccc1Cl"
+   ],
+   "product": "O=C(OC(c1ccc(Cl)cc1)c1ccccc1Cl)C1CN2CCC1CC2"
+  },
+  {
+   "id": "blind6_0114",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(CNc1ncnc2ccc(C(F)(F)F)cc12)NC1CNC1",
+    "O=C1CCC2(CC1)OCCO2"
+   ],
+   "product": "O=C1CCC(N2CC(NC(=O)CNc3ncnc4ccc(C(F)(F)F)cc34)C2)CC1"
+  },
+  {
+   "id": "blind6_0115",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCC[Sn](CCCC)(CCCC)c1nc(N2CCOCC2)c2nc(CN3CCC(C(C)(C)O)CC3)n(C)c2n1",
+    "Cc1cn2c(Br)cccc2n1"
+   ],
+   "product": "Cc1cn2c(-c3nc(N4CCOCC4)c4nc(CN5CCC(C(C)(C)O)CC5)n(C)c4n3)cccc2n1"
+  },
+  {
+   "id": "blind6_0116",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NCCBr",
+    "O=C(Cl)c1ccc(F)cc1[N+](=O)[O-]"
+   ],
+   "product": "O=C(NCCBr)c1ccc(F)cc1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0117",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ccc(S(N)(=O)=O)cc1",
+    "Fc1ccc(F)c(CBr)c1CBr"
+   ],
+   "product": "Cc1ccc(S(=O)(=O)N2Cc3c(F)ccc(F)c3C2)cc1"
+  },
+  {
+   "id": "blind6_0118",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)c1ccc(Br)c(C(=O)OCC)c1",
+    "COc1cccc(O)c1"
+   ],
+   "product": "CCOC(=O)c1ccc(Oc2cccc(OC)c2)c(C(=O)OCC)c1"
+  },
+  {
+   "id": "blind6_0119",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C1OC(O)c2ccc([N+](=O)[O-])cc21",
+    "SCCCS"
+   ],
+   "product": "O=C(O)c1cc([N+](=O)[O-])ccc1C1SCCCS1"
+  },
+  {
+   "id": "blind6_0120",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1=Cc2ccccc2C(=C2CCNCC2)c2ccccc21",
+    "CCC(C)(CC)OC(=O)NCC(=O)O"
+   ],
+   "product": "CCC(C)(CC)OC(=O)NCC(=O)N1CCC(=C2c3ccccc3C=Cc3ccccc32)CC1"
+  },
+  {
+   "id": "blind6_0121",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CS(=O)(=O)OCCC1(CCOS(C)(=O)=O)SC(NC2CC3CCC2C3)=NC1=O",
+    "NC1CCCC1"
+   ],
+   "product": "O=C1N=C(NC2CC3CCC2C3)SC12CCN(C1CCCC1)CC2"
+  },
+  {
+   "id": "blind6_0122",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ccc(Cl)cc1C(CCN(C)C(=O)OC(C)(C)C)OCCOS(C)(=O)=O",
+    "[N-]=[N+]=[N-]"
+   ],
+   "product": "Cc1ccc(Cl)cc1C(CCN(C)C(=O)OC(C)(C)C)OCCN=[N+]=[N-]"
+  },
+  {
+   "id": "blind6_0123",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1cn(COCC[Si](C)(C)C)c(=O)n(CCCCl)c1=O",
+    "Clc1ccccc1N1CCNCC1"
+   ],
+   "product": "Cc1cn(COCC[Si](C)(C)C)c(=O)n(CCCN2CCN(c3ccccc3Cl)CC2)c1=O"
+  },
+  {
+   "id": "blind6_0124",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN(c1nc2cc(O)ccc2s1)C1CCNCC1",
+    "ClCC=Cc1ccccc1"
+   ],
+   "product": "CN(c1nc2cc(O)ccc2s1)C1CCN(CC=Cc2ccccc2)CC1"
+  },
+  {
+   "id": "blind6_0125",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NCc1cn(-c2ccccc2)c2cc(Cl)ccc2c1=O",
+    "O=C(O)c1ccc(=O)n(Cc2ccccc2)c1"
+   ],
+   "product": "O=C(NCc1cn(-c2ccccc2)c2cc(Cl)ccc2c1=O)c1ccc(=O)n(Cc2ccccc2)c1"
+  },
+  {
+   "id": "blind6_0126",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1ccc(COc2cc(C)c(C)cc2N)c(C)c1",
+    "Cc1ccc(S(=O)(=O)Cl)o1"
+   ],
+   "product": "COC(=O)c1ccc(COc2cc(C)c(C)cc2NS(=O)(=O)c2ccc(C)o2)c(C)c1"
+  },
+  {
+   "id": "blind6_0127",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N",
+    "O=[N+]([O-])c1cnc2ccccc2c1Cl"
+   ],
+   "product": "Nc1c([N+](=O)[O-])cnc2ccccc12"
+  },
+  {
+   "id": "blind6_0128",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(Cl)c1ccccc1",
+    "O=C1CC(c2ccc(Cl)cc2Br)CN1"
+   ],
+   "product": "O=C1CC(c2ccc(Cl)cc2C(=O)c2ccccc2)CN1"
+  },
+  {
+   "id": "blind6_0129",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1nc2ccccc2nc1NCCN",
+    "c1ccc(OCC2CO2)cc1"
+   ],
+   "product": "Cc1nc2ccccc2nc1NCCNCC(O)COc1ccccc1"
+  },
+  {
+   "id": "blind6_0130",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(C)Nc1cc(C(=O)OC)cc(Cl)n1",
+    "CS(N)(=O)=O"
+   ],
+   "product": "CCC(C)Nc1cc(C(=O)OC)cc(NS(C)(=O)=O)n1"
+  },
+  {
+   "id": "blind6_0131",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCc1cc(C(=O)OC)nc(O)n1",
+    "O=P(Cl)(Cl)Cl"
+   ],
+   "product": "CCCCc1cc(C(=O)OC)nc(Cl)n1"
+  },
+  {
+   "id": "blind6_0132",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCN1",
+    "O=C(O)c1ccc2c(c1)OC(c1cc(F)cc(F)c1)(c1cc(F)cc(F)c1)O2"
+   ],
+   "product": "O=C(c1ccc2c(c1)OC(c1cc(F)cc(F)c1)(c1cc(F)cc(F)c1)O2)N1CCOCC1"
+  },
+  {
+   "id": "blind6_0133",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)CBr",
+    "O=C1CCc2ccc(F)cc21"
+   ],
+   "product": "CCOC(=O)CC1(O)CCc2ccc(F)cc21"
+  },
+  {
+   "id": "blind6_0134",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN(C)C(=O)N1CC2CC(C#N)CC2C1",
+    "IC1CCCC1"
+   ],
+   "product": "CN(C)C(=O)N1CC2CC(C#N)(C3CCCC3)CC2C1"
+  },
+  {
+   "id": "blind6_0135",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)c1ccc(CC#N)cc1",
+    "CCOC(=O)c1ccncc1"
+   ],
+   "product": "CC(C)(C)c1ccc(C(C#N)C(=O)c2ccncc2)cc1"
+  },
+  {
+   "id": "blind6_0136",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C[S-]",
+    "Nc1ccc(Cl)c2nc(Cl)sc12"
+   ],
+   "product": "CSc1nc2c(Cl)ccc(N)c2s1"
+  },
+  {
+   "id": "blind6_0137",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)OC(=O)N1CCC(COc2ccc(-c3ccc(S(C)(=O)=O)cc3)nc2CO)CC1",
+    "CCN(CC)S(F)(F)F"
+   ],
+   "product": "CC(C)OC(=O)N1CCC(COc2ccc(-c3ccc(S(C)(=O)=O)cc3)nc2CF)CC1"
+  },
+  {
+   "id": "blind6_0138",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NC1CC1",
+    "O=C(O)Cc1cc([N+](=O)[O-])cc(F)c1F"
+   ],
+   "product": "O=C1Cc2cc([N+](=O)[O-])cc(F)c2N1C1CC1"
+  },
+  {
+   "id": "blind6_0139",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOP(=O)(Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(F)cc3C(=O)NC)n2)c(OC)c1)OCC",
+    "CNC(=O)c1cccc(F)c1N"
+   ],
+   "product": "CCOP(=O)(Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3c(F)cccc3C(=O)NC)n2)c(OC)c1)OCC"
+  },
+  {
+   "id": "blind6_0140",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)C1CCc2oc(=O)c(-c3ccccc3)c(O)c2C1",
+    "CC(CCl)CN1CCOCC1"
+   ],
+   "product": "CC(COc1c2c(oc(=O)c1-c1ccccc1)CCC(C(C)(C)C)C2)CN1CCOCC1"
+  },
+  {
+   "id": "blind6_0141",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1ccc(Br)cc1CBr",
+    "C[S-]"
+   ],
+   "product": "COC(=O)c1ccc(Br)cc1CSC"
+  },
+  {
+   "id": "blind6_0142",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)NCC(C)(C)c1ccc(O)cc1",
+    "NC(=O)c1ccc(Cl)nc1"
+   ],
+   "product": "CC(C)(C)OC(=O)NCC(C)(C)c1ccc(Oc2ccc(C(N)=O)cn2)cc1"
+  },
+  {
+   "id": "blind6_0143",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CC#N",
+    "NCCCCNC(=O)C(O)C(O)C(=O)O"
+   ],
+   "product": "N#CCCNCCCCNC(=O)C(O)C(O)C(=O)O"
+  },
+  {
+   "id": "blind6_0144",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCN1",
+    "CC(C)(C)OC(=O)N1CCN(c2nc(C(=O)O)cs2)C(COc2cccnc2)C1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCN(c2nc(C(=O)N3CCOCC3)cs2)C(COc2cccnc2)C1"
+  },
+  {
+   "id": "blind6_0145",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NS(=O)(=O)c1ccc(Cl)c(C(=O)O)c1",
+    "Nc1nnc(-c2ccc(F)cc2)s1"
+   ],
+   "product": "NS(=O)(=O)c1ccc(Cl)c(C(=O)Nc2nnc(-c3ccc(F)cc3)s2)c1"
+  },
+  {
+   "id": "blind6_0146",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCc1nc2cc(C#N)c(Cl)cc2n1-c1ccc(CCO)cc1",
+    "CS(C)=O"
+   ],
+   "product": "CCc1nc2cc(C(N)=O)c(Cl)cc2n1-c1ccc(CCO)cc1"
+  },
+  {
+   "id": "blind6_0147",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CON",
+    "O=C1CCc2c(Br)cccc21"
+   ],
+   "product": "CON=C1CCc2c(Br)cccc21"
+  },
+  {
+   "id": "blind6_0148",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "ClCCCN1CCC(c2ccccc2)CC1",
+    "O=C1NC(=O)C(c2ccccc2)(c2ccc([N+](=O)[O-])cc2)N1"
+   ],
+   "product": "O=C1NC(c2ccccc2)(c2ccc([N+](=O)[O-])cc2)C(=O)N1CCCN1CCC(c2ccccc2)CC1"
+  },
+  {
+   "id": "blind6_0149",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "[Li]C",
+    "c1ccc2c(c1)Cc1ccccc1-2"
+   ],
+   "product": "[Li]c1cccc2c1Cc1ccccc1-2"
+  },
+  {
+   "id": "blind6_0150",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(Cl)CCl",
+    "O=C1Nc2ccccc2Nc2ncncc21"
+   ],
+   "product": "O=C1Nc2ccccc2N(C(=O)CCl)c2ncncc21"
+  },
+  {
+   "id": "blind6_0151",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc(C(C)(C)CN)cc1OC",
+    "O=CO"
+   ],
+   "product": "COc1cc2c(cc1OC)C(C)(C)CNC2"
+  },
+  {
+   "id": "blind6_0152",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CON",
+    "Cc1c(O)ccc2c3c(c(NCCN(C)C)nc12)C(=O)c1cnccc1-3"
+   ],
+   "product": "CON=C1c2cnccc2-c2c1c(NCCN(C)C)nc1c(C)c(O)ccc21"
+  },
+  {
+   "id": "blind6_0153",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(C(=O)NO)C(C(=O)N1CCN(C(=O)OC(C)(C)C)CC1C(=O)NCC(C)C)c1ccc(Cl)cc1",
+    "O=C(O)C(F)(F)F"
+   ],
+   "product": "CCC(C(=O)NO)C(C(=O)N1CCNCC1C(=O)NCC(C)C)c1ccc(Cl)cc1"
+  },
+  {
+   "id": "blind6_0154",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#Cc1cc(CN)cc(F)c1NS(C)(=O)=O",
+    "O=C(O)C=Cc1ccc(Cl)nc1"
+   ],
+   "product": "C#Cc1cc(CNC(=O)C=Cc2ccc(Cl)nc2)cc(F)c1NS(C)(=O)=O"
+  },
+  {
+   "id": "blind6_0155",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCC(N)CC1",
+    "CSC(=NC(=O)OCc1ccccc1)NC(=O)c1nc(Cl)c(N)nc1N"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC(NC(=NC(=O)OCc2ccccc2)NC(=O)c2nc(Cl)c(N)nc2N)CC1"
+  },
+  {
+   "id": "blind6_0156",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N#CCNC(=O)C1CC(S(=O)(=O)c2ccccc2)CN1",
+    "O=CC1CCCCC1"
+   ],
+   "product": "N#CCNC(=O)C1CC(S(=O)(=O)c2ccccc2)CN1CC1CCCCC1"
+  },
+  {
+   "id": "blind6_0157",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CCN=C=O",
+    "FC(F)Oc1ccc(C(OC2CNC2)c2ccccc2C(F)(F)F)cc1"
+   ],
+   "product": "C=CCNC(=O)N1CC(OC(c2ccc(OC(F)F)cc2)c2ccccc2C(F)(F)F)C1"
+  },
+  {
+   "id": "blind6_0158",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrCc1ccccc1",
+    "CC(C)(C)OC(=O)NC1CNc2ccccc2NC1=O"
+   ],
+   "product": "CC(C)(C)OC(=O)NC1CN(Cc2ccccc2)c2ccccc2NC1=O"
+  },
+  {
+   "id": "blind6_0159",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrCCOC1CCCCO1",
+    "CC(C)(C)OC(=O)N1CCC(C(=O)Nc2ccccc2Br)CC1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC(C(=O)N(CCOC2CCCCO2)c2ccccc2Br)CC1"
+  },
+  {
+   "id": "blind6_0160",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)CCC(OC)OC",
+    "NC1CCC(CCN2CCN(c3nccc4c3CCO4)CC2)CC1"
+   ],
+   "product": "COC(CCC(=O)NC1CCC(CCN2CCN(c3nccc4c3CCO4)CC2)CC1)OC"
+  },
+  {
+   "id": "blind6_0161",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)Nc1ccccc1OC1C=CCCC1",
+    "CCOC(C)=O"
+   ],
+   "product": "CC(=O)Nc1ccccc1OC1CCCC2OC12"
+  },
+  {
+   "id": "blind6_0162",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)c1ccc(N2CCNCC2)c(F)c1",
+    "CS(=O)(=O)c1ccc(Cl)c(C(=O)O)c1"
+   ],
+   "product": "CC(=O)c1ccc(N2CCN(C(=O)c3cc(S(C)(=O)=O)ccc3Cl)CC2)c(F)c1"
+  },
+  {
+   "id": "blind6_0163",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)[Si](C)(C)Cl",
+    "CCC(O)CN"
+   ],
+   "product": "CCC(CN)O[Si](C)(C)C(C)(C)C"
+  },
+  {
+   "id": "blind6_0164",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC[O-]",
+    "Nc1nnc2c3c(c(Cl)nn12)CCCC3"
+   ],
+   "product": "CCOc1nn2c(N)nnc2c2c1CCCC2"
+  },
+  {
+   "id": "blind6_0165",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCC2(CCNCC2)C1",
+    "Fc1ccc(Br)cc1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC2(CCN(c3ccc(F)cc3)CC2)C1"
+  },
+  {
+   "id": "blind6_0166",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ccc(Cc2cnc(N[N+](=O)[O-])[nH]c2=O)cn1",
+    "NCCCNc1ccccn1"
+   ],
+   "product": "Cc1ccc(Cc2cnc(NCCCNc3ccccn3)[nH]c2=O)cn1"
+  },
+  {
+   "id": "blind6_0167",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrCCOCCBr",
+    "CC(C)C1(c2ccccc2O)Sc2ccccc2N(C)C1=O"
+   ],
+   "product": "CC(C)C1(c2ccccc2OCCOCCBr)Sc2ccccc2N(C)C1=O"
+  },
+  {
+   "id": "blind6_0168",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1cc(Cl)ccc1NC(=O)COCC(=O)O",
+    "Nc1ccc(-c2ccc(F)cc2)cc1"
+   ],
+   "product": "COC(=O)c1cc(Cl)ccc1NC(=O)COCC(=O)Nc1ccc(-c2ccc(F)cc2)cc1"
+  },
+  {
+   "id": "blind6_0169",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#Cc1cncc(C#N)c1",
+    "OCc1cc(I)ccc1F"
+   ],
+   "product": "N#Cc1cncc(C#Cc2ccc(F)c(CO)c2)c1"
+  },
+  {
+   "id": "blind6_0170",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OC=O",
+    "COc1ccc2ccccc2c1C(CN)Sc1ccccc1"
+   ],
+   "product": "COc1ccc2ccccc2c1C(CNC=O)Sc1ccccc1"
+  },
+  {
+   "id": "blind6_0171",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCC(CN)CC1",
+    "O=C(Cl)OCc1ccccc1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCC(CNC(=O)OCc2ccccc2)CC1"
+  },
+  {
+   "id": "blind6_0172",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NC1CCCC1N",
+    "O=S(=O)(Cl)c1cc2cc(Cl)ccc2n1S(=O)(=O)c1ccccc1"
+   ],
+   "product": "NC1CCCC1NS(=O)(=O)c1cc2cc(Cl)ccc2n1S(=O)(=O)c1ccccc1"
+  },
+  {
+   "id": "blind6_0173",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1cc(-c2ccc(C(F)(F)F)cc2)nc(Cl)n1",
+    "OB(O)c1ccnc(Cl)c1"
+   ],
+   "product": "Cc1cc(-c2ccc(C(F)(F)F)cc2)nc(-c2ccnc(Cl)c2)n1"
+  },
+  {
+   "id": "blind6_0174",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1c(N)cc(Cl)cc1Cl",
+    "COc1ccc(C(C)C(=O)O)cc1"
+   ],
+   "product": "COC(=O)c1c(Cl)cc(Cl)cc1NC(=O)C(C)c1ccc(OC)cc1"
+  },
+  {
+   "id": "blind6_0175",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)C(C)(Cc1ccc(O)cc1)Oc1ccccc1",
+    "Cc1ccc(S(=O)(=O)OCCc2nc(-c3cccc(-c4ccsc4)c3)oc2C)cc1"
+   ],
+   "product": "CCOC(=O)C(C)(Cc1ccc(OCCc2nc(-c3cccc(-c4ccsc4)c3)oc2C)cc1)Oc1ccccc1"
+  },
+  {
+   "id": "blind6_0176",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Nc1nc(NCCNc2nc(Cl)cc3ncnn23)ccc1[N+](=O)[O-]",
+    "OB(O)c1ccc(C(F)(F)F)cc1"
+   ],
+   "product": "Nc1nc(NCCNc2nc(-c3ccc(C(F)(F)F)cc3)cc3ncnn23)ccc1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0177",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OC(C)=O",
+    "CNC(=O)c1cc(Oc2ccc3nc(NC4CCCCC4N)sc3c2)ccn1"
+   ],
+   "product": "CNC(=O)c1cc(Oc2ccc3nc(NC4CCCCC4NC(C)=O)sc3c2)ccn1"
+  },
+  {
+   "id": "blind6_0178",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(O)c1ccccn1",
+    "O=[N+]([O-])c1ccc(O)cc1"
+   ],
+   "product": "O=C(Oc1ccc([N+](=O)[O-])cc1)c1ccccn1"
+  },
+  {
+   "id": "blind6_0179",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ccc(C(=O)Cl)c(C)c1",
+    "Fc1ccccc1"
+   ],
+   "product": "Cc1ccc(C(=O)c2ccc(F)cc2)c(C)c1"
+  },
+  {
+   "id": "blind6_0180",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(c1ccccc1)N1Cc2sc(N)c(C(=O)OC(C)(C)C)c2CC1CN",
+    "O=Cc1ccc(Oc2ccccc2)cc1"
+   ],
+   "product": "CC(c1ccccc1)N1Cc2sc(N)c(C(=O)OC(C)(C)C)c2CC1CNCc1ccc(Oc2ccccc2)cc1"
+  },
+  {
+   "id": "blind6_0181",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Cc1ccc(S(=O)(=O)Cl)cc1",
+    "NCCCC(NC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)O"
+   ],
+   "product": "Cc1ccc(S(=O)(=O)NCCCC(NC(=O)OCC2c3ccccc3-c3ccccc32)C(=O)O)cc1"
+  },
+  {
+   "id": "blind6_0182",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Brc1ccc(NCCN2CCCC2)nc1",
+    "C#Cc1ccc(-c2ccc(Cl)cc2)cn1"
+   ],
+   "product": "Clc1ccc(-c2ccc(C#Cc3ccc(NCCN4CCCC4)nc3)nc2)cc1"
+  },
+  {
+   "id": "blind6_0183",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Nc1cc(Cl)ncn1",
+    "Nc1cccc(Cl)c1"
+   ],
+   "product": "Nc1cc(Nc2cccc(Cl)c2)ncn1"
+  },
+  {
+   "id": "blind6_0184",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC1(C)OB(c2cccc(OCc3ccccc3)c2F)OC1(C)C",
+    "Nc1ncnn2c(C3CCC3)nc(I)c12"
+   ],
+   "product": "Nc1ncnn2c(C3CCC3)nc(-c3cccc(OCc4ccccc4)c3F)c12"
+  },
+  {
+   "id": "blind6_0185",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(c1ccccc1)n1c(O)nc2ncc(Br)nc21",
+    "CN1CCCC1=O"
+   ],
+   "product": "COc1cnc2nc(O)n(C(C)c3ccccc3)c2n1"
+  },
+  {
+   "id": "blind6_0186",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(CC(=O)c1ccc(C#N)cc1)C(=O)O",
+    "CCOC(=O)COC1CCNCC1"
+   ],
+   "product": "CCOC(=O)COC1CCN(C(=O)C(C)CC(=O)c2ccc(C#N)cc2)CC1"
+  },
+  {
+   "id": "blind6_0187",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Brc1cncnc1",
+    "C#CCCCCO"
+   ],
+   "product": "OCCCCC#Cc1cncnc1"
+  },
+  {
+   "id": "blind6_0188",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CS(=O)(=O)Cl",
+    "OCc1cccnc1Br"
+   ],
+   "product": "CS(=O)(=O)OCc1cccnc1Br"
+  },
+  {
+   "id": "blind6_0189",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CCOc1ccc2c(=O)c(C)c(-c3ccccc3)oc2c1C(C)=O",
+    "O=Cc1ccccc1"
+   ],
+   "product": "C=CCOc1ccc2c(=O)c(C)c(-c3ccccc3)oc2c1C(=O)C=Cc1ccccc1"
+  },
+  {
+   "id": "blind6_0190",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc(C(C)=O)cc1O",
+    "NOCc1cccc(F)c1"
+   ],
+   "product": "COc1ccc(C(C)=NOCc2cccc(F)c2)cc1O"
+  },
+  {
+   "id": "blind6_0191",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CCOC(=O)N(I)CC(=O)O",
+    "CCCCCCCCBr"
+   ],
+   "product": "C#CCOC(=O)N(I)CC(=O)OCCCCCCCC"
+  },
+  {
+   "id": "blind6_0192",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCOc1cccc(CN)c1",
+    "O=C(Cl)Cc1cccc(Br)c1"
+   ],
+   "product": "CCCOc1cccc(CNC(=O)Cc2cccc(Br)c2)c1"
+  },
+  {
+   "id": "blind6_0193",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)CC(O)C(=O)N1CCNCC1",
+    "Oc1ccccc1-c1nc(Cl)c2cc(Br)ccc2n1"
+   ],
+   "product": "CC(C)CC(O)C(=O)N1CCN(c2nc(-c3ccccc3O)nc3ccc(Br)cc23)CC1"
+  },
+  {
+   "id": "blind6_0194",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CSc1ccc(Cl)cc1N",
+    "O=S(=O)(Cl)c1ccc(F)cc1F"
+   ],
+   "product": "CSc1ccc(Cl)cc1NS(=O)(=O)c1ccc(F)cc1F"
+  },
+  {
+   "id": "blind6_0195",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=CCC1(C(=O)OCc2ccccc2)CCCC1",
+    "[OH-]"
+   ],
+   "product": "O=C(O)CC1(C(=O)OCc2ccccc2)CCCC1"
+  },
+  {
+   "id": "blind6_0196",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)CCc1ccc(O)cc1",
+    "OCCSCCOC(c1ccc(Cl)cc1)c1ccc(Cl)cc1"
+   ],
+   "product": "COC(=O)CCc1ccc(OCCSCCOC(c2ccc(Cl)cc2)c2ccc(Cl)cc2)cc1"
+  },
+  {
+   "id": "blind6_0197",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1cc(O)nn1C",
+    "O=C([O-])[O-]"
+   ],
+   "product": "COC(=O)c1cc(OC)nn1C"
+  },
+  {
+   "id": "blind6_0198",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOCCn1c(CC2CCN(CCN)CC2)nc2cccnc21",
+    "S=C=S"
+   ],
+   "product": "CCOCCn1c(CC2CCN(CCN=C=S)CC2)nc2cccnc21"
+  },
+  {
+   "id": "blind6_0199",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(O)c1cc([N+](=O)[O-])c(O)cc1O",
+    "O=S(Cl)Cl"
+   ],
+   "product": "O=C(Cl)c1cc([N+](=O)[O-])c(O)cc1O"
+  },
+  {
+   "id": "blind6_0200",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CNC(=O)C(Cc1ccc2ccccc2c1)N1CCN(C(=O)C(Cc2ccc(F)cc2)NC(=O)C(C)(C)NC(=O)OC(C)(C)C)C(CC2CC2)C1=O",
+    "O=C(O)C(F)(F)F"
+   ],
+   "product": "CNC(=O)C(Cc1ccc2ccccc2c1)N1CCN(C(=O)C(Cc2ccc(F)cc2)NC(=O)C(C)(C)N)C(CC2CC2)C1=O"
+  },
+  {
+   "id": "blind6_0201",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCC(O)C(CC)CO",
+    "CCO[Si](Cl)(OCC)OCC"
+   ],
+   "product": "CCCC(O)C(CC)CO[Si](OCC)(OCC)OCC"
+  },
+  {
+   "id": "blind6_0202",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Nc1ccc2c(c1)OCO2",
+    "O=C(Cl)CCCCl"
+   ],
+   "product": "O=C1CCCN1c1ccc2c(c1)OCO2"
+  },
+  {
+   "id": "blind6_0203",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Nc1ccc(F)cc1",
+    "O=C(O)c1cc2cc(C(=O)N3CCN(C4CCCC4)CC3)ccc2[nH]1"
+   ],
+   "product": "O=C(Nc1ccc(F)cc1)c1cc2cc(C(=O)N3CCN(C4CCCC4)CC3)ccc2[nH]1"
+  },
+  {
+   "id": "blind6_0204",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCN=C=O",
+    "NS(=O)(=O)c1ccccc1OC(Cl)=CCl"
+   ],
+   "product": "CCCCNC(=O)NS(=O)(=O)c1ccccc1OC(Cl)=CCl"
+  },
+  {
+   "id": "blind6_0205",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1cccc(CCC(=O)Cl)c1",
+    "Nc1ccc(F)cc1"
+   ],
+   "product": "COc1cccc(CCC(=O)Nc2ccc(F)cc2)c1"
+  },
+  {
+   "id": "blind6_0206",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CSC1=CC(O)(CCCCOc2ccccc2)C(C(O)C=CC(O)CCCO)C1=O",
+    "O=C(OO)c1cccc(Cl)c1"
+   ],
+   "product": "CS(=O)C1=CC(O)(CCCCOc2ccccc2)C(C(O)C=CC(O)CCCO)C1=O"
+  },
+  {
+   "id": "blind6_0207",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrCCCc1ccccn1",
+    "Clc1ccc2[nH]c3c(c2c1)CNCC3"
+   ],
+   "product": "Clc1ccc2[nH]c3c(c2c1)CN(CCCc1ccccn1)CC3"
+  },
+  {
+   "id": "blind6_0208",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)c1cc2cc(Cl)ccc2[nH]1",
+    "O=S(=O)(Cl)c1ccccc1"
+   ],
+   "product": "CCOC(=O)c1cc2cc(Cl)ccc2n1S(=O)(=O)c1ccccc1"
+  },
+  {
+   "id": "blind6_0209",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN1CCC(O)N(c2nnc(C3CC3)s2)C1=O",
+    "O=C(Cl)Cc1cc([N+](=O)[O-])cc([N+](=O)[O-])c1"
+   ],
+   "product": "CN1CCC(OC(=O)Cc2cc([N+](=O)[O-])cc([N+](=O)[O-])c2)N(c2nnc(C3CC3)s2)C1=O"
+  },
+  {
+   "id": "blind6_0210",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCCC(N)C1c1ccccc1",
+    "COc1ccc(C(C(F)(F)F)C(F)(F)F)cc1C=O"
+   ],
+   "product": "COc1ccc(C(C(F)(F)F)C(F)(F)F)cc1CNC1CCCN(C(=O)OC(C)(C)C)C1c1ccccc1"
+  },
+  {
+   "id": "blind6_0211",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Br",
+    "CC(N)C(=O)N(C(=O)OCc1ccccc1)c1ccccc1"
+   ],
+   "product": "CC(N)C(=O)Nc1ccccc1"
+  },
+  {
+   "id": "blind6_0212",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CNC",
+    "O=C(O)c1ccccc1-c1ccc(C(=O)N2Cc3ccc(C(=O)NCc4cccnc4)n3Cc3ccccc32)cc1"
+   ],
+   "product": "CN(C)C(=O)c1ccccc1-c1ccc(C(=O)N2Cc3ccc(C(=O)NCc4cccnc4)n3Cc3ccccc32)cc1"
+  },
+  {
+   "id": "blind6_0213",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CCCc1ccccc1",
+    "CC(C)(C)OC(=O)c1ccc(Br)cc1[N+](=O)[O-]"
+   ],
+   "product": "CC(C)(C)OC(=O)c1ccc(C=CCCc2ccccc2)cc1[N+](=O)[O-]"
+  },
+  {
+   "id": "blind6_0214",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "FC(F)(F)c1cccc(CCl)n1",
+    "O=C1Nc2ccccc2C12COc1cc3c(cc12)OCCO3"
+   ],
+   "product": "O=C1N(Cc2cccc(C(F)(F)F)n2)c2ccccc2C12COc1cc3c(cc12)OCCO3"
+  },
+  {
+   "id": "blind6_0215",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOc1cccc(S)c1",
+    "Nc1ncc(Br)s1"
+   ],
+   "product": "CCOc1cccc(Sc2cnc(N)s2)c1"
+  },
+  {
+   "id": "blind6_0216",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CCOCCCCCCBr",
+    "CCN(CC)C(=O)c1ccc(Br)o1"
+   ],
+   "product": "CCN(CC)C(=O)c1ccc(C#CCOCCCCCCBr)o1"
+  },
+  {
+   "id": "blind6_0217",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCI",
+    "COc1ccc(-c2n[nH]c3c(C(F)(F)F)cccc23)c(OC)c1"
+   ],
+   "product": "CCCn1nc2c(C(F)(F)F)cccc2c1-c1ccc(OC)cc1OC"
+  },
+  {
+   "id": "blind6_0218",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Br",
+    "Cc1nc(C(F)(F)F)ccc1CO"
+   ],
+   "product": "Cc1nc(C(F)(F)F)ccc1CBr"
+  },
+  {
+   "id": "blind6_0219",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NO",
+    "O=C1c2ccccc2-c2c(OCC(O)CNCC3CCN(c4ccnc5cc(C(F)(F)F)ccc45)CC3)cccc21"
+   ],
+   "product": "ON=C1c2ccccc2-c2c(OCC(O)CNCC3CCN(c4ccnc5cc(C(F)(F)F)ccc45)CC3)cccc21"
+  },
+  {
+   "id": "blind6_0220",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CS(=O)(=O)c1ncccc1Cl",
+    "c1cc[nH]c1"
+   ],
+   "product": "Clc1cccnc1-n1cccc1"
+  },
+  {
+   "id": "blind6_0221",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CC(Cc2ccc(Cl)c(Cl)c2)CC1COS(C)(=O)=O",
+    "N#C[Na]"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CC(Cc2ccc(Cl)c(Cl)c2)CC1CC#N"
+  },
+  {
+   "id": "blind6_0222",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN(C)CCO",
+    "O=C(Cn1c(=O)ccc2cc(C(F)(F)F)ccc21)Nc1scc(Cl)c1-c1nc[nH]n1"
+   ],
+   "product": "CN(C)CCn1cnc(-c2c(Cl)csc2NC(=O)Cn2c(=O)ccc3cc(C(F)(F)F)ccc32)n1"
+  },
+  {
+   "id": "blind6_0223",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CC(C)(C)O",
+    "O=c1[nH]ccc2c(Nc3c(Cl)cc(-c4ccn[nH]4)cc3Cl)nc3ccc(Br)cc3c12"
+   ],
+   "product": "CC(C)(O)C#Cc1ccc2nc(Nc3c(Cl)cc(-c4ccn[nH]4)cc3Cl)c3cc[nH]c(=O)c3c2c1"
+  },
+  {
+   "id": "blind6_0224",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=c1[nH]c(-c2ccc(CCCCCl)cc2)cs1",
+    "c1ccc2c(N3CCNCC3)nsc2c1"
+   ],
+   "product": "O=c1[nH]c(-c2ccc(CCCCN3CCN(c4nsc5ccccc45)CC3)cc2)cs1"
+  },
+  {
+   "id": "blind6_0225",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "FC(F)(F)CCCBr",
+    "NC(=O)c1nc(-c2ccc(Cl)cc2Cl)c(-c2ccc(Cl)cc2)s1"
+   ],
+   "product": "O=C(NCCCC(F)(F)F)c1nc(-c2ccc(Cl)cc2Cl)c(-c2ccc(Cl)cc2)s1"
+  },
+  {
+   "id": "blind6_0226",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN",
+    "O=C1CCC(Nc2ccc3[nH]ncc3c2)CC1"
+   ],
+   "product": "CNC1CCC(Nc2ccc3[nH]ncc3c2)CC1"
+  },
+  {
+   "id": "blind6_0227",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N(CCCCO)Cc1ccccc1",
+    "CS(=O)(=O)Cl"
+   ],
+   "product": "CC(C)(C)OC(=O)N(CCCCS(C)(=O)=O)Cc1ccccc1"
+  },
+  {
+   "id": "blind6_0228",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)Nc1cccc(O)c1",
+    "COC(=O)c1sccc1CBr"
+   ],
+   "product": "COC(=O)c1sccc1COc1cccc(NC(C)=O)c1"
+  },
+  {
+   "id": "blind6_0229",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OC(C)=O",
+    "Nc1ccc(CCCN2CCC(=C3c4ccccc4C=Cc4ccccc43)CC2)cc1"
+   ],
+   "product": "CC(=O)Nc1ccc(CCCN2CCC(=C3c4ccccc4C=Cc4ccccc43)CC2)cc1"
+  },
+  {
+   "id": "blind6_0230",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CCOc1ccc(C(=O)Cl)cc1F",
+    "CC(N)C(C)(C)C"
+   ],
+   "product": "C#CCOc1ccc(C(=O)NC(C)C(C)(C)C)cc1F"
+  },
+  {
+   "id": "blind6_0231",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=[N+]=[N-]",
+    "Cc1nn(C)c(O)c1C(=O)c1ccc([N+](=O)[O-])cc1Cl"
+   ],
+   "product": "COc1c(C(=O)c2ccc([N+](=O)[O-])cc2Cl)c(C)nn1C"
+  },
+  {
+   "id": "blind6_0232",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CSCCN1",
+    "O=C(Cl)CCl"
+   ],
+   "product": "O=C(CCl)N1CCSCC1"
+  },
+  {
+   "id": "blind6_0233",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C=CCCO",
+    "N#Cc1c(O)c2c(-c3ccc(I)cc3)csc2[nH]c1=O"
+   ],
+   "product": "N#Cc1c(O)c2c(-c3ccc(C=CCCO)cc3)csc2[nH]c1=O"
+  },
+  {
+   "id": "blind6_0234",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NN1CCCCC1",
+    "O=C(O)c1ccc(Cl)c(-c2cccc(Cl)c2)n1"
+   ],
+   "product": "O=C(NN1CCCCC1)c1ccc(Cl)c(-c2cccc(Cl)c2)n1"
+  },
+  {
+   "id": "blind6_0235",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(O)C1CCCNC1",
+    "Cc1nc2ccccc2n1-c1nc(N2CCOCC2)c2nc(CBr)n(C)c2n1"
+   ],
+   "product": "Cc1nc2ccccc2n1-c1nc(N2CCOCC2)c2nc(CN3CCCC(C(C)(C)O)C3)n(C)c2n1"
+  },
+  {
+   "id": "blind6_0236",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)CCN",
+    "COc1ccc2nc(C(Nc3ccc(C(=O)O)cc3)C3CCCCC3)n(C)c2c1"
+   ],
+   "product": "CCOC(=O)CCNC(=O)c1ccc(NC(c2nc3ccc(OC)cc3n2C)C2CCCCC2)cc1"
+  },
+  {
+   "id": "blind6_0237",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1cc(Cl)n2nc(C)nc2n1",
+    "S"
+   ],
+   "product": "COC(=O)c1cc(S)n2nc(C)nc2n1"
+  },
+  {
+   "id": "blind6_0238",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCc1cccc(CC)c1C=NC(C(C)C)C(C)C",
+    "[OH-]"
+   ],
+   "product": "CCc1cccc(CC)c1C=O"
+  },
+  {
+   "id": "blind6_0239",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)CI",
+    "Cc1c(N(Cc2ccccc2)Cc2ccc(Oc3cccc(OCCO)c3)cc2)cccc1[N+](=O)[O-]"
+   ],
+   "product": "CCOC(=O)COCCOc1cccc(Oc2ccc(CN(Cc3ccccc3)c3cccc([N+](=O)[O-])c3C)cc2)c1"
+  },
+  {
+   "id": "blind6_0240",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CNOC",
+    "O=C(Cl)c1ccccc1-c1ccccc1"
+   ],
+   "product": "CON(C)C(=O)c1ccccc1-c1ccccc1"
+  },
+  {
+   "id": "blind6_0241",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N",
+    "O=C=NS(=O)(=O)c1cccc(Cl)c1Cl"
+   ],
+   "product": "NC(=O)NS(=O)(=O)c1cccc(Cl)c1Cl"
+  },
+  {
+   "id": "blind6_0242",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)c1ccc(C(=O)O)cc1",
+    "CC(C)(C)OC(=O)CCN"
+   ],
+   "product": "CC(=O)c1ccc(C(=O)NCCC(=O)OC(C)(C)C)cc1"
+  },
+  {
+   "id": "blind6_0243",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=S(=O)(O)Cl",
+    "O=[N+]([O-])c1ccccc1Cl"
+   ],
+   "product": "O=[N+]([O-])c1cc(S(=O)(=O)Cl)ccc1Cl"
+  },
+  {
+   "id": "blind6_0244",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrCCBr",
+    "COC(=O)c1cccc(CC#N)c1Cl"
+   ],
+   "product": "COC(=O)c1cccc(C2(C#N)CC2)c1Cl"
+  },
+  {
+   "id": "blind6_0245",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1CCNCC1",
+    "CC(Br)C(=O)Br"
+   ],
+   "product": "CC(Br)C(=O)N1CCCCC1"
+  },
+  {
+   "id": "blind6_0246",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccccc1C=[N+]1CCOCC1",
+    "O=C(O)c1cccc2cc(O)ccc12"
+   ],
+   "product": "COc1ccccc1C(c1c(O)ccc2c(C(=O)O)cccc12)N1CCOCC1"
+  },
+  {
+   "id": "blind6_0247",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)CBr",
+    "Cc1ncc[nH]1"
+   ],
+   "product": "COC(=O)Cn1ccnc1C"
+  },
+  {
+   "id": "blind6_0248",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N#CC1CC(F)CN1C(=O)CNC12CCC(C(=O)O)(CC1)CC2",
+    "Nc1ccc(-c2nc3ccccc3s2)cc1"
+   ],
+   "product": "N#CC1CC(F)CN1C(=O)CNC12CCC(C(=O)Nc3ccc(-c4nc5ccccc5s4)cc3)(CC1)CC2"
+  },
+  {
+   "id": "blind6_0249",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CS(=O)(=O)c1ccc(C(=NOC2CCCCC2)C(=O)O)cc1Cl",
+    "Cc1nsc(N)n1"
+   ],
+   "product": "Cc1nsc(NC(=O)C(=NOC2CCCCC2)c2ccc(S(C)(=O)=O)c(Cl)c2)n1"
+  },
+  {
+   "id": "blind6_0250",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N#CC(=C1Nc2ccc(C(=O)O)cc2S1)c1nccc(C(F)(F)F)n1",
+    "O"
+   ],
+   "product": "NC(=O)C(=C1Nc2ccc(C(=O)O)cc2S1)c1nccc(C(F)(F)F)n1"
+  },
+  {
+   "id": "blind6_0251",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Clc1ccc2c(c1)CCc1ccccc1C2=CBr",
+    "OB(O)c1ccc(O)cc1"
+   ],
+   "product": "Oc1ccc(C=C2c3ccccc3CCc3cc(Cl)ccc32)cc1"
+  },
+  {
+   "id": "blind6_0252",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCC(O)c1ccccc1",
+    "Cc1nn2c(-c3ccc(Cl)cc3Cl)c(C)oc2c1O"
+   ],
+   "product": "CCC(Oc1c(C)nn2c(-c3ccc(Cl)cc3Cl)c(C)oc12)c1ccccc1"
+  },
+  {
+   "id": "blind6_0253",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCc1nc2ccccc2[nH]1",
+    "Clc1nc(N2CCOCC2)c2nc(CN3CC(N4CCOCC4)C3)ccc2n1"
+   ],
+   "product": "CCc1nc2ccccc2n1-c1nc(N2CCOCC2)c2nc(CN3CC(N4CCOCC4)C3)ccc2n1"
+  },
+  {
+   "id": "blind6_0254",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "FC(F)(F)c1cn[nH]c1",
+    "N#Cc1ccc(F)cc1"
+   ],
+   "product": "N#Cc1ccc(-n2cc(C(F)(F)F)cn2)cc1"
+  },
+  {
+   "id": "blind6_0255",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "NCCc1ccccc1",
+    "O=C1C2=C(CCCC2)C(=O)N1c1cc(OC2CCCC2)c(Cl)cc1F"
+   ],
+   "product": "O=C(NCCc1ccccc1)C1=C(C(=O)Nc2cc(OC3CCCC3)c(Cl)cc2F)CCCC1"
+  },
+  {
+   "id": "blind6_0256",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCCC(O)C=CC1C=C(SC)C(=O)C1=CCCCCCC(=O)OC",
+    "O=C(OO)c1cccc(Cl)c1"
+   ],
+   "product": "CCCCCC(O)C=CC1C=C(S(C)=O)C(=O)C1=CCCCCCC(=O)OC"
+  },
+  {
+   "id": "blind6_0257",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CSc1ccc(N=C=O)cc1",
+    "Nc1ccc2nc(N3CC4CCC3CC4)ccc2c1"
+   ],
+   "product": "CSc1ccc(NC(=O)Nc2ccc3nc(N4CC5CCC4CC5)ccc3c2)cc1"
+  },
+  {
+   "id": "blind6_0258",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C#CCNC",
+    "COc1ccccc1N1CCN(CCC(C(=O)O)c2ccccc2)CC1"
+   ],
+   "product": "C#CCN(C)C(=O)C(CCN1CCN(c2ccccc2OC)CC1)c1ccccc1"
+  },
+  {
+   "id": "blind6_0259",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1cc2c(cc1OC)C(C(CO)CO)NCC2",
+    "S=C(Cl)Cl"
+   ],
+   "product": "COc1cc2c(cc1OC)C1C(CO)COC(=S)N1CC2"
+  },
+  {
+   "id": "blind6_0260",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)Cn1ccc2ccc(O)cc21",
+    "Cc1nc(-c2ccc(C(F)(F)F)cc2)cc(C(F)(F)F)c1CO"
+   ],
+   "product": "CCOC(=O)Cn1ccc2ccc(OCc3c(C(F)(F)F)cc(-c4ccc(C(F)(F)F)cc4)nc3C)cc21"
+  },
+  {
+   "id": "blind6_0261",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCCCCCCBr",
+    "O=C(O)c1ccc(O)cc1"
+   ],
+   "product": "CCCCCCCCOc1ccc(C(=O)O)cc1"
+  },
+  {
+   "id": "blind6_0262",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C(N)=O)c1ccc2c(c1)C(=O)Cc1cc(Cl)ccc1S2",
+    "[OH-]"
+   ],
+   "product": "CC(C(=O)O)c1ccc2c(c1)C(=O)Cc1cc(Cl)ccc1S2"
+  },
+  {
+   "id": "blind6_0263",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc(C=O)cc1CCl",
+    "Cc1cccc(C)c1O"
+   ],
+   "product": "COc1ccc(C=O)cc1COc1c(C)cccc1C"
+  },
+  {
+   "id": "blind6_0264",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Brc1cccs1",
+    "C#C[Si](C)(C)C"
+   ],
+   "product": "C[Si](C)(C)C#Cc1cccs1"
+  },
+  {
+   "id": "blind6_0265",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)OC(C)(C)C",
+    "Cc1c(N2CCNCC2)nn2c(I)c(-c3ccc(F)cc3)nc2c1C"
+   ],
+   "product": "Cc1c(N2CCN(C(=O)OC(C)(C)C)CC2)nn2c(I)c(-c3ccc(F)cc3)nc2c1C"
+  },
+  {
+   "id": "blind6_0266",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "BrP(Br)Br",
+    "CCCN(CCC)C(=O)c1cc(CO)cc(C(=O)OCC)c1"
+   ],
+   "product": "CCCN(CCC)C(=O)c1cc(CBr)cc(C(=O)OCC)c1"
+  },
+  {
+   "id": "blind6_0267",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(O)Cn1ccc(N)n1",
+    "O=C(O)C(CC1CCCC1)N1CC2=C(Oc3ccccc3C2)C1=O"
+   ],
+   "product": "CC(C)(O)Cn1ccc(NC(=O)C(CC2CCCC2)N2CC3=C(Oc4ccccc4C3)C2=O)n1"
+  },
+  {
+   "id": "blind6_0268",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N=C(c1ccccc1)c1ccccc1",
+    "NCC(=O)NCCCCc1ccccc1"
+   ],
+   "product": "O=C(CN=C(c1ccccc1)c1ccccc1)NCCCCc1ccccc1"
+  },
+  {
+   "id": "blind6_0269",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CC(O)CCC1CC1(O)CCOCC1",
+    "CS(=O)(=O)Cl"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CC(OS(C)(=O)=O)CCC1CC1(O)CCOCC1"
+  },
+  {
+   "id": "blind6_0270",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "Fc1nc(F)c(F)c(F)c1F",
+    "c1ccc(CN2CCNCC2)cc1"
+   ],
+   "product": "Fc1nc(F)c(F)c(N2CCN(Cc3ccccc3)CC2)c1F"
+  },
+  {
+   "id": "blind6_0271",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(=O)c1cc(-c2cncc(F)c2)cc(C)n1",
+    "Nc1ncc(F)s1"
+   ],
+   "product": "Cc1cc(-c2cncc(F)c2)cc(C(=O)Nc2ncc(F)s2)n1"
+  },
+  {
+   "id": "blind6_0272",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "N=C(NO)c1cccc(-n2nc(C(F)(F)F)c3c2C(=O)N(c2ccc(-n4ccccc4=O)cc2)CC3)c1",
+    "[OH-]"
+   ],
+   "product": "NC(=O)c1cccc(-n2nc(C(F)(F)F)c3c2C(=O)N(c2ccc(-n4ccccc4=O)cc2)CC3)c1"
+  },
+  {
+   "id": "blind6_0273",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CN(C(=O)OC(C)(C)C)c1cc(Cl)ccc1[N+](=O)[O-]",
+    "COc1ccc(O)cc1"
+   ],
+   "product": "COc1ccc(Oc2ccc([N+](=O)[O-])c(N(C)C(=O)OC(C)(C)C)c2)cc1"
+  },
+  {
+   "id": "blind6_0274",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCOC(=O)CBr",
+    "COP1OC(C)C(C)O1"
+   ],
+   "product": "CCCOC(=O)CP1(=O)OC(C)C(C)O1"
+  },
+  {
+   "id": "blind6_0275",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)n1cc(B2OC(C)(C)C(C)(C)O2)c2ccc([N+](=O)[O-])cc21",
+    "N#Cc1ccc(I)cc1C#N"
+   ],
+   "product": "CC(C)n1cc(-c2ccc(C#N)c(C#N)c2)c2ccc([N+](=O)[O-])cc21"
+  },
+  {
+   "id": "blind6_0276",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COCOc1cc(OC)c(OC)cc1-c1nc2c(CBr)cccc2o1",
+    "NCc1ccccn1"
+   ],
+   "product": "COCOc1cc(OC)c(OC)cc1-c1nc2c(CNCc3ccccn3)cccc2o1"
+  },
+  {
+   "id": "blind6_0277",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(O)c1cccc([N+](=O)[O-])c1Br",
+    "O=C([O-])[O-]"
+   ],
+   "product": "COC(=O)c1cccc([N+](=O)[O-])c1Br"
+  },
+  {
+   "id": "blind6_0278",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCCc1ccc(-c2c(O)c(C(C)=O)nn2C)cc1",
+    "NNC(=S)Nc1ccc(C(=O)O)cc1"
+   ],
+   "product": "CCCc1ccc(-c2c(O)c(C(C)=NNC(=S)Nc3ccc(C(=O)O)cc3)nn2C)cc1"
+  },
+  {
+   "id": "blind6_0279",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COS(=O)(=O)OC",
+    "O=C(c1ccccc1)c1ccc(O)cc1O"
+   ],
+   "product": "COc1ccc(C(=O)c2ccccc2)c(O)c1"
+  },
+  {
+   "id": "blind6_0280",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCOC(C)=O",
+    "O=C1CC2(CC=CC2)CC(=O)N1CCCCBr"
+   ],
+   "product": "O=C1CC2(CCC(O)C2)CC(=O)N1CCCCBr"
+  },
+  {
+   "id": "blind6_0281",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(CCC(=O)O)(c1ccc(O)cc1)c1ccc(O)cc1",
+    "CO"
+   ],
+   "product": "COC(=O)CCC(C)(c1ccc(O)cc1)c1ccc(O)cc1"
+  },
+  {
+   "id": "blind6_0282",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COC(=O)c1cc(C)c(O)c(C)c1",
+    "Fc1cc2nc(-c3ccc(Cl)cc3)n(C(COCC3CCCCC3)C3CCCCC3)c2cc1F"
+   ],
+   "product": "COC(=O)c1cc(C)c(OCC(C2CCCCC2)n2c(-c3ccc(Cl)cc3)nc3cc(F)c(F)cc32)c(C)c1"
+  },
+  {
+   "id": "blind6_0283",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "FC(F)(F)c1ccc(OC2CNC2)cc1",
+    "O=C=Nc1ccccc1"
+   ],
+   "product": "O=C(Nc1ccccc1)N1CC(Oc2ccc(C(F)(F)F)cc2)C1"
+  },
+  {
+   "id": "blind6_0284",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc2c(c1)C(CCNC(C)=O)CN2C(C)=O",
+    "[Cl-]"
+   ],
+   "product": "COc1cc2c(cc1Cl)N(C(C)=O)CC2CCNC(C)=O"
+  },
+  {
+   "id": "blind6_0285",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(Br)c1ccc(CBr)cc1",
+    "OCC(Cl)(Cl)Cl"
+   ],
+   "product": "O=C(OCC(Cl)(Cl)Cl)c1ccc(CBr)cc1"
+  },
+  {
+   "id": "blind6_0286",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCN1",
+    "Cc1nc2nc(Cl)nc(Cl)c2s1"
+   ],
+   "product": "Cc1nc2nc(Cl)nc(N3CCOCC3)c2s1"
+  },
+  {
+   "id": "blind6_0287",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)CC1CCn2c1c(I)c1cc(OCc3ccc(C4CCCC4)c(C(F)(F)F)c3)ccc12",
+    "C[Zn+]"
+   ],
+   "product": "Cc1c2n(c3ccc(OCc4ccc(C5CCCC5)c(C(F)(F)F)c4)cc13)CCC2CC(=O)OC(C)(C)C"
+  },
+  {
+   "id": "blind6_0288",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCI",
+    "CCOC(=O)CCCCCCn1c(C)nc(-c2ccccc2)c1-c1ccccc1"
+   ],
+   "product": "CCOC(=O)C(CC)CCCCCn1c(C)nc(-c2ccccc2)c1-c1ccccc1"
+  },
+  {
+   "id": "blind6_0289",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)C1(C(=O)O)CCC(NC(=O)OC(C)(C)C)C1",
+    "FC(F)(F)c1ccnc(N2CCNCC2)c1"
+   ],
+   "product": "CC(C)C1(C(=O)N2CCN(c3cc(C(F)(F)F)ccn3)CC2)CCC(NC(=O)OC(C)(C)C)C1"
+  },
+  {
+   "id": "blind6_0290",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC#N",
+    "COc1cc(CBr)c(Br)cc1OCc1ccccc1"
+   ],
+   "product": "COc1cc(CCC#N)c(Br)cc1OCc1ccccc1"
+  },
+  {
+   "id": "blind6_0291",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "C1COCCN1",
+    "Nc1cc(Cl)c(Cl)cn1"
+   ],
+   "product": "Nc1cc(N2CCOCC2)c(Cl)cn1"
+  },
+  {
+   "id": "blind6_0292",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CCN1CCN(C)CC(N)C1",
+    "CNc1nc(OC)c(C(=O)O)cc1Br"
+   ],
+   "product": "CCN1CCN(C)CC(NC(=O)c2cc(Br)c(NC)nc2OC)C1"
+  },
+  {
+   "id": "blind6_0293",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)I",
+    "COC(=O)c1ccc(O)cc1O"
+   ],
+   "product": "COC(=O)c1ccc(OC(C)C)cc1O"
+  },
+  {
+   "id": "blind6_0294",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1ccc2c(Oc3ccc4c(C(=O)O)cccc4c3)ccnc2c1",
+    "Nc1ccc(F)cc1N"
+   ],
+   "product": "COc1ccc2c(Oc3ccc4c(C(=O)Nc5ccc(F)cc5N)cccc4c3)ccnc2c1"
+  },
+  {
+   "id": "blind6_0295",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(C)(C)OC(=O)N1CCN(C(=O)c2ccc(Br)cc2S(C)(=O)=O)CC1",
+    "O=C1NC(COC(=O)c2ccccc2)CO1"
+   ],
+   "product": "CC(C)(C)OC(=O)N1CCN(C(=O)c2ccc(N3C(=O)OCC3COC(=O)c3ccccc3)cc2S(C)(=O)=O)CC1"
+  },
+  {
+   "id": "blind6_0296",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "O=C(C1CCNCC1)N1CCN(c2ccncn2)CC1",
+    "O=S(=O)(Cl)c1ccc(Br)cc1"
+   ],
+   "product": "O=C(C1CCN(S(=O)(=O)c2ccc(Br)cc2)CC1)N1CCN(c2ccncn2)CC1"
+  },
+  {
+   "id": "blind6_0297",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CI",
+    "Cc1ccc2[nH]c(=O)oc(=O)c2c1"
+   ],
+   "product": "Cc1ccc2c(c1)c(=O)oc(=O)n2C"
+  },
+  {
+   "id": "blind6_0298",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "COc1cc(C(=O)N2CCC3(CC2)Oc2cc(Cl)ccc2-n2cccc23)ccc1Br",
+    "OB(O)C1CC1"
+   ],
+   "product": "COc1cc(C(=O)N2CCC3(CC2)Oc2cc(Cl)ccc2-n2cccc23)ccc1C1CC1"
+  },
+  {
+   "id": "blind6_0299",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OC(C)=O",
+    "Nc1nc2ccccc2nc1N"
+   ],
+   "product": "CC(=O)Nc1nc2ccccc2nc1N"
+  },
+  {
+   "id": "blind6_0300",
+   "class": "blind6",
+   "n_reactants": 2,
+   "reactants": [
+    "CC(=O)OCCc1cc(C)cc(Cl)c1",
+    "O=C1CCC(=O)N1Br"
+   ],
+   "product": "CC(=O)OCCc1cc(Cl)cc(CBr)c1"
+  }
+ ]
+}

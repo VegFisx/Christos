@@ -1,0 +1,138 @@
+{
+ "rules": {
+  "total": 117,
+  "active": 111,
+  "disabled": 6,
+  "provenance_total": {
+   "cited": 38,
+   "secondary": 41,
+   "unvalidated": 38
+  },
+  "provenance_active": {
+   "cited": 38,
+   "secondary": 41,
+   "unvalidated": 32
+  }
+ },
+ "default_vs_explore": {
+  "default_validated": 73,
+  "active_unvalidated": 32
+ },
+ "latest_gate": {
+  "file": "release-6db26c5-20261124-2116.json",
+  "rev": "6db26c5",
+  "verdict": "pass",
+  "smoke": {
+   "A_yanyan": 45,
+   "A_jiangyan": 45,
+   "C_miyan_adj": 49,
+   "C_miyan_noadj": 45,
+   "C_cuyan_adj": 83,
+   "C_cuyan_noadj": 45,
+   "C_cuyan_envoff": 45,
+   "guard_jiandao": 824
+  },
+  "forward": 0.8659
+ },
+ "blind_artifacts": [
+  {
+   "file": "holdout_general_organic_blind_20261124.json",
+   "exists": true,
+   "sha256": "46942d0ba2a107020265b56a08a2a6793b59293304e9da38a03e6bb38f603dc5"
+  },
+  {
+   "file": "holdout_general_organic_blind2_20261124.json",
+   "exists": true,
+   "sha256": "1d8fff45492605b70ad770d7c357b96a5eaa6b5b113a9c9600c61d31405c4569"
+  },
+  {
+   "file": "holdout_general_organic_blind3_20261124.json",
+   "exists": true,
+   "sha256": "d420c132cca3830444d248c13283a8c56f1213879cb39c6c63c1d208e9183bb5"
+  },
+  {
+   "file": "holdout_general_organic_blind4_20261124.json",
+   "exists": true,
+   "sha256": "7682341787d01d6498e185b914a899a2c5ec85fbd76d73892cad8a8182bc313b"
+  },
+  {
+   "file": "holdout_general_organic_blind5_20261124.json",
+   "exists": true,
+   "sha256": "92083dfc5aac782efdebfba806f748346c16063cd6822cf2df54ebf51fe16683"
+  },
+  {
+   "file": "holdout_general_organic_blind6_20261124.json",
+   "exists": true,
+   "sha256": "d4fe636bcea9d554ab52c2b9eb7604f9c59d1e2a0c39407399b00cb1b8cc9ae8"
+  },
+  {
+   "file": "dev_general_organic_20261124.json",
+   "exists": true,
+   "sha256": "7e4cde26d15649260e853270d13b4a8750463d84f4c3be0dfb1f5c45b57bc703"
+  }
+ ],
+ "latest_dev_full_lf": {
+  "file": "general_organic_full_lf_dev_cyclic_20261124.json",
+  "n": 300,
+  "hits": 200,
+  "exact": 200
+ },
+ "family_sweep_candidates": {
+  "n_alkylation": 14,
+  "o_acylation": 2,
+  "chlorination": 3
+ },
+ "validation_only_pool_items": 17,
+ "co_substrate_pools_without_condition_gate": [
+  {
+   "rule": "condensation_schiff_base_001",
+   "smiles": "NCC(=O)O",
+   "name": "甘氨酸"
+  },
+  {
+   "rule": "amidation_intermolecular_001",
+   "smiles": "NCC(=O)O",
+   "name": "甘氨酸"
+  },
+  {
+   "rule": "aminolysis_ester_001",
+   "smiles": "NCC(=O)O",
+   "name": "甘氨酸"
+  },
+  {
+   "rule": "addition_michael_thiol_001",
+   "smiles": "CS",
+   "name": "甲硫醇"
+  },
+  {
+   "rule": "addition_michael_thiol_001",
+   "smiles": "NC(CS)C(=O)O",
+   "name": "半胱氨酸"
+  },
+  {
+   "rule": "addition_michael_amine_001",
+   "smiles": "NCC(=O)O",
+   "name": "甘氨酸"
+  },
+  {
+   "rule": "condensation_aldol_001",
+   "smiles": "C=O",
+   "name": "甲醛"
+  },
+  {
+   "rule": "condensation_aldol_001",
+   "smiles": "CC=O",
+   "name": "乙醛"
+  },
+  {
+   "rule": "addition_thiohemiacetal_001",
+   "smiles": "CS",
+   "name": "甲硫醇"
+  },
+  {
+   "rule": "addition_thiohemiacetal_001",
+   "smiles": "NC(CS)C(=O)O",
+   "name": "半胱氨酸"
+  }
+ ]
+}

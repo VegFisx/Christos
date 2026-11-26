@@ -187,8 +187,24 @@ def step_official(n, workers=2):
             "tail": (out + err).strip().splitlines()[-6:]}
 
 
+def _default_rerank_model() -> str:
+    """从 core/rerank.py 读 DEFAULT_MODEL。
+
+    ★ 2026-11-13：这里以前没设 CHEMCREACT_RERANK_MODEL，bench 会退回它内置的
+    v1 模型（top-1 41.67%），闸门测的根本不是生产默认模型。现在与生产同源。
+    """
+    try:
+        txt = (ROOT / "core" / "rerank.py").read_text(encoding="utf-8")
+        m = re.search(r'DEFAULT_MODEL\s*=\s*ROOT\s*/\s*"reports"\s*/\s*"([^"]+)"', txt)
+        if m:
+            return str(ROOT / "reports" / m.group(1))
+    except Exception:                                  # noqa: BLE001
+        pass
+    return str(ROOT / "reports" / "rank_model_v2.pkl")
+
+
 def step_official_rerank(n, workers=2):
-    """重排序开着跑一遍官方切分。
+    """重排序开着跑一遍官方切分（用生产默认模型）。
 
     为什么单列一步：重排序**只改顺序**，召回不受影响，但 top-1 全靠它。
     默认关，所以主 official 那条永远不会反映模型变化；这一条才是模型的回归闸门。
@@ -201,6 +217,7 @@ def step_official_rerank(n, workers=2):
                    "CHEMCREACT_BENCH_TAG": tag,
                    "CHEMCREACT_BENCH_LIMIT": str(n),
                    "CHEMCREACT_BENCH_RERANK": "1",
+                   "CHEMCREACT_RERANK_MODEL": _default_rerank_model(),
                    "CHEMCREACT_BENCH_CLI_CONFIG": "1"}, timeout=7200)
     f = out_dir / ("forward_official_test__%s.json" % tag)
     d = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}

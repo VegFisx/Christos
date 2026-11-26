@@ -1,0 +1,120 @@
+{
+  "created_at": "2026-11-22",
+  "protocol_version": "independent_validation_v1",
+  "frozen_git_rev": "pre-registered 2026-11-22 before rule patch",
+  "purpose": "独立验证集：验证后续补足的通用规则，与 30 例开发/缺口面板分开。",
+  "independence_criteria": [
+    "不在 data/holdout_paozhi.json 的 30 例里",
+    "不在 rules/paozhi_evidence.json 的证据来源里",
+    "不是规则补足的文献设计案例（天麻/黄柏/地黄）",
+    "尽量不同药材、不同底物；合成对照只用于验证通用反应型"
+  ],
+  "pre_registered_note": "expected 是补足后的预期；当前基线先跑一遍，预期为 miss 或 product_only。基线结果不用于反向修改规则。",
+  "tiers": {
+    "independent": "用于验证后续通用规则；不参与规则设计"
+  },
+  "cases": [
+    {
+      "id": "validation_benzyl_alcohol",
+      "herb_cn": "模型底物（苄醇）",
+      "herb_en": "benzyl alcohol (synthetic control)",
+      "process_cn": "加热模型",
+      "process_en": "thermal model",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "independent",
+      "seed": {
+        "iid": "HBIN017844",
+        "name": "Benzyl alcohol",
+        "formula": "C7H8O"
+      },
+      "targets": [
+        {
+          "label": "benzaldehyde",
+          "kind": "key",
+          "value": "HBIN017734",
+          "formula": "C7H6O",
+          "family": [
+            "oxidation_benzylic"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "oxidation_benzylic_alcohol_001",
+        "confidence": "high",
+        "reason": "补足后的预期：苄位醇氧化为苯甲醛。当前基线：evidence miss；production 由 rescue_lowsupport 给出 product_only（coverage 已覆盖，规则族未归因）。"
+      },
+      "baseline_note": "合成对照，不是药材案例；用于验证通用苄位氧化规则，避免只用天麻一个底物。",
+      "literature_note": "无药材文献；这是通用化学对照。天麻 gastrodin 是设计案例，本案例刻意改用最小苄醇。"
+    },
+    {
+      "id": "validation_huangjing_glucose_hmf",
+      "herb_cn": "黄精",
+      "herb_en": "Polygonatum sibiricum",
+      "process_cn": "酒蒸/九蒸九晒",
+      "process_en": "wine-steaming / repeated steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "independent",
+      "seed": {
+        "iid": "HBIN028037",
+        "name": "Glucose",
+        "formula": "C6H12O6"
+      },
+      "targets": [
+        {
+          "label": "5-HMF",
+          "kind": "key",
+          "value": "HBIN029444",
+          "formula": "C6H6O3",
+          "family": [
+            "dehydration_cyclization"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "dehydration_cyclization_001",
+        "confidence": "medium",
+        "reason": "补足后的预期：葡萄糖经连续脱水/环化生成 5-HMF。当前基线预计 miss；地黄是设计案例（用果糖），本案例改用黄精 + 葡萄糖。"
+      },
+      "baseline_note": "与地黄 HMF 案例同一类化学，但不同药材、不同单糖；用于验证规则是否泛化。",
+      "literature_note": "《酒黄精炮制与药理活性及其应用现状》，中草药 2026, 14（https://www.tiprpress.com/zcy/article/pdf/20261431）；专利 CN114858934B 测定酒蒸/清蒸/黑豆汁制黄精的 5-HMF 与丙烯酰胺。"
+    },
+    {
+      "id": "validation_huanglian_berberine",
+      "herb_cn": "黄连",
+      "herb_en": "Coptis chinensis",
+      "process_cn": "酒炙",
+      "process_en": "wine-frying",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "independent",
+      "seed": {
+        "iid": "HBIN017893",
+        "name": "Berberine",
+        "formula": "C20H18NO4+"
+      },
+      "targets": [
+        {
+          "label": "berberrubine",
+          "kind": "pubchem",
+          "value": "berberrubine",
+          "formula": "C19H16NO4+",
+          "family": [
+            "demethylation_aromatic"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "demethylation_aromatic_o_001",
+        "confidence": "high",
+        "reason": "补足后的预期：小檗碱芳香甲氧基脱甲基生成小檗红碱（C20H18NO4+ → C19H16NO4+）。当前基线：evidence miss；production 由 rescue_lowsupport 给出 product_only。"
+      },
+      "baseline_note": "与黄柏巴马汀案例同一反应型，但不同药材、不同底物（小檗碱）。目标结构由 PubChem CID 72704 提供，不是 tcm.db 的氯化物盐条目。",
+      "literature_note": "DOI 10.3969/j.issn.1001-1528.2010.03.028（祁东利等，黄柏炮制后化学成分转化研究，中成药 2010, 32(3):443-447）；黄连/黄柏小檗碱→小檗红碱另见中成药 2021, 43(11):3082-3088 与现代药物与临床 2015, 30(1):18-23。"
+    }
+  ]
+}

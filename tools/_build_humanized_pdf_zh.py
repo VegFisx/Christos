@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Render the Chinese humanized manuscript to standalone HTML.
 #
-# Same approach as the English build: pandoc is not on PATH, so markdown-it-py
-# supplies the body and paper-zh.css supplies the print layout.
+# pandoc is not on PATH, so markdown-it-py supplies the body and paper-zh.css
+# supplies the print layout.
 import sys
 from pathlib import Path
 

@@ -1,0 +1,39 @@
+{
+ "schema": "chemreact_input_dataset_v1",
+ "row": "one compound in one sample",
+ "required": [
+  "sample_id", "source_type", "herb", "template", "solvent", "temp_C",
+  "time_min", "replicate", "compound_name", "compound_id_type",
+  "compound_id", "role", "amount", "unit", "method", "detection"
+ ],
+ "vocab": {
+  "source_type": ["wet_lab", "literature"],
+  "compound_id_type": ["inchikey", "smiles", "cas", "name_only"],
+  "role": ["marker", "product", "intermediate", "internal_standard"],
+  "detection": ["confirmed_standard", "tentative_msms", "tentative_uv",
+                "not_detected"]
+ },
+ "fields": {
+  "sample_id": "string, unique per sample",
+  "citation": "required when source_type=literature (DOI or journal-year-volume-page)",
+  "herb": "must resolve in tcm.db name_cn/alias, or start with 'formula:'",
+  "template": "condition template name used by the engine",
+  "solvent": "free text, prefer engine vocabulary (water, ethanol, ...)",
+  "temp_C": "number, 25 for room temperature, empty only if unknown (note it)",
+  "time_min": "number of minutes",
+  "pressure_atm": "number, default 1",
+  "atmosphere": "air / N2 / vacuum / steam",
+  "replicate": "integer >= 1",
+  "compound_id": "InChIKey preferred; SMILES if inchikey unavailable",
+  "amount": "number; 0 for not detected",
+  "unit": "mg/g, ug/mL, %, relative, ...",
+  "method": "HPLC-UV / LC-MS / LC-MS/MS / GC-MS / NMR",
+  "lod": "number, same unit as amount",
+  "notes": "free text"
+ },
+ "notes": [
+  "name_only rows can be used for context but never count as an engine hit.",
+  "A literature row needs herb+template+solvent+temp+time to enter the condition layer.",
+  "Rows from one DOI must stay in the same train/holdout split."
+ ]
+}

@@ -1,0 +1,443 @@
+{
+  "generated_at": "2026-11-23 14:10:48",
+  "config": "full general engine: curated(all)+extra+mono+base; no rescue/stereo; gate_conditions=False",
+  "summary": {
+    "n": 30,
+    "skeleton": 30,
+    "exact": 29,
+    "errors": 0,
+    "by_class": {
+      "1": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "2": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "3": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "4": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "5": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "6": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 2
+      },
+      "7": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "8": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "9": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      },
+      "10": {
+        "n": 3,
+        "skeleton": 3,
+        "exact": 3
+      }
+    },
+    "hit_rules": [
+      "amidation_intermolecular_001",
+      "amide_coupling",
+      "amine_acetylation",
+      "hydrolysis_amide_001",
+      "mined_extra",
+      "mined_mono",
+      "mitsunobu",
+      "suzuki",
+      "williamson"
+    ]
+  },
+  "results": [
+    {
+      "id": "uspto50k_test_US06992103B2",
+      "class": "1",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "n_products": 53,
+      "n_hops": 73,
+      "seconds": 3.12
+    },
+    {
+      "id": "uspto50k_test_US20130289029A1",
+      "class": "1",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 17,
+      "n_hops": 26,
+      "seconds": 3.5
+    },
+    {
+      "id": "uspto50k_test_US20140024650A1",
+      "class": "1",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "n_products": 43,
+      "n_hops": 60,
+      "seconds": 3.82
+    },
+    {
+      "id": "uspto50k_test_US06924276B2",
+      "class": "2",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "amine_acetylation",
+        "mined_extra"
+      ],
+      "n_products": 37,
+      "n_hops": 55,
+      "seconds": 3.88
+    },
+    {
+      "id": "uspto50k_test_US08501746B2",
+      "class": "2",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "amidation_intermolecular_001",
+        "amide_coupling",
+        "mined_extra"
+      ],
+      "n_products": 31,
+      "n_hops": 47,
+      "seconds": 3.95
+    },
+    {
+      "id": "uspto50k_test_US20090197859A1",
+      "class": "2",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "amidation_intermolecular_001",
+        "amide_coupling"
+      ],
+      "n_products": 40,
+      "n_hops": 60,
+      "seconds": 4.22
+    },
+    {
+      "id": "uspto50k_test_US05059708",
+      "class": "3",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 36,
+      "n_hops": 58,
+      "seconds": 3.82
+    },
+    {
+      "id": "uspto50k_test_US20070111988A1",
+      "class": "3",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra",
+        "suzuki"
+      ],
+      "n_products": 47,
+      "n_hops": 69,
+      "seconds": 4.09
+    },
+    {
+      "id": "uspto50k_test_US20130109652A1",
+      "class": "3",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra",
+        "suzuki"
+      ],
+      "n_products": 29,
+      "n_hops": 45,
+      "seconds": 3.88
+    },
+    {
+      "id": "uspto50k_test_US07645781B2",
+      "class": "4",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 33,
+      "n_hops": 50,
+      "seconds": 3.93
+    },
+    {
+      "id": "uspto50k_test_US20050234081A1",
+      "class": "4",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 43,
+      "n_hops": 64,
+      "seconds": 3.88
+    },
+    {
+      "id": "uspto50k_test_US20110201815A1",
+      "class": "4",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 56,
+      "n_hops": 78,
+      "seconds": 4.14
+    },
+    {
+      "id": "uspto50k_test_US08153544B2",
+      "class": "5",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra",
+        "williamson"
+      ],
+      "n_products": 21,
+      "n_hops": 33,
+      "seconds": 3.84
+    },
+    {
+      "id": "uspto50k_test_US20060035933A1",
+      "class": "5",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 30,
+      "n_hops": 46,
+      "seconds": 3.49
+    },
+    {
+      "id": "uspto50k_test_US20130035310A1",
+      "class": "5",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 32,
+      "n_hops": 44,
+      "seconds": 3.58
+    },
+    {
+      "id": "uspto50k_test_US20110118480A1",
+      "class": "6",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 31,
+      "n_hops": 36,
+      "seconds": 3.43
+    },
+    {
+      "id": "uspto50k_test_US20120226037A1",
+      "class": "6",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 23,
+      "n_hops": 32,
+      "seconds": 3.62
+    },
+    {
+      "id": "uspto50k_test_US20140249104A1",
+      "class": "6",
+      "skeleton": true,
+      "exact": false,
+      "hit_rules": [
+        "hydrolysis_amide_001",
+        "mined_mono"
+      ],
+      "n_products": 34,
+      "n_hops": 49,
+      "seconds": 3.71
+    },
+    {
+      "id": "uspto50k_test_US07704994B2",
+      "class": "7",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 23,
+      "n_hops": 31,
+      "seconds": 3.62
+    },
+    {
+      "id": "uspto50k_test_US20090209562A1",
+      "class": "7",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 23,
+      "n_hops": 31,
+      "seconds": 3.24
+    },
+    {
+      "id": "uspto50k_test_US20090221555A1",
+      "class": "7",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 24,
+      "n_hops": 32,
+      "seconds": 3.39
+    },
+    {
+      "id": "uspto50k_test_US04721718",
+      "class": "8",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 47,
+      "n_hops": 64,
+      "seconds": 3.61
+    },
+    {
+      "id": "uspto50k_test_US20110059951A1",
+      "class": "8",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 21,
+      "n_hops": 29,
+      "seconds": 3.33
+    },
+    {
+      "id": "uspto50k_test_US20110201650A1",
+      "class": "8",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 24,
+      "n_hops": 31,
+      "seconds": 3.33
+    },
+    {
+      "id": "uspto50k_test_US04588732",
+      "class": "9",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 12,
+      "n_hops": 21,
+      "seconds": 3.06
+    },
+    {
+      "id": "uspto50k_test_US04988705",
+      "class": "9",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 15,
+      "n_hops": 24,
+      "seconds": 3.17
+    },
+    {
+      "id": "uspto50k_test_US20080207708A1",
+      "class": "9",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "n_products": 19,
+      "n_hops": 28,
+      "seconds": 3.62
+    },
+    {
+      "id": "uspto50k_test_US04760163",
+      "class": "10",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 37,
+      "n_hops": 53,
+      "seconds": 4.11
+    },
+    {
+      "id": "uspto50k_test_US06265349B1",
+      "class": "10",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 30,
+      "n_hops": 43,
+      "seconds": 4.34
+    },
+    {
+      "id": "uspto50k_test_US20100034827A1",
+      "class": "10",
+      "skeleton": true,
+      "exact": true,
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "n_products": 28,
+      "n_hops": 42,
+      "seconds": 4.46
+    }
+  ]
+}

@@ -1,0 +1,5942 @@
+{
+ "sample": {
+  "index": "D:\\ProgramData\\DSHNS\\chemreact-staging\\data\\ord_reaction_index.jsonl",
+  "total_lines": 1770980,
+  "requested": 120000,
+  "stride": 14,
+  "scanned_records": 119993,
+  "elapsed_sec": 1763.0
+ },
+ "parse_fail": 0,
+ "product_parse_fail": 0,
+ "empty_reactants": 0,
+ "rows": [
+  {
+   "id": "hydrolysis_amide_001",
+   "name": "酰胺水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[C:1](=[O:2])[N:3]>>[C:1](=[O:2])[OH].[N:3]",
+   "n_templates": 1,
+   "fired": 42033,
+   "product_match": 3362,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+     ],
+     "generated": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ],
+     "actual": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ]
+    },
+    {
+     "rid": "ord-fe0aa9a207b24d63bb0ea46174e05e6e",
+     "reactants": [
+      "CC(=O)Nc1ccc2c(c1)OCc1ccsc1C2=O",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "Nc1ccc2c(c1)OCc1ccsc1C2=O"
+     ],
+     "actual": [
+      "Nc1ccc2c(c1)OCc1ccsc1C2=O"
+     ]
+    },
+    {
+     "rid": "ord-65e718a8f3934e1487660a0d4b652d2f",
+     "reactants": [
+      "C=CCOC(=O)[C@@H](CCc1ccccc1)NC(=O)OC(C)(C)C",
+      "COc1ccccc1",
+      "O=C(O)C(F)(F)F",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ],
+     "actual": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-50d2591cf07947e7ab725904f4df96f4",
+     "reactants": [
+      "CCN(CC)CC",
+      "CS(=O)(=O)Cl",
+      "N=C(NC(=O)OCc1ccccc1)N1CCC(CO)C1"
+     ],
+     "generated": "O=C(O)OCc1ccccc1",
+     "actual": [
+      "CS(=O)(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1"
+     ]
+    },
+    {
+     "rid": "ord-ec5a4db79f2f4bb89fc58fd4e13d8f7e",
+     "reactants": [
+      "O=C(CCCCCBr)Nc1ccccc1Cc1ccccc1",
+      "c1ccc(Oc2ccc(C3CCNCC3)cc2)cc1"
+     ],
+     "generated": "O=C(O)CCCCCBr",
+     "actual": [
+      "O=C(CCCCCN1CCC(c2ccc(Oc3ccccc3)cc2)CC1)Nc1ccccc1Cc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-50d2591cf07947e7ab725904f4df96f4",
+    "reactants": [
+     "CCN(CC)CC",
+     "CS(=O)(=O)Cl",
+     "N=C(NC(=O)OCc1ccccc1)N1CCC(CO)C1"
+    ],
+    "generated": "O=C(O)OCc1ccccc1",
+    "actual": [
+     "CS(=O)(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_sulfate_001",
+   "name": "硫酸酯水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[S:1](=[O:2])(=[O:3])[O:4][C:5]>>[S:1](=[O:2])(=[O:3])[O:4][H].[C:5][OH]",
+   "n_templates": 1,
+   "fired": 1593,
+   "product_match": 9,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-38fad87017304b2ea8cf82845de81665",
+     "reactants": [
+      "COS(=O)(=O)C(F)(F)F",
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "generated": [
+      "O=S(=O)(O)C(F)(F)F"
+     ],
+     "actual": [
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1",
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1.O=S(=O)(O)C(F)(F)F",
+      "O=S(=O)(O)C(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-e785ea6338194dd69e22ecc6c663d32e",
+     "reactants": [
+      "CCCOS(=O)(=O)c1ccc(C)cc1"
+     ],
+     "generated": [
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "actual": [
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-459b22e82b8f4decbddb6d75a4854f6b",
+     "reactants": [
+      "O",
+      "O=N[O-].[Na+]",
+      "O=S(=O)(O[C@H]1CO[C@@H](OCc2ccccc2)[C@@H](OCc2ccccc2)[C@@H]1OCc1ccccc1)C(F)(F)F"
+     ],
+     "generated": [
+      "OC1COC(OCc2ccccc2)C(OCc2ccccc2)C1OCc1ccccc1"
+     ],
+     "actual": [
+      "OC1COC(OCc2ccccc2)C(OCc2ccccc2)C1OCc1ccccc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-24a3ddd0c4da4019a874af8b0e5c2e2d",
+     "reactants": [
+      "COS(=O)(=O)OC",
+      "Cc1c([N+](=O)[O-])ccc(N)c1C(=O)O",
+      "O=C([O-])O.[Na+]",
+      "O=C=O"
+     ],
+     "generated": "COS(=O)(=O)O",
+     "actual": [
+      "COC(=O)c1c(N)ccc([N+](=O)[O-])c1C"
+     ]
+    },
+    {
+     "rid": "ord-d2942481069b43c48c9121e0d8415d47",
+     "reactants": [
+      "COc1c(NOCc2ccccc2)ccnc1C",
+      "Cc1ccc(S(=O)(=O)OC2CCC3(CC2)OCCO3)cc1"
+     ],
+     "generated": "Cc1ccc(S(=O)(=O)O)cc1",
+     "actual": [
+      "COc1c(N(OCc2ccccc2)C2CCC3(CC2)OCCO3)ccnc1C"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-24a3ddd0c4da4019a874af8b0e5c2e2d",
+    "reactants": [
+     "COS(=O)(=O)OC",
+     "Cc1c([N+](=O)[O-])ccc(N)c1C(=O)O",
+     "O=C([O-])O.[Na+]",
+     "O=C=O"
+    ],
+    "generated": "COS(=O)(=O)O",
+    "actual": [
+     "COC(=O)c1c(N)ccc([N+](=O)[O-])c1C"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_phosphate_001",
+   "name": "磷酸酯水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[P:1](=[O:2])([O:3])[O:4][C:5]>>[P:1](=[O:2])([O:3])[O:4][H].[C:5][OH]",
+   "n_templates": 1,
+   "fired": 778,
+   "product_match": 6,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b76832d8c2fe47609a139e614967c486",
+     "reactants": [
+      "CCOP(=O)(CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O)OCC",
+      "CO",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CCOP(=O)(O)CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O"
+     ],
+     "actual": [
+      "CCOP(=O)(O)CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O"
+     ]
+    },
+    {
+     "rid": "ord-7c3ae6450c7a42018e55542fd2ea202a",
+     "reactants": [
+      "CCCCN(CCCC)CCCC",
+      "CCCC[NH+](CCCC)CCCC",
+      "O=C([O-])O.[NH4+]",
+      "O=P([O-])([O-])OP(=O)([O-])OP(=O)([O-])OP(=O)(O)O.O=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)[nH]1.O=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)[nH]1.[Na+].[Na+].[Na+].[Na+]"
+     ],
+     "generated": [
+      "O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1"
+     ],
+     "actual": [
+      "O=P(O)(O)OP(=O)(O)OP(=O)(O)OP(=O)(O)O",
+      "O=P(O)(O)OP(=O)(O)OP(=O)(O)OP(=O)(O)O.O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1.O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1",
+      "O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1"
+     ]
+    },
+    {
+     "rid": "ord-86616bee0271413c96e01ad81a58aacd",
+     "reactants": [
+      "CCOP(=O)(Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(C[C@H](O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1)OCC",
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CCCO)c4)cc3C(=O)N(CC)CC)n2)c(OC)c1"
+     ],
+     "generated": [
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CC(O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1"
+     ],
+     "actual": [
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CC(O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-513ee407692540e49f626f2d20b712d3",
+     "reactants": [
+      "C1CCOC1",
+      "CCOP(=O)(OCC)C(CC(=O)N(C)OC)P(=O)(OCC)OCC",
+      "[H-]",
+      "[H-].[Na+]"
+     ],
+     "generated": "CCOP(=O)(O)C(CC(=O)N(C)OC)P(=O)(OCC)OCC",
+     "actual": [
+      "CCOP(=O)(OCC)C(CC(=O)CC)P(=O)(OCC)OCC"
+     ]
+    },
+    {
+     "rid": "ord-8750cc7ad61a432da65104ddaeebb4b3",
+     "reactants": [
+      "CCCC(Cl)P(=O)(OCC)OCC",
+      "CCOCn1c(=O)[nH]c2nc[nH]c2c1=O",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": "CCCC(Cl)P(=O)(O)OCC",
+     "actual": [
+      "CCOCn1c(=O)c2c(ncn2CCCCP(=O)(OCC)OCC)n(C)c1=O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-513ee407692540e49f626f2d20b712d3",
+    "reactants": [
+     "C1CCOC1",
+     "CCOP(=O)(OCC)C(CC(=O)N(C)OC)P(=O)(OCC)OCC",
+     "[H-]",
+     "[H-].[Na+]"
+    ],
+    "generated": "CCOP(=O)(O)C(CC(=O)N(C)OC)P(=O)(OCC)OCC",
+    "actual": [
+     "CCOP(=O)(OCC)C(CC(=O)CC)P(=O)(OCC)OCC"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_acetal_001",
+   "name": "缩醛水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[CX4H1:1]([OX2:2][#6:3])[OX2:4][#6:5]>>[CX3H1:1]=[OX1:2].[OH:4][#6:5].[OH][#6:3]",
+   "n_templates": 1,
+   "fired": 2175,
+   "product_match": 213,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-991308a13d764cc0817ac696051b408e",
+     "reactants": [
+      "CC(C)(C)[Si](Cl)(c1ccccc1)c1ccccc1",
+      "CC(C)(C)[Si](OCc1ccc(CCCC2OCCO2)cc1)(c1ccccc1)c1ccccc1",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-71ad9a67baf44ed6bce3a9333c8c2b29",
+     "reactants": [
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]",
+      "c1c(COC2CCCCO2)noc1CN1CCOCC1"
+     ],
+     "generated": [
+      "OCc1cc(CN2CCOCC2)on1"
+     ],
+     "actual": [
+      "OCc1cc(CN2CCOCC2)on1"
+     ]
+    },
+    {
+     "rid": "ord-2603c295c6774fb2b21832e07be7eeeb",
+     "reactants": [
+      "Cc1ccc(S(=O)(=O)O)cc1",
+      "c1c(C2OCCO2)sc2c1OCCC2"
+     ],
+     "generated": [
+      "O=Cc1cc2c(s1)CCCO2"
+     ],
+     "actual": [
+      "O=Cc1cc2c(s1)CCCO2"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-991308a13d764cc0817ac696051b408e",
+     "reactants": [
+      "CC(C)(C)[Si](Cl)(c1ccccc1)c1ccccc1",
+      "CC(C)(C)[Si](OCc1ccc(CCCC2OCCO2)cc1)(c1ccccc1)c1ccccc1",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1",
+     "actual": [
+      "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-1fba45c98c28483dbc24abfca08ff922",
+     "reactants": [
+      "COC(=O)CCCCCCCCCCCCCCCOC1CCCCO1",
+      "NCCO",
+      "O=C1CCCCCCCCCCCCCCCO1",
+      "OCCNCCO"
+     ],
+     "generated": "CCCC=O",
+     "actual": [
+      "OCCNCCCCCCCCCCCCCCCCOC1CCCCO1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-1fba45c98c28483dbc24abfca08ff922",
+    "reactants": [
+     "COC(=O)CCCCCCCCCCCCCCCOC1CCCCO1",
+     "NCCO",
+     "O=C1CCCCCCCCCCCCCCCO1",
+     "OCCNCCO"
+    ],
+    "generated": "CCCC=O",
+    "actual": [
+     "OCCNCCCCCCCCCCCCCCCCOC1CCCCO1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_hemiacetal_001",
+   "name": "半缩醛水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[CX4H1:1]([OH:2])[OX2:3][#6:4]>>[CX3H1:1]=[O:2].[OH:3][#6:4]",
+   "n_templates": 1,
+   "fired": 155,
+   "product_match": 1,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-26bde17dc5b64039ae34d2762669f729",
+     "reactants": [
+      "CC(O)Oc1nnc(Cl)cc1N1CCNCC1.O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": [
+      "Oc1nnc(Cl)cc1N1CCNCC1"
+     ],
+     "actual": [
+      "Oc1nnc(Cl)cc1N1CCNCC1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-8963cbfe91a045aaa0bffa72e58f47f6",
+     "reactants": [
+      "CC(=O)N[C@H]1C(O)O[C@H](CO)[C@@H](O)[C@@H]1O",
+      "O=P([O-])([O-])[O-]"
+     ],
+     "generated": "CC(=O)NC(C=O)C(O)[CH]O",
+     "actual": [
+      "NC1C(O)OC(CO)C(O)C1O"
+     ]
+    },
+    {
+     "rid": "ord-2eb9932e21774af2b0a27f1f00230fb5",
+     "reactants": [
+      "COc1cccc2c1C(=O)OC2O",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": "COc1cccc(C=O)c1",
+     "actual": [
+      "O=C1OC(O)c2cccc(O)c21"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-8963cbfe91a045aaa0bffa72e58f47f6",
+    "reactants": [
+     "CC(=O)N[C@H]1C(O)O[C@H](CO)[C@@H](O)[C@@H]1O",
+     "O=P([O-])([O-])[O-]"
+    ],
+    "generated": "CC(=O)NC(C=O)C(O)[CH]O",
+    "actual": [
+     "NC1C(O)OC(CO)C(O)C1O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_hydroxyl_001",
+   "name": "羟基氧化",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[CH1:1][OH:2]>>[C:1]=[O:2]",
+   "n_templates": 1,
+   "fired": 7878,
+   "product_match": 346,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-518a16e34f3943a5b14400a699394dc9",
+     "reactants": [
+      "CC(C)=O.O=S(=O)(O)O.[O]=[Cr](=[O])=[O]",
+      "CCCCCCCCCCCC1CC(O)[C@@H](CCCCCC)C(=O)O1",
+      "O"
+     ],
+     "generated": [
+      "CCCCCCCCCCCC1CC(=O)C(CCCCCC)C(=O)O1"
+     ],
+     "actual": [
+      "CCCCCCCCCCCC1CC(=O)C(CCCCCC)C(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-9d59393c4c9049a0808495226bbc11b0",
+     "reactants": [
+      "CC(=O)OI1(OC(C)=O)(OC(C)=O)OC(=O)c2ccccc21",
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(O)C(F)(F)F)ccc1OC"
+     ],
+     "generated": [
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(=O)C(F)(F)F)ccc1OC"
+     ],
+     "actual": [
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(=O)C(F)(F)F)ccc1OC"
+     ]
+    },
+    {
+     "rid": "ord-1041ebbad9184896b84294f5baa9ee66",
+     "reactants": [
+      "CCN(CC)CC",
+      "COC(=O)c1ccc([C@H](c2ccc(Cl)cc2)N2CC(O)C2)cc1",
+      "CS(C)=O",
+      "O=C(Cl)C(=O)Cl"
+     ],
+     "generated": [
+      "COC(=O)c1ccc(C(c2ccc(Cl)cc2)N2CC(=O)C2)cc1"
+     ],
+     "actual": [
+      "COC(=O)c1ccc(C(c2ccc(Cl)cc2)N2CC(=O)C2)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-7dcfc77b6fae44dabea5f16d26269c62",
+     "reactants": [
+      "CCCCOP(=O)(COc1ccccc1)Cc1ccc(CC(C)NCC(O)COc2ccc(O)c(CO)c2)cc1",
+      "Cl"
+     ],
+     "generated": "CCCCOP(=O)(COc1ccccc1)Cc1ccc(CC(C)NCC(=O)COc2ccc(O)c(CO)c2)cc1",
+     "actual": [
+      "CC(Cc1ccc(CP(=O)(O)COc2ccccc2)cc1)NCC(O)COc1ccc(O)c(CO)c1"
+     ]
+    },
+    {
+     "rid": "ord-5873d336793841adad5cbcf873b625c5",
+     "reactants": [
+      "CC(=O)O",
+      "Nc1ccc(Br)cc1C(O)c1ccccn1"
+     ],
+     "generated": "Nc1ccc(Br)cc1C(=O)c1ccccn1",
+     "actual": [
+      "CC(C)(C)C=O",
+      "Nc1ccc(Br)cc1C(O)c1ccccn1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-7dcfc77b6fae44dabea5f16d26269c62",
+    "reactants": [
+     "CCCCOP(=O)(COc1ccccc1)Cc1ccc(CC(C)NCC(O)COc2ccc(O)c(CO)c2)cc1",
+     "Cl"
+    ],
+    "generated": "CCCCOP(=O)(COc1ccccc1)Cc1ccc(CC(C)NCC(=O)COc2ccc(O)c(CO)c2)cc1",
+    "actual": [
+     "CC(Cc1ccc(CP(=O)(O)COc2ccccc2)cc1)NCC(O)COc1ccc(O)c(CO)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_aldehyde_001",
+   "name": "醛氧化",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[CH1:1]=[O:2]>>[C:1](=[O:2])[OH]",
+   "n_templates": 1,
+   "fired": 10671,
+   "product_match": 126,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-3241ab6c22d447b498b7ce647cbfc9d9",
+     "reactants": [
+      "CC(=O)O",
+      "O=Cc1ccc(C(=O)OCc2ccccc2)cc1"
+     ],
+     "generated": [
+      "O=C(O)c1ccc(C(=O)OCc2ccccc2)cc1"
+     ],
+     "actual": [
+      "O=C(O)c1ccc(C(=O)OCc2ccccc2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-3cf88f8f01ae4eda9158f1af5217637a",
+     "reactants": [
+      "CC(C)(C)[O][K].CN(C)C=O.FC(F)F",
+      "O=Cc1ccccc1"
+     ],
+     "generated": [
+      "O=C(O)c1ccccc1"
+     ],
+     "actual": [
+      "O=C(O)c1ccccc1",
+      "OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-190dcd50c65c412eb9c6458f3623a7b2",
+     "reactants": [
+      "CC(C)=O.O=S(=O)(O)O.[O]=[Cr](=[O])=[O]",
+      "COC(=O)C1(CCCC=O)CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "generated": [
+      "COC(=O)C1(CCCC(=O)O)CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "actual": [
+      "COC(=O)C1(CCCC(=O)O)CCN(C(=O)OC(C)(C)C)CC1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-3b75f1f1033143b794c5a9db7bc6a994",
+     "reactants": [
+      "CC(=O)[O-].[Na+]",
+      "CON.Cl",
+      "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C=O",
+      "O"
+     ],
+     "generated": "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C(=O)O",
+     "actual": [
+      "CON=Cc1[nH]ccc1S(=O)(=O)NC(C)(C)C"
+     ]
+    },
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "O=C(O)c1ccccc1",
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-3b75f1f1033143b794c5a9db7bc6a994",
+    "reactants": [
+     "CC(=O)[O-].[Na+]",
+     "CON.Cl",
+     "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C=O",
+     "O"
+    ],
+    "generated": "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C(=O)O",
+    "actual": [
+     "CON=Cc1[nH]ccc1S(=O)(=O)NC(C)(C)C"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_phenol_quinone_001",
+   "name": "酚氧化成醌",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[OH:1][c:2][c:3][OH:4]>>[O:1]=[C:2][C:3]=[O:4]",
+   "n_templates": 1,
+   "fired": 255,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-9cad495ca4824beabdad8a4e8de68a2c",
+     "reactants": [
+      "Cl",
+      "O=CC(=O)O",
+      "Oc1cccc(F)c1O",
+      "[Na+].[OH-]"
+     ],
+     "generated": "O=C1C=CC=C(F)C1=O",
+     "actual": [
+      "O=C(O)C(O)c1ccc(F)c(O)c1O"
+     ]
+    },
+    {
+     "rid": "ord-bdd53f2aa794405982b767a086f662bc",
+     "reactants": [
+      "COC(=O)c1cccc(O)c1O",
+      "ClCCN(Cc1ccccc1)Cc1ccccc1",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": "COC(=O)C1=CC=CC(=O)C1=O",
+     "actual": [
+      "COC(=O)c1cccc(OCCN(Cc2ccccc2)Cc2ccccc2)c1O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-9cad495ca4824beabdad8a4e8de68a2c",
+    "reactants": [
+     "Cl",
+     "O=CC(=O)O",
+     "Oc1cccc(F)c1O",
+     "[Na+].[OH-]"
+    ],
+    "generated": "O=C1C=CC=C(F)C1=O",
+    "actual": [
+     "O=C(O)C(O)c1ccc(F)c(O)c1O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_amine_001",
+   "name": "胺氧化",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[CX4H2:1][NX3H2:2]>>[CX3H1:1]=[O].[N:2]",
+   "n_templates": 1,
+   "fired": 6522,
+   "product_match": 13,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-4f7a9ea9dccc4c679c1789f679ee250a",
+     "reactants": [
+      "CCCCN=C=O",
+      "NCCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCCCNC(=O)NCCN",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-c8c81d7d5d624a72ba91d08d0c646eb0",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-8e738d085e454a4eaf1163de4a12dd9d",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "O=CCOCCOC(=O)c1ccccc1",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-1fba45c98c28483dbc24abfca08ff922",
+     "reactants": [
+      "COC(=O)CCCCCCCCCCCCCCCOC1CCCCO1",
+      "NCCO",
+      "O=C1CCCCCCCCCCCCCCCO1",
+      "OCCNCCO"
+     ],
+     "generated": "O=CCO",
+     "actual": [
+      "OCCNCCCCCCCCCCCCCCCCOC1CCCCO1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "O=CCOCCOC(=O)c1ccccc1",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_ketone_001",
+   "name": "酮还原",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[CX3:1](=[OX1:2])[#6:3]>>[CX4:1]([OH])[#6:3]",
+   "n_templates": 1,
+   "fired": 82068,
+   "product_match": 955,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-59ad5f10a39944bab640d9fbd6671548",
+     "reactants": [
+      "O=C1CCC(c2ccccc2)CC1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "OC1CCC(c2ccccc2)CC1"
+     ],
+     "actual": [
+      "OC1CCC(c2ccccc2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-4213d05daadd4cc1a427b80287607a1d",
+     "reactants": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(=O)C1",
+      "COC(C)(C)C",
+      "[Al+3].[H-].[H-].[H-].[H-].[Li+]",
+      "[Br-].[Br-].[Mg+2]"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(O)C1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(O)C1"
+     ]
+    },
+    {
+     "rid": "ord-40b377d619b3445095890b35e71e45d2",
+     "reactants": [
+      "CC(=O)OC1CC[C@@]2(C)C(=CC[C@@H]3[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]32)C1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "CC(=O)OC1CCC2(C)C(=CCC3C2CCC2(C)C(O)CCC32)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1CCC2(C)C(=CCC3C2CCC2(C)C(O)CCC32)C1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+     "reactants": [
+      "CCCCCCCCOc1ccc(C(=O)O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCCCCCCOc1ccc(C(O)O)cc1",
+     "actual": [
+      "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "CC(O)O",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+    "reactants": [
+     "CCCCCCCCOc1ccc(C(=O)O)cc1",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCCCCCCCOc1ccc(C(O)O)cc1",
+    "actual": [
+     "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_quinone_001",
+   "name": "醌还原",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[O:1]=[C;R:2][C;R:3]=[O:4]>>[OH:1][c:2][c:3][OH:4]",
+   "n_templates": 1,
+   "fired": 290,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-461d95d8d5924dfa90fb02af4201c163",
+     "reactants": [
+      "CC(Cl)OC(=O)Cl",
+      "CN1CCc2c(ccc3c2NC(=O)C3=O)C1"
+     ],
+     "generated": "CN1CCc2c(ccc3c(O)c(O)[nH]c23)C1",
+     "actual": [
+      "O=C1Nc2c(ccc3c2CCNC3)C1=O"
+     ]
+    },
+    {
+     "rid": "ord-9f0b3ad6f04142c8a878ebd3b7343915",
+     "reactants": [
+      "CC(C)(C)[Si](C)(C)OCc1cccc(COC(=N)C(Cl)(Cl)Cl)c1",
+      "CCC1C=C(C)CC(C)CC(OC)C2OC(O)(C(=O)C(=O)N3CCCCC3C(=O)OC(C(C)=CC3CCC(O)C(OC)C3)C(C)C(O[Si](C)(C)C(C)(C)C)CC1=O)C(C)CC2OC",
+      "O=S(=O)(O)C(F)(F)F"
+     ],
+     "generated": "CCC1C=C(C)CC(C)CC(OC)C2OC(O)(C(O)=C(O)N3CCCCC3C(=O)OC(C(C)=CC3CCC(O)C(OC)C3)C(C)C(O[Si](C)(C)C(C)(C)C)CC1=O)C(C)CC2OC",
+     "actual": [
+      "CCC1C=C(C)CC(C)CC(OC)C2OC(O)(C(=O)C(=O)N3CCCCC3C(=O)OC(C(C)=CC3CCC(OCc4cccc(CO[Si](C)(C)C(C)(C)C)c4)C(OC)C3)C(C)C(O[Si](C)(C)C(C)(C)C)CC1=O)C(C)CC2OC"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-461d95d8d5924dfa90fb02af4201c163",
+    "reactants": [
+     "CC(Cl)OC(=O)Cl",
+     "CN1CCc2c(ccc3c2NC(=O)C3=O)C1"
+    ],
+    "generated": "CN1CCc2c(ccc3c(O)c(O)[nH]c23)C1",
+    "actual": [
+     "O=C1Nc2c(ccc3c2CCNC3)C1=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "demethylation_aromatic_001",
+   "name": "脱甲基",
+   "category": "demethylation",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[c:3][O:1][CH3:2]>>[c:3][O:1][H].[CH3][OH]",
+   "n_templates": 1,
+   "fired": 15300,
+   "product_match": 686,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c366215603d74e8f80c204c070b5fd26",
+     "reactants": [
+      "CCS",
+      "CO",
+      "COc1ccc2c(C(=O)c3ccc(OCCN4CCCCC4)cc3)c(-c3ccc4ccccc4c3)sc2c1",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": [
+      "O=C(c1ccc(OCCN2CCCCC2)cc1)c1c(-c2ccc3ccccc3c2)sc2cc(O)ccc12"
+     ],
+     "actual": [
+      "O=C(c1ccc(OCCN2CCCCC2)cc1)c1c(-c2ccc3ccccc3c2)sc2cc(O)ccc12"
+     ]
+    },
+    {
+     "rid": "ord-9f122af1a0394a17b79d34afbf18a558",
+     "reactants": [
+      "COc1ccc(N2CCN(c3ccncc3)CC2)cc1",
+      "N",
+      "O"
+     ],
+     "generated": [
+      "Oc1ccc(N2CCN(c3ccncc3)CC2)cc1"
+     ],
+     "actual": [
+      "Oc1ccc(N2CCN(c3ccncc3)CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-afe5cbc25fd340cf8536ac9ee64ce538",
+     "reactants": [
+      "BrB(Br)Br",
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccc(NC(C)=O)cc2)c1",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "CC(=O)Nc1ccc(C(=O)N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)c2cccc(O)c2)cc1"
+     ],
+     "actual": [
+      "CC(=O)Nc1ccc(C(=O)N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)c2cccc(O)c2)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-96b5709519a5432ab5539f7faa641c73",
+     "reactants": [
+      "BrOC1CCCC1",
+      "COc1ccc(CO)cc1O",
+      "O=C([O-])[O-].[Cs+].[Cs+]",
+      "[I-].[Na+]"
+     ],
+     "generated": "OCc1ccc(O)c(O)c1",
+     "actual": [
+      "COc1ccc(CO)cc1OC1CCCC1"
+     ]
+    },
+    {
+     "rid": "ord-d2942481069b43c48c9121e0d8415d47",
+     "reactants": [
+      "COc1c(NOCc2ccccc2)ccnc1C",
+      "Cc1ccc(S(=O)(=O)OC2CCC3(CC2)OCCO3)cc1"
+     ],
+     "generated": "Cc1nccc(NOCc2ccccc2)c1O",
+     "actual": [
+      "COc1c(N(OCc2ccccc2)C2CCC3(CC2)OCCO3)ccnc1C"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-96b5709519a5432ab5539f7faa641c73",
+    "reactants": [
+     "BrOC1CCCC1",
+     "COc1ccc(CO)cc1O",
+     "O=C([O-])[O-].[Cs+].[Cs+]",
+     "[I-].[Na+]"
+    ],
+    "generated": "OCc1ccc(O)c(O)c1",
+    "actual": [
+     "COc1ccc(CO)cc1OC1CCCC1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "decarboxylation_aromatic_001",
+   "name": "芳香酸脱羧",
+   "category": "decarboxylation",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[c:1][CX3:2](=[OX1:3])[OX2H:4]>>[c:1][H].[C](=[O])=[O]",
+   "n_templates": 1,
+   "fired": 7912,
+   "product_match": 58,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-a6d16c84992d44c5ba2388e74f39994d",
+     "reactants": [
+      "O=C(O)c1cc(-c2ccncc2)c(-c2ccc(F)cc2)s1",
+      "c1ccc2ncccc2c1"
+     ],
+     "generated": [
+      "Fc1ccc(-c2sccc2-c2ccncc2)cc1"
+     ],
+     "actual": [
+      "Fc1ccc(-c2sccc2-c2ccncc2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-db23a7df47ce43e88181e32cd36573c0",
+     "reactants": [
+      "Cc1ccc2c(n1)sc1c(O)c(C(=O)O)nnc12"
+     ],
+     "generated": [
+      "Cc1ccc2c(n1)sc1c(O)cnnc12"
+     ],
+     "actual": [
+      "Cc1ccc2c(n1)sc1c(O)cnnc12"
+     ]
+    },
+    {
+     "rid": "ord-e9551f53bc29421fa7d1f8c4aefb21cf",
+     "reactants": [
+      "CCc1[nH]c(=O)[nH]c1C(=O)O",
+      "O=C(O)c1ccc(-n2ccnc2)cc1"
+     ],
+     "generated": [
+      "O=C=O"
+     ],
+     "actual": [
+      "CCc1[nH]c(=O)[nH]c1C(=O)c1ccc(-n2ccnc2)cc1",
+      "O=C=O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+     "reactants": [
+      "CCCCCCCCOc1ccc(C(=O)O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCCCCCCOc1ccccc1",
+     "actual": [
+      "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-24a3ddd0c4da4019a874af8b0e5c2e2d",
+     "reactants": [
+      "COS(=O)(=O)OC",
+      "Cc1c([N+](=O)[O-])ccc(N)c1C(=O)O",
+      "O=C([O-])O.[Na+]",
+      "O=C=O"
+     ],
+     "generated": "Cc1cc(N)ccc1[N+](=O)[O-]",
+     "actual": [
+      "COC(=O)c1c(N)ccc([N+](=O)[O-])c1C"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+    "reactants": [
+     "CCCCCCCCOc1ccc(C(=O)O)cc1",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCCCCCCCOc1ccccc1",
+    "actual": [
+     "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "decarboxylation_beta_keto_001",
+   "name": "β-酮酸脱羧",
+   "category": "decarboxylation",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[CX3:1](=[OX1:2])[CX4:3][CX3:4](=[OX1:5])[OH:6]>>[CX3:1](=[OX1:2])[CX4:3].[C](=[O])=[O]",
+   "n_templates": 1,
+   "fired": 263,
+   "product_match": 13,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-853ac2ea43e24e448317811edbddc04c",
+     "reactants": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)cc1",
+      "O=[N+]([O-])O"
+     ],
+     "generated": "CCC(=O)c1ccc(Cl)cc1",
+     "actual": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)c([N+](=O)[O-])c1"
+     ]
+    },
+    {
+     "rid": "ord-bbd607b812354346904cf9218fbabf16",
+     "reactants": [
+      "C=O",
+      "CCNCC",
+      "Cl",
+      "O=C(O)C(Cc1ccccc1)C(=O)O"
+     ],
+     "generated": "O=C(O)CCc1ccccc1",
+     "actual": [
+      "C=C(Cc1ccccc1)C(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-853ac2ea43e24e448317811edbddc04c",
+    "reactants": [
+     "CC(C(=O)O)C(=O)c1ccc(Cl)cc1",
+     "O=[N+]([O-])O"
+    ],
+    "generated": "CCC(=O)c1ccc(Cl)cc1",
+    "actual": [
+     "CC(C(=O)O)C(=O)c1ccc(Cl)c([N+](=O)[O-])c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydroxylation_aromatic_001",
+   "name": "芳香环羟基化",
+   "category": "hydroxylation",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[cH:1]:[c:2]>>[c:1]([OH]):[c:2]",
+   "n_templates": 1,
+   "fired": 109923,
+   "product_match": 35,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-49d570f5b6da402d8ae3be1663819276",
+     "reactants": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)cc(=O)oc2c1OC1CCCC1",
+      "NC(N)=O.OO",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=S([O-])([O-])=S.[Na+].[Na+]"
+     ],
+     "generated": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)c(O)c(=O)oc2c1OC1CCCC1"
+     ],
+     "actual": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)c(O)c(=O)oc2c1OC1CCCC1"
+     ]
+    },
+    {
+     "rid": "ord-01f2f8a8a53d4d1d8fa1d6c058f5497a",
+     "reactants": [
+      "CCOP(=S)(S)OCC",
+      "N#Cc1c(O)cccc1O",
+      "NC(=S)c1ccccc1O"
+     ],
+     "generated": [
+      "NC(=S)c1c(O)cccc1O"
+     ],
+     "actual": [
+      "NC(=S)c1c(O)cccc1O"
+     ]
+    },
+    {
+     "rid": "ord-e7b420fca4cd44b99f56ad6c52a98cc7",
+     "reactants": [
+      "CC1(C)OB(B2OC(C)(C)C(C)(C)O2)OC1(C)C",
+      "Clc1cccc(Br)c1",
+      "O=S([O-])OO.[K+]"
+     ],
+     "generated": [
+      "Oc1cc(Cl)cc(Br)c1"
+     ],
+     "actual": [
+      "Oc1cc(Cl)cc(Br)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+     "reactants": [
+      "CCCCCCCCOc1ccc(C(=O)O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCCCCCCOc1ccc(C(=O)O)cc1O",
+     "actual": [
+      "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "NCCOCCOC(=O)c1ccccc1O",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+    "reactants": [
+     "CCCCCCCCOc1ccc(C(=O)O)cc1",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCCCCCCCOc1ccc(C(=O)O)cc1O",
+    "actual": [
+     "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydration_alkene_001",
+   "name": "烯烃水合",
+   "category": "hydration",
+   "status": "active",
+   "paper_tier": "论文原样",
+   "smarts": "[C:1]=[C:2]>>[C:1][C:2][OH]",
+   "n_templates": 1,
+   "fired": 15883,
+   "product_match": 70,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b8c3fa2dbf1b481391b010440c8960b9",
+     "reactants": [
+      "C=CCCC[C@@H](O)c1ccc(-c2ccc(Cl)cc2Cl)cc1",
+      "CCOCC.FB(F)F",
+      "O=C([O-])[O-].[K+].[K+]",
+      "OO"
+     ],
+     "generated": [
+      "OCCCCCC(O)c1ccc(-c2ccc(Cl)cc2Cl)cc1"
+     ],
+     "actual": [
+      "OCCCCCC(O)c1ccc(-c2ccc(Cl)cc2Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-2b11fcbc50ca4a2bb72a4e6681ad232d",
+     "reactants": [
+      "C=CC(=C)C",
+      "CC(=O)O"
+     ],
+     "generated": [
+      "C=CC(C)(C)O"
+     ],
+     "actual": [
+      "C=CC(C)(C)O",
+      "CC(C)=CCCC(=O)[O-]",
+      "CC(C)=CCO"
+     ]
+    },
+    {
+     "rid": "ord-32dd13615e9c4b979158fca19b892678",
+     "reactants": [
+      "B.C1CCOC1",
+      "CC(C)(C)OC(=O)NC1CC=CC1",
+      "OO",
+      "[Na+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)NC1CCC(O)C1"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)NC1CCC(O)C1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+     "reactants": [
+      "NS(=O)(=O)C(F)(F)F",
+      "O=C(Cl)CC(F)=C(F)F"
+     ],
+     "generated": "O=C(Cl)CC(F)C(O)(F)F",
+     "actual": [
+      "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-305f2a9859fc40c6bc0ea6b940f734ce",
+     "reactants": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": "O=C(O)CC(O)C(=O)O",
+     "actual": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1.O=C(O)C=CC(=O)O",
+      "O=C(O)C=CC(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+    "reactants": [
+     "NS(=O)(=O)C(F)(F)F",
+     "O=C(Cl)CC(F)=C(F)F"
+    ],
+    "generated": "O=C(Cl)CC(F)C(O)(F)F",
+    "actual": [
+     "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydration_enone_001",
+   "name": "α,β-不饱和羰基水合",
+   "category": "hydration",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[C:1]=[C:2][C:3]=[O:4]>>[C:1]([OH])[C:2][C:3]=[O:4]",
+   "n_templates": 1,
+   "fired": 6864,
+   "product_match": 5,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-6b5f322ea8cd4872a6831d2085442628",
+     "reactants": [
+      "C=CCO",
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-7150ca15c2424185a1b442fbafb5d959",
+     "reactants": [
+      "C=CCO",
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-48cf58e1338847e8a70ffcf248a106d7",
+     "reactants": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "O=S(=O)(O)O",
+      "OCc1ccccc1"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-305f2a9859fc40c6bc0ea6b940f734ce",
+     "reactants": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": "O=C(O)CC(O)C(=O)O",
+     "actual": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1.O=C(O)C=CC(=O)O",
+      "O=C(O)C=CC(=O)O"
+     ]
+    },
+    {
+     "rid": "ord-2125b916997c4e6d96420da536d3a807",
+     "reactants": [
+      "O=C(C=Cc1ccccc1)Nc1ccc(Cl)cc1",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": "O=C(CC(O)c1ccccc1)Nc1ccc(Cl)cc1",
+     "actual": [
+      "O=c1ccc2c(Cl)cccc2[nH]1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-305f2a9859fc40c6bc0ea6b940f734ce",
+    "reactants": [
+     "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+     "O=C(O)/C=C/C(=O)O"
+    ],
+    "generated": "O=C(O)CC(O)C(=O)O",
+    "actual": [
+     "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+     "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1.O=C(O)C=CC(=O)O",
+     "O=C(O)C=CC(=O)O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "tautomerization_keto_enol_001",
+   "name": "酮-烯醇化",
+   "category": "rearrangement",
+   "status": "active",
+   "paper_tier": "论文修正",
+   "smarts": "[CX3:1](=[OX1:2])[CX4:3]>>[C:1]([OH:2])=[C:3]",
+   "n_templates": 1,
+   "fired": 53620,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "C=C(O)O",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-68a4112e542d4a8cb9aa4b70a263e0cb",
+     "reactants": [
+      "C[O-].[Na+]",
+      "O=C(c1ccc(Br)cc1)C(Br)C(Br)C(=O)c1ccc(Br)cc1",
+      "[Br-].[K+]"
+     ],
+     "generated": "O=C(c1ccc(Br)cc1)C(Br)C(Br)=C(O)c1ccc(Br)cc1",
+     "actual": [
+      "COC(CC(=O)c1ccc(Br)cc1)C(=O)c1ccc(Br)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "C=C(O)O",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "esterification_gamma_lactone_001",
+   "name": "γ-内酯化",
+   "category": "esterification",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[OX2H:1][CX4:2][CX4:5][CX4:6][CX3:3](=[OX1:4])[OX2H:7]>>[O:1]1[CX4:2][CX4:5][CX4:6][CX3:3]1=[OX1:4].[OH2:7]",
+   "n_templates": 1,
+   "fired": 80,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-b9ee9195d30b401ea3470495f37b483c",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1C[C@H](O)C[C@@H]1C(=O)O",
+      "CCCN(CCC)C(=O)c1cccc(C(=O)OC)c1",
+      "CCCNCCC",
+      "CN(C)C(On1nnc2cccnc21)=[N+](C)C.F[P-](F)(F)(F)(F)F"
+     ],
+     "generated": "CC(C)(C)OC(=O)N1CC2CC1C(=O)O2",
+     "actual": [
+      "CCCN(CCC)C(=O)c1cccc(C(=O)O)c1"
+     ]
+    },
+    {
+     "rid": "ord-7035e5575b0d44c98d2ebd3ccef69d78",
+     "reactants": [
+      "CC(C)=O",
+      "CCN(CC)CC",
+      "CCOC(=O)Cl",
+      "O=C(O)C12CC3(O)CC(F)(CC(F)(C3)C1)C2"
+     ],
+     "generated": "O=C1OC23CC4(F)CC(F)(C2)CC1(C4)C3",
+     "actual": [
+      "O=C(NC12CC3(O)CC(F)(CC(F)(C3)C1)C2)OCc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-b9ee9195d30b401ea3470495f37b483c",
+    "reactants": [
+     "CC(C)(C)OC(=O)N1C[C@H](O)C[C@@H]1C(=O)O",
+     "CCCN(CCC)C(=O)c1cccc(C(=O)OC)c1",
+     "CCCNCCC",
+     "CN(C)C(On1nnc2cccnc21)=[N+](C)C.F[P-](F)(F)(F)(F)F"
+    ],
+    "generated": "CC(C)(C)OC(=O)N1CC2CC1C(=O)O2",
+    "actual": [
+     "CCCN(CCC)C(=O)c1cccc(C(=O)O)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "esterification_delta_lactone_001",
+   "name": "δ-内酯化",
+   "category": "esterification",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[OX2H:1][CX4:2][CX4:5][CX4:6][CX4:8][CX3:3](=[OX1:4])[OX2H:7]>>[O:1]1[CX4:2][CX4:5][CX4:6][CX4:8][CX3:3]1=[OX1:4].[OH2:7]",
+   "n_templates": 1,
+   "fired": 36,
+   "product_match": 1,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-87b35a6264bb4aac9c89aeef80b41113",
+     "reactants": [
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC(=O)O)[C@H]21",
+      "O=C1CCC(=O)N1O"
+     ],
+     "generated": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ],
+     "actual": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-7836998af0cb41f58d7d0082204d6be3",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "CN(C)C=O",
+      "CN(C)[P+](On1nnc2ccccc21)(N(C)C)N(C)C.F[P-](F)(F)(F)(F)F",
+      "COC(=O)Cl"
+     ],
+     "generated": "COC(=O)C1CC2CNC1C(=O)O2",
+     "actual": [
+      "COC(=O)C1CC(O)CN(C(=O)OC)C1C(=O)N1CCN(c2ccccc2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-d3c9cacfffde43b598fdb00d5c3c99ae",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "CN(C)C(On1nnc2ccccc21)=[N+](C)C.F[B-](F)(F)F",
+      "Nc1cnn2ccc(N3CCC[C@@H]3c3cc(F)ccc3F)nc12",
+      "O=C(O)[C@H]1CC[C@@H](O)C1"
+     ],
+     "generated": "O=C1OC2CCC1C2",
+     "actual": [
+      "O=C(Nc1cnn2ccc(N3CCCC3c3cc(F)ccc3F)nc12)C1CCC(O)C1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-7836998af0cb41f58d7d0082204d6be3",
+    "reactants": [
+     "CCN(C(C)C)C(C)C",
+     "CN(C)C=O",
+     "CN(C)[P+](On1nnc2ccccc21)(N(C)C)N(C)C.F[P-](F)(F)(F)(F)F",
+     "COC(=O)Cl"
+    ],
+    "generated": "COC(=O)C1CC2CNC1C(=O)O2",
+    "actual": [
+     "COC(=O)C1CC(O)CN(C(=O)OC)C1C(=O)N1CCN(c2ccccc2)CC1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_primary_alcohol_001",
+   "name": "伯醇氧化成醛",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX4H2:1][OH:2]>>[C:1]=[O:2]",
+   "n_templates": 1,
+   "fired": 10894,
+   "product_match": 524,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-8547a040ad9a425c98f22d4b4c6c403c",
+     "reactants": [
+      "CC(C)Nc1ccccc1CO",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": [
+      "CC(C)Nc1ccccc1C=O"
+     ],
+     "actual": [
+      "CC(C)Nc1ccccc1C=O"
+     ]
+    },
+    {
+     "rid": "ord-2dd48e91d9f149d4ba76a652ed59e760",
+     "reactants": [
+      "CCN(CC)CC",
+      "O",
+      "OCc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ],
+     "generated": [
+      "O=Cc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ],
+     "actual": [
+      "O=Cc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ]
+    },
+    {
+     "rid": "ord-42e2736d1d544ffaa239652e6a28183b",
+     "reactants": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(CO)cc1)Cc1ncccc1O"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(C=O)cc1)Cc1ncccc1O"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(C=O)cc1)Cc1ncccc1O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-50d2591cf07947e7ab725904f4df96f4",
+     "reactants": [
+      "CCN(CC)CC",
+      "CS(=O)(=O)Cl",
+      "N=C(NC(=O)OCc1ccccc1)N1CCC(CO)C1"
+     ],
+     "generated": "N=C(NC(=O)OCc1ccccc1)N1CCC(C=O)C1",
+     "actual": [
+      "CS(=O)(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1"
+     ]
+    },
+    {
+     "rid": "ord-96b5709519a5432ab5539f7faa641c73",
+     "reactants": [
+      "BrOC1CCCC1",
+      "COc1ccc(CO)cc1O",
+      "O=C([O-])[O-].[Cs+].[Cs+]",
+      "[I-].[Na+]"
+     ],
+     "generated": "COc1ccc(C=O)cc1O",
+     "actual": [
+      "COc1ccc(CO)cc1OC1CCCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-50d2591cf07947e7ab725904f4df96f4",
+    "reactants": [
+     "CCN(CC)CC",
+     "CS(=O)(=O)Cl",
+     "N=C(NC(=O)OCc1ccccc1)N1CCC(CO)C1"
+    ],
+    "generated": "N=C(NC(=O)OCc1ccccc1)N1CCC(C=O)C1",
+    "actual": [
+     "CS(=O)(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_sulfide_001",
+   "name": "硫醚氧化成亚砜",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#6:1][S:2][#6:3]>>[#6:1][S:2](=[O])[#6:3]",
+   "n_templates": 1,
+   "fired": 9960,
+   "product_match": 336,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-0390e1237c0d4ce1b863fbe6e79e9218",
+     "reactants": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1SCC",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1S(=O)CC"
+     ],
+     "actual": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1S(=O)CC"
+     ]
+    },
+    {
+     "rid": "ord-2ebc34d91ba745a7a7dd4bc687e432b0",
+     "reactants": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1SCC(F)(F)F",
+      "O=C(OO)c1cccc(Cl)c1",
+      "O=S([O-])[O-].[Na+].[Na+]"
+     ],
+     "generated": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1S(=O)CC(F)(F)F"
+     ],
+     "actual": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1S(=O)CC(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-a31a8aea26db44ba9a6c67dae080060b",
+     "reactants": [
+      "CSc1nnc2n1C=Cc1ccccc1C2",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CS(=O)c1nnc2n1C=Cc1ccccc1C2"
+     ],
+     "actual": [
+      "CS(=O)c1nnc2n1C=Cc1ccccc1C2"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-49f2d19dd08c44a6a1032e78dc4359e1",
+     "reactants": [
+      "CSC[C@H](Nc1cc(F)ccc1[N+](=O)[O-])C(=O)O",
+      "C[O-].[Na+]"
+     ],
+     "generated": "CS(=O)CC(Nc1cc(F)ccc1[N+](=O)[O-])C(=O)O",
+     "actual": [
+      "COc1ccc([N+](=O)[O-])c(NC(CSC)C(=O)O)c1"
+     ]
+    },
+    {
+     "rid": "ord-dd7b84cd2bdd41c8acecfbb08583d7c0",
+     "reactants": [
+      "CSC",
+      "Nc1cc(F)c(F)cc1F",
+      "O=C1CCC(=O)N1Cl",
+      "[Na+].[OH-]"
+     ],
+     "generated": "CS(C)=O",
+     "actual": [
+      "CSCc1c(N)c(F)cc(F)c1F"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-49f2d19dd08c44a6a1032e78dc4359e1",
+    "reactants": [
+     "CSC[C@H](Nc1cc(F)ccc1[N+](=O)[O-])C(=O)O",
+     "C[O-].[Na+]"
+    ],
+    "generated": "CS(=O)CC(Nc1cc(F)ccc1[N+](=O)[O-])C(=O)O",
+    "actual": [
+     "COc1ccc([N+](=O)[O-])c(NC(CSC)C(=O)O)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_epoxide_001",
+   "name": "双键环氧化",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]=[C:2]>>[C:1]1[O][C:2]1",
+   "n_templates": 1,
+   "fired": 15883,
+   "product_match": 103,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-07e7b8d911554e5d89dde51561daed3a",
+     "reactants": [
+      "C1=CCCCCCC1",
+      "ClC(Cl)Cl",
+      "O=C(CCl)C(Cl)(Cl)Cl",
+      "OO"
+     ],
+     "generated": [
+      "C1CCCC2OC2CC1"
+     ],
+     "actual": [
+      "C1CCCC2OC2CC1"
+     ]
+    },
+    {
+     "rid": "ord-94f84cbc479e491e8ede2b5a145fa82a",
+     "reactants": [
+      "CC1CCC=CCN1C(=O)OCc1ccccc1",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC1CCC2OC2CN1C(=O)OCc1ccccc1"
+     ],
+     "actual": [
+      "CC1CCC2OC2CN1C(=O)OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-2b7ec160332042a69b0aac988bc41c04",
+     "reactants": [
+      "C[C@]12CC=CC[C@@H]1CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC12CCC3C(CCC4CC5OC5CC43C)C1CCC2=O"
+     ],
+     "actual": [
+      "CC12CCC3C(CCC4CC5OC5CC43C)C1CCC2=O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+     "reactants": [
+      "NS(=O)(=O)C(F)(F)F",
+      "O=C(Cl)CC(F)=C(F)F"
+     ],
+     "generated": "O=C(Cl)CC1(F)OC1(F)F",
+     "actual": [
+      "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-305f2a9859fc40c6bc0ea6b940f734ce",
+     "reactants": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": "O=C(O)C1OC1C(=O)O",
+     "actual": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1.O=C(O)C=CC(=O)O",
+      "O=C(O)C=CC(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+    "reactants": [
+     "NS(=O)(=O)C(F)(F)F",
+     "O=C(Cl)CC(F)=C(F)F"
+    ],
+    "generated": "O=C(Cl)CC1(F)OC1(F)F",
+    "actual": [
+     "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_dehydrogenation_enone_001",
+   "name": "脱氢成α,β-不饱和羰基",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX4:1][CX4:2][CX3:3]=[OX1:4]>>[C:1]=[C:2][C:3]=[OX1:4]",
+   "n_templates": 1,
+   "fired": 30833,
+   "product_match": 41,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-722cf82db39c409eb44cd3dedcb941d6",
+     "reactants": [
+      "CCOC(=O)C1CN=C(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc21",
+      "O"
+     ],
+     "generated": [
+      "CCOC(=O)c1cnc(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc12"
+     ],
+     "actual": [
+      "CCOC(=O)c1cnc(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc12"
+     ]
+    },
+    {
+     "rid": "ord-23aebc49575048f78dc97f67179657f2",
+     "reactants": [
+      "CC1CC(=O)NN=C1c1ccc2c(c1)CCC(=O)N2C",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": [
+      "CC1CC(=O)NN=C1c1ccc2c(ccc(=O)n2C)c1"
+     ],
+     "actual": [
+      "CC1CC(=O)NN=C1c1ccc2c(ccc(=O)n2C)c1"
+     ]
+    },
+    {
+     "rid": "ord-4a59ea2658314cef9afdbdd4505f8643",
+     "reactants": [
+      "BrBr",
+      "CC1CC(=O)NN=C1c1ccc(Br)cc1"
+     ],
+     "generated": [
+      "Cc1cc(=O)[nH]nc1-c1ccc(Br)cc1"
+     ],
+     "actual": [
+      "Cc1cc(=O)[nH]nc1-c1ccc(Br)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-68a4112e542d4a8cb9aa4b70a263e0cb",
+     "reactants": [
+      "C[O-].[Na+]",
+      "O=C(c1ccc(Br)cc1)C(Br)C(Br)C(=O)c1ccc(Br)cc1",
+      "[Br-].[K+]"
+     ],
+     "generated": "O=C(C(Br)=C(Br)C(=O)c1ccc(Br)cc1)c1ccc(Br)cc1",
+     "actual": [
+      "COC(CC(=O)c1ccc(Br)cc1)C(=O)c1ccc(Br)cc1"
+     ]
+    },
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "CC=C(N)C(=O)OCC",
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-68a4112e542d4a8cb9aa4b70a263e0cb",
+    "reactants": [
+     "C[O-].[Na+]",
+     "O=C(c1ccc(Br)cc1)C(Br)C(Br)C(=O)c1ccc(Br)cc1",
+     "[Br-].[K+]"
+    ],
+    "generated": "O=C(C(Br)=C(Br)C(=O)c1ccc(Br)cc1)c1ccc(Br)cc1",
+    "actual": [
+     "COC(CC(=O)c1ccc(Br)cc1)C(=O)c1ccc(Br)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_aldehyde_001",
+   "name": "醛还原成醇",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1]=[OX1:2]>>[CX4:1][OH:2]",
+   "n_templates": 1,
+   "fired": 10671,
+   "product_match": 313,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c63ace3342d84bbd8c5c2007a1065d40",
+     "reactants": [
+      "O=Cc1cc2ccccc2nc1I"
+     ],
+     "generated": [
+      "OCc1cc2ccccc2nc1I"
+     ],
+     "actual": [
+      "OCc1cc2ccccc2nc1I"
+     ]
+    },
+    {
+     "rid": "ord-621039449c2a4a8292dc2cf8bcf28ed2",
+     "reactants": [
+      "O",
+      "O=Cc1ccc(C2CC2)cc1",
+      "[BH4-].[Li+]"
+     ],
+     "generated": [
+      "OCc1ccc(C2CC2)cc1"
+     ],
+     "actual": [
+      "OCc1ccc(C2CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-8f16daff33a54d7dbea2b1c031fe1318",
+     "reactants": [
+      "COc1ccc(C=O)c(Cl)c1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "COc1ccc(CO)c(Cl)c1"
+     ],
+     "actual": [
+      "COc1ccc(CO)c(Cl)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-3b75f1f1033143b794c5a9db7bc6a994",
+     "reactants": [
+      "CC(=O)[O-].[Na+]",
+      "CON.Cl",
+      "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C=O",
+      "O"
+     ],
+     "generated": "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1CO",
+     "actual": [
+      "CON=Cc1[nH]ccc1S(=O)(=O)NC(C)(C)C"
+     ]
+    },
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "OCc1ccccc1",
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-3b75f1f1033143b794c5a9db7bc6a994",
+    "reactants": [
+     "CC(=O)[O-].[Na+]",
+     "CON.Cl",
+     "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1C=O",
+     "O"
+    ],
+    "generated": "Cn1ccc(S(=O)(=O)NC(C)(C)C)c1CO",
+    "actual": [
+     "CON=Cc1[nH]ccc1S(=O)(=O)NC(C)(C)C"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_alkene_001",
+   "name": "双键加氢",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]=[C:2]>>[C:1][C:2]",
+   "n_templates": 1,
+   "fired": 15883,
+   "product_match": 747,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-a2fcb8e364ca4dd2ada72db56fde3611",
+     "reactants": [
+      "CC(C)N1C(=O)[C@@H](C/C=C/C(=O)O)O[C@H](c2ccccc2Cl)c2cc(Cl)ccc21",
+      "[H][H]"
+     ],
+     "generated": [
+      "CC(C)N1C(=O)C(CCCC(=O)O)OC(c2ccccc2Cl)c2cc(Cl)ccc21"
+     ],
+     "actual": [
+      "CC(C)N1C(=O)C(CCCC(=O)O)OC(c2ccccc2Cl)c2cc(Cl)ccc21"
+     ]
+    },
+    {
+     "rid": "ord-44d7775ce6aa4fefbef4fb0336de5ad9",
+     "reactants": [
+      "O=C(CCCCCCCC=Cc1ccc(Cl)cc1)C1=C(O)COC1=O",
+      "[H][H]"
+     ],
+     "generated": [
+      "O=C(CCCCCCCCCc1ccc(Cl)cc1)C1=C(O)COC1=O"
+     ],
+     "actual": [
+      "O=C(CCCCCCCCCc1ccc(Cl)cc1)C1=C(O)COC1=O"
+     ]
+    },
+    {
+     "rid": "ord-8ba885339f8d41249dc7afe4b839d218",
+     "reactants": [
+      "O=[N+]([O-])C=Cc1cccc(Cl)c1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "O=[N+]([O-])CCc1cccc(Cl)c1"
+     ],
+     "actual": [
+      "O=[N+]([O-])CCc1cccc(Cl)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+     "reactants": [
+      "NS(=O)(=O)C(F)(F)F",
+      "O=C(Cl)CC(F)=C(F)F"
+     ],
+     "generated": "O=C(Cl)CC(F)C(F)F",
+     "actual": [
+      "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-305f2a9859fc40c6bc0ea6b940f734ce",
+     "reactants": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": "O=C(O)CCC(=O)O",
+     "actual": [
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1",
+      "CN1CCCC1c1cncc(-c2ccc(Cl)cc2)c1.O=C(O)C=CC(=O)O",
+      "O=C(O)C=CC(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-e1a0dc1a113c454bac338b6a5d18d9a1",
+    "reactants": [
+     "NS(=O)(=O)C(F)(F)F",
+     "O=C(Cl)CC(F)=C(F)F"
+    ],
+    "generated": "O=C(Cl)CC(F)C(F)F",
+    "actual": [
+     "O=C(CC(F)=C(F)F)NS(=O)(=O)C(F)(F)F"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_lactam_001",
+   "name": "内酰胺开环",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[NX3:3][CX4:4]>>[C:1](=[O:2])[OH].[N:3][CX4:4]",
+   "n_templates": 1,
+   "fired": 29910,
+   "product_match": 2750,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+     ],
+     "generated": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ],
+     "actual": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ]
+    },
+    {
+     "rid": "ord-65e718a8f3934e1487660a0d4b652d2f",
+     "reactants": [
+      "C=CCOC(=O)[C@@H](CCc1ccccc1)NC(=O)OC(C)(C)C",
+      "COc1ccccc1",
+      "O=C(O)C(F)(F)F",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ],
+     "actual": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-83875325c1ee4a0ea07fd297824b70f1",
+     "reactants": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(Cc1c[nH]c2ccccc12)NC(=O)OC(C)(C)C",
+      "Cl"
+     ],
+     "generated": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12"
+     ],
+     "actual": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12",
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12.CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12.Cl.Cl.Cl.Cl.O.O.O",
+      "Cl",
+      "O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-531fb851617d486f9d7f9ae162bfa0c1",
+     "reactants": [
+      "C#CC(C)(O)Cc1cncc(C2CCC(=O)N2C)c1",
+      "CC(C)=O.Cc1ccccc1",
+      "[H-].[Na+]"
+     ],
+     "generated": "C#CC(C)(O)Cc1cncc(CCCC(=O)O)c1",
+     "actual": [
+      "C#Cc1cncc(C2CCC(=O)N2C)c1"
+     ]
+    },
+    {
+     "rid": "ord-f02b90c8e56b477c889ab251909baee4",
+     "reactants": [
+      "CN(C)C=O",
+      "N",
+      "O=C(O)CC1CCCC1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "O=CO",
+     "actual": [
+      "NC(=O)CC1CCCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-531fb851617d486f9d7f9ae162bfa0c1",
+    "reactants": [
+     "C#CC(C)(O)Cc1cncc(C2CCC(=O)N2C)c1",
+     "CC(C)=O.Cc1ccccc1",
+     "[H-].[Na+]"
+    ],
+    "generated": "C#CC(C)(O)Cc1cncc(CCCC(=O)O)c1",
+    "actual": [
+     "C#Cc1cncc(C2CCC(=O)N2C)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "hydrolysis_imine_001",
+   "name": "亚胺水解",
+   "category": "hydrolysis",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1]=[NX2:2][#6:3]>>[C:1]=[O].[N:2][#6:3]",
+   "n_templates": 1,
+   "fired": 330,
+   "product_match": 21,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b1dcbef1739948fe87cc9c46b0f68caa",
+     "reactants": [
+      "C1CCOC1",
+      "COc1cc(C=NC(C(C)C)C(C)C)c(C(C)C)cc1OC",
+      "Cl"
+     ],
+     "generated": [
+      "COc1cc(C=O)c(C(C)C)cc1OC"
+     ],
+     "actual": [
+      "COc1cc(C=O)c(C(C)C)cc1OC"
+     ]
+    },
+    {
+     "rid": "ord-7aa29bacc222422f86399fac0c0d4e76",
+     "reactants": [
+      "CCOC(C)=O",
+      "COc1ccc(C=NC(c2ccc(Cl)nc2)(c2ccc3c(c2)c(-c2cccc(Cl)c2)cc(=O)n3CC2CC2)c2cncn2C)cc1",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "Cn1cncc1C(N)(c1ccc(Cl)nc1)c1ccc2c(c1)c(-c1cccc(Cl)c1)cc(=O)n2CC1CC1"
+     ],
+     "actual": [
+      "Cn1cncc1C(N)(c1ccc(Cl)nc1)c1ccc2c(c1)c(-c1cccc(Cl)c1)cc(=O)n2CC1CC1"
+     ]
+    },
+    {
+     "rid": "ord-2e0fa9313051494aba91e78764bf09e3",
+     "reactants": [
+      "CC(C)CN=Cc1cccc(Oc2ccccc2)c1",
+      "Cl",
+      "O"
+     ],
+     "generated": [
+      "O=Cc1cccc(Oc2ccccc2)c1"
+     ],
+     "actual": [
+      "O=Cc1cccc(Oc2ccccc2)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-085932d48bf14331abdf9a25304a46c5",
+     "reactants": [
+      "CC1(C)Cc2c(Cl)cccc2C1N=CNC#N",
+      "COC(=O)CBr",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": "N#CNC=O",
+     "actual": [
+      "COC(=O)c1cncn1C1c2cccc(Cl)c2CC1(C)C"
+     ]
+    },
+    {
+     "rid": "ord-e04d68b258cb4cc796c17b5cc76c8b58",
+     "reactants": [
+      "CC(C)c1ccccc1N=C1N=CC(C)(C)CS1",
+      "CCI",
+      "O",
+      "[H-].[Na+]"
+     ],
+     "generated": "CC(C)(C=O)CS",
+     "actual": [
+      "CCN1CC(C)(C)CSC1=Nc1ccccc1C(C)C"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-085932d48bf14331abdf9a25304a46c5",
+    "reactants": [
+     "CC1(C)Cc2c(Cl)cccc2C1N=CNC#N",
+     "COC(=O)CBr",
+     "O=C([O-])[O-].[K+].[K+]"
+    ],
+    "generated": "N#CNC=O",
+    "actual": [
+     "COC(=O)c1cncn1C1c2cccc(Cl)c2CC1(C)C"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "cyclization_hemiacetal_001",
+   "name": "分子内半缩醛化",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1](=[OX1:2])[CX4:3][CX4:4][CX4:5][OX2H:6]>>[C:1]1([OH:2])[CX4:3][CX4:4][CX4:5][O:6]1",
+   "n_templates": 1,
+   "fired": 96,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-c8e3dfd703da496dbe1b8ec4c2014a7d",
+     "reactants": [
+      "C[C@H](O)[C@H](O)[C@@H](O)[C@@H](O)C=O",
+      "O=C([O-])[O-].[Ca+2]",
+      "[H][H]"
+     ],
+     "generated": "CC(O)C1OC(O)C(O)C1O",
+     "actual": [
+      "CC(O)C(O)C(O)C(O)CO"
+     ]
+    },
+    {
+     "rid": "ord-6dae5b39046d4420be3d6869a3e44071",
+     "reactants": [
+      "Cc1c(N)nc(C)c2c1[nH]c1ccccc12.O=C[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+      "N[C@@H](Cc1c[nH]c2ccccc12)C(=O)O",
+      "O=P([O-])(O)O.[K+]",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "OCC(O)C1OC(O)C(O)C1O",
+     "actual": [
+      "O=CC(O)C(O)C(O)C(O)CO"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-c8e3dfd703da496dbe1b8ec4c2014a7d",
+    "reactants": [
+     "C[C@H](O)[C@H](O)[C@@H](O)[C@@H](O)C=O",
+     "O=C([O-])[O-].[Ca+2]",
+     "[H][H]"
+    ],
+    "generated": "CC(O)C1OC(O)C(O)C1O",
+    "actual": [
+     "CC(O)C(O)C(O)C(O)CO"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "cyclization_lactam_001",
+   "name": "分子内酰胺化",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])([OX2H:7])[CX4:3][CX4:4][CX4:5][NX3H2:6]>>[C:1]1(=[O:2])[CX4:3][CX4:4][CX4:5][NX3H1:6]1.[OH2:7]",
+   "n_templates": 1,
+   "fired": 54,
+   "product_match": 2,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b80adfa3516a434db141f13b4adac7f3",
+     "reactants": [
+      "CC(C)[C@H](N)C(=O)O",
+      "CC[C@H](C)[C@H](N)C(=O)O",
+      "N[C@@H](CCC(=O)O)C(=O)O",
+      "N[C@@H](Cc1ccc(O)cc1)C(=O)O"
+     ],
+     "generated": [
+      "O"
+     ],
+     "actual": [
+      "CC(=O)O",
+      "CC(=O)O.CCCCO.O.c1ccncc1",
+      "CCCCO",
+      "O",
+      "c1ccncc1"
+     ]
+    },
+    {
+     "rid": "ord-d288bf917f0b4bd4840f67269f252b57",
+     "reactants": [
+      "CC(C)(C)OC(=O)[C@@H]1CC(CN)(CC(=O)O)CN1C(=O)OC(C)(C)C",
+      "CCN(C(C)C)C(C)C",
+      "CCN=C=NCCCN(C)C.Cl",
+      "On1nnc2ccccc21"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)C1CC2(CNC(=O)C2)CN1C(=O)OC(C)(C)C"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)C1CC2(CNC(=O)C2)CN1C(=O)OC(C)(C)C"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-d195102459e34c60aa3bc9d223c309ab",
+     "reactants": [
+      "CC(C)(C)OC(=O)N[C@@H](Cc1ccc(O)cc1)C(=O)O",
+      "NC(=O)CCC(=O)NO",
+      "NCC1(CC(=O)O)CCCCC1",
+      "[Na+].[OH-]"
+     ],
+     "generated": "O=C1CC2(CCCCC2)CN1",
+     "actual": [
+      "CC(C)(C)OC(=O)NC(Cc1ccc(O)cc1)C(=O)O",
+      "CC(C)(C)OC(=O)NC(Cc1ccc(O)cc1)C(=O)O.NCC1(CC(=O)O)CCCCC1",
+      "NCC1(CC(=O)O)CCCCC1"
+     ]
+    },
+    {
+     "rid": "ord-94d2421cd8b941fe97677e7b892c54a3",
+     "reactants": [
+      "CC(C[C@H](N)C(=O)O)C(=O)O",
+      "CC1C[C@H](NC(=O)C(F)(F)F)C(=O)OC1=O",
+      "c1ccc2c(c1)CCO2"
+     ],
+     "generated": "CC1CC(C(=O)O)NC1=O",
+     "actual": [
+      "CC1Cc2cc3c(cc2CC(N)C1)OCC3"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-d195102459e34c60aa3bc9d223c309ab",
+    "reactants": [
+     "CC(C)(C)OC(=O)N[C@@H](Cc1ccc(O)cc1)C(=O)O",
+     "NC(=O)CCC(=O)NO",
+     "NCC1(CC(=O)O)CCCCC1",
+     "[Na+].[OH-]"
+    ],
+    "generated": "O=C1CC2(CCCCC2)CN1",
+    "actual": [
+     "CC(C)(C)OC(=O)NC(Cc1ccc(O)cc1)C(=O)O",
+     "CC(C)(C)OC(=O)NC(Cc1ccc(O)cc1)C(=O)O.NCC1(CC(=O)O)CCCCC1",
+     "NCC1(CC(=O)O)CCCCC1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "cyclization_ether_001",
+   "name": "分子内脱水成醚",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[OX2H:1][CX4:2][CX4:3][CX4:4][CX4:5][OX2H:6]>>[O:1]1[CX4:2][CX4:3][CX4:4][CX4:5]1.[OH2:6]",
+   "n_templates": 1,
+   "fired": 540,
+   "product_match": 8,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-a5fb5c3cc7cf4d64ad4d21d86b8e6e50",
+     "reactants": [
+      "CC(C)OC(=O)/N=N/C(=O)OC(C)C",
+      "CC1(CO)CC[C@](O)(C(=O)O)C1(C)C",
+      "c1ccc(P(c2ccccc2)c2ccccc2)cc1"
+     ],
+     "generated": [
+      "CC12CCC(C(=O)O)(OC1)C2(C)C"
+     ],
+     "actual": [
+      "CC12CCC(C(=O)O)(OC1)C2(C)C"
+     ]
+    },
+    {
+     "rid": "ord-3e81f2c249494cdc8752073e4470ad61",
+     "reactants": [
+      "CC(C)(C)[Si](Oc1cccc(CC(CCO)C(O)c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1",
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](Oc1cccc(CC2CCOC2c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](Oc1cccc(CC2CCOC2c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-ebe7fdf5beaa48b0a4e162141f7df727",
+     "reactants": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n([C@H]2CC[C@H](OCC(O)CCCO)CC2)c2ncnn12",
+      "CCOC(=O)N=NC(=O)OCC",
+      "O",
+      "c1ccc(P(c2ccccc2)c2ccccc2)cc1"
+     ],
+     "generated": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n(C2CCC(OCC3CCCO3)CC2)c2ncnn12"
+     ],
+     "actual": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n(C2CCC(OCC3CCCO3)CC2)c2ncnn12"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-55af28a305474a509ca9db96966a0640",
+     "reactants": [
+      "O=C(Nc1nc2c(ncn2[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)s1)OCc1ccccc1"
+     ],
+     "generated": "O=C(Nc1nc2c(ncn2C2OC3COC2C3O)c(=O)s1)OCc1ccccc1",
+     "actual": [
+      "Nc1nc2c(ncn2C2OC(CO)C(O)C2O)c(=O)s1"
+     ]
+    },
+    {
+     "rid": "ord-ecce5c467964454bbe231535179e1e69",
+     "reactants": [
+      "CCOC(=O)Cl",
+      "CCSc1ccc(Cc2c(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)n[nH]c2C)cc1",
+      "Cc1cc(C)nc(C)c1",
+      "O=C(O)CC(O)(CC(=O)O)C(=O)O"
+     ],
+     "generated": "CCSc1ccc(Cc2c(OC3OC4COC(C4O)C3O)n[nH]c2C)cc1",
+     "actual": [
+      "CCOC(=O)OCC1OC(Oc2nn(C(=O)OCC)c(C)c2Cc2ccc(SCC)cc2)C(O)C(O)C1O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-55af28a305474a509ca9db96966a0640",
+    "reactants": [
+     "O=C(Nc1nc2c(ncn2[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)s1)OCc1ccccc1"
+    ],
+    "generated": "O=C(Nc1nc2c(ncn2C2OC3COC2C3O)c(=O)s1)OCc1ccccc1",
+    "actual": [
+     "Nc1nc2c(ncn2C2OC(CO)C(O)C2O)c(=O)s1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "cyclization_lactone_delta_001",
+   "name": "δ-羟基酸内酯化(备用)",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[OX2H:1][CX4:2][CX4:3][CX4:4][CX4:5][CX3:6](=[OX1:7])[OX2H:8]>>[O:1]1[CX4:2][CX4:3][CX4:4][CX4:5][CX3:6]1=[OX1:7].[OH2:8]",
+   "n_templates": 1,
+   "fired": 36,
+   "product_match": 1,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-87b35a6264bb4aac9c89aeef80b41113",
+     "reactants": [
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC(=O)O)[C@H]21",
+      "O=C1CCC(=O)N1O"
+     ],
+     "generated": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ],
+     "actual": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-7836998af0cb41f58d7d0082204d6be3",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "CN(C)C=O",
+      "CN(C)[P+](On1nnc2ccccc21)(N(C)C)N(C)C.F[P-](F)(F)(F)(F)F",
+      "COC(=O)Cl"
+     ],
+     "generated": "COC(=O)C1CC2CNC1C(=O)O2",
+     "actual": [
+      "COC(=O)C1CC(O)CN(C(=O)OC)C1C(=O)N1CCN(c2ccccc2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-d3c9cacfffde43b598fdb00d5c3c99ae",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "CN(C)C(On1nnc2ccccc21)=[N+](C)C.F[B-](F)(F)F",
+      "Nc1cnn2ccc(N3CCC[C@@H]3c3cc(F)ccc3F)nc12",
+      "O=C(O)[C@H]1CC[C@@H](O)C1"
+     ],
+     "generated": "O=C1OC2CCC1C2",
+     "actual": [
+      "O=C(Nc1cnn2ccc(N3CCCC3c3cc(F)ccc3F)nc12)C1CCC(O)C1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-7836998af0cb41f58d7d0082204d6be3",
+    "reactants": [
+     "CCN(C(C)C)C(C)C",
+     "CN(C)C=O",
+     "CN(C)[P+](On1nnc2ccccc21)(N(C)C)N(C)C.F[P-](F)(F)(F)(F)F",
+     "COC(=O)Cl"
+    ],
+    "generated": "COC(=O)C1CC2CNC1C(=O)O2",
+    "actual": [
+     "COC(=O)C1CC(O)CN(C(=O)OC)C1C(=O)N1CCN(c2ccccc2)CC1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "isomerization_double_bond_001",
+   "name": "双键位置异构",
+   "category": "rearrangement",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX4:1][CX3:2]=[CX3:3][CX4:4]>>[CX3:1]=[CX3:2][CX4:3][CX4:4]",
+   "n_templates": 1,
+   "fired": 3541,
+   "product_match": 22,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-4d2a5ce25ca84394ba1e3974ebce74f6",
+     "reactants": [
+      "C=C",
+      "C=CC",
+      "CC=C1CC2=CCC1C2",
+      "Fc1c(F)c(F)c(B(c2c(F)c(F)c(F)c(F)c2F)c2c(F)c(F)c(F)c(F)c2F)c(F)c1F"
+     ],
+     "generated": [
+      "CC=C1CC2C=CC1C2"
+     ],
+     "actual": [
+      "C=C",
+      "C=C.C=CC.CC=C1CC2C=CC1C2",
+      "C=CC",
+      "CC=C1CC2C=CC1C2"
+     ]
+    },
+    {
+     "rid": "ord-41eba227707c4a7fb38c30d845e22448",
+     "reactants": [
+      "C1=CCOC1",
+      "C1CCOC1",
+      "O"
+     ],
+     "generated": [
+      "C1=COCC1"
+     ],
+     "actual": [
+      "C1=COCC1",
+      "O=C1CCCO1",
+      "O=CCCCO",
+      "c1ccoc1"
+     ]
+    },
+    {
+     "rid": "ord-71a351736a0348eb8442aa7d42da8f29",
+     "reactants": [
+      "C=C(C)CCC(=O)OCC",
+      "CCOC(=O)C=CC(C)C",
+      "CCOC(=O)CC=C(C)C"
+     ],
+     "generated": [
+      "CCOC(=O)C=CC(C)C"
+     ],
+     "actual": [
+      "CCOC(=O)C=CC(C)C"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-6642d755fcb048beb2e3a7e3e3b838c6",
+     "reactants": [
+      "C=O",
+      "CC(=O)Cl",
+      "CC(=O)OCCl",
+      "C[C@]12CC[C@H](O)CC1=CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12"
+     ],
+     "generated": "CC12CCC3C(CCC4=C3(C)CCC(O)C4)C1CCC2=O",
+     "actual": [
+      "CC(=O)O",
+      "CC(=O)O.CC12CCC3C(CC=C4CC(OCO)CCC43C)C1CCC2=O",
+      "CC12CCC3C(CC=C4CC(OCO)CCC43C)C1CCC2=O"
+     ]
+    },
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": "O[CH]1=CCC(OC2CCCCO2)C1",
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-6642d755fcb048beb2e3a7e3e3b838c6",
+    "reactants": [
+     "C=O",
+     "CC(=O)Cl",
+     "CC(=O)OCCl",
+     "C[C@]12CC[C@H](O)CC1=CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12"
+    ],
+    "generated": "CC12CCC3C(CCC4=C3(C)CCC(O)C4)C1CCC2=O",
+    "actual": [
+     "CC(=O)O",
+     "CC(=O)O.CC12CCC3C(CC=C4CC(OCO)CCC43C)C1CCC2=O",
+     "CC12CCC3C(CC=C4CC(OCO)CCC43C)C1CCC2=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "rearrangement_retro_aldol_001",
+   "name": "逆羟醛裂解",
+   "category": "rearrangement",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]([OH:2])[CX4:3][C:4](=[OX1:5])>>[CX3:1]=[OX1:2].[CX3:3][C:4](=[OX1:5])",
+   "n_templates": 1,
+   "fired": 1719,
+   "product_match": 15,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-763f0c0f3fec45499feba900588ad0eb",
+     "reactants": [
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CCOC(=O)CC1(O)CCC(C)(C)c2ccc(N=Nc3ccc(C(=O)OCC)cc3)cc21"
+     ],
+     "generated": "CCOC(=O)c1ccc(N=Nc2ccc3c(c2)C(=O)CCC3(C)C)cc1",
+     "actual": [
+      "CCOC(=O)CC1=CCC(C)(C)c2ccc(N=Nc3ccc(C(=O)OCC)cc3)cc21"
+     ]
+    },
+    {
+     "rid": "ord-853ac2ea43e24e448317811edbddc04c",
+     "reactants": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)cc1",
+      "O=[N+]([O-])O"
+     ],
+     "generated": "O=C=O",
+     "actual": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)c([N+](=O)[O-])c1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-763f0c0f3fec45499feba900588ad0eb",
+    "reactants": [
+     "C(=NC1CCCCC1)=NC1CCCCC1",
+     "CCOC(=O)CC1(O)CCC(C)(C)c2ccc(N=Nc3ccc(C(=O)OCC)cc3)cc21"
+    ],
+    "generated": "CCOC(=O)c1ccc(N=Nc2ccc3c(c2)C(=O)CCC3(C)C)cc1",
+    "actual": [
+     "CCOC(=O)CC1=CCC(C)(C)c2ccc(N=Nc3ccc(C(=O)OCC)cc3)cc21"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "decarboxylation_malonic_001",
+   "name": "丙二酸型脱羧",
+   "category": "decarboxylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[CX4:3][CX3:4](=[OX1:5])[OX2H:6]>>[CX3:1](=[OX1:2])[CX4:3].[C](=[O])=[O]",
+   "n_templates": 1,
+   "fired": 263,
+   "product_match": 13,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-853ac2ea43e24e448317811edbddc04c",
+     "reactants": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)cc1",
+      "O=[N+]([O-])O"
+     ],
+     "generated": "CCC(=O)c1ccc(Cl)cc1",
+     "actual": [
+      "CC(C(=O)O)C(=O)c1ccc(Cl)c([N+](=O)[O-])c1"
+     ]
+    },
+    {
+     "rid": "ord-bbd607b812354346904cf9218fbabf16",
+     "reactants": [
+      "C=O",
+      "CCNCC",
+      "Cl",
+      "O=C(O)C(Cc1ccccc1)C(=O)O"
+     ],
+     "generated": "O=C(O)CCc1ccccc1",
+     "actual": [
+      "C=C(Cc1ccccc1)C(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-853ac2ea43e24e448317811edbddc04c",
+    "reactants": [
+     "CC(C(=O)O)C(=O)c1ccc(Cl)cc1",
+     "O=[N+]([O-])O"
+    ],
+    "generated": "CCC(=O)c1ccc(Cl)cc1",
+    "actual": [
+     "CC(C(=O)O)C(=O)c1ccc(Cl)c([N+](=O)[O-])c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "elimination_deamination_001",
+   "name": "氧化脱氨成羰基",
+   "category": "elimination",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX4H2:1][NX3H2:2]>>[CX3H1:1]=[O].[N:2]",
+   "n_templates": 1,
+   "fired": 6522,
+   "product_match": 13,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-4f7a9ea9dccc4c679c1789f679ee250a",
+     "reactants": [
+      "CCCCN=C=O",
+      "NCCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCCCNC(=O)NCCN",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-c8c81d7d5d624a72ba91d08d0c646eb0",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-8e738d085e454a4eaf1163de4a12dd9d",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "O=CCOCCOC(=O)c1ccccc1",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-1fba45c98c28483dbc24abfca08ff922",
+     "reactants": [
+      "COC(=O)CCCCCCCCCCCCCCCOC1CCCCO1",
+      "NCCO",
+      "O=C1CCCCCCCCCCCCCCCO1",
+      "OCCNCCO"
+     ],
+     "generated": "O=CCO",
+     "actual": [
+      "OCCNCCCCCCCCCCCCCCCCOC1CCCCO1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "O=CCOCCOC(=O)c1ccccc1",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "esterification_transesterification_001",
+   "name": "酯交换",
+   "category": "esterification",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1](=[O:2])[O:3]!@[C:4].[OX2H:5][C:6]>>[C:1](=[O:2])[O:5][C:6].[O:3][C:4]",
+   "n_templates": 2,
+   "fired": 15194,
+   "product_match": 321,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    },
+    {
+     "rid": "ord-51ef9f6ae2d14a58b7d97c8023ad50fd",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(=O)CC(O)c1ccc(C)nc1",
+      "[Na+].[OH-]",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ]
+    },
+    {
+     "rid": "ord-2587e99f20af4b9a95cc53879079e3af",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)OCC(=O)Nc1c(C(=O)C(C)(C)O)oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc12",
+      "CO",
+      "O.[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)(O)C(=O)c1oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc2c1NC(=O)CO"
+     ],
+     "actual": [
+      "CC(C)(O)C(=O)c1oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc2c1NC(=O)CO"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "CC(=O)OC(=O)c1ccccc1",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-50d2591cf07947e7ab725904f4df96f4",
+     "reactants": [
+      "CCN(CC)CC",
+      "CS(=O)(=O)Cl",
+      "N=C(NC(=O)OCc1ccccc1)N1CCC(CO)C1"
+     ],
+     "generated": "N=C(NC(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1)N1CCC(CO)C1",
+     "actual": [
+      "CS(=O)(=O)OCC1CCN(C(=N)NC(=O)OCc2ccccc2)C1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "CC(=O)OC(=O)c1ccccc1",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "esterification_intermolecular_001",
+   "name": "酯化(分子间)",
+   "category": "esterification",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[OX2H:3].[OX2H:4][#6:5]>>[C:1](=[O:2])[O:4][#6:5].[OH2:3]",
+   "n_templates": 2,
+   "fired": 26232,
+   "product_match": 998,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c6d1437bef5145cca37826ac5ae090f0",
+     "reactants": [
+      "CO",
+      "Cc1c(C(=O)O)cccc1[N+](=O)[O-]",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "COC(=O)c1cccc([N+](=O)[O-])c1C"
+     ],
+     "actual": [
+      "COC(=O)c1cccc([N+](=O)[O-])c1C"
+     ]
+    },
+    {
+     "rid": "ord-b36ff282a19946cb9e1721c4f32fd0ac",
+     "reactants": [
+      "CCO",
+      "O=C(O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ],
+     "actual": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-f82b850c17b44c82bd3c88a18c85d0b3",
+     "reactants": [
+      "C=Cc1ccccc1CC(C(=O)O)N1C(=O)c2ccccc2C1=O",
+      "CCN=C=NCCCN(C)C.Cl",
+      "C[Si](C)(C)CCO",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "C=Cc1ccccc1CC(C(=O)OCC[Si](C)(C)C)N1C(=O)c2ccccc2C1=O"
+     ],
+     "actual": [
+      "C=Cc1ccccc1CC(C(=O)OCC[Si](C)(C)C)N1C(=O)c2ccccc2C1=O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+     "reactants": [
+      "CCCCCCCCOc1ccc(C(=O)O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCCCCCCOc1ccc(C(=O)OC(=O)c2ccc(OCCCCCCCC)cc2)cc1",
+     "actual": [
+      "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "CC(=O)OC(C)=O",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+    "reactants": [
+     "CCCCCCCCOc1ccc(C(=O)O)cc1",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCCCCCCCOc1ccc(C(=O)OC(=O)c2ccc(OCCCCCCCC)cc2)cc1",
+    "actual": [
+     "CCCCCCCCOc1ccc(C(=O)Cl)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "condensation_schiff_base_001",
+   "name": "席夫碱生成",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1]=[OX1:2].[NX3H2:3][#6:4]>>[C:1]=[N:3][#6:4].[OH2:2]",
+   "n_templates": 2,
+   "fired": 2571,
+   "product_match": 142,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ],
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-8341607dd237492f8c1a68b89ed51a7c",
+     "reactants": [
+      "CC(C)(C)C=O",
+      "NC1CCNC1"
+     ],
+     "generated": [
+      "CC(C)(C)C=NC1CCNC1"
+     ],
+     "actual": [
+      "CC(C)(C)C=NC1CCNC1"
+     ]
+    },
+    {
+     "rid": "ord-7b25920dfe6144a1a723eec9437b7937",
+     "reactants": [
+      "CCCCc1ncc(C=O)n1Cc1ccccc1Cl",
+      "COC(=O)[C@@H](N)Cc1cccs1",
+      "Cc1ccccc1"
+     ],
+     "generated": [
+      "CCCCc1ncc(C=NC(Cc2cccs2)C(=O)OC)n1Cc1ccccc1Cl"
+     ],
+     "actual": [
+      "CCCCc1ncc(C=NC(Cc2cccs2)C(=O)OC)n1Cc1ccccc1Cl"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "CCOC(=O)C(CC)N=Cc1ccccc1",
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-8341607dd237492f8c1a68b89ed51a7c",
+     "reactants": [
+      "CC(C)(C)C=O",
+      "NC1CCNC1"
+     ],
+     "generated": "CC(C)(C)C=NC1CCNC1",
+     "actual": [
+      "CC(C)(C)C=NC1CCNC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-50a47b176604482395560ff8f1a4f880",
+    "reactants": [
+     "CN(C)C=C(C=O)c1ccc(Cl)cc1",
+     "Cl",
+     "NC(N)=O",
+     "[Cl-].[NH4+]"
+    ],
+    "generated": "CN(C)C=C(C=NC(N)=O)c1ccc(Cl)cc1",
+    "actual": [
+     "O=c1ncc(-c2ccc(Cl)cc2)c[nH]1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "amidation_intermolecular_001",
+   "name": "酰胺化(分子间)",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[OX2H:3].[NX3;H1,H2:4][#6:5]>>[C:1](=[O:2])[N:4][#6:5].[OH2:3]",
+   "n_templates": 2,
+   "fired": 17414,
+   "product_match": 6006,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-21393e26ab0b4c64a67d4dbe4b4c6328",
+     "reactants": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)O)c(C)c1=O",
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CNC.Cl",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)N(C)C)c(C)c1=O"
+     ],
+     "actual": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)N(C)C)c(C)c1=O"
+     ]
+    },
+    {
+     "rid": "ord-21d973d5e9c342b28599ca4532af6af7",
+     "reactants": [
+      "C=CCCC(=O)Cl",
+      "C=CCCC(=O)O",
+      "COC(=O)c1cccc(N)c1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "C=CCCC(=O)Nc1cccc(C(=O)OC)c1"
+     ],
+     "actual": [
+      "C=CCCC(=O)Nc1cccc(C(=O)OC)c1"
+     ]
+    },
+    {
+     "rid": "ord-555bc4c8dfda4c9f9927d3dfcbc0d7ef",
+     "reactants": [
+      "Nc1cccc([N+](=O)[O-])c1",
+      "O=C(O)c1ccc([N+](=O)[O-])cc1"
+     ],
+     "generated": [
+      "O=C(Nc1cccc([N+](=O)[O-])c1)c1ccc([N+](=O)[O-])cc1"
+     ],
+     "actual": [
+      "O=C(Nc1cccc([N+](=O)[O-])c1)c1ccc([N+](=O)[O-])cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "CC(=O)NC#N",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-24a3ddd0c4da4019a874af8b0e5c2e2d",
+     "reactants": [
+      "COS(=O)(=O)OC",
+      "Cc1c([N+](=O)[O-])ccc(N)c1C(=O)O",
+      "O=C([O-])O.[Na+]",
+      "O=C=O"
+     ],
+     "generated": "Cc1c([N+](=O)[O-])ccc(N)c1C(=O)Nc1ccc([N+](=O)[O-])c(C)c1C(=O)O",
+     "actual": [
+      "COC(=O)c1c(N)ccc([N+](=O)[O-])c1C"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "CC(=O)NC#N",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "aminolysis_ester_001",
+   "name": "酯的氨解",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1](=[O:2])[O:3]!@[C:4].[NX3;H1,H2:5][#6:6]>>[C:1](=[O:2])[N:5][#6:6].[O:3][C:4]",
+   "n_templates": 2,
+   "fired": 23459,
+   "product_match": 1249,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-9db8bda42ddd42569da026335543c4dd",
+     "reactants": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(CF)OC(C)=O)n1",
+      "Cl"
+     ],
+     "generated": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(O)CF)n1"
+     ],
+     "actual": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(O)CF)n1"
+     ]
+    },
+    {
+     "rid": "ord-446b034cd2a240b1811399997a196a51",
+     "reactants": [
+      "COC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1",
+      "COCCN"
+     ],
+     "generated": [
+      "COCCNC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1"
+     ],
+     "actual": [
+      "COCCNC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-cf8e0ae8899349c9bf22fff5e2ff09a3",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2N)c1"
+     ],
+     "generated": [
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2NC(C)=O)c1"
+     ],
+     "actual": [
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2NC(C)=O)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "N#CNC(=O)c1ccccc1",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": "CCOC(=O)C(CC)NC(=O)C(N)CC",
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "N#CNC(=O)c1ccccc1",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "condensation_glycosylation_001",
+   "name": "糖苷化",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX4H1:1]([OX2:3][#6:4])[OX2H:2].[OX2H:5][#6:6]>>[CX4H1:1]([OX2:3][#6:4])[O:5][#6:6].[OH2:2]",
+   "n_templates": 2,
+   "fired": 155,
+   "product_match": 4,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-0c6d074bda374bf1ac9566888c34446c",
+     "reactants": [
+      "CC(C)(Br)[C@@H]1CC(=O)O[C@H]1O",
+      "CC(C)O",
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "generated": [
+      "CC(C)OC1OC(=O)CC1C(C)(C)Br"
+     ],
+     "actual": [
+      "CC(C)OC1OC(=O)CC1C(C)(C)Br"
+     ]
+    },
+    {
+     "rid": "ord-496503ec4aca455e8a4367b940cce6e8",
+     "reactants": [
+      "CCOCC.FB(F)F",
+      "CO",
+      "C[C@H]1[C@@H](O)O[C@@H]2OC3(C)CC[C@H]4[C@H](C)CC[C@@H]1[C@@]24OO3"
+     ],
+     "generated": [
+      "COC1OC2OC3(C)CCC4C(C)CCC(C1C)C24OO3"
+     ],
+     "actual": [
+      "COC1OC2OC3(C)CCC4C(C)CCC(C1C)C24OO3"
+     ]
+    },
+    {
+     "rid": "ord-fe73c643d9524284b633570bbae68428",
+     "reactants": [
+      "CCN(CC)CC",
+      "COc1cc(C2CCC(O)O2)cc(OC)c1OC",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=C1c2ccccc2C(=O)N1CCCO"
+     ],
+     "generated": [
+      "COc1cc(C2CCC(OCCCN3C(=O)c4ccccc4C3=O)O2)cc(OC)c1OC"
+     ],
+     "actual": [
+      "COc1cc(C2CCC(OCCCN3C(=O)c4ccccc4C3=O)O2)cc(OC)c1OC"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-8963cbfe91a045aaa0bffa72e58f47f6",
+     "reactants": [
+      "CC(=O)N[C@H]1C(O)O[C@H](CO)[C@@H](O)[C@@H]1O",
+      "O=P([O-])([O-])[O-]"
+     ],
+     "generated": "CC(=O)NC1C(OC2OC(CO)C(O)C(O)C2NC(C)=O)OC(CO)C(O)C1O",
+     "actual": [
+      "NC1C(O)OC(CO)C(O)C1O"
+     ]
+    },
+    {
+     "rid": "ord-2eb9932e21774af2b0a27f1f00230fb5",
+     "reactants": [
+      "COc1cccc2c1C(=O)OC2O",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": "COc1cccc2c1C(=O)OC2OC1OC(=O)c2c(OC)cccc21",
+     "actual": [
+      "O=C1OC(O)c2cccc(O)c21"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-8963cbfe91a045aaa0bffa72e58f47f6",
+    "reactants": [
+     "CC(=O)N[C@H]1C(O)O[C@H](CO)[C@@H](O)[C@@H]1O",
+     "O=P([O-])([O-])[O-]"
+    ],
+    "generated": "CC(=O)NC1C(OC2OC(CO)C(O)C(O)C2NC(C)=O)OC(CO)C(O)C1O",
+    "actual": [
+     "NC1C(O)OC(CO)C(O)C1O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "condensation_hemiacetal_001",
+   "name": "半缩醛形成(分子间)",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1]=[OX1:2].[OX2H:3][#6:4]>>[CX4H1:1]([OH:2])[O:3][#6:4]",
+   "n_templates": 2,
+   "fired": 4200,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-8d8d9084812145079c62beccf28cf5f0",
+     "reactants": [
+      "COC(=O)CBr",
+      "COc1ccc(O)c(C=O)c1"
+     ],
+     "generated": "COc1ccc(OC(O)c2cc(OC)ccc2O)c(C=O)c1",
+     "actual": [
+      "COC(=O)COc1ccc(OC)cc1C=O"
+     ]
+    },
+    {
+     "rid": "ord-f02b90c8e56b477c889ab251909baee4",
+     "reactants": [
+      "CN(C)C=O",
+      "N",
+      "O=C(O)CC1CCCC1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CN(C)C(O)OC(=O)CC1CCCC1",
+     "actual": [
+      "NC(=O)CC1CCCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-8d8d9084812145079c62beccf28cf5f0",
+    "reactants": [
+     "COC(=O)CBr",
+     "COc1ccc(O)c(C=O)c1"
+    ],
+    "generated": "COc1ccc(OC(O)c2cc(OC)ccc2O)c(C=O)c1",
+    "actual": [
+     "COC(=O)COc1ccc(OC)cc1C=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "addition_michael_thiol_001",
+   "name": "Michael加成(硫醇)",
+   "category": "addition",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]=[C:2][C:3]=[OX1:4].[SX2H:5]>>[CX4:1]([S:5])[CX4:2][C:3]=[OX1:4]",
+   "n_templates": 2,
+   "fired": 138,
+   "product_match": 28,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-d9dbb8c843704e72b8d436d338439278",
+     "reactants": [
+      "C=CC(=O)NC1C2CC3CC(C2)CC1C3",
+      "CC(C)(C)c1cc(S)cc(C(C)(C)C)c1O",
+      "CCN(CC)CC"
+     ],
+     "generated": [
+      "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O"
+     ],
+     "actual": [
+      "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O"
+     ]
+    },
+    {
+     "rid": "ord-1459bb327c3c4429b7c487d3471ef8df",
+     "reactants": [
+      "O=C(O)C=CCC(=O)O",
+      "Sc1nc2ccccc2s1"
+     ],
+     "generated": [
+      "O=C(O)CC(CC(=O)O)Sc1nc2ccccc2s1"
+     ],
+     "actual": [
+      "O=C(O)CC(CC(=O)O)Sc1nc2ccccc2s1"
+     ]
+    },
+    {
+     "rid": "ord-fbab261c40194fdd8da010af0aa35152",
+     "reactants": [
+      "C/C=C/C=O",
+      "CCCCCCCCCCCCS"
+     ],
+     "generated": [
+      "CCCCCCCCCCCCSC(C)CC=O"
+     ],
+     "actual": [
+      "CCCCCCCCCCCCSC(C)CC=O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-b901239143da4037bbabfa55e775adfc",
+     "reactants": [
+      "CCOCC",
+      "Cc1cccc(C)n1",
+      "O=C([O-])C1=C(CI)CS[C@@H]2[C@H](NC(=S)Cc3cc(Cl)ccc3Cl)C(=O)N12",
+      "Sc1ccncc1"
+     ],
+     "generated": "O=C([O-])C1N2C(=O)C(NC(=S)Cc3cc(Cl)ccc3Cl)C2SCC1(CI)Sc1ccncc1",
+     "actual": [
+      "O=C(OCSc1ccncc1)C1=CCSC2C(NC(=S)Cc3cc(Cl)ccc3Cl)C(=O)N12"
+     ]
+    },
+    {
+     "rid": "ord-d9dbb8c843704e72b8d436d338439278",
+     "reactants": [
+      "C=CC(=O)NC1C2CC3CC(C2)CC1C3",
+      "CC(C)(C)c1cc(S)cc(C(C)(C)C)c1O",
+      "CCN(CC)CC"
+     ],
+     "generated": "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O",
+     "actual": [
+      "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-b901239143da4037bbabfa55e775adfc",
+    "reactants": [
+     "CCOCC",
+     "Cc1cccc(C)n1",
+     "O=C([O-])C1=C(CI)CS[C@@H]2[C@H](NC(=S)Cc3cc(Cl)ccc3Cl)C(=O)N12",
+     "Sc1ccncc1"
+    ],
+    "generated": "O=C([O-])C1N2C(=O)C(NC(=S)Cc3cc(Cl)ccc3Cl)C2SCC1(CI)Sc1ccncc1",
+    "actual": [
+     "O=C(OCSc1ccncc1)C1=CCSC2C(NC(=S)Cc3cc(Cl)ccc3Cl)C(=O)N12"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "addition_michael_amine_001",
+   "name": "Michael加成(胺)",
+   "category": "addition",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]=[C:2][C:3]=[OX1:4].[NX3;H1,H2:5][#6:6]>>[CX4:1]([N:5][#6:6])[CX4:2][C:3]=[OX1:4]",
+   "n_templates": 2,
+   "fired": 3821,
+   "product_match": 76,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-41d35a48018a4cf78bfe4a9b41deea1d",
+     "reactants": [
+      "C=CC(C)=O",
+      "CC(C)(C)C1CCC(c2ccccc2N2CCNCC2)CC1"
+     ],
+     "generated": [
+      "CC(=O)CCN1CCN(c2ccccc2C2CCC(C(C)(C)C)CC2)CC1"
+     ],
+     "actual": [
+      "CC(=O)CCN1CCN(c2ccccc2C2CCC(C(C)(C)C)CC2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-2597eddf038c410aaf1b84788b5a9f90",
+     "reactants": [
+      "CC(=O)C=C=O",
+      "Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ],
+     "generated": [
+      "CC(=O)CC(=O)Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ],
+     "actual": [
+      "CC(=O)CC(=O)Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-8882f056f76f4dc1830b0d8993567b22",
+     "reactants": [
+      "CC(=O)C=C=O",
+      "Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ],
+     "generated": [
+      "CC(=O)CC(=O)Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ],
+     "actual": [
+      "CC(=O)CC(=O)Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-2125b916997c4e6d96420da536d3a807",
+     "reactants": [
+      "O=C(C=Cc1ccccc1)Nc1ccc(Cl)cc1",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": "O=C(CC(c1ccccc1)N(C(=O)C=Cc1ccccc1)c1ccc(Cl)cc1)Nc1ccc(Cl)cc1",
+     "actual": [
+      "O=c1ccc2c(Cl)cccc2[nH]1"
+     ]
+    },
+    {
+     "rid": "ord-50a47b176604482395560ff8f1a4f880",
+     "reactants": [
+      "CN(C)C=C(C=O)c1ccc(Cl)cc1",
+      "Cl",
+      "NC(N)=O",
+      "[Cl-].[NH4+]"
+     ],
+     "generated": "CN(C)C(NC(N)=O)C(C=O)c1ccc(Cl)cc1",
+     "actual": [
+      "O=c1ncc(-c2ccc(Cl)cc2)c[nH]1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-2125b916997c4e6d96420da536d3a807",
+    "reactants": [
+     "O=C(C=Cc1ccccc1)Nc1ccc(Cl)cc1",
+     "[Al+3].[Cl-].[Cl-].[Cl-]"
+    ],
+    "generated": "O=C(CC(c1ccccc1)N(C(=O)C=Cc1ccccc1)c1ccc(Cl)cc1)Nc1ccc(Cl)cc1",
+    "actual": [
+     "O=c1ccc2c(Cl)cccc2[nH]1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "condensation_aldol_001",
+   "name": "醇醛缩合(分子间)",
+   "category": "condensation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[CX4:3].[CX3:4](=[OX1:5])[#6:6]>>[C:1](=[O:2])[C:3][C:4]([OH:5])[#6:6]",
+   "n_templates": 2,
+   "fired": 53620,
+   "product_match": 75,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-eb2ffed42db34070991af4f46a60fd88",
+     "reactants": [
+      "CCC(=O)CC",
+      "O=Cc1ccccc1"
+     ],
+     "generated": [
+      "CCC(=O)C(C)C(O)c1ccccc1"
+     ],
+     "actual": [
+      "CCC(=O)C(C)C(O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-8a968362f88c480f9b0ae8acc65393b9",
+     "reactants": [
+      "C(C[*:2])[*:1]",
+      "CCOC(C)=O",
+      "COc1cccc(C(=O)c2cccc(OC)c2)c1",
+      "N"
+     ],
+     "generated": [
+      "CCOC(=O)CC(O)(c1cccc(OC)c1)c1cccc(OC)c1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(O)(c1cccc(OC)c1)c1cccc(OC)c1"
+     ]
+    },
+    {
+     "rid": "ord-a8c8653a3de045df8c791130b1c0216b",
+     "reactants": [
+      "CCOC(=O)CN=[N+]=[N-]",
+      "CC[O-].[Na+]",
+      "O=Cc1cccnc1Cl"
+     ],
+     "generated": [
+      "CCOC(=O)C(N=[N+]=[N-])C(O)c1cccnc1Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C(N=[N+]=[N-])C(O)c1cccnc1Cl"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)[O-]",
+      "N#CN",
+      "NCCOCCOC(=O)c1ccccc1"
+     ],
+     "generated": "CC(O)(O)CC(=O)O",
+     "actual": [
+      "N=C(N)NCCOCCOC(=O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-68a4112e542d4a8cb9aa4b70a263e0cb",
+     "reactants": [
+      "C[O-].[Na+]",
+      "O=C(c1ccc(Br)cc1)C(Br)C(Br)C(=O)c1ccc(Br)cc1",
+      "[Br-].[K+]"
+     ],
+     "generated": "O=C(c1ccc(Br)cc1)C(Br)C(Br)C(O)(c1ccc(Br)cc1)C(Br)(C(=O)c1ccc(Br)cc1)C(Br)C(=O)c1ccc(Br)cc1",
+     "actual": [
+      "COC(CC(=O)c1ccc(Br)cc1)C(=O)c1ccc(Br)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-64d5f5dd2f664288acccc0452c5aa2a9",
+    "reactants": [
+     "CC(=O)O",
+     "CC(=O)[O-]",
+     "N#CN",
+     "NCCOCCOC(=O)c1ccccc1"
+    ],
+    "generated": "CC(O)(O)CC(=O)O",
+    "actual": [
+     "N=C(N)NCCOCCOC(=O)c1ccccc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "addition_thiohemiacetal_001",
+   "name": "硫代半缩醛形成",
+   "category": "addition",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3H1:1]=[OX1:2].[SX2H:3][#6:4]>>[CX4H1:1]([OH:2])[S:3][#6:4]",
+   "n_templates": 2,
+   "fired": 134,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-743a5e0c9015488eb101d423a762ba83",
+     "reactants": [
+      "COC(=O)CS",
+      "COc1ccc(C=O)c(F)c1",
+      "[H-].[Na+]"
+     ],
+     "generated": "COC(=O)CSC(O)c1ccc(OC)cc1F",
+     "actual": [
+      "COC(=O)c1cc2ccc(OC)cc2s1"
+     ]
+    },
+    {
+     "rid": "ord-52981b21eba84905a0d3ac01562ae02f",
+     "reactants": [
+      "CCOC(=O)c1ccc(CCCC=O)cc1",
+      "Cl",
+      "NCCC1(OC2CCCCO2)CCCCC1",
+      "O=C(O)CS"
+     ],
+     "generated": "CCOC(=O)c1ccc(CCCC(O)SCC(=O)O)cc1",
+     "actual": [
+      "O=C(O)c1ccc(CCCC2SCC(=O)N2CCC2(O)CCCCC2)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-743a5e0c9015488eb101d423a762ba83",
+    "reactants": [
+     "COC(=O)CS",
+     "COc1ccc(C=O)c(F)c1",
+     "[H-].[Na+]"
+    ],
+    "generated": "COC(=O)CSC(O)c1ccc(OC)cc1F",
+    "actual": [
+     "COC(=O)c1cc2ccc(OC)cc2s1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "elimination_amide_to_nitrile_001",
+   "name": "酰胺脱水成腈",
+   "category": "elimination",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[NX3H2:3]>>[C:1]#[N:3]",
+   "n_templates": 1,
+   "fired": 2755,
+   "product_match": 122,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-4de2e5c5af6b486c8884eeb767fb4238",
+     "reactants": [
+      "CC(=O)OO",
+      "NC(=O)c1cc(Cl)ccn1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "N#Cc1cc(Cl)ccn1"
+     ],
+     "actual": [
+      "N#Cc1cc(Cl)ccn1"
+     ]
+    },
+    {
+     "rid": "ord-0decf2fbbf764e13806159996ca3156c",
+     "reactants": [
+      "CC(Nc1cncc(-n2cnc3ccc(C(N)=O)cc32)n1)c1cccc(F)c1",
+      "O=P(Cl)(Cl)Cl"
+     ],
+     "generated": [
+      "CC(Nc1cncc(-n2cnc3ccc(C#N)cc32)n1)c1cccc(F)c1"
+     ],
+     "actual": [
+      "CC(Nc1cncc(-n2cnc3ccc(C#N)cc32)n1)c1cccc(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-9c9dcda28fe244a7982077b1f6608d72",
+     "reactants": [
+      "COc1cccc(CC(N)=O)c1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "COc1cccc(CC#N)c1"
+     ],
+     "actual": [
+      "COc1cccc(CC#N)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+     ],
+     "generated": "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C#N)cc3c2)CC1",
+     "actual": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ]
+    },
+    {
+     "rid": "ord-50a47b176604482395560ff8f1a4f880",
+     "reactants": [
+      "CN(C)C=C(C=O)c1ccc(Cl)cc1",
+      "Cl",
+      "NC(N)=O",
+      "[Cl-].[NH4+]"
+     ],
+     "generated": "N#CN",
+     "actual": [
+      "O=c1ncc(-c2ccc(Cl)cc2)c[nH]1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+    "reactants": [
+     "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+    ],
+    "generated": "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C#N)cc3c2)CC1",
+    "actual": [
+     "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_sulfoxide_to_sulfone_001",
+   "name": "亚砜氧化成砜",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#6:1][S:2](=[OX1:3])[#6:4]>>[#6:1][S:2](=[OX1:3])(=[O])[#6:4]",
+   "n_templates": 1,
+   "fired": 3653,
+   "product_match": 26,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-7cbd6652612f4c55b07a8147385f28b2",
+     "reactants": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)=O)c(F)c1",
+      "O.O.O.O.O.O.O=C([O-])c1ccccc1C(=O)O[O-].[Mg+2]",
+      "O=S(=O)([O-])O[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)(=O)=O)c(F)c1"
+     ],
+     "actual": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)(=O)=O)c(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-b03d103511ba46508cce9d5472c584ca",
+     "reactants": [
+      "CS(=O)C[C@H](NC(=O)OCc1ccccc1)C(=O)N[C@@H](Cc1ccccc1)[C@H](O)C[C@@]1(C(=O)[NH2+][O-])CCCN1C(C)(C)C.N#N",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-]"
+     ],
+     "actual": [
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-]",
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-].N#N.O",
+      "N#N",
+      "O"
+     ]
+    },
+    {
+     "rid": "ord-452a3c48ba9c42cea004229928dd9ac8",
+     "reactants": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)=O)cc1",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)(=O)=O)cc1"
+     ],
+     "actual": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)(=O)=O)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-60b484981a1542b5a69074c8e93eaa5c",
+     "reactants": [
+      "CS(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+      "CS(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1"
+     ],
+     "generated": "CS(=O)(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)NC3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+     "actual": [
+      "N#Cc1cccc(CN2CCC(NS(=O)(=O)c3ccc(-c4ccnc(N)n4)s3)C2=O)c1"
+     ]
+    },
+    {
+     "rid": "ord-90f641ecf797467592f5799ba146037c",
+     "reactants": [
+      "CS(=O)(=O)c1cc(C(=O)Cl)ccc1C1C=CCC1",
+      "N=C(N)N"
+     ],
+     "generated": "CS(=O)(=O)(=O)c1cc(C(=O)Cl)ccc1C1C=CCC1",
+     "actual": [
+      "CS(=O)(=O)c1cc(C(=O)N=C(N)N)ccc1C1C=CCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-60b484981a1542b5a69074c8e93eaa5c",
+    "reactants": [
+     "CS(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+     "CS(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1"
+    ],
+    "generated": "CS(=O)(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)NC3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+    "actual": [
+     "N#Cc1cccc(CN2CCC(NS(=O)(=O)c3ccc(-c4ccnc(N)n4)s3)C2=O)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_sulfoxide_001",
+   "name": "亚砜还原成硫醚",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#6:1][S:2](=[OX1:3])[#6:4]>>[#6:1][S:2][#6:4]",
+   "n_templates": 1,
+   "fired": 3653,
+   "product_match": 9,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-9bd323dfdfc3445abcf8bcd679f410ce",
+     "reactants": [
+      "CO",
+      "COc1cc(OCCS(C)(=O)=O)ccc1NC(=O)[C@@H]1N[C@@H](CC(C)(C)C)[C@@]2(C(=O)Nc3cc(Cl)ccc32)[C@H]1c1cccc(Cl)c1F"
+     ],
+     "generated": [
+      "COc1cc(OCCS(C)=O)ccc1NC(=O)C1NC(CC(C)(C)C)C2(C(=O)Nc3cc(Cl)ccc32)C1c1cccc(Cl)c1F"
+     ],
+     "actual": [
+      "COc1cc(OCCS(C)=O)ccc1NC(=O)C1NC(CC(C)(C)C)C2(C(=O)Nc3cc(Cl)ccc32)C1c1cccc(Cl)c1F"
+     ]
+    },
+    {
+     "rid": "ord-3caaed4844244114b6f8629face0a542",
+     "reactants": [
+      "CC(C)=O",
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CS(=O)[C@H]12)c1nsc(N)n1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "[I-].[Na+]"
+     ],
+     "generated": [
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CSC12)c1nsc(N)n1"
+     ],
+     "actual": [
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CSC12)c1nsc(N)n1"
+     ]
+    },
+    {
+     "rid": "ord-b7aa1f4da056454fbd5c81aea55bbaa3",
+     "reactants": [
+      "Cc1ccc([S@](=O)C[C@](O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "[I-].[Na+]"
+     ],
+     "generated": [
+      "Cc1ccc(SCC(O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1"
+     ],
+     "actual": [
+      "Cc1ccc(SCC(O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-60b484981a1542b5a69074c8e93eaa5c",
+     "reactants": [
+      "CS(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+      "CS(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1"
+     ],
+     "generated": "CS(=O)c1nccc(-c2ccc(S(=O)(=O)NC3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+     "actual": [
+      "N#Cc1cccc(CN2CCC(NS(=O)(=O)c3ccc(-c4ccnc(N)n4)s3)C2=O)c1"
+     ]
+    },
+    {
+     "rid": "ord-90f641ecf797467592f5799ba146037c",
+     "reactants": [
+      "CS(=O)(=O)c1cc(C(=O)Cl)ccc1C1C=CCC1",
+      "N=C(N)N"
+     ],
+     "generated": "CS(=O)c1cc(C(=O)Cl)ccc1C1C=CCC1",
+     "actual": [
+      "CS(=O)(=O)c1cc(C(=O)N=C(N)N)ccc1C1C=CCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-60b484981a1542b5a69074c8e93eaa5c",
+    "reactants": [
+     "CS(=O)(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+     "CS(=O)c1nccc(-c2ccc(S(=O)(=O)N[C@H]3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1"
+    ],
+    "generated": "CS(=O)c1nccc(-c2ccc(S(=O)(=O)NC3CCN(Cc4cccc(C#N)c4)C3=O)s2)n1",
+    "actual": [
+     "N#Cc1cccc(CN2CCC(NS(=O)(=O)c3ccc(-c4ccnc(N)n4)s3)C2=O)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "decarboxylation_cinnamic_001",
+   "name": "肉桂酸型脱羧",
+   "category": "decarboxylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[c:1][CX3H:2]=[CX3H:3][CX3:4](=[OX1:5])[OX2H:6]>>[c:1][CX3H:2]=[CX3:3].[C](=[O])=[O]",
+   "n_templates": 1,
+   "fired": 270,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-f163181057ab418cbb790b50f176beec",
+     "reactants": [
+      "CCN=C=NCCCN(C)C.Cl",
+      "Cl.NO",
+      "O.Oc1cccc2[nH]nnc12",
+      "O=C(O)/C=C/c1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1"
+     ],
+     "generated": "C=Cc1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1",
+     "actual": [
+      "O=C(C=Cc1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1)NO"
+     ]
+    },
+    {
+     "rid": "ord-fb3f5eca204841e4821ae304562fdf02",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "CNCc1cn(C)c2ccccc12",
+      "Cl.O=C(O)/C=C/c1cnc2c(c1)CCCC(=O)N2",
+      "ClCCCl"
+     ],
+     "generated": "C=Cc1cnc2c(c1)CCCC(=O)N2",
+     "actual": [
+      "CN(Cc1cn(C)c2ccccc12)C(=O)C=Cc1cnc2c(c1)CCCC(=O)N2"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-f163181057ab418cbb790b50f176beec",
+    "reactants": [
+     "CCN=C=NCCCN(C)C.Cl",
+     "Cl.NO",
+     "O.Oc1cccc2[nH]nnc12",
+     "O=C(O)/C=C/c1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1"
+    ],
+    "generated": "C=Cc1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1",
+    "actual": [
+     "O=C(C=Cc1ccc(-c2ccc(O)c(C34CC5CC(CC(C5)C3)C4)c2)cc1)NO"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "oxidation_diphenol_para_001",
+   "name": "对二酚氧化成醌",
+   "category": "oxidation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[OH:1][c:2][c:5][c:6][c:3][OH:4]>>[O:1]=[C:2][c:5][c:6][C:3]=[O:4]",
+   "n_templates": 1,
+   "fired": 165,
+   "product_match": 6,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-5e6a35ae7d31484597e3dd3d9eaeb9f3",
+     "reactants": [
+      "Cc1cc(O)ccc1O",
+      "O=O",
+      "O=S(=O)(O)O"
+     ],
+     "generated": [
+      "CC1=CC(=O)C=CC1=O"
+     ],
+     "actual": [
+      "CC1=CC(=O)C=CC1=O"
+     ]
+    },
+    {
+     "rid": "ord-de8eeb5a0f4e441ca9929962dbdd5c1a",
+     "reactants": [
+      "O=S(=O)(c1ccccc1)c1cc(O)c2ccccc2c1O"
+     ],
+     "generated": [
+      "O=C1C=C(S(=O)(=O)c2ccccc2)C(=O)c2ccccc21"
+     ],
+     "actual": [
+      "O=C1C=C(S(=O)(=O)c2ccccc2)C(=O)c2ccccc21"
+     ]
+    },
+    {
+     "rid": "ord-ae9f081be80842a1940c73492fb84164",
+     "reactants": [
+      "COc1ccc([Te](=O)c2ccc(OC)cc2)cc1",
+      "Oc1ccc(O)c2ccccc12"
+     ],
+     "generated": [
+      "O=C1C=CC(=O)c2ccccc21"
+     ],
+     "actual": [
+      "COc1ccc([Te]c2ccc(OC)cc2)cc1",
+      "O=C1C=CC(=O)c2ccccc21"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-3460ff4893ad4905a99f8400ac94a8e1",
+     "reactants": [
+      "CCC#CBr",
+      "O=C([O-])[O-].[K+].[K+]",
+      "Oc1ccc(O)cc1"
+     ],
+     "generated": "O=C1C=CC(=O)C=C1",
+     "actual": [
+      "CC#CCOc1ccc(O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-8082caa1a5ca4d7e9e3f980915bf164d",
+     "reactants": [
+      "CN(C)CCN1C(=O)c2cccc3cc4c(N)cccc4c(c23)C1=O",
+      "Cc1ccccc1",
+      "O=Cc1cc(O)ccc1O"
+     ],
+     "generated": "O=CC1=CC(=O)C=CC1=O",
+     "actual": [
+      "CN(C)CCN1C(=O)c2cccc3cc4c(N=Cc5cc(O)ccc5O)cccc4c(c23)C1=O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-3460ff4893ad4905a99f8400ac94a8e1",
+    "reactants": [
+     "CCC#CBr",
+     "O=C([O-])[O-].[K+].[K+]",
+     "Oc1ccc(O)cc1"
+    ],
+    "generated": "O=C1C=CC(=O)C=C1",
+    "actual": [
+     "CC#CCOc1ccc(O)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "reduction_quinone_para_001",
+   "name": "对醌还原成二酚",
+   "category": "reduction",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[O:1]=[C;r6:2]~[#6;R:5]~[#6;R:6]~[C;r6:3]=[O:4]>>[OH:1][c:2][c:5][c:6][c:3][OH:4]",
+   "n_templates": 1,
+   "fired": 314,
+   "product_match": 5,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-d264a4b8ce364c998253ee55ac74f6a8",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COC1=CC(=O)C=C(OC)C1=O",
+      "O",
+      "O=C(O)CCS"
+     ],
+     "generated": [
+      "COc1cc(O)cc(OC)c1O"
+     ],
+     "actual": [
+      "COc1cc(O)cc(OC)c1O",
+      "COc1cc(O)cc(OC)c1O.O=C(O)CCS",
+      "O=C(O)CCS"
+     ]
+    },
+    {
+     "rid": "ord-0fa0833f8c414229aadad5df5cceafad",
+     "reactants": [
+      "CO",
+      "O=C1C=C(Cl)C(=O)C2C1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ],
+     "generated": [
+      "Oc1cc(Cl)c(O)c2c1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ],
+     "actual": [
+      "Oc1cc(Cl)c(O)c2c1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ]
+    },
+    {
+     "rid": "ord-882cd14c17ef48f1a4869be62db102ee",
+     "reactants": [
+      "C",
+      "CC1=C(C)C(=O)C(CC[C@](C)(O)CO)=C(C)C1=O",
+      "[H][H]"
+     ],
+     "generated": [
+      "Cc1c(C)c(O)c(CCC(C)(O)CO)c(C)c1O"
+     ],
+     "actual": [
+      "Cc1c(C)c(O)c(CCC(C)(O)CO)c(C)c1O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-8547a040ad9a425c98f22d4b4c6c403c",
+     "reactants": [
+      "CC(C)Nc1ccccc1CO",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": "N#Cc1c(O)c(Cl)c(Cl)c(O)c1C#N",
+     "actual": [
+      "CC(C)Nc1ccccc1C=O"
+     ]
+    },
+    {
+     "rid": "ord-990155086c5549828f0ac2fa7edc056a",
+     "reactants": [
+      "CCNC(=O)Nc1nc2c(s1)-c1nc(-c3cccnc3)sc1CC2",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": "N#Cc1c(O)c(Cl)c(Cl)c(O)c1C#N",
+     "actual": [
+      "CCNC(=O)Nc1nc2ccc3sc(-c4cccnc4)nc3c2s1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-8547a040ad9a425c98f22d4b4c6c403c",
+    "reactants": [
+     "CC(C)Nc1ccccc1CO",
+     "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+    ],
+    "generated": "N#Cc1c(O)c(Cl)c(Cl)c(O)c1C#N",
+    "actual": [
+     "CC(C)Nc1ccccc1C=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "cyclization_conrad_limpach_alpha_aryl_001",
+   "name": "Conrad–Limpach 喹啉酮合成（α-芳基 β-酮酯）",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]-[O;H0;D2;+0:2]-[C;H0;D3;+0:3](=[O;D1;H0:4])-[CH;D3;+0:5](-[C;H0;D3;+0:6](-[C;D1;H3:7])=[O;H0;D1;+0:8])-[c;H0;D3;+0:9](:[c:10]):[c:11].[NH2;D1;+0:12]-[c:13]:[cH;D2;+0:14]:[c:15]>>[C;D1;H3:7]-[c;H0;D3;+0:6]1:[nH;D2;+0:12]:[c:13]:[c;H0;D3;+0:14](:[c:15]):[c;H0;D3;+0:3](=[O;D1;H0:4]):[c;H0;D3;+0:5]:1-[c;H0;D3;+0:9](:[c:10]):[c:11].[C:1]-[OH;D1;+0:2].[OH2;D0;+0:8]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "cyclization_indazole_001",
+   "name": "邻卤二苯甲酮 + 芳基肼 -> 1,2-二芳基吲唑",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[F;H0;D1;+0:1]-[c;H0;D3;+0:2](:[c:3]):[c:4]-[C;H0;D3;+0:5](=[O;H0;D1;+0:6])-[c;H0;D3;+0:7](:[c:8]):[c:9].[NH2;D1;+0:10]-[NH;D2;+0:11]-[c;H0;D3;+0:12](:[c:13]):[c:14]>>[FH;D0;+0:1].[OH2;D0;+0:6].[c:13]:[c;H0;D3;+0:12](-[n;H0;D3;+0:11]1:[n;H0;D2;+0:10]:[c;H0;D3;+0:5](-[c;H0;D3;+0:7](:[c:8]):[c:9]):[c:4]:[c;H0;D3;+0:2]:1:[c:3]):[c:14]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "cyclization_fischer_aza_indole_001",
+   "name": "Fischer 氮杂吲哚合成（2-肼基吡啶 + α-芳基酮）",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#7;a:1]:[c;H0;D3;+0:2](-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[CH2;D2;+0:5]-[c;H0;D3;+0:6](:[c:7]):[c:8]):[#8;a:9].[#7;a:10]:[c:11](-[NH;D2;+0:12]-[NH2;D1;+0:13]):[cH;D2;+0:14]:[c:15]>>[#7;a:1]:[c;H0;D3;+0:2](-[c;H0;D3;+0:3]1:[nH;D2;+0:12]:[c:11](:[#7;a:10]):[c;H0;D3;+0:14](:[c:15]):[c;H0;D3;+0:5]:1-[c;H0;D3;+0:6](:[c:7]):[c:8]):[#8;a:9].[NH3;D0;+0:13].[OH2;D0;+0:4]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "cyclization_larock_indole_001",
+   "name": "Larock 吲哚合成（2-碘苯胺 + TMS 炔）",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C:1]-[C;H0;D2;+0:2]#[C;H0;D2;+0:3]-[#14:4](-[C;D1;H3:5])(-[C;D1;H3:6])-[C;D1;H3:7].[I;H0;D1;+0:8]-[c;H0;D3;+0:9](:[c:10]):[c:11]-[NH2;D1;+0:12]>>[C:1]-[c;H0;D3;+0:2]1:[c;H0;D3;+0:9](:[c:10]):[c:11]:[nH;D2;+0:12]:[c;H0;D3;+0:3]:1-[#14:4](-[C;D1;H3:5])(-[C;D1;H3:6])-[C;D1;H3:7].[IH;D0;+0:8]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "cyclization_hantzsch_thiazole_001",
+   "name": "Hantzsch 噻唑合成（环状 α-溴酮 + 硫代氨基脲）",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#8:1]-[c:2]:[c;H0;D3;+0:3](:[c:4])-[C;H0;D3;+0:5](=[O;H0;D1;+0:6])-[CH;D3;+0:7](-[Br;H0;D1;+0:8])-[C:9].[N;D1;H2:10]-[#7:11]-[C;H0;D3;+0:12](-[NH2;D1;+0:13])=[S;H0;D1;+0:14]>>[#8:1]-[c:2]:[c;H0;D3;+0:3](:[c:4])-[c;H0;D3;+0:5]1:[n;H0;D2;+0:13]:[c;H0;D3;+0:12](-[#7:11]-[N;D1;H2:10]):[s;H0;D2;+0:14]:[c;H0;D3;+0:7]:1-[C:9].[BrH;D0;+0:8].[OH2;D0;+0:6]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "cyclization_macro_lactam_001",
+   "name": "大环内酰胺化（同一分子内羧酸 + 铵盐）",
+   "category": "cyclization",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[CX3:1](=[OX1:2])[OX2H:3].[NH3+;D1:4]>>[C:1](=[O:2])[N;H1;D2;+0:4]",
+   "n_templates": 2,
+   "fired": 172,
+   "product_match": 14,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c763472b558f4bf19c166b3b739155cb",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COc1ccc([C@@H](C)[NH3+])nc1.[Cl-]",
+      "C[C@H](C(=O)O)c1ccc(-c2ccccc2)c(F)c1",
+      "ClCCCl"
+     ],
+     "generated": [
+      "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1"
+     ],
+     "actual": [
+      "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1"
+     ]
+    },
+    {
+     "rid": "ord-5ad34635f4874236982f9ead8b5b9a65",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COC(=O)c1cccc(C[NH3+])c1.[Cl-]",
+      "COc1ccc(C(=O)O)cc1OC",
+      "ClCCCl"
+     ],
+     "generated": [
+      "COC(=O)c1cccc(CNC(=O)c2ccc(OC)c(OC)c2)c1"
+     ],
+     "actual": [
+      "COC(=O)c1cccc(CNC(=O)c2ccc(OC)c(OC)c2)c1"
+     ]
+    },
+    {
+     "rid": "ord-7a28c3a922934445a708448c217e5192",
+     "reactants": [
+      "Cc1cc(N2CCN(CCOc3ccccc3)C2=O)sc1C(=O)O",
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)O",
+      "[Cl-].[NH3+]Cc1cnc2ccccc2c1"
+     ],
+     "generated": [
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)NCc1cnc2ccccc2c1"
+     ],
+     "actual": [
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)NCc1cnc2ccccc2c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-c763472b558f4bf19c166b3b739155cb",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COc1ccc([C@@H](C)[NH3+])nc1.[Cl-]",
+      "C[C@H](C(=O)O)c1ccc(-c2ccccc2)c(F)c1",
+      "ClCCCl"
+     ],
+     "generated": "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1",
+     "actual": [
+      "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1"
+     ]
+    },
+    {
+     "rid": "ord-02ebf157de16404fbabea289291e79d0",
+     "reactants": [
+      "CC1(C)OC(=O)[C@H](C[NH3+])O1.O=C([O-])C(F)(F)F",
+      "CCN(C(C)C)C(C)C",
+      "CCN=C=NCCCN(C)C",
+      "O=C(Nc1cc(Cl)cc(Cl)c1)NC(c1ccc(C(=O)O)cc1)c1ccc(C2=CCCCC2)cc1"
+     ],
+     "generated": "CC1(C)OC(=O)C(CNC(=O)c2ccc(C(NC(=O)Nc3cc(Cl)cc(Cl)c3)c3ccc(C4=CCCCC4)cc3)cc2)O1",
+     "actual": [
+      "O=C(Nc1cc(Cl)cc(Cl)c1)NC(c1ccc(C(=O)NCC(O)C(=O)O)cc1)c1ccc(C2=CCCCC2)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-02ebf157de16404fbabea289291e79d0",
+    "reactants": [
+     "CC1(C)OC(=O)[C@H](C[NH3+])O1.O=C([O-])C(F)(F)F",
+     "CCN(C(C)C)C(C)C",
+     "CCN=C=NCCCN(C)C",
+     "O=C(Nc1cc(Cl)cc(Cl)c1)NC(c1ccc(C(=O)O)cc1)c1ccc(C2=CCCCC2)cc1"
+    ],
+    "generated": "CC1(C)OC(=O)C(CNC(=O)c2ccc(C(NC(=O)Nc3cc(Cl)cc(Cl)c3)c3ccc(C4=CCCCC4)cc3)cc2)O1",
+    "actual": [
+     "O=C(Nc1cc(Cl)cc(Cl)c1)NC(c1ccc(C(=O)NCC(O)C(=O)O)cc1)c1ccc(C2=CCCCC2)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "deprotection_boc_amine_001",
+   "name": "Boc 保护的胺脱保护（热/酸解脱 Boc）",
+   "category": "deprotection",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[C;H0;D4;+0:2](-[C;D1;H3:3])(-[CH3;D1;+0:4])-[O;H0;D2;+0:5]-[C;H0;D3;+0:6](=[O;D1;H0:7])-[NH;D2;+0:8]-[C;D1;H3:9]>>[C;D1;H3:1]-[C;H0;D3;+0:2](-[C;D1;H3:3])=[CH2;D1;+0:4].[C;D1;H3:9]-[NH2;D1;+0:8].[O;D1;H0:7]=[C;H0;D2;+0:6]=[O;H0;D1;+0:5]",
+   "n_templates": 1,
+   "fired": 1,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-a40fb7f683f64bb291d5ebb794f090bb",
+     "reactants": [
+      "CNC(=O)OC(C)(C)C",
+      "Cc1cc(Br)ccc1C=O"
+     ],
+     "generated": "C=C(C)C",
+     "actual": [
+      "Cc1cc(CNC(=O)OC(C)(C)C)ccc1C=O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-a40fb7f683f64bb291d5ebb794f090bb",
+    "reactants": [
+     "CNC(=O)OC(C)(C)C",
+     "Cc1cc(Br)ccc1C=O"
+    ],
+    "generated": "C=C(C)C",
+    "actual": [
+     "Cc1cc(CNC(=O)OC(C)(C)C)ccc1C=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "deprotection_cbz_amine_001",
+   "name": "Cbz 保护的胺脱保护（氢解 Cbz）",
+   "category": "deprotection",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[NH;D2;+0:2]-[C;H0;D3;+0:3](=[O;D1;H0:4])-[O;H0;D2;+0:5]-[CH2;D2;+0:6]-[c:7]>>[C;D1;H3:1]-[NH2;D1;+0:2].[CH3;D1;+0:6]-[c:7].[O;D1;H0:4]=[C;H0;D2;+0:3]=[O;H0;D1;+0:5]",
+   "n_templates": 1,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "sulfonylation_amine_001",
+   "name": "胺的磺酰化（磺酰氯 + 胺 -> 磺酰胺）",
+   "category": "acylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[C;D1;H3:3]-[S;H0;D4;+0:4](-[Cl;H0;D1;+0:5])(=[O;D1;H0:6])=[O;D1;H0:7]>>[C;D1;H3:1]-[NH;D2;+0:2]-[S;H0;D4;+0:4](-[C;D1;H3:3])(=[O;D1;H0:6])=[O;D1;H0:7].[ClH;D0;+0:5]",
+   "n_templates": 2,
+   "fired": 2,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [
+    {
+     "rid": "ord-6ed7ffd382a547988c74763112b9027d",
+     "reactants": [
+      "C1CCOC1",
+      "CCN(C(C)C)C(C)C",
+      "CN",
+      "CS(=O)(=O)Cl"
+     ],
+     "generated": "CNS(C)(=O)=O",
+     "actual": [
+      "CNCc1ccc(-c2cc(NC(=O)C3(c4ccc5c(c4)OCO5)CC3)ccc2C)cc1"
+     ]
+    },
+    {
+     "rid": "ord-291a419c503c47b38c49af64c88fcd22",
+     "reactants": [
+      "CN",
+      "CS(=O)(=O)Cl",
+      "O[C@@H]1CCc2ccccc2[C@H]1N1CCCC1",
+      "[Na+].[OH-]"
+     ],
+     "generated": "CNS(C)(=O)=O",
+     "actual": [
+      "CNC1c2ccccc2CCC1N1CCCC1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-6ed7ffd382a547988c74763112b9027d",
+    "reactants": [
+     "C1CCOC1",
+     "CCN(C(C)C)C(C)C",
+     "CN",
+     "CS(=O)(=O)Cl"
+    ],
+    "generated": "CNS(C)(=O)=O",
+    "actual": [
+     "CNCc1ccc(-c2cc(NC(=O)C3(c4ccc5c(c4)OCO5)CC3)ccc2C)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "addition_isocyanate_amine_urea_001",
+   "name": "异氰酸酯 + 胺 -> 脲",
+   "category": "addition",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[O;D1;H0:3]=[C;H0;D2;+0:4]=[N;H0;D2;+0:5]-[c:6]>>[C;D1;H3:1]-[NH;D2;+0:2]-[C;H0;D3;+0:4](=[O;D1;H0:3])-[NH;D2;+0:5]-[c:6]",
+   "n_templates": 2,
+   "fired": 1,
+   "product_match": 1,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c855ba8a68d94a90a16f7359111ea10d",
+     "reactants": [
+      "CC(Cl)Cl",
+      "CN",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N)c2Cl",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N=C=O)c2Cl"
+     ],
+     "generated": [
+      "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C"
+     ],
+     "actual": [
+      "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-c855ba8a68d94a90a16f7359111ea10d",
+     "reactants": [
+      "CC(Cl)Cl",
+      "CN",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N)c2Cl",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N=C=O)c2Cl"
+     ],
+     "generated": "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C",
+     "actual": [
+      "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C"
+     ]
+    }
+   ],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "coupling_suzuki_biaryl_001",
+   "name": "Suzuki 偶联（芳基溴 + 芳基硼酸 -> 联苯）",
+   "category": "coupling",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[Br;H0;D1;+0:1]-[c;H0;D3;+0:2](:[c:3]):[c:4].[O;D1;H1:5]-[B;H0;D3;+0:6](-[O;D1;H1:7])-[c;H0;D3;+0:8](:[c:9]):[c:10]>>[Br;H0;D1;+0:1]-[B;H0;D3;+0:6](-[O;D1;H1:5])-[O;D1;H1:7].[c:3]:[c;H0;D3;+0:2](-[c;H0;D3;+0:8](:[c:9]):[c:10]):[c:4]",
+   "n_templates": 2,
+   "fired": 1160,
+   "product_match": 920,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-19b3524e42254cd798a618b4d5e376b5",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCc1cc(OCc2ccc(B(O)O)cc2)c2ccccc2n1.Cl",
+      "N#Cc1ccccc1Br"
+     ],
+     "generated": [
+      "CCc1cc(OCc2ccc(-c3ccccc3C#N)cc2)c2ccccc2n1"
+     ],
+     "actual": [
+      "CCc1cc(OCc2ccc(-c3ccccc3C#N)cc2)c2ccccc2n1"
+     ]
+    },
+    {
+     "rid": "ord-2e87ef03d13944988967e1bb4dcac910",
+     "reactants": [
+      "OB(O)c1ccc(Cl)cc1",
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(Br)c2c1"
+     ],
+     "generated": [
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(-c3ccc(Cl)cc3)c2c1"
+     ],
+     "actual": [
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(-c3ccc(Cl)cc3)c2c1"
+     ]
+    },
+    {
+     "rid": "ord-505d378986564b289b6586ca9291e8b6",
+     "reactants": [
+      "Brc1ccc2c(c1)C1(CCCCC1)C(=NOCc1ccccc1)N2",
+      "CCCCCC",
+      "COc1cccc(B(O)O)c1"
+     ],
+     "generated": [
+      "COc1cccc(-c2ccc3c(c2)C2(CCCCC2)C(=NOCc2ccccc2)N3)c1"
+     ],
+     "actual": [
+      "COc1cccc(-c2ccc3c(c2)C2(CCCCC2)C(=NOCc2ccccc2)N3)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-19b3524e42254cd798a618b4d5e376b5",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCc1cc(OCc2ccc(B(O)O)cc2)c2ccccc2n1.Cl",
+      "N#Cc1ccccc1Br"
+     ],
+     "generated": "OB(O)Br",
+     "actual": [
+      "CCc1cc(OCc2ccc(-c3ccccc3C#N)cc2)c2ccccc2n1"
+     ]
+    },
+    {
+     "rid": "ord-f1ad471805684fc5b6ebc2d669085dc4",
+     "reactants": [
+      "CC1C(=O)Nc2ccc(Br)cc21",
+      "O=C([O-])[O-].[K+].[K+]",
+      "O=[N+]([O-])c1cccc(B(O)O)c1",
+      "[Cl-].[NH4+]"
+     ],
+     "generated": "OB(O)Br",
+     "actual": [
+      "CC1=c2cc(Br)ccc2=NC1=O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-f1ad471805684fc5b6ebc2d669085dc4",
+    "reactants": [
+     "CC1C(=O)Nc2ccc(Br)cc21",
+     "O=C([O-])[O-].[K+].[K+]",
+     "O=[N+]([O-])c1cccc(B(O)O)c1",
+     "[Cl-].[NH4+]"
+    ],
+    "generated": "OB(O)Br",
+    "actual": [
+     "CC1=c2cc(Br)ccc2=NC1=O"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "coupling_sonogashira_aryl_alkyne_001",
+   "name": "Sonogashira 偶联（芳基溴 + 端炔 -> 芳基炔）",
+   "category": "coupling",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[Br;H0;D1;+0:1]-[c;H0;D3;+0:2](:[c:3]):[c:4].[C:5]#[CH;D1;+0:6]>>[BrH;D0;+0:1].[C:5]#[C;H0;D2;+0:6]-[c;H0;D3;+0:2](:[c:3]):[c:4]",
+   "n_templates": 2,
+   "fired": 381,
+   "product_match": 287,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-0dbb83c791174a899436c4d40bf3aa58",
+     "reactants": [
+      "C#Cc1ccccc1",
+      "Nc1ncc(C(F)(F)F)cc1Br",
+      "O"
+     ],
+     "generated": [
+      "Nc1ncc(C(F)(F)F)cc1C#Cc1ccccc1"
+     ],
+     "actual": [
+      "Nc1ncc(C(F)(F)F)cc1C#Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-bd280274d3164bc1abeaa913cf194cbf",
+     "reactants": [
+      "C#C[Si](C)(C)C",
+      "CCN(CC)CC",
+      "N#Cc1cc(F)cc(Br)c1"
+     ],
+     "generated": [
+      "C[Si](C)(C)C#Cc1cc(F)cc(C#N)c1"
+     ],
+     "actual": [
+      "C[Si](C)(C)C#Cc1cc(F)cc(C#N)c1"
+     ]
+    },
+    {
+     "rid": "ord-ac88b083643c4694ae3373a4a8eb478e",
+     "reactants": [
+      "Brc1ccc(C2(NCc3ccccc3)CC2)cc1",
+      "C#C[Si](C)(C)C"
+     ],
+     "generated": [
+      "C[Si](C)(C)C#Cc1ccc(C2(NCc3ccccc3)CC2)cc1"
+     ],
+     "actual": [
+      "C[Si](C)(C)C#Cc1ccc(C2(NCc3ccccc3)CC2)cc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-0dbb83c791174a899436c4d40bf3aa58",
+     "reactants": [
+      "C#Cc1ccccc1",
+      "Nc1ncc(C(F)(F)F)cc1Br",
+      "O"
+     ],
+     "generated": "Br",
+     "actual": [
+      "Nc1ncc(C(F)(F)F)cc1C#Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-bd280274d3164bc1abeaa913cf194cbf",
+     "reactants": [
+      "C#C[Si](C)(C)C",
+      "CCN(CC)CC",
+      "N#Cc1cc(F)cc(Br)c1"
+     ],
+     "generated": "Br",
+     "actual": [
+      "C[Si](C)(C)C#Cc1cc(F)cc(C#N)c1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-f7ec05d051794e1cafe523dacd44acd6",
+    "reactants": [
+     "C#Cc1cccc(-c2cc(S(=O)(=O)[O-])ccc2C)c1",
+     "CO",
+     "O=C(OC(=O)c1ccc(Br)c2ccccc12)c1ccc(Br)c2ccccc12",
+     "[K+].[OH-]"
+    ],
+    "generated": "Br",
+    "actual": [
+     "C#Cc1cccc(Oc2ccc(C(=O)OC(=O)c3ccc(Oc4cccc(C#C)c4)c4ccccc34)c3ccccc23)c1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "coupling_n_arylation_amine_001",
+   "name": "Buchwald–Hartwig 型 N-芳基化（芳基溴 + 胺）",
+   "category": "coupling",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[Br;H0;D1;+0:1]-[c;H0;D3;+0:2](:[c:3]):[c:4].[NH2;D1;+0:5]-[c:6]>>[BrH;D0;+0:1].[c:3]:[c;H0;D3;+0:2](-[NH;D2;+0:5]-[c:6]):[c:4]",
+   "n_templates": 2,
+   "fired": 1516,
+   "product_match": 149,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-e666274769674ed785f5d9ad4ef36895",
+     "reactants": [
+      "C1COCCO1",
+      "CSc1cc(-c2cnn(C)c2N)ncn1",
+      "Cc1ccc(NC(=O)c2cccc(C(F)(F)F)c2)cc1Br",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "CSc1cc(-c2cnn(C)c2Nc2cc(NC(=O)c3cccc(C(F)(F)F)c3)ccc2C)ncn1"
+     ],
+     "actual": [
+      "CSc1cc(-c2cnn(C)c2Nc2cc(NC(=O)c3cccc(C(F)(F)F)c3)ccc2C)ncn1"
+     ]
+    },
+    {
+     "rid": "ord-26a7fcbaf54e431ca865fbca56d6db18",
+     "reactants": [
+      "CC1(C)c2cccc(P(c3ccccc3)c3ccccc3)c2Oc2c(P(c3ccccc3)c3ccccc3)cccc21",
+      "CN1CCN(C(=O)c2ccc(Br)cc2)CC1",
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(N)nnc3c2)c1",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(C(=O)N5CCN(C)CC5)cc4)nnc3c2)c1"
+     ],
+     "actual": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(C(=O)N5CCN(C)CC5)cc4)nnc3c2)c1"
+     ]
+    },
+    {
+     "rid": "ord-e604cb0789b14f32a33b0a9fab1c99d1",
+     "reactants": [
+      "Brc1ccc(SCCN2CCCC2)cc1",
+      "CC1(C)c2cccc(P(c3ccccc3)c3ccccc3)c2Oc2c(P(c3ccccc3)c3ccccc3)cccc21",
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(N)nnc3c2)c1",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(SCCN5CCCC5)cc4)nnc3c2)c1"
+     ],
+     "actual": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(SCCN5CCCC5)cc4)nnc3c2)c1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-5873d336793841adad5cbcf873b625c5",
+     "reactants": [
+      "CC(=O)O",
+      "Nc1ccc(Br)cc1C(O)c1ccccn1"
+     ],
+     "generated": "Br",
+     "actual": [
+      "CC(C)(C)C=O",
+      "Nc1ccc(Br)cc1C(O)c1ccccn1"
+     ]
+    },
+    {
+     "rid": "ord-a7b7ef5f674140eda2b87b65e3637f7d",
+     "reactants": [
+      "Cc1ccc(-c2c(N)ncnc2OCCO)cc1",
+      "Clc1ncc(Br)cn1",
+      "[Cl-].[NH4+]",
+      "[H-].[Na+]"
+     ],
+     "generated": "Br",
+     "actual": [
+      "Cc1ccc(-c2c(N)ncnc2OCCOc2ncc(Br)cn2)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-5873d336793841adad5cbcf873b625c5",
+    "reactants": [
+     "CC(=O)O",
+     "Nc1ccc(Br)cc1C(O)c1ccccn1"
+    ],
+    "generated": "Br",
+    "actual": [
+     "CC(C)(C)C=O",
+     "Nc1ccc(Br)cc1C(O)c1ccccn1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "coupling_n_alkylation_amine_001",
+   "name": "胺的 N-烷基化（卤代烷 + 胺 -> 仲/叔胺）",
+   "category": "coupling",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[Br;H0;D1;+0:1]-[CH3;D1;+0:2].[C;D1;H3:3]-[NH2;D1;+0:4]>>[BrH;D0;+0:1].[C;D1;H3:3]-[NH;D2;+0:4]-[CH3;D1;+0:2]",
+   "n_templates": 2,
+   "fired": 0,
+   "product_match": 0,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [],
+   "examples_fired": [],
+   "mismatch_example": null,
+   "conditions": null
+  },
+  {
+   "id": "acylation_alcohol_anhydride_001",
+   "name": "醇的 O-酰化（酸酐 + 醇 -> 酯）",
+   "category": "acylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[C:2](=[O;D1;H0:3])-[O;H0;D2;+0:4]-[C;H0;D3;+0:5](-[C;D1;H3:6])=[O;D1;H0:7].[C:8]-[OH;D1;+0:9]>>[C;D1;H3:1]-[C:2](=[O;D1;H0:3])-[OH;D1;+0:4].[C:8]-[O;H0;D2;+0:9]-[C;H0;D3;+0:5](-[C;D1;H3:6])=[O;D1;H0:7]",
+   "n_templates": 2,
+   "fired": 487,
+   "product_match": 145,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    },
+    {
+     "rid": "ord-51ef9f6ae2d14a58b7d97c8023ad50fd",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(=O)CC(O)c1ccc(C)nc1",
+      "[Na+].[OH-]",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ]
+    },
+    {
+     "rid": "ord-c66ac16f92a140a99bf16ac4d992dd53",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "COc1ccc(C2CCC(O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ],
+     "generated": [
+      "COc1ccc(C2CCC(OC(C)=O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ],
+     "actual": [
+      "COc1ccc(C2CCC(OC(C)=O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": "CC(=O)O",
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    },
+    {
+     "rid": "ord-51ef9f6ae2d14a58b7d97c8023ad50fd",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(=O)CC(O)c1ccc(C)nc1",
+      "[Na+].[OH-]",
+      "c1ccncc1"
+     ],
+     "generated": "CC(=O)O",
+     "actual": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-444e854447fe4b53ac481a298adcab6e",
+    "reactants": [
+     "CC(=O)OC(C)=O",
+     "Cc1ccc(C(O)(C(F)(F)F)C(F)(F)F)cc1",
+     "O=S(=O)(O)O"
+    ],
+    "generated": "CC(=O)O",
+    "actual": [
+     "CC(=O)OC(OC(C)=O)c1ccc(C(OC(C)=O)(C(F)(F)F)C(F)(F)F)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "substitution_alcohol_thionyl_001",
+   "name": "醇的氯代（醇 + 亚硫酰氯 -> 氯代烷）",
+   "category": "substitution",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;D1;H3:1]-[CH2;D2;+0:2]-[OH;D1;+0:3].[Cl;H0;D1;+0:4]-[S;H0;D3;+0:5](-[Cl;H0;D1;+0:6])=[O;D1;H0:7]>>[C;D1;H3:1]-[CH2;D2;+0:2]-[Cl;H0;D1;+0:4].[ClH;D0;+0:6].[O;D1;H0:7]=[S;H0;D2;+0:5]=[O;H0;D1;+0:3]",
+   "n_templates": 2,
+   "fired": 35,
+   "product_match": 6,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-c9fda451c4c64a4baef159b8914061f8",
+     "reactants": [
+      "CCO",
+      "O=C(O)[C@H]1C[C@@H](O)CN1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C1CC(O)CN1",
+      "CCOC(=O)C1CC(O)CN1.Cl",
+      "Cl"
+     ]
+    },
+    {
+     "rid": "ord-ab828ab4f8de435cbeaf92e3a367de83",
+     "reactants": [
+      "CC1CNCCC1C(=O)O.Cl",
+      "CCO",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C1CCNCC1C",
+      "CCOC(=O)C1CCNCC1C.Cl",
+      "Cl"
+     ]
+    },
+    {
+     "rid": "ord-31132c42a0fd482cafc5a6621aa9e049",
+     "reactants": [
+      "CCCCN(CC(=O)O)C(=O)[C@H](CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1.N#N",
+      "CCO",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCCCN(CC(=O)OCC)C(=O)C(CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1",
+      "CCCCN(CC(=O)OCC)C(=O)C(CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1.Cl.N#N",
+      "Cl",
+      "N#N"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-b36ff282a19946cb9e1721c4f32fd0ac",
+     "reactants": [
+      "CCO",
+      "O=C(O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCl",
+     "actual": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-d0d304e48bc64f40b143545cd4b9d69b",
+     "reactants": [
+      "CCO",
+      "O=C(O)C(C(=O)O)c1ccccc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCl",
+     "actual": [
+      "CCOC(=O)C(C(=O)O)c1ccccc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-b36ff282a19946cb9e1721c4f32fd0ac",
+    "reactants": [
+     "CCO",
+     "O=C(O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCCl",
+    "actual": [
+     "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "substitution_alcohol_thionyl_family_001",
+   "name": "醇的氯代（伯/仲/苄醇族 + 亚硫酰氯）",
+   "category": "substitution",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[C;H1,H2,H3:1]-[OH;D1:2].[Cl;D1:3]-[S;D3:4](-[Cl;D1:5])=[O;D1:6]>>[C:1]-[Cl;D1:3].[ClH;D0:5].[O;D1:6]=[S;D2:4]=[O;D1:2]",
+   "n_templates": 2,
+   "fired": 525,
+   "product_match": 307,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-b1be6064558b4bf8b5568e3fb5a9afe1",
+     "reactants": [
+      "CN(C)C=O",
+      "O=S(Cl)Cl",
+      "OCCCOCCc1cccc2sccc12"
+     ],
+     "generated": [
+      "ClCCCOCCc1cccc2sccc12"
+     ],
+     "actual": [
+      "ClCCCOCCc1cccc2sccc12"
+     ]
+    },
+    {
+     "rid": "ord-dee3bbe8fbf245858780f3dd89a7ddd2",
+     "reactants": [
+      "O=S(Cl)Cl",
+      "OCc1ccncc1"
+     ],
+     "generated": [
+      "ClCc1ccncc1"
+     ],
+     "actual": [
+      "Cl",
+      "Cl.ClCc1ccncc1",
+      "ClCc1ccncc1"
+     ]
+    },
+    {
+     "rid": "ord-dee3bbe8fbf245858780f3dd89a7ddd2",
+     "reactants": [
+      "O=S(Cl)Cl",
+      "OCc1ccncc1"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "Cl",
+      "Cl.ClCc1ccncc1",
+      "ClCc1ccncc1"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-c6d1437bef5145cca37826ac5ae090f0",
+     "reactants": [
+      "CO",
+      "Cc1c(C(=O)O)cccc1[N+](=O)[O-]",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCl",
+     "actual": [
+      "COC(=O)c1cccc([N+](=O)[O-])c1C"
+     ]
+    },
+    {
+     "rid": "ord-b36ff282a19946cb9e1721c4f32fd0ac",
+     "reactants": [
+      "CCO",
+      "O=C(O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": "CCCl",
+     "actual": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-c6d1437bef5145cca37826ac5ae090f0",
+    "reactants": [
+     "CO",
+     "Cc1c(C(=O)O)cccc1[N+](=O)[O-]",
+     "O=S(Cl)Cl"
+    ],
+    "generated": "CCl",
+    "actual": [
+     "COC(=O)c1cccc([N+](=O)[O-])c1C"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "coupling_n_alkylation_benzyl_001",
+   "name": "苄基/杂芳甲基氯的 N-烷基化",
+   "category": "coupling",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[Cl;H0;D1;+0:3]-[CH2;D2;+0:4]-[c:5].[#6:1]-[NH2;D1;+0:2]>>[#6:1]-[NH;D2;+0:2]-[CH2;D2;+0:4]-[c:5].[ClH;D0;+0:3]",
+   "n_templates": 2,
+   "fired": 210,
+   "product_match": 63,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-5552549c3a7244c2a7f25a78047820a8",
+     "reactants": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c([C@H](N)Cc2c[nH]c3ccccc23)n1",
+      "CCN(CC)CC",
+      "ClCc1ccccc1"
+     ],
+     "generated": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c(C(Cc2c[nH]c3ccccc23)NCc2ccccc2)n1"
+     ],
+     "actual": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c(C(Cc2c[nH]c3ccccc23)NCc2ccccc2)n1"
+     ]
+    },
+    {
+     "rid": "ord-7fa9a543ff6a42ba8c85a7a23afb39d9",
+     "reactants": [
+      "CC(C)c1nc(CCl)co1",
+      "CN"
+     ],
+     "generated": [
+      "CNCc1coc(C(C)C)n1"
+     ],
+     "actual": [
+      "CNCc1coc(C(C)C)n1"
+     ]
+    },
+    {
+     "rid": "ord-14ad940e92ac4243ac1b9cc8a245e186",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)CN.Cl",
+      "O=[N+]([O-])c1ccc(Cl)cc1CCl"
+     ],
+     "generated": [
+      "CCOC(=O)CNCc1cc(Cl)ccc1[N+](=O)[O-]"
+     ],
+     "actual": [
+      "CCOC(=O)CNCc1cc(Cl)ccc1[N+](=O)[O-]"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-77cb8f49e98843759fa1c7777b2640d4",
+     "reactants": [
+      "COc1ccccc1N",
+      "O=C(Cl)c1ccc(CCl)cc1",
+      "[Na+].[OH-]"
+     ],
+     "generated": "COc1ccccc1NCc1ccc(C(=O)Cl)cc1",
+     "actual": [
+      "COc1ccccc1NC(=O)c1ccc(CCl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-bf45258a6b514b10a95b14738e45793c",
+     "reactants": [
+      "Nc1nc(Cl)cc(CCl)n1",
+      "OCC(F)(F)F",
+      "[Na]"
+     ],
+     "generated": "Nc1nc(Cl)cc(CNc2nc(Cl)cc(CCl)n2)n1",
+     "actual": [
+      "Nc1nc(CCl)cc(OCC(F)(F)F)n1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-77cb8f49e98843759fa1c7777b2640d4",
+    "reactants": [
+     "COc1ccccc1N",
+     "O=C(Cl)c1ccc(CCl)cc1",
+     "[Na+].[OH-]"
+    ],
+    "generated": "COc1ccccc1NCc1ccc(C(=O)Cl)cc1",
+    "actual": [
+     "COc1ccccc1NC(=O)c1ccc(CCl)cc1"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "acylation_alcohol_cyclic_succinic_001",
+   "name": "醇的 O-酰化（丁二酸酐开环 -> 单酯）",
+   "category": "acylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#8:5]=[#6:4]1-[#8:3]-[#6:1](=[#8:2])-[#6:10]-[#6:11]-1.[OX2H1:8]-[#6:9]>>[#8:5]=[#6:4](-[#8:3])-[#6:11]-[#6:10]-[#6:1](=[#8:2])-[#8:8]-[#6:9]",
+   "n_templates": 2,
+   "fired": 54,
+   "product_match": 18,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-d8d5f6909a9d42dca945fc4afe484978",
+     "reactants": [
+      "CN(C)C=O",
+      "O=C1CCC(=O)O1",
+      "O=C1O[C@@H](Cn2ccnn2)CN1c1ccc(-c2ccc(C3=NO[C@H](CO)C3)nc2)c(F)c1",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "O=C(O)CCC(=O)OCC1CC(c2ccc(-c3ccc(N4CC(Cn5ccnn5)OC4=O)cc3F)cn2)=NO1"
+     ],
+     "actual": [
+      "O=C(O)CCC(=O)OCC1CC(c2ccc(-c3ccc(N4CC(Cn5ccnn5)OC4=O)cc3F)cn2)=NO1"
+     ]
+    },
+    {
+     "rid": "ord-6294c2bf7f454cdbad3246340af72d9c",
+     "reactants": [
+      "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "O=C1CCC(=O)O1",
+      "OCc1ccccc1",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "O=C(O)CCC(=O)OCc1ccccc1"
+     ],
+     "actual": [
+      "O=C(O)CCC(=O)OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-3c50555f4f484c72bdffa807ed8b8b0f",
+     "reactants": [
+      "C=C[C@H]1CN2CCC1C[C@@H]2[C@@H](O)c1ccnc2ccc(OC)cc12",
+      "CO",
+      "Cc1ccccc1",
+      "O=C1OC(=O)[C@H]2[C@@H]1[C@@H]1C=C[C@H]2C1"
+     ],
+     "generated": [
+      "COC(=O)C1C2C=CC(C2)C1C(=O)O"
+     ],
+     "actual": [
+      "COC(=O)C1C2C=CC(C2)C1C(=O)O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-6bbd52add90e4a25982e0e07aba38158",
+     "reactants": [
+      "CC(=O)Nc1ccccc1",
+      "NC(N)=O.OO",
+      "O=C1CCC(=O)O1",
+      "OO"
+     ],
+     "generated": "O=C(O)CCC(=O)Oc1cccc2cccnc12",
+     "actual": [
+      "NC(N)=O",
+      "NC(N)=O.OCC(O)CO.OO",
+      "OCC(O)CO",
+      "OO"
+     ]
+    },
+    {
+     "rid": "ord-ea314902d4824602afd3aaaa46286da4",
+     "reactants": [
+      "C=C1CC(=O)OC1=O",
+      "CC(C)=CCC/C(C)=C/CC/C(C)=C/CSC[C@H](N)C(=O)O",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": "C=C(CC(=O)O)C(=O)OC(=O)C(N)CSCC=C(C)CCC=C(C)CCC=C(C)C",
+     "actual": [
+      "C=C(CC(=O)NC(CSCC=C(C)CCC=C(C)CCC=C(C)C)C(=O)O)C(=O)O"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-6bbd52add90e4a25982e0e07aba38158",
+    "reactants": [
+     "CC(=O)Nc1ccccc1",
+     "NC(N)=O.OO",
+     "O=C1CCC(=O)O1",
+     "OO"
+    ],
+    "generated": "O=C(O)CCC(=O)Oc1cccc2cccnc12",
+    "actual": [
+     "NC(N)=O",
+     "NC(N)=O.OCC(O)CO.OO",
+     "OCC(O)CO",
+     "OO"
+    ]
+   },
+   "conditions": null
+  },
+  {
+   "id": "acylation_alcohol_cyclic_phthalic_001",
+   "name": "醇的 O-酰化（邻苯二甲酸酐开环 -> 单酯）",
+   "category": "acylation",
+   "status": "active",
+   "paper_tier": "自写新增",
+   "smarts": "[#8:5]=[#6:4]1-[#8:3]-[#6:1](=[#8:2])-[#6:10]2:[#6:11]-1:[#6:12]:[#6:13]:[#6:14]:[#6:15]:2.[OX2H1:8]-[#6:9]>>[#8:5]=[#6:4](-[#8:3])-[#6:11]1:[#6:12]:[#6:13]:[#6:14]:[#6:15]:[#6:10]:1-[#6:1](=[#8:2])-[#8:8]-[#6:9]",
+   "n_templates": 2,
+   "fired": 59,
+   "product_match": 6,
+   "run_errors": 0,
+   "invalid_products": 0,
+   "examples_match": [
+    {
+     "rid": "ord-3dbead96b25644bab899c35c4bc7ec16",
+     "reactants": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCO)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCOC(=O)c3ccccc3C(=O)O)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1"
+     ],
+     "actual": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCOC(=O)c3ccccc3C(=O)O)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1"
+     ]
+    },
+    {
+     "rid": "ord-962249844c1c4960ba42236fd6ee7f5e",
+     "reactants": [
+      "C#CC(C)(O)CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O",
+      "CCN(CC)CC",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "C#CC(C)(CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O)OC(=O)c1ccccc1C(=O)O"
+     ],
+     "actual": [
+      "C#CC(C)(CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O)OC(=O)c1ccccc1C(=O)O"
+     ]
+    },
+    {
+     "rid": "ord-1cc4507b4a854a03a6da1001749d07ed",
+     "reactants": [
+      "CO",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "COC(=O)c1ccccc1C(=O)O"
+     ],
+     "actual": [
+      "COC(=O)c1ccccc1C(=O)O"
+     ]
+    }
+   ],
+   "examples_fired": [
+    {
+     "rid": "ord-958756ffd18845888710f0970aeb4d2c",
+     "reactants": [
+      "CCOC(=O)C(CN)C1(C)OCCO1",
+      "O=C1OC(=O)c2c(O)cccc21"
+     ],
+     "generated": "O=C(O)c1cccc(O)c1C(=O)Oc1cccc2c1C(=O)OC2=O",
+     "actual": [
+      "CCOC(=O)C(CN1C(=O)c2cccc(O)c2C1=O)C1(C)OCCO1"
+     ]
+    },
+    {
+     "rid": "ord-26a2cbfbb4d34563afa8982f03fdf0ef",
+     "reactants": [
+      "CC(=O)O",
+      "COc1ccc(CN)cc1",
+      "O=C1OC(=O)c2c(O)cccc21"
+     ],
+     "generated": "CC(=O)OC(=O)c1c(O)cccc1C(=O)O",
+     "actual": [
+      "COc1ccc(CN2C(=O)c3cccc(O)c3C2=O)cc1"
+     ]
+    }
+   ],
+   "mismatch_example": {
+    "rid": "ord-958756ffd18845888710f0970aeb4d2c",
+    "reactants": [
+     "CCOC(=O)C(CN)C1(C)OCCO1",
+     "O=C1OC(=O)c2c(O)cccc21"
+    ],
+    "generated": "O=C(O)c1cccc(O)c1C(=O)Oc1cccc2c1C(=O)OC2=O",
+    "actual": [
+     "CCOC(=O)C(CN1C(=O)c2cccc(O)c2C1=O)C1(C)OCCO1"
+    ]
+   },
+   "conditions": null
+  }
+ ]
+}

@@ -75,6 +75,19 @@ def main() -> int:
     ap.add_argument("--n", type=int, default=12000)
     ap.add_argument("--seed", type=int, default=20261014)
     ap.add_argument("--out", default=str(ROOT / "reports" / "rank_dataset.jsonl"))
+    # ★ 第 152 轮：生产路径（integration/tcmai_bridge/chemreact.py:1102-1108）用的是
+    #   curated 模板 + 严格氧化还原门 + mined top 条件。默认关，保持旧数据集可复现；
+    #   要与生产同分布时必须三个都开。
+    ap.add_argument("--curated", action="store_true", help="use_curated_templates=True")
+    ap.add_argument("--strict-redox", action="store_true", help="strict_redox_gate=True")
+    ap.add_argument("--mined-top-conditions", action="store_true",
+                    help="use_mined_top_conditions=True")
+    # ★ 2026-11-14：续跑。--skip N 跳过前 N 条已完成的反应（按同样的洗牌与过滤
+    #   规则重放），并校验文件最后一条 want 与第 N 条一致；--append 追加写入。
+    ap.add_argument("--skip", type=int, default=0)
+    ap.add_argument("--append", action="store_true")
+    # ★ 2026-11-14：第二语料（USPTO-MIT），用于 P2 的跨语料复现
+    ap.add_argument("--src", choices=("uspto", "mit"), default="uspto")
     a = ap.parse_args()
 
     import smartreact_engine as SE
@@ -92,17 +105,59 @@ def main() -> int:
     except Exception as _ex:                     # noqa: BLE001
         print("  [warn] rules.json 读不了：%s" % _ex)
 
-    rows = [json.loads(l) for l in TESTSET.open(encoding="utf-8")]
+    if a.src == "mit":
+        import paper_bench_official_test as PB
+        rows = PB._load_mit()
+        print("MIT 记录 %d 条" % len(rows), flush=True)
+    else:
+        rows = [json.loads(l) for l in TESTSET.open(encoding="utf-8")]
     random.Random(a.seed).shuffle(rows)
 
-    eng = SE.SmartReactEngine()
+    skip = int(a.skip)
+    if skip:
+        last_want = None
+        with open(a.out, encoding="utf-8") as _fr:
+            for _line in _fr:
+                _line = _line.strip()
+                if _line:
+                    try:
+                        last_want = json.loads(_line).get("want")
+                    except Exception:                  # noqa: BLE001
+                        pass
+        n_elig = 0
+        last_skip_want = None
+        for _d in rows[: a.n]:
+            _rl = (ast.literal_eval(_d["reactants"])
+                   if isinstance(_d["reactants"], str) else _d["reactants"])
+            if not [s for s in _rl[:2] if Chem.MolFromSmiles(s)]:
+                continue
+            _w = canon(_d.get("product") or "")
+            if not _w:
+                continue
+            if n_elig == skip - 1:
+                last_skip_want = _w
+                break
+            n_elig += 1
+        if last_skip_want != last_want:
+            print("[ERROR] 续跑对齐失败：第 %d 条 want=%r，文件最后一条 want=%r"
+                  "（可能前段有引擎异常导致的跳条）" % (skip, last_skip_want, last_want))
+            return 2
+        print("续跑对齐：跳过 %d 条，最后一条 want 一致" % skip, flush=True)
+
+    eng = SE.SmartReactEngine(use_curated_templates=bool(a.curated),
+                              strict_redox_gate=bool(a.strict_redox),
+                              use_mined_top_conditions=bool(a.mined_top_conditions))
+    print("引擎配置：curated=%s strict_redox=%s mined_top_conditions=%s"
+          % (a.curated, a.strict_redox, a.mined_top_conditions), flush=True)
     cond = T.get_template("煎煮")
     t0 = time.time()
-    n_rxn = 0
+    n_rxn = skip
     n_cand = 0
     n_hit = 0
     skipped = 0
-    with open(a.out, "w", encoding="utf-8") as fo:
+    mode = "a" if a.append else "w"
+    n_elig = 0
+    with open(a.out, mode, encoding="utf-8") as fo:
         for d in rows[: a.n]:
             rl = ast.literal_eval(d["reactants"]) if isinstance(d["reactants"], str) else d["reactants"]
             comps = [Compound(smiles=s, name="R%d" % i, herb="(bench)")
@@ -114,6 +169,10 @@ def main() -> int:
             if not want:
                 skipped += 1
                 continue
+            if n_elig < skip:
+                n_elig += 1
+                continue
+            n_elig += 1
             try:
                 prods = eng.step(comps, cond, round_no=1)
             except Exception:
@@ -178,9 +237,17 @@ def main() -> int:
             n_rxn += 1
             n_hit += 1 if hit else 0
             if n_rxn % 1000 == 0:
+                # ★ 2026-11-14：长跑时强制清一次分子缓存，压低 RSS（否则涨到 4 GB+）
+                try:
+                    import engine as _engmod
+                    _engmod._MOL_CACHE.clear()
+                except Exception:                      # noqa: BLE001
+                    pass
                 print("  ...%d 反应 / %.0f s / 命中 %d" % (n_rxn, time.time() - t0, n_hit), flush=True)
-    print("完成：%d 反应（跳过 %d）/ %d 候选 / 发射序命中 %d（%.2f%%）/ 耗时 %.1f s"
-          % (n_rxn, skipped, n_cand, n_hit, 100.0 * n_hit / max(1, n_rxn), time.time() - t0))
+    n_this = n_rxn - skip
+    print("完成：共 %d 条（本次 %d，跳过 %d）/ %d 候选 / 本次命中 %d（%.2f%%）/ 耗时 %.1f s"
+          % (n_rxn, n_this, skipped, n_cand, n_hit,
+             100.0 * n_hit / max(1, n_this), time.time() - t0))
     print("写出 %s" % a.out)
     return 0
 

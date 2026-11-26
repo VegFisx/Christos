@@ -1,0 +1,231 @@
+{
+  "manifest": "D:\\ProgramData\\DSHNS\\chemreact-staging\\tools\\rule_candidates_20261124.json",
+  "rows": [
+    {
+      "id": "control_hcl_alkene",
+      "smarts": "[#6:1]=[#6:2].[Cl:3]>>[#6:1]-[#6:2]-[Cl:3]",
+      "standard": [
+        {
+          "ok": true,
+          "n_products": 2,
+          "hit": 1,
+          "balance": null,
+          "why": "",
+          "name": "propene+HCl",
+          "target": "CC(Cl)C"
+        }
+      ],
+      "external": [
+        {
+          "ok": true,
+          "n_products": 2,
+          "hit": 1,
+          "balance": null,
+          "why": "",
+          "id": "uspto50k_test_US07223769B2",
+          "class": "10",
+          "target": "CCC#CCOc1cc(OC(C)C(C)(C)Cl)ncn1"
+        }
+      ],
+      "errors": [],
+      "verdict": "PASS"
+    },
+    {
+      "id": "control_deoxygenation",
+      "smarts": "[C;H0;D4;+0:1]-[O;H1;D1;+0:2]>>[C;H1;D4;+0:1]",
+      "standard": [
+        {
+          "ok": true,
+          "n_products": 1,
+          "hit": 1,
+          "balance": true,
+          "why": "",
+          "name": "tert-butanol",
+          "target": "CC(C)C"
+        }
+      ],
+      "external": [
+        {
+          "ok": true,
+          "n_products": 1,
+          "hit": 1,
+          "balance": true,
+          "why": "",
+          "id": "uspto50k_test_US07473703B2",
+          "class": "9",
+          "target": "COCCn1cccc1C(C)c1ccc(N(C)S(=O)(=O)c2ccccc2)cc1"
+        }
+      ],
+      "errors": [],
+      "verdict": "PASS"
+    },
+    {
+      "id": "quat_intramolecular",
+      "smarts": "[Cl;H0;D1;+0:1]-[CH2;D2;+0:2]-[CH2;D2;+0:3]-[C:4]-[N;H0;D3;+0:5]1-[C:6]-[CH2;D2;+0:7]-[CH2;D2;+0:8]-[C:9]-1>>[C:4]1-[CH2;D2;+0:3]-[CH2;D2;+0:7]-[C:6]-[N+;H0;D4:5]-12-[C:9]-[CH2;D2;+0:8]-[CH2;D2;+0:2]-2.[Cl-;H0;D0:1]",
+      "standard": [
+        {
+          "ok": true,
+          "n_products": 2,
+          "hit": 2,
+          "balance": true,
+          "why": "",
+          "name": "chloropropylpyrrolidine",
+          "target": "C1CC[N+]2(C1)CCC2"
+        }
+      ],
+      "external": [
+        {
+          "ok": true,
+          "n_products": 2,
+          "hit": 2,
+          "balance": true,
+          "why": "",
+          "id": "uspto50k_test_US20110257395A1",
+          "class": "1",
+          "target": "C1CC[N+]2(C1)CCC2"
+        }
+      ],
+      "errors": [],
+      "verdict": "PASS"
+    },
+    {
+      "id": "fischer_aza_benzyl",
+      "smarts": "[#7;a:1]:[c;H0;D3;+0:2](-[NH;D2;+0:3]-[NH2;D1;+0:4]):[cH;D2;+0:5]:[c:6].[#6:7]-[C;H0;D3;+0:8](=[O;D1;H0:9])-[#6:10]>>[#7;a:1]:[c;H0;D3;+0:2]1:[c,n;+0:7]:[c;H0;D3;+0:8](-[#6:10]):[nH;D2;+0:3]:[c,n;H0;D3;+0:5]:1:[c,n:6].[NH3:4].[OH2:9]",
+      "standard": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "no product",
+          "name": "2-hydrazinylpyridine+benzyl phenyl ketone",
+          "target": "c1ccc(Cc2cc3cccnc3[nH]2)cc1"
+        }
+      ],
+      "external": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "no product",
+          "id": "uspto50k_test_US20050261331A1",
+          "class": "4",
+          "target": "Brc1cnc2[nH]c(-c3ncco3)c(-c3ccccc3)c2c1"
+        }
+      ],
+      "errors": [],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "fischer_phenyl",
+      "smarts": "[#6:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[c;H0;D3;+0:4](:[c:5]):[c:6].[NH2;D1;+0:7]-[NH;D2;+0:8]-[c,n:9]:[c,n;D2;+0:10]:[c,n:11]>>[NH3;D0;+0:7].[OH2;D0;+0:3].[c,n:11]:[c,n;H0;D3;+0:10]1:[c,n:9]:[nH;D2;+0:8]:[c;H0;D3;+0:2](-[c;H0;D3;+0:4](:[c:5]):[c:6]):[c;+0:1]:1",
+      "standard": [
+        {
+          "ok": true,
+          "n_products": 4,
+          "hit": 4,
+          "balance": true,
+          "why": "",
+          "name": "phenylhydrazine+acetophenone",
+          "target": "c1ccc(-c2cc3ccccc3[nH]2)cc1"
+        }
+      ],
+      "external": [],
+      "errors": [],
+      "verdict": "PASS"
+    },
+    {
+      "id": "conrad_limpach",
+      "smarts": "[C;D1;H3:6]-[c;H0;D3;+0:5]1:[cH;D2;+0:4]:[c;H0;D3;+0:2](=[O;D1;H0:3]):[c;H0;D3;+0:10](:[c:11]):[c:9]:[nH;D2;+0:8]:1.[OH2;D0;+0:7].[OH2;D0;+0:1]>>C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=[O;D1;H0:3])-[CH2;D2;+0:4]-[C;H0;D3;+0:5](-[C;D1;H3:6])=[O;H0;D1;+0:7].[NH2;D1;+0:8]-[c:9]:[cH;D2;+0:10]:[c:11]",
+      "standard": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "run: ValueError: ChemicalParserException: Number of reactants provided does not match number of reactant templates.",
+          "name": "aniline+ethyl acetoacetate",
+          "target": "Cc1[nH]c2ccccc2c(=O)c1"
+        }
+      ],
+      "external": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "run: ValueError: ChemicalParserException: Number of reactants provided does not match number of reactant templates.",
+          "id": "uspto50k_test_US09018229B2",
+          "class": "4",
+          "target": "CCCOc1cc2ccccc2c2c(=O)c(-c3ccc(OC)cc3)c(C)[nH]c12"
+        }
+      ],
+      "errors": [],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "hantzsch_thiazole",
+      "smarts": "[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[C;H0;D3;+0:3](=[O;H0;D1;+0:4])-[c;H0;D3;+0:5](:[c:6]):[c:7].[N;D1;H2:8]-[#7:9]-[C;H0;D3;+0:10](-[NH2;D1;+0:11])=[S;H0;D1;+0:12]>>[BrH;D0;+0:1].[N;D1;H2:8]-[#7:9]-[c;H0;D3;+0:10]1:[n;H0;D2;+0:11]:[c;H0;D3;+0:3](-[c;H0;D3;+0:5](:[c:6]):[c:7]):[cH;D2;+0:2]:[s;H0;D2;+0:12]:1.[OH2;D0;+0:4]",
+      "standard": [
+        {
+          "ok": true,
+          "n_products": 2,
+          "hit": 2,
+          "balance": true,
+          "why": "",
+          "name": "phenacyl bromide+thiosemicarbazide",
+          "target": "NNc1nc(-c2ccccc2)cs1"
+        }
+      ],
+      "external": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "no product",
+          "id": "uspto50k_test_US20090247567A1",
+          "class": "4",
+          "target": "NNc1nc2c(s1)CCOc1ccc(Br)cc1-2"
+        }
+      ],
+      "errors": [],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "reductive_amination",
+      "smarts": "[#6:1]-[NH3+;D1;+0:2]-[#6:3].[CH;D2;+0:4](=[O;D1:5])-[#6:6]>>[#6:1]-[NH;H1;D2;+0:2]-[CH2;D2;+0:4]-[#6:6]",
+      "standard": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "no product",
+          "name": "benzaldehyde+isopropylammonium",
+          "target": "CC(C)NCc1ccccc1"
+        }
+      ],
+      "external": [
+        {
+          "ok": false,
+          "n_products": 0,
+          "hit": 0,
+          "balance": null,
+          "why": "no product",
+          "id": "uspto50k_test_US04599198",
+          "class": "1",
+          "target": "CC(C)CNC[C@@H](OCc1ccccc1)[C@H](CC1CCCCC1)NC(=O)OC(C)(C)C"
+        }
+      ],
+      "errors": [],
+      "verdict": "FAIL"
+    }
+  ],
+  "summary": {
+    "n": 8,
+    "pass": 4,
+    "fail": 4
+  }
+}

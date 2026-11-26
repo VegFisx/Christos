@@ -24,6 +24,7 @@ import argparse
 import json
 import os
 import re
+import math
 import sys
 import time
 from pathlib import Path
@@ -318,11 +319,21 @@ def _parse_limit(x):
     return n if n > 0 else None
 
 
+def _runs_dir() -> Path:
+    """运行台账目录。
+
+    默认本目录 out\\；桌面版由界面通过 CHEMREACT_RUNS_DIR 指到它自己的产物目录 ——
+    否则引擎写 HERE\\out、界面读 OUT_DIR，侧边栏历史永远为空（2026-11-20 审计修复）。
+    """
+    x = str(os.environ.get("CHEMCREACT_RUNS_DIR") or "").strip()
+    return Path(x) if x else (HERE / "out")
+
+
 def _log_run(kind: str, note: str, files: dict, seconds: float = None,
              details: dict = None) -> None:
-    """运行台账：追加一行到本目录 out\\runs.jsonl（我们自己的文件；不碰任何外部库）。"""
+    """运行台账：追加一行到「运行台账目录」runs.jsonl（我们自己的文件；不碰任何外部库）。"""
     try:
-        d = HERE / "out"
+        d = _runs_dir()
         d.mkdir(parents=True, exist_ok=True)
         rec = {"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "kind": kind,
                "note": note, "files": files}
@@ -386,6 +397,8 @@ def cmd_predict(a) -> int:
                   str(getattr(a, "include", "") or "").split(",") if _x.strip()}
     seeds = []
     selection = {}
+    drug_selection = []
+    _drug_queries = []
     # ★ 属名（拉丁）不直接开跑：收集候选，交给网页渲染一个**选择窗口**（用户 2026-10-15 要求）
     genus_hit = None
     choice_window = None
@@ -838,6 +851,70 @@ def cmd_predict(a) -> int:
         print(T("  * 命令行：--herb 甘草 ／ --herb \"Glycyrrhiza uralensis\"",
                 "  * CLI: --herb 甘草 / --herb \"Glycyrrhiza uralensis\""))
         return 2
+    # ★ 2026-11-23：西药库（ChEMBL）作为**新的输入源**接入。药物结构与
+    #   ChEMBL ID 原样进种子；不新增规则、不改既有规则。名字有歧义时
+    #   只报候选，不替用户猜盐型/母体。
+    _drug_queries = list(_split_list(getattr(a, "drug", "") or ""))
+    _drug_file = str(getattr(a, "drug_file", "") or "").strip()
+    if _drug_file:
+        try:
+            with open(_drug_file, "r", encoding="utf-8-sig") as _df:
+                for _ln in _df:
+                    _ln = _ln.strip()
+                    if _ln and not _ln.startswith("#"):
+                        _drug_queries.append(_ln)
+        except OSError as ex:
+            print(T("✗ 读取药物文件失败：%s", "✗ Cannot read drug file: %s") % ex)
+            return 2
+    if _drug_queries:
+        try:
+            import drug as DR
+            _di = DR.DrugIndex(getattr(a, "drug_snapshot", None))
+        except Exception as ex:                  # noqa: BLE001 —— 入口错误要显示
+            print(T("✗ ChEMBL 药物库加载失败：%s", "✗ ChEMBL drug index failed: %s") % ex)
+            return 2
+        _seen_drugs = set()
+        for _q in _drug_queries:
+            try:
+                _rec = _di.resolve_one(_q)
+            except DR.AmbiguousDrugError as ex:
+                print(T("✗ %s", "✗ %s") % ex)
+                for _c in ex.candidates[:12]:
+                    print("   " + _di.format_record(_c))
+                print(T("  请改用 ChEMBL ID 指定具体条目。",
+                        "  Specify the ChEMBL ID of the intended entry."))
+                return 2
+            except DR.DrugNotFoundError as ex:
+                print(T("✗ %s", "✗ %s") % ex)
+                for _c in ex.suggestions[:8]:
+                    print("   " + _di.format_record(_c))
+                return 2
+            _ncand = int(DR.LAST_RESOLVE.get("n_candidates") or 1)
+            if _ncand > 1:
+                print(T("   [note] %s 命中 %d 个 ChEMBL 条目；已按母体优先选 %s；"
+                        "要盐型请直接给 ChEMBL ID。",
+                        "   [note] %s matched %d ChEMBL entries; chose parent-preferring %s; "
+                        "use a ChEMBL ID for a specific salt.")
+                      % (_q, _ncand, _rec.chembl_id))
+            if _rec.chembl_id in _seen_drugs:
+                continue
+            _seen_drugs.add(_rec.chembl_id)
+            seeds.append((_rec.display_name, _rec.smiles,
+                          "药物:ChEMBL:%s" % _rec.chembl_id))
+            drug_selection.append(_rec.to_dict())
+            print(T("   药物 [ChEMBL] %s → %s（%s）",
+                    "   Drug [ChEMBL] %s -> %s (%s)")
+                  % (_q, _di.format_record(_rec), _rec.formula or "formula?"))
+        selection["drugs"] = drug_selection
+        selection["drug_snapshot"] = {
+            "version": _di.version,
+            "release_date": _di.release_date,
+            "file": _di.path.name,
+            "license": _di.meta.get("license") or {},
+        }
+        print(T("   ChEMBL 快照 %s（%s）：载入 %d 条，本次使用 %d 个药物",
+                "   ChEMBL snapshot %s (%s): %d records, %d drug(s) selected")
+              % (_di.version, _di.release_date, len(_di), len(drug_selection)))
     for sm in _split_list(getattr(a, "smiles", "") or ""):
         seeds.append((sm[:24], sm, "用户给定"))
     if getattr(a, "mol", None):
@@ -848,7 +925,10 @@ def cmd_predict(a) -> int:
         out_dir = Path(a.out) if a.out else (HERE / "out")
         out_dir.mkdir(parents=True, exist_ok=True)
         ts = time.strftime("%Y%m%d-%H%M%S")
-        mp = out_dir / ("%s_%s.meta.json" % (ts, choice_window["query"]))
+        # ★ 2026-11-20 审计修复：查询串直接进文件名，含「/」「:」等会 OSError。
+        qtag = re.sub(r'[\\/:*?"<>|\s]+', "_",
+                      str(choice_window.get("query") or "query"))[:40] or "query"
+        mp = out_dir / ("%s_%s.meta.json" % (ts, qtag))
         mp.write_text(json.dumps({
             "built_at": time.strftime("%Y-%m-%d %H:%M:%S"),
             "kind": "choice_window",
@@ -867,7 +947,7 @@ def cmd_predict(a) -> int:
               % (mp.name, len(choice_window["items"])))
         return 0
     if not seeds:
-        print("没有底物：给 --herb / --smiles / --mol 之一")
+        print("没有底物：给 --herb / --smiles / --mol / --drug 之一")
         return 2
 
     fair = bool(getattr(a, "fair_pairs", False))
@@ -892,12 +972,19 @@ def cmd_predict(a) -> int:
         "dose_budget": bool(getattr(a, "dose_budget", False)),
         "doses": dict(doses),
         "herb_order": str(getattr(a, "herb_order", "marker") or "marker"),
+        # ★ 2026-11-23：ChEMBL 药物输入（结构来自离线快照，来源逐条保留）
+        "drugs": [str(d.get("chembl_id") or "") for d in drug_selection],
+        "drug_queries": list(_drug_queries),
+        "drug_snapshot": (selection.get("drug_snapshot") or {}),
         "max_pairs": int(a.max_pairs),
         "direction": (not bool(a.no_direction)),
         "score": (not bool(a.no_score)),
         "reagents": list(_split_list(a.reagents)),
         "paozhi_adjuvant": bool(getattr(a, "paozhi_adjuvant", True)),
         "paozhi_base_templates": bool(getattr(a, "paozhi_base_templates", False)),
+        # ★ 2026-11-22：规则 provenance 闸门。allow_unvalidated 的最终值
+        #   在判断 _paozhi 后写入（通用/煎煮默认为探索口径）。
+        "strict_provenance": bool(getattr(a, "strict_provenance", False)),
         # ★ 第84轮：反应进程层（time/pH/催化剂 参与产物生成）；默认关
         "condition_extent": bool(getattr(a, "condition_extent", False)),
         # ★ 第 141 轮：extent 是否真的筛选产物（默认 False = 只标注）
@@ -913,6 +1000,13 @@ def cmd_predict(a) -> int:
         _pressure_in = 0.05
         _pressure_src = "气氛 vacuum 推得 0.05 atm（P1 约定，不是测出来的）"
     _pressure = float(_pressure_in) if _pressure_in is not None else 1.0
+    # ★ 2026-11-20 审计修复：0/负/nan 以前会被 RunSpec 静默当 1 atm，
+    #   而 switches 里又记着原值，meta 自相矛盾。入口直接拒绝。
+    if not math.isfinite(_pressure) or _pressure <= 0.0:
+        print(T("压力必须为正的有限数（atm）；真空请用 --atmosphere vacuum",
+                "Pressure must be a positive finite number (atm); "
+                "use --atmosphere vacuum for vacuum."))
+        return 2
     switches["pressure_atm"] = _pressure
     _conc_in = getattr(a, "concentration_M", None)
     _conc = float(_conc_in) if _conc_in is not None else 0.1
@@ -983,6 +1077,22 @@ def cmd_predict(a) -> int:
                or str(a.cond).startswith("无溶剂"))
     _paozhi_method = (str(a.cond).split("·", 1)[1] if "·" in str(a.cond)
                       else ("无溶剂（炮制）" if _paozhi else ""))
+    # ★ 2026-11-22：provenance 策略。通用/煎煮是探索口径，保留历史全部
+    #   curated 规则（guard_jiandao 824 就是这条路径）；炮制 evidence/
+    #   production 默认严格。显式开关可覆盖：
+    #     --strict-provenance  通用/煎煮也只跑 cited/secondary
+    #     --allow-unvalidated  强制允许 unvalidated
+    _strict_prov = bool(getattr(a, "strict_provenance", False))
+    _force_explore = bool(getattr(a, "allow_unvalidated", False))
+    if _strict_prov and _force_explore:
+        print("--strict-provenance 与 --allow-unvalidated 不能同时使用")
+        return 2
+    _allow_unvalidated = (not _paozhi)
+    if _strict_prov:
+        _allow_unvalidated = False
+    if _force_explore:
+        _allow_unvalidated = True
+    switches["allow_unvalidated"] = _allow_unvalidated
     # 2026-11-06：炮制·自定义 —— 条件由用户填。没填的项用模板占位基线（150°C/30min/
     # 无溶剂/空气），必须明确告知，否则用户会以为那是某个文献工艺。
     if str(a.cond) == "炮制·自定义":
@@ -1104,12 +1214,22 @@ def cmd_predict(a) -> int:
                       use_mono_templates=not _paozhi,
                       use_base_templates=_paozhi_base,
                       curated_rule_ids=_paozhi_ids,
+                      allow_unvalidated=_allow_unvalidated,
                       use_mined_top_conditions=True,
                       strict_redox_gate=True,
                       condition_extent=bool(getattr(a, "condition_extent", False)),
                       condition_gate=bool(getattr(a, "condition_gate", False)),
                       rerank=bool(getattr(a, "rerank", False)),
                       rerank_center=bool(getattr(a, "rerank_center", False)),
+                      # ★ 第 163 轮：train 模板覆盖（默认开）
+                      rescue=bool(getattr(a, "rescue", True)),
+                      rescue_min_support=int(getattr(a, "rescue_min_support", 1)),
+                      # ★ 第 163 轮：只有本次真的加载了辅料，规则级辅料池才生效
+                      paozhi_adjuvant=bool(_paozhi_adj),
+                      # ★ 第 164 轮：coverage 产物的有界立体枚举（默认 8 / 4 中心）
+                      stereo_enum_cap=int(getattr(a, "stereo_enum_cap", 8)),
+                      stereo_enum_max_centers=int(
+                          getattr(a, "stereo_enum_max_centers", 4)),
                       pressure_atm=_pressure,
                       concentration_M=_conc,
                       cond_override=_cond_override,
@@ -1160,7 +1280,7 @@ def cmd_predict(a) -> int:
         # ★ 第143轮（压力 P2）：温度那一栏补「有效温度」，因为液相被沸点截断后
         #   extent 用的是截断值，不是输入值。
         "pressure_atm": {
-            "value": float(getattr(_resolved_cond, "pressure_atm", 1.0) or 1.0),
+            "value": float(getattr(_resolved_cond, "pressure_atm", 1.0)),
             "unit": "atm",
             "note": "记录；P2 起通过沸点上限约束液相温度（只对溶液浴）",
             "source": switches.get("pressure_source", "默认 1.0 atm"),
@@ -1237,8 +1357,13 @@ def cmd_predict(a) -> int:
     ts = time.strftime("%Y%m%d-%H%M%S")
     if formulas_prov:
         tag = "+".join(list(formulas_prov)[:3])
+    elif a.herb:
+        tag = a.herb.split(",")[0].strip()
+    elif drug_selection:
+        tag = "drug_" + str(drug_selection[0].get("name")
+                            or drug_selection[0].get("chembl_id") or "chembl")
     else:
-        tag = (a.herb.split(",")[0].strip() if a.herb else "smiles")
+        tag = "smiles"
     tag = re.sub(r'[\\/:*?"<>|]', "_", tag)[:40] or "run"
     pf, xf = qb.dump_inventory(inv, out_dir / f"{ts}_{tag}.csv", out_dir / f"{ts}_{tag}.tsv")
     try:
@@ -1280,8 +1405,15 @@ def cmd_predict(a) -> int:
             _bits.append(_bit)
         _ftxt = " formula_tier=" + ",".join(_bits) + \
             (" probe_cha_wu=%d/%d" % (_pv_n, _pv_a) if (_pv_n or _pv_a) else "")
-    _input_note = (("formulas:" + "+".join(list(formulas_prov)[:3]))
-                   if formulas_prov else (a.herb or "(smiles)"))
+    if formulas_prov:
+        _input_note = "formulas:" + "+".join(list(formulas_prov)[:3])
+    elif a.herb:
+        _input_note = a.herb
+    elif drug_selection:
+        _input_note = "drugs:" + "+".join(
+            str(d.get("chembl_id") or "") for d in drug_selection[:4])
+    else:
+        _input_note = "(smiles)"
     _log_run("predict",
              "herb=%s limit=%s rounds=%s cond=%s chp=%s fair=%s%s"
              % (_input_note, a.limit, a.rounds, a.cond,
@@ -1300,6 +1432,9 @@ def cmd_predict(a) -> int:
 # ---------------------------------------------------------------- routes
 def cmd_routes(a) -> int:
     global LANG
+    # ★ 2026-11-20 审计修复：末端写 runs.jsonl 时用 seconds=time.time()-t0，
+    #   但 t0 只在 cmd_predict 里定义，任何 routes 运行都会 NameError 崩溃。
+    t0 = time.time()
     LANG = "en" if str(getattr(a, "lang", "zh")) == "en" else "zh"
     if not _research_enabled():
         print("公开版已关闭任意目标逆合成路线。")
@@ -1443,7 +1578,7 @@ def cmd_routes(a) -> int:
 
 # ---------------------------------------------------------------- history
 def cmd_history(a) -> int:
-    p = HERE / "out" / "runs.jsonl"
+    p = _runs_dir() / "runs.jsonl"
     if not p.exists():
         print("还没有运行记录（先跑 predict / routes）")
         return 0
@@ -1495,6 +1630,14 @@ def main() -> int:
     pp.add_argument("--herb", default=None, help="中药名（逗号分隔多个；读 tcm.db，只读）")
     pp.add_argument("--smiles", default=None, help="逗号/分号分隔的 SMILES 列表")
     pp.add_argument("--mol", default=None, help="单个 SMILES（可重复用 --smiles）")
+    pp.add_argument("--drug", default=None,
+                    help="ChEMBL 药物名或 ChEMBL ID（逗号分隔多个）；"
+                         "结构取自离线 ChEMBL 快照，不改规则")
+    pp.add_argument("--drug-file", default=None, dest="drug_file",
+                    help="药名/ChEMBL ID 列表文件：每行一个，空行和 # 注释跳过")
+    pp.add_argument("--drug-snapshot", default=None, dest="drug_snapshot",
+                    help="ChEMBL JSONL 快照路径（默认 data/drugs/chembl_*_drugs.jsonl，"
+                         "也可用 CHEMREACT_DRUG_DB 指定）")
     pp.add_argument("--include", default=None,
                     help="强制纳入的成分名（逗号分隔，大小写不敏感）；不受 --limit 截断与排序影响")
     pp.add_argument("--limit", default="12",
@@ -1550,6 +1693,14 @@ def main() -> int:
     pp.add_argument("--paozhi-base-templates", action="store_true",
                     dest="paozhi_base_templates", default=False,
                     help="炮制档也跑 SmartReact 基础模板库（默认关=严格模式，只跑 4 条证据规则）")
+    pp.add_argument("--allow-unvalidated", action="store_true",
+                    dest="allow_unvalidated", default=False,
+                    help="强制探索口径：加载 provenance=unvalidated 的规则"
+                         "（通用/煎煮默认已是探索；证据/生产默认严格）")
+    pp.add_argument("--strict-provenance", action="store_true",
+                    dest="strict_provenance", default=False,
+                    help="通用/煎煮也只加载 cited/secondary，不加载 unvalidated"
+                         "（默认通用/煎煮为探索口径）")
     pp.add_argument("--triples", action="store_true", help="三组分模板（默认关；很慢）")
     pp.add_argument("--triples-min-support", type=int, default=2, dest="triples_min_support")
     # ★ 第84轮：反应进程层（time_min / pH / 催化剂）。第123/124轮验证后定为「只标注、不筛选」。
@@ -1568,6 +1719,26 @@ def main() -> int:
                     help="用学习型反应中心模型给候选排序（第 147 轮）：按「从底物走到"
                          "该候选要改哪几处键、每处多可能」重排。只改顺序，候选集合不变；"
                          "缺模型时保持发射序")
+    # ★ 第 163 轮：train 模板覆盖成为默认（默认开）——用训练半区通用模板补候选
+    pp.add_argument("--rescue", action="store_true", dest="rescue", default=True,
+                    help="覆盖模式（默认开）：用 USPTO 训练半区通用模板补候选"
+                         "（召回 +2.8 pp，top-1 几乎不动，候选 +1.6）")
+    pp.add_argument("--no-rescue", action="store_false", dest="rescue",
+                    help="关闭覆盖模式（复现旧默认口径）")
+    pp.add_argument("--rescue-min-support", type=int, default=1,
+                    dest="rescue_min_support",
+                    help="覆盖模式的最低支持度（默认 1）")
+    # ★ 第 164 轮（item 2）：coverage 产物的有界立体枚举（默认开）
+    pp.add_argument("--stereo-enum", type=int, default=8, dest="stereo_enum_cap",
+                    help="覆盖产物的立体枚举上限（默认 8）：模板不带立体时，"
+                         "补至多 N 个立体异构体 + 平面版；0 = 关闭"
+                         "（关闭后官方全量召回 94.99%%，开启 96.25%%）")
+    pp.add_argument("--no-stereo-enum", action="store_const", const=0,
+                    dest="stereo_enum_cap",
+                    help="关闭覆盖产物的立体枚举（复现 94.99%% 口径）")
+    pp.add_argument("--stereo-max-centers", type=int, default=4,
+                    dest="stereo_enum_max_centers",
+                    help="最多对几个立体中心的产物做枚举（默认 4；更多中心只加平面版）")
     pp.add_argument("--no-direction", action="store_true", dest="no_direction")
     pp.add_argument("--no-score", action="store_true", dest="no_score")
     pp.add_argument("--no-ik-cache", action="store_true", dest="no_ik_cache")

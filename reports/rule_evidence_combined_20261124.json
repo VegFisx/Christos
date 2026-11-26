@@ -1,0 +1,3253 @@
+{
+ "summary": {
+  "rules": 73,
+  "strong_ord": 41,
+  "weak_ord": 15,
+  "no_ord": 17,
+  "with_literature": 8,
+  "propose_secondary": 41,
+  "propose_cited": 0,
+  "keep": 32,
+  "ord_file": "rule_ord_execution_20261124.json",
+  "lit_file": "rule_literature_20261124.json",
+  "usage_file": "evidence_backlog_20261124.json",
+  "criteria": {
+   "strong_match": 10,
+   "strong_fired": 20
+  }
+ },
+ "rows": [
+  {
+   "id": "amidation_intermolecular_001",
+   "category": "condensation",
+   "fired": 17414,
+   "product_match": 6006,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-21393e26ab0b4c64a67d4dbe4b4c6328",
+     "reactants": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)O)c(C)c1=O",
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CNC.Cl",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)N(C)C)c(C)c1=O"
+     ],
+     "actual": [
+      "C#CCn1c(-c2ccccc2)nc(C(=O)N(C)C)c(C)c1=O"
+     ]
+    },
+    {
+     "rid": "ord-21d973d5e9c342b28599ca4532af6af7",
+     "reactants": [
+      "C=CCCC(=O)Cl",
+      "C=CCCC(=O)O",
+      "COC(=O)c1cccc(N)c1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "C=CCCC(=O)Nc1cccc(C(=O)OC)c1"
+     ],
+     "actual": [
+      "C=CCCC(=O)Nc1cccc(C(=O)OC)c1"
+     ]
+    },
+    {
+     "rid": "ord-555bc4c8dfda4c9f9927d3dfcbc0d7ef",
+     "reactants": [
+      "Nc1cccc([N+](=O)[O-])c1",
+      "O=C(O)c1ccc([N+](=O)[O-])cc1"
+     ],
+     "generated": [
+      "O=C(Nc1cccc([N+](=O)[O-])c1)c1ccc([N+](=O)[O-])cc1"
+     ],
+     "actual": [
+      "O=C(Nc1cccc([N+](=O)[O-])c1)c1ccc([N+](=O)[O-])cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydrolysis_amide_001",
+   "category": "hydrolysis",
+   "fired": 42033,
+   "product_match": 3362,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+     ],
+     "generated": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ],
+     "actual": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ]
+    },
+    {
+     "rid": "ord-fe0aa9a207b24d63bb0ea46174e05e6e",
+     "reactants": [
+      "CC(=O)Nc1ccc2c(c1)OCc1ccsc1C2=O",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "Nc1ccc2c(c1)OCc1ccsc1C2=O"
+     ],
+     "actual": [
+      "Nc1ccc2c(c1)OCc1ccsc1C2=O"
+     ]
+    },
+    {
+     "rid": "ord-65e718a8f3934e1487660a0d4b652d2f",
+     "reactants": [
+      "C=CCOC(=O)[C@@H](CCc1ccccc1)NC(=O)OC(C)(C)C",
+      "COc1ccccc1",
+      "O=C(O)C(F)(F)F",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ],
+     "actual": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydrolysis_lactam_001",
+   "category": "hydrolysis",
+   "fired": 29910,
+   "product_match": 2750,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-b5c1249063ad41ecb9a886e640b8e144",
+     "reactants": [
+      "CC(C)(C)OC(=O)N1CCN(c2ccc3oc(C(N)=O)cc3c2)CC1"
+     ],
+     "generated": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ],
+     "actual": [
+      "NC(=O)c1cc2cc(N3CCNCC3)ccc2o1"
+     ]
+    },
+    {
+     "rid": "ord-65e718a8f3934e1487660a0d4b652d2f",
+     "reactants": [
+      "C=CCOC(=O)[C@@H](CCc1ccccc1)NC(=O)OC(C)(C)C",
+      "COc1ccccc1",
+      "O=C(O)C(F)(F)F",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ],
+     "actual": [
+      "C=CCOC(=O)C(N)CCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-83875325c1ee4a0ea07fd297824b70f1",
+     "reactants": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(Cc1c[nH]c2ccccc12)NC(=O)OC(C)(C)C",
+      "Cl"
+     ],
+     "generated": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12"
+     ],
+     "actual": [
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12",
+      "CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12.CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)C(N)Cc1c[nH]c2ccccc12.Cl.Cl.Cl.Cl.O.O.O",
+      "Cl",
+      "O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "aminolysis_ester_001",
+   "category": "condensation",
+   "fired": 23459,
+   "product_match": 1249,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-9db8bda42ddd42569da026335543c4dd",
+     "reactants": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(CF)OC(C)=O)n1",
+      "Cl"
+     ],
+     "generated": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(O)CF)n1"
+     ],
+     "actual": [
+      "COc1cc(OC)nc(NC(=O)NS(=O)(=O)c2sccc2C(O)CF)n1"
+     ]
+    },
+    {
+     "rid": "ord-446b034cd2a240b1811399997a196a51",
+     "reactants": [
+      "COC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1",
+      "COCCN"
+     ],
+     "generated": [
+      "COCCNC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1"
+     ],
+     "actual": [
+      "COCCNC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-cf8e0ae8899349c9bf22fff5e2ff09a3",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2N)c1"
+     ],
+     "generated": [
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2NC(C)=O)c1"
+     ],
+     "actual": [
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccccc2NC(C)=O)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "esterification_intermolecular_001",
+   "category": "esterification",
+   "fired": 26232,
+   "product_match": 998,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c6d1437bef5145cca37826ac5ae090f0",
+     "reactants": [
+      "CO",
+      "Cc1c(C(=O)O)cccc1[N+](=O)[O-]",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "COC(=O)c1cccc([N+](=O)[O-])c1C"
+     ],
+     "actual": [
+      "COC(=O)c1cccc([N+](=O)[O-])c1C"
+     ]
+    },
+    {
+     "rid": "ord-b36ff282a19946cb9e1721c4f32fd0ac",
+     "reactants": [
+      "CCO",
+      "O=C(O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ],
+     "actual": [
+      "CCOC(=O)COc1ccc(C(=O)CN2CCN(c3ccncc3)CC2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-f82b850c17b44c82bd3c88a18c85d0b3",
+     "reactants": [
+      "C=Cc1ccccc1CC(C(=O)O)N1C(=O)c2ccccc2C1=O",
+      "CCN=C=NCCCN(C)C.Cl",
+      "C[Si](C)(C)CCO",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "C=Cc1ccccc1CC(C(=O)OCC[Si](C)(C)C)N1C(=O)c2ccccc2C1=O"
+     ],
+     "actual": [
+      "C=Cc1ccccc1CC(C(=O)OCC[Si](C)(C)C)N1C(=O)c2ccccc2C1=O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "reduction_ketone_001",
+   "category": "reduction",
+   "fired": 82068,
+   "product_match": 955,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-59ad5f10a39944bab640d9fbd6671548",
+     "reactants": [
+      "O=C1CCC(c2ccccc2)CC1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "OC1CCC(c2ccccc2)CC1"
+     ],
+     "actual": [
+      "OC1CCC(c2ccccc2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-4213d05daadd4cc1a427b80287607a1d",
+     "reactants": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(=O)C1",
+      "COC(C)(C)C",
+      "[Al+3].[H-].[H-].[H-].[H-].[Li+]",
+      "[Br-].[Br-].[Mg+2]"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(O)C1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](C)(C)OC1C=CC(O)C1"
+     ]
+    },
+    {
+     "rid": "ord-40b377d619b3445095890b35e71e45d2",
+     "reactants": [
+      "CC(=O)OC1CC[C@@]2(C)C(=CC[C@@H]3[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]32)C1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "CC(=O)OC1CCC2(C)C(=CCC3C2CCC2(C)C(O)CCC32)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1CCC2(C)C(=CCC3C2CCC2(C)C(O)CCC32)C1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "coupling_suzuki_biaryl_001",
+   "category": "coupling",
+   "fired": 1160,
+   "product_match": 920,
+   "ord_grade": "strong_ord",
+   "literature": [
+    {
+     "doi": "10.1021/cr00039a007",
+     "title": "Palladium-Catalyzed Cross-Coupling Reactions of Organoboron Compounds",
+     "container": "Chemical Reviews",
+     "year": 1995
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-19b3524e42254cd798a618b4d5e376b5",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCc1cc(OCc2ccc(B(O)O)cc2)c2ccccc2n1.Cl",
+      "N#Cc1ccccc1Br"
+     ],
+     "generated": [
+      "CCc1cc(OCc2ccc(-c3ccccc3C#N)cc2)c2ccccc2n1"
+     ],
+     "actual": [
+      "CCc1cc(OCc2ccc(-c3ccccc3C#N)cc2)c2ccccc2n1"
+     ]
+    },
+    {
+     "rid": "ord-2e87ef03d13944988967e1bb4dcac910",
+     "reactants": [
+      "OB(O)c1ccc(Cl)cc1",
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(Br)c2c1"
+     ],
+     "generated": [
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(-c3ccc(Cl)cc3)c2c1"
+     ],
+     "actual": [
+      "Oc1ccc2nc(-c3ccc(O)c(F)c3)cc(-c3ccc(Cl)cc3)c2c1"
+     ]
+    },
+    {
+     "rid": "ord-505d378986564b289b6586ca9291e8b6",
+     "reactants": [
+      "Brc1ccc2c(c1)C1(CCCCC1)C(=NOCc1ccccc1)N2",
+      "CCCCCC",
+      "COc1cccc(B(O)O)c1"
+     ],
+     "generated": [
+      "COc1cccc(-c2ccc3c(c2)C2(CCCCC2)C(=NOCc2ccccc2)N3)c1"
+     ],
+     "actual": [
+      "COc1cccc(-c2ccc3c(c2)C2(CCCCC2)C(=NOCc2ccccc2)N3)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "reduction_alkene_001",
+   "category": "reduction",
+   "fired": 15883,
+   "product_match": 747,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-a2fcb8e364ca4dd2ada72db56fde3611",
+     "reactants": [
+      "CC(C)N1C(=O)[C@@H](C/C=C/C(=O)O)O[C@H](c2ccccc2Cl)c2cc(Cl)ccc21",
+      "[H][H]"
+     ],
+     "generated": [
+      "CC(C)N1C(=O)C(CCCC(=O)O)OC(c2ccccc2Cl)c2cc(Cl)ccc21"
+     ],
+     "actual": [
+      "CC(C)N1C(=O)C(CCCC(=O)O)OC(c2ccccc2Cl)c2cc(Cl)ccc21"
+     ]
+    },
+    {
+     "rid": "ord-44d7775ce6aa4fefbef4fb0336de5ad9",
+     "reactants": [
+      "O=C(CCCCCCCC=Cc1ccc(Cl)cc1)C1=C(O)COC1=O",
+      "[H][H]"
+     ],
+     "generated": [
+      "O=C(CCCCCCCCCc1ccc(Cl)cc1)C1=C(O)COC1=O"
+     ],
+     "actual": [
+      "O=C(CCCCCCCCCc1ccc(Cl)cc1)C1=C(O)COC1=O"
+     ]
+    },
+    {
+     "rid": "ord-8ba885339f8d41249dc7afe4b839d218",
+     "reactants": [
+      "O=[N+]([O-])C=Cc1cccc(Cl)c1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "O=[N+]([O-])CCc1cccc(Cl)c1"
+     ],
+     "actual": [
+      "O=[N+]([O-])CCc1cccc(Cl)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "demethylation_aromatic_001",
+   "category": "demethylation",
+   "fired": 15300,
+   "product_match": 686,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c366215603d74e8f80c204c070b5fd26",
+     "reactants": [
+      "CCS",
+      "CO",
+      "COc1ccc2c(C(=O)c3ccc(OCCN4CCCCC4)cc3)c(-c3ccc4ccccc4c3)sc2c1",
+      "[Al+3].[Cl-].[Cl-].[Cl-]"
+     ],
+     "generated": [
+      "O=C(c1ccc(OCCN2CCCCC2)cc1)c1c(-c2ccc3ccccc3c2)sc2cc(O)ccc12"
+     ],
+     "actual": [
+      "O=C(c1ccc(OCCN2CCCCC2)cc1)c1c(-c2ccc3ccccc3c2)sc2cc(O)ccc12"
+     ]
+    },
+    {
+     "rid": "ord-9f122af1a0394a17b79d34afbf18a558",
+     "reactants": [
+      "COc1ccc(N2CCN(c3ccncc3)CC2)cc1",
+      "N",
+      "O"
+     ],
+     "generated": [
+      "Oc1ccc(N2CCN(c3ccncc3)CC2)cc1"
+     ],
+     "actual": [
+      "Oc1ccc(N2CCN(c3ccncc3)CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-afe5cbc25fd340cf8536ac9ee64ce538",
+     "reactants": [
+      "BrB(Br)Br",
+      "COc1cccc(N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)C(=O)c2ccc(NC(C)=O)cc2)c1",
+      "O=C([O-])O.[Na+]"
+     ],
+     "generated": [
+      "CC(=O)Nc1ccc(C(=O)N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)c2cccc(O)c2)cc1"
+     ],
+     "actual": [
+      "CC(=O)Nc1ccc(C(=O)N(CCN2CCC(C(=O)c3ccc(F)cc3)CC2)c2cccc(O)c2)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_primary_alcohol_001",
+   "category": "oxidation",
+   "fired": 10894,
+   "product_match": 524,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-8547a040ad9a425c98f22d4b4c6c403c",
+     "reactants": [
+      "CC(C)Nc1ccccc1CO",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": [
+      "CC(C)Nc1ccccc1C=O"
+     ],
+     "actual": [
+      "CC(C)Nc1ccccc1C=O"
+     ]
+    },
+    {
+     "rid": "ord-2dd48e91d9f149d4ba76a652ed59e760",
+     "reactants": [
+      "CCN(CC)CC",
+      "O",
+      "OCc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ],
+     "generated": [
+      "O=Cc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ],
+     "actual": [
+      "O=Cc1cn(C(c2ccccc2)(c2ccccc2)c2ccccc2)cn1"
+     ]
+    },
+    {
+     "rid": "ord-42e2736d1d544ffaa239652e6a28183b",
+     "reactants": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(CO)cc1)Cc1ncccc1O"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(C=O)cc1)Cc1ncccc1O"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)N(Cc1ccc(C=O)cc1)Cc1ncccc1O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_hydroxyl_001",
+   "category": "oxidation",
+   "fired": 7878,
+   "product_match": 346,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-518a16e34f3943a5b14400a699394dc9",
+     "reactants": [
+      "CC(C)=O.O=S(=O)(O)O.[O]=[Cr](=[O])=[O]",
+      "CCCCCCCCCCCC1CC(O)[C@@H](CCCCCC)C(=O)O1",
+      "O"
+     ],
+     "generated": [
+      "CCCCCCCCCCCC1CC(=O)C(CCCCCC)C(=O)O1"
+     ],
+     "actual": [
+      "CCCCCCCCCCCC1CC(=O)C(CCCCCC)C(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-9d59393c4c9049a0808495226bbc11b0",
+     "reactants": [
+      "CC(=O)OI1(OC(C)=O)(OC(C)=O)OC(=O)c2ccccc21",
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(O)C(F)(F)F)ccc1OC"
+     ],
+     "generated": [
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(=O)C(F)(F)F)ccc1OC"
+     ],
+     "actual": [
+      "COC(=O)N(Cc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Cc1cc(C(F)(F)F)ccc1-c1cc(C(=O)C(F)(F)F)ccc1OC"
+     ]
+    },
+    {
+     "rid": "ord-1041ebbad9184896b84294f5baa9ee66",
+     "reactants": [
+      "CCN(CC)CC",
+      "COC(=O)c1ccc([C@H](c2ccc(Cl)cc2)N2CC(O)C2)cc1",
+      "CS(C)=O",
+      "O=C(Cl)C(=O)Cl"
+     ],
+     "generated": [
+      "COC(=O)c1ccc(C(c2ccc(Cl)cc2)N2CC(=O)C2)cc1"
+     ],
+     "actual": [
+      "COC(=O)c1ccc(C(c2ccc(Cl)cc2)N2CC(=O)C2)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_sulfide_001",
+   "category": "oxidation",
+   "fired": 9960,
+   "product_match": 336,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 2,
+   "blind6_hits": 4,
+   "examples": [
+    {
+     "rid": "ord-0390e1237c0d4ce1b863fbe6e79e9218",
+     "reactants": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1SCC",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1S(=O)CC"
+     ],
+     "actual": [
+      "CCOCCSC(SC(C)=O)=C(C(=O)OCc1ccc([N+](=O)[O-])cc1)N1C(=O)CC1S(=O)CC"
+     ]
+    },
+    {
+     "rid": "ord-2ebc34d91ba745a7a7dd4bc687e432b0",
+     "reactants": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1SCC(F)(F)F",
+      "O=C(OO)c1cccc(Cl)c1",
+      "O=S([O-])[O-].[Na+].[Na+]"
+     ],
+     "generated": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1S(=O)CC(F)(F)F"
+     ],
+     "actual": [
+      "Cc1ccc(-c2c[nH]nc2C(F)(F)F)cc1S(=O)CC(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-a31a8aea26db44ba9a6c67dae080060b",
+     "reactants": [
+      "CSc1nnc2n1C=Cc1ccccc1C2",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CS(=O)c1nnc2n1C=Cc1ccccc1C2"
+     ],
+     "actual": [
+      "CS(=O)c1nnc2n1C=Cc1ccccc1C2"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "esterification_transesterification_001",
+   "category": "esterification",
+   "fired": 15194,
+   "product_match": 321,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    },
+    {
+     "rid": "ord-51ef9f6ae2d14a58b7d97c8023ad50fd",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(=O)CC(O)c1ccc(C)nc1",
+      "[Na+].[OH-]",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ]
+    },
+    {
+     "rid": "ord-2587e99f20af4b9a95cc53879079e3af",
+     "reactants": [
+      "CC(=O)O",
+      "CC(=O)OCC(=O)Nc1c(C(=O)C(C)(C)O)oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc12",
+      "CO",
+      "O.[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)(O)C(=O)c1oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc2c1NC(=O)CO"
+     ],
+     "actual": [
+      "CC(C)(O)C(=O)c1oc2nc(-c3ccccc3Cl)c(-c3ccc(Cl)cc3)cc2c1NC(=O)CO"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "reduction_aldehyde_001",
+   "category": "reduction",
+   "fired": 10671,
+   "product_match": 313,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c63ace3342d84bbd8c5c2007a1065d40",
+     "reactants": [
+      "O=Cc1cc2ccccc2nc1I"
+     ],
+     "generated": [
+      "OCc1cc2ccccc2nc1I"
+     ],
+     "actual": [
+      "OCc1cc2ccccc2nc1I"
+     ]
+    },
+    {
+     "rid": "ord-621039449c2a4a8292dc2cf8bcf28ed2",
+     "reactants": [
+      "O",
+      "O=Cc1ccc(C2CC2)cc1",
+      "[BH4-].[Li+]"
+     ],
+     "generated": [
+      "OCc1ccc(C2CC2)cc1"
+     ],
+     "actual": [
+      "OCc1ccc(C2CC2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-8f16daff33a54d7dbea2b1c031fe1318",
+     "reactants": [
+      "COc1ccc(C=O)c(Cl)c1",
+      "[BH4-].[Na+]"
+     ],
+     "generated": [
+      "COc1ccc(CO)c(Cl)c1"
+     ],
+     "actual": [
+      "COc1ccc(CO)c(Cl)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "substitution_alcohol_thionyl_family_001",
+   "category": "substitution",
+   "fired": 525,
+   "product_match": 307,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 2,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-b1be6064558b4bf8b5568e3fb5a9afe1",
+     "reactants": [
+      "CN(C)C=O",
+      "O=S(Cl)Cl",
+      "OCCCOCCc1cccc2sccc12"
+     ],
+     "generated": [
+      "ClCCCOCCc1cccc2sccc12"
+     ],
+     "actual": [
+      "ClCCCOCCc1cccc2sccc12"
+     ]
+    },
+    {
+     "rid": "ord-dee3bbe8fbf245858780f3dd89a7ddd2",
+     "reactants": [
+      "O=S(Cl)Cl",
+      "OCc1ccncc1"
+     ],
+     "generated": [
+      "ClCc1ccncc1"
+     ],
+     "actual": [
+      "Cl",
+      "Cl.ClCc1ccncc1",
+      "ClCc1ccncc1"
+     ]
+    },
+    {
+     "rid": "ord-dee3bbe8fbf245858780f3dd89a7ddd2",
+     "reactants": [
+      "O=S(Cl)Cl",
+      "OCc1ccncc1"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "Cl",
+      "Cl.ClCc1ccncc1",
+      "ClCc1ccncc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "coupling_sonogashira_aryl_alkyne_001",
+   "category": "coupling",
+   "fired": 381,
+   "product_match": 287,
+   "ord_grade": "strong_ord",
+   "literature": [
+    {
+     "doi": "10.1016/S0040-4039(00)91094-3",
+     "title": "A convenient synthesis of acetylenes: catalytic substitutions of acetylenic hydrogen with bromoalkenes, iodoarenes and bromopyridines",
+     "container": "Tetrahedron Letters",
+     "year": 1975
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-0dbb83c791174a899436c4d40bf3aa58",
+     "reactants": [
+      "C#Cc1ccccc1",
+      "Nc1ncc(C(F)(F)F)cc1Br",
+      "O"
+     ],
+     "generated": [
+      "Nc1ncc(C(F)(F)F)cc1C#Cc1ccccc1"
+     ],
+     "actual": [
+      "Nc1ncc(C(F)(F)F)cc1C#Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-bd280274d3164bc1abeaa913cf194cbf",
+     "reactants": [
+      "C#C[Si](C)(C)C",
+      "CCN(CC)CC",
+      "N#Cc1cc(F)cc(Br)c1"
+     ],
+     "generated": [
+      "C[Si](C)(C)C#Cc1cc(F)cc(C#N)c1"
+     ],
+     "actual": [
+      "C[Si](C)(C)C#Cc1cc(F)cc(C#N)c1"
+     ]
+    },
+    {
+     "rid": "ord-ac88b083643c4694ae3373a4a8eb478e",
+     "reactants": [
+      "Brc1ccc(C2(NCc3ccccc3)CC2)cc1",
+      "C#C[Si](C)(C)C"
+     ],
+     "generated": [
+      "C[Si](C)(C)C#Cc1ccc(C2(NCc3ccccc3)CC2)cc1"
+     ],
+     "actual": [
+      "C[Si](C)(C)C#Cc1ccc(C2(NCc3ccccc3)CC2)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydrolysis_acetal_001",
+   "category": "hydrolysis",
+   "fired": 2175,
+   "product_match": 213,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-991308a13d764cc0817ac696051b408e",
+     "reactants": [
+      "CC(C)(C)[Si](Cl)(c1ccccc1)c1ccccc1",
+      "CC(C)(C)[Si](OCc1ccc(CCCC2OCCO2)cc1)(c1ccccc1)c1ccccc1",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](OCc1ccc(CCCC=O)cc1)(c1ccccc1)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-71ad9a67baf44ed6bce3a9333c8c2b29",
+     "reactants": [
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]",
+      "c1c(COC2CCCCO2)noc1CN1CCOCC1"
+     ],
+     "generated": [
+      "OCc1cc(CN2CCOCC2)on1"
+     ],
+     "actual": [
+      "OCc1cc(CN2CCOCC2)on1"
+     ]
+    },
+    {
+     "rid": "ord-2603c295c6774fb2b21832e07be7eeeb",
+     "reactants": [
+      "Cc1ccc(S(=O)(=O)O)cc1",
+      "c1c(C2OCCO2)sc2c1OCCC2"
+     ],
+     "generated": [
+      "O=Cc1cc2c(s1)CCCO2"
+     ],
+     "actual": [
+      "O=Cc1cc2c(s1)CCCO2"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "coupling_n_arylation_amine_001",
+   "category": "coupling",
+   "fired": 1516,
+   "product_match": 149,
+   "ord_grade": "strong_ord",
+   "literature": [
+    {
+     "doi": "10.1021/ja00096a059",
+     "title": "Palladium-Catalyzed Aromatic Aminations with in situ Generated Aminostannanes",
+     "container": "Journal of the American Chemical Society",
+     "year": 1994
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-e666274769674ed785f5d9ad4ef36895",
+     "reactants": [
+      "C1COCCO1",
+      "CSc1cc(-c2cnn(C)c2N)ncn1",
+      "Cc1ccc(NC(=O)c2cccc(C(F)(F)F)c2)cc1Br",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "CSc1cc(-c2cnn(C)c2Nc2cc(NC(=O)c3cccc(C(F)(F)F)c3)ccc2C)ncn1"
+     ],
+     "actual": [
+      "CSc1cc(-c2cnn(C)c2Nc2cc(NC(=O)c3cccc(C(F)(F)F)c3)ccc2C)ncn1"
+     ]
+    },
+    {
+     "rid": "ord-26a7fcbaf54e431ca865fbca56d6db18",
+     "reactants": [
+      "CC1(C)c2cccc(P(c3ccccc3)c3ccccc3)c2Oc2c(P(c3ccccc3)c3ccccc3)cccc21",
+      "CN1CCN(C(=O)c2ccc(Br)cc2)CC1",
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(N)nnc3c2)c1",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(C(=O)N5CCN(C)CC5)cc4)nnc3c2)c1"
+     ],
+     "actual": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(C(=O)N5CCN(C)CC5)cc4)nnc3c2)c1"
+     ]
+    },
+    {
+     "rid": "ord-e604cb0789b14f32a33b0a9fab1c99d1",
+     "reactants": [
+      "Brc1ccc(SCCN2CCCC2)cc1",
+      "CC1(C)c2cccc(P(c3ccccc3)c3ccccc3)c2Oc2c(P(c3ccccc3)c3ccccc3)cccc21",
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(N)nnc3c2)c1",
+      "O=C([O-])[O-].[Cs+].[Cs+]"
+     ],
+     "generated": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(SCCN5CCCC5)cc4)nnc3c2)c1"
+     ],
+     "actual": [
+      "COc1ccc(Cl)c(-c2cc(C)c3nc(Nc4ccc(SCCN5CCCC5)cc4)nnc3c2)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "acylation_alcohol_anhydride_001",
+   "category": "acylation",
+   "fired": 487,
+   "product_match": 145,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-00533d2621284180b8d6e372c9496cb7",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(C)=O",
+      "CN(C)c1ccccn1",
+      "O[C@@H]1C=C[C@H](OC2CCCCO2)C1"
+     ],
+     "generated": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ],
+     "actual": [
+      "CC(=O)OC1C=CC(OC2CCCCO2)C1"
+     ]
+    },
+    {
+     "rid": "ord-51ef9f6ae2d14a58b7d97c8023ad50fd",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "CCOC(=O)CC(O)c1ccc(C)nc1",
+      "[Na+].[OH-]",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(OC(C)=O)c1ccc(C)nc1"
+     ]
+    },
+    {
+     "rid": "ord-c66ac16f92a140a99bf16ac4d992dd53",
+     "reactants": [
+      "CC(=O)OC(C)=O",
+      "COc1ccc(C2CCC(O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ],
+     "generated": [
+      "COc1ccc(C2CCC(OC(C)=O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ],
+     "actual": [
+      "COc1ccc(C2CCC(OC(C)=O)CC2NC(=O)c2ccc(OCC3CC3)c(OCC3CC3)c2)cc1OC"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "condensation_schiff_base_001",
+   "category": "condensation",
+   "fired": 2571,
+   "product_match": 142,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-968da5d345074707bd8ae7f036b4987e",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)C(N)CC.Cl",
+      "O=Cc1ccccc1",
+      "O=S(=O)([O-])[O-].[Mg+2]"
+     ],
+     "generated": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ],
+     "actual": [
+      "CCOC(=O)C(CC)N=Cc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-8341607dd237492f8c1a68b89ed51a7c",
+     "reactants": [
+      "CC(C)(C)C=O",
+      "NC1CCNC1"
+     ],
+     "generated": [
+      "CC(C)(C)C=NC1CCNC1"
+     ],
+     "actual": [
+      "CC(C)(C)C=NC1CCNC1"
+     ]
+    },
+    {
+     "rid": "ord-7b25920dfe6144a1a723eec9437b7937",
+     "reactants": [
+      "CCCCc1ncc(C=O)n1Cc1ccccc1Cl",
+      "COC(=O)[C@@H](N)Cc1cccs1",
+      "Cc1ccccc1"
+     ],
+     "generated": [
+      "CCCCc1ncc(C=NC(Cc2cccs2)C(=O)OC)n1Cc1ccccc1Cl"
+     ],
+     "actual": [
+      "CCCCc1ncc(C=NC(Cc2cccs2)C(=O)OC)n1Cc1ccccc1Cl"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_aldehyde_001",
+   "category": "oxidation",
+   "fired": 10671,
+   "product_match": 126,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-3241ab6c22d447b498b7ce647cbfc9d9",
+     "reactants": [
+      "CC(=O)O",
+      "O=Cc1ccc(C(=O)OCc2ccccc2)cc1"
+     ],
+     "generated": [
+      "O=C(O)c1ccc(C(=O)OCc2ccccc2)cc1"
+     ],
+     "actual": [
+      "O=C(O)c1ccc(C(=O)OCc2ccccc2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-3cf88f8f01ae4eda9158f1af5217637a",
+     "reactants": [
+      "CC(C)(C)[O][K].CN(C)C=O.FC(F)F",
+      "O=Cc1ccccc1"
+     ],
+     "generated": [
+      "O=C(O)c1ccccc1"
+     ],
+     "actual": [
+      "O=C(O)c1ccccc1",
+      "OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-190dcd50c65c412eb9c6458f3623a7b2",
+     "reactants": [
+      "CC(C)=O.O=S(=O)(O)O.[O]=[Cr](=[O])=[O]",
+      "COC(=O)C1(CCCC=O)CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "generated": [
+      "COC(=O)C1(CCCC(=O)O)CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "actual": [
+      "COC(=O)C1(CCCC(=O)O)CCN(C(=O)OC(C)(C)C)CC1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "elimination_amide_to_nitrile_001",
+   "category": "elimination",
+   "fired": 2755,
+   "product_match": 122,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-4de2e5c5af6b486c8884eeb767fb4238",
+     "reactants": [
+      "CC(=O)OO",
+      "NC(=O)c1cc(Cl)ccn1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "N#Cc1cc(Cl)ccn1"
+     ],
+     "actual": [
+      "N#Cc1cc(Cl)ccn1"
+     ]
+    },
+    {
+     "rid": "ord-0decf2fbbf764e13806159996ca3156c",
+     "reactants": [
+      "CC(Nc1cncc(-n2cnc3ccc(C(N)=O)cc32)n1)c1cccc(F)c1",
+      "O=P(Cl)(Cl)Cl"
+     ],
+     "generated": [
+      "CC(Nc1cncc(-n2cnc3ccc(C#N)cc32)n1)c1cccc(F)c1"
+     ],
+     "actual": [
+      "CC(Nc1cncc(-n2cnc3ccc(C#N)cc32)n1)c1cccc(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-9c9dcda28fe244a7982077b1f6608d72",
+     "reactants": [
+      "COc1cccc(CC(N)=O)c1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "COc1cccc(CC#N)c1"
+     ],
+     "actual": [
+      "COc1cccc(CC#N)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_epoxide_001",
+   "category": "oxidation",
+   "fired": 15883,
+   "product_match": 103,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-07e7b8d911554e5d89dde51561daed3a",
+     "reactants": [
+      "C1=CCCCCCC1",
+      "ClC(Cl)Cl",
+      "O=C(CCl)C(Cl)(Cl)Cl",
+      "OO"
+     ],
+     "generated": [
+      "C1CCCC2OC2CC1"
+     ],
+     "actual": [
+      "C1CCCC2OC2CC1"
+     ]
+    },
+    {
+     "rid": "ord-94f84cbc479e491e8ede2b5a145fa82a",
+     "reactants": [
+      "CC1CCC=CCN1C(=O)OCc1ccccc1",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC1CCC2OC2CN1C(=O)OCc1ccccc1"
+     ],
+     "actual": [
+      "CC1CCC2OC2CN1C(=O)OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-2b7ec160332042a69b0aac988bc41c04",
+     "reactants": [
+      "C[C@]12CC=CC[C@@H]1CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC12CCC3C(CCC4CC5OC5CC43C)C1CCC2=O"
+     ],
+     "actual": [
+      "CC12CCC3C(CCC4CC5OC5CC43C)C1CCC2=O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "addition_michael_amine_001",
+   "category": "addition",
+   "fired": 3821,
+   "product_match": 76,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-41d35a48018a4cf78bfe4a9b41deea1d",
+     "reactants": [
+      "C=CC(C)=O",
+      "CC(C)(C)C1CCC(c2ccccc2N2CCNCC2)CC1"
+     ],
+     "generated": [
+      "CC(=O)CCN1CCN(c2ccccc2C2CCC(C(C)(C)C)CC2)CC1"
+     ],
+     "actual": [
+      "CC(=O)CCN1CCN(c2ccccc2C2CCC(C(C)(C)C)CC2)CC1"
+     ]
+    },
+    {
+     "rid": "ord-2597eddf038c410aaf1b84788b5a9f90",
+     "reactants": [
+      "CC(=O)C=C=O",
+      "Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ],
+     "generated": [
+      "CC(=O)CC(=O)Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ],
+     "actual": [
+      "CC(=O)CC(=O)Nc1ccc(NCCCC2CCCO2)c(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-8882f056f76f4dc1830b0d8993567b22",
+     "reactants": [
+      "CC(=O)C=C=O",
+      "Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ],
+     "generated": [
+      "CC(=O)CC(=O)Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ],
+     "actual": [
+      "CC(=O)CC(=O)Nc1ccc(N2CCOCC2)c(C(F)(F)F)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "condensation_aldol_001",
+   "category": "condensation",
+   "fired": 53620,
+   "product_match": 75,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-eb2ffed42db34070991af4f46a60fd88",
+     "reactants": [
+      "CCC(=O)CC",
+      "O=Cc1ccccc1"
+     ],
+     "generated": [
+      "CCC(=O)C(C)C(O)c1ccccc1"
+     ],
+     "actual": [
+      "CCC(=O)C(C)C(O)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-8a968362f88c480f9b0ae8acc65393b9",
+     "reactants": [
+      "C(C[*:2])[*:1]",
+      "CCOC(C)=O",
+      "COc1cccc(C(=O)c2cccc(OC)c2)c1",
+      "N"
+     ],
+     "generated": [
+      "CCOC(=O)CC(O)(c1cccc(OC)c1)c1cccc(OC)c1"
+     ],
+     "actual": [
+      "CCOC(=O)CC(O)(c1cccc(OC)c1)c1cccc(OC)c1"
+     ]
+    },
+    {
+     "rid": "ord-a8c8653a3de045df8c791130b1c0216b",
+     "reactants": [
+      "CCOC(=O)CN=[N+]=[N-]",
+      "CC[O-].[Na+]",
+      "O=Cc1cccnc1Cl"
+     ],
+     "generated": [
+      "CCOC(=O)C(N=[N+]=[N-])C(O)c1cccnc1Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C(N=[N+]=[N-])C(O)c1cccnc1Cl"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydration_alkene_001",
+   "category": "hydration",
+   "fired": 15883,
+   "product_match": 70,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-b8c3fa2dbf1b481391b010440c8960b9",
+     "reactants": [
+      "C=CCCC[C@@H](O)c1ccc(-c2ccc(Cl)cc2Cl)cc1",
+      "CCOCC.FB(F)F",
+      "O=C([O-])[O-].[K+].[K+]",
+      "OO"
+     ],
+     "generated": [
+      "OCCCCCC(O)c1ccc(-c2ccc(Cl)cc2Cl)cc1"
+     ],
+     "actual": [
+      "OCCCCCC(O)c1ccc(-c2ccc(Cl)cc2Cl)cc1"
+     ]
+    },
+    {
+     "rid": "ord-2b11fcbc50ca4a2bb72a4e6681ad232d",
+     "reactants": [
+      "C=CC(=C)C",
+      "CC(=O)O"
+     ],
+     "generated": [
+      "C=CC(C)(C)O"
+     ],
+     "actual": [
+      "C=CC(C)(C)O",
+      "CC(C)=CCCC(=O)[O-]",
+      "CC(C)=CCO"
+     ]
+    },
+    {
+     "rid": "ord-32dd13615e9c4b979158fca19b892678",
+     "reactants": [
+      "B.C1CCOC1",
+      "CC(C)(C)OC(=O)NC1CC=CC1",
+      "OO",
+      "[Na+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)NC1CCC(O)C1"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)NC1CCC(O)C1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "coupling_n_alkylation_benzyl_001",
+   "category": "coupling",
+   "fired": 210,
+   "product_match": 63,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-5552549c3a7244c2a7f25a78047820a8",
+     "reactants": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c([C@H](N)Cc2c[nH]c3ccccc23)n1",
+      "CCN(CC)CC",
+      "ClCc1ccccc1"
+     ],
+     "generated": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c(C(Cc2c[nH]c3ccccc23)NCc2ccccc2)n1"
+     ],
+     "actual": [
+      "CC(C)(C)c1cn(Cc2ccccc2)c(C(Cc2c[nH]c3ccccc23)NCc2ccccc2)n1"
+     ]
+    },
+    {
+     "rid": "ord-7fa9a543ff6a42ba8c85a7a23afb39d9",
+     "reactants": [
+      "CC(C)c1nc(CCl)co1",
+      "CN"
+     ],
+     "generated": [
+      "CNCc1coc(C(C)C)n1"
+     ],
+     "actual": [
+      "CNCc1coc(C(C)C)n1"
+     ]
+    },
+    {
+     "rid": "ord-14ad940e92ac4243ac1b9cc8a245e186",
+     "reactants": [
+      "CCN(CC)CC",
+      "CCOC(=O)CN.Cl",
+      "O=[N+]([O-])c1ccc(Cl)cc1CCl"
+     ],
+     "generated": [
+      "CCOC(=O)CNCc1cc(Cl)ccc1[N+](=O)[O-]"
+     ],
+     "actual": [
+      "CCOC(=O)CNCc1cc(Cl)ccc1[N+](=O)[O-]"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "decarboxylation_aromatic_001",
+   "category": "decarboxylation",
+   "fired": 7912,
+   "product_match": 58,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-a6d16c84992d44c5ba2388e74f39994d",
+     "reactants": [
+      "O=C(O)c1cc(-c2ccncc2)c(-c2ccc(F)cc2)s1",
+      "c1ccc2ncccc2c1"
+     ],
+     "generated": [
+      "Fc1ccc(-c2sccc2-c2ccncc2)cc1"
+     ],
+     "actual": [
+      "Fc1ccc(-c2sccc2-c2ccncc2)cc1"
+     ]
+    },
+    {
+     "rid": "ord-db23a7df47ce43e88181e32cd36573c0",
+     "reactants": [
+      "Cc1ccc2c(n1)sc1c(O)c(C(=O)O)nnc12"
+     ],
+     "generated": [
+      "Cc1ccc2c(n1)sc1c(O)cnnc12"
+     ],
+     "actual": [
+      "Cc1ccc2c(n1)sc1c(O)cnnc12"
+     ]
+    },
+    {
+     "rid": "ord-e9551f53bc29421fa7d1f8c4aefb21cf",
+     "reactants": [
+      "CCc1[nH]c(=O)[nH]c1C(=O)O",
+      "O=C(O)c1ccc(-n2ccnc2)cc1"
+     ],
+     "generated": [
+      "O=C=O"
+     ],
+     "actual": [
+      "CCc1[nH]c(=O)[nH]c1C(=O)c1ccc(-n2ccnc2)cc1",
+      "O=C=O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_dehydrogenation_enone_001",
+   "category": "oxidation",
+   "fired": 30833,
+   "product_match": 41,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-722cf82db39c409eb44cd3dedcb941d6",
+     "reactants": [
+      "CCOC(=O)C1CN=C(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc21",
+      "O"
+     ],
+     "generated": [
+      "CCOC(=O)c1cnc(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc12"
+     ],
+     "actual": [
+      "CCOC(=O)c1cnc(CN2C(=O)c3ccccc3C2=O)c2c(OC)cc(OC)cc12"
+     ]
+    },
+    {
+     "rid": "ord-23aebc49575048f78dc97f67179657f2",
+     "reactants": [
+      "CC1CC(=O)NN=C1c1ccc2c(c1)CCC(=O)N2C",
+      "N#CC1=C(C#N)C(=O)C(Cl)=C(Cl)C1=O"
+     ],
+     "generated": [
+      "CC1CC(=O)NN=C1c1ccc2c(ccc(=O)n2C)c1"
+     ],
+     "actual": [
+      "CC1CC(=O)NN=C1c1ccc2c(ccc(=O)n2C)c1"
+     ]
+    },
+    {
+     "rid": "ord-4a59ea2658314cef9afdbdd4505f8643",
+     "reactants": [
+      "BrBr",
+      "CC1CC(=O)NN=C1c1ccc(Br)cc1"
+     ],
+     "generated": [
+      "Cc1cc(=O)[nH]nc1-c1ccc(Br)cc1"
+     ],
+     "actual": [
+      "Cc1cc(=O)[nH]nc1-c1ccc(Br)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydroxylation_aromatic_001",
+   "category": "hydroxylation",
+   "fired": 109923,
+   "product_match": 35,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-49d570f5b6da402d8ae3be1663819276",
+     "reactants": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)cc(=O)oc2c1OC1CCCC1",
+      "NC(N)=O.OO",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=S([O-])([O-])=S.[Na+].[Na+]"
+     ],
+     "generated": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)c(O)c(=O)oc2c1OC1CCCC1"
+     ],
+     "actual": [
+      "COc1ccc2c(Nc3c(Cl)cncc3Cl)c(O)c(=O)oc2c1OC1CCCC1"
+     ]
+    },
+    {
+     "rid": "ord-01f2f8a8a53d4d1d8fa1d6c058f5497a",
+     "reactants": [
+      "CCOP(=S)(S)OCC",
+      "N#Cc1c(O)cccc1O",
+      "NC(=S)c1ccccc1O"
+     ],
+     "generated": [
+      "NC(=S)c1c(O)cccc1O"
+     ],
+     "actual": [
+      "NC(=S)c1c(O)cccc1O"
+     ]
+    },
+    {
+     "rid": "ord-e7b420fca4cd44b99f56ad6c52a98cc7",
+     "reactants": [
+      "CC1(C)OB(B2OC(C)(C)C(C)(C)O2)OC1(C)C",
+      "Clc1cccc(Br)c1",
+      "O=S([O-])OO.[K+]"
+     ],
+     "generated": [
+      "Oc1cc(Cl)cc(Br)c1"
+     ],
+     "actual": [
+      "Oc1cc(Cl)cc(Br)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "addition_michael_thiol_001",
+   "category": "addition",
+   "fired": 138,
+   "product_match": 28,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-d9dbb8c843704e72b8d436d338439278",
+     "reactants": [
+      "C=CC(=O)NC1C2CC3CC(C2)CC1C3",
+      "CC(C)(C)c1cc(S)cc(C(C)(C)C)c1O",
+      "CCN(CC)CC"
+     ],
+     "generated": [
+      "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O"
+     ],
+     "actual": [
+      "CC(C)(C)c1cc(SCCC(=O)NC2C3CC4CC(C3)CC2C4)cc(C(C)(C)C)c1O"
+     ]
+    },
+    {
+     "rid": "ord-1459bb327c3c4429b7c487d3471ef8df",
+     "reactants": [
+      "O=C(O)C=CCC(=O)O",
+      "Sc1nc2ccccc2s1"
+     ],
+     "generated": [
+      "O=C(O)CC(CC(=O)O)Sc1nc2ccccc2s1"
+     ],
+     "actual": [
+      "O=C(O)CC(CC(=O)O)Sc1nc2ccccc2s1"
+     ]
+    },
+    {
+     "rid": "ord-fbab261c40194fdd8da010af0aa35152",
+     "reactants": [
+      "C/C=C/C=O",
+      "CCCCCCCCCCCCS"
+     ],
+     "generated": [
+      "CCCCCCCCCCCCSC(C)CC=O"
+     ],
+     "actual": [
+      "CCCCCCCCCCCCSC(C)CC=O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_sulfoxide_to_sulfone_001",
+   "category": "oxidation",
+   "fired": 3653,
+   "product_match": 26,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-7cbd6652612f4c55b07a8147385f28b2",
+     "reactants": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)=O)c(F)c1",
+      "O.O.O.O.O.O.O=C([O-])c1ccccc1C(=O)O[O-].[Mg+2]",
+      "O=S(=O)([O-])O[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)(=O)=O)c(F)c1"
+     ],
+     "actual": [
+      "Cc1onc(-c2ccccc2)c1-c1cc(F)c(S(C)(=O)=O)c(F)c1"
+     ]
+    },
+    {
+     "rid": "ord-b03d103511ba46508cce9d5472c584ca",
+     "reactants": [
+      "CS(=O)C[C@H](NC(=O)OCc1ccccc1)C(=O)N[C@@H](Cc1ccccc1)[C@H](O)C[C@@]1(C(=O)[NH2+][O-])CCCN1C(C)(C)C.N#N",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-]"
+     ],
+     "actual": [
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-]",
+      "CC(C)(C)N1CCCC1(CC(O)C(Cc1ccccc1)NC(=O)C(CS(C)(=O)=O)NC(=O)OCc1ccccc1)C(=O)[NH2+][O-].N#N.O",
+      "N#N",
+      "O"
+     ]
+    },
+    {
+     "rid": "ord-452a3c48ba9c42cea004229928dd9ac8",
+     "reactants": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)=O)cc1",
+      "O=C(OO)c1cccc(Cl)c1"
+     ],
+     "generated": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)(=O)=O)cc1"
+     ],
+     "actual": [
+      "CC1=C(CC(=O)O)c2cc(F)c(F)cc2C1=Cc1ccc(S(C)(=O)=O)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "isomerization_double_bond_001",
+   "category": "rearrangement",
+   "fired": 3541,
+   "product_match": 22,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-4d2a5ce25ca84394ba1e3974ebce74f6",
+     "reactants": [
+      "C=C",
+      "C=CC",
+      "CC=C1CC2=CCC1C2",
+      "Fc1c(F)c(F)c(B(c2c(F)c(F)c(F)c(F)c2F)c2c(F)c(F)c(F)c(F)c2F)c(F)c1F"
+     ],
+     "generated": [
+      "CC=C1CC2C=CC1C2"
+     ],
+     "actual": [
+      "C=C",
+      "C=C.C=CC.CC=C1CC2C=CC1C2",
+      "C=CC",
+      "CC=C1CC2C=CC1C2"
+     ]
+    },
+    {
+     "rid": "ord-41eba227707c4a7fb38c30d845e22448",
+     "reactants": [
+      "C1=CCOC1",
+      "C1CCOC1",
+      "O"
+     ],
+     "generated": [
+      "C1=COCC1"
+     ],
+     "actual": [
+      "C1=COCC1",
+      "O=C1CCCO1",
+      "O=CCCCO",
+      "c1ccoc1"
+     ]
+    },
+    {
+     "rid": "ord-71a351736a0348eb8442aa7d42da8f29",
+     "reactants": [
+      "C=C(C)CCC(=O)OCC",
+      "CCOC(=O)C=CC(C)C",
+      "CCOC(=O)CC=C(C)C"
+     ],
+     "generated": [
+      "CCOC(=O)C=CC(C)C"
+     ],
+     "actual": [
+      "CCOC(=O)C=CC(C)C"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydrolysis_imine_001",
+   "category": "hydrolysis",
+   "fired": 330,
+   "product_match": 21,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 1,
+   "examples": [
+    {
+     "rid": "ord-b1dcbef1739948fe87cc9c46b0f68caa",
+     "reactants": [
+      "C1CCOC1",
+      "COc1cc(C=NC(C(C)C)C(C)C)c(C(C)C)cc1OC",
+      "Cl"
+     ],
+     "generated": [
+      "COc1cc(C=O)c(C(C)C)cc1OC"
+     ],
+     "actual": [
+      "COc1cc(C=O)c(C(C)C)cc1OC"
+     ]
+    },
+    {
+     "rid": "ord-7aa29bacc222422f86399fac0c0d4e76",
+     "reactants": [
+      "CCOC(C)=O",
+      "COc1ccc(C=NC(c2ccc(Cl)nc2)(c2ccc3c(c2)c(-c2cccc(Cl)c2)cc(=O)n3CC2CC2)c2cncn2C)cc1",
+      "Cl",
+      "O=C([O-])[O-].[K+].[K+]"
+     ],
+     "generated": [
+      "Cn1cncc1C(N)(c1ccc(Cl)nc1)c1ccc2c(c1)c(-c1cccc(Cl)c1)cc(=O)n2CC1CC1"
+     ],
+     "actual": [
+      "Cn1cncc1C(N)(c1ccc(Cl)nc1)c1ccc2c(c1)c(-c1cccc(Cl)c1)cc(=O)n2CC1CC1"
+     ]
+    },
+    {
+     "rid": "ord-2e0fa9313051494aba91e78764bf09e3",
+     "reactants": [
+      "CC(C)CN=Cc1cccc(Oc2ccccc2)c1",
+      "Cl",
+      "O"
+     ],
+     "generated": [
+      "O=Cc1cccc(Oc2ccccc2)c1"
+     ],
+     "actual": [
+      "O=Cc1cccc(Oc2ccccc2)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "acylation_alcohol_cyclic_succinic_001",
+   "category": "acylation",
+   "fired": 54,
+   "product_match": 18,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-d8d5f6909a9d42dca945fc4afe484978",
+     "reactants": [
+      "CN(C)C=O",
+      "O=C1CCC(=O)O1",
+      "O=C1O[C@@H](Cn2ccnn2)CN1c1ccc(-c2ccc(C3=NO[C@H](CO)C3)nc2)c(F)c1",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "O=C(O)CCC(=O)OCC1CC(c2ccc(-c3ccc(N4CC(Cn5ccnn5)OC4=O)cc3F)cn2)=NO1"
+     ],
+     "actual": [
+      "O=C(O)CCC(=O)OCC1CC(c2ccc(-c3ccc(N4CC(Cn5ccnn5)OC4=O)cc3F)cn2)=NO1"
+     ]
+    },
+    {
+     "rid": "ord-6294c2bf7f454cdbad3246340af72d9c",
+     "reactants": [
+      "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "O=C1CCC(=O)O1",
+      "OCc1ccccc1",
+      "c1ccncc1"
+     ],
+     "generated": [
+      "O=C(O)CCC(=O)OCc1ccccc1"
+     ],
+     "actual": [
+      "O=C(O)CCC(=O)OCc1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-3c50555f4f484c72bdffa807ed8b8b0f",
+     "reactants": [
+      "C=C[C@H]1CN2CCC1C[C@@H]2[C@@H](O)c1ccnc2ccc(OC)cc12",
+      "CO",
+      "Cc1ccccc1",
+      "O=C1OC(=O)[C@H]2[C@@H]1[C@@H]1C=C[C@H]2C1"
+     ],
+     "generated": [
+      "COC(=O)C1C2C=CC(C2)C1C(=O)O"
+     ],
+     "actual": [
+      "COC(=O)C1C2C=CC(C2)C1C(=O)O"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "rearrangement_retro_aldol_001",
+   "category": "rearrangement",
+   "fired": 1719,
+   "product_match": 15,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "cyclization_macro_lactam_001",
+   "category": "cyclization",
+   "fired": 172,
+   "product_match": 14,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c763472b558f4bf19c166b3b739155cb",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COc1ccc([C@@H](C)[NH3+])nc1.[Cl-]",
+      "C[C@H](C(=O)O)c1ccc(-c2ccccc2)c(F)c1",
+      "ClCCCl"
+     ],
+     "generated": [
+      "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1"
+     ],
+     "actual": [
+      "COc1ccc(C(C)NC(=O)C(C)c2ccc(-c3ccccc3)c(F)c2)nc1"
+     ]
+    },
+    {
+     "rid": "ord-5ad34635f4874236982f9ead8b5b9a65",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COC(=O)c1cccc(C[NH3+])c1.[Cl-]",
+      "COc1ccc(C(=O)O)cc1OC",
+      "ClCCCl"
+     ],
+     "generated": [
+      "COC(=O)c1cccc(CNC(=O)c2ccc(OC)c(OC)c2)c1"
+     ],
+     "actual": [
+      "COC(=O)c1cccc(CNC(=O)c2ccc(OC)c(OC)c2)c1"
+     ]
+    },
+    {
+     "rid": "ord-7a28c3a922934445a708448c217e5192",
+     "reactants": [
+      "Cc1cc(N2CCN(CCOc3ccccc3)C2=O)sc1C(=O)O",
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)O",
+      "[Cl-].[NH3+]Cc1cnc2ccccc2c1"
+     ],
+     "generated": [
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)NCc1cnc2ccccc2c1"
+     ],
+     "actual": [
+      "Cc1cc(N2CCN(Cc3ccc(F)cc3)C2=O)sc1C(=O)NCc1cnc2ccccc2c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "decarboxylation_beta_keto_001",
+   "category": "decarboxylation",
+   "fired": 263,
+   "product_match": 13,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "decarboxylation_malonic_001",
+   "category": "decarboxylation",
+   "fired": 263,
+   "product_match": 13,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-3106a99bd54c4b21ada04ba10d9f7f30",
+     "reactants": [
+      "CCN(CC)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "CCOC1NN(c2ccc(OC)cc2)C(=O)C1=O",
+      "COC(=O)C1NN(c2ccc(OC)cc2)C(=O)C1=O"
+     ],
+     "generated": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ],
+     "actual": [
+      "COc1ccc(N2NCC(=O)C2=O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-9d80b20dec5a45708345ce38f4ea4e7e",
+     "reactants": [
+      "CC(CCCCCC1=CCCC1=O)(C(=O)O)C(=O)O.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "CCOC(=O)C(C)(CCCCCC1=CCCC1=O)C(=O)OCC.O/N=C/c1cc[n+](C[n+]2ccc(/C=N/O)cc2)cc1.[Br-].[Br-]",
+      "[K+].[OH-]"
+     ],
+     "generated": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O"
+     ],
+     "actual": [
+      "CC(CCCCCC1=CCCC1=O)C(=O)O",
+      "CC(CCCCCC1=CCCC1=O)C(=O)O.ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1.[Br-].[Br-]",
+      "ON=Cc1cc[n+](C[n+]2ccc(C=NO)cc2)cc1",
+      "[Br-]"
+     ]
+    },
+    {
+     "rid": "ord-31c3e2e98cd44467899f028d14290818",
+     "reactants": [
+      "O=C(O)C1(C(=O)O)CC2(CCC2)C1"
+     ],
+     "generated": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ],
+     "actual": [
+      "O=C(O)C1CC2(CCC2)C1"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "elimination_deamination_001",
+   "category": "elimination",
+   "fired": 6522,
+   "product_match": 13,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-4f7a9ea9dccc4c679c1789f679ee250a",
+     "reactants": [
+      "CCCCN=C=O",
+      "NCCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCCCNC(=O)NCCN",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-c8c81d7d5d624a72ba91d08d0c646eb0",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-8e738d085e454a4eaf1163de4a12dd9d",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "oxidation_amine_001",
+   "category": "oxidation",
+   "fired": 6522,
+   "product_match": 13,
+   "ord_grade": "strong_ord",
+   "literature": [],
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-4f7a9ea9dccc4c679c1789f679ee250a",
+     "reactants": [
+      "CCCCN=C=O",
+      "NCCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCCCNC(=O)NCCN",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-c8c81d7d5d624a72ba91d08d0c646eb0",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    },
+    {
+     "rid": "ord-8e738d085e454a4eaf1163de4a12dd9d",
+     "reactants": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "CN(C)CCN"
+     ],
+     "generated": [
+      "N"
+     ],
+     "actual": [
+      "CCC(Br)c1nc2ccccc2c(=O)n1Cc1ccccc1",
+      "N"
+     ]
+    }
+   ],
+   "proposed_provenance": "secondary"
+  },
+  {
+   "id": "hydrolysis_sulfate_001",
+   "category": "hydrolysis",
+   "fired": 1593,
+   "product_match": 9,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-38fad87017304b2ea8cf82845de81665",
+     "reactants": [
+      "COS(=O)(=O)C(F)(F)F",
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1"
+     ],
+     "generated": [
+      "O=S(=O)(O)C(F)(F)F"
+     ],
+     "actual": [
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1",
+      "Cc1nccn1S(=O)(=O)N1CCN(C(=O)OC(C)(C)C)CC1.O=S(=O)(O)C(F)(F)F",
+      "O=S(=O)(O)C(F)(F)F"
+     ]
+    },
+    {
+     "rid": "ord-e785ea6338194dd69e22ecc6c663d32e",
+     "reactants": [
+      "CCCOS(=O)(=O)c1ccc(C)cc1"
+     ],
+     "generated": [
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "actual": [
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ]
+    },
+    {
+     "rid": "ord-459b22e82b8f4decbddb6d75a4854f6b",
+     "reactants": [
+      "O",
+      "O=N[O-].[Na+]",
+      "O=S(=O)(O[C@H]1CO[C@@H](OCc2ccccc2)[C@@H](OCc2ccccc2)[C@@H]1OCc1ccccc1)C(F)(F)F"
+     ],
+     "generated": [
+      "OC1COC(OCc2ccccc2)C(OCc2ccccc2)C1OCc1ccccc1"
+     ],
+     "actual": [
+      "OC1COC(OCc2ccccc2)C(OCc2ccccc2)C1OCc1ccccc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "reduction_sulfoxide_001",
+   "category": "reduction",
+   "fired": 3653,
+   "product_match": 9,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-9bd323dfdfc3445abcf8bcd679f410ce",
+     "reactants": [
+      "CO",
+      "COc1cc(OCCS(C)(=O)=O)ccc1NC(=O)[C@@H]1N[C@@H](CC(C)(C)C)[C@@]2(C(=O)Nc3cc(Cl)ccc32)[C@H]1c1cccc(Cl)c1F"
+     ],
+     "generated": [
+      "COc1cc(OCCS(C)=O)ccc1NC(=O)C1NC(CC(C)(C)C)C2(C(=O)Nc3cc(Cl)ccc32)C1c1cccc(Cl)c1F"
+     ],
+     "actual": [
+      "COc1cc(OCCS(C)=O)ccc1NC(=O)C1NC(CC(C)(C)C)C2(C(=O)Nc3cc(Cl)ccc32)C1c1cccc(Cl)c1F"
+     ]
+    },
+    {
+     "rid": "ord-3caaed4844244114b6f8629face0a542",
+     "reactants": [
+      "CC(C)=O",
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CS(=O)[C@H]12)c1nsc(N)n1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "[I-].[Na+]"
+     ],
+     "generated": [
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CSC12)c1nsc(N)n1"
+     ],
+     "actual": [
+      "CON=C(C(=O)NC1C(=O)N2C(C(=O)OC(c3ccccc3)c3ccccc3)=C(COC(=O)N3CCN(C)CC3)CSC12)c1nsc(N)n1"
+     ]
+    },
+    {
+     "rid": "ord-b7aa1f4da056454fbd5c81aea55bbaa3",
+     "reactants": [
+      "Cc1ccc([S@](=O)C[C@](O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "[I-].[Na+]"
+     ],
+     "generated": [
+      "Cc1ccc(SCC(O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1"
+     ],
+     "actual": [
+      "Cc1ccc(SCC(O)(CC(C)(C)c2cc(Br)cc3c2OCC3)C(F)(F)F)cc1"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_ether_001",
+   "category": "cyclization",
+   "fired": 540,
+   "product_match": 8,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-a5fb5c3cc7cf4d64ad4d21d86b8e6e50",
+     "reactants": [
+      "CC(C)OC(=O)/N=N/C(=O)OC(C)C",
+      "CC1(CO)CC[C@](O)(C(=O)O)C1(C)C",
+      "c1ccc(P(c2ccccc2)c2ccccc2)cc1"
+     ],
+     "generated": [
+      "CC12CCC(C(=O)O)(OC1)C2(C)C"
+     ],
+     "actual": [
+      "CC12CCC(C(=O)O)(OC1)C2(C)C"
+     ]
+    },
+    {
+     "rid": "ord-3e81f2c249494cdc8752073e4470ad61",
+     "reactants": [
+      "CC(C)(C)[Si](Oc1cccc(CC(CCO)C(O)c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1",
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "generated": [
+      "CC(C)(C)[Si](Oc1cccc(CC2CCOC2c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1"
+     ],
+     "actual": [
+      "CC(C)(C)[Si](Oc1cccc(CC2CCOC2c2nc(-c3ccccc3)c(-c3ccccc3)o2)c1)(c1ccccc1)c1ccccc1"
+     ]
+    },
+    {
+     "rid": "ord-ebe7fdf5beaa48b0a4e162141f7df727",
+     "reactants": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n([C@H]2CC[C@H](OCC(O)CCCO)CC2)c2ncnn12",
+      "CCOC(=O)N=NC(=O)OCC",
+      "O",
+      "c1ccc(P(c2ccccc2)c2ccccc2)cc1"
+     ],
+     "generated": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n(C2CCC(OCC3CCCO3)CC2)c2ncnn12"
+     ],
+     "actual": [
+      "CCCc1c(Cc2ccc(-c3ccccc3C#N)cc2)c(=O)n(C2CCC(OCC3CCCO3)CC2)c2ncnn12"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "acylation_alcohol_cyclic_phthalic_001",
+   "category": "acylation",
+   "fired": 59,
+   "product_match": 6,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 1,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-3dbead96b25644bab899c35c4bc7ec16",
+     "reactants": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCO)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCOC(=O)c3ccccc3C(=O)O)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1"
+     ],
+     "actual": [
+      "CNC(=O)c1c2cc(C3CC3)c(N(CCOC(=O)c3ccccc3C(=O)O)S(C)(=O)=O)cc2nn1-c1ccc(F)cc1"
+     ]
+    },
+    {
+     "rid": "ord-962249844c1c4960ba42236fd6ee7f5e",
+     "reactants": [
+      "C#CC(C)(O)CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O",
+      "CCN(CC)CC",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "C#CC(C)(CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O)OC(=O)c1ccccc1C(=O)O"
+     ],
+     "actual": [
+      "C#CC(C)(CCc1c(C)c(OC(C)=O)c(C)c(C)c1OC(C)=O)OC(=O)c1ccccc1C(=O)O"
+     ]
+    },
+    {
+     "rid": "ord-1cc4507b4a854a03a6da1001749d07ed",
+     "reactants": [
+      "CO",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "generated": [
+      "COC(=O)c1ccccc1C(=O)O"
+     ],
+     "actual": [
+      "COC(=O)c1ccccc1C(=O)O"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "hydrolysis_phosphate_001",
+   "category": "hydrolysis",
+   "fired": 778,
+   "product_match": 6,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-b76832d8c2fe47609a139e614967c486",
+     "reactants": [
+      "CCOP(=O)(CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O)OCC",
+      "CO",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CCOP(=O)(O)CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O"
+     ],
+     "actual": [
+      "CCOP(=O)(O)CCC(C)=CCc1c(O)c2c(c(C)c1OC)COC2=O"
+     ]
+    },
+    {
+     "rid": "ord-7c3ae6450c7a42018e55542fd2ea202a",
+     "reactants": [
+      "CCCCN(CCCC)CCCC",
+      "CCCC[NH+](CCCC)CCCC",
+      "O=C([O-])O.[NH4+]",
+      "O=P([O-])([O-])OP(=O)([O-])OP(=O)([O-])OP(=O)(O)O.O=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)[nH]1.O=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)[nH]1.[Na+].[Na+].[Na+].[Na+]"
+     ],
+     "generated": [
+      "O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1"
+     ],
+     "actual": [
+      "O=P(O)(O)OP(=O)(O)OP(=O)(O)OP(=O)(O)O",
+      "O=P(O)(O)OP(=O)(O)OP(=O)(O)OP(=O)(O)O.O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1.O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1",
+      "O=c1ccn(C2OC(CO)C(O)C2O)c(=O)[nH]1"
+     ]
+    },
+    {
+     "rid": "ord-86616bee0271413c96e01ad81a58aacd",
+     "reactants": [
+      "CCOP(=O)(Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(C[C@H](O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1)OCC",
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CCCO)c4)cc3C(=O)N(CC)CC)n2)c(OC)c1"
+     ],
+     "generated": [
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CC(O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1"
+     ],
+     "actual": [
+      "CCOP(=O)(O)Cc1ccc(Nc2ncc(C(F)(F)F)c(Nc3ccc(-c4cnn(CC(O)CO)c4)c4c3C(=O)N(C)C4)n2)c(OC)c1"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "oxidation_diphenol_para_001",
+   "category": "oxidation",
+   "fired": 165,
+   "product_match": 6,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-5e6a35ae7d31484597e3dd3d9eaeb9f3",
+     "reactants": [
+      "Cc1cc(O)ccc1O",
+      "O=O",
+      "O=S(=O)(O)O"
+     ],
+     "generated": [
+      "CC1=CC(=O)C=CC1=O"
+     ],
+     "actual": [
+      "CC1=CC(=O)C=CC1=O"
+     ]
+    },
+    {
+     "rid": "ord-de8eeb5a0f4e441ca9929962dbdd5c1a",
+     "reactants": [
+      "O=S(=O)(c1ccccc1)c1cc(O)c2ccccc2c1O"
+     ],
+     "generated": [
+      "O=C1C=C(S(=O)(=O)c2ccccc2)C(=O)c2ccccc21"
+     ],
+     "actual": [
+      "O=C1C=C(S(=O)(=O)c2ccccc2)C(=O)c2ccccc21"
+     ]
+    },
+    {
+     "rid": "ord-ae9f081be80842a1940c73492fb84164",
+     "reactants": [
+      "COc1ccc([Te](=O)c2ccc(OC)cc2)cc1",
+      "Oc1ccc(O)c2ccccc12"
+     ],
+     "generated": [
+      "O=C1C=CC(=O)c2ccccc21"
+     ],
+     "actual": [
+      "COc1ccc([Te]c2ccc(OC)cc2)cc1",
+      "O=C1C=CC(=O)c2ccccc21"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "substitution_alcohol_thionyl_001",
+   "category": "substitution",
+   "fired": 35,
+   "product_match": 6,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c9fda451c4c64a4baef159b8914061f8",
+     "reactants": [
+      "CCO",
+      "O=C(O)[C@H]1C[C@@H](O)CN1",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C1CC(O)CN1",
+      "CCOC(=O)C1CC(O)CN1.Cl",
+      "Cl"
+     ]
+    },
+    {
+     "rid": "ord-ab828ab4f8de435cbeaf92e3a367de83",
+     "reactants": [
+      "CC1CNCCC1C(=O)O.Cl",
+      "CCO",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCOC(=O)C1CCNCC1C",
+      "CCOC(=O)C1CCNCC1C.Cl",
+      "Cl"
+     ]
+    },
+    {
+     "rid": "ord-31132c42a0fd482cafc5a6621aa9e049",
+     "reactants": [
+      "CCCCN(CC(=O)O)C(=O)[C@H](CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1.N#N",
+      "CCO",
+      "O=S(Cl)Cl"
+     ],
+     "generated": [
+      "Cl"
+     ],
+     "actual": [
+      "CCCCN(CC(=O)OCC)C(=O)C(CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1",
+      "CCCCN(CC(=O)OCC)C(=O)C(CCCNC(=N)N)NS(=O)(=O)c1ccc2ccccc2c1.Cl.N#N",
+      "Cl",
+      "N#N"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "hydration_enone_001",
+   "category": "hydration",
+   "fired": 6864,
+   "product_match": 5,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-6b5f322ea8cd4872a6831d2085442628",
+     "reactants": [
+      "C=CCO",
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-7150ca15c2424185a1b442fbafb5d959",
+     "reactants": [
+      "C=CCO",
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "[Li+].[OH-]"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    },
+    {
+     "rid": "ord-48cf58e1338847e8a70ffcf248a106d7",
+     "reactants": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H]1CC=CC(=O)O1",
+      "Cl",
+      "O=S(=O)(O)O",
+      "OCc1ccccc1"
+     ],
+     "generated": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ],
+     "actual": [
+      "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC1CC(O)CC(=O)O1"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "reduction_quinone_para_001",
+   "category": "reduction",
+   "fired": 314,
+   "product_match": 5,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-d264a4b8ce364c998253ee55ac74f6a8",
+     "reactants": [
+      "CCN(C(C)C)C(C)C",
+      "COC1=CC(=O)C=C(OC)C1=O",
+      "O",
+      "O=C(O)CCS"
+     ],
+     "generated": [
+      "COc1cc(O)cc(OC)c1O"
+     ],
+     "actual": [
+      "COc1cc(O)cc(OC)c1O",
+      "COc1cc(O)cc(OC)c1O.O=C(O)CCS",
+      "O=C(O)CCS"
+     ]
+    },
+    {
+     "rid": "ord-0fa0833f8c414229aadad5df5cceafad",
+     "reactants": [
+      "CO",
+      "O=C1C=C(Cl)C(=O)C2C1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ],
+     "generated": [
+      "Oc1cc(Cl)c(O)c2c1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ],
+     "actual": [
+      "Oc1cc(Cl)c(O)c2c1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl"
+     ]
+    },
+    {
+     "rid": "ord-882cd14c17ef48f1a4869be62db102ee",
+     "reactants": [
+      "C",
+      "CC1=C(C)C(=O)C(CC[C@](C)(O)CO)=C(C)C1=O",
+      "[H][H]"
+     ],
+     "generated": [
+      "Cc1c(C)c(O)c(CCC(C)(O)CO)c(C)c1O"
+     ],
+     "actual": [
+      "Cc1c(C)c(O)c(CCC(C)(O)CO)c(C)c1O"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "condensation_glycosylation_001",
+   "category": "condensation",
+   "fired": 155,
+   "product_match": 4,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-0c6d074bda374bf1ac9566888c34446c",
+     "reactants": [
+      "CC(C)(Br)[C@@H]1CC(=O)O[C@H]1O",
+      "CC(C)O",
+      "Cc1ccc(S(=O)(=O)O)cc1"
+     ],
+     "generated": [
+      "CC(C)OC1OC(=O)CC1C(C)(C)Br"
+     ],
+     "actual": [
+      "CC(C)OC1OC(=O)CC1C(C)(C)Br"
+     ]
+    },
+    {
+     "rid": "ord-496503ec4aca455e8a4367b940cce6e8",
+     "reactants": [
+      "CCOCC.FB(F)F",
+      "CO",
+      "C[C@H]1[C@@H](O)O[C@@H]2OC3(C)CC[C@H]4[C@H](C)CC[C@@H]1[C@@]24OO3"
+     ],
+     "generated": [
+      "COC1OC2OC3(C)CCC4C(C)CCC(C1C)C24OO3"
+     ],
+     "actual": [
+      "COC1OC2OC3(C)CCC4C(C)CCC(C1C)C24OO3"
+     ]
+    },
+    {
+     "rid": "ord-fe73c643d9524284b633570bbae68428",
+     "reactants": [
+      "CCN(CC)CC",
+      "COc1cc(C2CCC(O)O2)cc(OC)c1OC",
+      "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+      "O=C1c2ccccc2C(=O)N1CCCO"
+     ],
+     "generated": [
+      "COc1cc(C2CCC(OCCCN3C(=O)c4ccccc4C3=O)O2)cc(OC)c1OC"
+     ],
+     "actual": [
+      "COc1cc(C2CCC(OCCCN3C(=O)c4ccccc4C3=O)O2)cc(OC)c1OC"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_lactam_001",
+   "category": "cyclization",
+   "fired": 54,
+   "product_match": 2,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-b80adfa3516a434db141f13b4adac7f3",
+     "reactants": [
+      "CC(C)[C@H](N)C(=O)O",
+      "CC[C@H](C)[C@H](N)C(=O)O",
+      "N[C@@H](CCC(=O)O)C(=O)O",
+      "N[C@@H](Cc1ccc(O)cc1)C(=O)O"
+     ],
+     "generated": [
+      "O"
+     ],
+     "actual": [
+      "CC(=O)O",
+      "CC(=O)O.CCCCO.O.c1ccncc1",
+      "CCCCO",
+      "O",
+      "c1ccncc1"
+     ]
+    },
+    {
+     "rid": "ord-d288bf917f0b4bd4840f67269f252b57",
+     "reactants": [
+      "CC(C)(C)OC(=O)[C@@H]1CC(CN)(CC(=O)O)CN1C(=O)OC(C)(C)C",
+      "CCN(C(C)C)C(C)C",
+      "CCN=C=NCCCN(C)C.Cl",
+      "On1nnc2ccccc21"
+     ],
+     "generated": [
+      "CC(C)(C)OC(=O)C1CC2(CNC(=O)C2)CN1C(=O)OC(C)(C)C"
+     ],
+     "actual": [
+      "CC(C)(C)OC(=O)C1CC2(CNC(=O)C2)CN1C(=O)OC(C)(C)C"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "addition_isocyanate_amine_urea_001",
+   "category": "addition",
+   "fired": 1,
+   "product_match": 1,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-c855ba8a68d94a90a16f7359111ea10d",
+     "reactants": [
+      "CC(Cl)Cl",
+      "CN",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N)c2Cl",
+      "CN1C(=O)CN=C(c2ccccc2F)c2c1ccc(N=C=O)c2Cl"
+     ],
+     "generated": [
+      "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C"
+     ],
+     "actual": [
+      "CNC(=O)Nc1ccc2c(c1Cl)C(c1ccccc1F)=NCC(=O)N2C"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_lactone_delta_001",
+   "category": "cyclization",
+   "fired": 36,
+   "product_match": 1,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-87b35a6264bb4aac9c89aeef80b41113",
+     "reactants": [
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC(=O)O)[C@H]21",
+      "O=C1CCC(=O)N1O"
+     ],
+     "generated": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ],
+     "actual": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "esterification_delta_lactone_001",
+   "category": "esterification",
+   "fired": 36,
+   "product_match": 1,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-87b35a6264bb4aac9c89aeef80b41113",
+     "reactants": [
+      "C(=NC1CCCCC1)=NC1CCCCC1",
+      "CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC(=O)O)[C@H]21",
+      "O=C1CCC(=O)N1O"
+     ],
+     "generated": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ],
+     "actual": [
+      "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "hydrolysis_hemiacetal_001",
+   "category": "hydrolysis",
+   "fired": 155,
+   "product_match": 1,
+   "ord_grade": "weak_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [
+    {
+     "rid": "ord-26bde17dc5b64039ae34d2762669f729",
+     "reactants": [
+      "CC(O)Oc1nnc(Cl)cc1N1CCNCC1.O=C(O)/C=C/C(=O)O"
+     ],
+     "generated": [
+      "Oc1nnc(Cl)cc1N1CCNCC1"
+     ],
+     "actual": [
+      "Oc1nnc(Cl)cc1N1CCNCC1"
+     ]
+    }
+   ],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "addition_thiohemiacetal_001",
+   "category": "addition",
+   "fired": 134,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "condensation_hemiacetal_001",
+   "category": "condensation",
+   "fired": 4200,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "coupling_n_alkylation_amine_001",
+   "category": "coupling",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_conrad_limpach_alpha_aryl_001",
+   "category": "cyclization",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [
+    {
+     "doi": "10.1007/978-3-030-50865-4",
+     "title": "Name Reactions",
+     "container": "",
+     "year": 2021
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_fischer_aza_indole_001",
+   "category": "cyclization",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [
+    {
+     "doi": "10.1007/978-3-030-50865-4",
+     "title": "Name Reactions",
+     "container": "",
+     "year": 2021
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_hantzsch_thiazole_001",
+   "category": "cyclization",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [
+    {
+     "doi": "10.1007/978-3-030-50865-4",
+     "title": "Name Reactions",
+     "container": "",
+     "year": 2021
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_hemiacetal_001",
+   "category": "cyclization",
+   "fired": 96,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_indazole_001",
+   "category": "cyclization",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [
+    {
+     "doi": "10.1007/978-3-030-50865-4",
+     "title": "Name Reactions",
+     "container": "",
+     "year": 2021
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "cyclization_larock_indole_001",
+   "category": "cyclization",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [
+    {
+     "doi": "10.1021/ja00017a059",
+     "title": "Synthesis of indoles via palladium-catalyzed heteroannulation of internal alkynes",
+     "container": "Journal of the American Chemical Society",
+     "year": 1991
+    }
+   ],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "decarboxylation_cinnamic_001",
+   "category": "decarboxylation",
+   "fired": 270,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "deprotection_boc_amine_001",
+   "category": "deprotection",
+   "fired": 1,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "deprotection_cbz_amine_001",
+   "category": "deprotection",
+   "fired": 0,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "esterification_gamma_lactone_001",
+   "category": "esterification",
+   "fired": 80,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "oxidation_phenol_quinone_001",
+   "category": "oxidation",
+   "fired": 255,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "reduction_quinone_001",
+   "category": "reduction",
+   "fired": 290,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "sulfonylation_amine_001",
+   "category": "acylation",
+   "fired": 2,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  },
+  {
+   "id": "tautomerization_keto_enol_001",
+   "category": "rearrangement",
+   "fired": 53620,
+   "product_match": 0,
+   "ord_grade": "no_ord",
+   "literature": [],
+   "dev_hits": 0,
+   "blind6_hits": 0,
+   "examples": [],
+   "proposed_provenance": "keep"
+  }
+ ]
+}

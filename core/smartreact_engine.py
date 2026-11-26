@@ -32,6 +32,7 @@ r"""★ SmartReact 后端的 Engine —— 把新规则库接进旧引擎架构 
 from __future__ import annotations
 
 import math
+import os
 import re
 import sys
 import time
@@ -43,6 +44,9 @@ _STAGE = Path(__file__).resolve().parent.parent
 # 参照点 extent = 1 - 1/e（kinetics.json 的 reference_point：在 profile default
 # 温度/时间下 extent 恰好等于它）。用它把 extent 归一成 0~1 的「条件相容度」。
 _E_REF = 1.0 - math.exp(-1.0)
+# ★ 2026-11-20 审计修复：extent 只降权、不判零。e=0（例如 time_min=0）时
+#   activation 以前会变成 0，step 随即把整类规则的产物丢弃，违反 AGENTS §12。
+_E_FLOOR = 0.05
 for _p in (_STAGE / "core", _STAGE / "conditions", _STAGE / "rules", _STAGE / "libs"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
@@ -291,6 +295,125 @@ def _cap_by_support(got: dict, cap: int) -> list:
     return [k for k, _v in items[:max(1, int(cap))]]
 
 
+def _apply_intra_pair(rx, mol, min_path: int = 8, max_products: int = 12):
+    """Apply a two-reactant curated template to one molecule.
+
+    The template is for a ring-closing (intramolecular) reaction.  RDKit's
+    reaction engine wants one molecule per reactant template, so we cut one
+    single bond on a path between the two matched sites, run the pair reaction
+    on the two resulting fragments, then re-form the cut bond.  The cut bond is
+    deliberately outside both matched sites; if no such interior bond exists,
+    or if cutting does not split the molecule, the substrate is skipped.
+
+    This is intentionally conservative: it returns only atom-balanced-looking
+    products and leaves the normal formula guard in ``_collect`` to make the
+    final decision.
+    """
+    from collections import deque
+
+    try:
+        pat_a = rx.GetReactantTemplate(0)
+        pat_b = rx.GetReactantTemplate(1)
+    except Exception:
+        return set()
+    ma = mol.GetSubstructMatches(pat_a, uniquify=False, maxMatches=128)
+    mb = mol.GetSubstructMatches(pat_b, uniquify=False, maxMatches=128)
+    if not ma or not mb:
+        return set()
+
+    def path_between(aset, bset):
+        q = deque()
+        parent = {}
+        for s in aset:
+            q.append(s)
+            parent[s] = None
+        while q:
+            u = q.popleft()
+            if u in bset:
+                path = []
+                while u is not None:
+                    path.append(u)
+                    u = parent[u]
+                return list(reversed(path))
+            for nb in mol.GetAtomWithIdx(u).GetNeighbors():
+                v = nb.GetIdx()
+                if v not in parent:
+                    parent[v] = u
+                    q.append(v)
+        return None
+
+    out = set()
+    for a in ma:
+        aset = set(a)
+        for b in mb:
+            bset = set(b)
+            if aset & bset:
+                continue
+            path = path_between(aset, bset)
+            if not path or len(path) - 1 < min_path:
+                continue
+            for pos in range(1, len(path) - 1):
+                x, y = path[pos], path[pos + 1]
+                if x in aset or y in aset or x in bset or y in bset:
+                    continue
+                bond = mol.GetBondBetweenAtoms(x, y)
+                if bond is None or bond.GetBondType() != Chem.BondType.SINGLE:
+                    continue
+                em = Chem.RWMol(mol)
+                em.GetAtomWithIdx(x).SetAtomMapNum(9001)
+                em.GetAtomWithIdx(y).SetAtomMapNum(9002)
+                try:
+                    bidx = mol.GetBondBetweenAtoms(x, y).GetIdx()
+                    frag_mol = Chem.FragmentOnBonds(
+                        em, [bidx], addDummies=True)
+                    frags = Chem.GetMolFrags(
+                        frag_mol, asMols=True, sanitizeFrags=False)
+                except Exception:
+                    continue
+                if len(frags) != 2:
+                    continue
+                for order in ((frags[0], frags[1]), (frags[1], frags[0])):
+                    try:
+                        res = rx.RunReactants(order)
+                    except Exception:
+                        continue
+                    for pset in res or []:
+                        pmols = [Chem.Mol(p) for p in pset if p is not None]
+                        if not pmols:
+                            continue
+                        comb = pmols[0]
+                        for q in pmols[1:]:
+                            comb = Chem.CombineMols(comb, q)
+                        dummies = [at.GetIdx() for at in comb.GetAtoms()
+                                   if at.GetAtomicNum() == 0]
+                        rw = Chem.RWMol(comb)
+                        for idx in sorted(dummies, reverse=True):
+                            rw.RemoveAtom(idx)
+                        i1 = [at.GetIdx() for at in rw.GetAtoms()
+                              if at.GetAtomMapNum() == 9001]
+                        i2 = [at.GetIdx() for at in rw.GetAtoms()
+                              if at.GetAtomMapNum() == 9002]
+                        if len(i1) != 1 or len(i2) != 1:
+                            continue
+                        try:
+                            rw.AddBond(i1[0], i2[0], Chem.BondType.SINGLE)
+                            Chem.SanitizeMol(rw)
+                        except Exception:
+                            continue
+                        for at in rw.GetAtoms():
+                            at.SetAtomMapNum(0)
+                        try:
+                            smi = Chem.MolToSmiles(
+                                rw, canonical=True, isomericSmiles=True)
+                        except Exception:
+                            continue
+                        if smi:
+                            out.add(smi)
+                        if len(out) >= max_products:
+                            return out
+    return out
+
+
 def _cap_products(got, cap: int) -> list:
     """兼容 set / dict 两种入参的截断入口（set 无 support，退化为字母序）。"""
     if isinstance(got, dict):
@@ -406,6 +529,11 @@ class SmartReactEngine:
                  mono_redox_gate: bool = False,
                  use_curated_templates: bool = False,
                  curated_rule_ids=None,
+                 # 2026-11-22：规则 provenance 闸门。默认只加载
+                 # provenance=cited/secondary 的规则；unvalidated 规则
+                 # 仅在探索模式显式打开时进入文件级加载。
+                 allow_unvalidated: bool = False,
+                 include_validation_pools: bool = False,
                  use_mined_top_conditions: bool = False,
                  mined_top_limit: int = 100,
                  # ★ D5（2026-10-13）：3 组分正向模板。**默认关**——实测（甘草 12 成分、
@@ -419,11 +547,44 @@ class SmartReactEngine:
                  # ★ 第 128 轮：学习型重排序模型路径（None = 关闭，保持发射序）
                  rerank_model=None,
         center_rank: bool = False,
-        center_rank_model=None):
+        center_rank_model=None,
+        # ★ 第 156 轮：抢救层（默认关）——主池候选少于阈值时，用低支持度模板补。
+        rescue: bool = False,
+        rescue_min_candidates: int = 10,
+        rescue_min_support: int = 1,
+        rescue_max_support: int = 4,
+        # ★ 第 162 轮：可指定模板池（默认 ORD 低支持度池）。用于「训练半区挖的通用模板」
+        #   做覆盖层探针；None = 沿用 core/rescue.py 的默认路径。
+        rescue_path=None,
+        # ★ 第 163 轮：本次运行是否加载了炮制辅料共底物；False 时规则级
+        #   co_substrate_pool 里的辅料型条目（when_template）不出现。
+        paozhi_adjuvant: bool = True,
+        # ★ 第 163 轮（item 2）：coverage 产物的有界立体枚举。0 = 关（默认）。
+        #   模板不含 '@' 时，把产物去立体后枚举至多 cap 个异构体，并显式加入平面版；
+        #   中心数 > max_centers 的产物只加平面版。只扩展候选，不删、不排序。
+        stereo_enum_cap: int = 0,
+        stereo_enum_max_centers: int = 4):
         from smartreact import ReactionEnumerator
 
         self.default_max_products = default_max_products
         self.max_products_per_pair = max_products_per_pair
+        # ★ 第 156 轮：抢救层（低支持度模板）。加载失败只告警，不影响主流程。
+        self.rescue_pool = None
+        self.rescue_min_candidates = int(rescue_min_candidates)
+        self._rescue_added = 0
+        self.paozhi_adjuvant = bool(paozhi_adjuvant)
+        self.stereo_enum_cap = max(0, int(stereo_enum_cap))
+        self.stereo_enum_max_centers = max(0, int(stereo_enum_max_centers))
+        if rescue:
+            try:
+                from rescue import RescuePool
+                _kw = {"min_support": rescue_min_support,
+                       "max_support": rescue_max_support}
+                if rescue_path:
+                    _kw["path"] = Path(rescue_path)
+                self.rescue_pool = RescuePool(**_kw)
+            except Exception as ex:                    # noqa: BLE001
+                print("[rescue] 抢救层加载失败：%s: %s" % (type(ex).__name__, ex))
         self.max_pairs = max_pairs
         # ★ 2026-10-15：对子超预算时的截断方式。False=顺序截断（旧行为，默认不变）；
         #   True=公平截断（每个成分摊到大致相同的伙伴数，无"参与度冠军/陪跑"）。
@@ -610,11 +771,30 @@ class SmartReactEngine:
         # ★ B 试点：6 条 curated 规则（默认关，实时 chemreact.py 显式打开）
         self.curated_pair_templates = []
         self.curated_mono_templates = []
+        # 2026-11-24：分子内双端模板（同一分子里含两个反应物片段，成环）。
+        self.curated_intra_templates = []
+        self.curated_intra_min_path: Dict[str, int] = {}
+        self._curated_intra_cache: Dict[tuple, tuple] = {}
+        # 2026-11-23：curated 三反应物模板（n_tpl=3）。默认无规则，行为不变。
+        self.curated_triple_templates = []
+        # ★ 2026-11-23：只有规则显式声明 bidirectional=true 才在前向 0 产物时
+        #   尝试反向顺序。既有规则不加这个字段 -> 行为逐位不变（smoke 824 守住）。
+        self.curated_pair_bidirectional = set()
         self.curated_cond_table: Dict[str, Any] = {}
         self.curated_co_pool: Dict[str, list] = {}
         self.curated_note = "未启用"
         # 2026-10-31：炮制严格模式只加载指定的规则子集（None = 全部 active 规则）。
         self.curated_rule_ids = set(curated_rule_ids) if curated_rule_ids else None
+        # 2026-11-22：provenance 闸门。显式 curated_rule_ids 是调用方点名
+        # 的探索入口（测试/单规则探针）；文件级默认加载只放
+        # cited/secondary，unvalidated 需 allow_unvalidated=True。
+        self.allow_unvalidated = bool(allow_unvalidated)
+        # 2026-11-24：验收用共底物池（标准例的试剂/共底物）默认不进生产枚举，
+        #   否则它们是「凭空加进去的辅料」，会污染煎煮/前向基准。
+        #   显式参数或 CHEMCREACT_VALIDATION_POOLS=1 才放行（测试/单规则探针）。
+        self.include_validation_pools = bool(
+            include_validation_pools
+            or os.environ.get("CHEMCREACT_VALIDATION_POOLS") == "1")
         if use_curated_templates:
             self._load_curated_templates()
         self.gate_stats: Dict[str, Any] = {}
@@ -753,7 +933,9 @@ class SmartReactEngine:
             self.curated_note = "读取 rules.json 失败：%s" % ex
             return
         profiles = data.get("profiles") or {}
-        n_pair = n_mono = n_fail = 0
+        n_pair = n_mono = n_intra = n_triple = n_fail = 0
+        n_skip_prov = n_explicit_unvalidated = 0
+        validated_provenance = {"cited", "secondary"}
         for r in data.get("rules") or []:
             rid = r.get("id")
             if self.curated_rule_ids is not None and rid not in self.curated_rule_ids:
@@ -768,6 +950,17 @@ class SmartReactEngine:
             # and most other transformations a decoction actually undergoes.
             if str(r.get("status") or "active") != "active":
                 continue
+            # 2026-11-22：provenance 闸门。默认文件级加载排除 unvalidated；
+            # 显式 curated_rule_ids 是调用方点名，允许但计数（探索/单规则测试）。
+            prov = str(r.get("provenance") or "unvalidated").strip().lower()
+            if prov not in validated_provenance:
+                if self.allow_unvalidated:
+                    pass
+                elif self.curated_rule_ids is not None:
+                    n_explicit_unvalidated += 1
+                else:
+                    n_skip_prov += 1
+                    continue
             sm = str(r.get("smarts") or "")
             try:
                 rx = rdChemReactions.ReactionFromSmarts(sm)
@@ -782,8 +975,19 @@ class SmartReactEngine:
                 self.curated_mono_templates.append((sm, rx, rid))
                 n_mono += 1
             elif n_tpl == 2:
-                self.curated_pair_templates.append((sm, rx, rid))
-                n_pair += 1
+                if bool(r.get("intramolecular")):
+                    self.curated_intra_templates.append((sm, rx, rid))
+                    self.curated_intra_min_path[rid] = int(
+                        r.get("intra_min_path") or 8)
+                    n_intra += 1
+                else:
+                    self.curated_pair_templates.append((sm, rx, rid))
+                    if bool(r.get("bidirectional")):
+                        self.curated_pair_bidirectional.add(rid)
+                    n_pair += 1
+            elif n_tpl == 3:
+                self.curated_triple_templates.append((sm, rx, rid))
+                n_triple += 1
             else:
                 n_fail += 1
                 continue
@@ -818,10 +1022,17 @@ class SmartReactEngine:
                 smi = str(c.get("smiles") or "").strip()
                 if smi:
                     pool.append({"smiles": smi,
-                                 "when_solvent": c.get("when_solvent") or []})
+                                 "when_solvent": c.get("when_solvent") or [],
+                                 # ★ 第 163 轮：模板门要带进来，否则
+                                 #   _curated_co_smiles 永远看不到 when_template。
+                                 "when_template": c.get("when_template") or [],
+                                 # 2026-11-24：标准例验收池标记，生产枚举跳过。
+                                 "validation_only": bool(c.get("validation_only"))})
             self.curated_co_pool[rid] = pool
-        self.curated_note = ("curated: 双底物 %d / 单底物 %d / 失败 %d"
-                             % (n_pair, n_mono, n_fail))
+        self.curated_note = ("curated: 双底物 %d / 单底物 %d / 分子内 %d / 三底物 %d / 失败 %d"
+                             " / 跳过 unvalidated %d / 显式 unvalidated %d"
+                             % (n_pair, n_mono, n_intra, n_triple, n_fail,
+                                n_skip_prov, n_explicit_unvalidated))
 
     def _load_extra_templates(self, path, min_support: int, limit: int):
         mod = self._load_lib()
@@ -1001,10 +1212,12 @@ class SmartReactEngine:
         """对这批底物对跑额外模板；并跑【单底物】模板（第二十二/二十四轮，按条件筛）。"""
         from smartreact.types import ReactionResult
         lib = getattr(self, "_extra_lib", None)
-        if lib is None and (self.curated_pair_templates or self.curated_mono_templates):
+        if lib is None and (self.curated_pair_templates or self.curated_mono_templates
+                            or self.curated_intra_templates
+                            or self.curated_triple_templates):
             lib = self._load_lib()
             self._extra_lib = lib
-        if lib is None:
+        if lib is None and not self.curated_triple_templates:
             return []
         out = []
         # ---- 双底物模板（mined_extra）----
@@ -1093,21 +1306,39 @@ class SmartReactEngine:
         if self.curated_pair_templates:
             for i, j in chunk:
                 sa, sb = subs[i][1], subs[j][1]
+                # 2026-11-23：curated 双底物规则做**前向优先的反向兜底**。
+                # 模板的反应物顺序是固定的，而种子对子的顺序由输入/药材顺序决定；
+                # 只按 (sa,sb) 会让同一反应在另一顺序下漏掉（吗啉案例实测）。
+                # 但若前向已经命中，再做反向并集会额外产生区域异构体：
+                # 实测煎煮 guard 824 -> 925（+101），会触发 smoke 硬闸门。
+                # 因此只在**前向 0 产物**时尝试 (sb,sa)，既消除顺序依赖，
+                # 又不改变前向已命中场景的既有产物。
+                # 反向命中仍以原对子 sa/sb 记来源，保持 source/partner 稳定。
                 for sm, rx, name in self.curated_pair_templates:
-                    try:
-                        _trc: Dict[str, str] = {}
-                        got = lib.apply_pair([(sm, rx)], get_mol(sa), get_mol(sb), _trc)
-                    except Exception:
-                        key = "curated双底物_套用异常"
-                        self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
-                        continue
-                    if got:
+                    _orient = (((sa, sb), (sb, sa))
+                               if sa != sb and name in self.curated_pair_bidirectional
+                               else ((sa, sb),))
+                    for _oi, (_a, _b) in enumerate(_orient):
+                        try:
+                            _trc: Dict[str, str] = {}
+                            got = lib.apply_pair([(sm, rx)],
+                                                 get_mol(_a), get_mol(_b), _trc)
+                        except Exception:
+                            key = "curated双底物_套用异常"
+                            self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
+                            continue
+                        if not got:
+                            continue
+                        if _oi:
+                            key = "curated双底物_反向命中"
+                            self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
                         for _cs, _s2 in _trc.items():
                             self._mined_smarts[(name, sa, _cs)] = _s2
                         out.append(ReactionResult(
                             reactant_a=sa, reactant_b=sb,
                             reaction_name=name,
                             products=_cap_products(got, self.max_products_per_pair)))
+                        break
             # 单输入 + 条件允许的 co_substrate_pool（乙醇/硫醇/葡萄糖等）
             for k in range(len(subs)):
                 sa = subs[k][1]
@@ -1131,6 +1362,35 @@ class SmartReactEngine:
                                     reactant_a=x, reactant_b=y,
                                     reaction_name=name,
                                     products=_cap_products(got, self.max_products_per_pair)))
+        # ---- ★ 分子内双端模板：同一底物内酸/胺成环 ----
+        # 不看 chunk 的 pair；只要有底物就试。只有规则显式 intramolecular=true
+        # 才进入这个列表，既有双底物规则的行为不变。
+        if self.curated_intra_templates:
+            uniq_i = (sorted({k for pair in chunk for k in pair}) if chunk
+                      else list(range(len(subs))))
+            for k in uniq_i:
+                sa = subs[k][1]
+                for sm, rx, name in self.curated_intra_templates:
+                    _ck = (name, sa, self.curated_intra_min_path.get(name, 8))
+                    got = self._curated_intra_cache.get(_ck)
+                    if got is None:
+                        try:
+                            got = _apply_intra_pair(
+                                rx, get_mol(sa),
+                                min_path=self.curated_intra_min_path.get(name, 8),
+                                max_products=self.max_products_per_pair)
+                        except Exception:
+                            key = "curated分子内_套用异常"
+                            self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
+                            continue
+                        got = tuple(sorted(got))
+                        self._curated_intra_cache[_ck] = got
+                    if got:
+                        out.append(ReactionResult(
+                            reactant_a=sa, reactant_b=sa,
+                            reaction_name=name,
+                            products=_cap_products(
+                                got, self.max_products_per_pair)))
         if self.curated_mono_templates:
             uniq_c = (sorted({k for pair in chunk for k in pair}) if chunk
                       else list(range(len(subs))))
@@ -1175,6 +1435,38 @@ class SmartReactEngine:
                             reaction_name=name,
                             products=_prods))
                 self._curated_mono_cache[_ck] = _collected
+        # ---- 2026-11-23：curated 三反应物模板（n_tpl=3）----
+        if self.curated_triple_templates and self.max_triples:
+            from itertools import combinations
+            uniq_c = (sorted({k for pair in chunk for k in pair}) if chunk
+                      else list(range(len(subs))))
+            combos = list(combinations(uniq_c, 3))
+            if len(combos) > self.max_triples:
+                k = "curated三底物_组合被截断"
+                self.gate_stats[k] = self.gate_stats.get(k, 0) + (len(combos) - self.max_triples)
+                combos = combos[:self.max_triples]
+            for (ia, ib, ic) in combos:
+                sa, sb, sc = subs[ia][1], subs[ib][1], subs[ic][1]
+                ma, mb, mc = get_mol(sa), get_mol(sb), get_mol(sc)
+                if ma is None or mb is None or mc is None:
+                    continue
+                for sm, rx, name in self.curated_triple_templates:
+                    try:
+                        got_raw = rx.RunReactants((ma, mb, mc))
+                    except Exception:
+                        key = "curated三底物_套用异常"
+                        self.gate_stats[key] = self.gate_stats.get(key, 0) + 1
+                        continue
+                    prods = set()
+                    for ps in got_raw or ():
+                        for m in ps:
+                            if m is not None:
+                                prods.add(Chem.MolToSmiles(m))
+                    if prods:
+                        out.append(ReactionResult(
+                            reactant_a=sa, reactant_b=sb, reactant_c=sc,
+                            reaction_name=name,
+                            products=_cap_products(sorted(prods), self.max_products_per_pair)))
         # ---- ★ D5（2026-10-13）3 组分模板：对 chunk 里出现过的底物取三元组（有上限）----
         #   用户选了方案 C：**全量模板 + 多进程**（不改化学判据，只是同时开几口锅），
         #   并且给"只见过一次的套路"产出的东西**打标记**（support 带在 product_support 里）。
@@ -1218,17 +1510,33 @@ class SmartReactEngine:
         return out
 
     def _curated_co_smiles(self, rule_name: str, cond) -> list:
-        """按当前溶剂过滤 co_substrate_pool（溶剂族比较，不要求字面相同）。"""
+        """按当前溶剂过滤 co_substrate_pool（溶剂族比较，不要求字面相同）。
+
+        ★ 第 163 轮：辅料型共底物（醋炙的乙酸等）还要按**条件模板名**门控。
+          溶剂门不够用：醋炙的溶剂也是 water，普通水煎里没有乙酸。
+          与 core/engine.py::available_cosubstrates 同一口径；空模板名 = 不知道
+          模板，带模板门的池项不出现（宁可少反应，不凭空加辅料）。
+        """
         pool = self.curated_co_pool.get(rule_name) or []
         if not pool:
             return []
+        # 2026-11-24：validation_only 池项只在验收/探针模式下出现。
+        if not getattr(self, "include_validation_pools", False):
+            pool = [c for c in pool if not c.get("validation_only")]
+            if not pool:
+                return []
         if cond is None:
-            return [c["smiles"] for c in pool]
+            return [c["smiles"] for c in pool
+                    if not (c.get("when_template") or [])]
         sc = solvent_class(getattr(cond, "solvent", "") or "")
         out = []
         for c in pool:
             ws = c.get("when_solvent") or []
             if ws and not any(solvent_class(w) == sc for w in ws):
+                continue
+            wt = c.get("when_template") or []
+            if wt and (not self.paozhi_adjuvant
+                       or getattr(cond, "template", "") not in wt):
                 continue
             out.append(c["smiles"])
         return out
@@ -1256,7 +1564,9 @@ class SmartReactEngine:
             try:
                 if m.HasSubstructMatch(patt):
                     return name
-            except Exception:
+            except Exception:                           # noqa: BLE001
+                _k = "role_match_failures"
+                self.stats[_k] = self.stats.get(_k, 0) + 1
                 continue
         return None
 
@@ -1636,7 +1946,8 @@ class SmartReactEngine:
                 return 0.0, (f"{_e_why}；转化程度 {_e_val:.2f} 低于可检出下限 "
                              f"{_ext_min:g}，判不产出")
             if _e_val < _E_REF:
-                _fit_s = max(0.0, _e_val / _E_REF)
+                # 只降权、不判零：真正的判零只留给上面显式的门控分支（gate_ok 且 e<gate_min）。
+                _fit_s = max(_E_FLOOR, _e_val / _E_REF)
                 if _fit_s < score:
                     score = _fit_s
                 reasons.append(f"反应进程 e={_e_val:.2f}（参照 0.63），"
@@ -1688,6 +1999,132 @@ class SmartReactEngine:
         return solvent_class(name)
 
     # ---------------------------------------------------------------- 核心
+    def _rescue_apply(self, subs, round_no, out, seen, by_smiles) -> int:
+        """抢救层：用低支持度模板补候选（只生成，不排序）。"""
+        from rdkit import Chem
+        from rdkit.Chem import Descriptors, rdMolDescriptors
+
+        mols, uniq = [], set()
+        for _c, cs in subs:
+            m = get_mol(cs)
+            if m is None:
+                continue
+            k = Chem.MolToSmiles(m)
+            if k in uniq:
+                continue
+            uniq.add(k)
+            mols.append(m)
+        if not mols:
+            return 0
+        # ★ 多成分批次（中药）不启用：12 个成分 = 78 个底物对，逐对补会把
+        #   824 行变成 19,822 行（实测），界面不可用。覆盖模式只服务
+        #   「单反应 / 1-2 个底物」的场景。
+        if len(mols) > 2:
+            return 0
+
+        # ★ 与主引擎同构：单底物 + 两两。一次 step 可能传 12 个成分，
+        #   整批当反应物模板吃不下，必须逐对跑。
+        jobs = [(m,) for m in mols]
+        jobs += [(mols[i], mols[j]) for i in range(len(mols))
+                 for j in range(i + 1, len(mols))]
+
+        src = subs[0][0]
+        n_add = 0
+        stereo_budget = 256         # 每次 step 最多新增的立体变体数（防组合爆炸）
+        for job in jobs:
+            react_tot = _element_totals(list(job))
+            for cs, tpl, sup in self.rescue_pool.run(list(job)):
+                # ★ 第 163 轮（item 2 修）：base 已在主池里也不能直接跳过——
+                #   主池可能只有某一个立体异构体（常见：E 型），而文献产物是
+                #   未指定立体/另一个构型。立体层关着时才保留旧的快速跳过。
+                if cs in seen and self.stereo_enum_cap <= 0:
+                    continue
+                m = get_mol(cs)
+                if m is None:
+                    continue
+                try:
+                    keep, is_byp = classify_product(m)
+                except Exception:                      # noqa: BLE001
+                    keep, is_byp = True, False
+                if not keep:
+                    continue
+                pform = rdMolDescriptors.CalcMolFormula(m)
+                _p = Product(
+                    smiles=cs,
+                    formula=pform,
+                    element_delta=_element_delta(react_tot, pform),
+                    partner_smiles="",
+                    mw=round(Descriptors.MolWt(m), 3),
+                    heavy_atoms=m.GetNumHeavyAtoms(),
+                    rule_id="rescue_lowsupport",
+                    rule_name="rescue_lowsupport",
+                    category="",
+                    source_smiles=(Chem.MolToSmiles(get_mol(src.smiles))
+                                   if get_mol(src.smiles) else src.smiles),
+                    source_name=src.name,
+                    source_herb=src.herb,
+                    round=round_no,
+                    is_byproduct=is_byp,
+                    reversible=False,
+                    activation=1.0,
+                    activation_why="覆盖层：通用模板（support=%d）" % int(sup),
+                    co_products=(),
+                    template_support=int(sup),
+                    extent=1.0,
+                    extent_band="",
+                    template_smarts=tpl,
+                )
+                # base 已存在时只借 _p 当变体模板，不重复加 base。
+                if cs not in seen:
+                    _p.seq = len(out)
+                    out.append(_p)
+                    by_smiles[cs] = _p
+                    seen.add(cs)
+                    n_add += 1
+                # ★ 第 163 轮（item 2）：模板不带立体时，补有界立体异构体 + 平面版。
+                #   只扩展 coverage 产物，不碰主池；标注「立体未指定」，不是立体预测。
+                if (self.stereo_enum_cap > 0 and stereo_budget > 0
+                        and not is_byp and "@" not in (tpl or "")):
+                    try:
+                        from dataclasses import replace as _dc_replace
+                        from rdkit.Chem.EnumerateStereoisomers import (
+                            EnumerateStereoisomers, StereoEnumerationOptions)
+                        flat = Chem.Mol(m)
+                        Chem.RemoveStereochemistry(flat)
+                        n_c = len(Chem.FindMolChiralCenters(
+                            flat, includeUnassigned=True,
+                            useLegacyImplementation=False))
+                        vset = [Chem.MolToSmiles(flat)]
+                        if 0 < n_c <= self.stereo_enum_max_centers:
+                            opts = StereoEnumerationOptions(
+                                maxIsomers=self.stereo_enum_cap,
+                                onlyUnassigned=False, unique=True,
+                                tryEmbedding=False)
+                            for x in EnumerateStereoisomers(flat, options=opts):
+                                vset.append(Chem.MolToSmiles(x))
+                                if len(vset) >= self.stereo_enum_cap + 1:
+                                    break
+                    except Exception as ex:            # noqa: BLE001 —— 打印，不静默
+                        print("   [warn] 立体枚举失败（%s: %s）" % (type(ex).__name__, ex))
+                        vset = []
+                    for vs in vset:
+                        if stereo_budget <= 0:
+                            break
+                        if vs in seen or vs == cs:
+                            continue
+                        _v = _dc_replace(
+                            _p, smiles=vs,
+                            activation_why=(_p.activation_why
+                                            + "；立体未指定，枚举变体"))
+                        _v.seq = len(out)
+                        out.append(_v)
+                        by_smiles[vs] = _v
+                        seen.add(vs)
+                        n_add += 1
+                        stereo_budget -= 1
+        self._rescue_added += n_add
+        return n_add
+
     def step(self,
              compounds: Sequence[Compound],
              cond=None,
@@ -1714,6 +2151,14 @@ class SmartReactEngine:
         其余产物带 `extent` / `extent_band`（none/minor/major）。
         默认 False = 旧行为逐位不变。
         """
+        # ★ 2026-11-20 审计修复：
+        #   1) 下面两个计数器每步重置——stats 字典在末尾整体重建，旧写法把它们写进
+        #      self.stats 会被重建抹掉，批量枚举失败仍然无记录。
+        #   2) _mined_smarts 只在本步内写入/读取；长跑（一个引擎跑数千条反应）
+        #      以前会线性增长，实测每反应 13–101 条。
+        self._enum_fail_step = 0
+        self._rescue_added = 0
+        self._mined_smarts.clear()
         exclude_smiles = exclude_smiles or set()
         # 第 144 轮修 C4：gate_stats 是**实例级累加器**，跨 step 不清零；
         # 而 stats["gated_zero_total"] 直接 sum 它，于是同一个 step 连跑两遍数字会翻倍
@@ -1726,6 +2171,7 @@ class SmartReactEngine:
                 subs.append((c, Chem.MolToSmiles(m)))
         if (len(subs) < 2 and not self.mono_templates
                 and not self.curated_mono_templates
+                and not self.curated_intra_templates
                 and not self.mono_top_templates):
             return []
         if not subs:
@@ -1798,13 +2244,20 @@ class SmartReactEngine:
             try:
                 results = (list(self._enum.enumerate_pairs(payload))
                            if (payload and self._enum is not None) else [])
-            except Exception:
+            except Exception as ex:                     # noqa: BLE001
+                # ★ 2026-11-13：一批 400 对的模板枚举失败曾经静默 continue，
+                #   整批产物凭空消失而日志无痕。改为计数 + 前 3 次带原因打印。
+                self._enum_fail_step += 1
+                if self._enum_fail_step <= 3:
+                    print("   [warn] 模板枚举失败（第 %d 批 / %d 对）：%s: %s"
+                          % (b, len(payload), type(ex).__name__, ex))
                 continue
             # ★ 第十五/十六轮：额外（ORD 自抽）模板 —— 默认【启用 K1 档】（见 __init__）★
             # ★ 第十七轮：extra_requires_accepted_pair=True 时走「非孤儿」规则（见 __init__）★
             # ★ 第二十二轮：单底物模板（mined_mono）也要在这里跑 —— 所以判据是「两者任一非空」★
             if (self.extra_templates or self.mono_templates or self.triple_templates
                     or self.curated_pair_templates or self.curated_mono_templates
+                    or self.curated_intra_templates
                     or self.extra_top_templates or self.mono_top_templates):
                 extra = self._extra_results(chunk, subs, cond)
                 if self.extra_requires_accepted_pair and extra:
@@ -1813,8 +2266,10 @@ class SmartReactEngine:
                         a0, _w0 = self.cond_activation(r0.reaction_name, cond)
                         if a0 > 0.0:
                             ok_pairs.add((r0.reactant_a, r0.reactant_b))
+                    intra_names = {n for _sm, _rx, n in self.curated_intra_templates}
                     kept = [r0 for r0 in extra
-                            if (r0.reactant_a, r0.reactant_b) in ok_pairs]
+                            if (r0.reactant_a, r0.reactant_b) in ok_pairs
+                            or r0.reaction_name in intra_names]
                     k = "自抽模板_被非孤儿规则丢弃"
                     self.gate_stats[k] = self.gate_stats.get(k, 0) + (len(extra) - len(kept))
                     extra = kept
@@ -1961,8 +2416,10 @@ class SmartReactEngine:
                         heavy_atoms=m.GetNumHeavyAtoms(),
                         rule_id=r.reaction_name,
                         rule_name=r.reaction_name,
-                        category=(self._rule_by_id.get(r.reaction_name, {})
-                                  .get("categories", [""])[0] if
+                        # ★ 2026-11-20 审计修复：categories 可能是空列表（规则无类别），
+                        #   旧的 .get("categories", [""])[0] 会 IndexError。
+                        category=((self._rule_by_id.get(r.reaction_name, {})
+                                   .get("categories") or [""])[0] if
                                   self._rule_by_id.get(r.reaction_name) else ""),
                         source_smiles=Chem.MolToSmiles(get_mol(src.smiles)) if get_mol(src.smiles) else src.smiles,
                         source_name=src.name,
@@ -1996,6 +2453,15 @@ class SmartReactEngine:
                     seen.add(cs)
                     n_take += 1
 
+        # ★ 第 156 轮：抢救层（默认关）。只在第一轮、主池候选少于阈值时触发。
+        if (self.rescue_pool is not None and round_no == 1
+                and len(out) < self.rescue_min_candidates):
+            try:
+                self._rescue_apply(subs, round_no, out, seen, by_smiles)
+            except Exception as ex:                     # noqa: BLE001
+                print("[rescue] 抢救层失败（保持主池）：%s: %s"
+                      % (type(ex).__name__, ex))
+
         # ★ 第 145 轮做过「条件包络」（这个转化在文献里是不是在这个温时窗口做过的），
         #   第 148 轮按判据删掉：模板级 AUC 0.488、类型级 AUC 0.502，都等于抛硬币。
         #   留着它只会给台账加两列看起来有信息、其实没有意义的数，还会让
@@ -2024,6 +2490,8 @@ class SmartReactEngine:
             "prefilter_skipped": getattr(self, "_pf_skipped", 0),
             "raw_products": n_raw,
             "kept": len(out),
+            "rescue_added": self._rescue_added,
+            "enumerate_batch_failures": self._enum_fail_step,
             # ★ 第十九轮：被【介质相关可逆性】标为可逆的产物数（它们不参与级联传播）
             "reversible_by_medium": n_rev_medium,
             "seconds": round(time.time() - t0, 2),

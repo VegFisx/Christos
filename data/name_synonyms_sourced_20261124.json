@@ -1,0 +1,27 @@
+{
+ "note": "Small, explicitly sourced alias->canonical entries for names that the user's two synonym resources do not contain. Only add an entry when a citation supports it AND the canonical name exists in tcm.db. Ambiguous names (e.g. 官桂) must stay out.",
+ "generated_at": "2026-11-24",
+ "entries": [
+  {
+   "alias": "黄耆",
+   "canonical": "黄芪",
+   "source": "南京中医药大学中药学数据库·黄芪（异名首列“黄耆”）；《本草纲目》“今俗通作黄芪”",
+   "url": "https://zwy.njucm.edu.cn/2021/0204/c4723a70966/page.htm",
+   "quote": "异名：黄耆、戴糁（《本经》）……释名引李时珍“耆，长也，黄耆色黄，为补药之长”"
+  },
+  {
+   "alias": "桂心",
+   "canonical": "肉桂",
+   "source": "《中药大辞典》1977：桂心为肉桂加工过程中剪下的边条，除去栓皮者；《本草纲目》“去内外皮者，即为桂心”",
+   "url": "https://www.tcmjc.com/download/pdf?id=A32F8593A54A49E3B6DF4EA30D87E3C1",
+   "quote": "桂心，即肉桂加工过程中剪下的边条，除去栓皮者"
+  }
+ ],
+ "excluded": [
+  {
+   "alias": "官桂",
+   "reason": "既作肉桂商品规格名，又在部分地区指川桂等近缘种（用户 alias_map 中“官桂皮 -> 川桂”）；语义不唯一，不补。",
+   "count_in_formula_db": 85
+  }
+ ]
+}

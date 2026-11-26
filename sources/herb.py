@@ -320,17 +320,12 @@ def compounds_of_herb(herb_name: str, db_path: str = DEFAULT_DB,
         except Exception as ex:                        # 打印，不静默
             print("   [warn] 药典优先排序加载失败，退回原序：%s: %s" % (type(ex).__name__, ex))
         if chp:
-            # out 与 rows 的"去重后"顺序一一对应：重建 ingredient_id 列表
-            id_list, seen2 = [], set()
-            for ing_id, _n, smi, iso, _mw, _h, _l, _ob, _dl in rows:
-                use = (iso or "").strip()
-                if not use or use in ("Not", "not", "None", "none", "N/A", "NA"):
-                    use = (smi or "").strip()
-                if use and use not in seen2:
-                    seen2.add(use)
-                    id_list.append(ing_id)
-            for c, iid in zip(out, id_list):
-                c.chp = chp.get(iid)
+            # ★ 2026-11-20 审计修复：旧实现按「行序去重」重建 id_list 再 zip(out, id_list)。
+            #   但主循环会跳过 _looks_like_smiles 判不过的行（如 "Not Available"），
+            #   两边口径不一致 → 从第一处跳过开始整体错位，药典信息挂到下一个成分。
+            #   每个成分在构造时已带 _iid（第 285 行），直接按 id 取即可。
+            for c in out:
+                c.chp = chp.get(getattr(c, "_iid", None))
             indexed = list(enumerate(out))
 
             def _key(pair):

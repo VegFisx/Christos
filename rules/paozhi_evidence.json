@@ -374,6 +374,254 @@
         }
       ],
       "evidence_level": "primary"
+    },
+    {
+      "id": "oxidation_benzylic_alcohol_001",
+      "sources": [
+        {
+          "title": "How steaming and drying processes affect the active compounds and antioxidant types of Gastrodia elata Bl. f. glauca S. chow",
+          "journal": "Food Research International",
+          "year": 2022,
+          "volume": "157",
+          "pages": "111277",
+          "doi": "10.1016/j.foodres.2022.111277",
+          "quote": "Steaming significantly increased gastrodin (3.4x), p-hydroxybenzyl alcohol (1.1x), p-hydroxybenzaldehyde (1.1x), parishins A/B/E and catechin vs fresh.",
+          "note": "蒸制/干燥后 p-hydroxybenzyl alcohol/aldehyde 增加；本规则是通用苄位氧化，不是只对天麻。引句来自摘要/检索摘要。"
+        },
+        {
+          "title": "Hydrogen peroxide as a green oxidant for the selective catalytic oxidation of benzylic and heterocyclic alcohols in different media: An overview",
+          "journal": "Chemistry",
+          "year": 2020,
+          "volume": "2(1)",
+          "pages": "101-178",
+          "doi": "10.3390/chemistry2010010",
+          "quote": "selective catalytic oxidation of benzylic and heterocyclic alcohols",
+          "note": "通用苄位醇氧化为醛/酮的机理与氧化剂综述；不是炮制文献。"
+        },
+        {
+          "title": "USPTO-50k train forward template (mined)",
+          "journal": "mined library",
+          "year": 2026,
+          "doi": "",
+          "quote": "support=69; [OH][CH2][c]>>[O=CH][c]",
+          "note": "mined template, product-only; 只作为反应中心证据，不作为条件/选择性依据。"
+        }
+      ],
+      "evidence_level": "secondary"
+    },
+    {
+      "id": "demethylation_aromatic_o_001",
+      "sources": [
+        {
+          "title": "黄柏炮制后化学成分转化研究",
+          "journal": "中成药",
+          "year": 2010,
+          "volume": "32(3)",
+          "pages": "443-447",
+          "doi": "10.3969/j.issn.1001-1528.2010.03.028",
+          "quote": "黄柏炮制过程中小檗碱可以分解转化成小檗红碱",
+          "note": "160°C 1h 加热盐酸小檗碱，分离得到小檗红碱；另报道巴马汀→巴马红汀。"
+        },
+        {
+          "title": "基于UPLC-QqQ-MS技术的黄柏生品及其盐炙品中10种成分量的变化",
+          "journal": "中成药",
+          "year": 2021,
+          "volume": "43(11)",
+          "pages": "3082-3088",
+          "doi": "",
+          "quote": "巴马汀、小檗碱含量整体下降；小檗红碱、巴马红汀、药根红碱含量整体上升",
+          "note": "盐炙 130-180°C；与 2010 的转化结论一致。"
+        },
+        {
+          "title": "黄柏炮制前后生物碱和柠檬苦素类成分的变化研究",
+          "journal": "现代药物与临床",
+          "year": 2015,
+          "volume": "30(1)",
+          "pages": "18-23",
+          "doi": "",
+          "quote": "黄柏炮制后小檗碱和巴马汀均发生转化，生成小檗红碱和巴马红汀",
+          "note": "温度是关键因素；160°C 为常用炮制温度。"
+        },
+        {
+          "title": "USPTO-50k train forward template (mined)",
+          "journal": "mined library",
+          "year": 2026,
+          "doi": "",
+          "quote": "support=417; C-[O]-[c]>>[OH]-[c]",
+          "note": "mined template, product-only; 只作为反应中心证据，不作为条件/选择性依据。"
+        }
+      ],
+      "evidence_level": "primary"
+    },
+    {
+      "id": "isomerization_cyclic_ether_saponin_001",
+      "sources": [
+        {
+          "title": "基于HPLC-DAD-MSn的柴胡皂苷A的体外生物转化研究",
+          "journal": "中草药",
+          "year": 2017,
+          "volume": "48(2)",
+          "pages": "333-338",
+          "doi": "10.7501/j.issn.0253-2670.2017.02.019",
+          "quote": "柴胡皂苷A在人工胃液中转化为柴胡皂苷b1",
+          "note": "酸性条件 13,28-环氧醚开环/异构化。"
+        },
+        {
+          "title": "柴胡醋制前后柴胡皂苷a、b2、c、d的LC-MS/MS法测定及比较",
+          "journal": "中国药科大学学报",
+          "year": 2012,
+          "volume": "43(4)",
+          "pages": "334-342",
+          "doi": "",
+          "quote": "醋制后 I 型柴胡皂苷（a/c/d）向 II 型（b1/b2）转化",
+          "note": "醋制方向依据；无 DOI。"
+        },
+        {
+          "title": "RXNMapper+RDChiral derived template",
+          "journal": "derived",
+          "year": 2026,
+          "doi": "",
+          "quote": "SSa->SSb1 template; SSd->SSb2 second substrate hit",
+          "note": "模板由文献对映射派生，不是手写 SMARTS。"
+        }
+      ],
+      "evidence_level": "secondary"
+    },
+    {
+      "id": "rearrangement_strychnos_alkaloid_001",
+      "sources": [
+        {
+          "title": "基于半定向转化策略的马钱子模拟炮制方法研究",
+          "journal": "中国现代中药",
+          "year": 2024,
+          "volume": "26(11)",
+          "pages": "1953-1961",
+          "doi": "10.13313/j.issn.1673-4890.20230201001",
+          "quote": "砂烫后士的宁、马钱子碱下降，异士的宁、异马钱子碱等毒性较低成分增加",
+          "note": "马钱子砂烫减毒。"
+        },
+        {
+          "title": "Processing of nux vomica. II. Changes in alkaloid composition of the seeds of Strychnos nux-vomica on traditional drug-processing",
+          "journal": "Chemical & Pharmaceutical Bulletin",
+          "year": 1990,
+          "volume": "38(5)",
+          "pages": "1295",
+          "doi": "10.1248/cpb.38.1295",
+          "quote": "heat treatment increased isostrychnine and isobrucine via cleavage of the ether linkage",
+          "note": "经典转化证据；士的宁/马钱子碱→异型。"
+        },
+        {
+          "title": "RXNMapper+RDChiral derived template",
+          "journal": "derived",
+          "year": 2026,
+          "doi": "",
+          "quote": "strychnine->isostrychnine template; brucine->isobrucine skeleton hit",
+          "note": "模板由文献对映射派生，不是手写 SMARTS。"
+        }
+      ],
+      "evidence_level": "secondary"
+    },
+    {
+      "id": "oxidation_n_demethylation_aromatization_001",
+      "sources": [
+        {
+          "title": "The Quinazolinocarbolines, Chapter 4",
+          "journal": "ScienceDirect book series",
+          "year": 2008,
+          "volume": "",
+          "pages": "",
+          "doi": "",
+          "quote": "evodiamine hydrochloride, on heating, liberates methyl chloride and is converted into rutaecarpine",
+          "note": "经典化学；章节链接 S1876081308600433。"
+        },
+        {
+          "title": "析因设计法研究炮制对吴茱萸中3种主要成分的影响",
+          "journal": "中国实验方剂学杂志",
+          "year": 2011,
+          "volume": "17(7)",
+          "pages": "",
+          "doi": "",
+          "quote": "加热样品中吴茱萸次碱显著升高",
+          "note": "炮制方向依据；无 DOI。"
+        },
+        {
+          "title": "RXNMapper+RDChiral derived template",
+          "journal": "derived",
+          "year": 2026,
+          "doi": "",
+          "quote": "evodiamine->rutaecarpine tautomer + CH4 template",
+          "note": "模板由文献对映射派生；单底物，未做第二底物。"
+        }
+      ],
+      "evidence_level": "secondary"
+    },
+    {
+      "id": "dehydration_cyclization_hmf_fructose_001",
+      "sources": [
+        {
+          "title": "Changes in the Chemical Components of Processed Rehmanniae Radix Distillate during Different Steaming Times",
+          "journal": "Evidence-Based Complementary and Alternative Medicine",
+          "year": 2022,
+          "volume": "2022",
+          "pages": "3382333",
+          "doi": "10.1155/2022/3382333",
+          "quote": "5-HMF increases with steaming; fructose is preferentially converted in early cycles",
+          "note": "地黄九蒸九晒。"
+        },
+        {
+          "title": "酒黄精炮制与药理活性及其应用现状",
+          "journal": "中草药",
+          "year": 2026,
+          "volume": "57(14)",
+          "pages": "",
+          "doi": "",
+          "quote": "酒蒸/九蒸九晒过程中生成 5-HMF、麦芽酚类与丙烯酰胺",
+          "note": "黄精酒蒸；无 DOI。"
+        },
+        {
+          "title": "RXNMapper+RDChiral derived template",
+          "journal": "derived",
+          "year": 2026,
+          "doi": "",
+          "quote": "fructose->5-HMF + 3 H2O template",
+          "note": "模板由文献对映射派生，含果糖立体化学。"
+        }
+      ],
+      "evidence_level": "secondary"
+    },
+    {
+      "id": "dehydration_cyclization_hmf_glucose_001",
+      "sources": [
+        {
+          "title": "Changes in the Chemical Components of Processed Rehmanniae Radix Distillate during Different Steaming Times",
+          "journal": "Evidence-Based Complementary and Alternative Medicine",
+          "year": 2022,
+          "volume": "2022",
+          "pages": "3382333",
+          "doi": "10.1155/2022/3382333",
+          "quote": "5-HMF increases with steaming; glucose also contributes to later HMF formation",
+          "note": "地黄九蒸九晒。"
+        },
+        {
+          "title": "一种黄精不同炮制工艺中5-羟甲基糠醛和丙烯酰胺的测定方法",
+          "journal": "专利",
+          "year": 2023,
+          "volume": "",
+          "pages": "",
+          "doi": "",
+          "quote": "CN114858934B：酒蒸/清蒸/黑豆汁制黄精均生成 5-HMF",
+          "note": "黄精工艺；专利号 CN114858934B。"
+        },
+        {
+          "title": "RXNMapper+RDChiral derived template",
+          "journal": "derived",
+          "year": 2026,
+          "doi": "",
+          "quote": "glucose->5-HMF + 3 H2O template",
+          "note": "模板由文献对映射派生，含葡萄糖立体化学。"
+        }
+      ],
+      "evidence_level": "secondary"
     }
   ]
 }

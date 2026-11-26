@@ -1,0 +1,732 @@
+{
+ "summary": {
+  "formulas": 20,
+  "with_herbs_resolved": 20,
+  "with_engine_run": 20,
+  "errors": 0,
+  "median_products": 1174,
+  "min_products": 302,
+  "max_products": 2478,
+  "median_seconds": 40.5,
+  "total_seconds": 936.0,
+  "top_unresolved_herbs": [
+   [
+    "氯化铵",
+    1
+   ],
+   [
+    "盐酸麻黄碱",
+    1
+   ],
+   [
+    "贝母",
+    1
+   ],
+   [
+    "生地黄",
+    1
+   ],
+   [
+    "败龟",
+    1
+   ],
+   [
+    "官桂",
+    1
+   ],
+   [
+    "熟生黄",
+    1
+   ],
+   [
+    "培干半",
+    1
+   ],
+   [
+    "桂半",
+    1
+   ],
+   [
+    "锉半",
+    1
+   ],
+   [
+    "陈橘皮",
+    1
+   ],
+   [
+    "去白",
+    1
+   ],
+   [
+    "猪牙皂荚",
+    1
+   ],
+   [
+    "牛白藤",
+    1
+   ],
+   [
+    "蛇胆",
+    1
+   ],
+   [
+    "益母草浸膏",
+    1
+   ],
+   [
+    "榆树枝",
+    1
+   ],
+   [
+    "槐枝",
+    1
+   ],
+   [
+    "接骨术",
+    1
+   ],
+   [
+    "虎枚",
+    1
+   ]
+  ],
+  "top_rules": [
+   [
+    "mined_extra",
+    20
+   ],
+   [
+    "mitsunobu",
+    20
+   ],
+   [
+    "mined_mono",
+    20
+   ],
+   [
+    "hydration_alkene_001",
+    20
+   ],
+   [
+    "condensation_aldol_001",
+    19
+   ],
+   [
+    "elimination_dehydration_001",
+    14
+   ],
+   [
+    "esterification",
+    14
+   ],
+   [
+    "hydroxylation_aromatic_001",
+    14
+   ],
+   [
+    "isomerization_double_bond_001",
+    13
+   ],
+   [
+    "esterification_transesterification_001",
+    9
+   ],
+   [
+    "oxidation_epoxide_001",
+    8
+   ],
+   [
+    "aminolysis_ester_001",
+    8
+   ],
+   [
+    "hydrolysis_acetal_001",
+    6
+   ],
+   [
+    "hydrolysis_glycoside_001",
+    5
+   ],
+   [
+    "addition_michael_thiol_001",
+    2
+   ]
+  ],
+  "params": {
+   "formula": "",
+   "n": 20,
+   "per_herb": 3,
+   "max_seeds": 18,
+   "max_pairs": 80,
+   "max_products": 32,
+   "cond": "煎煮",
+   "out_json": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\formula_end2end_20261125.json",
+   "out_md": "D:\\ProgramData\\DSHNS\\chemreact-staging\\reports\\formula_end2end_20261125.md"
+  }
+ },
+ "rows": [
+  {
+   "formula": "散痰宁糖浆",
+   "source": "ETCM",
+   "tokens": 6,
+   "herbs_resolved": 4,
+   "herbs_unresolved": [
+    "氯化铵",
+    "盐酸麻黄碱"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 430,
+   "seeds_used": 10,
+   "n_products": 492,
+   "n_hops": 658,
+   "seconds": 12.9,
+   "rules": {
+    "mined_extra": 580,
+    "mitsunobu": 20,
+    "mined_mono": 20,
+    "hydration_alkene_001": 13,
+    "elimination_dehydration_001": 9,
+    "oxidation_epoxide_001": 5,
+    "condensation_aldol_001": 4,
+    "aminolysis_ester_001": 4,
+    "isomerization_double_bond_001": 3
+   },
+   "error": ""
+  },
+  {
+   "formula": "清火栀麦丸",
+   "source": "Chinese Pharmacopoeia 2020 edition",
+   "tokens": 3,
+   "herbs_resolved": 3,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 309,
+   "seeds_used": 9,
+   "n_products": 1099,
+   "n_hops": 1545,
+   "seconds": 47.0,
+   "rules": {
+    "mined_extra": 939,
+    "mitsunobu": 280,
+    "mined_mono": 75,
+    "condensation_aldol_001": 56,
+    "esterification": 38,
+    "hydroxylation_aromatic_001": 27,
+    "hydration_alkene_001": 27,
+    "esterification_transesterification_001": 17,
+    "aminolysis_ester_001": 14,
+    "isomerization_double_bond_001": 14
+   },
+   "error": ""
+  },
+  {
+   "formula": "化毒散",
+   "source": "《普济方》卷二九一。",
+   "tokens": 15,
+   "herbs_resolved": 10,
+   "herbs_unresolved": [
+    "贝母",
+    "生地黄",
+    "败龟",
+    "官桂",
+    "熟生黄"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 1827,
+   "seeds_used": 18,
+   "n_products": 1409,
+   "n_hops": 1866,
+   "seconds": 59.5,
+   "rules": {
+    "mined_extra": 1208,
+    "esterification": 150,
+    "mined_mono": 130,
+    "condensation_aldol_001": 87,
+    "mitsunobu": 86,
+    "esterification_transesterification_001": 37,
+    "hydration_alkene_001": 34,
+    "elimination_dehydration_001": 30,
+    "hydrolysis_glycoside_001": 18,
+    "hydrolysis_acetal_001": 17
+   },
+   "error": ""
+  },
+  {
+   "formula": "桔梗汤",
+   "source": "《幼幼新书》卷十六引张涣方。",
+   "tokens": 7,
+   "herbs_resolved": 6,
+   "herbs_unresolved": [
+    "培干半"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 717,
+   "seeds_used": 16,
+   "n_products": 1374,
+   "n_hops": 1841,
+   "seconds": 50.8,
+   "rules": {
+    "mined_extra": 1314,
+    "mitsunobu": 179,
+    "esterification": 69,
+    "mined_mono": 63,
+    "hydroxylation_aromatic_001": 48,
+    "hydration_alkene_001": 31,
+    "condensation_aldol_001": 27,
+    "esterification_transesterification_001": 21,
+    "isomerization_double_bond_001": 19,
+    "aminolysis_ester_001": 16
+   },
+   "error": ""
+  },
+  {
+   "formula": "桑白皮汤",
+   "source": "《圣济总录》（人卫本）卷七十一。",
+   "tokens": 8,
+   "herbs_resolved": 3,
+   "herbs_unresolved": [
+    "桂半",
+    "锉半",
+    "陈橘皮",
+    "去白",
+    "猪牙皂荚"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 607,
+   "seeds_used": 9,
+   "n_products": 576,
+   "n_hops": 742,
+   "seconds": 16.7,
+   "rules": {
+    "mined_extra": 600,
+    "mitsunobu": 38,
+    "esterification": 31,
+    "mined_mono": 30,
+    "condensation_aldol_001": 14,
+    "hydroxylation_aromatic_001": 7,
+    "elimination_dehydration_001": 6,
+    "aminolysis_ester_001": 4,
+    "esterification_intermolecular_001": 3,
+    "hydration_alkene_001": 3
+   },
+   "error": ""
+  },
+  {
+   "formula": "三蛇胆川贝糖浆",
+   "source": "ETCM",
+   "tokens": 11,
+   "herbs_resolved": 9,
+   "herbs_unresolved": [
+    "牛白藤",
+    "蛇胆"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 1519,
+   "seeds_used": 18,
+   "n_products": 1048,
+   "n_hops": 1342,
+   "seconds": 32.3,
+   "rules": {
+    "mined_extra": 1096,
+    "mined_mono": 55,
+    "hydration_alkene_001": 43,
+    "condensation_aldol_001": 27,
+    "esterification": 19,
+    "oxidation_epoxide_001": 17,
+    "aminolysis_ester_001": 12,
+    "addition_michael_thiol_001": 12,
+    "isomerization_double_bond_001": 12,
+    "mitsunobu": 10
+   },
+   "error": ""
+  },
+  {
+   "formula": "玉液丸",
+   "source": "ETCM",
+   "tokens": 36,
+   "herbs_resolved": 35,
+   "herbs_unresolved": [
+    "益母草浸膏"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 5436,
+   "seeds_used": 18,
+   "n_products": 1407,
+   "n_hops": 1801,
+   "seconds": 37.8,
+   "rules": {
+    "mined_extra": 1362,
+    "mitsunobu": 87,
+    "mined_mono": 81,
+    "condensation_aldol_001": 50,
+    "hydration_alkene_001": 42,
+    "elimination_dehydration_001": 33,
+    "isomerization_double_bond_001": 22,
+    "esterification_transesterification_001": 20,
+    "hydroxylation_aromatic_001": 20,
+    "esterification": 19
+   },
+   "error": ""
+  },
+  {
+   "formula": "金不换膏",
+   "source": "ETCM",
+   "tokens": 76,
+   "herbs_resolved": 74,
+   "herbs_unresolved": [
+    "榆树枝",
+    "槐枝"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 10177,
+   "seeds_used": 18,
+   "n_products": 1264,
+   "n_hops": 1663,
+   "seconds": 31.5,
+   "rules": {
+    "mined_extra": 1280,
+    "condensation_aldol_001": 69,
+    "mined_mono": 55,
+    "hydroxylation_aromatic_001": 49,
+    "mitsunobu": 45,
+    "hydration_alkene_001": 41,
+    "isomerization_double_bond_001": 21,
+    "oxidation_epoxide_001": 15,
+    "elimination_dehydration_001": 12,
+    "demethylation_aromatic_001": 12
+   },
+   "error": ""
+  },
+  {
+   "formula": "消风散",
+   "source": "CPMCP",
+   "tokens": 13,
+   "herbs_resolved": 13,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 1954,
+   "seeds_used": 18,
+   "n_products": 1040,
+   "n_hops": 1375,
+   "seconds": 40.5,
+   "rules": {
+    "mined_extra": 856,
+    "esterification": 102,
+    "mined_mono": 99,
+    "mitsunobu": 70,
+    "condensation_aldol_001": 48,
+    "esterification_transesterification_001": 29,
+    "hydration_alkene_001": 28,
+    "elimination_dehydration_001": 27,
+    "hydrolysis_acetal_001": 19,
+    "hydroxylation_aromatic_001": 18
+   },
+   "error": ""
+  },
+  {
+   "formula": "骨痛药酒",
+   "source": "ETCM",
+   "tokens": 22,
+   "herbs_resolved": 20,
+   "herbs_unresolved": [
+    "接骨术",
+    "虎枚"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 2498,
+   "seeds_used": 18,
+   "n_products": 1494,
+   "n_hops": 2016,
+   "seconds": 53.0,
+   "rules": {
+    "mined_extra": 1443,
+    "mitsunobu": 159,
+    "mined_mono": 118,
+    "hydroxylation_aromatic_001": 60,
+    "hydration_alkene_001": 48,
+    "condensation_aldol_001": 34,
+    "isomerization_double_bond_001": 27,
+    "elimination_dehydration_001": 20,
+    "oxidation_epoxide_001": 19,
+    "aminolysis_ester_001": 16
+   },
+   "error": ""
+  },
+  {
+   "formula": "芩荷引竭煎",
+   "source": "《引经证医》卷四。",
+   "tokens": 9,
+   "herbs_resolved": 7,
+   "herbs_unresolved": [
+    "山楂子",
+    "沉香曲"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 766,
+   "seeds_used": 18,
+   "n_products": 1086,
+   "n_hops": 1480,
+   "seconds": 35.1,
+   "rules": {
+    "mined_extra": 988,
+    "mined_mono": 104,
+    "mitsunobu": 88,
+    "hydroxylation_aromatic_001": 63,
+    "esterification": 55,
+    "condensation_aldol_001": 35,
+    "hydration_alkene_001": 26,
+    "hydrolysis_acetal_001": 19,
+    "hydrolysis_glycoside_001": 16,
+    "esterification_transesterification_001": 14
+   },
+   "error": ""
+  },
+  {
+   "formula": "王氏保赤丸",
+   "source": "ETCM",
+   "tokens": 4,
+   "herbs_resolved": 4,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 518,
+   "seeds_used": 12,
+   "n_products": 1467,
+   "n_hops": 2010,
+   "seconds": 48.9,
+   "rules": {
+    "mined_extra": 1377,
+    "mitsunobu": 283,
+    "esterification": 91,
+    "mined_mono": 82,
+    "condensation_aldol_001": 66,
+    "esterification_transesterification_001": 22,
+    "hydration_alkene_001": 14,
+    "isomerization_double_bond_001": 14,
+    "elimination_dehydration_001": 12,
+    "aminolysis_ester_001": 11
+   },
+   "error": ""
+  },
+  {
+   "formula": "加味香苏散",
+   "source": "《医略六书》卷二十八。",
+   "tokens": 6,
+   "herbs_resolved": 6,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 985,
+   "seeds_used": 18,
+   "n_products": 1125,
+   "n_hops": 1499,
+   "seconds": 31.4,
+   "rules": {
+    "mined_extra": 1229,
+    "hydration_alkene_001": 58,
+    "mined_mono": 44,
+    "mitsunobu": 32,
+    "hydroxylation_aromatic_001": 30,
+    "esterification": 28,
+    "isomerization_double_bond_001": 28,
+    "oxidation_epoxide_001": 24,
+    "condensation_aldol_001": 7,
+    "amidation_intermolecular_001": 7
+   },
+   "error": ""
+  },
+  {
+   "formula": "桑螵蛸散",
+   "source": "《傅青主女科·产后编》卷下。",
+   "tokens": 6,
+   "herbs_resolved": 6,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 636,
+   "seeds_used": 16,
+   "n_products": 1174,
+   "n_hops": 1490,
+   "seconds": 42.2,
+   "rules": {
+    "mined_extra": 1067,
+    "esterification": 104,
+    "mined_mono": 80,
+    "condensation_aldol_001": 63,
+    "mitsunobu": 36,
+    "hydration_alkene_001": 35,
+    "elimination_dehydration_001": 23,
+    "oxidation_epoxide_001": 15,
+    "isomerization_double_bond_001": 10,
+    "hydrolysis_glycoside_001": 7
+   },
+   "error": ""
+  },
+  {
+   "formula": "青娥丸",
+   "source": "《慎斋遗书》卷九。",
+   "tokens": 3,
+   "herbs_resolved": 2,
+   "herbs_unresolved": [
+    "核桃肉"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 497,
+   "seeds_used": 6,
+   "n_products": 510,
+   "n_hops": 639,
+   "seconds": 16.0,
+   "rules": {
+    "mined_extra": 475,
+    "mitsunobu": 39,
+    "hydration_alkene_001": 30,
+    "hydroxylation_aromatic_001": 24,
+    "mined_mono": 21,
+    "elimination_dehydration_001": 19,
+    "oxidation_epoxide_001": 14,
+    "condensation_aldol_001": 7,
+    "addition_michael_thiol_001": 2,
+    "demethylation_aromatic_001": 2
+   },
+   "error": ""
+  },
+  {
+   "formula": "舒痔丸",
+   "source": "ETCM",
+   "tokens": 16,
+   "herbs_resolved": 14,
+   "herbs_unresolved": [
+    "荆芥炭",
+    "象牙屑"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 1950,
+   "seeds_used": 18,
+   "n_products": 1910,
+   "n_hops": 2527,
+   "seconds": 72.1,
+   "rules": {
+    "mined_extra": 1591,
+    "condensation_aldol_001": 238,
+    "mitsunobu": 190,
+    "mined_mono": 139,
+    "esterification": 121,
+    "elimination_dehydration_001": 45,
+    "addition_michael_amine_001": 28,
+    "amidation_intermolecular_001": 22,
+    "hydration_alkene_001": 22,
+    "hydrolysis_acetal_001": 21
+   },
+   "error": ""
+  },
+  {
+   "formula": "凉膈散",
+   "source": "《金鉴》卷七十八。",
+   "tokens": 8,
+   "herbs_resolved": 7,
+   "herbs_unresolved": [
+    "芒消"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 953,
+   "seeds_used": 18,
+   "n_products": 2478,
+   "n_hops": 3226,
+   "seconds": 116.3,
+   "rules": {
+    "mined_extra": 2127,
+    "mitsunobu": 546,
+    "mined_mono": 151,
+    "condensation_aldol_001": 77,
+    "esterification": 69,
+    "hydration_alkene_001": 40,
+    "hydroxylation_aromatic_001": 39,
+    "esterification_transesterification_001": 34,
+    "elimination_dehydration_001": 31,
+    "hydrolysis_acetal_001": 22
+   },
+   "error": ""
+  },
+  {
+   "formula": "固本明目颗粒",
+   "source": "ITCM",
+   "tokens": 7,
+   "herbs_resolved": 5,
+   "herbs_unresolved": [
+    "塞北紫堇",
+    "熊胆粉"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 563,
+   "seeds_used": 13,
+   "n_products": 1320,
+   "n_hops": 1721,
+   "seconds": 60.3,
+   "rules": {
+    "mined_extra": 1068,
+    "mitsunobu": 324,
+    "mined_mono": 89,
+    "hydration_alkene_001": 48,
+    "esterification_transesterification_001": 41,
+    "condensation_aldol_001": 37,
+    "oxidation_epoxide_001": 23,
+    "isomerization_double_bond_001": 23,
+    "hydroxylation_aromatic_001": 19,
+    "aminolysis_ester_001": 7
+   },
+   "error": ""
+  },
+  {
+   "formula": "痱子粉",
+   "source": "《赵炳南临床经验集》。",
+   "tokens": 5,
+   "herbs_resolved": 4,
+   "herbs_unresolved": [
+    "甘石粉"
+   ],
+   "herbs_missing_id": [],
+   "compounds_available": 240,
+   "seeds_used": 9,
+   "n_products": 304,
+   "n_hops": 418,
+   "seconds": 13.4,
+   "rules": {
+    "mined_extra": 306,
+    "mined_mono": 33,
+    "mitsunobu": 26,
+    "condensation_aldol_001": 12,
+    "hydroxylation_aromatic_001": 12,
+    "elimination_dehydration_001": 7,
+    "hydrolysis_ester_001": 5,
+    "hydration_alkene_001": 3,
+    "isomerization_double_bond_001": 3,
+    "hydrolysis_glycoside_001": 3
+   },
+   "error": ""
+  },
+  {
+   "formula": "羊藿三七胶囊",
+   "source": "Chinese Pharmacopoeia 2020 edition",
+   "tokens": 2,
+   "herbs_resolved": 2,
+   "herbs_unresolved": [],
+   "herbs_missing_id": [],
+   "compounds_available": 409,
+   "seeds_used": 5,
+   "n_products": 302,
+   "n_hops": 413,
+   "seconds": 15.8,
+   "rules": {
+    "mined_extra": 216,
+    "mitsunobu": 55,
+    "mined_mono": 44,
+    "esterification": 22,
+    "hydration_alkene_001": 13,
+    "hydroxylation_aromatic_001": 10,
+    "isomerization_double_bond_001": 10,
+    "hydrolysis_acetal_001": 8,
+    "elimination_dehydration_001": 8,
+    "hydrolysis_glycoside_001": 7
+   },
+   "error": ""
+  }
+ ]
+}

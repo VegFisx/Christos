@@ -62,20 +62,61 @@ def _paozhi_ids():
         return ()
 
 
-def run_once(seed, cond_name="煎煮"):
-    """单底物跑一轮。成本 = 1 个底物 × 模板库，秒级。"""
+def run_once(seed, cond_name="煎煮", mode=None, rounds=1, max_pairs=None):
+    """单底物跑指定轮数。成本 = 1 个底物 × 规则层 × 轮数，秒级。
+
+    mode（验证口径，必须显式）：
+      general     通用文献对照：curated 非炮制规则 + extra/mono/base；无覆盖/立体
+      evidence    炮制证据规则：11 条 cited 规则；extra/mono/base/覆盖/立体全关
+      production  生产炮制：11 条 cited 规则 + train coverage + 立体；extra/mono/base 关
+
+    2026-11-22：此前只关 base，extra/mono/rescue/stereo 仍是默认开，
+    导致 22 例留出集实际跑的是混合配置。现在三套口径显式分开。
+
+    ★ 2026-11-22 多轮预算修正：`max_pairs` 是单轮最多跑多少个底物对。旧版固定 1，
+    复杂底物第一轮产出几十个新分子时，第二轮只展开其中一个，长链会被截断
+    （甘遂诊断：二酯→单酯→ingenol 多轮只到单酯；单酯单独作种子一轮就到 ingenol）。
+    单轮仍用 1 保持旧口径；多轮默认 128，显式传 `max_pairs` 可覆盖。
+    """
     _paozhi = str(cond_name or "").startswith("炮制")
+    if mode is None:
+        mode = "evidence" if _paozhi else "general"
+    if mode == "general":
+        # 2026-11-22：general 是探索口径，保留历史全规则行为；
+        # evidence/production 只跑 cited/secondary。
+        flags = dict(use_curated_templates=True, strict_redox_gate=True,
+                     curated_rule_ids=(), use_base_templates=True,
+                     use_extra_templates=True, use_mono_templates=True,
+                     allow_unvalidated=True,
+                     rescue=False, stereo_enum_cap=0)
+    elif mode == "evidence":
+        if not _paozhi:
+            raise ValueError("mode=evidence 只用于炮制条件")
+        flags = dict(use_curated_templates=True, strict_redox_gate=True,
+                     curated_rule_ids=_paozhi_ids(), use_base_templates=False,
+                     use_extra_templates=False, use_mono_templates=False,
+                     allow_unvalidated=False,
+                     rescue=False, stereo_enum_cap=0)
+    elif mode == "production":
+        if not _paozhi:
+            raise ValueError("mode=production 只用于炮制条件")
+        flags = dict(use_curated_templates=True, strict_redox_gate=True,
+                     curated_rule_ids=_paozhi_ids(), use_base_templates=False,
+                     use_extra_templates=False, use_mono_templates=False,
+                     allow_unvalidated=False,
+                     rescue=True, stereo_enum_cap=8,
+                     stereo_enum_max_centers=4)
+    else:
+        raise ValueError("未知 mode=%r（允许 general / evidence / production）" % mode)
+    _rounds = int(rounds)
+    _max_pairs = (1 if _rounds <= 1 else 128) if max_pairs is None else int(max_pairs)
     spec = qb.RunSpec(
         seeds=[seed],
         cond_name=cond_name,
-        rounds=1,
-        max_pairs=1,
+        rounds=_rounds,
+        max_pairs=_max_pairs,
         max_products_per_pair=64,
-        use_curated_templates=True,
-        strict_redox_gate=True,
-        # 炮制档与生产路径对齐：只跑证据规则，基础模板库不参与
-        curated_rule_ids=(_paozhi_ids() if _paozhi else ()),
-        use_base_templates=(not _paozhi),
+        **flags
     )
     t0 = time.time()
     inv = qb.build_inventory(spec, score=False, use_cache=False)

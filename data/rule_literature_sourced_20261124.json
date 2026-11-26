@@ -1,0 +1,79 @@
+{
+ "note": "Literature for the 17 rules with no ORD execution evidence. status=verified_reference means the DOI was resolved through Crossref and the title/source matches the reaction class; it does NOT mean the exact template was validated. status=candidate means the page was found by search but the citation metadata was not confirmed.",
+ "generated_at": "2026-11-24",
+ "verified_reference": [
+  {
+   "rules": ["deprotection_boc_amine_001"],
+   "source": "Greene's Protective Groups in Organic Synthesis, 5th ed. (Wiley, 2014), Boc chapter",
+   "doi": "10.1002/9781118905074",
+   "type": "edited-book"
+  },
+  {
+   "rules": ["deprotection_cbz_amine_001"],
+   "source": "Greene's Protective Groups in Organic Synthesis, 5th ed. (Wiley, 2014), Cbz chapter",
+   "doi": "10.1002/9781118905074",
+   "type": "edited-book"
+  },
+  {
+   "rules": ["sulfonylation_amine_001"],
+   "source": "Greene's Protective Groups in Organic Synthesis, 5th ed. (Wiley, 2014), sulfonamide protection of amines",
+   "doi": "10.1002/9781118905074",
+   "type": "edited-book"
+  },
+  {
+   "rules": ["addition_thiohemiacetal_001"],
+   "source": "Thiohemiacetal formation by inhibitory aldehydes at the active site of papain",
+   "doi": "10.1021/bi00641a023",
+   "journal": "Biochemistry",
+   "year": 1977,
+   "type": "journal-article"
+  },
+  {
+   "rules": ["cyclization_conrad_limpach_alpha_aryl_001",
+             "cyclization_fischer_aza_indole_001",
+             "cyclization_hantzsch_thiazole_001",
+             "cyclization_indazole_001"],
+   "source": "Name Reactions, 6th ed. (Springer, 2021)",
+   "doi": "10.1007/978-3-030-50865-4",
+   "type": "book"
+  },
+  {
+   "rules": ["cyclization_larock_indole_001"],
+   "source": "Synthesis of indoles via palladium-catalyzed heteroannulation of internal alkynes",
+   "doi": "10.1021/ja00017a059",
+   "journal": "Journal of the American Chemical Society",
+   "year": 1991,
+   "type": "journal-article"
+  }
+ ],
+ "candidate": [
+  {
+   "rules": ["condensation_hemiacetal_001", "cyclization_hemiacetal_001"],
+   "source": "酒制增效机制综述（《中草药》2026, 57(12)）：β-葡萄糖苷酶断裂糖苷键，生成具半缩醛结构的苷元，并可进一步分子内环化",
+   "url": "https://www.tiprpress.com/zcy/ch/reader/create_pdf.aspx?file_no=20261229&year_id=2026&quarter_id=12&falg=1",
+   "status": "candidate_metadata_unverified"
+  },
+  {
+   "rules": ["condensation_hemiacetal_001", "cyclization_hemiacetal_001"],
+   "source": "环烯醚萜苷稳定性综述（《中草药》）：龙胆苦苷在酸性下糖苷键断裂、烯醚键打开并进一步环合；苷元半缩醛结构在弱碱性下较稳定",
+   "url": "https://www.tiprpress.com/zcy/ch/reader/create_pdf.aspx?file_no=20211629&year_id=2021&quarter_id=16&falg=1",
+   "status": "candidate_metadata_unverified"
+  },
+  {
+   "rules": ["oxidation_phenol_quinone_001", "reduction_quinone_001"],
+   "source": "中药化学教材/综述：醌极易还原为氢醌、氢醌可再氧化成醌；大黄含蒽酚/蒽酮（可氧化回蒽醌）；丹参含邻醌型丹参酮",
+   "url": "http://yqgx.tsinghua.edu.cn/ueditor/jsp/uploadfiles/20200207/1581072853265075129.pdf",
+   "status": "candidate_textbook_context"
+  }
+ ],
+ "no_source": [
+  {"rule": "decarboxylation_cinnamic_001",
+   "reason": "未检索到可核对的中药炮制文献；notes 里只有人工底物验证"},
+  {"rule": "esterification_gamma_lactone_001",
+   "reason": "未检索到可核对的中药文献；属常规内酯化"},
+  {"rule": "tautomerization_keto_enol_001",
+   "reason": "互变异构是通用化学，不需要中药专属文献；但也没有可核对的专门引用"},
+  {"rule": "coupling_n_alkylation_amine_001",
+   "reason": "Greene's 的酰胺/胺保护章节不直接覆盖普通 N-烷基化，未硬套"}
+ ]
+}

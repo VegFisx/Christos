@@ -1,0 +1,16 @@
+{
+  "protocol": "MIT md5 sample; exclude all uspto50k signatures; drop reagents; RXNMapper; RDChiral forward flip",
+  "seed": "20261121",
+  "pct": 2.1,
+  "mit_rows": 479035,
+  "sampled": 10024,
+  "bad": 0,
+  "excluded_50k": 426,
+  "external_sample": 9598,
+  "mapped": 9534,
+  "map_fail": 64,
+  "extract_fail": 6,
+  "unique_templates": 5275,
+  "support_ge2": 1046,
+  "seconds": 469.8
+}

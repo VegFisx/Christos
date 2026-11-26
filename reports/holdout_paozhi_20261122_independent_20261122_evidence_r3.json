@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-11-22 17:30:03",
+  "holdout_file": "data/holdout_paozhi_independent_20261122.json",
+  "frozen_git_rev": "pre-registered 2026-11-22 before rule patch",
+  "mode": "evidence",
+  "rounds": 3,
+  "n_cases": 3,
+  "n_prediction_hits": 3,
+  "actual_status_counts": {
+    "consistent": 3
+  },
+  "cases": [
+    {
+      "tag": "validation_benzyl_alcohol",
+      "seed_id": "HBIN017844",
+      "condition": "炮制·蒸制",
+      "mode": "evidence",
+      "rounds": 3,
+      "seed_name": "Benzyl alcohol",
+      "seed_formula": "C7H8O",
+      "seed_smiles_source": "tcm.db:flat",
+      "seconds_round1": 0.2,
+      "n_round1": 1,
+      "targets": [
+        {
+          "rule": "oxidation_benzylic_alcohol_001",
+          "rules_all": [
+            "oxidation_benzylic_alcohol_001"
+          ],
+          "product_formula": "C7H6O",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "benzaldehyde",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "模型底物（苄醇）",
+      "process_cn": "加热模型",
+      "holdout_strength": "independent",
+      "expected": {
+        "status": "consistent",
+        "rule": "oxidation_benzylic_alcohol_001",
+        "confidence": "high",
+        "reason": "补足后的预期：苄位醇氧化为苯甲醛。当前基线：evidence miss；production 由 rescue_lowsupport 给出 product_only（coverage 已覆盖，规则族未归因）。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "validation_huangjing_glucose_hmf",
+      "seed_id": "HBIN028037",
+      "condition": "炮制·蒸制",
+      "mode": "evidence",
+      "rounds": 3,
+      "seed_name": "Glucose",
+      "seed_formula": "C6H12O6",
+      "seed_smiles_source": "tcm.db:isomeric",
+      "seconds_round1": 0.2,
+      "n_round1": 4,
+      "targets": [
+        {
+          "rule": "dehydration_cyclization_hmf_glucose_001",
+          "rules_all": [
+            "dehydration_cyclization_hmf_glucose_001"
+          ],
+          "product_formula": "C6H6O3",
+          "co_product": false,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "5-HMF",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "黄精",
+      "process_cn": "酒蒸/九蒸九晒",
+      "holdout_strength": "independent",
+      "expected": {
+        "status": "consistent",
+        "rule": "dehydration_cyclization_001",
+        "confidence": "medium",
+        "reason": "补足后的预期：葡萄糖经连续脱水/环化生成 5-HMF。当前基线预计 miss；地黄是设计案例（用果糖），本案例改用黄精 + 葡萄糖。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "validation_huanglian_berberine",
+      "seed_id": "HBIN017893",
+      "condition": "炮制·酒炙",
+      "mode": "evidence",
+      "rounds": 3,
+      "seed_name": "Berberine",
+      "seed_formula": "C20H18NO4+",
+      "seed_smiles_source": "tcm.db:flat",
+      "seconds_round1": 0.2,
+      "n_round1": 4,
+      "targets": [
+        {
+          "rule": "demethylation_aromatic_o_001",
+          "rules_all": [
+            "demethylation_aromatic_o_001"
+          ],
+          "product_formula": "C19H16NO4+",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "berberrubine",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "黄连",
+      "process_cn": "酒炙",
+      "holdout_strength": "independent",
+      "expected": {
+        "status": "consistent",
+        "rule": "demethylation_aromatic_o_001",
+        "confidence": "high",
+        "reason": "补足后的预期：小檗碱芳香甲氧基脱甲基生成小檗红碱（C20H18NO4+ → C19H16NO4+）。当前基线：evidence miss；production 由 rescue_lowsupport 给出 product_only。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    }
+  ]
+}

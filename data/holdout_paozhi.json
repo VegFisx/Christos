@@ -6,7 +6,9 @@
     "1. 本文件在任何一次运行之前提交（commit），此后 expected 字段冻结；",
     "2. 运行只允许用现有规则（rules/rules.json，71 条）与现有条件档，不改代码；",
     "3. 若某个案例失败，只能记录，不能为它新增规则/模板/特殊分支；",
-    "4. 每次发布前重跑本文件，写入 reports/holdout_paozhi_<date>.json 并与此预期对照。"
+    "4. 每次发布前重跑本文件，写入 reports/holdout_paozhi_<date>.json 并与此预期对照。",
+    "5. 2026-11-22 扩例：只新增 weak 案例，strong 5 例与 expected 不变（原有大黄 1 例 weak 不动）；先提交再跑。",
+    "6. 2026-11-22 strong 扩例：5 条新药材案例，expected 先提交再跑；不得为它们补规则。"
   ],
   "selection_note": "案例来源：文献记载了该炮制方法下某个标记性成分的结构转化，且底物与产物在 tcm.db 里都有结构。选它们的原因不是'我们能做'——其中两条预期是失败。",
   "holdout_strength": "strong=该化学未被用于设计任何规则；weak=所用规则族的证据文献里出现过同一味药（但未指名这一对底物/产物）。",
@@ -208,6 +210,846 @@
         "reason": "番泻苷 A 需连续剥两个葡萄糖才到番泻苷元，单轮一步只能到单糖苷中间体；若规则一次剥两个则可能命中"
       },
       "literature_note": "大黄酒制/酒蒸过程中番泻苷水解为番泻苷元（致泻作用减弱）；注意 hydrolysis_glycoside_001 的一条证据文献是大黄综述，故只算弱留出"
+    },
+    {
+      "id": "miyan_licorice_glycyrrhizin",
+      "herb_cn": "甘草",
+      "herb_en": "Licorice",
+      "process_cn": "蜜炙",
+      "process_en": "honey-frying",
+      "condition": "炮制·蜜炙",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN028191",
+        "name": "Glycyrrhizin",
+        "formula": "C42H62O16"
+      },
+      "targets": [
+        {
+          "label": "glycyrrhetinic acid",
+          "kind": "key",
+          "value": "HBIN002095",
+          "formula": "C30H46O4",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "甘草酸（二葡萄糖醛酸苷）水解到甘草次酸；lit_cond 已实测命中同一规则"
+      },
+      "literature_note": "DOI 10.1080/14786419.2026.2693245（蜜炙甘草成分变化）"
+    },
+    {
+      "id": "zhengzhi_ginseng_rb1_rg3",
+      "herb_cn": "人参",
+      "herb_en": "Ginseng",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN027729",
+        "name": "Ginsenoside rb1",
+        "formula": "C54H92O23"
+      },
+      "targets": [
+        {
+          "label": "ginsenoside rg3",
+          "kind": "key",
+          "value": "HBIN027751",
+          "formula": "C42H72O13",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "Rb1 去糖得 Rg3；lit_cond 已实测命中"
+      },
+      "literature_note": "DOI 10.3390/molecules25194390（不同炮制工艺的人参皂苷谱）"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg1_rh1",
+      "herb_cn": "人参",
+      "herb_en": "Ginseng",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN027746",
+        "name": "Ginsenoside rg1",
+        "formula": "C42H72O14"
+      },
+      "targets": [
+        {
+          "label": "ginsenoside rh1",
+          "kind": "key",
+          "value": "HBIN027761",
+          "formula": "C36H62O9",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "Rg1 去一个葡萄糖得 Rh1（C42H72O14 - C6H10O5）；与 Rb1 同族"
+      },
+      "literature_note": "DOI 10.3390/molecules25194390（不同炮制工艺的人参皂苷谱）"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg3_rg5",
+      "herb_cn": "人参",
+      "herb_en": "Ginseng",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN027751",
+        "name": "Ginsenoside rg3",
+        "formula": "C42H72O13"
+      },
+      "targets": [
+        {
+          "label": "ginsenoside rg5",
+          "kind": "key",
+          "value": "HBIN027756",
+          "formula": "C42H70O12",
+          "family": [
+            "elimination_dehydration"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "elimination_dehydration_001",
+        "confidence": "medium",
+        "reason": "Rg3 脱水得 Rg5（C42H72O13 - H2O）；若规则只给 Rk1 或不给脱水产物，则记为 miss"
+      },
+      "literature_note": "DOI 10.3390/molecules25194390（不同炮制工艺的人参皂苷谱）"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg3_rk1",
+      "herb_cn": "人参",
+      "herb_en": "Ginseng",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN027751",
+        "name": "Ginsenoside rg3",
+        "formula": "C42H72O13"
+      },
+      "targets": [
+        {
+          "label": "ginsenoside rk1",
+          "kind": "key",
+          "value": "HBIN027782",
+          "formula": "C42H70O12",
+          "family": [
+            "elimination_dehydration"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "elimination_dehydration_001",
+        "confidence": "medium",
+        "reason": "Rg3 脱水得 Rk1（与 Rg5 同分子式、双键位置不同）；规则若只给一种异构体，则记为 miss"
+      },
+      "literature_note": "DOI 10.3390/molecules25194390（不同炮制工艺的人参皂苷谱）"
+    },
+    {
+      "id": "fuzi_aconitine_benzoylaconine",
+      "herb_cn": "附子",
+      "herb_en": "Aconite",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN014582",
+        "name": "Aconitine",
+        "formula": "C34H47NO11"
+      },
+      "targets": [
+        {
+          "label": "benzoylaconine",
+          "kind": "key",
+          "value": "HBIN017810",
+          "formula": "C32H45NO10",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "乌头碱 C8 乙酰酯水解得苯甲酰乌头原碱（C34H47NO11 - C2H2O）"
+      },
+      "literature_note": "DOI 10.3389/fphar.2016.00367（双酯型生物碱酯水解）"
+    },
+    {
+      "id": "fuzi_mesaconitine_benzoylmesaconine",
+      "herb_cn": "附子",
+      "herb_en": "Aconite",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN034775",
+        "name": "Mesaconitine",
+        "formula": "C33H45NO11"
+      },
+      "targets": [
+        {
+          "label": "benzoylmesaconine",
+          "kind": "key",
+          "value": "HBIN017822",
+          "formula": "C31H43NO10",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "中乌头碱乙酰酯水解得苯甲酰中乌头原碱（C33H45NO11 - C2H2O）"
+      },
+      "literature_note": "DOI 10.3389/fphar.2016.00367（双酯型生物碱酯水解）"
+    },
+    {
+      "id": "fuzi_hypaconitine_benzoylhypaconine",
+      "herb_cn": "附子",
+      "herb_en": "Aconite",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN029816",
+        "name": "Hypaconitine",
+        "formula": "C33H45NO10"
+      },
+      "targets": [
+        {
+          "label": "benzoylhypaconine",
+          "kind": "key",
+          "value": "HBIN017820",
+          "formula": "C31H43NO9",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "次乌头碱乙酰酯水解得苯甲酰次乌头原碱（C33H45NO10 - C2H2O）"
+      },
+      "literature_note": "DOI 10.3389/fphar.2016.00367（双酯型生物碱酯水解）"
+    },
+    {
+      "id": "binglang_arecoline_guvacoline",
+      "herb_cn": "槟榔",
+      "herb_en": "Areca seed",
+      "process_cn": "炒焦",
+      "process_en": "char-frying",
+      "condition": "炮制·炒焦",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN016699",
+        "name": "Arecoline",
+        "formula": "C8H13NO2"
+      },
+      "targets": [
+        {
+          "label": "guvacoline",
+          "kind": "key",
+          "value": "HBIN028561",
+          "formula": "C7H11NO2",
+          "family": [
+            "demethylation_n"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "demethylation_n_001",
+        "confidence": "high",
+        "reason": "槟榔碱 N-脱甲基得去甲槟榔碱（guvacoline，C8H13NO2 - CH2）；lit_cond 已实测命中"
+      },
+      "literature_note": "《美拉德反应对槟榔炮制过程中槟榔碱转化的影响》(2017)"
+    },
+    {
+      "id": "cangerzi_catr_atr",
+      "herb_cn": "苍耳子",
+      "herb_en": "Xanthium fruit",
+      "process_cn": "炒黄",
+      "process_en": "stir-frying",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN019719",
+        "name": "Carboxyatractyloside",
+        "formula": "C31H46O18S2"
+      },
+      "targets": [
+        {
+          "label": "atractyloside skeleton",
+          "kind": "formula",
+          "value": "C30H46O16S2",
+          "family": [
+            "decarboxylation"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "formula_only",
+        "rule": "decarboxylation_001",
+        "confidence": "high",
+        "reason": "CATR 加热脱羧得 ATR 骨架（C31H46O18S2 - CO2）；ATR 在 tcm.db 无结构，只能判分子式"
+      },
+      "literature_note": "《苍耳子炮制前后羧基苍术苷和苍术苷的含量比较》(2013)"
+    },
+    {
+      "id": "heshouwu_thsg_aglycone",
+      "herb_cn": "何首乌",
+      "herb_en": "Polygonum multiflorum",
+      "process_cn": "蒸制",
+      "process_en": "steaming",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "weak",
+      "seed": {
+        "iid": "HBIN003908",
+        "name": "2,3,5,4'-tetrahydroxystilbene-2-O-beta-D-glucoside",
+        "formula": "C20H22O9"
+      },
+      "targets": [
+        {
+          "label": "THSG aglycone",
+          "kind": "formula",
+          "value": "C14H12O4",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "formula_only",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "THSG 去葡萄糖得二苯乙烯苷元（C20H22O9 - C6H10O5 = C14H12O4）；苷元在 tcm.db 无结构，只能判分子式"
+      },
+      "literature_note": "DOI 10.3389/fphar.2018.00934（何首乌炮制化学）"
+    },
+    {
+      "id": "zhiqiao_hesperidin_hesperetin",
+      "herb_cn": "枳壳",
+      "herb_en": "Fructus Aurantii",
+      "process_cn": "麸炒",
+      "process_en": "bran stir-frying",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN029196",
+        "name": "Hesperidin",
+        "formula": "C28H34O15"
+      },
+      "targets": [
+        {
+          "label": "hesperetin",
+          "kind": "key",
+          "value": "HBIN029190",
+          "formula": "C16H14O6",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "橙皮苷（芦丁糖苷）水解得橙皮素；麸炒后橙皮苷 6.34→4.23 μg/mL、橙皮素 0.50→0.93 μg/mL（文献定量）。条件档用炒黄近似麸炒。"
+      },
+      "literature_note": "DOI 10.1016/j.fochx.2026.104646（Bran stir-frying remodels Fructus Aurantii through flavonoid deglycosylation and limonoid reduction）"
+    },
+    {
+      "id": "zhiqiao_naringin_naringenin",
+      "herb_cn": "枳壳",
+      "herb_en": "Fructus Aurantii",
+      "process_cn": "麸炒",
+      "process_en": "bran stir-frying",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN036380",
+        "name": "Naringin",
+        "formula": "C27H32O14"
+      },
+      "targets": [
+        {
+          "label": "naringenin",
+          "kind": "key",
+          "value": "HBIN006816",
+          "formula": "C15H12O5",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "柚皮苷水解得柚皮素；麸炒后柚皮苷 4.55→3.41 μg/mL、柚皮素 1.46→2.59 μg/mL（文献定量）。条件档用炒黄近似麸炒。"
+      },
+      "literature_note": "DOI 10.1016/j.fochx.2026.104646（同上）"
+    },
+    {
+      "id": "huangqin_baicalin_baicalein",
+      "herb_cn": "黄芩",
+      "herb_en": "Scutellaria baicalensis",
+      "process_cn": "酒炙",
+      "process_en": "wine-frying",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN017516",
+        "name": "Baicalin",
+        "formula": "C21H18O11"
+      },
+      "targets": [
+        {
+          "label": "baicalein",
+          "kind": "key",
+          "value": "HBIN017508",
+          "formula": "C15H10O5",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "黄芩苷（葡萄糖醛酸苷）水解得黄芩素；酒炙后黄芩苷/汉黄芩苷下降、黄芩素/汉黄芩素上升（文献多成分定量）。"
+      },
+      "literature_note": "DOI 10.7501/j.issn.0253-2670.2020.09.019（黄芩酒炙前后化学成分变化）"
+    },
+    {
+      "id": "nvzhenzi_ligustroside_hydroxytyrosol",
+      "herb_cn": "女贞子",
+      "herb_en": "Ligustri Lucidi Fructus",
+      "process_cn": "酒蒸",
+      "process_en": "wine-steaming",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN033207",
+        "name": "Ligustroside",
+        "formula": "C25H32O12"
+      },
+      "targets": [
+        {
+          "label": "hydroxytyrosol",
+          "kind": "key",
+          "value": "HBIN007117",
+          "formula": "C8H10O3",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "文献报道酒蒸使女贞子苷（ligustroside）水解为羟基酪醇。现有糖苷规则只脱葡萄糖到苷元；羟基酪醇还需断裂裂环烯醚萜酯，预计 miss。条件档用酒炙近似酒蒸。"
+      },
+      "literature_note": "DOI 10.1016/j.chroma.2020.461228（wine steaming of Ligustri Lucidi Fructus）"
+    },
+    {
+      "id": "huangqi_acetylastragaloside_astragaloside_iv",
+      "herb_cn": "黄芪",
+      "herb_en": "Astragali Radix",
+      "process_cn": "蜜炙",
+      "process_en": "honey-frying",
+      "condition": "炮制·蜜炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN014450",
+        "name": "Acetylastragaloside I",
+        "formula": "C47H74O17"
+      },
+      "targets": [
+        {
+          "label": "astragaloside IV",
+          "kind": "key",
+          "value": "HBIN017230",
+          "formula": "C41H68O14",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "medium",
+        "reason": "文献报道加热使乙酰黄芪苷脱乙酰生成黄芪甲苷 IV。单轮酯水解只脱一个乙酰，预计到不了黄芪甲苷 IV。"
+      },
+      "literature_note": "DOI 10.3390/molecules27020575（Astragali radix processing methods）"
+    },
+    {
+      "id": "huaimi_rutin_quercetin",
+      "herb_cn": "槐米",
+      "herb_en": "Sophora japonica flower bud",
+      "process_cn": "炒炭（中度）",
+      "process_en": "moderate char-frying",
+      "condition": "炮制·炒炭",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN042670",
+        "name": "Rutin",
+        "formula": "C27H30O16"
+      },
+      "targets": [
+        {
+          "label": "quercetin",
+          "kind": "key",
+          "value": "HBIN041495",
+          "formula": "C15H10O7",
+          "family": [
+            "hydrolysis_glycoside"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "high",
+        "reason": "炒炭过程中芦丁（槲皮素-3-O-芸香糖苷）逐步减少，槲皮素先增后降；中度炒炭时槲皮素升高，符合芦丁脱糖苷生成槲皮素。同批 HPLC 定量 6 个成分，芦丁与槲皮素呈反向趋势。"
+      },
+      "literature_note": "DOI 10.7501/j.issn.0253-2670.2025.18.010（付毛毛等，槐米炒炭过程中颜色、成分含量的变化规律和相关性分析，中草药 2025, 56(18):6602-6611）"
+    },
+    {
+      "id": "dihuang_acteoside_verbasoside",
+      "herb_cn": "地黄",
+      "herb_en": "Rehmannia glutinosa",
+      "process_cn": "九蒸九晒（多次蒸制）",
+      "process_en": "repeated steaming and drying",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN014630",
+        "name": "Acteoside",
+        "formula": "C29H36O15"
+      },
+      "targets": [
+        {
+          "label": "verbasoside",
+          "kind": "key",
+          "value": "HBIN047822",
+          "formula": "C20H30O12",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "反复蒸制中 acteoside（verbascoside）的咖啡酰酯键水解，生成 verbasoside（失去咖啡酰基）；文献在炮制地黄馏出物中检出 verbasoside，并把它归因于 acteoside 降解。"
+      },
+      "literature_note": "DOI 10.1155/2022/3382333（Xue et al., Changes in the Chemical Components of Processed Rehmanniae Radix Distillate during Different Steaming Times, Evid Based Complement Alternat Med 2022; PMC8872652）"
+    },
+    {
+      "id": "chaihu_saikosaponin_a_b1",
+      "herb_cn": "柴胡",
+      "herb_en": "Bupleurum chinense",
+      "process_cn": "醋炙",
+      "process_en": "vinegar-frying",
+      "condition": "炮制·醋炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN042787",
+        "name": "Saikosaponin a",
+        "formula": "C42H68O13"
+      },
+      "targets": [
+        {
+          "label": "saikosaponin b1",
+          "kind": "key",
+          "value": "HBIN042789",
+          "formula": "C42H68O13",
+          "family": [
+            "isomerization",
+            "rearrangement"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "醋炙/酸性条件下柴胡皂苷 A 的 13,28-环氧醚键开环，异构化为柴胡皂苷 b1（同分子式 C42H68O13，环数 8→7）。现有规则只有三元环氧化物开环（hydrolysis_epoxide_001，SMARTS 为 [C]1[O][C]1）和非环醚水解（cleavage_ether_acyclic_001，[CX4;!R][O][CX4;!R]），都不匹配13,28-五元环醚；也没有异构化规则。"
+      },
+      "literature_note": "DOI 10.7501/j.issn.0253-2670.2017.02.019（于蓓蓓等，基于HPLC-DAD-MSn的柴胡皂苷A的体外生物转化研究，中草药 2017, 48(2):333-338）；醋制 I 型→II 型见中国药科大学学报 2012, 43(4):334-342。"
+    },
+    {
+      "id": "huangbo_palmatine_palmatrubine",
+      "herb_cn": "黄柏",
+      "herb_en": "Phellodendron chinense",
+      "process_cn": "盐炙（150–160 °C）",
+      "process_en": "salt-frying",
+      "condition": "炮制·盐炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN038666",
+        "name": "Palmatine",
+        "formula": "C21H22NO4+"
+      },
+      "targets": [
+        {
+          "label": "palmatrubine",
+          "kind": "key",
+          "value": "HBIN038670",
+          "formula": "C20H20NO4+",
+          "family": [
+            "demethylation"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "盐炙 150–160 °C 使巴马汀的芳香甲氧基脱甲基生成巴马红汀（C21H22NO4+ → C20H20NO4+）。现有 demethylation_n_001 只匹配N-甲基（[N;!a][CH3]）；cleavage_ether_acyclic_001 只匹配非环烷基醚（[CX4;!R][O][CX4;!R]），均不覆盖芳香 O-甲基。"
+      },
+      "literature_note": "DOI 10.3969/j.issn.1001-1528.2010.03.028（祁东利等，黄柏炮制后化学成分转化研究，中成药 2010, 32(3):443-447）；巴马汀→巴马红汀见中成药 2021, 43(11):3082-3088 与现代药物与临床 2015, 30(1):18-23。"
+    },
+    {
+      "id": "gansui_diester_ingenol",
+      "herb_cn": "甘遂",
+      "herb_en": "Euphorbia kansui",
+      "process_cn": "醋炙",
+      "process_en": "vinegar-frying",
+      "condition": "炮制·醋炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN008999",
+        "name": "3-O-(2'E,4'Z-decadienoyl)-20-O-acetylingenol",
+        "formula": "C32H44O7"
+      },
+      "targets": [
+        {
+          "label": "ingenol",
+          "kind": "key",
+          "value": "HBIN030161",
+          "formula": "C20H28O5",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "醋炙使二酯型 ingenol 二萜经酯键水解：先脱 20-O-乙酰基生成3-O-(2'E,4'Z-decadienoyl)ingenol（HBIN009001），再脱 3-O-癸二烯酰基生成 ingenol。单轮预计只到单酯；多轮 r3 预计到 ingenol。"
+      },
+      "literature_note": "DOI 10.19540/j.cnki.cjcmm.20230303.301（刘寒香等，基于毒性成分转化的甘遂醋炙工艺优选，中国中药杂志 2023, 48(11):2958-2967）"
+    },
+    {
+      "id": "gansui_kpc_deoxyingenol",
+      "herb_cn": "甘遂",
+      "herb_en": "Euphorbia kansui",
+      "process_cn": "醋炙",
+      "process_en": "vinegar-frying",
+      "condition": "炮制·醋炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN032056",
+        "name": "Kansuiphorin C",
+        "formula": "C29H34O6"
+      },
+      "targets": [
+        {
+          "label": "20-deoxyingenol",
+          "kind": "key",
+          "value": "HBIN003394",
+          "formula": "C20H28O4",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "KPC 经酯键水解先到 5-O-benzoyl-20-deoxyingenol（HBIN011834），再脱苯甲酰基到 20-deoxyingenol。单轮预计只到单酯；多轮 r3 预计到苷元。"
+      },
+      "literature_note": "DOI 10.19540/j.cnki.cjcmm.20230303.301（刘寒香等，基于毒性成分转化的甘遂醋炙工艺优选，中国中药杂志 2023, 48(11):2958-2967）"
+    },
+    {
+      "id": "dihuang_fructose_hmf",
+      "herb_cn": "地黄",
+      "herb_en": "Rehmannia glutinosa",
+      "process_cn": "九蒸九晒（多次蒸制）",
+      "process_en": "repeated steaming and drying",
+      "condition": "炮制·蒸制",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN026793",
+        "name": "Fructose",
+        "formula": "C6H12O6"
+      },
+      "targets": [
+        {
+          "label": "5-HMF",
+          "kind": "key",
+          "value": "HBIN029444",
+          "formula": "C6H6O3",
+          "family": [
+            "maillard",
+            "condensation",
+            "dehydration"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "5-HMF 由果糖/葡萄糖连续脱水并环化生成（净失 3 分子水）。maillard_simplified_001 只把 α-羟基醛氧化成二羰基；elimination_dehydration_001 每次只脱一分子水，且没有呋喃环化规则；单轮与多轮预计都到不了 5-HMF。"
+      },
+      "literature_note": "DOI 10.1155/2022/3382333（Xue et al., Changes in the Chemical Components of Processed Rehmanniae Radix Distillate during Different Steaming Times; PMC8872652）；5-HMF 随蒸制增加另见中草药 2016 与 Foods 2025 DOI 10.3390/foods14223932。"
+    },
+    {
+      "id": "wuzhuyu_evodiamine_rutaecarpine",
+      "herb_cn": "吴茱萸",
+      "herb_en": "Evodia rutaecarpa",
+      "process_cn": "炒制（加热）",
+      "process_en": "stir-frying",
+      "condition": "炮制·炒黄",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN026264",
+        "name": "Evodiamine",
+        "formula": "C19H17N3O"
+      },
+      "targets": [
+        {
+          "label": "rutaecarpine",
+          "kind": "key",
+          "value": "HBIN042657",
+          "formula": "C18H13N3O",
+          "family": [
+            "demethylation",
+            "oxidation",
+            "aromatization"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "miss",
+        "rule": "",
+        "confidence": "high",
+        "reason": "加热下吴茱萸碱盐酸盐脱去 CH3Cl 并氧化/芳构化为吴茱萸次碱（C19H17N3O → C18H13N3O）。demethylation_n_001 只做 N-甲基水解，净失 CH2，产物是 C18H15N3O 的去甲吴茱萸碱，不是 C18H13N3O 的吴茱萸次碱；也没有氧化/芳构化规则。"
+      },
+      "literature_note": "The Quinazolinocarbolines, Chapter 4（ScienceDirect S1876081308600433）：evodiamine hydrochloride 加热脱 CH3Cl 生成 rutaecarpine；加热使 rutaecarpine 升高见中国实验方剂学杂志 2011, 17(7)（析因设计法研究炮制对吴茱萸中3种主要成分的影响）。"
+    },
+    {
+      "id": "nvzhenzi_oleuropein_hydroxytyrosol_control",
+      "herb_cn": "女贞子",
+      "herb_en": "Ligustri Lucidi Fructus",
+      "process_cn": "酒蒸",
+      "process_en": "wine-steaming",
+      "condition": "炮制·酒炙",
+      "holdout_strength": "strong",
+      "seed": {
+        "iid": "HBIN038054",
+        "name": "Oleuropein",
+        "formula": "C25H32O13"
+      },
+      "targets": [
+        {
+          "label": "hydroxytyrosol",
+          "kind": "key",
+          "value": "HBIN007117",
+          "formula": "C8H10O3",
+          "family": [
+            "hydrolysis_ester"
+          ]
+        }
+      ],
+      "bridge": "",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_ester_001",
+        "confidence": "high",
+        "reason": "oleuropein 的侧链是 hydroxytyrosol 酯；酯水解直接释放 hydroxytyrosol（C8H10O3）。这是对 nvzhenzi_ligustroside 配对的对照：ligustroside 的侧链是 tyrosol（C8H10O2），到 hydroxytyrosol 还差一次芳环羟化，不能由现有证据规则完成。"
+      },
+      "literature_note": "DOI 10.1016/j.chroma.2020.461228（wine steaming of Ligustri Lucidi Fructus）；oleuropein 是 hydroxytyrosol 的酯前体。该对照在正式 31 例运行前写入并提交，用于区分 seed-target 配对问题与规则缺口。"
     }
-  ]
+  ],
+  "expanded_at": "2026-11-22",
+  "tiers": {
+    "strong": "只把这 19 例的分数当作独立留出",
+    "weak": "规则设计/证据文献已覆盖的案例，只作回归集，不当作独立验证（共 12 例）"
+  },
+  "weak_cases_frozen_note": "新增 11 条 weak（连同原有大黄共 12 条）及其 expected 在 2026-11-22 运行前写入并提交；strong 5 例的 expected 未改",
+  "strong_expanded_at": "2026-11-22",
+  "strong_expansion_note": "5 条 strong 新案例（枳壳2、黄芩、女贞子、黄芪）来自 2026-11-22 联网检索；规则设计时未使用；expected 在运行前写入并提交。",
+  "strong_expansion_note_round2": "2026-11-22 第二轮联网检索新增 2 条 strong（槐米、地黄）；陈皮/山楂因缺少条件特异的结构转化证据未纳入。规则未改；两条 expected 在运行前写入并提交。",
+  "strong_expansion_note_round3": "2026-11-22 第三轮新增 2 条 strong 缺口探针（柴胡、黄柏），预期均为 miss：柴胡 13,28-五元环醚开环/异构化、黄柏芳香 O-去甲基，现有 11 条证据规则都不覆盖。规则未改；expected 在运行前写入并提交。",
+  "strong_expansion_note_round4": "2026-11-22 第四轮新增 4 条 strong 缺口探针（甘遂2、地黄5-HMF、吴茱萸）。甘遂单轮预期 miss、多轮 r3 预期 consistent；地黄5-HMF 与吴茱萸两模式均 miss。规则未改；expected 在运行前写入并提交。",
+  "strong_expansion_note_round5": "2026-11-22 第五轮新增 1 条 strong 对照（oleuropein → hydroxytyrosol）。配对诊断显示 ligustroside 的侧链是 tyrosol（C8H10O2），到 hydroxytyrosol（C8H10O3）还差一次芳环羟化；oleuropein 的侧链本身就是 hydroxytyrosol。原 nvzhenzi_ligustroside 案例保留，expected 不改；本对照在正式 31 例运行前写入并提交，不新增规则。"
 }

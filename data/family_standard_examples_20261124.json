@@ -1,0 +1,337 @@
+{
+ "schema": "family_standard_examples_v1",
+ "note": "Independent standard examples for family-template sweeps; not for direct rule insertion.",
+ "families": [
+  {
+   "name": "n_alkylation",
+   "examples": [
+    {
+     "id": "n_me_br",
+     "reactants": [
+      "CBr",
+      "CN"
+     ],
+     "product": "CNC",
+     "byproducts": [
+      "[BrH]"
+     ]
+    },
+    {
+     "id": "n_me_cl",
+     "reactants": [
+      "CCl",
+      "CN"
+     ],
+     "product": "CNC",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_me_i",
+     "reactants": [
+      "CI",
+      "CN"
+     ],
+     "product": "CNC",
+     "byproducts": [
+      "[IH]"
+     ]
+    },
+    {
+     "id": "n_bn_cl",
+     "reactants": [
+      "ClCc1ccccc1",
+      "CN"
+     ],
+     "product": "CNCc1ccccc1",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_pr_cl",
+     "reactants": [
+      "CCCCl",
+      "CN"
+     ],
+     "product": "CCCNC",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_di_br",
+     "reactants": [
+      "CBr",
+      "CNC"
+     ],
+     "product": "CN(C)C",
+     "byproducts": [
+      "[BrH]"
+     ]
+    },
+    {
+     "id": "n_et_cl",
+     "reactants": [
+      "CCCl",
+      "CN"
+     ],
+     "product": "CCNC",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_et_br",
+     "reactants": [
+      "CCBr",
+      "CN"
+     ],
+     "product": "CCNC",
+     "byproducts": [
+      "[BrH]"
+     ]
+    },
+    {
+     "id": "n_et_i",
+     "reactants": [
+      "CCI",
+      "CN"
+     ],
+     "product": "CCNC",
+     "byproducts": [
+      "[IH]"
+     ]
+    },
+    {
+     "id": "n_bn_br",
+     "reactants": [
+      "BrCc1ccccc1",
+      "CN"
+     ],
+     "product": "CNCc1ccccc1",
+     "byproducts": [
+      "[BrH]"
+     ]
+    },
+    {
+     "id": "n_bn_i",
+     "reactants": [
+      "ICc1ccccc1",
+      "CN"
+     ],
+     "product": "CNCc1ccccc1",
+     "byproducts": [
+      "[IH]"
+     ]
+    },
+    {
+     "id": "n_hetero_cl",
+     "reactants": [
+      "ClCc1ccncc1",
+      "CN"
+     ],
+     "product": "CNCc1ccncc1",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_sec_cl",
+     "reactants": [
+      "CCl",
+      "CNC"
+     ],
+     "product": "CN(C)C",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_sec_bn",
+     "reactants": [
+      "ClCc1ccccc1",
+      "CNC"
+     ],
+     "product": "CN(C)Cc1ccccc1",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "n_sec_pr",
+     "reactants": [
+      "CCCCl",
+      "CNC"
+     ],
+     "product": "CCCN(C)C",
+     "byproducts": [
+      "[ClH]"
+     ]
+    }
+   ],
+   "negatives": [
+    {
+     "id": "n_aryl_halide",
+     "reactants": [
+      "Brc1ccccc1",
+      "Nc1ccccc1"
+     ],
+     "product": "c1ccc(Nc2ccccc2)cc1"
+    }
+   ]
+  },
+  {
+   "name": "o_acylation",
+   "examples": [
+    {
+     "id": "o_et_succ",
+     "reactants": [
+      "CCO",
+      "O=C1CCC(=O)O1"
+     ],
+     "product": "CCOC(=O)CCC(=O)O",
+     "byproducts": []
+    },
+    {
+     "id": "o_et_phthal",
+     "reactants": [
+      "CCO",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "product": "CCOC(=O)c1ccccc1C(=O)O",
+     "byproducts": []
+    },
+    {
+     "id": "o_bn_succ",
+     "reactants": [
+      "OCc1ccccc1",
+      "O=C1CCC(=O)O1"
+     ],
+     "product": "O=C(O)CCC(=O)OCc1ccccc1",
+     "byproducts": []
+    },
+    {
+     "id": "o_me_phthal",
+     "reactants": [
+      "CO",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "product": "COC(=O)c1ccccc1C(=O)O",
+     "byproducts": []
+    },
+    {
+     "id": "o_et_glutaric",
+     "reactants": [
+      "CCO",
+      "O=C1CCCC(=O)O1"
+     ],
+     "product": "CCOC(=O)CCCC(=O)O",
+     "byproducts": []
+    },
+    {
+     "id": "o_bn_phthalic",
+     "reactants": [
+      "OCc1ccccc1",
+      "O=C1OC(=O)c2ccccc21"
+     ],
+     "product": "O=C(O)c1ccccc1C(=O)OCc1ccccc1",
+     "byproducts": []
+    },
+    {
+     "id": "o_me_succ",
+     "reactants": [
+      "CO",
+      "O=C1CCC(=O)O1"
+     ],
+     "product": "COC(=O)CCC(=O)O",
+     "byproducts": []
+    },
+    {
+     "id": "o_ph_benzoyl",
+     "reactants": [
+      "Oc1ccccc1",
+      "O=C(Cl)c1ccccc1"
+     ],
+     "product": "O=C(Oc1ccccc1)c1ccccc1",
+     "byproducts": [
+      "[ClH]"
+     ]
+    },
+    {
+     "id": "o_ph_acetic",
+     "reactants": [
+      "Oc1ccccc1",
+      "CC(=O)OC(C)=O"
+     ],
+     "product": "CC(=O)Oc1ccccc1",
+     "byproducts": [
+      "CC(=O)O"
+     ]
+    }
+   ],
+   "negatives": [
+    {
+     "id": "o_acid_alcohol",
+     "reactants": [
+      "CCO",
+      "CC(=O)O"
+     ],
+     "product": "CCOC(=O)C"
+    }
+   ]
+  },
+  {
+   "name": "chlorination",
+   "examples": [
+    {
+     "id": "cl_et",
+     "reactants": [
+      "CCO",
+      "O=S(Cl)Cl"
+     ],
+     "product": "CCCl",
+     "byproducts": [
+      "[ClH]",
+      "O=S=O"
+     ]
+    },
+    {
+     "id": "cl_bn",
+     "reactants": [
+      "OCc1ccccc1",
+      "O=S(Cl)Cl"
+     ],
+     "product": "ClCc1ccccc1",
+     "byproducts": [
+      "[ClH]",
+      "O=S=O"
+     ]
+    },
+    {
+     "id": "cl_cy",
+     "reactants": [
+      "OC1CCCCC1",
+      "O=S(Cl)Cl"
+     ],
+     "product": "ClC1CCCCC1",
+     "byproducts": [
+      "[ClH]",
+      "O=S=O"
+     ]
+    }
+   ],
+   "negatives": [
+    {
+     "id": "cl_acid_chloride",
+     "reactants": [
+      "CCO",
+      "CC(=O)Cl"
+     ],
+     "product": "CCOC(=O)C"
+    }
+   ]
+  }
+ ]
+}

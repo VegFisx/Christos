@@ -43,7 +43,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MODEL = ROOT / "reports" / "rank_model_v2.pkl"  # v2：产物级特征，官方 4,993 条 top-1 72.62%
+# v4：v2 的 59 维模型 + 模板命中率后处理。官方 4,993 条 top-1 73.72%（v2 72.62%，
+# McNemar p=0.0002），去污染子集 73.24%（v2 72.19%）。见第一百五十三轮报告。
+DEFAULT_MODEL = ROOT / "reports" / "rank_model_v4.pkl"
+# v3 / v5（61 维，把模板统计当特征）内部有效但官方集崩到 26–66%，**不要设默认**；
+# 它们的问题是同一类：依赖表内统计分布，不跨引擎配置迁移。见第一百五十二/一百五十四轮。
 SUPPORT_JSONL = ROOT / "reports" / "mined_forward_templates_full_s5.jsonl"
 RULES_JSON = ROOT / "rules" / "rules.json"
 
@@ -136,6 +140,13 @@ class Reranker:
         self.top_rules: List[str] = []
         self.curated_ids: set = set()
         self.meta: Dict[str, Any] = {}
+        # v3：模板先验（只在 train 切分上统计；统计量随模型一起发布）
+        self.tpl_stats: Dict[str, Tuple[int, int]] = {}
+        self.tpl_alpha: float = 20.0
+        self.tpl_prior: float = 0.0
+        # v4：把模板命中率当**后处理**与模型分数混合（不改特征）。
+        # 直接当特征喂 GBM 会在官方集崩到 27.5%（第一百五十二轮）。
+        self.blend_hitrate: float = 0.0
         self.sup = load_support_map()
         self._ext_cache: Dict[Tuple[Any, ...], float] = {}
         try:
@@ -146,7 +157,24 @@ class Reranker:
             self.top_rules = list(blob.get("top_rules") or [])
             self.curated_ids = set(blob.get("curated_ids") or [])
             self.meta = dict(blob.get("meta") or {})
-            self.ok = True
+            self.tpl_stats = dict(blob.get("tpl_stats") or {})
+            self.tpl_alpha = float(blob.get("tpl_alpha") or 20.0)
+            self.tpl_prior = float(blob.get("tpl_prior") or 0.0)
+            self.blend_hitrate = float(blob.get("blend_hitrate") or 0.0)
+            # ★ 2026-11-13：加载自检。特征名单与模型维数不一致时**拒绝启用**，
+            #   不再静默退回发射序（v5 开发期踩过：91 vs 61 导致基准白跑）。
+            n_model = getattr(self.model, "n_features_in_", None)
+            if self.features and n_model is not None and int(n_model) != len(self.features):
+                print("[rerank] 致命：模型特征维数 %d 与特征名单 %d 不一致（%s），停用重排序"
+                      % (int(n_model), len(self.features), self.path.name),
+                      file=sys.stderr)
+                self.ok = False
+            elif self.blend_hitrate > 0.0 and not self.tpl_stats:
+                print("[rerank] 致命：blend_hitrate=%.2f 但没有模板统计（%s），停用重排序"
+                      % (self.blend_hitrate, self.path.name), file=sys.stderr)
+                self.ok = False
+            else:
+                self.ok = True
         except FileNotFoundError:
             if not _WARNED["model"]:
                 print("[rerank] 模型不存在（%s），保持发射序" % self.path, file=sys.stderr)
@@ -206,6 +234,11 @@ class Reranker:
         #   这样「9 个旧特征」和「9+5 条件特征」两种模型都能跑，不必改模型文件。
         _names = list(self.features or [])
         _use_named = bool(_names)
+        # v5：同一反应内每个模板产出多少个候选（模板越"滥"越不可信）
+        _tpl_counts: Dict[str, int] = {}
+        for _p in products:
+            _t = getattr(_p, "template_smarts", "") or ""
+            _tpl_counts[_t] = _tpl_counts.get(_t, 0) + 1
         for i, p in enumerate(products):
             cs = getattr(p, "smiles", "") or ""
             tpl = getattr(p, "template_smarts", "") or ""
@@ -217,6 +250,13 @@ class Reranker:
             if _use_named:
                 _fit = float(getattr(p, "condition_fit", 1.0) or 1.0)
                 _tm = float(getattr(cond, "time_min", 60.0) or 60.0)
+                # v3 模板先验：与 tools/train_ranker_v3.py 的 tpl_feats 同公式
+                _st = self.tpl_stats.get(tpl)
+                if _st is None:
+                    _hr, _hn = self.tpl_prior, 0
+                else:
+                    _hn = int(_st[1])
+                    _hr = (float(_st[0]) + self.tpl_alpha * self.tpl_prior) / (_hn + self.tpl_alpha)
                 vals = {
                     "rank": float(i),
                     "log_sup": math.log1p(float(self.sup.get(tpl, 0))),
@@ -233,6 +273,10 @@ class Reranker:
                     "is_water": 1.0 if str(getattr(cond, "solvent", "") or "") == "water" else 0.0,
                     "has_cat": 1.0 if str(getattr(cond, "catalyst", "") or "") else 0.0,
                     "eng": float(getattr(p, "score", 0.0) or 0.0),
+                    "tpl_hitrate": _hr,
+                    "tpl_hitrate_n": math.log1p(_hn),
+                    "tpl_in_rxn": math.log1p(_tpl_counts.get(tpl, 1)),
+                    "rank_frac_tpl": float(i) / max(1, _tpl_counts.get(tpl, 1)),
                 }
                 # v2 的产物级 / 底物级结构量（与 tools/train_ranker_v2.py 的 desc() 同序）
                 dp = _desc(cs)
@@ -266,15 +310,46 @@ class Reranker:
         return rows
 
     # ---------- 排序 ----------
+    def _hitrate_of(self, tpl: str) -> float:
+        st = self.tpl_stats.get(tpl)
+        if st is None:
+            return self.tpl_prior
+        n = int(st[1])
+        return (float(st[0]) + self.tpl_alpha * self.tpl_prior) / (n + self.tpl_alpha)
+
+    def _blend(self, products: Sequence[Any], proba) -> List[float]:
+        """反应内百分位混合：score = (1-λ)·pct(proba) + λ·pct(模板命中率)。"""
+        n = len(products)
+        hr = [self._hitrate_of(getattr(p, "template_smarts", "") or "") for p in products]
+
+        def pct(vals):
+            order = sorted(range(n), key=lambda i: (vals[i], i))
+            out = [0.0] * n
+            for r, i in enumerate(order):
+                out[i] = r / (n - 1)
+            return out
+
+        pv = pct([float(x) for x in proba])
+        ph = pct(hr)
+        lam = self.blend_hitrate
+        return [(1.0 - lam) * pv[i] + lam * ph[i] for i in range(n)]
+
     def reorder(self, products: List[Any], eng: Any, cond: Any) -> List[Any]:
         if not self.ok or len(products) < 2:
             return products
         try:
             feats = self._features_of(products, eng, cond)
             if self.features and len(self.features) != len(feats[0]):
+                print("[rerank] 致命：实际特征行 %d 维与名单 %d 维不一致，停用重排序"
+                      % (len(feats[0]), len(self.features)), file=sys.stderr)
+                self.ok = False
                 return products
             proba = self.model.predict_proba(feats)[:, 1]
-            order = sorted(range(len(products)), key=lambda k: (-float(proba[k]), k))
+            if self.blend_hitrate > 0.0 and self.tpl_stats:
+                score = self._blend(products, proba)
+            else:
+                score = [float(x) for x in proba]
+            order = sorted(range(len(products)), key=lambda k: (-float(score[k]), k))
             return [products[k] for k in order]
         except Exception as exc:
             if not _WARNED["model"]:

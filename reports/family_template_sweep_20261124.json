@@ -1,0 +1,245 @@
+{
+ "manifest": "family_standard_examples_20261124.json",
+ "dev": "dev_general_organic_20261124.json",
+ "families": [
+  {
+   "family": "n_alkylation",
+   "negatives": [
+    {
+     "id": "n_aryl_halide",
+     "reactants": [
+      "Brc1ccccc1",
+      "Nc1ccccc1"
+     ],
+     "product": "c1ccc(Nc2ccccc2)cc1"
+    }
+   ],
+   "candidates": [
+    {
+     "source": "n_bn_cl",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[Cl;H0;D1;+0:3]-[CH2;D2;+0:4]-[c:5]>>[C;D1;H3:1]-[NH;D2;+0:2]-[CH2;D2;+0:4]-[c:5].[ClH;D0;+0:3]",
+     "standard_pass": 2,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_pr_cl",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[C:3]-[CH2;D2;+0:4]-[Cl;H0;D1;+0:5]>>[C:3]-[CH2;D2;+0:4]-[NH;D2;+0:2]-[C;D1;H3:1].[ClH;D0;+0:5]",
+     "standard_pass": 2,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_me_i",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[CH3;D1;+0:3]-[I;H0;D1;+0:4]>>[C;D1;H3:1]-[NH;D2;+0:2]-[CH3;D1;+0:3].[IH;D0;+0:4]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_me_br",
+     "orientation": "swap",
+     "smarts": "[Br;H0;D1;+0:1]-[CH3;D1;+0:2].[C;D1;H3:3]-[NH2;D1;+0:4]>>[BrH;D0;+0:1].[C;D1;H3:3]-[NH;D2;+0:4]-[CH3;D1;+0:2]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_me_cl",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[CH3;D1;+0:3]-[Cl;H0;D1;+0:4]>>[C;D1;H3:1]-[NH;D2;+0:2]-[CH3;D1;+0:3].[ClH;D0;+0:4]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_bn_i",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH2;D1;+0:2].[I;H0;D1;+0:3]-[CH2;D2;+0:4]-[c:5]>>[C;D1;H3:1]-[NH;D2;+0:2]-[CH2;D2;+0:4]-[c:5].[IH;D0;+0:3]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_bn_br",
+     "orientation": "swap",
+     "smarts": "[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[c:3].[C;D1;H3:4]-[NH2;D1;+0:5]>>[BrH;D0;+0:1].[C;D1;H3:4]-[NH;D2;+0:5]-[CH2;D2;+0:2]-[c:3]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_et_i",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[CH2;D2;+0:2]-[I;H0;D1;+0:3].[C;D1;H3:4]-[NH2;D1;+0:5]>>[C;D1;H3:1]-[CH2;D2;+0:2]-[NH;D2;+0:5]-[C;D1;H3:4].[IH;D0;+0:3]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_et_cl",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[CH2;D2;+0:2]-[Cl;H0;D1;+0:3].[C;D1;H3:4]-[NH2;D1;+0:5]>>[C;D1;H3:1]-[CH2;D2;+0:2]-[NH;D2;+0:5]-[C;D1;H3:4].[ClH;D0;+0:3]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_et_br",
+     "orientation": "swap",
+     "smarts": "[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[C;D1;H3:3].[C;D1;H3:4]-[NH2;D1;+0:5]>>[BrH;D0;+0:1].[C;D1;H3:3]-[CH2;D2;+0:2]-[NH;D2;+0:5]-[C;D1;H3:4]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_di_br",
+     "orientation": "swap",
+     "smarts": "[Br;H0;D1;+0:1]-[CH3;D1;+0:2].[C;D1;H3:3]-[NH;D2;+0:4]-[C;D1;H3:5]>>[BrH;D0;+0:1].[C;D1;H3:3]-[N;H0;D3;+0:4](-[C;D1;H3:5])-[CH3;D1;+0:2]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_sec_cl",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH;D2;+0:2]-[C;D1;H3:3].[CH3;D1;+0:4]-[Cl;H0;D1;+0:5]>>[C;D1;H3:1]-[N;H0;D3;+0:2](-[C;D1;H3:3])-[CH3;D1;+0:4].[ClH;D0;+0:5]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_sec_bn",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH;D2;+0:2]-[C;D1;H3:3].[Cl;H0;D1;+0:4]-[CH2;D2;+0:5]-[c:6]>>[C;D1;H3:1]-[N;H0;D3;+0:2](-[C;D1;H3:3])-[CH2;D2;+0:5]-[c:6].[ClH;D0;+0:4]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "n_sec_pr",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[NH;D2;+0:2]-[C;D1;H3:3].[C:4]-[CH2;D2;+0:5]-[Cl;H0;D1;+0:6]>>[C:4]-[CH2;D2;+0:5]-[N;H0;D3;+0:2](-[C;D1;H3:1])-[C;D1;H3:3].[ClH;D0;+0:6]",
+     "standard_pass": 1,
+     "standard_total": 15,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    }
+   ]
+  },
+  {
+   "family": "o_acylation",
+   "negatives": [
+    {
+     "id": "o_acid_alcohol",
+     "reactants": [
+      "CCO",
+      "CC(=O)O"
+     ],
+     "product": "CCOC(=O)C"
+    }
+   ],
+   "candidates": [
+    {
+     "source": "o_ph_benzoyl",
+     "orientation": "swap",
+     "smarts": "[Cl;H0;D1;+0:1]-[C;H0;D3;+0:2](=[O;D1;H0:3])-[c:4].[OH;D1;+0:5]-[c:6]>>[ClH;D0;+0:1].[O;D1;H0:3]=[C;H0;D3;+0:2](-[c:4])-[O;H0;D2;+0:5]-[c:6]",
+     "standard_pass": 1,
+     "standard_total": 9,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "o_ph_acetic",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[C:2](=[O;D1;H0:3])-[O;H0;D2;+0:4]-[C;H0;D3;+0:5](-[C;D1;H3:6])=[O;D1;H0:7].[OH;D1;+0:8]-[c:9]>>[C;D1;H3:6]-[C;H0;D3;+0:5](=[O;D1;H0:7])-[O;H0;D2;+0:8]-[c:9].[C;D1;H3:1]-[C:2](=[O;D1;H0:3])-[OH;D1;+0:4]",
+     "standard_pass": 1,
+     "standard_total": 9,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    }
+   ]
+  },
+  {
+   "family": "chlorination",
+   "negatives": [
+    {
+     "id": "cl_acid_chloride",
+     "reactants": [
+      "CCO",
+      "CC(=O)Cl"
+     ],
+     "product": "CCOC(=O)C"
+    }
+   ],
+   "candidates": [
+    {
+     "source": "cl_bn",
+     "orientation": "swap",
+     "smarts": "[Cl;H0;D1;+0:1]-[S;H0;D3;+0:2](-[Cl;H0;D1;+0:3])=[O;D1;H0:4].[OH;D1;+0:5]-[CH2;D2;+0:6]-[c:7]>>[Cl;H0;D1;+0:3]-[CH2;D2;+0:6]-[c:7].[ClH;D0;+0:1].[O;D1;H0:4]=[S;H0;D2;+0:2]=[O;H0;D1;+0:5]",
+     "standard_pass": 1,
+     "standard_total": 3,
+     "negative_pass": true,
+     "dev_hits": [
+      "dev_0122",
+      "dev_0227"
+     ],
+     "n_dev_hits": 2
+    },
+    {
+     "source": "cl_et",
+     "orientation": "swap",
+     "smarts": "[C;D1;H3:1]-[CH2;D2;+0:2]-[OH;D1;+0:3].[Cl;H0;D1;+0:4]-[S;H0;D3;+0:5](-[Cl;H0;D1;+0:6])=[O;D1;H0:7]>>[C;D1;H3:1]-[CH2;D2;+0:2]-[Cl;H0;D1;+0:4].[ClH;D0;+0:6].[O;D1;H0:7]=[S;H0;D2;+0:5]=[O;H0;D1;+0:3]",
+     "standard_pass": 1,
+     "standard_total": 3,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    },
+    {
+     "source": "cl_cy",
+     "orientation": "swap",
+     "smarts": "[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[C:4].[Cl;H0;D1;+0:5]-[S;H0;D3;+0:6](-[Cl;H0;D1;+0:7])=[O;D1;H0:8]>>[C:1]-[CH;D3;+0:2](-[Cl;H0;D1;+0:7])-[C:4].[ClH;D0;+0:5].[O;D1;H0:8]=[S;H0;D2;+0:6]=[O;H0;D1;+0:3]",
+     "standard_pass": 1,
+     "standard_total": 3,
+     "negative_pass": true,
+     "dev_hits": [],
+     "n_dev_hits": 0
+    }
+   ]
+  }
+ ],
+ "note": "Candidates only; rules.json is not edited."
+}

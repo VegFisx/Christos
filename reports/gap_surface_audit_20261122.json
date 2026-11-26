@@ -1,0 +1,1802 @@
+{
+  "generated_at": "2026-11-22T15:47:19",
+  "holdout": [
+    {
+      "id": "zhizi_geniposide",
+      "tier": "strong",
+      "condition": "炮制·炒黄",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Geniposide",
+      "targets": [
+        "genipin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "xingren_amygdalin",
+      "tier": "strong",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Amygdalin",
+      "targets": [
+        "prunasin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "tianma_gastrodin",
+      "tier": "strong",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Gastrodin",
+      "targets": [
+        "4-hydroxybenzaldehyde"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "coverage_path"
+    },
+    {
+      "id": "zhuyu_loganin",
+      "tier": "strong",
+      "condition": "炮制·酒炙",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Loganin",
+      "targets": [
+        "loganetin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "maqianzi_strychnine",
+      "tier": "strong",
+      "condition": "炮制·炒黄",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Strychnine",
+      "targets": [
+        "isostrychnine"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "miss"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": []
+      },
+      "class": "rule_gap"
+    },
+    {
+      "id": "dahuang_sennoside",
+      "tier": "weak",
+      "condition": "炮制·酒炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Sennoside a",
+      "targets": [
+        "sennidin a"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "multi_step_hit"
+    },
+    {
+      "id": "miyan_licorice_glycyrrhizin",
+      "tier": "weak",
+      "condition": "炮制·蜜炙",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Glycyrrhizin",
+      "targets": [
+        "glycyrrhetinic acid"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "zhengzhi_ginseng_rb1_rg3",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Ginsenoside rb1",
+      "targets": [
+        "ginsenoside rg3"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg1_rh1",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Ginsenoside rg1",
+      "targets": [
+        "ginsenoside rh1"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg3_rg5",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "elimination_dehydration_001",
+      "seed": "Ginsenoside rg3",
+      "targets": [
+        "ginsenoside rg5"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "elimination_dehydration_001"
+        ],
+        "production_r1": [
+          "elimination_dehydration_001"
+        ],
+        "evidence_r3": [
+          "elimination_dehydration_001"
+        ],
+        "production_r3": [
+          "elimination_dehydration_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "zhengzhi_ginseng_rg3_rk1",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "elimination_dehydration_001",
+      "seed": "Ginsenoside rg3",
+      "targets": [
+        "ginsenoside rk1"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "elimination_dehydration_001"
+        ],
+        "production_r1": [
+          "elimination_dehydration_001"
+        ],
+        "evidence_r3": [
+          "elimination_dehydration_001"
+        ],
+        "production_r3": [
+          "elimination_dehydration_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "fuzi_aconitine_benzoylaconine",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_ester_001",
+      "seed": "Aconitine",
+      "targets": [
+        "benzoylaconine"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "fuzi_mesaconitine_benzoylmesaconine",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_ester_001",
+      "seed": "Mesaconitine",
+      "targets": [
+        "benzoylmesaconine"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "fuzi_hypaconitine_benzoylhypaconine",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_ester_001",
+      "seed": "Hypaconitine",
+      "targets": [
+        "benzoylhypaconine"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "binglang_arecoline_guvacoline",
+      "tier": "weak",
+      "condition": "炮制·炒焦",
+      "expected": "consistent",
+      "expected_rule": "demethylation_n_001",
+      "seed": "Arecoline",
+      "targets": [
+        "guvacoline"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "demethylation_n_001"
+        ],
+        "production_r1": [
+          "demethylation_n_001"
+        ],
+        "evidence_r3": [
+          "demethylation_n_001"
+        ],
+        "production_r3": [
+          "demethylation_n_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "cangerzi_catr_atr",
+      "tier": "weak",
+      "condition": "炮制·炒黄",
+      "expected": "formula_only",
+      "expected_rule": "decarboxylation_001",
+      "seed": "Carboxyatractyloside",
+      "targets": [
+        "atractyloside skeleton"
+      ],
+      "status": {
+        "evidence_r1": "formula_only",
+        "production_r1": "formula_only",
+        "evidence_r3": "formula_only",
+        "production_r3": "formula_only"
+      },
+      "rules": {
+        "evidence_r1": [
+          "decarboxylation_001"
+        ],
+        "production_r1": [
+          "decarboxylation_001"
+        ],
+        "evidence_r3": [
+          "decarboxylation_001"
+        ],
+        "production_r3": [
+          "decarboxylation_001"
+        ]
+      },
+      "class": "formula_level"
+    },
+    {
+      "id": "heshouwu_thsg_aglycone",
+      "tier": "weak",
+      "condition": "炮制·蒸制",
+      "expected": "formula_only",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "2,3,5,4'-tetrahydroxystilbene-2-O-beta-D-glucoside",
+      "targets": [
+        "THSG aglycone"
+      ],
+      "status": {
+        "evidence_r1": "formula_only",
+        "production_r1": "formula_only",
+        "evidence_r3": "formula_only",
+        "production_r3": "formula_only"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "formula_level"
+    },
+    {
+      "id": "zhiqiao_hesperidin_hesperetin",
+      "tier": "strong",
+      "condition": "炮制·炒黄",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Hesperidin",
+      "targets": [
+        "hesperetin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "zhiqiao_naringin_naringenin",
+      "tier": "strong",
+      "condition": "炮制·炒黄",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Naringin",
+      "targets": [
+        "naringenin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "huangqin_baicalin_baicalein",
+      "tier": "strong",
+      "condition": "炮制·酒炙",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Baicalin",
+      "targets": [
+        "baicalein"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "nvzhenzi_ligustroside_hydroxytyrosol",
+      "tier": "strong",
+      "condition": "炮制·酒炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Ligustroside",
+      "targets": [
+        "hydroxytyrosol"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "miss"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": []
+      },
+      "class": "rule_gap"
+    },
+    {
+      "id": "huangqi_acetylastragaloside_astragaloside_iv",
+      "tier": "strong",
+      "condition": "炮制·蜜炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Acetylastragaloside I",
+      "targets": [
+        "astragaloside IV"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "multi_step_hit"
+    },
+    {
+      "id": "huaimi_rutin_quercetin",
+      "tier": "strong",
+      "condition": "炮制·炒炭",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_glycoside_001",
+      "seed": "Rutin",
+      "targets": [
+        "quercetin"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r1": [
+          "hydrolysis_glycoside_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_glycoside_001"
+        ],
+        "production_r3": [
+          "hydrolysis_glycoside_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "dihuang_acteoside_verbasoside",
+      "tier": "strong",
+      "condition": "炮制·蒸制",
+      "expected": "consistent",
+      "expected_rule": "hydrolysis_ester_001",
+      "seed": "Acteoside",
+      "targets": [
+        "verbasoside"
+      ],
+      "status": {
+        "evidence_r1": "consistent",
+        "production_r1": "consistent",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r1": [
+          "hydrolysis_ester_001"
+        ],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "curated_hit"
+    },
+    {
+      "id": "chaihu_saikosaponin_a_b1",
+      "tier": "strong",
+      "condition": "炮制·醋炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Saikosaponin a",
+      "targets": [
+        "saikosaponin b1"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "miss"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": []
+      },
+      "class": "rule_gap"
+    },
+    {
+      "id": "huangbo_palmatine_palmatrubine",
+      "tier": "strong",
+      "condition": "炮制·盐炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Palmatine",
+      "targets": [
+        "palmatrubine"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "product_only",
+        "evidence_r3": "miss",
+        "production_r3": "product_only"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [
+          "rescue_lowsupport"
+        ],
+        "evidence_r3": [],
+        "production_r3": [
+          "rescue_lowsupport"
+        ]
+      },
+      "class": "coverage_product_only"
+    },
+    {
+      "id": "gansui_diester_ingenol",
+      "tier": "strong",
+      "condition": "炮制·醋炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "3-O-(2'E,4'Z-decadienoyl)-20-O-acetylingenol",
+      "targets": [
+        "ingenol"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "multi_step_hit"
+    },
+    {
+      "id": "gansui_kpc_deoxyingenol",
+      "tier": "strong",
+      "condition": "炮制·醋炙",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Kansuiphorin C",
+      "targets": [
+        "20-deoxyingenol"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "consistent",
+        "production_r3": "consistent"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [
+          "hydrolysis_ester_001"
+        ],
+        "production_r3": [
+          "hydrolysis_ester_001"
+        ]
+      },
+      "class": "multi_step_hit"
+    },
+    {
+      "id": "dihuang_fructose_hmf",
+      "tier": "strong",
+      "condition": "炮制·蒸制",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Fructose",
+      "targets": [
+        "5-HMF"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "miss"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": []
+      },
+      "class": "rule_gap"
+    },
+    {
+      "id": "wuzhuyu_evodiamine_rutaecarpine",
+      "tier": "strong",
+      "condition": "炮制·炒黄",
+      "expected": "miss",
+      "expected_rule": "",
+      "seed": "Evodiamine",
+      "targets": [
+        "rutaecarpine"
+      ],
+      "status": {
+        "evidence_r1": "miss",
+        "production_r1": "miss",
+        "evidence_r3": "miss",
+        "production_r3": "miss"
+      },
+      "rules": {
+        "evidence_r1": [],
+        "production_r1": [],
+        "evidence_r3": [],
+        "production_r3": []
+      },
+      "class": "rule_gap"
+    }
+  ],
+  "rule_probes": [
+    {
+      "type": "benzylic_oxidation",
+      "probe": "benzyl alcohol -> aldehyde",
+      "matched_rules": [],
+      "covered": false,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "aromatic_o_demethylation",
+      "probe": "anisole -> phenol",
+      "matched_rules": [],
+      "covered": false,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "cyclic_ether_5ring",
+      "probe": "THF ring opening",
+      "matched_rules": [],
+      "covered": false,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "epoxide_3ring",
+      "probe": "ethylene oxide opening",
+      "matched_rules": [
+        "hydrolysis_epoxide_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "acyclic_ether",
+      "probe": "diethyl ether cleavage",
+      "matched_rules": [
+        "cleavage_ether_acyclic_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "glycoside_hydrolysis",
+      "probe": "phenyl glucoside",
+      "matched_rules": [
+        "hydrolysis_glycoside_001",
+        "elimination_dehydration_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "ester_hydrolysis",
+      "probe": "ethyl acetate",
+      "matched_rules": [
+        "hydrolysis_ester_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "esterification",
+      "probe": "acetic acid + ethanol",
+      "matched_rules": [
+        "elimination_dehydration_001",
+        "esterification_acid_alcohol_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "lactone_5ring",
+      "probe": "gamma-butyrolactone",
+      "matched_rules": [
+        "hydrolysis_ester_001",
+        "hydrolysis_lactone_5ring_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "n_methyl_amine",
+      "probe": "N,N-dimethylbenzylamine",
+      "matched_rules": [
+        "demethylation_n_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "secondary_alcohol_dehydration",
+      "probe": "isopropanol",
+      "matched_rules": [
+        "elimination_dehydration_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "alpha_hydroxy_aldehyde",
+      "probe": "glycolaldehyde",
+      "matched_rules": [
+        "maillard_simplified_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "allylic_alcohol",
+      "probe": "allyl alcohol",
+      "matched_rules": [
+        "oxidation_allylic_alcohol_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "decarboxylation",
+      "probe": "malonic acid",
+      "matched_rules": [
+        "decarboxylation_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "sugar_dehydration",
+      "probe": "glucose",
+      "matched_rules": [
+        "elimination_dehydration_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "sulfite_esterification",
+      "probe": "Paeoniflorin",
+      "matched_rules": [
+        "hydrolysis_ester_001",
+        "hydrolysis_glycoside_001",
+        "elimination_dehydration_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "alkaloid_rearrangement",
+      "probe": "Strychnine",
+      "matched_rules": [],
+      "covered": false,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    },
+    {
+      "type": "oxidative_aromatization",
+      "probe": "Evodiamine",
+      "matched_rules": [
+        "demethylation_n_001"
+      ],
+      "covered": true,
+      "caveat": "substructure match only; reaction-level coverage is in coverage_probes"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "炮制·炒黄",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": "温度 165°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": "温度 165°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": "温度 165°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": "温度 165°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": "温度 165°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·炒焦",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": "温度 195°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": "温度 195°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": "温度 195°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": "温度 195°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": "温度 195°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·炒炭",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 200°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）"
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": "温度 260°C 高于惯用上限 150°C，但在模型适用范围内：按「高温加速」处理，不降权（程度见 extent）；溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·蜜炙",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·酒炙",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": ""
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·醋炙",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": ""
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·盐炙",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": ""
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·姜炙",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": ""
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·蒸制",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": ""
+        }
+      ],
+      "inactive": []
+    },
+    {
+      "condition": "炮制·自定义",
+      "active": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_ester_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "elimination_dehydration_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "maillard_simplified_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "hydrolysis_lactone_5ring_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "hydrolysis_epoxide_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        },
+        {
+          "rule": "esterification_acid_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "oxidation_allylic_alcohol_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "demethylation_n_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "decarboxylation_001",
+          "score": 1.0,
+          "why": ""
+        },
+        {
+          "rule": "cleavage_ether_acyclic_001",
+          "score": 1.0,
+          "why": "溶剂 none：无该反应类的成败标签（ORD 偏好 ['water', 'aqueous', 'alcohol']），按中性处理（不扣分）"
+        }
+      ],
+      "inactive": []
+    }
+  ],
+  "coverage_probes": [
+    {
+      "type": "benzylic_oxidation",
+      "seed": "benzylic_oxidation",
+      "condition": "炮制·蒸制",
+      "target": "O=Cc1ccccc1",
+      "n_hops": 1,
+      "seconds": 0.5,
+      "hits": [
+        {
+          "rule": "rescue_lowsupport",
+          "co": false,
+          "round": "1",
+          "formula": "C7H6O"
+        }
+      ],
+      "covered": true
+    },
+    {
+      "type": "benzylic_oxidation_aglycone",
+      "seed": "benzylic_oxidation_aglycone",
+      "condition": "炮制·蒸制",
+      "target": "O=Cc1ccc(O)cc1",
+      "n_hops": 2,
+      "seconds": 0.5,
+      "hits": [
+        {
+          "rule": "rescue_lowsupport",
+          "co": false,
+          "round": "1",
+          "formula": "C7H6O2"
+        }
+      ],
+      "covered": true
+    },
+    {
+      "type": "aromatic_o_demethylation",
+      "seed": "aromatic_o_demethylation",
+      "condition": "炮制·蒸制",
+      "target": "Oc1ccccc1",
+      "n_hops": 2,
+      "seconds": 0.5,
+      "hits": [
+        {
+          "rule": "rescue_lowsupport",
+          "co": false,
+          "round": "1",
+          "formula": "C6H6O"
+        }
+      ],
+      "covered": true
+    },
+    {
+      "type": "aromatic_o_demethylation_catechol",
+      "seed": "aromatic_o_demethylation_catechol",
+      "condition": "炮制·蒸制",
+      "target": "Oc1ccccc1O",
+      "n_hops": 3,
+      "seconds": 0.5,
+      "hits": [
+        {
+          "rule": "rescue_lowsupport",
+          "co": false,
+          "round": "1",
+          "formula": "C6H6O2"
+        }
+      ],
+      "covered": true
+    },
+    {
+      "type": "cyclic_ether_opening",
+      "seed": "cyclic_ether_opening",
+      "condition": "炮制·醋炙",
+      "target": "OCCCCO",
+      "n_hops": 2,
+      "seconds": 0.5,
+      "hits": [],
+      "covered": false
+    },
+    {
+      "type": "sugar_to_5hmf",
+      "seed": "Fructose",
+      "condition": "炮制·蒸制",
+      "target": "HBIN029444",
+      "n_hops": 115,
+      "seconds": 0.7,
+      "hits": [],
+      "covered": false
+    },
+    {
+      "type": "sugar_to_maltol",
+      "seed": "Glucose",
+      "condition": "炮制·蒸制",
+      "target": "HBIN034353",
+      "n_hops": 109,
+      "seconds": 0.9,
+      "hits": [],
+      "covered": false
+    },
+    {
+      "type": "oxidative_n_demethylation_aromatization",
+      "seed": "Evodiamine",
+      "condition": "炮制·炒黄",
+      "target": "HBIN042657",
+      "n_hops": 9,
+      "seconds": 0.9,
+      "hits": [],
+      "covered": false
+    },
+    {
+      "type": "alkaloid_rearrangement",
+      "seed": "Strychnine",
+      "condition": "炮制·炒黄",
+      "target": "HBIN031270",
+      "n_hops": 24,
+      "seconds": 0.8,
+      "hits": [],
+      "covered": false
+    },
+    {
+      "type": "sulfite_esterification",
+      "seed": "Paeoniflorin",
+      "condition": "炮制·自定义",
+      "target": "C23H28O13S",
+      "n_hops": 89,
+      "seconds": 1.0,
+      "hits": [],
+      "covered": false
+    }
+  ]
+}

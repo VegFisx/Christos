@@ -1,0 +1,521 @@
+{
+  "generated_at": "2026-11-23 14:27:38",
+  "config": "curated(all)+extra/mono=full_lf+base; no rescue/stereo; gate_conditions=False",
+  "n": 30,
+  "hits": 30,
+  "exact": 29,
+  "errors": 0,
+  "cases_with_source": {
+    "base": 8,
+    "mined_lf": 22
+  },
+  "mined_support": {
+    "n": 28,
+    "min": 11,
+    "p10": 22,
+    "median": 291,
+    "max": 21400
+  },
+  "rows": [
+    {
+      "id": "uspto50k_test_US06992103B2",
+      "class": "1",
+      "hit": true,
+      "n_products": 53,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "uspto50k_test_US20130289029A1",
+      "class": "1",
+      "hit": true,
+      "n_products": 17,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        291
+      ],
+      "seconds": 0.04
+    },
+    {
+      "id": "uspto50k_test_US20140024650A1",
+      "class": "1",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "mitsunobu"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "uspto50k_test_US06924276B2",
+      "class": "2",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amine_acetylation"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "uspto50k_test_US08501746B2",
+      "class": "2",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.09
+    },
+    {
+      "id": "uspto50k_test_US20090197859A1",
+      "class": "2",
+      "hit": true,
+      "n_products": 40,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "amide_coupling"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "uspto50k_test_US05059708",
+      "class": "3",
+      "hit": true,
+      "n_products": 36,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        24,
+        28
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "uspto50k_test_US20070111988A1",
+      "class": "3",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.14
+    },
+    {
+      "id": "uspto50k_test_US20130109652A1",
+      "class": "3",
+      "hit": true,
+      "n_products": 29,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "suzuki"
+      ],
+      "mined_supports": [],
+      "seconds": 0.1
+    },
+    {
+      "id": "uspto50k_test_US07645781B2",
+      "class": "4",
+      "hit": true,
+      "n_products": 33,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        59
+      ],
+      "seconds": 0.08
+    },
+    {
+      "id": "uspto50k_test_US20050234081A1",
+      "class": "4",
+      "hit": true,
+      "n_products": 43,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        22,
+        22
+      ],
+      "seconds": 0.07
+    },
+    {
+      "id": "uspto50k_test_US20110201815A1",
+      "class": "4",
+      "hit": true,
+      "n_products": 56,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        18
+      ],
+      "seconds": 0.12
+    },
+    {
+      "id": "uspto50k_test_US08153544B2",
+      "class": "5",
+      "hit": true,
+      "n_products": 20,
+      "exact": true,
+      "sources": [
+        "base"
+      ],
+      "hit_rules": [
+        "williamson"
+      ],
+      "mined_supports": [],
+      "seconds": 0.05
+    },
+    {
+      "id": "uspto50k_test_US20060035933A1",
+      "class": "5",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        104
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "uspto50k_test_US20130035310A1",
+      "class": "5",
+      "hit": true,
+      "n_products": 32,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        11,
+        1742
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "uspto50k_test_US20110118480A1",
+      "class": "6",
+      "hit": true,
+      "n_products": 31,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        387,
+        14521
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US20120226037A1",
+      "class": "6",
+      "hit": true,
+      "n_products": 22,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        34
+      ],
+      "seconds": 0.03
+    },
+    {
+      "id": "uspto50k_test_US20140249104A1",
+      "class": "6",
+      "hit": true,
+      "n_products": 34,
+      "exact": false,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        269
+      ],
+      "seconds": 0.05
+    },
+    {
+      "id": "uspto50k_test_US07704994B2",
+      "class": "7",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        21400
+      ],
+      "seconds": 0.03
+    },
+    {
+      "id": "uspto50k_test_US20090209562A1",
+      "class": "7",
+      "hit": true,
+      "n_products": 23,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        237,
+        237,
+        677
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US20090221555A1",
+      "class": "7",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        21400
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US04721718",
+      "class": "8",
+      "hit": true,
+      "n_products": 47,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        329
+      ],
+      "seconds": 0.11
+    },
+    {
+      "id": "uspto50k_test_US20110059951A1",
+      "class": "8",
+      "hit": true,
+      "n_products": 21,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        2543
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US20110201650A1",
+      "class": "8",
+      "hit": true,
+      "n_products": 24,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        2543
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US04588732",
+      "class": "9",
+      "hit": true,
+      "n_products": 12,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        70
+      ],
+      "seconds": 0.06
+    },
+    {
+      "id": "uspto50k_test_US04988705",
+      "class": "9",
+      "hit": true,
+      "n_products": 15,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        199
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": "uspto50k_test_US20080207708A1",
+      "class": "9",
+      "hit": true,
+      "n_products": 19,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_mono"
+      ],
+      "mined_supports": [
+        332
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": "uspto50k_test_US04760163",
+      "class": "10",
+      "hit": true,
+      "n_products": 37,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        2085
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "uspto50k_test_US06265349B1",
+      "class": "10",
+      "hit": true,
+      "n_products": 30,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        2085
+      ],
+      "seconds": 0.1
+    },
+    {
+      "id": "uspto50k_test_US20100034827A1",
+      "class": "10",
+      "hit": true,
+      "n_products": 28,
+      "exact": true,
+      "sources": [
+        "mined_lf"
+      ],
+      "hit_rules": [
+        "mined_extra"
+      ],
+      "mined_supports": [
+        2085
+      ],
+      "seconds": 0.08
+    }
+  ]
+}

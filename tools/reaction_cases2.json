@@ -489,5 +489,947 @@
   ],
   "forbid": [],
   "note": "9,10-蒽醌 +H2 → 9,10-蒽氢醌 (C14H8O2 → C14H10O2)。论文说明承诺的「大黄蒽醌」就是这一类"
+ },
+ {
+  "id": "clv_cyanohydrin",
+  "kind": "rule",
+  "rule": "cleavage_cyanohydrin_001",
+  "smiles": {
+   "db": "NNICRUQPODTGRU-UHFFFAOYSA-N",
+   "name": "2-hydroxy-2-phenylacetonitrile"
+  },
+  "name": "扁桃腈",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+    "name": "Benzaldehyde"
+   }
+  ],
+  "forbid": [],
+  "note": "氰醇裂解生成苯甲醛+HCN。文献 Haisman & Knight, Biochem J 1967;103(2):528（苦杏仁苷→苯甲醛链的最后一环）"
+ },
+ {
+  "id": "clv_ether_acyclic",
+  "kind": "rule",
+  "rule": "cleavage_ether_acyclic_001",
+  "smiles": {
+   "db": "RTZKZFJDLAIYFH-UHFFFAOYSA-N",
+   "name": "Ether"
+  },
+  "name": "二乙醚",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+    "name": "Alchohol"
+   }
+  ],
+  "forbid": [],
+  "note": "非环醚水解断裂生成两分子乙醇（狼毒醋制 EA 醚键断裂的简化模型）"
+ },
+ {
+  "id": "dec_malonic",
+  "kind": "rule",
+  "rule": "decarboxylation_001",
+  "smiles": {
+   "db": "OFOBLEOULBTSOW-UHFFFAOYSA-N",
+   "name": "Malonicacid"
+  },
+  "name": "丙二酸",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+    "name": "Acetic acid"
+   }
+  ],
+  "forbid": [],
+  "note": "丙二酸型热脱羧生成乙酸+CO2（苍耳子 CATR→ATR 的基元模型）"
+ },
+ {
+  "id": "dem_arecoline",
+  "kind": "rule",
+  "rule": "demethylation_n_001",
+  "smiles": {
+   "lit": "COC(=O)C1=CCN(C)C1",
+   "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+  },
+  "name": "槟榔碱",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "COC(=O)C1=CCNC1",
+    "why": "库外（教科书级小分子 / 引擎产物；tcm.db 里没有）"
+   }
+  ],
+  "forbid": [],
+  "note": "叔胺N-去甲基化生成去甲槟榔碱+甲醛。文献：李凯悦等 2017 华西药学杂志 32(2):150-153"
+ },
+ {
+  "id": "est_vinegar",
+  "kind": "rule",
+  "rule": "esterification_acid_alcohol_001",
+  "smiles": {
+   "db": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+   "name": "Alchohol"
+  },
+  "name": "乙醇",
+  "conditions": "炮制·醋炙",
+  "expect_any": [
+   {
+    "db": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+    "name": "Ethyl acetate"
+   }
+  ],
+  "forbid": [],
+  "note": "醋炙辅料（米醋37%、pH3）下乙酸与醇酯化生成乙酸乙酯；煎煮无乙酸共底物不触发。文献：郁红礼等 2022 狼毒醋制"
+ },
+ {
+  "id": "hyd_lactone_gbl",
+  "kind": "rule",
+  "rule": "hydrolysis_lactone_5ring_001",
+  "smiles": {
+   "db": "YEJRWHAVMIAJKC-UHFFFAOYSA-N",
+   "name": "Gbl"
+  },
+  "name": "γ-丁内酯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "SJZRECIVHVDYJC-UHFFFAOYSA-N",
+    "name": "Hydroxybutyric acid-"
+   }
+  ],
+  "forbid": [],
+  "note": "五元内酯水解开环生成4-羟基丁酸（狼毒 HAO/JNB/FA 内酯开环的简化模型）"
+ },
+ {
+  "id": "ox_allylic",
+  "kind": "rule",
+  "rule": "oxidation_allylic_alcohol_001",
+  "smiles": {
+   "db": "MKUWVMRNQOOSAT-UHFFFAOYSA-N",
+   "name": "3-buten-2-ol"
+  },
+  "name": "3-丁烯-2-醇",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "db": "FUSUHKVFWTUUBE-UHFFFAOYSA-N",
+    "name": "Butenone"
+   }
+  ],
+  "forbid": [],
+  "note": "烯丙醇氧化为α,β-不饱和酮。文献：郁红礼等 2022 狼毒醋制"
+ },
+ {
+  "id": "ox_benzylic",
+  "kind": "rule",
+  "rule": "oxidation_benzylic_alcohol_001",
+  "smiles": {
+   "lit": "OCc1ccccc1",
+   "why": "库外教科书级小分子；独立于天麻案例"
+  },
+  "name": "苯甲醇",
+  "conditions": "炮制·蒸制",
+  "expect_any": [
+   {
+    "lit": "O=Cc1ccccc1",
+    "why": "苯甲醛"
+   }
+  ],
+  "forbid": [],
+  "note": "苄位伯醇氧化；专门验证脚本还覆盖 4-羟基苄醇、负例脂肪醇/2-苯乙醇。"
+ },
+ {
+  "id": "dem_aromatic_o",
+  "kind": "rule",
+  "rule": "demethylation_aromatic_o_001",
+  "smiles": {
+   "lit": "COc1ccccc1",
+   "why": "库外教科书级小分子；独立于黄柏/黄连案例"
+  },
+  "name": "苯甲醚",
+  "conditions": "炮制·蒸制",
+  "expect_any": [
+   {
+    "lit": "Oc1ccccc1",
+    "why": "苯酚"
+   }
+  ],
+  "forbid": [],
+  "note": "芳香甲氧基 O-去甲基，产物苯酚+甲醇；专门验证脚本还覆盖愈创木酚与负例脂肪醚/酯。"
+ },
+ {
+  "id": "chaihu_ssa_b1",
+  "kind": "rule",
+  "rule": "isomerization_cyclic_ether_saponin_001",
+  "smiles": {
+   "db": "KYWSCMDFVARMPN-MSSMMRRTSA-N",
+   "name": "Saikosaponin a"
+  },
+  "name": "柴胡皂苷A",
+  "conditions": "炮制·醋炙",
+  "expect_any": [
+   {
+    "db": "WRYJYFCCMSVEPQ-MNIDVGFKSA-N",
+    "name": "Saikosaponin b1"
+   }
+  ],
+  "forbid": [],
+  "note": "RXNMapper+RDChiral 派生模板；13,28-环氧醚开环/异构化。"
+ },
+ {
+  "id": "chaihu_ssd_b2",
+  "kind": "rule",
+  "rule": "isomerization_cyclic_ether_saponin_001",
+  "smiles": {
+   "db": "KYWSCMDFVARMPN-LCSVLAELSA-N",
+   "name": "Saikosaponin d"
+  },
+  "name": "柴胡皂苷D",
+  "conditions": "炮制·醋炙",
+  "expect_any": [
+   {
+    "db": "WRYJYFCCMSVEPQ-ORAXXRKOSA-N",
+    "name": "Saikosaponin b2"
+   }
+  ],
+  "forbid": [],
+  "note": "第二底物泛化；同一模板 SSd→b2。"
+ },
+ {
+  "id": "maqianzi_strychnine_iso",
+  "kind": "rule",
+  "rule": "rearrangement_strychnos_alkaloid_001",
+  "smiles": {
+   "db": "QMGVPVSNSZLJIA-FVWCLLPLSA-N",
+   "name": "Strychnine"
+  },
+  "name": "士的宁",
+  "conditions": "炮制·炒黄",
+  "expect_any": [
+   {
+    "db": "PNYOGGAOQVIZDM-JQNVFVSUSA-N",
+    "name": "Isostrychnine"
+   }
+  ],
+  "forbid": [],
+  "note": "RXNMapper+RDChiral 派生；醚键断裂重排。"
+ },
+ {
+  "id": "maqianzi_brucine_isobrucine",
+  "kind": "rule",
+  "rule": "rearrangement_strychnos_alkaloid_001",
+  "smiles": {
+   "db": "RRKTZKIUPZVBMF-IBTVXLQLSA-N",
+   "name": "Brucine"
+  },
+  "name": "马钱子碱",
+  "conditions": "炮制·炒黄",
+  "expect_any": [
+   {
+    "db": "XTGYWZXUYFAABL-HUJXXYTHSA-N",
+    "name": "Isobrucine"
+   },
+   {
+    "lit": "COc1cc2c(cc1OC)[C@]13CCN4C/C(=C/CO)[C@H](C[C@H]41)C1=CCC(=O)N2[C@@H]13",
+    "why": "规则派生产物；与 DB isobrucine 同骨架，DB 未标 E/Z"
+   }
+  ],
+  "forbid": [],
+  "note": "第二底物泛化；brucine→isobrucine（骨架一致；DB 未标 E/Z，期望含规则派生的立体异构体）。"
+ },
+ {
+  "id": "wuzhuyu_evodiamine_rutaecarpine",
+  "kind": "rule",
+  "rule": "oxidation_n_demethylation_aromatization_001",
+  "smiles": {
+   "db": "TXDUTHBFYKGSAH-SFHVURJKSA-N",
+   "name": "Evodiamine"
+  },
+  "name": "吴茱萸碱",
+  "conditions": "炮制·炒黄",
+  "expect_any": [
+   {
+    "lit": "O=c1c2ccccc2nc2n1CCc1c-2[nH]c2ccccc12",
+    "why": "规则派生产物；rutaecarpine 骨架互变异构体"
+   }
+  ],
+  "forbid": [],
+  "note": "RXNMapper+RDChiral 派生；N-去甲基+氧化/芳构化。holdout 按骨架判定。"
+ },
+ {
+  "id": "hmf_fructose",
+  "kind": "rule",
+  "rule": "dehydration_cyclization_hmf_fructose_001",
+  "smiles": {
+   "db": "LKDRXBCSQODPBY-VRPWFDPXSA-N",
+   "name": "Fructose"
+  },
+  "name": "果糖",
+  "conditions": "炮制·蒸制",
+  "expect_any": [
+   {
+    "db": "NOEGNKMFWQHSLB-UHFFFAOYSA-N",
+    "name": "Hmf"
+   }
+  ],
+  "forbid": [],
+  "note": "RXNMapper+RDChiral 派生；果糖→5-HMF+3H2O。"
+ },
+ {
+  "id": "hmf_glucose",
+  "kind": "rule",
+  "rule": "dehydration_cyclization_hmf_glucose_001",
+  "smiles": {
+   "db": "WQZGKKKJIJFFOK-GASJEMHNSA-N",
+   "name": "Glucose"
+  },
+  "name": "葡萄糖",
+  "conditions": "炮制·蒸制",
+  "expect_any": [
+   {
+    "db": "NOEGNKMFWQHSLB-UHFFFAOYSA-N",
+    "name": "Hmf"
+   }
+  ],
+  "forbid": [],
+  "note": "RXNMapper+RDChiral 派生；葡萄糖→5-HMF+3H2O。"
+ },
+ {
+  "id": "boc_azole_gating",
+  "kind": "gating",
+  "rule": "protection_boc_azole_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "protection_boc_azole_001"
+  ],
+  "note": "双底物 Boc 唑类规则；产物生成由 tools/validate_boc_azole.py 独立验证。"
+ },
+ {
+  "id": "sulfonamide_acylation_gating",
+  "kind": "gating",
+  "rule": "acylation_sulfonamide_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "acylation_sulfonamide_001"
+  ],
+  "note": "双底物酰氯+磺酰胺规则；产物生成由 tools/validate_sulfonamide_acylation.py 独立验证。"
+ },
+ {
+  "id": "pyrazole_knorr_gating",
+  "kind": "gating",
+  "rule": "cyclization_pyrazole_knorr_001",
+  "conditions": "煎煮",
+  "must_active_rules": [
+   "cyclization_pyrazole_knorr_001"
+  ],
+  "note": "双底物 1,3-二羰基+芳基肼；产物生成由 tools/validate_pyrazole_knorr.py 独立验证。"
+ },
+ {
+  "id": "epoxide_sulfur_ylide_gating",
+  "kind": "gating",
+  "rule": "cyclization_epoxide_sulfur_ylide_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "cyclization_epoxide_sulfur_ylide_001"
+  ],
+  "note": "双底物硫叶立德环氧化；产物生成由 tools/validate_epoxide_sulfur_ylide.py 独立验证。"
+ },
+ {
+  "id": "oxadiazole_diacylhydrazine",
+  "kind": "rule",
+  "rule": "cyclization_oxadiazole_diacylhydrazine_001",
+  "smiles": {
+   "lit": "CC(=O)NNC(=O)c1ccccc1",
+   "why": "库外（N-乙酰基苯甲酰肼；标准例，独立于外部案例）"
+  },
+  "name": "N-乙酰基苯甲酰肼",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "Cc1nnc(-c2ccccc2)o1",
+    "why": "2-甲基-5-苯基-1,3,4-噁二唑"
+   }
+  ],
+  "forbid": [],
+  "note": "二酰肼环化脱水；专门验证脚本另测二烷基与外部 held-out。"
+ },
+ {
+  "id": "morpholine_double_alkylation_gating",
+  "kind": "gating",
+  "rule": "cyclization_morpholine_double_alkylation_001",
+  "conditions": "煎煮",
+  "must_active_rules": [
+   "cyclization_morpholine_double_alkylation_001"
+  ],
+  "note": "芳胺+二溴乙醚；产物与双向匹配由 validate_morpholine_double_alkylation.py 验证。"
+ },
+ {
+  "id": "indole_alkynylaniline",
+  "kind": "rule",
+  "rule": "cyclization_indole_alkynylaniline_001",
+  "smiles": {
+   "lit": "Nc1ccccc1C#Cc1ccccc1",
+   "why": "库外（2-乙炔基苯胺标准例，独立于外部案例）"
+  },
+  "name": "2-乙炔基苯胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1ccc2[nH]c(-c3ccccc3)cc2c1",
+    "why": "2-苯基吲哚"
+   }
+  ],
+  "forbid": [],
+  "note": "邻炔基苯胺 5-endo-dig 环化成吲哚；无副产物。"
+ },
+ {
+  "id": "grignard_ketone_gating",
+  "kind": "gating",
+  "rule": "addition_grignard_ketone_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "addition_grignard_ketone_001"
+  ],
+  "note": "R-MgX + 酮；产物与配平由 validate_grignard_weinreb.py 验证（双向）。"
+ },
+ {
+  "id": "grignard_weinreb_gating",
+  "kind": "gating",
+  "rule": "addition_grignard_weinreb_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "addition_grignard_weinreb_001"
+  ],
+  "note": "Weinreb 酰胺 + R-MgX -> 酮；产物与配平由 validate_grignard_weinreb.py 验证（双向）。"
+ },
+ {
+  "id": "red_dehalogenation_tert_br",
+  "kind": "rule",
+  "rule": "reduction_dehalogenation_cbr_001",
+  "smiles": {
+   "lit": "CC(C)(C)Br",
+   "why": "库外叔溴标准例"
+  },
+  "name": "2-溴-2-甲基丙烷",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "CC(C)C",
+    "why": "异丁烷"
+   }
+  ],
+  "forbid": [],
+  "note": "叔溴氢解成 C-H + HBr；专门验证脚本另测外部甾体案例。"
+ },
+ {
+  "id": "red_deoxygenation_tert_ol",
+  "kind": "rule",
+  "rule": "reduction_deoxygenation_tertiary_001",
+  "smiles": {
+   "lit": "CC(C)(C)O",
+   "why": "库外叔醇标准例"
+  },
+  "name": "2-甲基-2-丙醇",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "CC(C)C",
+    "why": "异丁烷"
+   }
+  ],
+  "forbid": [],
+  "note": "叔醇脱氧成 C-H + H2O；专门验证脚本另测外部案例。"
+ },
+ {
+  "id": "hcl_alkene_gating",
+  "kind": "gating",
+  "rule": "addition_hcl_alkene_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "addition_hcl_alkene_001"
+  ],
+  "note": "烯烃 + HCl；双底物产物与配平由 validate_hcl_alkene.py 验证。"
+ },
+ {
+  "id": "quaternary_ammonium_gating",
+  "kind": "gating",
+  "rule": "cyclization_quaternary_ammonium_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "cyclization_quaternary_ammonium_001"
+  ],
+  "note": "叔胺+卤代丙基分子内季铵化；产物与配平由 validate_quaternary_ammonium.py 验证；模板适用范围见规则说明。"
+ },
+ {
+  "id": "red_pyridine_plain",
+  "kind": "rule",
+  "rule": "reduction_pyridine_001",
+  "smiles": {
+   "lit": "c1ccccn1",
+   "why": "库外吡啶标准例"
+  },
+  "name": "吡啶",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "C1CCCCN1",
+    "why": "哌啶"
+   }
+  ],
+  "forbid": [],
+  "note": "无取代吡啶 -> 哌啶 + 3H2。"
+ },
+ {
+  "id": "red_pyridine_substituted",
+  "kind": "rule",
+  "rule": "reduction_pyridine_substituted_001",
+  "smiles": {
+   "lit": "c1ccc(-c2ccccn2)cc1",
+   "why": "库外2-苯基吡啶标准例"
+  },
+  "name": "2-苯基吡啶",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "c1ccc(C2CCCCN2)cc1",
+    "why": "2-苯基哌啶"
+   }
+  ],
+  "forbid": [],
+  "note": "取代吡啶 -> 取代哌啶 + 3H2。"
+ },
+ {
+  "id": "reductive_amination_gating",
+  "kind": "gating",
+  "rule": "reduction_reductive_amination_001",
+  "conditions": "还原",
+  "must_active_rules": [
+   "reduction_reductive_amination_001"
+  ],
+  "note": "醛+质子化伯胺还原胺化；产物与配平由 validate_reductive_amination.py 验证。"
+ },
+ {
+  "id": "boc_amine_gating",
+  "kind": "gating",
+  "rule": "protection_boc_amine_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "protection_boc_amine_001"
+  ],
+  "note": "Boc2O+质子化伯胺；产物/配平由 validate_boc_amine.py 验证。"
+ },
+ {
+  "id": "ethynylation_ketone_gating",
+  "kind": "gating",
+  "rule": "addition_ethynylation_ketone_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "addition_ethynylation_ketone_001"
+  ],
+  "note": "酮+乙炔炔基化；产物由 validate_class3_additions.py 验证。"
+ },
+ {
+  "id": "barbier_aldehyde_gating",
+  "kind": "gating",
+  "rule": "addition_barbier_aldehyde_001",
+  "conditions": "室温浸泡",
+  "must_active_rules": [
+   "addition_barbier_aldehyde_001"
+  ],
+  "note": "氯代烷+醛 Barbier 型加成；产物由 validate_class3_additions.py 验证。"
+ },
+ {
+  "id": "conrad_alpha_aryl",
+  "kind": "rule",
+  "rule": "cyclization_conrad_limpach_alpha_aryl_001",
+  "smiles": {
+   "lit": "CCOC(=O)C(c1ccccc1)C(C)=O",
+   "why": "库外（2-苯基乙酰乙酸乙酯标准例，独立于外部案例）"
+  },
+  "name": "2-苯基乙酰乙酸乙酯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "Cc1[nH]c2ccccc2c(=O)c1-c1ccccc1",
+    "why": "3-芳基-2-甲基喹啉-4(1H)-酮"
+   }
+  ],
+  "forbid": [],
+  "note": "Conrad–Limpach：苯胺（co_substrate_pool 标准例）+ α-芳基 β-酮酯 -> 喹啉酮 + EtOH + H2O；模板未用 295 案例拟合。"
+ },
+ {
+  "id": "indazole_standard",
+  "kind": "rule",
+  "rule": "cyclization_indazole_001",
+  "smiles": {
+   "lit": "O=C(c1ccccc1)c1ccccc1F",
+   "why": "库外（2-氟二苯甲酮标准例，独立于外部案例）"
+  },
+  "name": "2-氟二苯甲酮",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1ccc(-c2nn(-c3ccccc3)c3ccccc23)cc1",
+    "why": "1,2-二苯基吲唑"
+   }
+  ],
+  "forbid": [],
+  "note": "邻氟二苯甲酮 + 苯肼（co_substrate_pool 标准例）-> 1,2-二苯基吲唑 + HF + H2O；模板未用 295 案例拟合。"
+ },
+ {
+  "id": "fischer_aza_indole_std",
+  "kind": "rule",
+  "rule": "cyclization_fischer_aza_indole_001",
+  "smiles": {
+   "lit": "O=C(Cc1ccccc1)c1ncco1",
+   "why": "库外（2-(苯乙酰基)噁唑标准例，独立于外部案例）"
+  },
+  "name": "2-(苯乙酰基)噁唑",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1cnc2[nH]c(-c3ncco3)c(-c3ccccc3)c2c1",
+    "why": "2-(噁唑-2-基)-3-苯基-1H-吡咯并[2,3-b]吡啶"
+   }
+  ],
+  "forbid": [],
+  "note": "2-肼基吡啶（co_substrate_pool 标准例）+ α-芳基酮 -> 氮杂吲哚 + NH3 + H2O；模板未用 295 案例拟合。"
+ },
+ {
+  "id": "larock_indole_std",
+  "kind": "rule",
+  "rule": "cyclization_larock_indole_001",
+  "smiles": {
+   "lit": "C[Si](C)(C)C#CC1CCCCC1",
+   "why": "库外（TMS-环己基乙炔标准例，独立于外部案例）"
+  },
+  "name": "TMS-环己基乙炔",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "C[Si](C)(C)c1c(C2CCCCC2)c2ccccc2[nH]1",
+    "why": "2-TMS-3-环己基吲哚"
+   }
+  ],
+  "forbid": [],
+  "note": "2-碘苯胺（co_substrate_pool 标准例）+ TMS 炔 -> 吲哚 + HI；模板未用 295 案例拟合。"
+ },
+ {
+  "id": "hantzsch_thiazole_std",
+  "kind": "rule",
+  "rule": "cyclization_hantzsch_thiazole_001",
+  "smiles": {
+   "lit": "O=C1C(Br)CCOc2ccccc21",
+   "why": "库外（2-溴色满酮标准例，独立于外部案例）"
+  },
+  "name": "2-溴色满酮",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "NNc1nc2c(s1)CCOc1ccccc1-2",
+    "why": "2-肼基-4,5-二氢噻唑并[4,5-h]色烯"
+   }
+  ],
+  "forbid": [],
+  "note": "硫代氨基脲（co_substrate_pool 标准例）+ 环状 α-溴酮 -> 稠合噻唑 + HBr + H2O；模板未用 295 案例拟合。"
+ },
+ {
+  "id": "macro_lactam_std",
+  "kind": "rule",
+  "rule": "cyclization_macro_lactam_001",
+  "smiles": {
+   "lit": "CNC(=O)C(C)CC(O)C(Cc1cccc(OCCCCCC(=O)O)c1)NC(=O)C(C)[NH3+]",
+   "why": "库外（简化的大环氨基酸标准例；不是 held-out 的丁基/立体化学原样）"
+  },
+  "name": "简化大环氨基酸",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CNC(=O)C(C)CC(O)C1Cc2cccc(c2)OCCCCCC(=O)NC(C)C(=O)N1",
+    "why": "简化大环内酰胺"
+   }
+  ],
+  "forbid": [],
+  "note": "引擎分子内双端模式：同一分子内羧酸 + 铵盐 -> 大环内酰胺 + H2O + H+；最短路径 >=8 键。"
+ },
+ {
+  "id": "boc_deprotection_std",
+  "kind": "rule",
+  "rule": "deprotection_boc_amine_001",
+  "smiles": {
+   "lit": "CNC(=O)OC(C)(C)C",
+   "why": "库外（Boc 甲胺标准例，独立于 295/blind）"
+  },
+  "name": "N-Boc 甲胺",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CN",
+    "why": "甲胺"
+   }
+  ],
+  "forbid": [],
+  "note": "Boc 热/酸解脱保护 -> 甲胺 + 异丁烯 + CO2；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "cbz_deprotection_std",
+  "kind": "rule",
+  "rule": "deprotection_cbz_amine_001",
+  "smiles": {
+   "lit": "CNC(=O)OCc1ccccc1",
+   "why": "库外（Cbz 甲胺标准例，独立于 295/blind）"
+  },
+  "name": "N-Cbz 甲胺",
+  "conditions": "还原",
+  "expect_any": [
+   {
+    "lit": "CN",
+    "why": "甲胺"
+   }
+  ],
+  "forbid": [],
+  "note": "Cbz 氢解 -> 甲胺 + 甲苯 + CO2；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "sulfonylation_amine_std",
+  "kind": "rule",
+  "rule": "sulfonylation_amine_001",
+  "smiles": {
+   "lit": "CN",
+   "why": "库外（甲胺标准例，独立于 295/blind）"
+  },
+  "name": "甲胺",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CS(=O)(=O)NC",
+    "why": "N-甲基甲磺酰胺"
+   }
+  ],
+  "forbid": [],
+  "note": "甲磺酰氯（co_substrate_pool 标准例）+ 伯胺 -> 磺酰胺 + HCl；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "isocyanate_amine_urea_std",
+  "kind": "rule",
+  "rule": "addition_isocyanate_amine_urea_001",
+  "smiles": {
+   "lit": "CN",
+   "why": "库外（甲胺标准例，独立于 295/blind）"
+  },
+  "name": "甲胺",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CNC(=O)Nc1ccccc1",
+    "why": "1-甲基-3-苯基脲"
+   }
+  ],
+  "forbid": [],
+  "note": "异氰酸苯酯（co_substrate_pool 标准例）+ 伯胺 -> 脲；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "suzuki_biaryl_std",
+  "kind": "rule",
+  "rule": "coupling_suzuki_biaryl_001",
+  "smiles": {
+   "lit": "Brc1ccccc1",
+   "why": "库外（溴苯标准例，独立于 295/blind）"
+  },
+  "name": "溴苯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1ccc(-c2ccccc2)cc1",
+    "why": "联苯"
+   }
+  ],
+  "forbid": [],
+  "note": "苯硼酸（co_substrate_pool 标准例）+ 芳基溴 -> 联苯 + B(OH)2Br；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "sonogashira_aryl_alkyne_std",
+  "kind": "rule",
+  "rule": "coupling_sonogashira_aryl_alkyne_001",
+  "smiles": {
+   "lit": "Brc1ccccc1",
+   "why": "库外（溴苯标准例，独立于 295/blind）"
+  },
+  "name": "溴苯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1ccc(C#Cc2ccccc2)cc1",
+    "why": "二苯乙炔"
+   }
+  ],
+  "forbid": [],
+  "note": "苯乙炔（co_substrate_pool 标准例）+ 芳基溴 -> 二苯乙炔 + HBr；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "n_arylation_amine_std",
+  "kind": "rule",
+  "rule": "coupling_n_arylation_amine_001",
+  "smiles": {
+   "lit": "Brc1ccccc1",
+   "why": "库外（溴苯标准例，独立于 295/blind）"
+  },
+  "name": "溴苯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "c1ccc(Nc2ccccc2)cc1",
+    "why": "二苯胺"
+   }
+  ],
+  "forbid": [],
+  "note": "苯胺（co_substrate_pool 标准例）+ 芳基溴 -> 二苯胺 + HBr；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "n_alkylation_amine_std",
+  "kind": "rule",
+  "rule": "coupling_n_alkylation_amine_001",
+  "smiles": {
+   "lit": "CBr",
+   "why": "库外（溴甲烷标准例，独立于 295/blind）"
+  },
+  "name": "溴甲烷",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CNC",
+    "why": "二甲胺"
+   }
+  ],
+  "forbid": [],
+  "note": "甲胺（co_substrate_pool 标准例）+ 溴甲烷 -> 二甲胺 + HBr；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "o_acylation_anhydride_std",
+  "kind": "rule",
+  "rule": "acylation_alcohol_anhydride_001",
+  "smiles": {
+   "lit": "CC(=O)OC(C)=O",
+   "why": "库外（乙酸酐标准例，独立于 295/blind）"
+  },
+  "name": "乙酸酐",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CCOC(=O)C",
+    "why": "乙酸乙酯"
+   }
+  ],
+  "forbid": [],
+  "note": "乙酸酐（co_substrate_pool 标准例）+ 乙醇 -> 乙酸乙酯 + 乙酸；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "chlorination_thionyl_std",
+  "kind": "rule",
+  "rule": "substitution_alcohol_thionyl_001",
+  "smiles": {
+   "lit": "CCO",
+   "why": "库外（乙醇标准例，独立于 295/blind）"
+  },
+  "name": "乙醇",
+  "conditions": "室温浸泡",
+  "expect_any": [
+   {
+    "lit": "CCCl",
+    "why": "氯乙烷"
+   }
+  ],
+  "forbid": [],
+  "note": "亚硫酰氯（co_substrate_pool 标准例）+ 乙醇 -> 氯乙烷 + SO2 + HCl；模板未用 295/blind 拟合。"
+ },
+ {
+  "id": "chlorination_thionyl_family_std",
+  "kind": "rule",
+  "rule": "substitution_alcohol_thionyl_family_001",
+  "smiles": {
+   "lit": "OCc1ccccc1",
+   "why": "库外（苄醇标准例，独立于 295/blind）"
+  },
+  "name": "苄醇",
+  "conditions": "醇提",
+  "expect_any": [
+   {
+    "lit": "ClCc1ccccc1",
+    "why": "苄氯"
+   }
+  ],
+  "forbid": [],
+  "note": "亚硫酰氯（co_substrate_pool 标准例，醇类溶剂门控）+ 苄醇 -> 苄氯 + SO2 + HCl；模板由乙醇/苄醇/环己醇标准例族泛化。"
+ },
+ {
+  "id": "n_alkylation_benzyl_std",
+  "kind": "rule",
+  "rule": "coupling_n_alkylation_benzyl_001",
+  "smiles": {
+   "lit": "ClCc1ccccc1",
+   "why": "库外（苄基氯标准例，独立于 295/blind）"
+  },
+  "name": "苄基氯",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CNCc1ccccc1",
+    "why": "N-甲基苄胺"
+   }
+  ],
+  "forbid": [],
+  "note": "甲胺（co_substrate_pool 标准例）+ 苄基氯 -> N-甲基苄胺 + HCl；胺侧泛化为任意碳取代。"
+ },
+ {
+  "id": "o_acylation_cyclic_succinic_std",
+  "kind": "rule",
+  "rule": "acylation_alcohol_cyclic_succinic_001",
+  "smiles": {
+   "lit": "O=C1CCC(=O)O1",
+   "why": "库外（丁二酸酐标准例，独立于 295/blind）"
+  },
+  "name": "丁二酸酐",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "CCOC(=O)CCC(=O)O",
+    "why": "丁二酸单乙酯"
+   }
+  ],
+  "forbid": [
+   {
+    "lit": "O=C1CCC(=O)O1",
+    "why": "不应保留酸酐"
+   }
+  ],
+  "note": "丁二酸酐（标准例共底物池，验收用）+ 乙醇 -> 丁二酸单乙酯；模板由映射标准例整环生成。"
+ },
+ {
+  "id": "o_acylation_cyclic_phthalic_std",
+  "kind": "rule",
+  "rule": "acylation_alcohol_cyclic_phthalic_001",
+  "smiles": {
+   "lit": "O=C1OC(=O)c2ccccc21",
+   "why": "库外（邻苯二甲酸酐标准例，独立于 295/blind）"
+  },
+  "name": "邻苯二甲酸酐",
+  "conditions": "煎煮",
+  "expect_any": [
+   {
+    "lit": "COC(=O)c1ccccc1C(=O)O",
+    "why": "邻苯二甲酸单甲酯"
+   }
+  ],
+  "forbid": [
+   {
+    "lit": "O=C1OC(=O)c2ccccc21",
+    "why": "不应保留酸酐"
+   }
+  ],
+  "note": "邻苯二甲酸酐（标准例共底物池，验收用）+ 甲醇 -> 单甲酯；模板由映射标准例整环生成。"
  }
 ]

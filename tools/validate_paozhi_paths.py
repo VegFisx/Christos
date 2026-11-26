@@ -224,8 +224,10 @@ def _judge(hit, kind, prefixes):
     return item
 
 
-def run_case(cur, tag, seed_id, cond, targets, bridge_id):
-    row = {"tag": tag, "seed_id": seed_id, "condition": cond}
+def run_case(cur, tag, seed_id, cond, targets, bridge_id,
+             mode="evidence", rounds=1):
+    row = {"tag": tag, "seed_id": seed_id, "condition": cond,
+           "mode": mode, "rounds": int(rounds)}
     seed = db_row(cur, seed_id)
     if not seed or not seed[3]:
         row["status"] = "no_seed"
@@ -241,7 +243,8 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
         seed_smi, seed_src = _st["smiles"], "pubchem:isomeric"
     row["seed_smiles_source"] = seed_src
 
-    hops1, sec1 = run_once((seed[1], seed_smi, "tcm.db:paozhi-literature"), cond_name=cond)
+    hops1, sec1 = run_once((seed[1], seed_smi, "tcm.db:paozhi-literature"),
+                           cond_name=cond, mode=mode, rounds=rounds)
     row["seconds_round1"] = sec1
     row["n_round1"] = len({h.product for h in hops1})
 
@@ -266,7 +269,9 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
         if hit is not None:
             item = _judge(hit, _eff_kind(kind), prefixes)
             item["target"] = label
-            item["round"] = 1
+            # ★ 2026-11-22：多轮协议下 hops1 含所有轮；命中轮次取 Hop 自己的 round，
+            #   旧写法一律写 1，会把第 2/3 轮的命中误报成第 1 轮。
+            item["round"] = int(getattr(hit, "round", 1) or 1)
             results.append(item)
         else:
             need_bridge.append((label, kind, val, prefixes))
@@ -277,7 +282,7 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id):
         if bridge and bridge[3]:
             row["bridge_name"] = bridge[1]
             hops2, sec2 = run_once((bridge[1], bridge[3], "tcm.db:paozhi-bridge"),
-                                   cond_name=cond)
+                                   cond_name=cond, mode=mode, rounds=rounds)
             row["seconds_round2"] = sec2
             for item in results:
                 if item["status"] != "pending_round2":

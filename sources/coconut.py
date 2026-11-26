@@ -286,6 +286,9 @@ def compounds_of_species(species: str, db_path: str = DEFAULT_DB,
 
     去重按**结构**（rdkit 规范 SMILES），不是按字符串——否则同一分子不同写法会被算两次，
     白白吃掉对子预算。解析失败的条目**计数并打印**，不静默跳过。
+
+    ★ 2026-11-20 审计修复：删掉旧的 ``LENGTH(c.smiles) > 3`` —— 它会把 CCO（乙醇）、
+      CO（甲醇）这类合法短 SMILES 静默丢掉；垃圾值已由 NOT IN 挡住，解析失败另有计数。
     """
     sp = " ".join(_norm_words(species)[:2])
     # ★ 异写合并：查一个种名时，把同 fold 组的拼写变体**全部**取进来（实测 522 组）。
@@ -306,7 +309,6 @@ def compounds_of_species(species: str, db_path: str = DEFAULT_DB,
             WHERE LOWER(TRIM(sc.species)) IN ({ph})
               AND c.smiles IS NOT NULL
               AND c.smiles NOT IN ('', 'None', 'none', 'N/A', 'nan')
-              AND LENGTH(c.smiles) > 3
             ORDER BY c.cnp_id
             """,
             variants).fetchall()

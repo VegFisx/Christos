@@ -32,6 +32,8 @@ from __future__ import annotations
 
 import csv
 import json
+import math
+import os
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor, TimeoutError as FutTimeout, as_completed
@@ -111,6 +113,21 @@ PATH_FIELDS = ["product_smiles", "product_inchikey", "formula", "mw", "heavy_ato
                "partner_smiles"]
 
 
+def _sidecar(path, suffix: str) -> Path:
+    """台账的伴生文件路径：a.csv -> a.meta.json；a.tsv 或 a -> a.meta.json。
+
+    ★ 2026-11-20 审计修复：旧实现用 `str(p).replace(".csv", ".meta.json")`；
+    路径不含 .csv 时替换不生效，meta 路径等于台账路径，写 meta 会把刚写好的
+    台账整个覆盖掉（数据损坏）。改用 stem 拼接。
+    """
+    p = Path(path)
+    return p.with_name(p.stem + suffix)
+
+
+def _tmp_of(path) -> Path:
+    return Path(str(path) + ".tmp")
+
+
 @dataclass
 class RunSpec:
     """一次枚举的输入规格：输入分子 + 条件 + 轮数（轮数由用户掌握）。"""
@@ -139,11 +156,18 @@ class RunSpec:
     # 只跑 curated 证据规则，且台账里不再出现 esterification/mitsunobu 等基础反应名。
     use_base_templates: bool = True
     curated_rule_ids: tuple = ()
+    # ★ 2026-11-22：规则 provenance 闸门。False = 文件级默认加载只放
+    #   cited/secondary；True = 探索模式，允许 unvalidated 规则。
+    #   显式 curated_rule_ids 视为调用方点名，仍可加载（见 SmartReactEngine）。
+    allow_unvalidated: bool = False
     # ★ C 试点（2026-10-17）：实时路径是否接入 top mined 模板的 per-template 条件
     use_mined_top_conditions: bool = False
     # ★ Application-layer switch: honour a stated atmosphere even without
     #   auxiliary reagents.  Benchmark paths leave this off.
     strict_redox_gate: bool = False
+    # ★ 2026-11-23：条件层总开关。默认 True 保持旧行为；外部泛化探针
+    #   设 False，只测规则可达性，不让 ORD 条件窗口参与判活。
+    gate_conditions: bool = True
     # ★ 第84轮（2026-11-04）：反应进程层 —— time_min / pH / 催化剂 真正参与产物生成。
     #   默认 False：旧行为逐位不变（产物不带 extent、不门控）。
     #   打开后：extent < conditions/kinetics.json 的 gates.extent_min 的反应整条不产出，
@@ -166,6 +190,28 @@ class RunSpec:
     # ★ 第 147 轮：中心模型排序（默认关）。给每个候选算「从底物走到它要改哪几处键、
     #   每处多可能」，按几何平均重排；只改顺序，候选集合不变；模型缺失自动退回。
     rerank_center: bool = False
+    # ★ 第 163 轮：train 模板覆盖成为产品默认（默认开）。用 USPTO 训练半区挖的
+    #   通用正向模板补候选：官方全量召回 92.19→94.99%，top-1 73.72→73.70，
+    #   候选 +1.6/反应。只生成候选、不删、不排序；产物照常去重/过滤/进台账。
+    #   rescue=False 完全关闭（复现旧 92.19% 口径）；>2 底物的多成分批次自动跳过。
+    rescue: bool = True
+    rescue_min_support: int = 1
+    rescue_max_support: int = 10 ** 9
+    # 覆盖模式默认常开（= 对所有反应都补）；<=0 表示按候选数触发（旧实验路径）
+    rescue_min_candidates: int = 1000000
+    # 覆盖池路径；空 = 默认 train 池（rescue.TRAIN_COVERAGE）。
+    # 显式传 ORD 池路径 + rescue_max_support=4 可复现旧 rescue 行为。
+    rescue_path: str = ""
+    # ★ 第 163 轮：本次运行是否真的加载了炮制辅料共底物。
+    #   用于门控规则级 co_substrate_pool 里的辅料（醋炙的乙酸）：
+    #   --no-paozhi-adjuvant / env=0 时，规则不凭空补乙酸。
+    paozhi_adjuvant: bool = True
+    # ★ 第 164 轮（item 2）：coverage 产物的有界立体枚举（默认开）。
+    #   模板不带立体时，去立体后枚举至多 cap 个异构体并加平面版；
+    #   官方全量：召回 94.99→96.25%，候选 35.07→44.25，top-1 73.70→73.18。
+    #   0 = 关闭（复现 94.99% 口径）。
+    stereo_enum_cap: int = 8
+    stereo_enum_max_centers: int = 4
     # ★ 用户自定义条件：在预设条件档案之上逐项覆盖。
     #   键名与 Conditions 的字段一致（solvent/temperature/time_min/pH/
     #   catalyst/atmosphere）。空字典 = 完全使用预设。
@@ -191,9 +237,13 @@ class RunSpec:
         # ★ 第142轮：压力最后覆盖（显式写的优先于预设）。非 1.0 才 replace，
         #   保证默认路径的 Conditions 对象逐字不变（旧行为不动）。
         try:
-            _pa = float(self.pressure_atm or 1.0)
+            _pa = float(self.pressure_atm) if self.pressure_atm is not None else 1.0
         except (TypeError, ValueError):
-            _pa = 1.0
+            raise ValueError("pressure_atm 必须是数字（atm）")
+        if not math.isfinite(_pa) or _pa <= 0.0:
+            raise ValueError(
+                "pressure_atm 必须为正的有限数（atm）；真空请用 atmosphere=vacuum"
+                "（按 0.05 atm 的 P1 约定）")
         if _pa != 1.0:
             from dataclasses import replace as _replace
             c = _replace(c, pressure_atm=_pa)
@@ -305,6 +355,9 @@ class Inventory:
                 e["sources"][src] = s
             s["paths"].append({"rule_name": r.get("rule_name", ""),
                                "round": _as_int(r.get("round")),
+                               # ★ 2026-11-20 审计修复：漏了 seq，出处排序 (round, seq, ...)
+                               #   永远退化成 (round, 0, rule_name)。
+                               "seq": _as_int(r.get("seq")),
                                "activation": r.get("activation", ""),
                                "activation_why": r.get("activation_why", ""),
                                "direction": r.get("direction", ""),
@@ -437,9 +490,12 @@ def load_ik_cache(path: Path = IK_CACHE) -> Dict[str, str]:
 
 
 def save_ik_cache(cache: Dict[str, str], path: Path = IK_CACHE) -> None:
+    # ★ 2026-11-20 审计修复：先写 .tmp 再 os.replace —— 中途被杀不会留下半截 JSON。
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = _tmp_of(path)
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False)
+    os.replace(tmp, path)
 
 
 def inchikeys_of(smiles_list: Sequence[str],
@@ -475,9 +531,21 @@ def inchikeys_of(smiles_list: Sequence[str],
         stat.update({"timeout": 0, "abandoned": 0, "budget_s": round(budget, 1),
                      "timed_out_examples": []})
         pool = None
+        # ★ 2026-11-20 审计修复：只判断 workers>1 不够。daemon 子进程里
+        #   ProcessPoolExecutor() 本身能构造，但 submit 时才抛
+        #   AssertionError: daemonic processes are not allowed to have children，
+        #   而 submit 循环在 try 之外 -> 整个 build_inventory 崩溃。这里显式判断。
+        _in_daemon = False
+        try:
+            import multiprocessing as _mp
+            _in_daemon = bool(_mp.current_process().daemon)
+        except Exception:                          # noqa: BLE001
+            pass
         # workers<=1 时完全不建池：调用方可能本身就在 daemon 进程里
         # （多进程切片），再开子进程会被 Python 直接拒绝。
-        if workers and workers > 1:
+        if _in_daemon and workers and workers > 1:
+            print("   [warn] 当前进程是 daemon，不能创建子进程；InChIKey 改串行")
+        elif workers and workers > 1:
             try:
                 pool = ProcessPoolExecutor(max_workers=workers)
             except Exception as err:             # noqa: BLE001  —— 退化成单进程串行
@@ -576,6 +644,7 @@ def build_inventory(spec: RunSpec,
     from engine import Compound, get_mol
     from scorer import score_product
     from smartreact_engine import SmartReactEngine
+    from rescue import TRAIN_COVERAGE as _TRAIN_COVERAGE
 
     t_all = time.time()
     inv = Inventory(spec=spec, built_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
@@ -618,10 +687,15 @@ def build_inventory(spec: RunSpec,
                                getattr(spec, "use_base_templates", True)),
                            curated_rule_ids=(tuple(
                                getattr(spec, "curated_rule_ids", ()) or ()) or None),
+                           allow_unvalidated=bool(
+                               getattr(spec, "allow_unvalidated", False)),
                            use_mined_top_conditions=bool(
                                getattr(spec, "use_mined_top_conditions", False)),
                            strict_redox_gate=bool(
                                getattr(spec, "strict_redox_gate", False)),
+                           # ★ 2026-11-23：条件层总开关（默认 True，旧行为）
+                           gate_conditions=bool(
+                               getattr(spec, "gate_conditions", True)),
                            # Strict atmosphere mode is meaningless with the
                            # mono redox gate switched off, so tie them together.
                            mono_redox_gate=bool(
@@ -635,7 +709,19 @@ def build_inventory(spec: RunSpec,
                            center_rank_model=os.environ.get("CHEMCREACT_CENTER_MODEL") or None,
                            # ★ 第 141 轮：extent 真正接进引擎（此前从未传入 → 恒 1.0）
                            condition_extent=_extent_on,
-                           condition_gate=_extent_gate_on)
+                           condition_gate=_extent_gate_on,
+                           # ★ 第 156 轮：覆盖模式（默认关）
+                           rescue=bool(getattr(spec, "rescue", True)),
+                           rescue_min_support=int(getattr(spec, "rescue_min_support", 1)),
+                           rescue_max_support=int(getattr(spec, "rescue_max_support", 10 ** 9)),
+                           rescue_min_candidates=int(
+                               getattr(spec, "rescue_min_candidates", 1000000)),
+                           rescue_path=(getattr(spec, "rescue_path", "")
+                                        or str(_TRAIN_COVERAGE)),
+                           paozhi_adjuvant=bool(getattr(spec, "paozhi_adjuvant", True)),
+                           stereo_enum_cap=int(getattr(spec, "stereo_enum_cap", 8)),
+                           stereo_enum_max_centers=int(
+                               getattr(spec, "stereo_enum_max_centers", 4)))
     st.engine_notes = [f"base: {eng.base_template_note}",
                        f"extra: {eng.extra_template_note}",
                        f"mono: {eng.mono_template_note}",
@@ -875,14 +961,19 @@ def dump_inventory(inv: Inventory,
     * `<index_file>`：TSV，**一行一个产物分子**（索引：SMILES / InChIKey / 出处条数）
     """
     paths_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(paths_file, "w", encoding="utf-8-sig", newline="") as f:
+    # ★ 2026-11-20 审计修复：先写 .tmp 再 os.replace，避免 UI「停止」/异常时
+    #   把旧台账截断并留下半截文件（读回方无法分辨）。
+    _ptmp = _tmp_of(paths_file)
+    with open(_ptmp, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=PATH_FIELDS, extrasaction="ignore")
         w.writeheader()
         for r in inv.paths:
             w.writerow(r)
+    os.replace(_ptmp, paths_file)
 
     idx = inv.index()
-    with open(index_file, "w", encoding="utf-8-sig", newline="") as f:
+    _itmp = _tmp_of(index_file)
+    with open(_itmp, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f, delimiter="\t")
         w.writerow(["product_inchikey", "product_smiles", "formula", "mw",
                     "heavy_atoms", "n_source_molecules", "n_paths",
@@ -900,6 +991,7 @@ def dump_inventory(inv: Inventory,
                         min(rounds) if rounds else "", "|".join(rules),
                         e["reversible"], e["is_byproduct"],
                         "|".join(e["co_products"]), dirs, why])
+    os.replace(_itmp, index_file)
     inv.paths_file, inv.index_file = paths_file, index_file
     # ★ 元信息 sidecar：条件/轮数/输入分子。没有它，读回台账只能显示"(读回)"，
     #   下一个会话就看不出这份台账是在什么条件下枚举的。
@@ -933,9 +1025,11 @@ def dump_inventory(inv: Inventory,
         _ex = (getattr(inv, "notes", {}) or {}).get("extent") or {}
         meta["extent_dropped"] = int(_ex.get("dropped", 0) or 0)
         meta["extent_gate_by_type"] = dict(_ex.get("by_type") or {})
-    meta_path = Path(str(paths_file).replace(".csv", ".meta.json"))
-    with open(meta_path, "w", encoding="utf-8") as f:
+    meta_path = _sidecar(paths_file, ".meta.json")
+    _mtmp = _tmp_of(meta_path)
+    with open(_mtmp, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
+    os.replace(_mtmp, meta_path)
     return paths_file, index_file
 
 
@@ -955,7 +1049,7 @@ def load_inventory(paths_file: Path = INVENTORY_CSV,
             inv.paths.append(row)
     inv.paths_file = paths_file
     # 同目录的 sidecar：条件/轮数/输入分子（没有也能用，只是出处信息变少）
-    meta_path = Path(str(paths_file).replace(".csv", ".meta.json"))
+    meta_path = _sidecar(paths_file, ".meta.json")
     if meta_path.exists():
         try:
             with open(meta_path, encoding="utf-8") as f:
@@ -982,6 +1076,14 @@ def load_inventory(paths_file: Path = INVENTORY_CSV,
             st.engine_notes = list(meta.get("engine_notes", []))
             inv.notes = dict(meta.get("notes", {}))
             inv.notes["loaded_from"] = str(paths_file)
+            # ★ 2026-11-20 审计修复：台账若被中断/截断，行数会少于 meta 记录的
+            #   n_paths_kept。以前不校验，界面照抄 meta 的数字，看起来完整。
+            _n_expect = int(ms.get("n_paths_kept", len(inv.paths)))
+            if _n_expect and len(inv.paths) != _n_expect:
+                print("   [warn] 台账不完整：实际 %d 行，sidecar 记录 %d 行（可能被中断）"
+                      % (len(inv.paths), _n_expect))
+                inv.notes["row_count_mismatch"] = {
+                    "actual": len(inv.paths), "expected": _n_expect}
         except Exception as ex:                  # noqa: BLE001 —— 打印，不静默
             print(f"   [warn] sidecar {meta_path.name} 读不动（{type(ex).__name__}: {ex}），"
                   f"退回最小信息模式")
@@ -993,6 +1095,20 @@ def load_inventory(paths_file: Path = INVENTORY_CSV,
 
 # ---------------------------------------------------------------- 名称 / 库反查
 
+# ★ 2026-11-20 审计修复：模块级缓存在长跑（常驻界面 / 桌面版）里会无界增长。
+#   统一走有界字典：超过 cap 条就丢最早插入的一条（dict 保持插入序）。
+_MEM_CAP = 20000
+
+
+def _mem_put(cache: dict, key, val, cap: int = _MEM_CAP) -> None:
+    cache[key] = val
+    while len(cache) > cap:
+        try:
+            cache.pop(next(iter(cache)))
+        except (StopIteration, KeyError):
+            break
+
+
 _NAMES_MEM: Dict[str, List[Dict[str, str]]] = {}
 _NAMES_SCAN: Optional[Dict[str, List[Dict[str, str]]]] = None
 
@@ -1003,12 +1119,16 @@ def names_of_inchikey(ik: str, limit: int = 8,
 
     一个进程内只**顺序扫一次** COCONUT 名称表（15 MB），之后走内存缓存 ——
     避免"每打印一行都扫一遍 27 万行"。
+
+    ★ 2026-11-20 审计修复：旧缓存按**首次调用的 limit** 截断固化（第一次要 2 个，
+      以后要 8 个也只有 2 个）。现在至少缓存 8 条，按需再取。
     """
     global _NAMES_SCAN
     if not ik:
         return []
-    if ik in _NAMES_MEM:
-        return _NAMES_MEM[ik][:limit]
+    cached = _NAMES_MEM.get(ik)
+    if cached is not None and len(cached) >= limit:
+        return cached[:limit]
     if _NAMES_SCAN is None:
         t0 = time.perf_counter()
         scan: Dict[str, List[Dict[str, str]]] = {}
@@ -1025,9 +1145,10 @@ def names_of_inchikey(ik: str, limit: int = 8,
         _NAMES_SCAN = scan
         print(f"   （名称表 {coco_index.name} 扫入内存：{len(scan):,} 个 InChIKey，"
               f"{time.perf_counter()-t0:.1f}s）")
-    out = list(_NAMES_SCAN.get(ik, []))
-    out += _tcm_names_by_ik(ik, max(0, limit - len(out)))
-    _NAMES_MEM[ik] = out
+    base = list(_NAMES_SCAN.get(ik, []))
+    need = max(limit, 8) - len(base)
+    out = base + (_tcm_names_by_ik(ik, need) if need > 0 else [])
+    _mem_put(_NAMES_MEM, ik, out)
     return out[:limit]
 
 
@@ -1095,7 +1216,7 @@ def label_of(smiles: str, seed_labels: Optional[Dict[str, str]] = None) -> str:
     info = resolve_molecule(cs)
     if info["kind"] == "名称" and info.get("candidates"):
         nm = str(info["candidates"][0].get("name") or "").strip()
-        _LABEL_MEM[cs] = nm
+        _mem_put(_LABEL_MEM, cs, nm)
         return nm
     ik = info.get("inchikey") or ""
     if not ik:
@@ -1105,7 +1226,7 @@ def label_of(smiles: str, seed_labels: Optional[Dict[str, str]] = None) -> str:
     if ik:
         got = names_of_inchikey(ik, limit=1)
         nm = str(got[0]["name"]).strip() if got else ""
-    _LABEL_MEM[cs] = nm
+    _mem_put(_LABEL_MEM, cs, nm)
     return nm
 
 
@@ -1259,7 +1380,7 @@ def search_db_by_name(keyword: str, limit: int = 5) -> List[Dict[str, str]]:
                             "formula": "", "id": cid})
         except Exception as ex:                  # noqa: BLE001
             print(f"   [warn] coconut.db 按名称查失败：{type(ex).__name__}: {ex}")
-    _NAME_SEARCH_MEM[ck] = out
+    _mem_put(_NAME_SEARCH_MEM, ck, out, cap=4096)
     return out
 
 
@@ -1582,7 +1703,7 @@ def fp_cache_path(paths_file: Optional[Path] = None) -> Path:
     """指纹缓存路径：跟随台账文件名（换台账不会互相污染）。"""
     if paths_file is None:
         return FP_CACHE
-    return Path(str(paths_file).replace(".csv", ".fingerprints.json"))
+    return _sidecar(paths_file, ".fingerprints.json")
 
 
 def fp_of_smiles(smiles: str, radius: int = FP_RADIUS, nbits: int = FP_BITS,
@@ -1680,13 +1801,17 @@ def build_fingerprints(inv: Inventory,
         keep = {e["smiles"] for e in inv.index().values()}
         cache = {k: v for k, v in cache.items() if k in keep}
         out.parent.mkdir(parents=True, exist_ok=True)
-        with open(out, "w", encoding="utf-8") as f:
+        # ★ 2026-11-20 审计修复：同样先写 .tmp 再 os.replace（中途被杀不留半截 JSON）
+        tmp = _tmp_of(out)
+        with open(tmp, "w", encoding="utf-8") as f:
             json.dump({"_meta": {"kind": FP_KIND, "radius": FP_RADIUS,
                                  "nbits": FP_BITS,
                                  "built_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                  "n": len(cache)},
                        "fp": cache}, f)
-    _FP_CACHE_MEM[str(out)] = dict(cache)
+        os.replace(tmp, out)
+    # 每个值是一整份指纹字典（可能几 MB）——按缓存路径只留最近 8 个
+    _mem_put(_FP_CACHE_MEM, str(out), dict(cache), cap=8)
     stat = {"n": len(cache), "computed": len(todo), "reused": reused, "fail": n_fail,
             "fail_examples": fails, "path": str(out),
             "seconds": round(time.time() - t0, 2), "kind": FP_KIND}
