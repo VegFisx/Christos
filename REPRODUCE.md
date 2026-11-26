@@ -2,7 +2,13 @@
 
 Everything below was run from a **fresh clone** of this repository on
 Windows 11 with CPython 3.12.10 and the pinned versions in `requirements.txt`.
-The clone was 101.8 MB (including the shipped derived artifacts).
+
+The forward, official-split, and reverse-coverage runs use only files shipped
+in the repository. The multi-step benchmark additionally needs the full
+`tcm.db` and the ORD-derived purchasable-block indices
+(`reports/purchasable_blocks_*.jsonl` and `reports/coconut_inchikey_index.jsonl`).
+Those are not shipped because of size, so its commands cannot be reconstructed
+from the repository alone; the numbers are reported for completeness.
 
 Each command prints a summary and writes a JSON next to it. Small samples are
 for a quick smoke test; the full-size commands follow.
@@ -43,9 +49,10 @@ the official split smoke test uses 3% of the rows and the multi-step test uses
 | `CHEMCREACT_MS_TPL=data/benchmark/lib_uspto50k_excl_v2_freq10.jsonl python -I tools/bench_multistep.py 300 2 4 --use-lib` | 47.67% (2026-11-27 rerun) | 928 s |
 | same with `300 3 4` | 72.33% (2026-11-27 rerun) | 1,460 s |
 
-The multi-step benchmark **requires** `--use-lib` and the `_freq10` library
-(16,891 compiled templates). Without them it falls back to the 3,025-template
-clustered library and reports roughly 21 points lower.
+The multi-step benchmark **requires** `--use-lib`, the `_freq10` library
+(16,891 compiled templates), and the non-shipped files listed at the top.
+Without `--use-lib` it falls back to the 3,025-template clustered library and
+reports roughly 21 points lower.
 
 The multi-step values are route-recovery rates: a target counts as recovered if
 at least one route is found, whether or not every step passes `step_usability`.
