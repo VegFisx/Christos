@@ -35,7 +35,7 @@ python tools\validate_input_dataset.py <你的数据文件>
 
 对应的审计产物在 `reports/`：`rule_ord_execution_20261124.*`、`holdout_paozhi_20261125.*`、`formula_db_coverage3_sourced_20261124.json`、`formula_end2end_20261125.*`。
 
-本次发布闸门记录：`reports/benchmarks/release-673932e-20261126-2246.json`（quick 档，dirty 0，verdict pass）：safety ERROR 0；smoke 45/45/49/45/83/45/45/824；holdout 23/31 consistent；forward 0.8659（600 条子集，不能与论文 50,016 条的 92.01% 直接比较）；official 0.91（any-position；top-1 0.4167 仅诊断）；rerank 0.93 / 0.7567 / 0.9167（可选重排序）；multistep 0.56（路线找回）。
+本次发布闸门记录：`reports/benchmarks/release-673932e-20261126-2246.json`（quick 档，dirty 0，verdict pass）：safety ERROR 0；smoke 45/45/49/45/83/45/45/824；holdout 23/31 consistent（按“文献产物出现即计分”为 25/31）；forward 0.8659（600 条子集，不能与论文 50,016 条的 92.01% 直接比较）；official 0.91（any-position；top-1 0.4167 仅诊断）；rerank 0.93 / 0.7567 / 0.9167（可选重排序）；multistep 0.56（路线找回）。
 
 ## 四、已知边界
 
