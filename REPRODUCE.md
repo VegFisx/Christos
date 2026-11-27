@@ -191,9 +191,11 @@ palmatine, 5-HMF, and evodiamine); at r3 all six close, including the two Kansui
 ester rule. The added oleuropein control is consistent in both configurations at r1 and r3. The
 original ligustroside case remains a miss and is retained as a seed-target mismatch: its side chain
 is tyrosol (C8H10O2), while the recorded target is hydroxytyrosol (C8H10O3). Overall, evidence r1
-gives 23 consistent, 6 miss, 2 formula-only (25/31 prediction hits); production r1 gives the same;
-evidence r3 gives 28 consistent, 1 miss, 2 formula-only (26/31); production r3 gives the same. The
-remaining r3 miss is ligustroside. The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
+gives 23 consistent, 6 miss, 2 formula-only; production r1 gives the same. The script's
+`prediction_hit` field is a status match, not a product-presence count. On the 21 cases where the
+literature reports a product, r1 gives 18 structural hits (20/21 if formula-level matches count),
+with the 10 negative controls excluded from the denominator. Evidence r3 gives 28 consistent,
+1 miss, 2 formula-only; production r3 gives the same. The remaining r3 miss is ligustroside. The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
 at r1; 10 consistent, 0 miss, 2 formula-only at r3. The multi-round protocol is developmental, not
 an independent holdout, and it is not a production default.
 

@@ -49,7 +49,7 @@
 | 项目 | 论文值 | 证据文件 |
 |---|---|---|
 | 规则用例 | 121/121 通过，111/111 规则覆盖 | `reports/reaction_cases_run_20261125.txt` |
-| 炮制文献留出集 | 31 条：23 consistent / 6 miss / 2 formula_only；预测命中 25/31 | `reports/holdout_paozhi_20261126.json` |
+| 炮制文献留出集 | 阳性 21 条：18 条结构命中（18/21；按分子式核对 20/21）；10 条负对照不计分 | `reports/holdout_paozhi_20261126.json` |
 | 方剂库覆盖 v3（有出处口径） | 12,070 方 / 117,585 提及；解析 85.64%，完整解析 44.29%；歧义 2,541 不猜 | `reports/formula_db_coverage3_sourced_20261124.json` |
 | 方剂端到端审计 | 20/20 跑通；中位 1,174 个候选产物（302–2,478）；40.5 s/方 | `reports/formula_end2end_20261125.md` |
 | 甘草煎煮示例 | 2,176 条产物（`--limit 12 --rounds 1 --cond 煎煮`），208 s | `reports/repro_20261126/gc12/20261127-001322_甘草.meta.json` |
