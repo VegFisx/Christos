@@ -1,5 +1,6 @@
 # Core runtime for the reproducible benchmarks (Python 3.12.10).
-# rdchiral and SmartReact are vendored under libs/ and are not pip packages.
+# rdchiral 1.1.0 and SmartReact are vendored under libs/ and are not pip
+# packages; the scripts put libs/ first on sys.path.
 rdkit==2026.3.6
 numpy==2.5.3
 pandas==3.0.5

@@ -5,6 +5,10 @@
 
 把 **chemreact-staging** 里的通用化学 AI（正向枚举 + 逆合成 + 方向/条件标注）接到 TCMAI 项目里的入口。
 
+> **公开仓用户先看根目录 `README.md` 和 `PUBLIC_REPRO.md`。** 下面命令里的
+> `D:\TCMAI\chemreact` 是作者本机路径；克隆后请换成本仓库根目录，
+> `D:\TCMAI\venv\Scripts\python.exe` 换成你自己的 venv 或 `python`。
+
 ## 是什么 / 不是什么
 
 * **是**：一个薄桥接（`chemreact.py`）——TCMAI 侧可以直接跑的命令行；引擎源码仍在
@@ -16,7 +20,7 @@
 
 ### 三步页（本机图形界面，v0）——不想敲命令就用它
 
-双击 `start_ui.bat`（等价于 `D:\TCMAI\venv\Scripts\python.exe ui.py`）→ 浏览器自动打开
+双击 `start_ui.bat`（自动用仓库 `.venv`，没有则用 PATH 里的 `python`）→ 浏览器自动打开
 `http://127.0.0.1:8765/`：**选药材 → 条件/轮数 → 开始预测**（真跑引擎，约几秒~几分钟）→
 结果区给「一页报告 / 台账 CSV / 索引 TSV」链接 + 运行记录（成分取舍 / 开关 / 对子）。
 公开版只显示「单味 / 物种」「方剂」「历史」「设置」四个工作区，不提供任意目标逆合成。
@@ -25,21 +29,21 @@
 只绑本机 127.0.0.1、只写 `out\`，与命令行完全同一条路。停：控制台 Ctrl+C。
 
 ```powershell
-cd D:\TCMAI\chemreact
+cd <仓库根目录>
 
 # ① 环境自检（引擎目录、模板数、黑名单数、数据库只读连通）
-D:\TCMAI\venv\Scripts\python.exe chemreact.py info
+python -I integration\tcmai_bridge\chemreact.py info
 
 # ② 正向：甘草成分 1 轮 -> 候选产物台账（CSV + TSV + 一页 HTML 报告，写在 out\）
-D:\TCMAI\venv\Scripts\python.exe chemreact.py predict --herb 甘草 --limit 12 --rounds 1
+python -I integration\tcmai_bridge\chemreact.py predict --herb 甘草 --limit 12 --rounds 1
 
 # ③ 内部研究专用：给目标分子找路线（公开版默认关闭；需显式设置研究模式）
 $env:CHRISTOS_RESEARCH_MODE='1'
-D:\TCMAI\venv\Scripts\python.exe chemreact.py routes --target "CC(=O)Oc1ccccc1C(=O)O" --depth 2
+python -I integration\tcmai_bridge\chemreact.py routes --target "CC(=O)Oc1ccccc1C(=O)O" --depth 2
 
 # ④ 受限池问答：只用你这批底物能不能做出目标
-D:\TCMAI\venv\Scripts\python.exe chemreact.py routes --target "CC(=O)Oc1ccccc1C(=O)O" `
-    --pool-file D:\ProgramData\DSHNS\chemreact-staging\reports\_pool_aspirin_demo.txt --depth 1
+python -I integration\tcmai_bridge\chemreact.py routes --target "CC(=O)Oc1ccccc1C(=O)O" `
+    --pool-file reports\_pool_aspirin_demo.txt --depth 1
 ```
 
 > **逆模板库版本（2026-10-15 起）**：生产默认 = **v2·freq≥10**（18,914 条；加载约 1 秒 /
@@ -77,8 +81,8 @@ D:\TCMAI\venv\Scripts\python.exe chemreact.py routes --target "CC(=O)Oc1ccccc1C(
 
 ## 环境变量
 
-* `CHEMCREACT_STAGE`：覆盖引擎目录（默认 `D:\ProgramData\DSHNS\chemreact-staging`）。
-  如果哪天 chemreact-staging 挪了位置，设这个变量即可，不用改代码。
+* `CHEMCREACT_STAGE`：覆盖引擎目录（默认从脚本位置推导到仓库根目录）。
+  只有把 `integration/tcmai_bridge/` 单独拷出去时才需要设置。
 
 ## 安全边界（每次跑都会遵守）
 
