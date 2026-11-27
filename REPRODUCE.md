@@ -3,6 +3,9 @@
 Everything below was run from a **fresh clone** of this repository on
 Windows 11 with CPython 3.12.10 and the pinned versions in `requirements.txt`.
 
+For a one-page answer to "what can an expert actually run from this repository?",
+see `PUBLIC_REPRO.md`.
+
 The forward, official-split, and reverse-coverage runs use only files shipped
 in the repository. The multi-step benchmark additionally needs the full
 `tcm.db` and the ORD-derived purchasable-block indices

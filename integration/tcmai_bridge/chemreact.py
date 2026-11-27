@@ -44,8 +44,12 @@ def _research_enabled() -> bool:
 
 
 def _stage() -> Path:
-    return Path(os.environ.get("CHEMCREACT_STAGE",
-                               r"D:\ProgramData\DSHNS\chemreact-staging"))
+    env = os.environ.get("CHEMCREACT_STAGE")
+    if env:
+        return Path(env)
+    # 2026-11-27: default to the repository root, so a fresh clone runs
+    # without setting CHEMCREACT_STAGE (layout: <root>/integration/tcmai_bridge/).
+    return Path(__file__).resolve().parents[2]
 
 
 def _bootstrap() -> Path:
@@ -56,6 +60,10 @@ def _bootstrap() -> Path:
         print("      set CHEMCREACT_STAGE=D:\\新位置\\chemreact-staging")
         print("  * 或把本脚本移回与引擎同级的地方。")
         sys.exit(3)
+    # 2026-11-27: the repo root is needed for package imports such as
+    # ``from conditions import pressure``; the subdirs cover flat imports.
+    if str(st) not in sys.path:
+        sys.path.insert(0, str(st))
     for sub in ("core", "rules", "libs", "tools", "sources", "conditions"):
         d = st / sub
         if d.is_dir() and str(d) not in sys.path:

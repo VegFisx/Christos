@@ -19,8 +19,17 @@ from contextlib import contextmanager
 from pathlib import Path
 
 # 2026-11-27：允许评审/复现时指向随仓库发布的脱敏子集（data/tcm_subset.db）。
-TCM_DB = Path(os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
+# 如果本机没有完整 tcm.db，则回退到仓库自带的 17 味药子集（会打警告）。
+_DEFAULT_TCM = Path(r"D:\TCMAI\tcm.db")
+if not _DEFAULT_TCM.exists():
+    _packaged = Path(__file__).resolve().parent.parent / "data" / "tcm_subset.db"
+    if _packaged.exists():
+        _DEFAULT_TCM = _packaged
+TCM_DB = Path(os.environ.get("CHEMCREACT_TCM_DB") or _DEFAULT_TCM)
 COCONUT_DB = Path(os.environ.get("CHEMCREACT_COCONUT_DB") or r"D:\TCMAI\coconut.db")
+_USING_PACKAGED = (not os.environ.get("CHEMCREACT_TCM_DB")
+                   and TCM_DB.name == "tcm_subset.db")
+_WARNED_PACKAGED = False
 
 
 @contextmanager
@@ -32,6 +41,11 @@ def open_db(db_path=TCM_DB):
     仍然是纯只读（SQLite 不加锁、不写任何文件），只是把库当作"不会变化的快照"——
     若爬虫此刻正在写，读到的可能是略旧的快照（不伤库；也绝不会写库）。回退会打警告，不静默。
     """
+    global _WARNED_PACKAGED
+    if _USING_PACKAGED and not _WARNED_PACKAGED:
+        print("   [warn] tcm_ro: 完整 D:\\TCMAI\\tcm.db 不存在，使用仓库自带子集 "
+              "data/tcm_subset.db（17 味药，2,899 个成分）")
+        _WARNED_PACKAGED = True
     p = Path(db_path).resolve()
     uri = "file:" + p.as_posix()
     try:
