@@ -43,7 +43,7 @@ the official split smoke test uses 3% of the rows and the multi-step test uses
 | `python -I tools/paper_bench_50k_forward.py 100000 4` | 92.01% (current default; 2026-11-27 rerun) | 1,973 s |
 | `CHEMCREACT_STEREO_CANON=0 python -I tools/paper_bench_50k_forward.py 100000 4` | 82.77% (stereo off) | 1,956 s |
 | `CHEMCREACT_BENCH_LEGACY=1 CHEMCREACT_BENCH_NO_EXTRA=1 python -I tools/paper_bench_50k_forward.py 100000 4` | 55.53% (legacy baseline) | 853 s |
-| `python -I tools/paper_bench_official_test.py 2` | 91.71% / top-1 43.28% | 216 s |
+| `python -I tools/paper_bench_official_test.py 2` | 91.71% (any-position recall) | 216 s |
 | `python -I tools/paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl_v2.jsonl 10` | 94.74% (2026-11-27 rerun) | 2,696 s |
 | `python -I tools/paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl.jsonl 1` | 79.81% (2026-11-27 rerun) | 2,413 s |
 | `CHEMCREACT_MS_TPL=data/benchmark/lib_uspto50k_excl_v2_freq10.jsonl python -I tools/bench_multistep.py 300 2 4 --use-lib` | 47.67% (2026-11-27 rerun) | 928 s |
@@ -61,6 +61,12 @@ depth ≤2 (142/300) and 69.00% at depth ≤3 (207/300).
 
 The official-split row is the bench default and does not include the production coverage tier.
 See "Production coverage tier" below for the 96.70% configuration.
+
+Except for the optional re-ranker section, every score in this file is **any-position
+recall**: the recorded product (forward) or the recorded precursor set (reverse) must
+appear somewhere in the candidate list. The official-split script also prints top-1;
+that is a ranking diagnostic, not the acceptance criterion, and the paper does not
+use it for any headline number.
 
 ## Re-ranking: models, candidate table, and the overlap caveat
 
