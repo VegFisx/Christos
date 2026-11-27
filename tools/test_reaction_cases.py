@@ -19,7 +19,7 @@ from pathlib import Path
 # 生产枚举默认不加载；测试必须在 load_engine() 之前打开。
 os.environ.setdefault("CHEMCREACT_VALIDATION_POOLS", "1")
 
-STAGE = Path(r"D:\ProgramData\DSHNS\chemreact-staging")
+STAGE = Path(__file__).resolve().parent.parent
 for d in ("core", "conditions", "rules", "libs", "sources"):
     p = STAGE / d
     if p.is_dir():

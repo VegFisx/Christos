@@ -15,6 +15,7 @@ Two documents answer this:
 
 - **`PUBLIC_REPRO.md`** — one page: what is reproducible, what is not, and why.
 - **`REPRODUCE.md`** — full commands, runtimes, expected outputs and caveats.
+- **`TEST_EXAMPLES.md`** — copy-paste smoke tests and holdout cases, with expected outputs.
 
 ### Quick start
 
