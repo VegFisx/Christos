@@ -1,0 +1,357 @@
+{
+ "source": "holdout_paozhi_20261127_evidence_r3.json",
+ "convention": "positive cases only; skeleton/structure hit = consistent/product_only; key targets match InChIKey 14",
+ "n_cases": 31,
+ "n_positive": 21,
+ "n_structure_hits": 21,
+ "n_formula_only": 0,
+ "n_positive_misses": 0,
+ "n_negative_controls": 10,
+ "n_negative_with_product": 9,
+ "supplement": "holdout_paozhi_20261127_structure_supplement_20261127.json",
+ "cases": [
+  {
+   "tag": "zhizi_geniposide",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "xingren_amygdalin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "tianma_gastrodin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhuyu_loganin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "maqianzi_strychnine",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "dahuang_sennoside",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "miyan_licorice_glycyrrhizin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhengzhi_ginseng_rb1_rg3",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhengzhi_ginseng_rg1_rh1",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhengzhi_ginseng_rg3_rg5",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhengzhi_ginseng_rg3_rk1",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "fuzi_aconitine_benzoylaconine",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "fuzi_mesaconitine_benzoylmesaconine",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "fuzi_hypaconitine_benzoylhypaconine",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "binglang_arecoline_guvacoline",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "cangerzi_catr_atr",
+   "expected": "formula_only",
+   "actual": "formula_only",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "formula_only"
+   ],
+   "supplement": "cangerzi_catr_atr_struct"
+  },
+  {
+   "tag": "heshouwu_thsg_aglycone",
+   "expected": "formula_only",
+   "actual": "formula_only",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "formula_only"
+   ],
+   "supplement": "heshouwu_thsg_aglycone_struct"
+  },
+  {
+   "tag": "zhiqiao_hesperidin_hesperetin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "zhiqiao_naringin_naringenin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "huangqin_baicalin_baicalein",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "nvzhenzi_ligustroside_hydroxytyrosol",
+   "expected": "miss",
+   "actual": "miss",
+   "positive": false,
+   "structure_hit": false,
+   "formula_hit": false,
+   "target_statuses": [
+    "miss"
+   ]
+  },
+  {
+   "tag": "huangqi_acetylastragaloside_astragaloside_iv",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "huaimi_rutin_quercetin",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "dihuang_acteoside_verbasoside",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "chaihu_saikosaponin_a_b1",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "huangbo_palmatine_palmatrubine",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "gansui_diester_ingenol",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "gansui_kpc_deoxyingenol",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "dihuang_fructose_hmf",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "wuzhuyu_evodiamine_rutaecarpine",
+   "expected": "miss",
+   "actual": "consistent",
+   "positive": false,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  },
+  {
+   "tag": "nvzhenzi_oleuropein_hydroxytyrosol_control",
+   "expected": "consistent",
+   "actual": "consistent",
+   "positive": true,
+   "structure_hit": true,
+   "formula_hit": false,
+   "target_statuses": [
+    "consistent"
+   ]
+  }
+ ]
+}

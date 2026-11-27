@@ -212,7 +212,17 @@ python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261126.json
 python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261126.json `
   reports\holdout_paozhi_20261127_structure_supplement_20261127.json
 # 20/21 skeleton-level hits (95.2%), 1 positive miss, 10 negative controls
-``` The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
+
+python -I tools\run_holdout_paozhi.py --mode evidence --rounds 3
+python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261127_evidence_r3.json `
+  reports\holdout_paozhi_20261127_structure_supplement_20261127.json
+# 21/21 positive hits, but 9/10 negative controls also produce a product
+```
+
+The 3-round run is a development configuration, not the default. It closes the
+last positive case (tianma) but also increases product formation in the negative
+controls from 5/10 to 9/10. The residual problem is selectivity, not missing rule
+families. The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
 at r1; 10 consistent, 0 miss, 2 formula-only at r3. The multi-round protocol is developmental, not
 an independent holdout, and it is not a production default.
 
