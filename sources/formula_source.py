@@ -35,7 +35,10 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-FJ_DEFAULT = r"D:\TCMAI\data\formula_db.json"
+import os
+
+FJ_DEFAULT = (os.environ.get("CHEMCREACT_FORMULA_DB")
+              or r"D:\TCMAI\data\formula_db.json")
 ARTIFACT = Path(__file__).resolve().parent.parent / "data" / "formula_source_tier.json"
 
 # ---- 层级定义（与任务书逐字一致）------------------------------------------

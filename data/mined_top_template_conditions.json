@@ -1,0 +1,8051 @@
+{
+ "top": 100,
+ "scanned": 20000,
+ "rows": [
+  {
+   "template": "O=[N+;H0;D3:1](-[O-])-[c:2]>>[NH2;D1;+0:1]-[c:2]",
+   "support": 21400,
+   "n_templates": 1,
+   "fired": 1535,
+   "match": 345,
+   "n_temp": 66,
+   "n_catalyst": 254,
+   "n_solvent": 329,
+   "n_reagent": 0,
+   "n_any": 342,
+   "temps": {
+    "80 1": 14,
+    "70 1": 7,
+    "100 1": 6,
+    "90 1": 6,
+    "60 1": 6,
+    "50 1": 6,
+    "75 1": 5,
+    "65 1": 4,
+    "0 1": 2,
+    "45 1": 1,
+    "95 1": 1,
+    "105 1": 1,
+    "55 1": 1,
+    "22.5 1": 1,
+    "20 1": 1,
+    "30 1": 1,
+    "52.5 1": 1,
+    "110 1": 1,
+    "25 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 110.0,
+   "catalysts": {
+    "Pd/C": 52,
+    "iron": 47,
+    "palladium on carbon": 22,
+    "zinc": 11,
+    "Iron": 10,
+    "Raney nickel": 8,
+    "Raney Nickel": 8,
+    "palladium on charcoal": 7,
+    "palladium-carbon": 7,
+    "palladium carbon": 7,
+    "Ni": 6,
+    "Fe": 6,
+    "Pd—C": 6,
+    "platinum on carbon": 5,
+    "palladium": 5,
+    "palladium-on-carbon": 5,
+    "Pd-C": 3,
+    "Palladium on carbon": 3,
+    "Pd": 3,
+    "Pd on carbon": 3
+   },
+   "solvents": {
+    "ethanol": 76,
+    "methanol": 56,
+    "water": 42,
+    "MeOH": 37,
+    "ethyl acetate": 35,
+    "EtOH": 22,
+    "acetic acid": 19,
+    "tetrahydrofuran": 17,
+    "EtOAc": 15,
+    "THF": 14,
+    "H2O": 6,
+    "Water": 5,
+    "acetonitrile": 4,
+    "toluene": 4,
+    "HCl": 4,
+    "AcOH": 4,
+    "dioxane": 3,
+    "hydrochloric acid": 3,
+    "DMF": 3,
+    "dichloromethane": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-67ec3bcdf85a4cd095b46cc07afa68ed",
+     "temp": "45 1",
+     "catalysts": [
+      "Pd/C"
+     ],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-68a8e77da56c464fb8e4488b01b277d1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "EtOAc",
+      "EtOH"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-53a3ebdf15d441468909b1e846bdef45",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]>>[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]",
+   "support": 14521,
+   "n_templates": 1,
+   "fired": 7455,
+   "match": 743,
+   "n_temp": 166,
+   "n_catalyst": 30,
+   "n_solvent": 651,
+   "n_reagent": 0,
+   "n_any": 656,
+   "temps": {
+    "50 1": 30,
+    "60 1": 23,
+    "80 1": 14,
+    "0 1": 13,
+    "25 1": 12,
+    "70 1": 8,
+    "40 1": 7,
+    "55 1": 7,
+    "90 1": 6,
+    "100 1": 6,
+    "65 1": 4,
+    "120 1": 4,
+    "45 1": 4,
+    "30 1": 3,
+    "20 1": 3,
+    "75 1": 2,
+    "35 1": 2,
+    "68 1": 2,
+    "95 1": 2,
+    "23 1": 2
+   },
+   "temps_min": 0.0,
+   "temps_max": 160.0,
+   "catalysts": {
+    "Pd(PPh3)4": 5,
+    "palladium on carbon": 4,
+    "Pd/C": 4,
+    "palladium carbon": 3,
+    "zinc": 3,
+    "palladium on charcoal": 3,
+    "palladium": 2,
+    "acetic acid": 1,
+    "palladium-on-carbon": 1,
+    "Pd(Ph3P)4": 1,
+    "Pd on carbon": 1,
+    "palladium-on-charcoal": 1,
+    "Pd on activated charcoal": 1
+   },
+   "solvents": {
+    "water": 129,
+    "methanol": 111,
+    "ethanol": 101,
+    "THF": 88,
+    "tetrahydrofuran": 68,
+    "MeOH": 55,
+    "dioxane": 28,
+    "H2O": 22,
+    "dichloromethane": 22,
+    "EtOH": 18,
+    "NaOH": 14,
+    "CH2Cl2": 12,
+    "ethyl acetate": 11,
+    "HCl": 10,
+    "EtOAc": 9,
+    "hydrochloric acid": 9,
+    "trifluoroacetic acid": 8,
+    "acetic acid": 7,
+    "THF MeOH": 7,
+    "1,4-dioxane": 7
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-4f8eca8686f04fab850d92ff0dd05c7a",
+     "temp": "75 1",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2900eeef6bee4f96854b610d5c6665dc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "H2O"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1b1496d4ad5040759352f2bc285c5252",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]>>[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]",
+   "support": 12618,
+   "n_templates": 1,
+   "fired": 5301,
+   "match": 405,
+   "n_temp": 89,
+   "n_catalyst": 11,
+   "n_solvent": 348,
+   "n_reagent": 0,
+   "n_any": 351,
+   "temps": {
+    "50 1": 13,
+    "80 1": 10,
+    "60 1": 10,
+    "0 1": 10,
+    "40 1": 5,
+    "55 1": 5,
+    "25 1": 4,
+    "100 1": 4,
+    "70 1": 3,
+    "30 1": 3,
+    "65 1": 3,
+    "20 1": 3,
+    "45 1": 3,
+    "95 1": 2,
+    "90 1": 2,
+    "130 1": 2,
+    "120 1": 2,
+    "75 1": 1,
+    "35 1": 1,
+    "140 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 160.0,
+   "catalysts": {
+    "Pd(PPh3)4": 4,
+    "zinc": 3,
+    "acetic acid": 1,
+    "PdCl2": 1,
+    "Pd(Ph3P)4": 1,
+    "palladium on charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 75,
+    "water": 63,
+    "methanol": 39,
+    "THF": 38,
+    "tetrahydrofuran": 25,
+    "dichloromethane": 21,
+    "dioxane": 16,
+    "MeOH": 15,
+    "EtOH": 12,
+    "CH2Cl2": 10,
+    "H2O": 8,
+    "hydrochloric acid": 8,
+    "HCl": 7,
+    "trifluoroacetic acid": 7,
+    "DCM": 5,
+    "NaOH": 5,
+    "acetic acid": 5,
+    "ethyl acetate": 5,
+    "acetonitrile": 4,
+    "methylene chloride": 4
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-4f8eca8686f04fab850d92ff0dd05c7a",
+     "temp": "75 1",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1b1496d4ad5040759352f2bc285c5252",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2edd7bfaf0f643ea9042f3b3d6c043f5",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "water",
+      "water ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-O-C(=O)-[N;H0;D3;+0:1](-[C:2])-[C:3]>>[C:2]-[NH;D2;+0:1]-[C:3]",
+   "support": 10316,
+   "n_templates": 1,
+   "fired": 900,
+   "match": 206,
+   "n_temp": 16,
+   "n_catalyst": 1,
+   "n_solvent": 181,
+   "n_reagent": 0,
+   "n_any": 185,
+   "temps": {
+    "0 1": 4,
+    "20 1": 2,
+    "45 1": 2,
+    "42.5 1": 1,
+    "100 1": 1,
+    "50 1": 1,
+    "60 1": 1,
+    "80 1": 1,
+    "-78 1": 1,
+    "90 1": 1,
+    "40 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "zinc bromide": 1
+   },
+   "solvents": {
+    "DCM": 34,
+    "dioxane": 27,
+    "dichloromethane": 27,
+    "CH2Cl2": 15,
+    "MeOH": 14,
+    "methanol": 11,
+    "ethyl acetate": 11,
+    "1,4-dioxane": 11,
+    "methylene chloride": 9,
+    "chloroform": 5,
+    "EtOAc": 4,
+    "ether": 4,
+    "HCl": 3,
+    "ethanol": 3,
+    "trifluoroacetic acid": 3,
+    "TFA": 3,
+    "THF": 2,
+    "1,4-Dioxane": 2,
+    "Et2O": 2,
+    "CHCl3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e90368ffd2234df394e85e5cab1a5b4f",
+     "temp": "42.5 1",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f83b060476964130952cd72d63482d88",
+     "temp": "100 1",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-165bb2fd30774dcab9791f3bb61ece03",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-[O;H0;D2;+0:1]-[c:2]>>[OH;D1;+0:1]-[c:2]",
+   "support": 7497,
+   "n_templates": 1,
+   "fired": 5224,
+   "match": 240,
+   "n_temp": 54,
+   "n_catalyst": 50,
+   "n_solvent": 211,
+   "n_reagent": 0,
+   "n_any": 216,
+   "temps": {
+    "0 1": 12,
+    "200 1": 4,
+    "120 1": 4,
+    "-78 1": 3,
+    "160 1": 3,
+    "50 1": 3,
+    "70 1": 2,
+    "80 1": 2,
+    "140 1": 2,
+    "195 1": 1,
+    "165 1": 1,
+    "68 1": 1,
+    "105 1": 1,
+    "60 1": 1,
+    "75 1": 1,
+    "3 1": 1,
+    "100 1": 1,
+    "25 1": 1,
+    "-15 1": 1,
+    "90 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 210.0,
+   "catalysts": {
+    "Pd/C": 12,
+    "palladium on carbon": 9,
+    "palladium on charcoal": 3,
+    "Pd—C": 3,
+    "palladium-on-carbon": 2,
+    "Palladium on carbon": 2,
+    "palladium-carbon": 2,
+    "palladium/carbon": 2,
+    "Pd on activated carbon": 2,
+    "Pd on charcoal": 1,
+    "Pd": 1,
+    "Ni": 1,
+    "Palladium on charcoal": 1,
+    "Pd(OH)2": 1,
+    "palladium on activated charcoal": 1,
+    "palladium carbon": 1,
+    "palladium hydroxide": 1,
+    "palladium acetate": 1,
+    "Pd(OH)2 on Carbon": 1,
+    "hexadecyltrimethylammonium bromide": 1
+   },
+   "solvents": {
+    "dichloromethane": 35,
+    "ethanol": 20,
+    "methanol": 19,
+    "methylene chloride": 14,
+    "CH2Cl2": 14,
+    "DCM": 14,
+    "water": 14,
+    "acetic acid": 13,
+    "ethyl acetate": 9,
+    "THF": 6,
+    "EtOH": 6,
+    "MeOH": 6,
+    "chloroform": 4,
+    "N,N-dimethylformamide": 4,
+    "EtOAc": 4,
+    "dioxane": 3,
+    "benzene": 3,
+    "tetrahydrofuran": 3,
+    "TFA": 3,
+    "HBr": 3
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e71cb2ebf2654d4ba5d844ad5a953bf8",
+     "temp": "195 1",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4492a1316c2143eaaae289f2e539a4d5",
+     "temp": "200 1",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7700df5685184235ac02c3c0c47a1faa",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[CH2;D2;+0:1]-[C:2].[OH;D1;+0:3]-[c:4]>>[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-[c:4]",
+   "support": 6158,
+   "n_templates": 2,
+   "fired": 162,
+   "match": 115,
+   "n_temp": 41,
+   "n_catalyst": 9,
+   "n_solvent": 103,
+   "n_reagent": 0,
+   "n_any": 103,
+   "temps": {
+    "80 1": 8,
+    "60 1": 5,
+    "70 1": 4,
+    "90 1": 3,
+    "50 1": 3,
+    "100 1": 3,
+    "3 1": 2,
+    "0 1": 2,
+    "65 1": 2,
+    "165 1": 2,
+    "25 1": 1,
+    "45 1": 1,
+    "54.5 1": 1,
+    "55 1": 1,
+    "40 1": 1,
+    "4 1": 1,
+    "110 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 165.0,
+   "catalysts": {
+    "potassium iodide": 2,
+    "tetrabutyl ammonium chloride": 1,
+    "Aliquat 336": 1,
+    "Potassium iodide": 1,
+    "tetra-n-butylammonium bromide": 1,
+    "tetrabutylammonium iodide": 1,
+    "tetrabuylammonium iodide": 1,
+    "copper": 1
+   },
+   "solvents": {
+    "DMF": 22,
+    "acetone": 20,
+    "dimethylformamide": 13,
+    "N,N-dimethylformamide": 11,
+    "water": 10,
+    "ethyl acetate": 8,
+    "acetonitrile": 7,
+    "diethyl ether": 4,
+    "ether": 4,
+    "methyl ethyl ketone": 2,
+    "ethanol": 2,
+    "EtOAc": 2,
+    "2-butanone": 2,
+    "methylene chloride": 2,
+    "dichloromethane": 1,
+    "methanol": 1,
+    "methylcellosolve": 1,
+    "chloroform": 1,
+    "toluene DMF": 1,
+    "toluene": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-000cebf4787344f1bf7d418a9168b1b4",
+     "temp": "",
+     "catalysts": [
+      "tetrabutyl ammonium chloride"
+     ],
+     "solvents": [
+      "diethyl ether",
+      "ether"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c144e12b7636471bb89c322c897a8c5d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetone"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-019353d7e69c489b850181b2c519559a",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "dimethylformamide"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-O-C(=O)-[NH;D2;+0:1]-[C:2]>>[C:2]-[NH2;D1;+0:1]",
+   "support": 5381,
+   "n_templates": 1,
+   "fired": 584,
+   "match": 105,
+   "n_temp": 11,
+   "n_catalyst": 1,
+   "n_solvent": 86,
+   "n_reagent": 0,
+   "n_any": 89,
+   "temps": {
+    "25 1": 4,
+    "0 1": 3,
+    "5 1": 2,
+    "50 1": 1,
+    "2.5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 50.0,
+   "catalysts": {
+    "H2 Pd": 1
+   },
+   "solvents": {
+    "dichloromethane": 17,
+    "dioxane": 16,
+    "DCM": 10,
+    "CH2Cl2": 7,
+    "ethyl acetate": 6,
+    "HCl": 4,
+    "ethanol": 4,
+    "EtOAc": 3,
+    "methanol": 3,
+    "trifluoroacetic acid": 3,
+    "methylene chloride": 3,
+    "ether": 3,
+    "MeOH": 3,
+    "acetic acid": 2,
+    "CH3OH": 2,
+    "TFA": 2,
+    "1,4-dioxane": 2,
+    "chloroform": 1,
+    "2-methyltetrahydrofuran": 1,
+    "water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-157b347806e5402d819b7c9214a3f0d4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-fd0fe1d1c92e49348e550fdf4bdb608e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-50ed7038747b4b8da7d3167b5e6c208b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "EtOAc"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[#7;a:3].[NH2;D1;+0:4]-[c:5]>>[#7;a:2]:[c;H0;D3;+0:1](-[NH;D2;+0:4]-[c:5]):[#7;a:3]",
+   "support": 4994,
+   "n_templates": 2,
+   "fired": 113,
+   "match": 59,
+   "n_temp": 21,
+   "n_catalyst": 10,
+   "n_solvent": 26,
+   "n_reagent": 0,
+   "n_any": 28,
+   "temps": {
+    "120 1": 3,
+    "80 1": 3,
+    "100 1": 3,
+    "150 1": 2,
+    "60 1": 1,
+    "200 1": 1,
+    "170 1": 1,
+    "130 1": 1,
+    "175 1": 1,
+    "75 1": 1,
+    "110 1": 1,
+    "140 1": 1,
+    "116 1": 1,
+    "160 1": 1
+   },
+   "temps_min": 60.0,
+   "temps_max": 200.0,
+   "catalysts": {
+    "palladium acetate": 3,
+    "palladium(II) acetate": 2,
+    "Pd(OAc)2": 2,
+    "Pd2(dba)3": 1,
+    "palladium(II)acetate": 1,
+    "Zinc(II) chloride": 1
+   },
+   "solvents": {
+    "dioxane": 6,
+    "1,4-dioxane": 4,
+    "iPrOH": 2,
+    "MeOH": 2,
+    "DMF": 1,
+    "ethylene glycol": 1,
+    "dimethylformamide": 1,
+    "DCM": 1,
+    "i-PrOH": 1,
+    "trifluoroethanol": 1,
+    "THF": 1,
+    "acetic acid": 1,
+    "DME": 1,
+    "n-hexanes EtOAc": 1,
+    "H2O": 1,
+    "ethyl acetate": 1,
+    "toluene": 1,
+    "dichloromethane": 1,
+    "butyl alcohol": 1,
+    "DCE": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-6319f4d90ee340cbb34c2715c3d9de01",
+     "temp": "60 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-26f6988d5b824001b38b7b1b7e2773d8",
+     "temp": "120 1",
+     "catalysts": [
+      "palladium(II) acetate"
+     ],
+     "solvents": [
+      "dioxane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-cdc05590ab414a0f910d3c4cf75610a3",
+     "temp": "120 1",
+     "catalysts": [
+      "palladium(II) acetate"
+     ],
+     "solvents": [
+      "dioxane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[S;H0;D4;+0:1](-[C;D1;H3:2])(=[O;D1;H0:3])=[O;D1;H0:4].[C:5]-[OH;D1;+0:6]>>[C:5]-[O;H0;D2;+0:6]-[S;H0;D4;+0:1](-[C;D1;H3:2])(=[O;D1;H0:3])=[O;D1;H0:4]",
+   "support": 4335,
+   "n_templates": 2,
+   "fired": 115,
+   "match": 69,
+   "n_temp": 19,
+   "n_catalyst": 1,
+   "n_solvent": 61,
+   "n_reagent": 0,
+   "n_any": 61,
+   "temps": {
+    "0 1": 14,
+    "-10 1": 1,
+    "35 1": 1,
+    "130 1": 1,
+    "-20 1": 1,
+    "-78 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 130.0,
+   "catalysts": {
+    "N,N-dimethylpyridin-4-amine": 1
+   },
+   "solvents": {
+    "dichloromethane": 24,
+    "methylene chloride": 10,
+    "CH2Cl2": 10,
+    "ethyl acetate": 6,
+    "water": 6,
+    "THF": 4,
+    "DCM": 3,
+    "EtOAc": 3,
+    "tetrahydrofuran": 2,
+    "triethylamine": 2,
+    "brine": 1,
+    "DMF": 1,
+    "N,N-dimethylformamide": 1,
+    "acetonitrile THF": 1,
+    "toluene": 1,
+    "chloroform": 1,
+    "pyridine": 1,
+    "TEA": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-13653be87d9a426aafa7e7ae72c1fdf7",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-063d21c295f14515abcd47ec336c942e",
+     "temp": "0 1",
+     "catalysts": [],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-3b06d10f87f54db6b1c4562944c027a9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]",
+   "support": 4268,
+   "n_templates": 1,
+   "fired": 3739,
+   "match": 443,
+   "n_temp": 87,
+   "n_catalyst": 25,
+   "n_solvent": 389,
+   "n_reagent": 0,
+   "n_any": 393,
+   "temps": {
+    "50 1": 16,
+    "60 1": 15,
+    "25 1": 11,
+    "0 1": 10,
+    "70 1": 5,
+    "55 1": 5,
+    "90 1": 3,
+    "40 1": 3,
+    "80 1": 3,
+    "30 1": 2,
+    "20 1": 2,
+    "95 1": 2,
+    "100 1": 2,
+    "65 1": 1,
+    "47.5 1": 1,
+    "68 1": 1,
+    "18 1": 1,
+    "130 1": 1,
+    "12.5 1": 1,
+    "140 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 160.0,
+   "catalysts": {
+    "palladium on carbon": 4,
+    "Pd/C": 4,
+    "zinc": 3,
+    "Pd(PPh3)4": 3,
+    "palladium carbon": 2,
+    "palladium on charcoal": 2,
+    "acetic acid": 1,
+    "palladium": 1,
+    "palladium-on-carbon": 1,
+    "Pd(Ph3P)4": 1,
+    "Pd on carbon": 1,
+    "palladium-on-charcoal": 1,
+    "Pd on activated charcoal": 1
+   },
+   "solvents": {
+    "water": 67,
+    "ethanol": 60,
+    "methanol": 56,
+    "THF": 46,
+    "tetrahydrofuran": 37,
+    "MeOH": 32,
+    "dioxane": 23,
+    "dichloromethane": 17,
+    "H2O": 13,
+    "CH2Cl2": 12,
+    "ethyl acetate": 10,
+    "NaOH": 10,
+    "EtOH": 9,
+    "trifluoroacetic acid": 8,
+    "HCl": 7,
+    "1,4-dioxane": 5,
+    "methylene chloride": 5,
+    "EtOAc": 4,
+    "diethyl ether": 4,
+    "DCM": 4
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2900eeef6bee4f96854b610d5c6665dc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "H2O"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-9c83a6e508cf40888e8a12369cb3ade0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-273ecbc82a3a49628633bb22c5aef4ba",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]",
+   "support": 4028,
+   "n_templates": 1,
+   "fired": 2579,
+   "match": 262,
+   "n_temp": 52,
+   "n_catalyst": 10,
+   "n_solvent": 230,
+   "n_reagent": 0,
+   "n_any": 233,
+   "temps": {
+    "50 1": 9,
+    "60 1": 8,
+    "0 1": 7,
+    "55 1": 5,
+    "25 1": 4,
+    "30 1": 2,
+    "20 1": 2,
+    "95 1": 2,
+    "80 1": 2,
+    "70 1": 2,
+    "100 1": 2,
+    "40 1": 2,
+    "65 1": 1,
+    "130 1": 1,
+    "140 1": 1,
+    "160 1": 1,
+    "90 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 160.0,
+   "catalysts": {
+    "zinc": 3,
+    "Pd(PPh3)4": 3,
+    "acetic acid": 1,
+    "PdCl2": 1,
+    "Pd(Ph3P)4": 1,
+    "palladium on charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 43,
+    "water": 34,
+    "THF": 25,
+    "methanol": 24,
+    "dichloromethane": 17,
+    "tetrahydrofuran": 14,
+    "dioxane": 13,
+    "MeOH": 12,
+    "CH2Cl2": 10,
+    "trifluoroacetic acid": 7,
+    "EtOH": 6,
+    "HCl": 5,
+    "H2O": 5,
+    "DCM": 4,
+    "NaOH": 4,
+    "ethyl acetate": 4,
+    "acetonitrile": 3,
+    "TFA": 3,
+    "methylene chloride": 3,
+    "isopropanol": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ee01e8fa35e148bf874c25c944de280c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8a554496fa3e45d7b8f2671f3d1b2f08",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "MeOH"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-74a9b48031c448bbaac6cd0f895df564",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF",
+      "ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[OH;D1;+0:2])-[c:3].[C:4]-[NH2;D1;+0:5]>>[C:4]-[NH;D2;+0:5]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[c:3]",
+   "support": 4010,
+   "n_templates": 2,
+   "fired": 331,
+   "match": 236,
+   "n_temp": 23,
+   "n_catalyst": 13,
+   "n_solvent": 134,
+   "n_reagent": 0,
+   "n_any": 134,
+   "temps": {
+    "0 1": 6,
+    "25 1": 4,
+    "40 1": 2,
+    "50 1": 2,
+    "-10 1": 1,
+    "70 1": 1,
+    "60 1": 1,
+    "-5 1": 1,
+    "23 1": 1,
+    "2.5 1": 1,
+    "80 1": 1,
+    "-30 1": 1,
+    "17 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "DMAP": 6,
+    "4-dimethylaminopyridine": 3,
+    "DMF": 2,
+    "4-Dimethylaminopyridine": 1,
+    "N,N-dimethylformaldehyde": 1
+   },
+   "solvents": {
+    "DMF": 42,
+    "water": 22,
+    "dichloromethane": 17,
+    "N,N-dimethylformamide": 12,
+    "ethyl acetate": 11,
+    "dimethylformamide": 10,
+    "DCM": 10,
+    "THF": 9,
+    "tetrahydrofuran": 8,
+    "triethylamine": 8,
+    "methylene chloride": 6,
+    "CH2Cl2": 5,
+    "chloroform": 4,
+    "EtOAc": 3,
+    "DMA": 3,
+    "Water": 3,
+    "DMSO": 3,
+    "acetonitrile": 3,
+    "tert-butanol": 2,
+    "CHCl3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-43dc13e19e6d4983baebc448eadd34c1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e3a0429581cf490d82d19479a4a2a413",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-cff34015ba624ba5a241ee4299a9abc9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[c:1]-[O;H0;D2;+0:2]-C-c1:c:c:c:c:c:1>>[OH;D1;+0:2]-[c:1]",
+   "support": 3646,
+   "n_templates": 1,
+   "fired": 535,
+   "match": 62,
+   "n_temp": 7,
+   "n_catalyst": 45,
+   "n_solvent": 59,
+   "n_reagent": 0,
+   "n_any": 60,
+   "temps": {
+    "50 1": 2,
+    "68 1": 1,
+    "65 1": 1,
+    "-78 1": 1,
+    "0 1": 1,
+    "85 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 85.0,
+   "catalysts": {
+    "Pd/C": 12,
+    "palladium on carbon": 9,
+    "palladium on charcoal": 3,
+    "Pd—C": 3,
+    "palladium-on-carbon": 2,
+    "Palladium on carbon": 2,
+    "palladium-carbon": 2,
+    "palladium/carbon": 2,
+    "Pd on activated carbon": 2,
+    "Pd on charcoal": 1,
+    "Palladium on charcoal": 1,
+    "Pd(OH)2": 1,
+    "palladium on activated charcoal": 1,
+    "palladium carbon": 1,
+    "palladium hydroxide": 1,
+    "Pd(OH)2 on Carbon": 1,
+    "palladium-on-charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 15,
+    "methanol": 8,
+    "ethyl acetate": 6,
+    "MeOH": 6,
+    "EtOH": 5,
+    "THF": 3,
+    "TFA": 3,
+    "EtOAc": 3,
+    "trifluoroacetic acid": 2,
+    "acetonitrile": 2,
+    "methanol ethyl acetate": 2,
+    "DCM": 2,
+    "dioxane": 1,
+    "ethyl acetate methanol": 1,
+    "THF ethyl acetate": 1,
+    "acetic acid": 1,
+    "methylene chloride": 1,
+    "methylenedichloride": 1,
+    "tetrahydrofuran": 1,
+    "hexanes": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-f369b6f770fb42b39d21ef9339c14116",
+     "temp": "",
+     "catalysts": [
+      "Pd/C"
+     ],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-974a081e77a3417da4398a24d196880c",
+     "temp": "",
+     "catalysts": [
+      "Pd/C"
+     ],
+     "solvents": [
+      "dioxane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c4e4213524b64bf1a0bb27c15664fd6a",
+     "temp": "",
+     "catalysts": [
+      "palladium-on-carbon"
+     ],
+     "solvents": [
+      "ethyl acetate methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[CH2;D2;+0:1]-[C:2].[C:3]-[NH;D2;+0:4]-[C:5]>>[C:3]-[N;H0;D3;+0:4](-[CH2;D2;+0:1]-[C:2])-[C:5]",
+   "support": 3481,
+   "n_templates": 2,
+   "fired": 212,
+   "match": 142,
+   "n_temp": 29,
+   "n_catalyst": 6,
+   "n_solvent": 109,
+   "n_reagent": 0,
+   "n_any": 110,
+   "temps": {
+    "60 1": 6,
+    "50 1": 4,
+    "80 1": 3,
+    "100 1": 3,
+    "5 1": 2,
+    "90 1": 2,
+    "25 1": 2,
+    "110 1": 1,
+    "120 1": 1,
+    "95 1": 1,
+    "170 1": 1,
+    "75 1": 1,
+    "70 1": 1,
+    "77 1": 1
+   },
+   "temps_min": 5.0,
+   "temps_max": 170.0,
+   "catalysts": {
+    "tetrabutylammonium sulfate": 2,
+    "tetrabutylammonium bromide": 1,
+    "potassium iodide": 1,
+    "tetra-n-butylammonium hydrogensulfate": 1,
+    "tetra-butylammonium hydrogen sulfate": 1
+   },
+   "solvents": {
+    "acetonitrile": 31,
+    "DMF": 18,
+    "dimethylformamide": 9,
+    "THF": 9,
+    "ethanol": 9,
+    "water": 8,
+    "acetone": 6,
+    "EtOAc": 5,
+    "N,N-dimethylformamide": 5,
+    "CH3CN": 4,
+    "tetrahydrofuran": 3,
+    "ethyl acetate": 3,
+    "benzene": 3,
+    "methanol": 3,
+    "toluene": 3,
+    "H2O": 3,
+    "methylene chloride": 3,
+    "ether": 3,
+    "methyl isobutyl ketone": 3,
+    "dimethylsulfoxide": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e8381d73f4f9423dbff70d4f1bb4f249",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-31271072559247c18d69d3585f821af2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "EtOAc",
+      "Water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-89e65fdcf54141689ca1a566dc61bce4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "N,N-dimethylformamide"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-[O;H0;D2;+0:1]-[C:2]=[O;D1;H0:3]>>[O;D1;H0:3]=[C:2]-[OH;D1;+0:1]",
+   "support": 3462,
+   "n_templates": 1,
+   "fired": 2117,
+   "match": 78,
+   "n_temp": 8,
+   "n_catalyst": 0,
+   "n_solvent": 60,
+   "n_reagent": 0,
+   "n_any": 61,
+   "temps": {
+    "0 1": 3,
+    "25 1": 2,
+    "45 1": 1,
+    "70 1": 1,
+    "100 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 100.0,
+   "catalysts": {},
+   "solvents": {
+    "dichloromethane": 17,
+    "CH2Cl2": 10,
+    "trifluoroacetic acid": 7,
+    "DCM": 5,
+    "methylene chloride": 4,
+    "TFA": 3,
+    "dioxane": 3,
+    "water": 3,
+    "Petroleum ether": 2,
+    "diethyl ether": 2,
+    "acetonitrile": 1,
+    "dichloroethane": 1,
+    "di-chloromethane": 1,
+    "HCl": 1,
+    "formic acid": 1,
+    "hydrogen chloride": 1,
+    "H2O": 1,
+    "dioxanes": 1,
+    "hydrochloric acid": 1,
+    "Ethyl acetate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ee01e8fa35e148bf874c25c944de280c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6857fd771a8b44e0b17585c5501f4bf0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-dcb078251a394645bb7a44e63aa37b69",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3].[C:4]-[NH2;D1;+0:5]>>[C:4]-[NH;D2;+0:5]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3]",
+   "support": 3192,
+   "n_templates": 2,
+   "fired": 464,
+   "match": 272,
+   "n_temp": 28,
+   "n_catalyst": 14,
+   "n_solvent": 149,
+   "n_reagent": 0,
+   "n_any": 149,
+   "temps": {
+    "0 1": 6,
+    "25 1": 4,
+    "40 1": 2,
+    "50 1": 2,
+    "80 1": 2,
+    "100 1": 2,
+    "-10 1": 1,
+    "70 1": 1,
+    "60 1": 1,
+    "-5 1": 1,
+    "23 1": 1,
+    "2.5 1": 1,
+    "10 1": 1,
+    "-30 1": 1,
+    "170 1": 1,
+    "17 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 170.0,
+   "catalysts": {
+    "DMAP": 6,
+    "4-dimethylaminopyridine": 4,
+    "DMF": 2,
+    "4-Dimethylaminopyridine": 1,
+    "N,N-dimethylformaldehyde": 1
+   },
+   "solvents": {
+    "DMF": 43,
+    "water": 24,
+    "dichloromethane": 17,
+    "ethyl acetate": 13,
+    "N,N-dimethylformamide": 12,
+    "dimethylformamide": 10,
+    "DCM": 10,
+    "THF": 9,
+    "triethylamine": 9,
+    "tetrahydrofuran": 8,
+    "methylene chloride": 6,
+    "CH2Cl2": 5,
+    "chloroform": 5,
+    "EtOAc": 4,
+    "DMA": 3,
+    "Water": 3,
+    "methanol": 3,
+    "DMSO": 3,
+    "acetonitrile": 3,
+    "tert-butanol": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-43dc13e19e6d4983baebc448eadd34c1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e3a0429581cf490d82d19479a4a2a413",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-cff34015ba624ba5a241ee4299a9abc9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3].[NH2;D1;+0:4]-[c:5]>>[O;D1;H0:2]=[C;H0;D3;+0:1](-[c:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 3178,
+   "n_templates": 2,
+   "fired": 114,
+   "match": 87,
+   "n_temp": 6,
+   "n_catalyst": 9,
+   "n_solvent": 58,
+   "n_reagent": 0,
+   "n_any": 58,
+   "temps": {
+    "60 1": 2,
+    "100 1": 1,
+    "0 1": 1,
+    "50 1": 1,
+    "-5 1": 1
+   },
+   "temps_min": -5.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 3,
+    "DMAP": 2,
+    "4-dimethylamino-pyridine": 1,
+    "4-(dimethylamino)pyridine": 1,
+    "ether": 1,
+    "platinum": 1
+   },
+   "solvents": {
+    "dichloromethane": 14,
+    "pyridine": 10,
+    "methylene chloride": 7,
+    "THF": 6,
+    "DCM": 5,
+    "CH2Cl2": 5,
+    "water": 4,
+    "tetrahydrofuran": 3,
+    "acetonitrile": 3,
+    "methanol": 3,
+    "Ethyl acetate hexane": 1,
+    "triethylamine": 1,
+    "DMF": 1,
+    "1,2-dichloroethane": 1,
+    "acetic acid": 1,
+    "toluene": 1,
+    "dioxane": 1,
+    "MeCN": 1,
+    "acetic acid, acetic anhydride": 1,
+    "potassium acetate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-26852837714a48d0acc9eda7e9ce55f7",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7d2a5ee88619484c8d74a7550ba9b6d4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-aff4bb6560f44a6c9e3a0009d8d22301",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[N+;H0;D3:1](-[O-])-[c:2]:[c:3]:[#7;a:4]>>[#7;a:4]:[c:3]:[c:2]-[NH2;D1;+0:1]",
+   "support": 3070,
+   "n_templates": 1,
+   "fired": 217,
+   "match": 61,
+   "n_temp": 15,
+   "n_catalyst": 43,
+   "n_solvent": 57,
+   "n_reagent": 0,
+   "n_any": 60,
+   "temps": {
+    "80 1": 4,
+    "75 1": 2,
+    "50 1": 2,
+    "65 1": 1,
+    "105 1": 1,
+    "90 1": 1,
+    "22.5 1": 1,
+    "30 1": 1,
+    "52.5 1": 1,
+    "70 1": 1
+   },
+   "temps_min": 22.5,
+   "temps_max": 105.0,
+   "catalysts": {
+    "Pd/C": 8,
+    "iron": 6,
+    "palladium on carbon": 5,
+    "platinum on carbon": 4,
+    "zinc": 3,
+    "palladium-carbon": 2,
+    "palladium-on-charcoal": 2,
+    "Platinum on carbon": 2,
+    "palladium hydroxide on carbon": 1,
+    "Pd—C": 1,
+    "Pd on carbon": 1,
+    "HCl": 1,
+    "Iron": 1,
+    "water": 1,
+    "palladium on activated carbon": 1,
+    "palladium carbon": 1,
+    "Pt/C": 1,
+    "palladium on charcoal": 1,
+    "Ni": 1,
+    "Pd": 1
+   },
+   "solvents": {
+    "ethanol": 14,
+    "methanol": 9,
+    "MeOH": 7,
+    "ethyl acetate": 5,
+    "acetonitrile": 4,
+    "tetrahydrofuran": 4,
+    "EtOH": 3,
+    "acetic acid": 3,
+    "water": 2,
+    "THF MeOH": 2,
+    "EtOAc": 2,
+    "isopropanol": 1,
+    "2-methyl-2-propanol": 1,
+    "EtOH HOAc H2O": 1,
+    "IMS": 1,
+    "Water": 1,
+    "DMF": 1,
+    "THF": 1,
+    "dichloromethane": 1,
+    "HCl": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-aae0dad34e834b03a63c256ec63dadca",
+     "temp": "",
+     "catalysts": [
+      "platinum on carbon"
+     ],
+     "solvents": [
+      "acetonitrile",
+      "isopropanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e2d2246eb6a34499a6fbd94959555ffd",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8124d96a500a4e3a887dabd4c5bdc581",
+     "temp": "75 1",
+     "catalysts": [
+      "iron"
+     ],
+     "solvents": [
+      "EtOH",
+      "water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[CH2;D2;+0:1]-[C:2].[C:3]-[NH;D2;+0:4]-[C:5]>>[C:3]-[N;H0;D3;+0:4](-[CH2;D2;+0:1]-[C:2])-[C:5]",
+   "support": 3039,
+   "n_templates": 2,
+   "fired": 161,
+   "match": 81,
+   "n_temp": 20,
+   "n_catalyst": 3,
+   "n_solvent": 59,
+   "n_reagent": 0,
+   "n_any": 60,
+   "temps": {
+    "80 1": 10,
+    "70 1": 3,
+    "60 1": 2,
+    "100 1": 2,
+    "55 1": 1,
+    "82 1": 1,
+    "30 1": 1
+   },
+   "temps_min": 30.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "Br2": 1,
+    "tetrabutylammonium hydrogen sulfate": 1,
+    "tetrabutylammonium iodide": 1
+   },
+   "solvents": {
+    "acetonitrile": 13,
+    "N,N-dimethylformamide": 9,
+    "DMF": 9,
+    "water": 9,
+    "ether": 4,
+    "dimethylformamide": 3,
+    "toluene": 3,
+    "ethanol": 2,
+    "H2O": 2,
+    "MeCN": 2,
+    "dichloromethane": 2,
+    "THF": 2,
+    "THF EtOH": 1,
+    "diethyl ether": 1,
+    "EtOH": 1,
+    "n-hexane": 1,
+    "tetrahydrofuran": 1,
+    "4-methyl-2-pentanone": 1,
+    "DCM": 1,
+    "n-butanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e1dcf3764cea4e59a631d89d7f2b7e7d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-872233572f814beb868d5accde50c333",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8cc7371e38f3460581b5e22886eb5510",
+     "temp": "55 1",
+     "catalysts": [],
+     "solvents": [
+      "THF EtOH"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-[Si](-C)(-C)-[O;H0;D2;+0:1]-[C:2]>>[C:2]-[OH;D1;+0:1]",
+   "support": 2653,
+   "n_templates": 1,
+   "fired": 152,
+   "match": 34,
+   "n_temp": 7,
+   "n_catalyst": 1,
+   "n_solvent": 34,
+   "n_reagent": 0,
+   "n_any": 34,
+   "temps": {
+    "0 1": 4,
+    "25 1": 1,
+    "20 1": 1,
+    "90 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "acetyl chloride": 1,
+    "ammonium chloride": 1
+   },
+   "solvents": {
+    "THF": 23,
+    "methanol": 4,
+    "tetrahydrofuran": 3,
+    "ethyl acetate": 2,
+    "water": 2,
+    "acetic acid": 2,
+    "EA": 1,
+    "acetonitrile": 1,
+    "dimethylformamide": 1,
+    "ether": 1,
+    "ammonia": 1,
+    "EtOAc": 1,
+    "brine": 1,
+    "NaHCO3": 1,
+    "Diethyl ether": 1,
+    "ethanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a9e5e1fe7109474dbd63453d82efc8ef",
+     "temp": "25 1",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0dcf09ec65274c75860150ba15cd9fc1",
+     "temp": "0 1",
+     "catalysts": [],
+     "solvents": [
+      "EA",
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4afd094ed6124c9ba7e1055b8de83003",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetonitrile",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[c;H0;D3;+0:1](:[c:2]):[c:3].O-B(-O)-[c;H0;D3;+0:4](:[c:5]):[c:6]>>[c:2]:[c;H0;D3;+0:1](-[c;H0;D3;+0:4](:[c:5]):[c:6]):[c:3]",
+   "support": 2633,
+   "n_templates": 2,
+   "fired": 265,
+   "match": 210,
+   "n_temp": 97,
+   "n_catalyst": 130,
+   "n_solvent": 154,
+   "n_reagent": 0,
+   "n_any": 159,
+   "temps": {
+    "100 1": 21,
+    "90 1": 13,
+    "80 1": 12,
+    "110 1": 9,
+    "85 1": 7,
+    "75 1": 6,
+    "70 1": 6,
+    "120 1": 4,
+    "95 1": 4,
+    "140 1": 3,
+    "150 1": 2,
+    "160 1": 2,
+    "105 1": 2,
+    "130 1": 2,
+    "22.5 1": 1,
+    "82.5 1": 1,
+    "135 1": 1,
+    "62 1": 1
+   },
+   "temps_min": 22.5,
+   "temps_max": 160.0,
+   "catalysts": {
+    "tetrakis(triphenylphosphine)palladium(0)": 21,
+    "Pd(PPh3)4": 17,
+    "Pd(dppf)Cl2": 17,
+    "tetrakis(triphenylphosphine)palladium": 9,
+    "PdCl2(dppf)": 5,
+    "PdCl2(PPh3)2": 4,
+    "Pd(OAc)2": 4,
+    "Palladium tetrakis(triphenylphosphine)": 3,
+    "Tetrakis(triphenylphosphine)palladium(0)": 3,
+    "palladium acetate": 3,
+    "[1,1′-bis(diphenylphosphino)-ferrocene]dichloro palladium(II)": 2,
+    "tetrakis(triphenylphosphine) palladium(0)": 2,
+    "[1,1′-bis(diphenylphosphino)ferrocene]dichloropalladium(II)": 2,
+    "Pd(PPh3)2Cl2": 2,
+    "Pd2(dba)3": 2,
+    "tris(dibenzylideneacetone)dipalladium(0)": 2,
+    "tetrakis(triphenylphosphine) palladium": 2,
+    "PdCl2(dppf) CH2Cl2": 2,
+    "palladium(II) acetate": 2,
+    "dichlorobis(triphenylphosphine)palladium": 1
+   },
+   "solvents": {
+    "water": 48,
+    "toluene": 31,
+    "dioxane": 28,
+    "ethanol": 18,
+    "DME": 9,
+    "ethyl acetate": 9,
+    "EtOAc": 8,
+    "H2O": 8,
+    "DMF": 8,
+    "1,4-dioxane": 8,
+    "EtOH": 7,
+    "acetonitrile": 5,
+    "Water": 4,
+    "dimethoxyethane": 4,
+    "THF": 3,
+    "dioxane water": 3,
+    "1,2-dimethoxyethane": 3,
+    "Toluene": 2,
+    "DME H2O": 2,
+    "NaHCO3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2e87ef03d13944988967e1bb4dcac910",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-600bf3d103d74d4c8b6ec0893592398f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f28078c0604c469b887a017ec7139846",
+     "temp": "85 1",
+     "catalysts": [
+      "[1,1′-bis(diphenylphosphino)-ferrocene]dichloro palladium(II)"
+     ],
+     "solvents": [
+      "EtOAc",
+      "EtOH",
+      "Toluene"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[NH2;D1;+0:4]-[c:5]>>[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 2627,
+   "n_templates": 2,
+   "fired": 172,
+   "match": 92,
+   "n_temp": 13,
+   "n_catalyst": 2,
+   "n_solvent": 71,
+   "n_reagent": 0,
+   "n_any": 71,
+   "temps": {
+    "0 1": 6,
+    "25 1": 3,
+    "80 1": 1,
+    "19 1": 1,
+    "40 1": 1,
+    "95 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 95.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 1,
+    "DMAP": 1
+   },
+   "solvents": {
+    "tetrahydrofuran": 12,
+    "CH2Cl2": 8,
+    "methylene chloride": 7,
+    "THF": 6,
+    "dichloromethane": 6,
+    "pyridine": 5,
+    "DCM": 5,
+    "ethyl acetate": 4,
+    "DMF": 4,
+    "water": 3,
+    "EtOAc": 3,
+    "diethyl ether": 2,
+    "NMP": 2,
+    "acetonitrile": 2,
+    "ethanol": 1,
+    "dimethylformamide": 1,
+    "CH2Cl2 THF": 1,
+    "toluene": 1,
+    "chloroform": 1,
+    "ethyl acetate hexane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2e03a241be2b4b53bf88ccfacb21967f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol",
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-3e5d8cbf20784de7b4cf63b277ed7053",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e7e6311d096a476e84425d47c1600a34",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF",
+      "diethyl ether"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[C:1]-[CH2;D2;+0:2]-[OH;D1;+0:3]>>[C:1]-[CH;D2;+0:2]=[O;H0;D1;+0:3]",
+   "support": 2543,
+   "n_templates": 1,
+   "fired": 1431,
+   "match": 47,
+   "n_temp": 15,
+   "n_catalyst": 2,
+   "n_solvent": 45,
+   "n_reagent": 0,
+   "n_any": 45,
+   "temps": {
+    "0 1": 6,
+    "-78 1": 4,
+    "23 1": 2,
+    "-10 1": 2,
+    "5 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 23.0,
+   "catalysts": {
+    "manganese dioxide": 2
+   },
+   "solvents": {
+    "CH2Cl2": 12,
+    "methylene chloride": 8,
+    "water": 6,
+    "dichloromethane": 5,
+    "DMSO": 4,
+    "DCM": 3,
+    "ether": 3,
+    "benzene": 2,
+    "dimethylsulfoxide": 2,
+    "EtOAc": 1,
+    "diethyl ether": 1,
+    "solution": 1,
+    "methanol": 1,
+    "NaHCO3": 1,
+    "pyridine": 1,
+    "Methylene chloride": 1,
+    "triethylamine": 1,
+    "dimethyl sulfoxide": 1,
+    "H2O": 1,
+    "tetrahydrofuran": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e5daab64725749169af83e097ae14fc0",
+     "temp": "23 1",
+     "catalysts": [],
+     "solvents": [
+      "EtOAc"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a2c21d1ff6fb48648d47adbb5018a845",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b5475f0ab04b44948ee6b195049fa0af",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[CH3;D1;+0:1].[O;D1;H0:2]=[C:3]-[OH;D1;+0:4]>>[CH3;D1;+0:1]-[O;H0;D2;+0:4]-[C:3]=[O;D1;H0:2]",
+   "support": 2513,
+   "n_templates": 2,
+   "fired": 813,
+   "match": 70,
+   "n_temp": 15,
+   "n_catalyst": 2,
+   "n_solvent": 21,
+   "n_reagent": 0,
+   "n_any": 31,
+   "temps": {
+    "60 1": 3,
+    "70 1": 3,
+    "0 1": 2,
+    "-5 1": 1,
+    "120 1": 1,
+    "25 1": 1,
+    "100 1": 1,
+    "22 1": 1,
+    "80 1": 1,
+    "20 1": 1
+   },
+   "temps_min": -5.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "sulfuric acid": 2
+   },
+   "solvents": {
+    "THF": 5,
+    "water": 4,
+    "methanol": 3,
+    "diethyl ether": 2,
+    "H2SO4": 1,
+    "ethyl acetate": 1,
+    "ethyl acetate petroleum ether": 1,
+    "EtOAc": 1,
+    "dioxane": 1,
+    "acetone": 1,
+    "methylene chloride": 1,
+    "sulfuric acid": 1,
+    "hydrogen chloride": 1,
+    "tetrahydrofuran": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-13f0bb09496b4e76add90df9bebc924b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-aefa3b74c30b479da2d952052a0e8df6",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-dabb0134a3664218ab80ff869d75d7fc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[CH;D2;+0:1]-[c:2].[C:3]-[NH2;D1;+0:4]>>[C:3]-[NH;D2;+0:4]-[CH2;D2;+0:1]-[c:2]",
+   "support": 2484,
+   "n_templates": 2,
+   "fired": 163,
+   "match": 77,
+   "n_temp": 6,
+   "n_catalyst": 7,
+   "n_solvent": 56,
+   "n_reagent": 0,
+   "n_any": 56,
+   "temps": {
+    "15 1": 1,
+    "20 1": 1,
+    "0 1": 1,
+    "45 1": 1,
+    "85 1": 1,
+    "130 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 130.0,
+   "catalysts": {
+    "acetic acid": 3,
+    "Raney nickel": 1,
+    "AcOH": 1,
+    "palladium-on-carbon": 1,
+    "H2O": 1
+   },
+   "solvents": {
+    "methanol": 22,
+    "MeOH": 7,
+    "dichloromethane": 6,
+    "1,2-dichloroethane": 4,
+    "acetic acid": 3,
+    "acetonitrile": 3,
+    "ethyl acetate": 3,
+    "toluene": 3,
+    "DCM": 3,
+    "DCE": 2,
+    "ethanol": 2,
+    "Water": 2,
+    "triethylamine": 2,
+    "HOAc": 1,
+    "benzene": 1,
+    "chloroform": 1,
+    "N-methyl-2-pyrrolidinone": 1,
+    "trimethylorthoformate": 1,
+    "CH2Cl2": 1,
+    "NaHCO3": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-3838062fb5794b499372a71d6efce843",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetic acid",
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-438793ff082649f88c1c2e9a199250a3",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetonitrile",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6dddbc217146496e8af5e30483ced0a9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]#[CH;D1;+0:5]>>[C:4]#[C;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "support": 2428,
+   "n_templates": 2,
+   "fired": 77,
+   "match": 57,
+   "n_temp": 15,
+   "n_catalyst": 34,
+   "n_solvent": 35,
+   "n_reagent": 0,
+   "n_any": 35,
+   "temps": {
+    "50 1": 4,
+    "70 1": 4,
+    "80 1": 3,
+    "65 1": 1,
+    "55 1": 1,
+    "85 1": 1,
+    "40 1": 1
+   },
+   "temps_min": 40.0,
+   "temps_max": 85.0,
+   "catalysts": {
+    "CuI": 8,
+    "copper(I)iodide": 7,
+    "dichlorobis(triphenylphosphine)palladium(II)": 7,
+    "copper (I) iodide": 6,
+    "copper(I) iodide": 4,
+    "tetrakis(triphenylphosphine)palladium": 3,
+    "bis(triphenylphosphine) palladium (II) chloride": 3,
+    "bis(triphenylphosphine)palladium(II) chloride": 3,
+    "(Ph3P)2PdCl2": 3,
+    "Pd(PPh3)2Cl2": 3,
+    "Pd(PPh3)4": 2,
+    "Bis-(triphenylphosphine)-palladium(II)dichloride": 1,
+    "bis(triphenylphosphine)palladium (II) chloride": 1,
+    "palladium (II) chloride": 1,
+    "bis(triphenylphosphine)palladium(II) dichloride": 1,
+    "bis(benzonitrile)dichloropalladium": 1,
+    "copper (II) acetate": 1,
+    "copper iodide": 1,
+    "PdCl2(PPh3)2": 1,
+    "bis (triphenylphosphine)-palladium (II) chloride": 1
+   },
+   "solvents": {
+    "triethylamine": 10,
+    "DMF": 7,
+    "tetrahydrofuran": 5,
+    "Et3N": 5,
+    "ethyl acetate": 5,
+    "water": 3,
+    "hexane": 3,
+    "THF": 2,
+    "triethyl amine": 1,
+    "ammonium hydroxide": 1,
+    "NEt3": 1,
+    "hexanes": 1,
+    "diisopropyl amine": 1,
+    "ether": 1,
+    "diisopropylamine": 1,
+    "methylene chloride": 1,
+    "Dioxane": 1,
+    "EtOAc": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-c1285cc3f48e45fcba3863c6b4ce2a19",
+     "temp": "65 1",
+     "catalysts": [
+      "Bis-(triphenylphosphine)-palladium(II)dichloride",
+      "copper(I)iodide"
+     ],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a0b6accf35b745089b43cf89393a31a8",
+     "temp": "80 1",
+     "catalysts": [
+      "tetrakis(triphenylphosphine)palladium"
+     ],
+     "solvents": [
+      "triethyl amine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e6b119c3983c413690ea790918144434",
+     "temp": "",
+     "catalysts": [
+      "copper(I)iodide",
+      "dichlorobis(triphenylphosphine)palladium(II)"
+     ],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[C:1]-[N;H0;D3;+0:2](-C-c1:c:c:c:c:c:1)-[C:3]>>[C:1]-[NH;D2;+0:2]-[C:3]",
+   "support": 2386,
+   "n_templates": 1,
+   "fired": 1094,
+   "match": 60,
+   "n_temp": 7,
+   "n_catalyst": 35,
+   "n_solvent": 55,
+   "n_reagent": 0,
+   "n_any": 56,
+   "temps": {
+    "90 1": 3,
+    "25 1": 1,
+    "50 1": 1,
+    "100 1": 1,
+    "0 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "Pd/C": 7,
+    "palladium on carbon": 5,
+    "palladium": 4,
+    "palladium-on-charcoal": 3,
+    "palladium on charcoal": 3,
+    "Pd(OH)2/C": 2,
+    "Pd(OH)2 on carbon": 2,
+    "catalyst": 1,
+    "palladium-charcoal": 1,
+    "palladium on activated carbon": 1,
+    "palladium hydroxide": 1,
+    "Palladium": 1,
+    "Pd-C": 1,
+    "palladium hydroxide-on-carbon": 1,
+    "palladium-on-carbon": 1,
+    "palladium carbon": 1,
+    "Pearlman's catalyst": 1
+   },
+   "solvents": {
+    "methanol": 18,
+    "water": 7,
+    "ethanol": 5,
+    "MeOH": 4,
+    "acetonitrile": 3,
+    "1,2-dichloroethane": 3,
+    "ACN water": 3,
+    "trifluoroacetic acid": 2,
+    "EtOH": 2,
+    "toluene": 2,
+    "CH2Cl2": 2,
+    "hydrogen": 2,
+    "ether": 1,
+    "hydrobromic acid": 1,
+    "methylene chloride": 1,
+    "AcOH": 1,
+    "acetic acid": 1,
+    "sulfuric acid": 1,
+    "water methanol": 1,
+    "triethylamine methanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-13fff069e6674f938ae4987e19fdf4d8",
+     "temp": "",
+     "catalysts": [
+      "Pd/C",
+      "catalyst"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-626d82d2c4b54a04aa6cce4fac5598b1",
+     "temp": "",
+     "catalysts": [
+      "palladium-on-charcoal"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-94462c4fdb6a43548a178c056ea9d5a2",
+     "temp": "",
+     "catalysts": [
+      "palladium"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[c:4]>>[O;H0;D1;+0:1]=[C;H0;D3;+0:2](-[OH;D1;+0:3])-[c:4]",
+   "support": 2376,
+   "n_templates": 1,
+   "fired": 1672,
+   "match": 298,
+   "n_temp": 79,
+   "n_catalyst": 5,
+   "n_solvent": 260,
+   "n_reagent": 0,
+   "n_any": 261,
+   "temps": {
+    "50 1": 14,
+    "80 1": 11,
+    "60 1": 8,
+    "40 1": 4,
+    "120 1": 4,
+    "100 1": 4,
+    "45 1": 4,
+    "90 1": 3,
+    "70 1": 3,
+    "65 1": 3,
+    "0 1": 3,
+    "75 1": 2,
+    "35 1": 2,
+    "55 1": 2,
+    "23 1": 2,
+    "25 1": 1,
+    "43 1": 1,
+    "20 1": 1,
+    "150 1": 1,
+    "68 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 150.0,
+   "catalysts": {
+    "Pd(PPh3)4": 2,
+    "palladium carbon": 1,
+    "palladium": 1,
+    "palladium on charcoal": 1
+   },
+   "solvents": {
+    "water": 62,
+    "methanol": 54,
+    "THF": 42,
+    "ethanol": 41,
+    "tetrahydrofuran": 31,
+    "MeOH": 23,
+    "H2O": 9,
+    "EtOH": 9,
+    "hydrochloric acid": 7,
+    "acetic acid": 6,
+    "EtOAc": 5,
+    "dioxane": 5,
+    "dichloromethane": 5,
+    "THF H2O": 4,
+    "THF MeOH": 4,
+    "NaOH": 4,
+    "N,N-dimethylformamide": 3,
+    "sodium hydroxide": 3,
+    "HCl": 3,
+    "THF ethanol": 3
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-4f8eca8686f04fab850d92ff0dd05c7a",
+     "temp": "75 1",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1b1496d4ad5040759352f2bc285c5252",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2edd7bfaf0f643ea9042f3b3d6c043f5",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "water",
+      "water ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[OH;D1;+0:2])-[c:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:4]-[N;H0;D3;+0:5](-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[c:3])-[C:6]",
+   "support": 2294,
+   "n_templates": 2,
+   "fired": 232,
+   "match": 122,
+   "n_temp": 5,
+   "n_catalyst": 1,
+   "n_solvent": 58,
+   "n_reagent": 0,
+   "n_any": 58,
+   "temps": {
+    "0 1": 2,
+    "22 1": 1,
+    "20 1": 1,
+    "80 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "DMF": 28,
+    "water": 9,
+    "dichloromethane": 6,
+    "CH2Cl2": 5,
+    "EtOAc": 5,
+    "Water": 4,
+    "DMSO": 3,
+    "DCM": 3,
+    "DMF dichloromethane": 2,
+    "methylene chloride": 2,
+    "dimethylformamide": 2,
+    "THF": 2,
+    "NMP": 2,
+    "CH3CO2Et": 1,
+    "ethyl acetate": 1,
+    "ethanol": 1,
+    "2-methyltetrahydrofuran": 1,
+    "N,N-dimethylacetamide": 1,
+    "CH2Cl2 MeOH": 1,
+    "DCE": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ec04af704dab4af0a800e52e05e90ec9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-9278e2e1590149b49e3719679cf90bb5",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-bdda5943c31347b0b35cc00823718f35",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[O-]-[N+;H0;D3:1](=[O;D1;H0:2])-[OH;D1;+0:3].[c:4]:[cH;D2;+0:5]:[c:6]>>[O-;H0;D1:3]-[N+;H0;D3:1](=[O;D1;H0:2])-[c;H0;D3;+0:5](:[c:4]):[c:6]",
+   "support": 2281,
+   "n_templates": 2,
+   "fired": 90,
+   "match": 72,
+   "n_temp": 29,
+   "n_catalyst": 1,
+   "n_solvent": 57,
+   "n_reagent": 0,
+   "n_any": 62,
+   "temps": {
+    "0 1": 14,
+    "5 1": 3,
+    "90 1": 1,
+    "100 1": 1,
+    "-20 1": 1,
+    "-3 1": 1,
+    "-40 1": 1,
+    "23 1": 1,
+    "40 1": 1,
+    "3 1": 1,
+    "60 1": 1,
+    "-15 1": 1,
+    "50 1": 1,
+    "-5 1": 1
+   },
+   "temps_min": -40.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "tetrabutylammonium bromide": 1
+   },
+   "solvents": {
+    "acetic acid": 12,
+    "water": 9,
+    "sulfuric acid": 9,
+    "H2SO4": 6,
+    "ice water": 3,
+    "H2O": 3,
+    "acetic anhydride": 3,
+    "ice": 2,
+    "hexane": 1,
+    "acetonitrile": 1,
+    "hexanes": 1,
+    "1,2-dichloroethane": 1,
+    "CH2Cl2": 1,
+    "DCE": 1,
+    "Et2O": 1,
+    "heptane": 1,
+    "ethyl acetate": 1,
+    "sulphuric acid": 1,
+    "nitromethane": 1,
+    "dichloroethane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-617bfdd769eb46abb48d202834543d87",
+     "temp": "90 1",
+     "catalysts": [],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c8d5b04d3fab4744a5a52f1cf07989d7",
+     "temp": "100 1",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6ba6841b78714b57b1a9f8eb21bd0ae2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetic acid"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[C:1]-[N;H0;D2;+0:2]=[N+]=[N-]>>[C:1]-[NH2;D1;+0:2]",
+   "support": 2252,
+   "n_templates": 1,
+   "fired": 106,
+   "match": 39,
+   "n_temp": 4,
+   "n_catalyst": 22,
+   "n_solvent": 33,
+   "n_reagent": 0,
+   "n_any": 37,
+   "temps": {
+    "70 1": 1,
+    "0 1": 1,
+    "4 1": 1,
+    "60 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 70.0,
+   "catalysts": {
+    "Pd/C": 5,
+    "palladium on carbon": 4,
+    "Raney nickel": 2,
+    "Lindlar catalyst": 2,
+    "Pd—C": 2,
+    "Pd on carbon": 2,
+    "palladium-carbon": 1,
+    "Pd BaSO4": 1,
+    "Ra—Ni": 1,
+    "platinum oxide": 1,
+    "palladium on charcoal": 1
+   },
+   "solvents": {
+    "MeOH": 7,
+    "methanol": 6,
+    "ethanol": 6,
+    "THF": 5,
+    "tetrahydrofuran": 3,
+    "water": 3,
+    "ethyl acetate": 2,
+    "diethyl ether": 2,
+    "acetonitrile": 2,
+    "EtOAc": 1,
+    "H2O": 1,
+    "toluene": 1,
+    "DCM": 1,
+    "hexanes": 1,
+    "THF H2O": 1,
+    "ice water": 1,
+    "MeOH EtOAc": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2fa500ca7b4944fca84a3d33e9d249ba",
+     "temp": "",
+     "catalysts": [
+      "Raney nickel"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2409dcfe163049e4b8ef9642f3d75801",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "EtOAc"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4cc126164f774b3daf020878d2e832d0",
+     "temp": "",
+     "catalysts": [
+      "palladium-carbon"
+     ],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[#7;a:2]:[c;H0;D3;+0:1](-[N;H0;D3;+0:5](-[C:4])-[C:6]):[c:3]",
+   "support": 2199,
+   "n_templates": 2,
+   "fired": 132,
+   "match": 74,
+   "n_temp": 31,
+   "n_catalyst": 4,
+   "n_solvent": 50,
+   "n_reagent": 0,
+   "n_any": 53,
+   "temps": {
+    "130 1": 4,
+    "110 1": 4,
+    "90 1": 3,
+    "60 1": 3,
+    "160 1": 2,
+    "100 1": 2,
+    "120 1": 2,
+    "140 1": 2,
+    "80 1": 1,
+    "115 1": 1,
+    "180 1": 1,
+    "165 1": 1,
+    "50 1": 1,
+    "125 1": 1,
+    "175 1": 1,
+    "85 1": 1,
+    "45 1": 1
+   },
+   "temps_min": 45.0,
+   "temps_max": 180.0,
+   "catalysts": {
+    "copper iodide": 1,
+    "n-Bu4NI": 1,
+    "copper (I) iodide": 1,
+    "tris(dibenzylideneacetone)dipalladium(0)": 1
+   },
+   "solvents": {
+    "water": 6,
+    "DMF": 5,
+    "ethyl acetate": 4,
+    "toluene": 4,
+    "methanol": 3,
+    "EtOAc": 3,
+    "dioxane": 3,
+    "DMSO": 3,
+    "NMP": 3,
+    "MeOH": 3,
+    "CH2Cl2": 2,
+    "1,4-dioxane": 2,
+    "n-butanol": 2,
+    "THF": 2,
+    "tetrahydrofuran": 2,
+    "ethanol": 2,
+    "acetonitrile": 2,
+    "methylene chloride": 1,
+    "diethyl ether": 1,
+    "N,N-dimethylformamide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e29ccb51b538447fb9b647070a1f044d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0f40534b868141a1b3fc5543ccda5098",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "ethyl acetate"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4d5ab7a591db4d5bb27b08e395373788",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[CH;D2;+0:1]-[c:2].[C:3]-[NH;D2;+0:4]-[C:5]>>[C:3]-[N;H0;D3;+0:4](-[CH2;D2;+0:1]-[c:2])-[C:5]",
+   "support": 2175,
+   "n_templates": 2,
+   "fired": 193,
+   "match": 80,
+   "n_temp": 3,
+   "n_catalyst": 7,
+   "n_solvent": 57,
+   "n_reagent": 0,
+   "n_any": 57,
+   "temps": {
+    "60 1": 1,
+    "50 1": 1,
+    "65 1": 1
+   },
+   "temps_min": 50.0,
+   "temps_max": 65.0,
+   "catalysts": {
+    "ZnCl2": 2,
+    "acetic acid": 2,
+    "AcOH": 2,
+    "zinc chloride": 1
+   },
+   "solvents": {
+    "1,2-dichloroethane": 13,
+    "acetic acid": 10,
+    "methanol": 6,
+    "dichloromethane": 6,
+    "MeOH": 4,
+    "DCM": 4,
+    "DCE": 4,
+    "dichloroethane": 3,
+    "ethanol": 3,
+    "DMSO": 3,
+    "CH2Cl2": 2,
+    "chloroform": 2,
+    "THF": 2,
+    "water": 2,
+    "1,2-DCE": 1,
+    "benzene": 1,
+    "methylene chloride": 1,
+    "Et2O": 1,
+    "CH3COOH CH3OH": 1,
+    "Water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-16bde70fcd064c18a0e2fb70f4c85ac0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "MeOH"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8585272f986b43429b57b80fb10e19a7",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetic acid"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f82ba1b097674a6d8e9b7dd55df731f9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "I-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]#[CH;D1;+0:5]>>[C:4]#[C;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "support": 2121,
+   "n_templates": 2,
+   "fired": 58,
+   "match": 53,
+   "n_temp": 7,
+   "n_catalyst": 36,
+   "n_solvent": 35,
+   "n_reagent": 0,
+   "n_any": 39,
+   "temps": {
+    "80 1": 2,
+    "55 1": 1,
+    "90 1": 1,
+    "70 1": 1,
+    "60 1": 1,
+    "50 1": 1
+   },
+   "temps_min": 50.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "copper(I)iodide": 12,
+    "CuI": 7,
+    "copper (I) iodide": 6,
+    "copper(I) iodide": 5,
+    "dichlorobis(triphenylphosphine)palladium(II)": 4,
+    "Dichlorobis(triphenylphosphine)palladium(II)": 3,
+    "(Ph3P)4Pd": 3,
+    "PdCl2(PPh3)2": 3,
+    "Dichlorobis(triphenylphosphine)-palladium(II)": 2,
+    "Dichlorobis (triphenylphosphine)palladium(II)": 2,
+    "copper iodide": 2,
+    "bis(triphenylphosphine)palladium(II) chloride": 2,
+    "bis(triphenylphosphine)palladium": 2,
+    "PdCl2(PPh3)": 1,
+    "bis(triphenylphosphine) palladium(II) chloride": 1,
+    "Pd(dppf)Cl2": 1,
+    "bis(triphenylphosphine) palladium (II) chloride": 1,
+    "(PPh3)2PdCl2": 1,
+    "palladium dichloride": 1,
+    "triphenylphosphine": 1
+   },
+   "solvents": {
+    "triethylamine": 9,
+    "DMF": 6,
+    "ethyl acetate": 5,
+    "hexane": 4,
+    "Et3N": 3,
+    "DMSO": 2,
+    "methylene chloride": 2,
+    "EtOAc": 2,
+    "diethyl ether": 2,
+    "N,N-dimethylformamide": 2,
+    "THF": 2,
+    "water": 2,
+    "triethyl amine": 2,
+    "Et2NH": 1,
+    "tetrahydrofuran": 1,
+    "ether": 1,
+    "toluene": 1,
+    "brine": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-3e0d8478526940bf83b3ecdefee834a4",
+     "temp": "",
+     "catalysts": [
+      "CuI",
+      "PdCl2(PPh3)"
+     ],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-fd8f2eb4d3cd4161ad3408f1062379e0",
+     "temp": "",
+     "catalysts": [
+      "Dichlorobis(triphenylphosphine)-palladium(II)",
+      "copper(I)iodide"
+     ],
+     "solvents": [
+      "triethylamine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1cbe6f9096034dca88f079642785b8a9",
+     "temp": "",
+     "catalysts": [
+      "Dichlorobis (triphenylphosphine)palladium(II)",
+      "copper(I)iodide"
+     ],
+     "solvents": [
+      "triethylamine"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=C1-C-C-C(=O)-N-1-[Br;H0;D1;+0:1].[CH3;D1;+0:2]-[c:3]>>[Br;H0;D1;+0:1]-[CH2;D2;+0:2]-[c:3]",
+   "support": 2085,
+   "n_templates": 2,
+   "fired": 52,
+   "match": 32,
+   "n_temp": 4,
+   "n_catalyst": 10,
+   "n_solvent": 32,
+   "n_reagent": 0,
+   "n_any": 32,
+   "temps": {
+    "25 1": 1,
+    "40 1": 1,
+    "80 1": 1,
+    "70 1": 1
+   },
+   "temps_min": 25.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "benzoyl peroxide": 5,
+    "2,2′-azobis(isobutyronitrile)": 2,
+    "AIBN": 2,
+    "N-bromosuccinimide": 1,
+    "azobisisobutyronitrile": 1
+   },
+   "solvents": {
+    "carbon tetrachloride": 17,
+    "CCl4": 4,
+    "tetrachloromethane": 2,
+    "chloroform": 2,
+    "pyridine": 1,
+    "carbon tetra-chloride": 1,
+    "trichloromethane": 1,
+    "benzene": 1,
+    "t-butyl acetate": 1,
+    "N,N-dimethylformamide": 1,
+    "triethylamine": 1,
+    "acetonitrile": 1,
+    "DCM": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-628befcfd14e4cc8a671bfbe61404147",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "carbon tetrachloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4797d2bbb4364b1292cb86e1745f47d2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "carbon tetrachloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-dbcaa8535aba4216b195dd3e4389f8fc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "pyridine"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[C:2])-[OH;D1;+0:3].[C:4]-[NH2;D1;+0:5]>>[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[NH;D2;+0:5]-[C:4]",
+   "support": 2073,
+   "n_templates": 2,
+   "fired": 434,
+   "match": 197,
+   "n_temp": 27,
+   "n_catalyst": 1,
+   "n_solvent": 135,
+   "n_reagent": 0,
+   "n_any": 136,
+   "temps": {
+    "0 1": 8,
+    "-20 1": 4,
+    "60 1": 3,
+    "20 1": 2,
+    "5 1": 1,
+    "-30 1": 1,
+    "120 1": 1,
+    "38 1": 1,
+    "65 1": 1,
+    "95 1": 1,
+    "70 1": 1,
+    "-15 1": 1,
+    "80 1": 1,
+    "4 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "DMF": 39,
+    "water": 18,
+    "tetrahydrofuran": 15,
+    "ethyl acetate": 15,
+    "dimethylformamide": 11,
+    "dichloromethane": 9,
+    "N,N-dimethylformamide": 9,
+    "triethylamine": 9,
+    "CH2Cl2": 8,
+    "EtOAc": 7,
+    "THF": 7,
+    "methylene chloride": 5,
+    "DCM": 5,
+    "Ethyl acetate": 4,
+    "acetonitrile": 4,
+    "acetone": 4,
+    "Water": 3,
+    "ethylacetate": 2,
+    "dioxane": 2,
+    "MeOH CHCl3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a50f7cac2645481a8747ad859fb15edc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-65c497fe5d834364a584b9d25bebadc4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b041def7457f4f6580dc12786d8b43aa",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4].[NH2;D1;+0:5]-[c:6]>>[O;D1;H0:2]=[S;H0;D4;+0:1](=[O;D1;H0:3])(-[c:4])-[NH;D2;+0:5]-[c:6]",
+   "support": 2065,
+   "n_templates": 2,
+   "fired": 99,
+   "match": 76,
+   "n_temp": 4,
+   "n_catalyst": 5,
+   "n_solvent": 42,
+   "n_reagent": 0,
+   "n_any": 43,
+   "temps": {
+    "50 1": 2,
+    "95 1": 1,
+    "0 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 95.0,
+   "catalysts": {
+    "DMAP": 4,
+    "4-dimethylamino-pyridine": 1
+   },
+   "solvents": {
+    "pyridine": 19,
+    "DCM": 8,
+    "dichloromethane": 3,
+    "methylene chloride": 2,
+    "dioxane": 2,
+    "ethyl acetate": 2,
+    "CHCl3": 1,
+    "tetrahydrofuran": 1,
+    "acetonitrile": 1,
+    "N,N-dimethylformamide": 1,
+    "dimethoxyethane": 1,
+    "N,N-dimethylacetamide": 1,
+    "chloroform": 1,
+    "Hexane": 1,
+    "CH2Cl2": 1,
+    "acetone": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-1c01429526074468a4f8db2c2945efa6",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c20a4b02ca1749ac9f1d51787d4abdeb",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "CHCl3"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-af023ee423194ec1abb7f225a7034e30",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "pyridine"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4].[C:5]-[OH;D1;+0:6]>>[C:5]-[O;H0;D2;+0:6]-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4]",
+   "support": 2025,
+   "n_templates": 2,
+   "fired": 78,
+   "match": 32,
+   "n_temp": 7,
+   "n_catalyst": 7,
+   "n_solvent": 31,
+   "n_reagent": 0,
+   "n_any": 31,
+   "temps": {
+    "0 1": 4,
+    "-70 1": 1,
+    "-20 1": 1,
+    "32.5 1": 1
+   },
+   "temps_min": -70.0,
+   "temps_max": 32.5,
+   "catalysts": {
+    "DMAP": 3,
+    "4-(dimethylamino)pyridine": 2,
+    "4-Dimethylaminopyridine": 1,
+    "4-dimethylaminopyridine": 1
+   },
+   "solvents": {
+    "pyridine": 14,
+    "CH2Cl2": 5,
+    "dichloromethane": 3,
+    "THF": 2,
+    "water": 2,
+    "ether": 2,
+    "dimethylformamide": 1,
+    "ethyl acetate": 1,
+    "2-methyltetrahydrofuran": 1,
+    "DMF": 1,
+    "acetone": 1,
+    "diethyl ether": 1,
+    "EtOAc": 1,
+    "TBF": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-afa0de4fa1314bc2ab626f5a63fc339d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "pyridine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-17ff9177d67b4daea96f547a09703f58",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-ddc72aa1f7f64090aacdc225e55f5182",
+     "temp": "",
+     "catalysts": [
+      "4-(dimethylamino)pyridine"
+     ],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[CH2;D2;+0:1]-[C:2].[OH;D1;+0:3]-[c:4]>>[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-[c:4]",
+   "support": 2016,
+   "n_templates": 2,
+   "fired": 108,
+   "match": 58,
+   "n_temp": 19,
+   "n_catalyst": 3,
+   "n_solvent": 49,
+   "n_reagent": 0,
+   "n_any": 50,
+   "temps": {
+    "80 1": 7,
+    "100 1": 4,
+    "90 1": 3,
+    "70 1": 1,
+    "10 1": 1,
+    "60 1": 1,
+    "50 1": 1,
+    "40 1": 1
+   },
+   "temps_min": 10.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "tetrabutylammonium iodide": 2,
+    "tetrabutylammonium bromide": 1
+   },
+   "solvents": {
+    "DMF": 12,
+    "water": 7,
+    "dimethylformamide": 5,
+    "N,N-dimethylformamide": 5,
+    "acetone": 5,
+    "toluene": 3,
+    "acetonitrile": 3,
+    "NaOH": 2,
+    "EtOAc": 2,
+    "ether": 2,
+    "petroleum ether": 1,
+    "ethyl acetate acetonitrile triethylamine": 1,
+    "MeCN": 1,
+    "N,N-dimethylacetamide": 1,
+    "EA": 1,
+    "isopropanol": 1,
+    "DCM": 1,
+    "MeOH": 1,
+    "sodium hydroxide": 1,
+    "methyl ethyl ketone": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a4995629b6204d468d5b4336e14f9897",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "petroleum ether",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0fed15fd2091475685652c7edc9bf58e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-5a8f3738e8b54083859973ad6d386fe0",
+     "temp": "70 1",
+     "catalysts": [],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]-[OH;D1;+0:5]>>[C:4]-[O;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "support": 1994,
+   "n_templates": 2,
+   "fired": 1398,
+   "match": 92,
+   "n_temp": 16,
+   "n_catalyst": 2,
+   "n_solvent": 72,
+   "n_reagent": 0,
+   "n_any": 73,
+   "temps": {
+    "0 1": 5,
+    "80 1": 4,
+    "60 1": 2,
+    "4 1": 2,
+    "35 1": 1,
+    "130 1": 1,
+    "72.5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 130.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 2
+   },
+   "solvents": {
+    "tetrahydrofuran": 15,
+    "THF": 14,
+    "toluene": 13,
+    "dichloromethane": 7,
+    "water": 6,
+    "ethyl acetate": 5,
+    "DMF": 4,
+    "methylene chloride": 4,
+    "benzene": 4,
+    "pyridine": 3,
+    "Hexane": 3,
+    "dimethylformamide": 2,
+    "DCM": 2,
+    "ether": 2,
+    "acetonitrile": 1,
+    "carbon tetrachloride": 1,
+    "Toluene": 1,
+    "tetra-hydrofuran": 1,
+    "MeOH CH2Cl2": 1,
+    "CH2Cl2": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-43a0aaa7336a47c9a189d7a4c5585e94",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7299248e4fb54641993e1d2f22c7abe2",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2c763baf62ac4a7ab704f36e92b56a0b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "toluene"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[#7:2])-[C:3]>>[#7:2]-[CH2;D2;+0:1]-[C:3]",
+   "support": 1988,
+   "n_templates": 1,
+   "fired": 2981,
+   "match": 50,
+   "n_temp": 15,
+   "n_catalyst": 0,
+   "n_solvent": 47,
+   "n_reagent": 0,
+   "n_any": 47,
+   "temps": {
+    "0 1": 7,
+    "50 1": 3,
+    "60 1": 2,
+    "67 1": 1,
+    "-10 1": 1,
+    "5 1": 1
+   },
+   "temps_min": -10.0,
+   "temps_max": 67.0,
+   "catalysts": {},
+   "solvents": {
+    "THF": 22,
+    "tetrahydrofuran": 18,
+    "ethanol": 4,
+    "ether": 3,
+    "H2O": 2,
+    "ethyl acetate": 2,
+    "toluene": 2,
+    "ethyl ether": 1,
+    "Et2O": 1,
+    "methanol": 1,
+    "dichloromethane": 1,
+    "sodium hydroxide": 1,
+    "EtOAc": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-fb667311067c4e2380c096bb5a2c1403",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-89510e5e251747e18d969a20e01544c2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6fe12898c1d14edb9a0f623174eacc70",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3].[C:4]-[NH2;D1;+0:5]>>[C:4]-[NH;D2;+0:5]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3]",
+   "support": 1910,
+   "n_templates": 2,
+   "fired": 68,
+   "match": 53,
+   "n_temp": 6,
+   "n_catalyst": 1,
+   "n_solvent": 44,
+   "n_reagent": 0,
+   "n_any": 44,
+   "temps": {
+    "0 1": 4,
+    "25 1": 1,
+    "60 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 60.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 1
+   },
+   "solvents": {
+    "dichloromethane": 9,
+    "methylene chloride": 8,
+    "water": 8,
+    "THF": 4,
+    "DMF": 4,
+    "CH2Cl2": 3,
+    "DCM": 3,
+    "toluene": 2,
+    "sodium hydroxide": 2,
+    "tetrahydrofuran": 2,
+    "triethylamine": 2,
+    "ethanol": 1,
+    "acetonitrile": 1,
+    "chloroform": 1,
+    "1-methyl-2-pyrrolidinone": 1,
+    "acetone": 1,
+    "N,N-dimethylacetamide": 1,
+    "ethyl acetate": 1,
+    "diethylether": 1,
+    "pyridine": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-9aeedcdb9c5a4914ae3d792adb965e42",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1ccd850b8d5f4b728e33415745f93e9f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e5ae32d7776648c0bb37c58a2396d377",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:4]-[N;H0;D3;+0:5](-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3])-[C:6]",
+   "support": 1864,
+   "n_templates": 2,
+   "fired": 357,
+   "match": 131,
+   "n_temp": 5,
+   "n_catalyst": 1,
+   "n_solvent": 63,
+   "n_reagent": 0,
+   "n_any": 63,
+   "temps": {
+    "0 1": 2,
+    "22 1": 1,
+    "20 1": 1,
+    "80 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "DMF": 28,
+    "water": 10,
+    "dichloromethane": 7,
+    "Water": 5,
+    "CH2Cl2": 5,
+    "THF": 5,
+    "EtOAc": 5,
+    "DMSO": 3,
+    "dimethylformamide": 3,
+    "DCM": 3,
+    "toluene": 2,
+    "ethyl acetate": 2,
+    "DMF dichloromethane": 2,
+    "methylene chloride": 2,
+    "NMP": 2,
+    "CH3CO2Et": 1,
+    "methanol": 1,
+    "ethanol": 1,
+    "2-methyltetrahydrofuran": 1,
+    "N,N-dimethylacetamide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ec04af704dab4af0a800e52e05e90ec9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b3c9902835434202a8d24214e3949123",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane",
+      "toluene"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-9278e2e1590149b49e3719679cf90bb5",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[Br;H0;D1;+0:1].[c:2]:[cH;D2;+0:3]:[c:4]>>[Br;H0;D1;+0:1]-[c;H0;D3;+0:3](:[c:2]):[c:4]",
+   "support": 1858,
+   "n_templates": 2,
+   "fired": 92,
+   "match": 41,
+   "n_temp": 10,
+   "n_catalyst": 4,
+   "n_solvent": 39,
+   "n_reagent": 0,
+   "n_any": 39,
+   "temps": {
+    "0 1": 2,
+    "80 1": 2,
+    "120 1": 1,
+    "25 1": 1,
+    "2.5 1": 1,
+    "40 1": 1,
+    "70 1": 1,
+    "60 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "Fe": 3,
+    "sulfuric acid": 1
+   },
+   "solvents": {
+    "acetic acid": 17,
+    "water": 5,
+    "chloroform": 4,
+    "AcOH": 4,
+    "dichloromethane": 3,
+    "CH2Cl2": 2,
+    "ether": 1,
+    "EtOAc": 1,
+    "HCOOH": 1,
+    "dioxane": 1,
+    "methylene chloride": 1,
+    "CHCl3": 1,
+    "diethyl ether": 1,
+    "hexanes": 1,
+    "acetone": 1,
+    "pyridine": 1,
+    "tetrahydrofuran": 1,
+    "methanol": 1,
+    "hydrobromic acid": 1,
+    "CCl4": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-099a937005364924bd6eae4d9b0b8422",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetic acid",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a9cc5d51a5cd4083b1e28f3c6287e8ac",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-65cd14e2618b47ab885125172d1bad5d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(=O)-[O;H0;D2;+0:1]-[C:2]>>[C:2]-[OH;D1;+0:1]",
+   "support": 1853,
+   "n_templates": 1,
+   "fired": 3739,
+   "match": 46,
+   "n_temp": 12,
+   "n_catalyst": 0,
+   "n_solvent": 43,
+   "n_reagent": 0,
+   "n_any": 43,
+   "temps": {
+    "30 1": 3,
+    "-50 1": 1,
+    "0 1": 1,
+    "40 1": 1,
+    "50 1": 1,
+    "35 1": 1,
+    "-78 1": 1,
+    "60 1": 1,
+    "25 1": 1,
+    "23 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 60.0,
+   "catalysts": {},
+   "solvents": {
+    "methanol": 13,
+    "water": 9,
+    "MeOH": 5,
+    "tetrahydrofuran": 5,
+    "dichloromethane": 3,
+    "H2O": 2,
+    "ethanol": 2,
+    "pyridine": 2,
+    "dioxane": 2,
+    "ether": 1,
+    "MeOH CHCl3": 1,
+    "THF methanol": 1,
+    "acetate": 1,
+    "THF i-propanol water": 1,
+    "EtOAc": 1,
+    "THF": 1,
+    "methyl alcohol": 1,
+    "tetrahydrofuran water methanol": 1,
+    "toluene": 1,
+    "THF MeOH": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e496953e1a8048e29a65351a07d1384b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ether"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b1d02d975dd644069dccecc38e8a3752",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a55c07b6c23940838c275505fb8f5838",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "MeOH",
+      "MeOH CHCl3"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[C:2])-[OH;D1;+0:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[N;H0;D3;+0:5](-[C:4])-[C:6]",
+   "support": 1834,
+   "n_templates": 2,
+   "fired": 586,
+   "match": 146,
+   "n_temp": 21,
+   "n_catalyst": 9,
+   "n_solvent": 107,
+   "n_reagent": 0,
+   "n_any": 107,
+   "temps": {
+    "0 1": 10,
+    "-15 1": 2,
+    "-20 1": 2,
+    "25 1": 2,
+    "4 1": 1,
+    "60 1": 1,
+    "45 1": 1,
+    "-30 1": 1,
+    "-10 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 60.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 4,
+    "DMAP": 2,
+    "acetic acid": 1,
+    "N,N-dimethylpyridin-4-amine": 1,
+    "4-dimethylamino pyridine": 1
+   },
+   "solvents": {
+    "DMF": 35,
+    "dichloromethane": 21,
+    "N,N-dimethylformamide": 14,
+    "tetrahydrofuran": 12,
+    "water": 11,
+    "THF": 10,
+    "DCM": 9,
+    "ethyl acetate": 8,
+    "dimethylformamide": 7,
+    "triethylamine": 6,
+    "methylene chloride": 5,
+    "CH2Cl2": 4,
+    "acetonitrile": 4,
+    "EtOAc": 4,
+    "chloroform": 3,
+    "Water": 3,
+    "Ethyl acetate": 2,
+    "hexane": 2,
+    "methylene chloride methanol": 1,
+    "ethanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2a63c23aabf6477a95f607a9610fff33",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DCM",
+      "triethylamine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-18c55e75a5c248f0a49de337c375323e",
+     "temp": "4 1",
+     "catalysts": [],
+     "solvents": [
+      "chloroform"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f7f1d605a00c407485160438a0416ec8",
+     "temp": "",
+     "catalysts": [
+      "4-dimethylaminopyridine"
+     ],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[C:2])-[OH;D1;+0:3].[#8:4]-[C:5](=[O;D1;H0:6])-[C:7]-[NH2;D1;+0:8]>>[#8:4]-[C:5](=[O;D1;H0:6])-[C:7]-[NH;D2;+0:8]-[C;H0;D3;+0:1](-[C:2])=[O;H0;D1;+0:3]",
+   "support": 1829,
+   "n_templates": 2,
+   "fired": 78,
+   "match": 43,
+   "n_temp": 5,
+   "n_catalyst": 1,
+   "n_solvent": 24,
+   "n_reagent": 0,
+   "n_any": 24,
+   "temps": {
+    "-20 1": 1,
+    "-30 1": 1,
+    "38 1": 1,
+    "0 1": 1,
+    "4 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 38.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "DMF": 7,
+    "triethylamine": 5,
+    "dichloromethane": 3,
+    "N,N-dimethylformamide": 2,
+    "CH2Cl2": 2,
+    "dioxane": 2,
+    "methylene chloride": 1,
+    "EtOAc": 1,
+    "water": 1,
+    "buffer solution": 1,
+    "2-methyl-1-propanol": 1,
+    "Et3N": 1,
+    "EtOAc hexanes": 1,
+    "MeOH CHCl3": 1,
+    "DCM": 1,
+    "EDC": 1,
+    "dimethylformamide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a50f7cac2645481a8747ad859fb15edc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b041def7457f4f6580dc12786d8b43aa",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c01da2a578f046fea35924a7d62e99c1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4].[C:5]-[NH2;D1;+0:6]>>[C:5]-[NH;D2;+0:6]-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4]",
+   "support": 1817,
+   "n_templates": 2,
+   "fired": 46,
+   "match": 36,
+   "n_temp": 10,
+   "n_catalyst": 1,
+   "n_solvent": 32,
+   "n_reagent": 0,
+   "n_any": 32,
+   "temps": {
+    "0 1": 4,
+    "30 1": 1,
+    "3 1": 1,
+    "5 1": 1,
+    "-78 1": 1,
+    "4 1": 1,
+    "25 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 30.0,
+   "catalysts": {
+    "N,N-dimethyl-4-aminopyridine": 1
+   },
+   "solvents": {
+    "water": 10,
+    "dichloromethane": 6,
+    "THF": 4,
+    "dioxane": 3,
+    "chloroform": 3,
+    "DMF": 2,
+    "methylene chloride": 2,
+    "sodium hydroxide": 2,
+    "1,4-dioxane": 2,
+    "dimethylformamide": 1,
+    "toluene": 1,
+    "ethanol": 1,
+    "CH2Cl2": 1,
+    "acetic acid": 1,
+    "acetonitrile": 1,
+    "tetrahydrofuran": 1,
+    "DCM": 1,
+    "acetone": 1,
+    "EtOAc": 1,
+    "ethyl acetate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e60e9f255ff64e7190309e64e3d68715",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c0c4244a11c84b8bb0979a414d3e20be",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-49ab6d51b98448e4af26859b600ddb92",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[OH;D1;+0:2])-[c:3].[NH2;D1;+0:4]-[c:5]>>[O;H0;D1;+0:2]=[C;H0;D3;+0:1](-[c:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 1797,
+   "n_templates": 2,
+   "fired": 151,
+   "match": 96,
+   "n_temp": 23,
+   "n_catalyst": 8,
+   "n_solvent": 61,
+   "n_reagent": 0,
+   "n_any": 63,
+   "temps": {
+    "80 1": 4,
+    "0 1": 3,
+    "4 1": 2,
+    "45 1": 2,
+    "5 1": 2,
+    "70 1": 1,
+    "-2.5 1": 1,
+    "90 1": 1,
+    "20 1": 1,
+    "23 1": 1,
+    "-10 1": 1,
+    "60 1": 1,
+    "50 1": 1,
+    "55 1": 1,
+    "17.5 1": 1
+   },
+   "temps_min": -10.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "DMF": 3,
+    "4-(dimethylamino)pyridine": 2,
+    "dimethylformamide": 1,
+    "DMAP": 1,
+    "triethylamine": 1
+   },
+   "solvents": {
+    "DMF": 16,
+    "water": 14,
+    "THF": 9,
+    "dichloromethane": 5,
+    "dimethylformamide": 5,
+    "ethyl acetate": 5,
+    "pyridine": 5,
+    "tetrahydrofuran": 3,
+    "methylene chloride": 3,
+    "benzene": 3,
+    "DCM": 3,
+    "CH2Cl2": 2,
+    "chloroform": 2,
+    "thionyl chloride": 2,
+    "1,4-dioxane": 2,
+    "acetonitrile": 2,
+    "N,N-dimethylformamide": 2,
+    "oxalyl chloride": 1,
+    "DMSO": 1,
+    "Water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ac9b042f4b28460bbb5f5ac06fb31c97",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-79badf2057394d658daaaa00bfa681cc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-5f8e2eace96a4a629a7b0b416dcdcf5b",
+     "temp": "70 1",
+     "catalysts": [],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[OH;D1;+0:1]-[CH2;D2;+0:2]-[c:3]>>[O;H0;D1;+0:1]=[CH;D2;+0:2]-[c:3]",
+   "support": 1779,
+   "n_templates": 1,
+   "fired": 341,
+   "match": 36,
+   "n_temp": 6,
+   "n_catalyst": 25,
+   "n_solvent": 35,
+   "n_reagent": 0,
+   "n_any": 35,
+   "temps": {
+    "-78 1": 2,
+    "0 1": 1,
+    "80 1": 1,
+    "-60 1": 1,
+    "40 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "manganese dioxide": 11,
+    "MnO2": 7,
+    "Manganese dioxide": 3,
+    "manganese oxide": 1,
+    "manganese(IV)oxide": 1,
+    "tetra-n-propylammonium perruthenate": 1,
+    "TPAP": 1,
+    "manganese (IV) dioxide": 1
+   },
+   "solvents": {
+    "CH2Cl2": 7,
+    "dichloromethane": 5,
+    "DCM": 5,
+    "methylene chloride": 3,
+    "tetrahydrofuran": 3,
+    "ethyl acetate": 2,
+    "acetonitrile": 2,
+    "ether": 1,
+    "THF hexane": 1,
+    "sodium bicarbonate": 1,
+    "Triethylamine": 1,
+    "trichloromethane": 1,
+    "Dichloromethane": 1,
+    "benzene": 1,
+    "MnO2": 1,
+    "methylene chloride MeOH": 1,
+    "methanol": 1,
+    "acetone": 1,
+    "DMSO": 1,
+    "trimethylamine": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-741edcda20ec4dd68396b440300ebbef",
+     "temp": "",
+     "catalysts": [
+      "manganese dioxide"
+     ],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-fc6f0aba60704c4dabaaa80653a14acb",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-28dd524290f4471ea623c6c82934819a",
+     "temp": "",
+     "catalysts": [
+      "manganese dioxide"
+     ],
+     "solvents": [
+      "ether"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "F-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:4]-[N;H0;D3;+0:5](-[c;H0;D3;+0:1](:[c:2]):[c:3])-[C:6]",
+   "support": 1760,
+   "n_templates": 2,
+   "fired": 364,
+   "match": 55,
+   "n_temp": 30,
+   "n_catalyst": 0,
+   "n_solvent": 43,
+   "n_reagent": 0,
+   "n_any": 43,
+   "temps": {
+    "90 1": 7,
+    "100 1": 5,
+    "120 1": 3,
+    "80 1": 3,
+    "160 1": 2,
+    "95 1": 1,
+    "60 1": 1,
+    "140 1": 1,
+    "130 1": 1,
+    "155 1": 1,
+    "300 1": 1,
+    "85 1": 1,
+    "110 1": 1,
+    "122 1": 1,
+    "50 1": 1
+   },
+   "temps_min": 50.0,
+   "temps_max": 300.0,
+   "catalysts": {},
+   "solvents": {
+    "water": 8,
+    "dimethyl sulfoxide": 7,
+    "DMF": 6,
+    "acetonitrile": 5,
+    "DMSO": 4,
+    "n-BuOH": 4,
+    "ethyl acetate": 3,
+    "pyridine": 3,
+    "NMP": 2,
+    "brine": 1,
+    "triethylamine": 1,
+    "dimethyl sulphoxide": 1,
+    "dichloromethane": 1,
+    "dioxane": 1,
+    "ethanol": 1,
+    "dimethylsulfoxide": 1,
+    "N,N-dimethylformamide": 1,
+    "toluene": 1,
+    "EA": 1,
+    "ice water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-8e91639c1fcc4e6c8f63a502696c87a4",
+     "temp": "90 1",
+     "catalysts": [],
+     "solvents": [
+      "dimethyl sulfoxide",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0fae7ddd1d0049a886bdc0a00e245af5",
+     "temp": "90 1",
+     "catalysts": [],
+     "solvents": [
+      "brine",
+      "dimethyl sulfoxide"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-902a9ff84aca45ca9c38902439cd98a2",
+     "temp": "90 1",
+     "catalysts": [],
+     "solvents": [
+      "dimethyl sulfoxide",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=C1-[N;H0;D3;+0:1](-[C:2])-C(=O)-c2:c:c:c:c:c:2-1>>[C:2]-[NH2;D1;+0:1]",
+   "support": 1747,
+   "n_templates": 1,
+   "fired": 145,
+   "match": 39,
+   "n_temp": 7,
+   "n_catalyst": 0,
+   "n_solvent": 33,
+   "n_reagent": 0,
+   "n_any": 33,
+   "temps": {
+    "60 1": 2,
+    "57 1": 1,
+    "80 1": 1,
+    "50 1": 1,
+    "90 1": 1,
+    "65 1": 1
+   },
+   "temps_min": 50.0,
+   "temps_max": 90.0,
+   "catalysts": {},
+   "solvents": {
+    "ethanol": 13,
+    "methanol": 9,
+    "EtOH": 4,
+    "solution": 2,
+    "water": 2,
+    "EtOAc": 2,
+    "THF": 2,
+    "methyl amine": 1,
+    "N,N-dimethylformamide": 1,
+    "MeOH": 1,
+    "dichloromethane methanol": 1,
+    "hydrazine hydrate": 1,
+    "methylene chloride": 1,
+    "methylamine": 1,
+    "toluene": 1,
+    "tetrahydrofuran": 1,
+    "hydrazine monohydrate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-d69cadb84c1f457aa9645d6fe5e18d9e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol",
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-dc100c1b63e545c4b2253466d8d7ef06",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol",
+      "methyl amine",
+      "solution"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e93473c23e544ae18de46759427da86a",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[NH2;D1;+0:4]-[c:5]>>[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 1742,
+   "n_templates": 2,
+   "fired": 570,
+   "match": 157,
+   "n_temp": 39,
+   "n_catalyst": 12,
+   "n_solvent": 118,
+   "n_reagent": 0,
+   "n_any": 120,
+   "temps": {
+    "0 1": 13,
+    "25 1": 10,
+    "50 1": 5,
+    "175 1": 2,
+    "20 1": 2,
+    "75 1": 1,
+    "-20 1": 1,
+    "-10 1": 1,
+    "-25 1": 1,
+    "40 1": 1,
+    "5 1": 1,
+    "105 1": 1
+   },
+   "temps_min": -25.0,
+   "temps_max": 175.0,
+   "catalysts": {
+    "N,N-dimethylformamide": 5,
+    "4-dimethylaminopyridine": 2,
+    "DMF": 1,
+    "palladium/charcoal": 1,
+    "4-(dimethylamino)pyridine": 1,
+    "DMAP": 1,
+    "4-(N,N-dimethylamino)pyridine": 1
+   },
+   "solvents": {
+    "tetrahydrofuran": 17,
+    "methylene chloride": 17,
+    "dichloromethane": 14,
+    "water": 12,
+    "DMF": 11,
+    "dimethylformamide": 9,
+    "DCM": 8,
+    "THF": 8,
+    "pyridine": 7,
+    "N,N-dimethylformamide": 6,
+    "ethyl acetate": 6,
+    "CH2Cl2": 5,
+    "EtOAc": 5,
+    "acetic acid": 4,
+    "N,N-dimethylacetamide": 4,
+    "brine": 3,
+    "toluene": 3,
+    "xylene": 2,
+    "benzene": 2,
+    "triethylamine": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2e03a241be2b4b53bf88ccfacb21967f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol",
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6484a284b0aa46eaae0c0af132625719",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-55df25e97ace40dfac201fefc1def505",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:4]-[N;H0;D3;+0:5](-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3])-[C:6]",
+   "support": 1739,
+   "n_templates": 2,
+   "fired": 1030,
+   "match": 170,
+   "n_temp": 30,
+   "n_catalyst": 9,
+   "n_solvent": 124,
+   "n_reagent": 0,
+   "n_any": 126,
+   "temps": {
+    "0 1": 12,
+    "-15 1": 2,
+    "-20 1": 2,
+    "25 1": 2,
+    "70 1": 2,
+    "4 1": 1,
+    "60 1": 1,
+    "55 1": 1,
+    "23 1": 1,
+    "45 1": 1,
+    "1.5 1": 1,
+    "-30 1": 1,
+    "80 1": 1,
+    "-10 1": 1,
+    "90 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 4,
+    "DMAP": 2,
+    "acetic acid": 1,
+    "N,N-dimethylpyridin-4-amine": 1,
+    "4-dimethylamino pyridine": 1
+   },
+   "solvents": {
+    "DMF": 37,
+    "dichloromethane": 22,
+    "N,N-dimethylformamide": 15,
+    "tetrahydrofuran": 13,
+    "THF": 12,
+    "water": 11,
+    "DCM": 10,
+    "dimethylformamide": 9,
+    "ethyl acetate": 9,
+    "triethylamine": 7,
+    "methylene chloride": 5,
+    "pyridine": 5,
+    "CH2Cl2": 4,
+    "acetonitrile": 4,
+    "Water": 4,
+    "EtOAc": 4,
+    "chloroform": 3,
+    "methanol": 3,
+    "Ethyl acetate": 2,
+    "methylene chloride methanol": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2a63c23aabf6477a95f607a9610fff33",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DCM",
+      "triethylamine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-18c55e75a5c248f0a49de337c375323e",
+     "temp": "4 1",
+     "catalysts": [],
+     "solvents": [
+      "chloroform"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f7f1d605a00c407485160438a0416ec8",
+     "temp": "",
+     "catalysts": [
+      "4-dimethylaminopyridine"
+     ],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;H0;D1;+0:3]>>[C:2]-[CH2;D2;+0:1]-[OH;D1;+0:3]",
+   "support": 1719,
+   "n_templates": 1,
+   "fired": 6305,
+   "match": 89,
+   "n_temp": 28,
+   "n_catalyst": 1,
+   "n_solvent": 83,
+   "n_reagent": 0,
+   "n_any": 83,
+   "temps": {
+    "0 1": 11,
+    "-78 1": 3,
+    "45 1": 2,
+    "55 1": 1,
+    "-15 1": 1,
+    "50 1": 1,
+    "10 1": 1,
+    "-10 1": 1,
+    "80 1": 1,
+    "70 1": 1,
+    "25 1": 1,
+    "-70 1": 1,
+    "-20 1": 1,
+    "2.5 1": 1,
+    "5 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "HCl": 1
+   },
+   "solvents": {
+    "THF": 34,
+    "tetrahydrofuran": 18,
+    "ether": 8,
+    "water": 6,
+    "methylene chloride": 4,
+    "ethanol": 4,
+    "diethyl ether": 4,
+    "ethyl acetate": 3,
+    "EtOAc": 2,
+    "DCM": 2,
+    "dichloromethane": 2,
+    "metylene chloride": 1,
+    "t-butanol": 1,
+    "triethylamine": 1,
+    "EtOH": 1,
+    "HOAc": 1,
+    "LiBHEt3": 1,
+    "diethylether": 1,
+    "toluene": 1,
+    "MeOH": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-724adf2a51f8489d97c3c818d08a607f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-29ebbd36a0d347fd8065424702aa0c74",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride",
+      "metylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6f0364c3f1a245d7aa5fa0b2b583f5d2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[c;H0;D3;+0:1](:[c:2]):[c:3].O-B(-O)-[c;H0;D3;+0:4](:[c:5]):[c:6]>>[c:5]:[c;H0;D3;+0:4](-[c;H0;D3;+0:1](:[c:2]):[c:3]):[c:6]",
+   "support": 1679,
+   "n_templates": 2,
+   "fired": 265,
+   "match": 210,
+   "n_temp": 97,
+   "n_catalyst": 130,
+   "n_solvent": 154,
+   "n_reagent": 0,
+   "n_any": 159,
+   "temps": {
+    "100 1": 21,
+    "90 1": 13,
+    "80 1": 12,
+    "110 1": 9,
+    "85 1": 7,
+    "75 1": 6,
+    "70 1": 6,
+    "120 1": 4,
+    "95 1": 4,
+    "140 1": 3,
+    "150 1": 2,
+    "160 1": 2,
+    "105 1": 2,
+    "130 1": 2,
+    "22.5 1": 1,
+    "82.5 1": 1,
+    "135 1": 1,
+    "62 1": 1
+   },
+   "temps_min": 22.5,
+   "temps_max": 160.0,
+   "catalysts": {
+    "tetrakis(triphenylphosphine)palladium(0)": 21,
+    "Pd(PPh3)4": 17,
+    "Pd(dppf)Cl2": 17,
+    "tetrakis(triphenylphosphine)palladium": 9,
+    "PdCl2(dppf)": 5,
+    "PdCl2(PPh3)2": 4,
+    "Pd(OAc)2": 4,
+    "Palladium tetrakis(triphenylphosphine)": 3,
+    "Tetrakis(triphenylphosphine)palladium(0)": 3,
+    "palladium acetate": 3,
+    "[1,1′-bis(diphenylphosphino)-ferrocene]dichloro palladium(II)": 2,
+    "tetrakis(triphenylphosphine) palladium(0)": 2,
+    "[1,1′-bis(diphenylphosphino)ferrocene]dichloropalladium(II)": 2,
+    "Pd(PPh3)2Cl2": 2,
+    "Pd2(dba)3": 2,
+    "tris(dibenzylideneacetone)dipalladium(0)": 2,
+    "tetrakis(triphenylphosphine) palladium": 2,
+    "PdCl2(dppf) CH2Cl2": 2,
+    "palladium(II) acetate": 2,
+    "dichlorobis(triphenylphosphine)palladium": 1
+   },
+   "solvents": {
+    "water": 48,
+    "toluene": 31,
+    "dioxane": 28,
+    "ethanol": 18,
+    "DME": 9,
+    "ethyl acetate": 9,
+    "EtOAc": 8,
+    "H2O": 8,
+    "DMF": 8,
+    "1,4-dioxane": 8,
+    "EtOH": 7,
+    "acetonitrile": 5,
+    "Water": 4,
+    "dimethoxyethane": 4,
+    "THF": 3,
+    "dioxane water": 3,
+    "1,2-dimethoxyethane": 3,
+    "Toluene": 2,
+    "DME H2O": 2,
+    "NaHCO3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2e87ef03d13944988967e1bb4dcac910",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-600bf3d103d74d4c8b6ec0893592398f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f28078c0604c469b887a017ec7139846",
+     "temp": "85 1",
+     "catalysts": [
+      "[1,1′-bis(diphenylphosphino)-ferrocene]dichloro palladium(II)"
+     ],
+     "solvents": [
+      "EtOAc",
+      "EtOH",
+      "Toluene"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "F-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]-[OH;D1;+0:5]>>[C:4]-[O;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+   "support": 1658,
+   "n_templates": 2,
+   "fired": 649,
+   "match": 21,
+   "n_temp": 5,
+   "n_catalyst": 0,
+   "n_solvent": 16,
+   "n_reagent": 0,
+   "n_any": 17,
+   "temps": {
+    "50 1": 1,
+    "110 1": 1,
+    "60 1": 1,
+    "0 1": 1,
+    "100 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 110.0,
+   "catalysts": {},
+   "solvents": {
+    "DMF": 9,
+    "acetic acid": 2,
+    "ethyl acetate": 2,
+    "THF": 2,
+    "dimethylformamide": 1,
+    "methanol": 1,
+    "EtOAc": 1,
+    "DMSO": 1,
+    "brine": 1,
+    "toluene": 1,
+    "dimethyl sulfoxide": 1,
+    "water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-c2956910e6964c68a222931d19fd2abc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetic acid",
+      "dimethylformamide",
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b635247e1c454b27ad6122238f839d06",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e63c643616344de09c8a90bf54d98707",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "EtOAc"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[c;H0;D3;+0:1](:[c:2]):[c:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:4]-[N;H0;D3;+0:5](-[c;H0;D3;+0:1](:[c:2]):[c:3])-[C:6]",
+   "support": 1623,
+   "n_templates": 2,
+   "fired": 179,
+   "match": 34,
+   "n_temp": 19,
+   "n_catalyst": 27,
+   "n_solvent": 29,
+   "n_reagent": 0,
+   "n_any": 30,
+   "temps": {
+    "110 1": 5,
+    "80 1": 3,
+    "70 1": 1,
+    "75 1": 1,
+    "95 1": 1,
+    "90 1": 1,
+    "25 1": 1,
+    "150 1": 1,
+    "45 1": 1,
+    "100 1": 1,
+    "130 1": 1,
+    "50 1": 1,
+    "120 1": 1
+   },
+   "temps_min": 25.0,
+   "temps_max": 150.0,
+   "catalysts": {
+    "tris(dibenzylideneacetone)dipalladium": 4,
+    "Pd2(dba)3": 4,
+    "tris(dibenzylideneacetone)dipalladium(0)": 4,
+    "palladium acetate": 2,
+    "BINAP": 2,
+    "CuI": 2,
+    "palladium (II) acetate": 2,
+    "Pd(OAc)2": 2,
+    "2-dicyclohexylphosphino-2′,4′,6′-triisopropylbiphenyl": 1,
+    "palladium(II) acetate": 1,
+    "palladium(II)acetate": 1,
+    "Pd2 dba3": 1,
+    "racemic-2,2′-bis(diphenylphosphino)-1,1′-binaphthyl": 1,
+    "rac-BINAP": 1,
+    "copper iodide": 1,
+    "tetra-n-butyl ammonium iodide": 1,
+    "tris(dibenzylidene-acetone) dipalladium": 1
+   },
+   "solvents": {
+    "toluene": 14,
+    "ethyl acetate": 4,
+    "dioxane": 4,
+    "water": 2,
+    "tetrahydrofuran": 2,
+    "1,4-dioxane": 2,
+    "EtOAc": 2,
+    "THF": 2,
+    "heptane": 1,
+    "tert.-butanol": 1,
+    "DMF": 1,
+    "tBuOH": 1,
+    "H2O": 1,
+    "toluene ethanol": 1,
+    "DMSO": 1,
+    "Water": 1,
+    "diethylether": 1,
+    "brine": 1,
+    "ether": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-abefc20c9383425cb4c7e8a560d784a4",
+     "temp": "70 1",
+     "catalysts": [
+      "tris(dibenzylideneacetone)dipalladium"
+     ],
+     "solvents": [
+      "toluene",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1acf4834b5e243cbae1034b32456b368",
+     "temp": "110 1",
+     "catalysts": [
+      "2-dicyclohexylphosphino-2′,4′,6′-triisopropylbiphenyl"
+     ],
+     "solvents": [
+      "heptane",
+      "tert.-butanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-035b29cea70c4784b09c078f19050a49",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[O;H0;D1;+0:1]=[CH;D2;+0:2]-[c:3]>>[OH;D1;+0:1]-[CH2;D2;+0:2]-[c:3]",
+   "support": 1609,
+   "n_templates": 1,
+   "fired": 927,
+   "match": 34,
+   "n_temp": 9,
+   "n_catalyst": 1,
+   "n_solvent": 33,
+   "n_reagent": 0,
+   "n_any": 33,
+   "temps": {
+    "0 1": 7,
+    "-78 1": 1,
+    "25 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 25.0,
+   "catalysts": {
+    "palladium on activated carbon": 1
+   },
+   "solvents": {
+    "methanol": 10,
+    "THF": 6,
+    "MeOH": 5,
+    "tetrahydrofuran": 4,
+    "ethanol": 3,
+    "water": 2,
+    "methanol dichloromethane": 1,
+    "CH2Cl2": 1,
+    "H2O": 1,
+    "ethyl acetate": 1,
+    "diethylether": 1,
+    "hexane": 1,
+    "Water": 1,
+    "EtOH": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ba5e0dbceb244edeabb972ef6039049c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2adf7b177715439eb19c5c872418961b",
+     "temp": "",
+     "catalysts": [
+      "palladium on activated carbon"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1ce25ae06a494bf6ac544d70458fb12d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[CH2;D2;+0:1]-[c:2].[OH;D1;+0:3]-[c:4]>>[c:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-[c:4]",
+   "support": 1591,
+   "n_templates": 2,
+   "fired": 58,
+   "match": 33,
+   "n_temp": 4,
+   "n_catalyst": 1,
+   "n_solvent": 25,
+   "n_reagent": 0,
+   "n_any": 26,
+   "temps": {
+    "15 1": 1,
+    "0 1": 1,
+    "50 1": 1,
+    "45 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 50.0,
+   "catalysts": {
+    "tetrabutylammonium iodide": 1
+   },
+   "solvents": {
+    "DMF": 7,
+    "acetone": 5,
+    "water": 4,
+    "N,N-dimethylformamide": 3,
+    "dimethylformamide": 3,
+    "H2O": 2,
+    "methylene chloride": 1,
+    "ACN": 1,
+    "butanone": 1,
+    "CH2Cl2": 1,
+    "acetonitrile": 1,
+    "ethanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-02bc1bb165664703bc47e99c5b59c704",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8f299c5ebbfe49debf190fa8ba112a87",
+     "temp": "15 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f0429738fed54f89869d86f4162bfa51",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](=[O;D1;H0:2])-[c:3].[NH2;D1;+0:4]-[c:5]>>[O;D1;H0:2]=[C;H0;D3;+0:1](-[c:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 1567,
+   "n_templates": 2,
+   "fired": 227,
+   "match": 111,
+   "n_temp": 25,
+   "n_catalyst": 8,
+   "n_solvent": 67,
+   "n_reagent": 0,
+   "n_any": 69,
+   "temps": {
+    "80 1": 4,
+    "60 1": 3,
+    "0 1": 3,
+    "4 1": 2,
+    "45 1": 2,
+    "5 1": 2,
+    "70 1": 1,
+    "-2.5 1": 1,
+    "90 1": 1,
+    "20 1": 1,
+    "23 1": 1,
+    "-10 1": 1,
+    "50 1": 1,
+    "55 1": 1,
+    "17.5 1": 1
+   },
+   "temps_min": -10.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "DMF": 3,
+    "4-(dimethylamino)pyridine": 2,
+    "dimethylformamide": 1,
+    "DMAP": 1,
+    "triethylamine": 1
+   },
+   "solvents": {
+    "DMF": 17,
+    "water": 14,
+    "THF": 9,
+    "toluene": 5,
+    "dichloromethane": 5,
+    "dimethylformamide": 5,
+    "ethyl acetate": 5,
+    "pyridine": 5,
+    "methylene chloride": 4,
+    "tetrahydrofuran": 3,
+    "CH2Cl2": 3,
+    "benzene": 3,
+    "DCM": 3,
+    "chloroform": 2,
+    "thionyl chloride": 2,
+    "1,4-dioxane": 2,
+    "acetonitrile": 2,
+    "N,N-dimethylformamide": 2,
+    "methanol": 1,
+    "oxalyl chloride": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ac9b042f4b28460bbb5f5ac06fb31c97",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-79badf2057394d658daaaa00bfa681cc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-43a931f4a3554fa48873f25808abf5a1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](-[#8:2])=[O;D1;H0:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[#8:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[N;H0;D3;+0:5](-[C:4])-[C:6]",
+   "support": 1565,
+   "n_templates": 2,
+   "fired": 76,
+   "match": 26,
+   "n_temp": 4,
+   "n_catalyst": 1,
+   "n_solvent": 23,
+   "n_reagent": 0,
+   "n_any": 24,
+   "temps": {
+    "0 1": 4
+   },
+   "temps_min": 0.0,
+   "temps_max": 0.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 1
+   },
+   "solvents": {
+    "dichloromethane": 7,
+    "water": 5,
+    "THF": 3,
+    "toluene": 2,
+    "chloroform": 2,
+    "ethyl acetate": 1,
+    "EtOAc": 1,
+    "ethyl ether": 1,
+    "tetrahydrofuran": 1,
+    "DCM": 1,
+    "tetrahydrofuran water": 1,
+    "dioxane": 1,
+    "1,4-dioxane": 1,
+    "CH2Cl2": 1,
+    "K2CO3": 1,
+    "Dichloromethane": 1,
+    "methylene chloride": 1,
+    "sodium carbonate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ebb811057e7d4e2089d709387e100252",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "toluene",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f2d163a6a2854b79a0cc2fdbcf233e18",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-75a887d28a174090b477d534a8ed17dc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-S(=O)-[Cl;H0;D1;+0:1].O-[C;H0;D3;+0:2](=[O;D1;H0:3])-[c:4]>>[Cl;H0;D1;+0:1]-[C;H0;D3;+0:2](=[O;D1;H0:3])-[c:4]",
+   "support": 1565,
+   "n_templates": 2,
+   "fired": 100,
+   "match": 34,
+   "n_temp": 7,
+   "n_catalyst": 2,
+   "n_solvent": 16,
+   "n_reagent": 0,
+   "n_any": 17,
+   "temps": {
+    "80 1": 3,
+    "26 1": 1,
+    "90 1": 1,
+    "75 1": 1,
+    "100 1": 1
+   },
+   "temps_min": 26.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "DMF": 1,
+    "dimethylformamide": 1
+   },
+   "solvents": {
+    "toluene": 7,
+    "dichloromethane": 3,
+    "THF": 1,
+    "dimethylformamide": 1,
+    "N,N-dimethylformamide": 1,
+    "DMF": 1,
+    "methylene chloride": 1,
+    "tetrahydrofuran": 1,
+    "Toluene": 1,
+    "methanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-89aff4b1c18042e4bbb1f88ebba96f86",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4c3ca7fee7ca4cb68a75ae1c5be3919e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-5beec08eb29948b38b2aa6837fbf9204",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[NH2;D1;+0:1]-[c:2].[O;D1;H0:3]=[C;H0;D2;+0:4]=[N;H0;D2;+0:5]-[c:6]>>[O;D1;H0:3]=[C;H0;D3;+0:4](-[NH;D2;+0:1]-[c:2])-[NH;D2;+0:5]-[c:6]",
+   "support": 1564,
+   "n_templates": 2,
+   "fired": 56,
+   "match": 44,
+   "n_temp": 4,
+   "n_catalyst": 0,
+   "n_solvent": 24,
+   "n_reagent": 0,
+   "n_any": 24,
+   "temps": {
+    "60 1": 2,
+    "0 1": 1,
+    "70 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 70.0,
+   "catalysts": {},
+   "solvents": {
+    "THF": 6,
+    "CH2Cl2": 5,
+    "DCM": 4,
+    "tetrahydrofuran": 3,
+    "acetone": 1,
+    "dichloromethane": 1,
+    "ethyl acetate": 1,
+    "1,2-dichloroethane": 1,
+    "methylene chloride": 1,
+    "toluene": 1,
+    "MeCN": 1,
+    "brine": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-bff103b2a42047429dcc6fc22ece57c6",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7cbf3fe44966495488e6aeb2b7ecad37",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-43cf140f828b484e96f9048e3ed0ae47",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[OH;D1;+0:2])-[c:3]:[c:4]:[#7;a:5].[C:6]-[NH2;D1;+0:7]>>[#7;a:5]:[c:4]:[c:3]-[C;H0;D3;+0:1](=[O;H0;D1;+0:2])-[NH;D2;+0:7]-[C:6]",
+   "support": 1560,
+   "n_templates": 2,
+   "fired": 76,
+   "match": 59,
+   "n_temp": 5,
+   "n_catalyst": 5,
+   "n_solvent": 32,
+   "n_reagent": 0,
+   "n_any": 32,
+   "temps": {
+    "60 1": 1,
+    "50 1": 1,
+    "25 1": 1,
+    "0 1": 1,
+    "-30 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 60.0,
+   "catalysts": {
+    "DMAP": 4,
+    "DMF": 1
+   },
+   "solvents": {
+    "DMF": 11,
+    "dichloromethane": 3,
+    "N,N-dimethylformamide": 3,
+    "water": 3,
+    "tetrahydrofuran": 3,
+    "EtOAc": 2,
+    "THF": 2,
+    "dimethylformamide": 2,
+    "ethyl acetate": 2,
+    "chloroform": 2,
+    "ethyl chloroformate": 1,
+    "CH2Cl2": 1,
+    "acetonitrile": 1,
+    "1,2-dichloroethane": 1,
+    "EDC": 1,
+    "methylene chloride": 1,
+    "methanol": 1,
+    "N,N-Dimethylformamide": 1,
+    "DMSO": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-30ebef72dd23407daacc55c956298292",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethyl chloroformate"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-22e336786c714319a50c9cdf61c453a9",
+     "temp": "",
+     "catalysts": [
+      "DMAP"
+     ],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-555810d2b1e84f1aad4a7ff311f985d3",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](-[#8:2])=[O;D1;H0:3].[C:4]-[NH2;D1;+0:5]>>[#8:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[NH;D2;+0:5]-[C:4]",
+   "support": 1559,
+   "n_templates": 2,
+   "fired": 69,
+   "match": 32,
+   "n_temp": 5,
+   "n_catalyst": 1,
+   "n_solvent": 29,
+   "n_reagent": 0,
+   "n_any": 29,
+   "temps": {
+    "0 1": 4,
+    "60 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 60.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "water": 5,
+    "dichloromethane": 5,
+    "ethyl acetate": 3,
+    "DCM": 3,
+    "THF": 2,
+    "diethyl ether": 2,
+    "CH2Cl2": 2,
+    "tetrahydrofuran": 2,
+    "toluene": 1,
+    "dichloromethane methanol": 1,
+    "triethyl-amine": 1,
+    "chloroform": 1,
+    "acetone": 1,
+    "dioxane": 1,
+    "dimethylformamide": 1,
+    "Water": 1,
+    "THF water": 1,
+    "aqueous solution": 1,
+    "ether": 1,
+    "sodium hydroxide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-bbd17ea5df144cd0a50c633bd92af129",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF",
+      "diethyl ether"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-acd54b968634414ab260eeadb9f96832",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "toluene",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-4e30668ac83b48e79a5abd1a9b4b578a",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane methanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[NH2;D1;+0:5]>>[C:4]-[NH;D2;+0:5]-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3]",
+   "support": 1550,
+   "n_templates": 2,
+   "fired": 785,
+   "match": 243,
+   "n_temp": 32,
+   "n_catalyst": 4,
+   "n_solvent": 165,
+   "n_reagent": 0,
+   "n_any": 166,
+   "temps": {
+    "0 1": 10,
+    "-20 1": 4,
+    "60 1": 3,
+    "80 1": 2,
+    "20 1": 2,
+    "70 1": 2,
+    "-10 1": 1,
+    "5 1": 1,
+    "-30 1": 1,
+    "120 1": 1,
+    "38 1": 1,
+    "65 1": 1,
+    "95 1": 1,
+    "-15 1": 1,
+    "4 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 2,
+    "DMAP": 1,
+    "water": 1
+   },
+   "solvents": {
+    "DMF": 41,
+    "water": 20,
+    "tetrahydrofuran": 19,
+    "dichloromethane": 16,
+    "ethyl acetate": 16,
+    "dimethylformamide": 12,
+    "N,N-dimethylformamide": 9,
+    "triethylamine": 9,
+    "CH2Cl2": 8,
+    "EtOAc": 7,
+    "THF": 7,
+    "DCM": 7,
+    "methanol": 7,
+    "methylene chloride": 6,
+    "acetonitrile": 6,
+    "Ethyl acetate": 4,
+    "acetone": 4,
+    "MeOH": 3,
+    "Water": 3,
+    "ethanol": 3
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a50f7cac2645481a8747ad859fb15edc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a37d4b3af3174cb3b9d2b4d6eb76f09a",
+     "temp": "",
+     "catalysts": [
+      "4-dimethylaminopyridine"
+     ],
+     "solvents": [
+      "dichloromethane",
+      "hydrochloric acid",
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-aaa752085c62402d8beb5b3c0698a75a",
+     "temp": "-10 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[CH2;D2;+0:1]-[C:2](-[#8:3])=[O;D1;H0:4].[OH;D1;+0:5]-[c:6]>>[#8:3]-[C:2](=[O;D1;H0:4])-[CH2;D2;+0:1]-[O;H0;D2;+0:5]-[c:6]",
+   "support": 1533,
+   "n_templates": 2,
+   "fired": 26,
+   "match": 19,
+   "n_temp": 6,
+   "n_catalyst": 1,
+   "n_solvent": 19,
+   "n_reagent": 0,
+   "n_any": 19,
+   "temps": {
+    "0 1": 2,
+    "60 1": 2,
+    "80 1": 1,
+    "4 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "potassium iodide": 1
+   },
+   "solvents": {
+    "DMF": 6,
+    "acetone": 5,
+    "ethyl acetate": 3,
+    "dimethylformamide": 3,
+    "acetonitrile": 2,
+    "chloroform": 1,
+    "N,N-dimethylformamide": 1,
+    "water": 1,
+    "ether": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-c144e12b7636471bb89c322c897a8c5d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetone"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c77a631264b342fb8caa2f5f34453672",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-444d020cfa854d8dbda265bfc12cc6f5",
+     "temp": "0 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[CH2;D2;+0:1]-[C:2].[OH;D1;+0:3]-[c:4]>>[C:2]-[CH2;D2;+0:1]-[O;H0;D2;+0:3]-[c:4]",
+   "support": 1510,
+   "n_templates": 2,
+   "fired": 429,
+   "match": 67,
+   "n_temp": 16,
+   "n_catalyst": 1,
+   "n_solvent": 54,
+   "n_reagent": 0,
+   "n_any": 55,
+   "temps": {
+    "60 1": 5,
+    "80 1": 4,
+    "50 1": 2,
+    "0 1": 2,
+    "90 1": 1,
+    "120 1": 1,
+    "2.5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "tetrabutylammonium hydrogen sulfate": 1
+   },
+   "solvents": {
+    "DMF": 13,
+    "tetrahydrofuran": 12,
+    "THF": 7,
+    "water": 5,
+    "toluene": 4,
+    "dichloromethane": 3,
+    "N,N-dimethylformamide": 3,
+    "benzene": 3,
+    "ethanol": 2,
+    "ether": 2,
+    "Hexane": 2,
+    "methylene chloride": 2,
+    "AcOEt": 1,
+    "2-butanone": 1,
+    "Toluene": 1,
+    "tetra-hydrofuran": 1,
+    "tertiary butanol": 1,
+    "H2O": 1,
+    "DCM": 1,
+    "CH2Cl2": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-70054e6b95a147cabccc72cb3935270a",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "AcOEt",
+      "ethanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-40c4f9a72367450ea59ca49b0cb814f8",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7299248e4fb54641993e1d2f22c7abe2",
+     "temp": "80 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[NH3+;D1:1].[N;H0;D1;+0:2]#[C;H0;D2;+0:3]-[c;H0;D3;+0:4](:[c:5]):[c:6].[O-]-[C;H0;D3;+0:7](=[O;D1;H0:8])-[OH;D1;+0:9]>>[O;D1;H0:8]=[c;H0;D3;+0:7]1:[nH;D2;+0:1]:[c;H0;D3;+0:3](-[c;H0;D3;+0:4](:[c:5]):[c:6]):[n;H0;D2;+0:2]:[o;H0;D2;+0:9]:1",
+   "support": 1503,
+   "n_templates": 3,
+   "fired": 0,
+   "match": 0,
+   "n_temp": 0,
+   "n_catalyst": 0,
+   "n_solvent": 0,
+   "n_reagent": 0,
+   "n_any": 0,
+   "temps": {},
+   "temps_min": null,
+   "temps_max": null,
+   "catalysts": {},
+   "solvents": {},
+   "reagents": {},
+   "examples": []
+  },
+  {
+   "template": "O=C1-C-C-C(=O)-N-1-[Br;H0;D1;+0:1].[c:2]:[cH;D2;+0:3]:[c:4]>>[Br;H0;D1;+0:1]-[c;H0;D3;+0:3](:[c:2]):[c:4]",
+   "support": 1496,
+   "n_templates": 2,
+   "fired": 113,
+   "match": 26,
+   "n_temp": 6,
+   "n_catalyst": 0,
+   "n_solvent": 25,
+   "n_reagent": 0,
+   "n_any": 25,
+   "temps": {
+    "0 1": 4,
+    "90 1": 2
+   },
+   "temps_min": 0.0,
+   "temps_max": 90.0,
+   "catalysts": {},
+   "solvents": {
+    "water": 5,
+    "acetonitrile": 4,
+    "chloroform": 3,
+    "DMF": 3,
+    "CCl4": 2,
+    "dimethylformamide": 2,
+    "hexane": 2,
+    "methyl tert-butyl ether": 2,
+    "N,N-dimethylformamide": 2,
+    "methylene chloride": 1,
+    "benzene": 1,
+    "methanol": 1,
+    "THF": 1,
+    "dimethyl formamide": 1,
+    "ethyl acetate": 1,
+    "acetic acid": 1,
+    "acetic anhydride": 1,
+    "H2O": 1,
+    "CH2Cl2": 1,
+    "2-methyltetrahydrofuran": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-637cb1ab1673407aa14706e6cc2e10fc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2d642f267563461a8dd9ac10d04b81e1",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "benzene"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-65cd14e2618b47ab885125172d1bad5d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[C:1]-[C;H0;D2;+0:2]#[N;H0;D1;+0:3]>>[C:1]-[CH2;D2;+0:2]-[NH2;D1;+0:3]",
+   "support": 1488,
+   "n_templates": 1,
+   "fired": 665,
+   "match": 30,
+   "n_temp": 5,
+   "n_catalyst": 11,
+   "n_solvent": 29,
+   "n_reagent": 0,
+   "n_any": 29,
+   "temps": {
+    "60 1": 1,
+    "80 1": 1,
+    "40 1": 1,
+    "85 1": 1,
+    "67 1": 1
+   },
+   "temps_min": 40.0,
+   "temps_max": 85.0,
+   "catalysts": {
+    "Raney nickel": 3,
+    "cobalt": 2,
+    "Pd/C": 1,
+    "Raney-nickel": 1,
+    "Ni": 1,
+    "Raney Nickel": 1,
+    "Raney® nickel": 1,
+    "platinum dioxide": 1
+   },
+   "solvents": {
+    "THF": 9,
+    "tetrahydrofuran": 5,
+    "diethyl ether": 3,
+    "methanol": 3,
+    "ethanol": 3,
+    "ammonia": 2,
+    "MeOH": 2,
+    "dioxane": 1,
+    "toluene": 1,
+    "Et2O": 1,
+    "CH3OH CH2Cl2": 1,
+    "ether": 1,
+    "ammonia methanol": 1,
+    "acetic acid": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-355bf43961874334b0dd644d901cbbcf",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "diethyl ether"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-d37da7198475475b83000f1d89aa6a2d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b1ae99f5e34146479146dd21b0db7561",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[O;D1;H0:1]=[C:2]-[OH;D1;+0:3]>>[O-;H0;D1:3]-[C:2]=[O;D1;H0:1]",
+   "support": 1481,
+   "n_templates": 1,
+   "fired": 4302,
+   "match": 45,
+   "n_temp": 10,
+   "n_catalyst": 2,
+   "n_solvent": 38,
+   "n_reagent": 0,
+   "n_any": 40,
+   "temps": {
+    "75 1": 3,
+    "50 1": 2,
+    "90 1": 2,
+    "5 1": 1,
+    "60 1": 1,
+    "-78 1": 1
+   },
+   "temps_min": -78.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "4-DMAP": 1,
+    "tetramethyl ammonium chloride": 1
+   },
+   "solvents": {
+    "water": 11,
+    "methanol": 6,
+    "acetone": 4,
+    "ethanol": 3,
+    "t-butyl alcohol": 3,
+    "tert-butanol": 2,
+    "glyme": 2,
+    "isobutyl methyl ketone": 1,
+    "methylene chloride": 1,
+    "isopropanol": 1,
+    "DCM": 1,
+    "iso-propyl alcohol": 1,
+    "mixture": 1,
+    "CH2Cl2": 1,
+    "dichloromethane": 1,
+    "brine": 1,
+    "Tetrahydrofuran": 1,
+    "diethyl ether": 1,
+    "2-propanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-f9f37bcdc3464a7d9848ba524564d05b",
+     "temp": "5 1",
+     "catalysts": [],
+     "solvents": [
+      "isobutyl methyl ketone",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e527c729fc964c4c914e8b9b7b79ee52",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-cd97fccb5b74480dbedb1260fd73344b",
+     "temp": "50 1",
+     "catalysts": [],
+     "solvents": [
+      "acetone"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-O-C(=O)-[NH;D2;+0:1]-[C:2]-[C:3](-[#7:4])=[O;D1;H0:5]>>[#7:4]-[C:3](=[O;D1;H0:5])-[C:2]-[NH2;D1;+0:1]",
+   "support": 1469,
+   "n_templates": 1,
+   "fired": 73,
+   "match": 27,
+   "n_temp": 6,
+   "n_catalyst": 0,
+   "n_solvent": 23,
+   "n_reagent": 0,
+   "n_any": 26,
+   "temps": {
+    "25 1": 3,
+    "0 1": 1,
+    "2.5 1": 1,
+    "5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 25.0,
+   "catalysts": {},
+   "solvents": {
+    "dichloromethane": 6,
+    "DCM": 4,
+    "ethyl acetate": 2,
+    "dioxane": 2,
+    "trifluoroacetic acid": 2,
+    "acetic acid": 1,
+    "EtOAc": 1,
+    "ether": 1,
+    "hydrochloric acid dioxane": 1,
+    "CH3OH": 1,
+    "methylene chloride": 1,
+    "MeOH": 1,
+    "CH2Cl2": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-8c1a0f763e134725a382272c6c9a4fdb",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b4309212a44f4971b334474eceb5a23e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethyl acetate"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-fc408a594b894b8fbe55697e2af9bd08",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DCM"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[C:1]-[C;H0;D3;+0:2](=[O;H0;D1;+0:3])-[c:4]>>[C:1]-[CH;D3;+0:2](-[OH;D1;+0:3])-[c:4]",
+   "support": 1452,
+   "n_templates": 1,
+   "fired": 1017,
+   "match": 47,
+   "n_temp": 14,
+   "n_catalyst": 1,
+   "n_solvent": 44,
+   "n_reagent": 0,
+   "n_any": 44,
+   "temps": {
+    "0 1": 6,
+    "-10 1": 2,
+    "-15 1": 1,
+    "-55 1": 1,
+    "-35 1": 1,
+    "-40 1": 1,
+    "5 1": 1,
+    "50 1": 1
+   },
+   "temps_min": -55.0,
+   "temps_max": 50.0,
+   "catalysts": {
+    "HCl": 1
+   },
+   "solvents": {
+    "methanol": 10,
+    "THF": 10,
+    "ethanol": 7,
+    "water": 5,
+    "ethyl acetate": 4,
+    "EtOAc": 4,
+    "toluene": 4,
+    "tetrahydrofuran": 3,
+    "MeOH": 3,
+    "alcohol": 2,
+    "chloroform": 2,
+    "Na2CO3": 2,
+    "isopropanol": 1,
+    "brine": 1,
+    "DMF MeOH": 1,
+    "diethyl ether": 1,
+    "sodium borohydride": 1,
+    "tetrahydrofurane": 1,
+    "EtOH": 1,
+    "glyme": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-71d372ee817748b9b806f8449f71356b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "isopropanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-efc38a053d1c4ccfa3ee8c93fafdd2cb",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "brine",
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e6929fe333de4a2fa482e850fe235ef2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF MeOH"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[C:2])-[OH;D1;+0:3].[NH2;D1;+0:4]-[c:5]>>[C:2]-[C;H0;D3;+0:1](=[O;H0;D1;+0:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 1447,
+   "n_templates": 2,
+   "fired": 286,
+   "match": 113,
+   "n_temp": 33,
+   "n_catalyst": 11,
+   "n_solvent": 93,
+   "n_reagent": 0,
+   "n_any": 94,
+   "temps": {
+    "0 1": 12,
+    "25 1": 9,
+    "50 1": 2,
+    "175 1": 2,
+    "20 1": 2,
+    "75 1": 1,
+    "-20 1": 1,
+    "-10 1": 1,
+    "-25 1": 1,
+    "40 1": 1,
+    "5 1": 1
+   },
+   "temps_min": -25.0,
+   "temps_max": 175.0,
+   "catalysts": {
+    "N,N-dimethylformamide": 5,
+    "4-dimethylaminopyridine": 2,
+    "DMF": 1,
+    "palladium/charcoal": 1,
+    "4-(dimethylamino)pyridine": 1,
+    "DMAP": 1
+   },
+   "solvents": {
+    "methylene chloride": 17,
+    "dichloromethane": 12,
+    "water": 12,
+    "tetrahydrofuran": 12,
+    "DMF": 11,
+    "dimethylformamide": 7,
+    "DCM": 7,
+    "THF": 7,
+    "ethyl acetate": 6,
+    "pyridine": 5,
+    "N,N-dimethylformamide": 5,
+    "CH2Cl2": 4,
+    "EtOAc": 4,
+    "N,N-dimethylacetamide": 4,
+    "brine": 3,
+    "triethylamine": 2,
+    "HCl": 2,
+    "acetonitrile": 2,
+    "hexane": 2,
+    "H2O": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-6484a284b0aa46eaae0c0af132625719",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-2b280253fe694eeb9c97b4f613f7983b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "H2O",
+      "brine",
+      "pyridine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-d2f53c3bf7b9408b9aa67d86bd3f1a73",
+     "temp": "25 1",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[#7;a:3].[C:4]-[NH2;D1;+0:5]>>[#7;a:2]:[c;H0;D3;+0:1](-[NH;D2;+0:5]-[C:4]):[#7;a:3]",
+   "support": 1432,
+   "n_templates": 2,
+   "fired": 68,
+   "match": 29,
+   "n_temp": 5,
+   "n_catalyst": 0,
+   "n_solvent": 16,
+   "n_reagent": 0,
+   "n_any": 16,
+   "temps": {
+    "120 1": 2,
+    "70 1": 1,
+    "150 1": 1,
+    "90 1": 1
+   },
+   "temps_min": 70.0,
+   "temps_max": 150.0,
+   "catalysts": {},
+   "solvents": {
+    "n-butanol": 3,
+    "1,4-dioxane": 2,
+    "THF": 2,
+    "toluene": 1,
+    "1-methyl-pyrrolidinone": 1,
+    "acetonitrile": 1,
+    "IPA": 1,
+    "dimethylformamide": 1,
+    "DMF": 1,
+    "acetone": 1,
+    "methylene chloride": 1,
+    "N-methyl pyrrolidone": 1,
+    "ethanol": 1,
+    "dimethyl sulfoxide": 1,
+    "water": 1,
+    "trichloromethane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-282943bf8d7d4042bf9c075a053b8602",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-20fb1a096b914439ad7aeb0dd24776c2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e63c02bb260d484daeeb7469e673adba",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "toluene"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "I-[CH3;D1;+0:1].[C:2]-[OH;D1;+0:3]>>[C:2]-[O;H0;D2;+0:3]-[CH3;D1;+0:1]",
+   "support": 1429,
+   "n_templates": 2,
+   "fired": 79,
+   "match": 40,
+   "n_temp": 8,
+   "n_catalyst": 3,
+   "n_solvent": 36,
+   "n_reagent": 0,
+   "n_any": 36,
+   "temps": {
+    "60 1": 2,
+    "20 1": 1,
+    "80 1": 1,
+    "0 1": 1,
+    "25 1": 1,
+    "70 1": 1,
+    "23 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "silver oxide": 2,
+    "silver (I) oxide": 1
+   },
+   "solvents": {
+    "DMF": 17,
+    "dimethylformamide": 4,
+    "water": 3,
+    "ethyl acetate": 3,
+    "THF": 3,
+    "acetone": 2,
+    "CH3OH": 2,
+    "tetrahydrofuran": 2,
+    "hexane": 2,
+    "EtOAc": 1,
+    "acetonitrile": 1,
+    "H2O": 1,
+    "ether": 1,
+    "hexamethyl phosphorus triamide": 1,
+    "diethyl ether": 1,
+    "dimethyl-formamide": 1,
+    "ice water": 1,
+    "methylene chloride": 1,
+    "N,N-dimethylformamide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-6f660a7817ea40438cb69e468c18825b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dimethylformamide",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-bd65e464ac114d37a04a2cdcb5d1add2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dimethylformamide"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6fd52f8f709d4582a0de53e2f97abcfc",
+     "temp": "20 1",
+     "catalysts": [],
+     "solvents": [
+      "acetone"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[NH2;D1;+0:5]>>[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[NH;D2;+0:5]-[C:4]",
+   "support": 1401,
+   "n_templates": 2,
+   "fired": 785,
+   "match": 243,
+   "n_temp": 32,
+   "n_catalyst": 4,
+   "n_solvent": 165,
+   "n_reagent": 0,
+   "n_any": 166,
+   "temps": {
+    "0 1": 10,
+    "-20 1": 4,
+    "60 1": 3,
+    "80 1": 2,
+    "20 1": 2,
+    "70 1": 2,
+    "-10 1": 1,
+    "5 1": 1,
+    "-30 1": 1,
+    "120 1": 1,
+    "38 1": 1,
+    "65 1": 1,
+    "95 1": 1,
+    "-15 1": 1,
+    "4 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 2,
+    "DMAP": 1,
+    "water": 1
+   },
+   "solvents": {
+    "DMF": 41,
+    "water": 20,
+    "tetrahydrofuran": 19,
+    "dichloromethane": 16,
+    "ethyl acetate": 16,
+    "dimethylformamide": 12,
+    "N,N-dimethylformamide": 9,
+    "triethylamine": 9,
+    "CH2Cl2": 8,
+    "EtOAc": 7,
+    "THF": 7,
+    "DCM": 7,
+    "methanol": 7,
+    "methylene chloride": 6,
+    "acetonitrile": 6,
+    "Ethyl acetate": 4,
+    "acetone": 4,
+    "MeOH": 3,
+    "Water": 3,
+    "ethanol": 3
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a50f7cac2645481a8747ad859fb15edc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a37d4b3af3174cb3b9d2b4d6eb76f09a",
+     "temp": "",
+     "catalysts": [
+      "4-dimethylaminopyridine"
+     ],
+     "solvents": [
+      "dichloromethane",
+      "hydrochloric acid",
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-aaa752085c62402d8beb5b3c0698a75a",
+     "temp": "-10 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "ethyl acetate"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-[Si](-C)(-C)-[C;H0;D2;+0:1]#[C:2]>>[C:2]#[CH;D1;+0:1]",
+   "support": 1370,
+   "n_templates": 1,
+   "fired": 64,
+   "match": 19,
+   "n_temp": 2,
+   "n_catalyst": 1,
+   "n_solvent": 19,
+   "n_reagent": 0,
+   "n_any": 19,
+   "temps": {
+    "23 1": 1,
+    "5 1": 1
+   },
+   "temps_min": 5.0,
+   "temps_max": 23.0,
+   "catalysts": {
+    "tetrabutylammonium chloride": 1
+   },
+   "solvents": {
+    "methanol": 9,
+    "THF": 3,
+    "MeOH": 3,
+    "hexane": 2,
+    "ethyl acetate": 1,
+    "tetrahydrofuran": 1,
+    "acetonitrile": 1,
+    "EtOAc": 1,
+    "ethyl ether": 1,
+    "Hexanes": 1,
+    "water": 1,
+    "ethanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-8ccfabbc925a49f499ffa9cf1393b37d",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-55445a3c802c4387b622d07c9fb587f7",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethyl acetate",
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-bd6968ed48c6466e8db722dd01b4162e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "acetonitrile"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(=O)-O-[C;H0;D3;+0:1](-[C;D1;H3:2])=[O;D1;H0:3].[C:4]-[OH;D1;+0:5]>>[C:4]-[O;H0;D2;+0:5]-[C;H0;D3;+0:1](-[C;D1;H3:2])=[O;D1;H0:3]",
+   "support": 1363,
+   "n_templates": 2,
+   "fired": 83,
+   "match": 28,
+   "n_temp": 3,
+   "n_catalyst": 9,
+   "n_solvent": 25,
+   "n_reagent": 0,
+   "n_any": 25,
+   "temps": {
+    "35 1": 1,
+    "60 1": 1,
+    "70 1": 1
+   },
+   "temps_min": 35.0,
+   "temps_max": 70.0,
+   "catalysts": {
+    "DMAP": 3,
+    "4-dimethylaminopyridine": 3,
+    "sulfuric acid": 2,
+    "4-(N,N-dimethylamino)pyridine": 1
+   },
+   "solvents": {
+    "pyridine": 11,
+    "chloroform": 3,
+    "ethyl acetate": 3,
+    "dichloromethane": 2,
+    "tetrahydrofuran": 2,
+    "THF": 1,
+    "ethyl ether": 1,
+    "Brine": 1,
+    "CH2Cl2": 1,
+    "ethanol": 1,
+    "diethyl ether": 1,
+    "DMF": 1,
+    "ice water": 1,
+    "ether": 1,
+    "water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-4a21139022934614aaca272b8999f93e",
+     "temp": "35 1",
+     "catalysts": [
+      "DMAP"
+     ],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-95263361be4d4763a69960383067d79e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1a96469253c542e9ac25f301a713555c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[#7;a:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[#7;a:2]:[c;H0;D3;+0:1](-[N;H0;D3;+0:5](-[C:4])-[C:6]):[#7;a:3]",
+   "support": 1349,
+   "n_templates": 2,
+   "fired": 78,
+   "match": 31,
+   "n_temp": 9,
+   "n_catalyst": 0,
+   "n_solvent": 24,
+   "n_reagent": 0,
+   "n_any": 24,
+   "temps": {
+    "85 1": 2,
+    "100 1": 1,
+    "120 1": 1,
+    "110 1": 1,
+    "-5 1": 1,
+    "90 1": 1,
+    "80 1": 1,
+    "94 1": 1
+   },
+   "temps_min": -5.0,
+   "temps_max": 120.0,
+   "catalysts": {},
+   "solvents": {
+    "water": 7,
+    "dioxane": 3,
+    "chloroform": 2,
+    "isoamyl alcohol": 2,
+    "EtOH": 2,
+    "N,N-dimethylformamide": 1,
+    "hydrochloric acid": 1,
+    "pentanol": 1,
+    "dimethylformamide": 1,
+    "DMF": 1,
+    "dichloromethane": 1,
+    "sec-butanol": 1,
+    "NMP": 1,
+    "toluene": 1,
+    "THF": 1,
+    "DCM": 1,
+    "DMA": 1,
+    "MeOH": 1,
+    "propan-2-ol": 1,
+    "dimethyl acetamide": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-e0e475faa70b4ac49a3f05319e13d0f4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "N,N-dimethylformamide"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-c4aab881ba304b8ea0dd6829386c2198",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "hydrochloric acid"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-446e8a80fd7642449b2d5bff95ba4b59",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "pentanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[Si;H0;D4;+0:1](-[C:2])(-[C;D1;H3:3])-[C;D1;H3:4].[C:5]-[OH;D1;+0:6]>>[C:5]-[O;H0;D2;+0:6]-[Si;H0;D4;+0:1](-[C:2])(-[C;D1;H3:3])-[C;D1;H3:4]",
+   "support": 1341,
+   "n_templates": 2,
+   "fired": 56,
+   "match": 35,
+   "n_temp": 10,
+   "n_catalyst": 3,
+   "n_solvent": 32,
+   "n_reagent": 0,
+   "n_any": 33,
+   "temps": {
+    "0 1": 8,
+    "70 1": 1,
+    "20 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 70.0,
+   "catalysts": {
+    "DMAP": 1,
+    "4-Dimethylaminopyridine": 1,
+    "4-dimethylaminopyridine": 1
+   },
+   "solvents": {
+    "DMF": 9,
+    "dimethylformamide": 7,
+    "water": 4,
+    "CH2Cl2": 3,
+    "hexane": 3,
+    "DCM": 3,
+    "methylene chloride": 2,
+    "dichloromethane": 2,
+    "brine": 1,
+    "EtOAc": 1,
+    "N,N-dimethyl-formamide": 1,
+    "N,N-dimethylformamide": 1,
+    "ether": 1,
+    "ice water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-9a0fc9afc98d480a90a8dae8a8050c3f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-396347309c7e45c5aa561df64ccbeaed",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "brine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f152985bfcc1430499aab15162644780",
+     "temp": "",
+     "catalysts": [
+      "DMAP"
+     ],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[CH;D2;+0:1]-[c:2]:[#7;a:3].[#7:4]-[C:5](=[O;D1;H0:6])-[CH2;D2;+0:7]-[c:8]>>[#7:4]-[C:5](=[O;D1;H0:6])-[C;H0;D3;+0:7](=[CH;D2;+0:1]-[c:2]:[#7;a:3])-[c:8]",
+   "support": 1340,
+   "n_templates": 2,
+   "fired": 4,
+   "match": 4,
+   "n_temp": 1,
+   "n_catalyst": 2,
+   "n_solvent": 3,
+   "n_reagent": 0,
+   "n_any": 3,
+   "temps": {
+    "100 1": 1
+   },
+   "temps_min": 100.0,
+   "temps_max": 100.0,
+   "catalysts": {
+    "piperidine": 2
+   },
+   "solvents": {
+    "ethanol": 3
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-6034782cbd2e46a5b16cd29f8b2cc7f1",
+     "temp": "100 1",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-12f638ffe9e949e99e5e28a062188c8f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-a866996bf95b4ea8afb4446760c042ae",
+     "temp": "",
+     "catalysts": [
+      "piperidine"
+     ],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O-[C;H0;D3;+0:1](-[C:2])=[O;D1;H0:3].[C:4]-[NH;D2;+0:5]-[C:6]>>[C:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[N;H0;D3;+0:5](-[C:4])-[C:6]",
+   "support": 1328,
+   "n_templates": 2,
+   "fired": 1030,
+   "match": 170,
+   "n_temp": 30,
+   "n_catalyst": 9,
+   "n_solvent": 124,
+   "n_reagent": 0,
+   "n_any": 126,
+   "temps": {
+    "0 1": 12,
+    "-15 1": 2,
+    "-20 1": 2,
+    "25 1": 2,
+    "70 1": 2,
+    "4 1": 1,
+    "60 1": 1,
+    "55 1": 1,
+    "23 1": 1,
+    "45 1": 1,
+    "1.5 1": 1,
+    "-30 1": 1,
+    "80 1": 1,
+    "-10 1": 1,
+    "90 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 90.0,
+   "catalysts": {
+    "4-dimethylaminopyridine": 4,
+    "DMAP": 2,
+    "acetic acid": 1,
+    "N,N-dimethylpyridin-4-amine": 1,
+    "4-dimethylamino pyridine": 1
+   },
+   "solvents": {
+    "DMF": 37,
+    "dichloromethane": 22,
+    "N,N-dimethylformamide": 15,
+    "tetrahydrofuran": 13,
+    "THF": 12,
+    "water": 11,
+    "DCM": 10,
+    "dimethylformamide": 9,
+    "ethyl acetate": 9,
+    "triethylamine": 7,
+    "methylene chloride": 5,
+    "pyridine": 5,
+    "CH2Cl2": 4,
+    "acetonitrile": 4,
+    "Water": 4,
+    "EtOAc": 4,
+    "chloroform": 3,
+    "methanol": 3,
+    "Ethyl acetate": 2,
+    "methylene chloride methanol": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-2a63c23aabf6477a95f607a9610fff33",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DCM",
+      "triethylamine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-18c55e75a5c248f0a49de337c375323e",
+     "temp": "4 1",
+     "catalysts": [],
+     "solvents": [
+      "chloroform"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f7f1d605a00c407485160438a0416ec8",
+     "temp": "",
+     "catalysts": [
+      "4-dimethylaminopyridine"
+     ],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=C(-O-C-c1:c:c:c:c:c:1)-[N;H0;D3;+0:1](-[C:2])-[C:3]>>[C:2]-[NH;D2;+0:1]-[C:3]",
+   "support": 1325,
+   "n_templates": 1,
+   "fired": 133,
+   "match": 22,
+   "n_temp": 1,
+   "n_catalyst": 17,
+   "n_solvent": 21,
+   "n_reagent": 0,
+   "n_any": 22,
+   "temps": {
+    "80 1": 1
+   },
+   "temps_min": 80.0,
+   "temps_max": 80.0,
+   "catalysts": {
+    "palladium-on-carbon": 4,
+    "palladium on carbon": 3,
+    "Pd/C": 3,
+    "palladium-carbon": 2,
+    "palladium hydroxide": 2,
+    "Palladium": 1,
+    "palladium on activated carbon": 1,
+    "Pd—C": 1,
+    "Pd on charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 7,
+    "methanol": 4,
+    "MeOH": 3,
+    "hydrogen": 1,
+    "hydrochloric acid": 1,
+    "dichloromethane": 1,
+    "AcOH": 1,
+    "Et2O": 1,
+    "H2O MeOH": 1,
+    "dioxane": 1,
+    "ether": 1,
+    "CH3OH": 1,
+    "trifluoroacetic acid": 1,
+    "ethyl acetate": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-46ecb767a9af4aeb989fdb7fa30a4807",
+     "temp": "",
+     "catalysts": [
+      "palladium-carbon"
+     ],
+     "solvents": [
+      "hydrogen",
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-1616f826527d480290a5478276339e2f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "hydrochloric acid"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f9b9fd75b1604554b8965446ac5f9580",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3].[C:4]-[NH2;D1;+0:5]>>[#7;a:2]:[c;H0;D3;+0:1](-[NH;D2;+0:5]-[C:4]):[c:3]",
+   "support": 1293,
+   "n_templates": 2,
+   "fired": 167,
+   "match": 91,
+   "n_temp": 30,
+   "n_catalyst": 7,
+   "n_solvent": 52,
+   "n_reagent": 0,
+   "n_any": 55,
+   "temps": {
+    "100 1": 6,
+    "120 1": 3,
+    "90 1": 3,
+    "140 1": 2,
+    "80 1": 2,
+    "160 1": 2,
+    "130 1": 2,
+    "150 1": 2,
+    "67 1": 1,
+    "60 1": 1,
+    "105 1": 1,
+    "180 1": 1,
+    "70 1": 1,
+    "50 1": 1,
+    "165 1": 1,
+    "200 1": 1
+   },
+   "temps_min": 50.0,
+   "temps_max": 200.0,
+   "catalysts": {
+    "Raney-Nickel": 1,
+    "PdCl2(dppf)": 1,
+    "BrettPhos": 1,
+    "Pd(OAc)2": 1,
+    "Pd2(dba)3": 1,
+    "Palladium Acetate": 1,
+    "BINAP": 1,
+    "palladium(II) acetate": 1
+   },
+   "solvents": {
+    "acetonitrile": 6,
+    "dioxane": 6,
+    "water": 5,
+    "DMF": 4,
+    "EtOAc": 4,
+    "n-butanol": 4,
+    "THF": 3,
+    "methanol": 3,
+    "NMP": 3,
+    "ethyl acetate": 2,
+    "DMSO": 2,
+    "isopropanol": 2,
+    "N,N-dimethylformamide": 2,
+    "toluene": 2,
+    "tetrahydrofuran": 1,
+    "ethanol": 1,
+    "Et3N": 1,
+    "IPA": 1,
+    "dimethylsulfoxide": 1,
+    "1,4-dioxane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-1d28f93300e04c54af211412e745642b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8388cc3948c24d1aa622a1a5a14c0e04",
+     "temp": "67 1",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-11aaf203be374431b5cf7fb62b1523c8",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C-O-[C;H0;D3;+0:1](-[C:2])=[O;H0;D1;+0:3]>>[C:2]-[CH2;D2;+0:1]-[OH;D1;+0:3]",
+   "support": 1281,
+   "n_templates": 1,
+   "fired": 2579,
+   "match": 34,
+   "n_temp": 10,
+   "n_catalyst": 0,
+   "n_solvent": 32,
+   "n_reagent": 0,
+   "n_any": 32,
+   "temps": {
+    "0 1": 7,
+    "55 1": 1,
+    "25 1": 1,
+    "5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 55.0,
+   "catalysts": {},
+   "solvents": {
+    "tetrahydrofuran": 9,
+    "THF": 9,
+    "ether": 5,
+    "EtOAc": 2,
+    "DCM": 2,
+    "ethanol": 2,
+    "diethyl ether": 2,
+    "t-butanol": 1,
+    "toluene": 1,
+    "water": 1,
+    "MeOH": 1,
+    "brine": 1,
+    "methylene chloride": 1,
+    "ethyl acetate": 1,
+    "ethyl acetate hexane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-724adf2a51f8489d97c3c818d08a607f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "tetrahydrofuran"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6f0364c3f1a245d7aa5fa0b2b583f5d2",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-5fdd0e3dd94345ac930309f298b22ccd",
+     "temp": "55 1",
+     "catalysts": [],
+     "solvents": [
+      "t-butanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4].[C:5]-[NH;D2;+0:6]-[C:7]>>[C:5]-[N;H0;D3;+0:6](-[S;H0;D4;+0:1](=[O;D1;H0:2])(=[O;D1;H0:3])-[c:4])-[C:7]",
+   "support": 1273,
+   "n_templates": 2,
+   "fired": 51,
+   "match": 24,
+   "n_temp": 1,
+   "n_catalyst": 0,
+   "n_solvent": 21,
+   "n_reagent": 0,
+   "n_any": 21,
+   "temps": {
+    "25 1": 1
+   },
+   "temps_min": 25.0,
+   "temps_max": 25.0,
+   "catalysts": {},
+   "solvents": {
+    "dichloromethane": 7,
+    "CH2Cl2": 4,
+    "pyridine": 2,
+    "ethyl acetate": 2,
+    "water": 2,
+    "THF": 1,
+    "methylene chloride": 1,
+    "DCM": 1,
+    "diethyl ether": 1,
+    "tetrahydrofuran": 1,
+    "industrial methylated spirit": 1,
+    "dioxane": 1,
+    "EtOAc": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-b85d099259e8475f8ee61f1318b3a6b9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-dc1b35ceb41247bd9bac1d4427577103",
+     "temp": "25 1",
+     "catalysts": [],
+     "solvents": [
+      "pyridine"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-806ccaae526a4b27a380eef9af8b93d8",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "dichloromethane"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[c;H0;D3;+0:1](:[c:2]):[c:3]:[#7;a:4].O-B(-O)-[c;H0;D3;+0:5](:[c:6]):[c:7]>>[#7;a:4]:[c:3]:[c;H0;D3;+0:1](-[c;H0;D3;+0:5](:[c:6]):[c:7]):[c:2]",
+   "support": 1272,
+   "n_templates": 2,
+   "fired": 71,
+   "match": 52,
+   "n_temp": 25,
+   "n_catalyst": 28,
+   "n_solvent": 36,
+   "n_reagent": 0,
+   "n_any": 38,
+   "temps": {
+    "100 1": 6,
+    "90 1": 4,
+    "70 1": 3,
+    "80 1": 2,
+    "85 1": 2,
+    "140 1": 2,
+    "110 1": 2,
+    "95 1": 2,
+    "75 1": 1,
+    "130 1": 1
+   },
+   "temps_min": 70.0,
+   "temps_max": 140.0,
+   "catalysts": {
+    "Pd(dppf)Cl2": 9,
+    "Pd(PPh3)4": 4,
+    "PdCl2(dppf)": 2,
+    "tetrakis(triphenylphosphine)palladium(0)": 2,
+    "tetrakis(triphenylphosphine)palladium": 2,
+    "dichlorobis(triphenylphosphine)palladium": 1,
+    "bis(tri-tert-butylphosphine)palladium": 1,
+    "dichloro(bis{di-tert-butyl[4-(dimethylamino)phenyl]phosphoranyl})palladium": 1,
+    "1,1-bis(diphenylphosphino]ferrocenepalladium": 1,
+    "dppfPdCl2": 1,
+    "tetrakis(triphenylphosphine) palladium(0)": 1,
+    "1,1′-bis(diphenylphosphino)ferrocenedichloropalladium(II)": 1,
+    "PdCl2(dppf) CH2Cl2": 1,
+    "Pd(PPh3)2Cl2": 1
+   },
+   "solvents": {
+    "dioxane": 8,
+    "water": 7,
+    "1,4-dioxane": 4,
+    "EtOAc": 3,
+    "toluene": 3,
+    "THF": 2,
+    "NaHCO3": 2,
+    "ethyl acetate": 2,
+    "ethanol": 2,
+    "H2O": 2,
+    "acetonitrile": 2,
+    "2-propanol": 1,
+    "ethylene glycol dimethyl ether": 1,
+    "benzene": 1,
+    "Na2CO3": 1,
+    "CH2Cl2": 1,
+    "EA": 1,
+    "dioxane H2O": 1,
+    "dioxane water": 1,
+    "Toluene ethanol water": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ec3d91192a5044a9b1de8e1e50251c8b",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-ecbc23aa801f4089aa9d57bfbfbf440b",
+     "temp": "80 1",
+     "catalysts": [
+      "dichlorobis(triphenylphosphine)palladium"
+     ],
+     "solvents": [
+      "2-propanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-26556fabedf14c2b877808595e39c8bb",
+     "temp": "85 1",
+     "catalysts": [
+      "bis(tri-tert-butylphosphine)palladium"
+     ],
+     "solvents": [
+      "THF",
+      "water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(-C)(-C)-[O;H0;D2;+0:1]-[C;H0;D3;+0:2](-[C:3])=[O;H0;D1;+0:4]>>[C:3]-[C;H0;D3;+0:2](=[O;H0;D1;+0:1])-[OH;D1;+0:4]",
+   "support": 1222,
+   "n_templates": 1,
+   "fired": 337,
+   "match": 59,
+   "n_temp": 7,
+   "n_catalyst": 0,
+   "n_solvent": 51,
+   "n_reagent": 0,
+   "n_any": 52,
+   "temps": {
+    "0 1": 3,
+    "25 1": 2,
+    "70 1": 1,
+    "100 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 100.0,
+   "catalysts": {},
+   "solvents": {
+    "dichloromethane": 15,
+    "CH2Cl2": 10,
+    "trifluoroacetic acid": 7,
+    "DCM": 4,
+    "TFA": 3,
+    "methylene chloride": 3,
+    "dioxane": 3,
+    "water": 3,
+    "Petroleum ether": 2,
+    "diethyl ether": 2,
+    "dichloroethane": 1,
+    "HCl": 1,
+    "hydrogen chloride": 1,
+    "H2O": 1,
+    "dioxanes": 1,
+    "Ethyl acetate": 1,
+    "TFA methylene chloride": 1,
+    "dioxan": 1,
+    "trifluoroacetic acid water": 1,
+    "1,4-dioxane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-ee01e8fa35e148bf874c25c944de280c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6857fd771a8b44e0b17585c5501f4bf0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "CH2Cl2"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-d9f23dba989348838fd236424979ae43",
+     "temp": "0 1",
+     "catalysts": [],
+     "solvents": [
+      "DCM"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=[C;H0;D3;+0:1](-[C:2])-[OH;D1;+0:3].[C:4]-[NH2;D1;+0:5]>>[C:4]-[NH;D2;+0:5]-[C;H0;D3;+0:1](-[C:2])=[O;H0;D1;+0:3]",
+   "support": 1215,
+   "n_templates": 2,
+   "fired": 434,
+   "match": 197,
+   "n_temp": 27,
+   "n_catalyst": 1,
+   "n_solvent": 135,
+   "n_reagent": 0,
+   "n_any": 136,
+   "temps": {
+    "0 1": 8,
+    "-20 1": 4,
+    "60 1": 3,
+    "20 1": 2,
+    "5 1": 1,
+    "-30 1": 1,
+    "120 1": 1,
+    "38 1": 1,
+    "65 1": 1,
+    "95 1": 1,
+    "70 1": 1,
+    "-15 1": 1,
+    "80 1": 1,
+    "4 1": 1
+   },
+   "temps_min": -30.0,
+   "temps_max": 120.0,
+   "catalysts": {
+    "DMAP": 1
+   },
+   "solvents": {
+    "DMF": 39,
+    "water": 18,
+    "tetrahydrofuran": 15,
+    "ethyl acetate": 15,
+    "dimethylformamide": 11,
+    "dichloromethane": 9,
+    "N,N-dimethylformamide": 9,
+    "triethylamine": 9,
+    "CH2Cl2": 8,
+    "EtOAc": 7,
+    "THF": 7,
+    "methylene chloride": 5,
+    "DCM": 5,
+    "Ethyl acetate": 4,
+    "acetonitrile": 4,
+    "acetone": 4,
+    "Water": 3,
+    "ethylacetate": 2,
+    "dioxane": 2,
+    "MeOH CHCl3": 2
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-a50f7cac2645481a8747ad859fb15edc",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-65c497fe5d834364a584b9d25bebadc4",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-b041def7457f4f6580dc12786d8b43aa",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3]:[c:4]:[#7;a:5].[NH2;D1;+0:6]-[c:7]>>[#7;a:5]:[c:4]:[c:3]:[c;H0;D3;+0:1](-[NH;D2;+0:6]-[c:7]):[#7;a:2]",
+   "support": 1204,
+   "n_templates": 2,
+   "fired": 70,
+   "match": 40,
+   "n_temp": 10,
+   "n_catalyst": 1,
+   "n_solvent": 27,
+   "n_reagent": 0,
+   "n_any": 27,
+   "temps": {
+    "80 1": 2,
+    "110 1": 1,
+    "120 1": 1,
+    "70 1": 1,
+    "90 1": 1,
+    "130 1": 1,
+    "60 1": 1,
+    "150 1": 1,
+    "83 1": 1
+   },
+   "temps_min": 60.0,
+   "temps_max": 150.0,
+   "catalysts": {
+    "Pd2(dba)3": 1
+   },
+   "solvents": {
+    "ethanol": 5,
+    "n-butanol": 3,
+    "H2O": 2,
+    "isopropanol": 2,
+    "dioxane": 2,
+    "butanol": 1,
+    "water": 1,
+    "Dioxan": 1,
+    "hydrogen chloride": 1,
+    "n-BuOH": 1,
+    "acetonitrile": 1,
+    "dimethyl formamide": 1,
+    "dimethylformamide": 1,
+    "ethyl acetate": 1,
+    "DME": 1,
+    "DMF": 1,
+    "CH3CN": 1,
+    "methanol water": 1,
+    "dimethylsulfoxide": 1,
+    "1,4-dioxan": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-c8bd4d0a66984a0e969d11562e64778e",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "butanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-47a28c6f829248468da0cbc0fbf81b05",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-753ba51b07e845fc9cfead58758f27e0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "O=C(-O-C-c1:c:c:c:c:c:1)-[NH;D2;+0:1]-[C:2]>>[C:2]-[NH2;D1;+0:1]",
+   "support": 1193,
+   "n_templates": 1,
+   "fired": 149,
+   "match": 27,
+   "n_temp": 2,
+   "n_catalyst": 21,
+   "n_solvent": 23,
+   "n_reagent": 0,
+   "n_any": 25,
+   "temps": {
+    "0 1": 1,
+    "50 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 50.0,
+   "catalysts": {
+    "Pd/C": 6,
+    "palladium on carbon": 5,
+    "Pd(OH)2": 2,
+    "palladium-carbon": 1,
+    "palladium black": 1,
+    "palladium on activated carbon": 1,
+    "palladium hydroxide on charcoal": 1,
+    "palladium on charcoal": 1,
+    "palladium-on-carbon": 1,
+    "palladium hydroxide": 1,
+    "manganese(IV) oxide": 1,
+    "palladium-on-charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 7,
+    "methanol": 6,
+    "MeOH": 3,
+    "acetic acid": 1,
+    "diethyl ether": 1,
+    "dimethylformamide": 1,
+    "ethanol cyclohexene": 1,
+    "tetrahydrofuran": 1,
+    "water": 1,
+    "EA": 1,
+    "ethyl acetate": 1,
+    "acetonitrile": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-29290da4f651485f9a89caa1ac100820",
+     "temp": "",
+     "catalysts": [
+      "Pd/C"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-959a0ef24d78490988b23eae625899e7",
+     "temp": "",
+     "catalysts": [
+      "palladium on carbon"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-e4d7c9fea97e43ada9361d3a3512a57a",
+     "temp": "",
+     "catalysts": [
+      "palladium-carbon"
+     ],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[C;H0;D3;+0:1](-[#8:2])=[O;D1;H0:3].[NH2;D1;+0:4]-[c:5]>>[#8:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[NH;D2;+0:4]-[c:5]",
+   "support": 1167,
+   "n_templates": 2,
+   "fired": 63,
+   "match": 30,
+   "n_temp": 5,
+   "n_catalyst": 0,
+   "n_solvent": 28,
+   "n_reagent": 0,
+   "n_any": 28,
+   "temps": {
+    "0 1": 4,
+    "5 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 5.0,
+   "catalysts": {},
+   "solvents": {
+    "THF": 6,
+    "water": 4,
+    "dichloromethane": 4,
+    "EtOAc": 3,
+    "NaHCO3": 3,
+    "pyridine": 3,
+    "DCM": 3,
+    "methylene chloride": 2,
+    "DMF": 2,
+    "H2O": 2,
+    "THF water": 1,
+    "toluene": 1,
+    "hydrochloric acid": 1,
+    "EA": 1,
+    "sodium hydroxide": 1,
+    "ethyl acetate": 1,
+    "tetrahydrofuran": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-757aeda84cdd4e45a7edc65cd63a951f",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methylene chloride",
+      "water"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-de59078c0a014f0eb623ed9b30a93dc0",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF",
+      "EtOAc"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0f77619114f844429e1ebaae7b29ea17",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "THF water"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "C-C(=O)-[NH;D2;+0:1]-[c:2]>>[NH2;D1;+0:1]-[c:2]",
+   "support": 1148,
+   "n_templates": 1,
+   "fired": 662,
+   "match": 35,
+   "n_temp": 13,
+   "n_catalyst": 0,
+   "n_solvent": 28,
+   "n_reagent": 0,
+   "n_any": 30,
+   "temps": {
+    "100 1": 3,
+    "63 1": 2,
+    "65 1": 1,
+    "20 1": 1,
+    "85 1": 1,
+    "70 1": 1,
+    "80 1": 1,
+    "23 1": 1,
+    "0 1": 1,
+    "95 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 100.0,
+   "catalysts": {},
+   "solvents": {
+    "ethanol": 8,
+    "methanol": 6,
+    "water": 6,
+    "ammonia": 2,
+    "NaOH": 2,
+    "dioxane": 2,
+    "HCl": 1,
+    "EA": 1,
+    "hydrochloric acid": 1,
+    "EtOH": 1,
+    "H2SO4": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-546e985c373d49ba8a1bca6b63eaccc9",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0aa6374f81f648318495f33d600113bb",
+     "temp": "65 1",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f5fb54a257e44d39b9c11087f44a544d",
+     "temp": "20 1",
+     "catalysts": [],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[N;H0;D1;+0:1]#[C;H0;D2;+0:2]-[c:3]>>[NH2;D1;+0:1]-[CH2;D2;+0:2]-[c:3]",
+   "support": 1141,
+   "n_templates": 1,
+   "fired": 993,
+   "match": 24,
+   "n_temp": 4,
+   "n_catalyst": 15,
+   "n_solvent": 23,
+   "n_reagent": 0,
+   "n_any": 24,
+   "temps": {
+    "0 1": 3,
+    "65 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 65.0,
+   "catalysts": {
+    "Pd/C": 3,
+    "Raney nickel": 3,
+    "Raney Nickel": 2,
+    "Raney® Nickel": 1,
+    "catalyst": 1,
+    "palladium": 1,
+    "PtO2": 1,
+    "Pd—C": 1,
+    "Ni": 1,
+    "nickel": 1,
+    "Raney-Nickel": 1
+   },
+   "solvents": {
+    "tetrahydrofuran": 6,
+    "methanol": 4,
+    "THF": 3,
+    "ethanol": 2,
+    "ammonia": 2,
+    "Et2O": 1,
+    "MeOH": 1,
+    "NH3": 1,
+    "iPrOH": 1,
+    "water": 1,
+    "NH3 MeOH": 1,
+    "EtOH": 1,
+    "HCl": 1,
+    "isopropylalcohol": 1,
+    "acetic acid": 1,
+    "Ethanol": 1,
+    "HOAc": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-94d114d92fa5432ab753cd58d55d0023",
+     "temp": "",
+     "catalysts": [
+      "Raney® Nickel"
+     ],
+     "solvents": [
+      "methanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-6aef33c0c55d4490bcfd859fc7d2334b",
+     "temp": "65 1",
+     "catalysts": [],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-919da183d12643b28c363bbe62fd3270",
+     "temp": "0 1",
+     "catalysts": [],
+     "solvents": [
+      "Et2O"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Cl-[c;H0;D3;+0:1](:[#7;a:2]):[c:3].[OH;D1;+0:4]-[c:5]>>[#7;a:2]:[c;H0;D3;+0:1](-[O;H0;D2;+0:4]-[c:5]):[c:3]",
+   "support": 1135,
+   "n_templates": 2,
+   "fired": 51,
+   "match": 33,
+   "n_temp": 14,
+   "n_catalyst": 0,
+   "n_solvent": 26,
+   "n_reagent": 0,
+   "n_any": 26,
+   "temps": {
+    "90 1": 2,
+    "100 1": 2,
+    "125 1": 2,
+    "180 1": 1,
+    "0 1": 1,
+    "60 1": 1,
+    "80 1": 1,
+    "23 1": 1,
+    "95 1": 1,
+    "150 1": 1,
+    "50 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 180.0,
+   "catalysts": {},
+   "solvents": {
+    "water": 8,
+    "DMF": 6,
+    "dimethylformamide": 3,
+    "DMSO": 3,
+    "acetonitrile": 2,
+    "diglyme": 1,
+    "N,N-di-methylformamide": 1,
+    "dimethyl sulfoxide": 1,
+    "DMA": 1,
+    "tert-butanol": 1,
+    "MeOH": 1,
+    "CH3CN": 1,
+    "brine": 1,
+    "ice water": 1,
+    "1,4-dioxane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-d6384d48d7884598a010228de80c34f6",
+     "temp": "90 1",
+     "catalysts": [],
+     "solvents": [
+      "diglyme"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-0ea58b021f504387a450c1fee6fddaa9",
+     "temp": "100 1",
+     "catalysts": [],
+     "solvents": [
+      "N,N-di-methylformamide"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-7585679821ee45419a3aa02636c4d30c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "[O;D1;H0:1]=[C:2]-[O;H0;D2;+0:3]-C-c1:c:c:c:c:c:1>>[O;D1;H0:1]=[C:2]-[OH;D1;+0:3]",
+   "support": 1125,
+   "n_templates": 1,
+   "fired": 677,
+   "match": 28,
+   "n_temp": 4,
+   "n_catalyst": 19,
+   "n_solvent": 28,
+   "n_reagent": 0,
+   "n_any": 28,
+   "temps": {
+    "70 1": 1,
+    "60 1": 1,
+    "23 1": 1,
+    "12.5 1": 1
+   },
+   "temps_min": 12.5,
+   "temps_max": 70.0,
+   "catalysts": {
+    "palladium on carbon": 4,
+    "Pd/C": 4,
+    "palladium carbon": 3,
+    "palladium": 2,
+    "palladium on charcoal": 2,
+    "palladium-on-carbon": 1,
+    "Pd on carbon": 1,
+    "palladium-on-charcoal": 1,
+    "Pd on activated charcoal": 1
+   },
+   "solvents": {
+    "ethanol": 7,
+    "methanol": 5,
+    "ethyl acetate": 4,
+    "water": 4,
+    "MeOH": 3,
+    "THF": 2,
+    "EtOAc": 2,
+    "methylene chloride": 2,
+    "nitromethane": 1,
+    "MeOH EtOAc": 1,
+    "tetrahydrofuran": 1,
+    "EtOH": 1,
+    "chloroform": 1,
+    "heptane": 1,
+    "trifluoroacetic acid": 1,
+    "dioxane": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-052b6611baf54db8aba7f13890d7e39c",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "nitromethane"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-d6d339541bde41239f4dbc25a36315a6",
+     "temp": "",
+     "catalysts": [
+      "palladium carbon"
+     ],
+     "solvents": [
+      "ethanol"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-ff6efaeae2c44fe2aa49f00ff9a4ff03",
+     "temp": "",
+     "catalysts": [
+      "palladium"
+     ],
+     "solvents": [
+      "THF"
+     ],
+     "reagents": []
+    }
+   ]
+  },
+  {
+   "template": "Br-[CH2;D2;+0:1]-[c:2].[OH;D1;+0:3]-[c:4]>>[c:4]-[O;H0;D2;+0:3]-[CH2;D2;+0:1]-[c:2]",
+   "support": 1124,
+   "n_templates": 2,
+   "fired": 58,
+   "match": 33,
+   "n_temp": 4,
+   "n_catalyst": 1,
+   "n_solvent": 25,
+   "n_reagent": 0,
+   "n_any": 26,
+   "temps": {
+    "15 1": 1,
+    "0 1": 1,
+    "50 1": 1,
+    "45 1": 1
+   },
+   "temps_min": 0.0,
+   "temps_max": 50.0,
+   "catalysts": {
+    "tetrabutylammonium iodide": 1
+   },
+   "solvents": {
+    "DMF": 7,
+    "acetone": 5,
+    "water": 4,
+    "N,N-dimethylformamide": 3,
+    "dimethylformamide": 3,
+    "H2O": 2,
+    "methylene chloride": 1,
+    "ACN": 1,
+    "butanone": 1,
+    "CH2Cl2": 1,
+    "acetonitrile": 1,
+    "ethanol": 1
+   },
+   "reagents": {},
+   "examples": [
+    {
+     "rid": "ord-02bc1bb165664703bc47e99c5b59c704",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-8f299c5ebbfe49debf190fa8ba112a87",
+     "temp": "15 1",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    },
+    {
+     "rid": "ord-f0429738fed54f89869d86f4162bfa51",
+     "temp": "",
+     "catalysts": [],
+     "solvents": [
+      "DMF"
+     ],
+     "reagents": []
+    }
+   ]
+  }
+ ]
+}

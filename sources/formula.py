@@ -39,8 +39,12 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-FJ_DEFAULT = r"D:\TCMAI\data\formula_db.json"
 import os
+
+# 2026-11-27：公开仓不包含完整方剂库；缺失时按空库处理（药典 overlay 仍然可用），
+# 不再让一次「甘草」预测抛出 FileNotFoundError 警告。
+FJ_DEFAULT = (os.environ.get("CHEMCREACT_FORMULA_DB")
+              or r"D:\TCMAI\data\formula_db.json")
 
 TCM_DEFAULT = (os.environ.get("CHEMCREACT_TCM_DB") or r"D:\TCMAI\tcm.db")
 # ★ 药典 2025 成方制剂 overlay（我们自己从 indkb.zip 扒出来的，**不改用户的库**）
@@ -60,12 +64,22 @@ _JUNK = "。．.、；;：:，,（）()【】[]《》<>\"'“”‘’　 \t\r\n
 
 
 def _load(path: str = FJ_DEFAULT) -> dict:
-    """读方剂库（**进程内缓存**：5.3 MB，读一次 ≈0.15 s，之后 0）。"""
+    """读方剂库（**进程内缓存**：5.3 MB，读一次 ≈0.15 s，之后 0）。
+
+    文件不存在时返回空库（药典 overlay 仍可用），不抛异常。
+    """
     global _DB_CACHE, _DB_CACHE_PATH
     if _DB_CACHE is None or _DB_CACHE_PATH != path:
-        _DB_CACHE = json.loads(Path(path).read_text(encoding="utf-8"))
+        p = Path(path)
+        _DB_CACHE = (json.loads(p.read_text(encoding="utf-8"))
+                     if p.exists() else {})
         _DB_CACHE_PATH = path
     return _DB_CACHE
+
+
+def available(path: str = FJ_DEFAULT) -> bool:
+    """完整方剂库是否随仓库分发（公开仓默认没有）。"""
+    return Path(path).exists()
 
 
 _DB_CACHE: Optional[dict] = None
