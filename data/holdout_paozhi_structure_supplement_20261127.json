@@ -1,0 +1,82 @@
+{
+ "frozen_git_rev": "pre-registered 2026-11-27 before first run",
+ "notes": "Structure-level supplement for the two formula-only cases in the 31-case paozhi holdout. The original 31-case file is unchanged. Reference structures are derived deterministically from tcm.db entries (no handwritten SMILES): atractyloside free acid by neutralising the dipotassium salt HBIN017299; THSG aglycone by hydrolysing the 2-O-glucosyl bond of HBIN003908. Target matching uses the 14-character InChIKey skeleton.",
+ "cases": [
+  {
+   "id": "cangerzi_catr_atr_struct",
+   "herb_cn": "苍耳子",
+   "herb_en": "Xanthium fruit",
+   "process_cn": "炒黄",
+   "process_en": "stir-frying",
+   "condition": "炮制·炒黄",
+   "holdout_strength": "weak",
+   "seed": {
+    "iid": "HBIN019719",
+    "name": "Carboxyatractyloside",
+    "formula": "C31H46O18S2"
+   },
+   "targets": [
+    {
+     "label": "atractyloside free acid",
+     "kind": "key",
+     "value": "FYQXODZRNSCOTR",
+     "family": ["decarboxylation"]
+    }
+   ],
+   "bridge": "",
+   "expected": {
+    "status": "consistent",
+    "rule": "decarboxylation_001",
+    "confidence": "high",
+    "reason": "CATR 加热脱羧得 ATR 游离酸（C31H46O18S2 - CO2 = C30H46O16S2）。参考结构由 tcm.db HBIN017299 的二钾盐去 K+、硫酸酯负离子质子化得到。"
+   },
+   "reference": {
+    "name": "atractyloside free acid",
+    "smiles": "C=C1[C@@H]2CC[C@H]3[C@]4(C)C[C@H](O[C@@H]5O[C@H](CO)[C@@H](OS(=O)(=O)O)[C@H](OS(=O)(=O)O)[C@H]5OC(=O)CC(C)C)C[C@@H](C(=O)O)[C@H]4CC[C@]3(C2)[C@H]1O",
+    "formula": "C30H46O16S2",
+    "inchikey": "FYQXODZRNSCOTR-QLKRWLHJSA-N",
+    "source": "tcm.db HBIN017299 (Atractyloside dipotassium salt, PubChem CID 442004), neutralised",
+    "literature_note": "《苍耳子炮制前后羧基苍术苷和苍术苷的含量比较》(2013)"
+   },
+   "literature_note": "《苍耳子炮制前后羧基苍术苷和苍术苷的含量比较》(2013)"
+  },
+  {
+   "id": "heshouwu_thsg_aglycone_struct",
+   "herb_cn": "何首乌",
+   "herb_en": "Polygonum multiflorum",
+   "process_cn": "蒸制",
+   "process_en": "steaming",
+   "condition": "炮制·蒸制",
+   "holdout_strength": "weak",
+   "seed": {
+    "iid": "HBIN003908",
+    "name": "2,3,5,4'-tetrahydroxystilbene-2-O-beta-D-glucoside",
+    "formula": "C20H22O9"
+   },
+   "targets": [
+    {
+     "label": "THSG aglycone",
+     "kind": "key",
+     "value": "WREAQMXXCUARJD",
+     "family": ["hydrolysis_glycoside"]
+    }
+   ],
+   "bridge": "",
+   "expected": {
+    "status": "consistent",
+    "rule": "hydrolysis_glycoside_001",
+    "confidence": "medium",
+    "reason": "THSG 去 2-O-葡萄糖得 2,3,5,4'-四羟基二苯乙烯（C20H22O9 - C6H10O5 = C14H12O4）。参考结构由 tcm.db HBIN003908 的糖苷键水解得到。"
+   },
+   "reference": {
+    "name": "2,3,5,4'-tetrahydroxystilbene (THSG aglycone)",
+    "smiles": "Oc1ccc(/C=C/c2cc(O)cc(O)c2O)cc1",
+    "formula": "C14H12O4",
+    "inchikey": "WREAQMXXCUARJD-DAFODLJHSA-N",
+    "source": "tcm.db HBIN003908 (THSG), glycosidic O-C(anomeric) bond cleaved",
+    "literature_note": "DOI 10.3389/fphar.2018.00934（何首乌炮制化学）"
+   },
+   "literature_note": "DOI 10.3389/fphar.2018.00934（何首乌炮制化学）"
+  }
+ ]
+}

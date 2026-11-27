@@ -193,15 +193,25 @@ original ligustroside case remains a miss and is retained as a seed-target misma
 is tyrosol (C8H10O2), while the recorded target is hydroxytyrosol (C8H10O3). Overall, evidence r1
 gives 23 consistent, 6 miss, 2 formula-only; production r1 gives the same. The script's
 `prediction_hit` field is a status match, not a product-presence count. On the 21 cases where the
-literature reports a product, r1 gives 18 structural hits (20/21 if formula-level matches count),
-with the 10 negative controls excluded from the denominator. Evidence r3 gives 28 consistent,
-1 miss, 2 formula-only; production r3 gives the same. The remaining r3 miss is ligustroside.
+literature reports a product, the original r1 run gives 18 structural hits plus 2 formula-only
+cases, with the 10 negative controls excluded from the denominator. The 2 formula-only cases were
+re-checked with reference structures derived from tcm.db (dipotassium atractyloside neutralised;
+THSG glycoside hydrolysed), pre-registered in
+`data/holdout_paozhi_structure_supplement_20261127.json`. The THSG aglycone matches the full
+InChIKey; atractyloside matches the 14-character skeleton only (its full key differs in
+stereochemistry). At the holdout's skeleton-level matching, this gives 20/21 (95.2%). Evidence r3
+gives 28 consistent, 1 miss, 2 formula-only; production r3 gives the same. The remaining r3 miss is
+ligustroside.
 
 Recompute the presence score from a saved holdout JSON (does not rerun the engine):
 
 ```powershell
 python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261126.json
-# 18/21 structure hits, 20/21 formula-level, 1 positive miss, 10 negative controls
+# 18/21 structure hits, 2 formula-only, 1 positive miss, 10 negative controls
+
+python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261126.json `
+  reports\holdout_paozhi_20261127_structure_supplement_20261127.json
+# 20/21 skeleton-level hits (95.2%), 1 positive miss, 10 negative controls
 ``` The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
 at r1; 10 consistent, 0 miss, 2 formula-only at r3. The multi-round protocol is developmental, not
 an independent holdout, and it is not a production default.

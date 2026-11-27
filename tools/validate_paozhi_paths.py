@@ -252,10 +252,15 @@ def run_case(cur, tag, seed_id, cond, targets, bridge_id,
     for label, kind, val, prefixes in targets:
         if kind == "key":
             t = db_row(cur, val)
-            if not t or not t[5]:
-                resolved.append((label, kind, "", prefixes))
+            if t and t[5]:
+                resolved.append((label, kind, t[5][:14].upper(), prefixes))
                 continue
-            resolved.append((label, kind, t[5][:14].upper(), prefixes))
+            # 2026-11-27: supplement targets can carry a raw 14-char InChIKey
+            # skeleton for products that are not ingredients in tcm.db.
+            if len(val) >= 14 and val[:14].isalpha() and val[:14].isupper():
+                resolved.append((label, kind, val[:14].upper(), prefixes))
+                continue
+            resolved.append((label, kind, "", prefixes))
         else:
             resolved.append((label, kind, val, prefixes))
 

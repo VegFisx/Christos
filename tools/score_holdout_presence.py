@@ -11,6 +11,9 @@ This script does not rerun the engine and does not modify the input JSON.
 
 Usage:
     python -I tools/score_holdout_presence.py reports/holdout_paozhi_20261126.json
+    # optional structure supplement (same seed/target, tag + "_struct"):
+    python -I tools/score_holdout_presence.py reports/holdout_paozhi_20261126.json \
+        reports/holdout_paozhi_20261127_structure_supplement_20261127.json
 """
 from __future__ import annotations
 
@@ -51,8 +54,18 @@ def main() -> int:
         print("usage: python -I tools/score_holdout_presence.py <holdout.json>")
         return 2
     src = Path(sys.argv[1]).resolve()
+    supp = Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else None
     d = json.loads(src.read_text(encoding="utf-8"))
     rows = [score(c) for c in d.get("cases") or []]
+    if supp is not None:
+        sd = json.loads(supp.read_text(encoding="utf-8"))
+        supp_rows = {r["tag"]: r for r in (score(c) for c in sd.get("cases") or [])}
+        for r in rows:
+            s = supp_rows.get(str(r["tag"]) + "_struct")
+            if s and s["structure_hit"] and r["positive"]:
+                r["structure_hit"] = True
+                r["formula_hit"] = False
+                r["supplement"] = s["tag"]
     pos = [r for r in rows if r["positive"]]
     neg = [r for r in rows if not r["positive"]]
     struct = [r for r in pos if r["structure_hit"]]
@@ -61,8 +74,8 @@ def main() -> int:
 
     print("cases            %d" % len(rows))
     print("positive cases   %d" % len(pos))
-    print("structure hits   %d/%d = %.1f%%" % (len(struct), len(pos),
-                                               100.0 * len(struct) / max(1, len(pos))))
+    print("skeleton/structure hits %d/%d = %.1f%%" % (
+        len(struct), len(pos), 100.0 * len(struct) / max(1, len(pos))))
     print("formula-only     %d (upper bound %d/%d = %.1f%%)"
           % (len(formula), len(struct) + len(formula), len(pos),
              100.0 * (len(struct) + len(formula)) / max(1, len(pos))))
@@ -74,7 +87,8 @@ def main() -> int:
                   % (r["tag"], r["expected"], r["actual"], r["target_statuses"]))
     out = {
         "source": src.name,
-        "convention": "positive cases only; structure hit = consistent/product_only",
+        "convention": ("positive cases only; skeleton/structure hit = "
+                       "consistent/product_only; key targets match InChIKey 14"),
         "n_cases": len(rows),
         "n_positive": len(pos),
         "n_structure_hits": len(struct),
@@ -82,6 +96,7 @@ def main() -> int:
         "n_positive_misses": len(pos) - len(struct) - len(formula),
         "n_negative_controls": len(neg),
         "n_negative_with_product": len(neg_hit),
+        "supplement": supp.name if supp is not None else None,
         "cases": rows,
     }
     dst = src.with_name(src.stem + "_presence.json")

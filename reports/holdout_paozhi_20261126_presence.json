@@ -1,13 +1,14 @@
 {
  "source": "holdout_paozhi_20261126.json",
- "convention": "positive cases only; structure hit = consistent/product_only",
+ "convention": "positive cases only; skeleton/structure hit = consistent/product_only; key targets match InChIKey 14",
  "n_cases": 31,
  "n_positive": 21,
- "n_structure_hits": 18,
- "n_formula_only": 2,
+ "n_structure_hits": 20,
+ "n_formula_only": 0,
  "n_positive_misses": 1,
  "n_negative_controls": 10,
  "n_negative_with_product": 5,
+ "supplement": "holdout_paozhi_20261127_structure_supplement_20261127.json",
  "cases": [
   {
    "tag": "zhizi_geniposide",
@@ -179,22 +180,24 @@
    "expected": "formula_only",
    "actual": "formula_only",
    "positive": true,
-   "structure_hit": false,
-   "formula_hit": true,
+   "structure_hit": true,
+   "formula_hit": false,
    "target_statuses": [
     "formula_only"
-   ]
+   ],
+   "supplement": "cangerzi_catr_atr_struct"
   },
   {
    "tag": "heshouwu_thsg_aglycone",
    "expected": "formula_only",
    "actual": "formula_only",
    "positive": true,
-   "structure_hit": false,
-   "formula_hit": true,
+   "structure_hit": true,
+   "formula_hit": false,
    "target_statuses": [
     "formula_only"
-   ]
+   ],
+   "supplement": "heshouwu_thsg_aglycone_struct"
   },
   {
    "tag": "zhiqiao_hesperidin_hesperetin",

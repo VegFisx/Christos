@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-11-27 10:33:20",
+  "holdout_file": "data/holdout_paozhi_structure_supplement_20261127.json",
+  "frozen_git_rev": "pre-registered 2026-11-27 before first run",
+  "mode": "evidence",
+  "rounds": 1,
+  "n_cases": 2,
+  "n_prediction_hits": 2,
+  "actual_status_counts": {
+    "consistent": 2
+  },
+  "cases": [
+    {
+      "tag": "cangerzi_catr_atr_struct",
+      "seed_id": "HBIN019719",
+      "condition": "炮制·炒黄",
+      "mode": "evidence",
+      "rounds": 1,
+      "seed_name": "Carboxyatractyloside",
+      "seed_formula": "C31H46O18S2",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 0.3,
+      "n_round1": 9,
+      "targets": [
+        {
+          "rule": "decarboxylation_001",
+          "rules_all": [
+            "decarboxylation_001"
+          ],
+          "product_formula": "C30H46O16S2",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "atractyloside free acid",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "苍耳子",
+      "process_cn": "炒黄",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "decarboxylation_001",
+        "confidence": "high",
+        "reason": "CATR 加热脱羧得 ATR 游离酸（C31H46O18S2 - CO2 = C30H46O16S2）。参考结构由 tcm.db HBIN017299 的二钾盐去 K+、硫酸酯负离子质子化得到。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    },
+    {
+      "tag": "heshouwu_thsg_aglycone_struct",
+      "seed_id": "HBIN003908",
+      "condition": "炮制·蒸制",
+      "mode": "evidence",
+      "rounds": 1,
+      "seed_name": "2,3,5,4'-tetrahydroxystilbene-2-o-β-d-glucoside",
+      "seed_formula": "C20H22O9",
+      "seed_smiles_source": "pubchem:isomeric",
+      "seconds_round1": 0.2,
+      "n_round1": 3,
+      "targets": [
+        {
+          "rule": "hydrolysis_glycoside_001",
+          "rules_all": [
+            "hydrolysis_glycoside_001"
+          ],
+          "product_formula": "C14H12O4",
+          "co_product": true,
+          "match_level": "structure",
+          "rule_family_ok": true,
+          "status": "consistent",
+          "target": "THSG aglycone",
+          "round": 1
+        }
+      ],
+      "n_consistent": 1,
+      "n_products_ok": 1,
+      "status": "consistent",
+      "herb_cn": "何首乌",
+      "process_cn": "蒸制",
+      "holdout_strength": "weak",
+      "expected": {
+        "status": "consistent",
+        "rule": "hydrolysis_glycoside_001",
+        "confidence": "medium",
+        "reason": "THSG 去 2-O-葡萄糖得 2,3,5,4'-四羟基二苯乙烯（C20H22O9 - C6H10O5 = C14H12O4）。参考结构由 tcm.db HBIN003908 的糖苷键水解得到。"
+      },
+      "actual_status": "consistent",
+      "prediction_hit": true
+    }
+  ]
+}
