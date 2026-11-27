@@ -3,6 +3,12 @@
 这份文件只回答一个问题：**专家从 GitHub 下载后，实际能跑出什么、不能跑出什么。**
 论文正文与图件不在公开仓；公开仓是代码、规则、基准数据和可运行脚本。
 
+## 零、运行前提
+
+- 从仓库根目录运行；Python 3.12.10。
+- `pip install -r requirements.txt`；`rdchiral` 和 SmartReact 已放在 `libs/`，不需要额外安装。
+- 下面是 Windows PowerShell 写法；bash 用户把 `$env:X='v'` 换成 `export X=v`，把反斜杠换成斜杠。
+
 ## 一、能独立复现的
 
 | 能力 | 命令 | 期望 |

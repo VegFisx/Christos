@@ -1,104 +1,82 @@
 # Christos
 
-A local reaction-prediction system for forward enumeration, retrosynthesis, and
-result-level provenance, with a traditional-Chinese-medicine (TCM) input layer.
+A local, auditable reaction-prediction system for Chinese medicine component
+clarification: resolve herb/formula names to compound seeds, enumerate products
+with reaction templates, and keep the source record, template and condition
+evidence attached to every candidate.
 
-Every candidate keeps the record it came from: template id, source compound,
-reaction round, condition marker, and the flags that say which evidence is
-missing. The system answers "by these rules, A can become B" — it does not
-predict yields, selectivity, or whether a reaction is practical.
+This repository contains the engine, the rule library, the benchmark data and
+the scripts needed to reproduce the published numbers. **The manuscript and its
+figures are not included.**
 
-## What is in this repository
+## Reproduce the experiments
 
-| Path | Content |
-|---|---|
-| `core/` | Reaction engine, template application, retrosynthesis search, scoring, thermodynamics |
-| `conditions/` | Condition templates, activation scoring, reaction-extent annotation |
-| `rules/` | Curated rules (70+), evidence files, direction table |
-| `sources/` | Input resolution: herb names, species, formulas |
-| `integration/tcmai_bridge/` | CLI (`chemreact.py`) and local web UI (`ui.py` + `ui_page.html`) |
-| `tools/` | Benchmark, audit, validation and figure scripts |
-| `libs/smartreact/` | Vendored base-template enumerator (not on PyPI) |
-| `reports/` | Round-by-round reports, and the manuscript under `reports/paper/` |
+Two documents answer this:
 
-## Quick start
+- **`PUBLIC_REPRO.md`** — one page: what is reproducible, what is not, and why.
+- **`REPRODUCE.md`** — full commands, runtimes, expected outputs and caveats.
+
+### Quick start
+
+Run from the repository root on Windows with Python 3.12:
 
 ```powershell
-python -m pip install -r requirements.txt
-
-# forward prediction from a SMILES, decoction conditions, one round
-python integration/tcmai_bridge/chemreact.py predict --smiles "CCO" --cond 煎煮 --rounds 1 --limit 5
-
-# the local web UI
-python integration/tcmai_bridge/ui.py
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
-The produced directory contains a CSV ledger (one row per reaction step), a TSV
-index, a `meta.json`, and a one-page HTML report where each product can be
-traced back through the steps that produced it.
+`rdchiral` and SmartReact are vendored under `libs/`; no extra install is needed.
 
-## Benchmarks (frozen settings)
+### Headline checks
 
-| Task | Result |
-|---|---|
-| Forward, USPTO-50k, 50,016 reactions | 91.69% candidate-set recall (45,862 hits; Wilson 95% CI 91.45–91.93) |
-| Forward, official 5,001-reaction test split | 91.71% recall, top-1 43.28%, MRR 0.5496 |
-| Forward, USPTO-MIT deterministic sample (39,176) | 71.18% recall, top-1 32.81%, MRR 0.4187 |
-| Reverse, 5,002 targets / 79,184 templates | 94.74% any-hit |
-| Reverse, 50,016 targets / 3,065 leak-controlled templates | 79.81% any-hit |
-| Multi-step route found, depth ≤2 / ≤3, 300 targets | 47.67% / 72.33% |
+| Experiment | Command | Expected |
+|---|---|---|
+| Forward, USPTO-50k 50,016 | `$env:CHEMCREACT_BENCH_OUT='out'; python -I tools\paper_bench_50k_forward.py 100000 4` | 92.01% (stereo off 82.77%, baseline 55.53%) |
+| Official test split | `$env:CHEMCREACT_BENCH_OUT='out'; python -I tools\paper_bench_official_test.py 2` | 91.71% any-position; top-1 43.28% is diagnostic only |
+| Reverse coverage, 5,002 | `$env:CHEMCREACT_BENCH_OUT='out'; python -I tools\paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl_v2.jsonl 10` | 94.74% |
+| Reverse coverage, 50,016 | `$env:CHEMCREACT_BENCH_OUT='out'; python -I tools\paper_bench_50k_coverage.py 4 data/benchmark/lib_uspto50k_excl.jsonl 1` | 79.81% |
+| Paozhi holdout, 31 cases | `$env:CHEMCREACT_TCM_DB='data\tcm_holdout.db'; python -I tools\run_holdout_paozhi.py --mode evidence --rounds 1` | 20/21 skeleton-level with the reference supplement |
+| Rule/mapping safety | `python -I tools\audit_mapped_safety.py` | ERROR 0 |
 
-Strict same-reaction overlap between our template examples and either test set is
-zero (0/50,016 and 0/479,035). The transformer baselines that report 90–93% are
-top-1 on USPTO-MIT's 40,000-reaction split; those numbers are not directly
-comparable with candidate-set recall here.
-
-## Data
-
-The raw data is **not** included. It is large and separately licensed:
-
-- ORD reaction records (`ord-data/`) — needed only to re-mine templates; the
-  mined library ships here
-- USPTO-MIT — download with `python tools/fetch_data.py mit`
-- `tcm.db` — the full herbal compound database, read-only, not distributed here.
-  A 1.96 MB subset of the rows the paper touches ships in
-  `data/tcm_subset.db`, and `python tools/validate_tcm_on_subset.py` re-runs the
-  TCM-side validations against it.
-
-The derived artifacts a reviewer needs to re-run the benchmarks **are** in this
-repository: `reports/mined_forward_templates_full_s5.jsonl` (9.4 MB),
-`reports/paper/data/lib_uspto50k_excl*.jsonl` (retrosynthesis template
-libraries), `reports/paper/data/uspto50k_canon.jsonl` and the official
-5,001-reaction test split.
-
-## Reproducing the numbers
-
-See [REPRODUCE.md](REPRODUCE.md) for the commands and the values measured from a
-fresh clone, including which parts still need `tcm.db`.
+The holdout needs the shipped reference-structure supplement:
 
 ```powershell
-python -I tools/paper_bench_50k_forward.py 100000 2      # forward, full set
-python -I tools/paper_bench_official_test.py 2           # official 5,001 split
-python -I tools/paper_bench_50k_coverage.py 4 reports/paper/data/lib_uspto50k_excl_v2.jsonl 10
-python -I tools/bench_multistep.py 300 2 4 --use-lib
-python -I tools/audit_mapped_safety.py                   # atom-mapping safety gate
+python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261127.json `
+  reports\holdout_paozhi_20261127_structure_supplement_20261127.json
+# 20/21 skeleton-level hits, 1 positive miss, 10 negative controls
 ```
 
-Every report in `reports/` states the exact command it used.
+The 3-round development configuration reaches 21/21 positives but also raises
+product formation in the negative controls from 5/10 to 9/10. That trade-off is
+documented in `PUBLIC_REPRO.md` and the paper; selectivity is not an acceptance
+criterion at this stage.
 
-## Known limits
+### What is not reproducible from this repository alone
 
-- The system does not rank well: top-1 is 43%, so it is a candidate generator.
-- It cannot tell whether a pair of molecules reacts at all (decoy control shows
-  ~0.2% specificity). This is a documented design limit, not a bug.
-- Condition parameters annotate; they never filter products. Temperature and
-  time extrapolation were tested with leave-one-out and are reported as
-  unreliable, so they stay as annotations.
-- No wet-lab validation.
+- **Multi-step planning** (47.67%/72.33%): needs ORD-derived purchasable-block
+  indices and a COCONUT index that are not shipped because of size.
+- **Formula coverage** (85.64%/44.29%): needs `formula_db.json`, not shipped.
+- **Full TCM database** (31,646 compounds): only a 17-herb demo subset and a
+  56-compound holdout subset are shipped.
+- **The manuscript and figures**.
 
-## Licence
+See `PUBLIC_REPRO.md` for the complete list.
 
-MIT — see [LICENSE](LICENSE). Third-party components keep their own terms
-(`libs/smartreact/` is vendored; RDKit, NumPy, pandas, SciPy, scikit-learn and
-matplotlib are BSD-family). `data/tcm_subset.db` is distributed only so that the
-paper's cases can be re-run; see `data/TCM-SUBSET.md`.
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `core/`, `rules/`, `conditions/`, `sources/` | Engine, 117-rule library, condition layer, input resolution |
+| `tools/` | Benchmark, audit and reproduction scripts |
+| `data/benchmark/` | USPTO-50k targets, official test split, reverse template libraries |
+| `data/tcm_subset.db` | 17-herb demo subset (2,899 compounds) |
+| `data/tcm_holdout.db` | 56-compound holdout-only subset (31 cases) |
+| `reports/` | Derived artifacts, template pools, benchmark results, data card |
+| `integration/` | Command-line and desktop bridges |
+
+## Data and license
+
+Provenance, upstream licenses and known limitations are in `DATA_CARD.md`.
+Code is MIT (see `LICENSE`); upstream data carry their own licenses. Citation
+metadata is in `CITATION.cff` (version 1.1.0; DOI `10.5281/zenodo.24564325`).
