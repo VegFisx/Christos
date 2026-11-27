@@ -35,7 +35,12 @@ for _s in (sys.stdout, sys.stderr):
 import validate_paozhi_paths as V          # noqa: E402
 
 HOLDOUT = ROOT / "data" / "holdout_paozhi.json"
-_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB") or "D:/TCMAI/tcm.db"
+_DB_PATH = os.environ.get("CHEMCREACT_TCM_DB")
+if not _DB_PATH:
+    _full = Path("D:/TCMAI/tcm.db")
+    _hold = ROOT / "data" / "tcm_holdout.db"
+    _DB_PATH = str(_full if _full.exists() else _hold)
+    print("[db] %s" % _DB_PATH, flush=True)
 DB = "file:%s?mode=ro" % _DB_PATH.replace("\\", "/")
 
 

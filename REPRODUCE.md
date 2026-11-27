@@ -180,12 +180,16 @@ enumeration. The multi-round file keeps the same cases but runs three rounds; it
 were pre-registered separately.
 
 ```powershell
+# the full tcm.db is not distributed; this subset contains all 56 holdout ids
+$env:CHEMCREACT_TCM_DB='data\tcm_holdout.db'
 python -I tools\run_holdout_paozhi.py --mode evidence --rounds 1
 python -I tools\run_holdout_paozhi.py --mode production --rounds 1
 python -I tools\run_holdout_paozhi.py --holdout data\holdout_paozhi_multiround.json --mode evidence --rounds 3
 ```
 
 Measured on the 31-case combined holdout after the five derived rules and the oleuropein control.
+The 2026-11-27 run from `data/tcm_holdout.db` gives the same 23 consistent / 6 miss / 2 formula-only
+as the full `tcm.db` run; the subset contains all 56 seed/target ids.
 The 12-case strong validation core (before the gap probes) gives 9 consistent and 3 misses at r1.
 Multi-round runs use `max_pairs=128` (single-round keeps 1); with that budget the core reaches
 11 consistent and 1 miss, with tianma and acetylastragaloside I closing through the benzylic
