@@ -195,7 +195,14 @@ gives 23 consistent, 6 miss, 2 formula-only; production r1 gives the same. The s
 `prediction_hit` field is a status match, not a product-presence count. On the 21 cases where the
 literature reports a product, r1 gives 18 structural hits (20/21 if formula-level matches count),
 with the 10 negative controls excluded from the denominator. Evidence r3 gives 28 consistent,
-1 miss, 2 formula-only; production r3 gives the same. The remaining r3 miss is ligustroside. The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
+1 miss, 2 formula-only; production r3 gives the same. The remaining r3 miss is ligustroside.
+
+Recompute the presence score from a saved holdout JSON (does not rerun the engine):
+
+```powershell
+python -I tools\score_holdout_presence.py reports\holdout_paozhi_20261126.json
+# 18/21 structure hits, 20/21 formula-level, 1 positive miss, 10 negative controls
+``` The weak set is 12 cases: 9 consistent, 1 miss, 2 formula-only
 at r1; 10 consistent, 0 miss, 2 formula-only at r3. The multi-round protocol is developmental, not
 an independent holdout, and it is not a production default.
 
